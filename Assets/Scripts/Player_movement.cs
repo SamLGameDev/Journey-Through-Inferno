@@ -13,6 +13,7 @@ public class Player_movement : MonoBehaviour
     }
     public void Joystic_Movement()
     {
+        // Gets the movement action and moves the player based on that times speed
        InputActionAsset actions = GetComponent<PlayerInput>().actions;
        Vector2 movement = actions.FindAction("Movement").ReadValue<Vector2>();
        GetComponent<Rigidbody2D>().velocity = new Vector2(movement.x * speed, movement.y * speed);
