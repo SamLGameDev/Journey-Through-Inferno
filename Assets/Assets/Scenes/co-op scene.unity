@@ -495,9 +495,10 @@ GameObject:
   - component: {fileID: 1519157037}
   - component: {fileID: 1519157036}
   - component: {fileID: 1519157038}
+  - component: {fileID: 1519157039}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -641,6 +642,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1519157039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519157033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8b84871b0250ba438dbe2b84fadcf82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityMaxHealth: 100
+  entityCurrentHealth: 0
 --- !u!1 &1677023830
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,9 +669,10 @@ GameObject:
   - component: {fileID: 1677023833}
   - component: {fileID: 1677023832}
   - component: {fileID: 1677023831}
+  - component: {fileID: 1677023836}
   m_Layer: 0
   m_Name: Player 2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -800,3 +816,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1677023836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677023830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8b84871b0250ba438dbe2b84fadcf82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityMaxHealth: 100
+  entityCurrentHealth: 0
