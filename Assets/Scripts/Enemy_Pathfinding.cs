@@ -5,120 +5,68 @@ using System.Security;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Enemy_Pathfinding : MonoBehaviour
 {
-    [SerializeField] private bool coop;
     [SerializeField] private GameObject player1;
     [SerializeField] private GameObject player2;
     private Vector2 target;
     [SerializeField] private float speed;
-    private int mapWidth = 50;
-    private int mapHeight = 50;
-    [SerializeField] private GameObject obstacle;
-    [SerializeField] private List<Transform> enemies;
-    [SerializeField] private List<Transform> players;
+    [SerializeField] private bool coop;
+
+
+
+
+
 
     // Start is called before the first frame update
     void Start()
     {
-        Pathfind();
+
     }
     /// <summary>
     /// uses move towards to chase the closest player
     /// </summary>
     private void Pathfind()
     {
-        mapObjects[,] grid = CreateGrid();
-        for (int i = 0; i < mapWidth; i++) 
+        if (coop)
+
         {
-            for (int j = 0; j < mapHeight; j++)
+            // calculates the sqr magnitude of the distance between the the enemy and the two players and compares them.
+            Vector2 pos1 = player1.transform.position - transform.position;
+            Vector2 pos2 = player2.transform.position - transform.position;
+
+            if (pos1.sqrMagnitude < pos2.sqrMagnitude)
             {
-                Debug.Log(grid[i, j]);
+                target = player1.transform.position;
             }
-        }
+            else
 
 
-    }
-    private mapObjects[,] CreateGrid()
-    {
-        mapObjects[,] grid = new mapObjects[mapWidth, mapHeight];
-        Vector2Int[] obsticalpos = GetObstacleArrayPositions();
-        Vector2Int[] enemypos = GetRoundedPositions(enemies);
-        Vector2Int[] playerpos = GetRoundedPositions(players);
-        for (int x = 0; x < mapWidth; x++)
-        {
-            for (int y = 0; y < mapHeight; y++)
             {
-                bool found = false;
-                foreach (Vector2Int pos in obsticalpos) 
-                {
-                    if (pos == new Vector2Int(x, y))
-                    {
-                        grid[x, y] = mapObjects.Blocker;
-                        found = true;
-                        break;
-                    }
-                }
-                if (!found)
-                {
-                    grid[x, y] = mapObjects.Empty;
-                }
-
+                target = player2.transform.position;
 
             }
-            
-        }
-        foreach(Vector2 pos in enemypos)
-        {
-            grid[(int)pos.x, (int)pos.y] = mapObjects.Enemy;
-        }
-        foreach (Vector2 pos in playerpos)
-        {
-            grid[(int)pos.x, (int)pos.y] = mapObjects.Player;
-        }
-        return grid;
 
-    }
-    private Vector2Int[] GetObstacleArrayPositions()
-    {
-        Vector2Int[] positions = new Vector2Int[5];
-       for (int i = 0; i < 5; i++)
-        {
-            Vector2 pos = new Vector2(Random.Range(-25, 25) + 0.5f, Random.Range(-25, 25) + 0.5f);
-            Instantiate(obstacle, pos, Quaternion.identity);
-            positions[i] = new Vector2Int(Mathf.RoundToInt(pos.x +25 - 0.5f), Mathf.RoundToInt(pos.y + 25 - 0.5f));
-            
-        }
-       return positions;
-    }
-    private Vector2Int[] GetRoundedPositions(List<Transform> Objects)
-    {
-        Vector2Int[] positions = new Vector2Int[Objects.Count];
-        int i = 0;
-        foreach(Transform obj in Objects)
-        {
-            Vector2Int pos = new Vector2Int(Mathf.RoundToInt(obj.position.x + 25), Mathf.RoundToInt(obj.position.y + 25));
-            positions[i] = pos;
-            i++;
 
         }
-        return positions;
+        else
 
-        
-    }
 
-    private enum mapObjects 
-    {
-        Empty,
-        Enemy,
-        Blocker,
-        Player
+        {
+            target = player1.transform.position;
+        }
+
+        transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        Pathfind();
     }
+
 }
