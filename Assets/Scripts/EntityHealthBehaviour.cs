@@ -61,15 +61,13 @@ public class EntityHealthBehaviour : MonoBehaviour
     {
         if (gameObject.CompareTag("Enemy"))
         {
-            // Deduct from enemy counter here.
-
-            print("Death");
+            GameManager.instance.OnEnemyDeath();
 
             Destroy(gameObject);
         }
         else if (gameObject.CompareTag("Player"))
         {
-            // Set player as dead in gamemanager here.
+            GameManager.instance.OnPlayerDeath();
         }
     }
 }

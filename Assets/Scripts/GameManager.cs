@@ -6,6 +6,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    private int alivePlayers;
+    private int enemiesRemaining;
+
     public enum GameState
     {
         normalPlay,
@@ -23,6 +26,49 @@ public class GameManager : MonoBehaviour
         else
         {
             instance = this;
+        }
+    }
+
+    /// <summary>
+    /// Sets how many total players are in the game for checking win/loss conditions.
+    /// </summary>
+    /// <param name="amountOfPlayers">How many players there are.</param>
+    public void SetPlayerCount(int amountOfPlayers)
+    {
+        alivePlayers = amountOfPlayers;
+    }
+
+    /// <summary>
+    /// Deducts currently alive player counter to see if the game ends.
+    /// </summary>
+    public void OnPlayerDeath()
+    {
+        alivePlayers--;
+
+        if (alivePlayers == 0)
+        {
+            UpdateGameState(GameState.gameOver);
+        }
+    }
+
+    /// <summary>
+    /// Adds currently alive player counter.
+    /// </summary>
+    public void OnPlayerRevive()
+    {
+        alivePlayers++;
+    }
+
+    /// <summary>
+    /// Deducts currently alive enemy counter to see if the level is complete.
+    /// </summary>
+    public void OnEnemyDeath()
+    {
+        enemiesRemaining--;
+
+        if (enemiesRemaining == 0)
+        {
+            UpdateGameState(GameState.victory);
         }
     }
 
@@ -56,12 +102,16 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
 
+        print("Normal Play");
+
         // Add any other things you want to happen here.
     }
 
     private void OnPause()
     {
         Time.timeScale = 0;
+
+        print("Pause");
 
         // Add any other things you want to happen here.
     }
@@ -70,12 +120,16 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0;
 
+        print("Game Over");
+
         // Add any other things you want to happen here.
     }
 
     private void OnVictory()
     {
         Time.timeScale = 0;
+
+        print("Victory");
 
         // Add any other things you want to happen here.
     }
