@@ -16,15 +16,6 @@ public class Enemy_Pathfinding : MonoBehaviour
     [SerializeField] private bool coop;
 
 
-
-
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
     /// <summary>
     /// uses move towards to chase the closest player
     /// </summary>
