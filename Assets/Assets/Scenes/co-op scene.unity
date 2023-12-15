@@ -1160,6 +1160,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   target: {fileID: 1519157035}
+  player2: {fileID: 1677023835}
+  coop: 1
+  player1: {fileID: 1519157035}
 --- !u!114 &1964115445
 MonoBehaviour:
   m_ObjectHideFlags: 0

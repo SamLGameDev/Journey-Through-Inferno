@@ -16,9 +16,14 @@ namespace Pathfinding {
 	public class AIDestinationSetter : VersionedMonoBehaviour {
 		/// <summary>The object that the AI should move to</summary>
 		public Transform target;
+		public Transform player2;
+		public bool coop;
+		public Transform player1;
 		IAstarAI ai;
 
-		void OnEnable () {
+  
+
+        void OnEnable () {
 			ai = GetComponent<IAstarAI>();
 			// Update the destination right before searching for a path as well.
 			// This is enough in theory, but this script will also update the destination every
@@ -33,6 +38,19 @@ namespace Pathfinding {
 
 		/// <summary>Updates the AI's destination every frame</summary>
 		void Update () {
+			if (coop)
+			{
+				Vector2 p1 = player1.position - transform.position;
+				Vector2 p2 = player2.position - transform.position;
+				if (p1.sqrMagnitude < p2.sqrMagnitude)
+				{
+					target = player1;
+				}
+				else
+				{
+					target = player2;
+				}
+			}
 			if (target != null && ai != null) ai.destination = target.position;
 		}
 	}
