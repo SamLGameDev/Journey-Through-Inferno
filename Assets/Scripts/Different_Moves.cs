@@ -1,6 +1,8 @@
+using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class Different_Moves : MonoBehaviour
 {
@@ -24,6 +26,69 @@ public class Different_Moves : MonoBehaviour
         }
 
 
+    }
+    private void EnablerAStar(bool setter)
+    {
+        GetComponent<Seeker>().enabled = setter;
+        GetComponent<AIDestinationSetter>().enabled = setter;
+        GetComponent<AIPath>().enabled = setter;
+        GetComponent<AstarPath>().enabled = setter;
+    }
+    public IEnumerator Charge(AnimationEvent Charge_info)
+    {
+        GetComponent<Animator>().SetBool("Within_Charge_Range", false);
+        //Vector2 target = Calculate_Direction();
+        float time = Time.time;
+        while (Time.time - 2 < time)
+        {
+            yield return null;
+            transform.position += transform.right * Time.deltaTime * 2;
+        }
+        EnablerAStar(true);
+    }
+    public IEnumerator LookAtEnemy()
+    {
+        while (GetComponent<Animator>().GetBool("Within_Charge_Range") == true)
+        {
+            yield return null;
+            Transform target = GetComponent<AIDestinationSetter>().target;
+            Vector3 difference = target.position - transform.position;
+            float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
+        }
+    }
+    private Vector2 Calculate_Direction()
+    {
+        if (transform.rotation.z > 360)
+        {
+            transform.rotation = new Quaternion(0,0, 0, 0); 
+        }
+        if (transform.rotation.z >= -90 && transform.rotation.z < 0)
+        { 
+            float percent = -transform.rotation.z / 90;
+            float remaining = 1 - percent;
+            return new Vector2(transform.position.x * percent, transform.position.y * remaining);
+        }
+        else if (transform.rotation.z < -90 && transform.rotation.z >= -180)
+        {
+            float percent = (-transform.rotation.z-90) / 90;
+            float remaining = 1 - percent;
+            return new Vector2(transform.position.x * remaining, -transform.position.y * percent);
+        }
+        if (transform.rotation.z >= -270 && transform.rotation.z < -180)
+        {
+            float percent = (-transform.rotation.z-180) / 90;
+            float remaining = 1 - percent;
+            return new Vector2(- -transform.position.x * percent, -transform.position.y * remaining);
+        }
+        else if (transform.rotation.z < -270 && transform.rotation.z >= -360)
+        {
+            float percent = (-transform.rotation.z-270) / 90;
+            float remaining = 1 - percent;
+            return new Vector2(transform.position.x * remaining, -transform.position.y * percent);
+        }
+
+        return new Vector2(transform.position.x, -transform.position.y);    
     }
     // Update is called once per frame
     void Update()
