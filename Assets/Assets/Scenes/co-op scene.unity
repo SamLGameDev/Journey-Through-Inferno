@@ -141,6 +141,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ee427dbd87b8054395396023cc00405, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LayersToHit:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!114 &82781993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1240,6 +1243,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fallen Angel
+      objectReference: {fileID: 0}
+    - target: {fileID: 9010082080009253114, guid: 6f54f83e10a239546ad6251645f07e9b,
+        type: 3}
+      propertyPath: maxFrameTime
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

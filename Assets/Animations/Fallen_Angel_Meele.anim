@@ -31,7 +31,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0
+    m_StopTime: 0.35
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -53,8 +53,15 @@ AnimationClip:
   m_Events:
   - time: 0
     functionName: Melee
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 5
+    intParameter: 3
+    messageOptions: 0
+  - time: 0.35
+    functionName: Melee
     data: Player
     objectReferenceParameter: {fileID: 0}
-    floatParameter: 2
+    floatParameter: 5
     intParameter: 3
     messageOptions: 0
