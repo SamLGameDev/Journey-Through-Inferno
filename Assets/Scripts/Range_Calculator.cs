@@ -9,7 +9,6 @@ public class Range_Calculator : MonoBehaviour
 {
     private float cooldown;
     // Start is called before the first frame update
-    [SerializeField] private float speed;
     void Start()
     {
         cooldown = 0;
@@ -48,7 +47,6 @@ public class Range_Calculator : MonoBehaviour
         GetComponent<Seeker>().enabled = setter;
         GetComponent<AIDestinationSetter>().enabled = setter;
         GetComponent<AIPath>().enabled = setter;
-        GetComponent<AstarPath>().enabled = setter;
     }
 
     // Update is called once per frame

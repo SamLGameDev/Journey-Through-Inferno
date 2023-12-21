@@ -52,7 +52,6 @@ public class Different_Moves : MonoBehaviour
         GetComponent<Seeker>().enabled = setter;
         GetComponent<AIDestinationSetter>().enabled = setter;
         GetComponent<AIPath>().enabled = setter;
-        GetComponent<AstarPath>().enabled = setter;
     }
     public IEnumerator Charge(AnimationEvent Charge_info)
     {
