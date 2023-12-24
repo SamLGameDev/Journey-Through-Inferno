@@ -40,15 +40,28 @@ namespace Pathfinding {
 		void Update () {
 			if (coop)
 			{
-				Vector2 p1 = player1.position - transform.position;
-				Vector2 p2 = player2.position - transform.position;
-				if (p1.sqrMagnitude < p2.sqrMagnitude)
+				if (!player1)
+				{
+					target = player2;
+				}
+				else if (!player2)
 				{
 					target = player1;
 				}
 				else
 				{
-					target = player2;
+
+
+					Vector2 p1 = player1.position - transform.position;
+					Vector2 p2 = player2.position - transform.position;
+					if (p1.sqrMagnitude < p2.sqrMagnitude)
+					{
+						target = player1;
+					}
+					else
+					{
+						target = player2;
+					}
 				}
 			}
 			if (target != null && ai != null) ai.destination = target.position;

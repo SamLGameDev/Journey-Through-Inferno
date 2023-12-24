@@ -54,6 +54,10 @@ public class Range_Calculator : MonoBehaviour
     {
         float time = Time.time;
         Transform target = GetComponent<AIDestinationSetter>().target;
+        if (!target)
+        {
+            return;
+        }
         Vector2 distance = (Vector2)target.position - (Vector2)transform.position;
         bool range = Within_Melee_Range(distance);
         if (!range && GetComponent<Animator>().GetBool("Within_Charge_Range") == false && time - 10 > cooldown)
