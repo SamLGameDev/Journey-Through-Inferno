@@ -32,7 +32,7 @@ public class Different_Moves : MonoBehaviour
     {
         if (Time.time - 0.5 < time)
         {
-            return Time.time;
+            return time;
         }
 
         RaycastHit2D[] hit = Physics2D.BoxCastAll(transform.position, new Vector2(transform.localScale.x, range), transform.rotation.z, Vector2.up, range, LayersToHit);
