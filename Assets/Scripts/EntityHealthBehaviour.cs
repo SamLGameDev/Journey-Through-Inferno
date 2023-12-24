@@ -69,6 +69,7 @@ public class EntityHealthBehaviour : MonoBehaviour
         else if (gameObject.CompareTag("Player"))
         {
             GameManager.instance.OnPlayerDeath();
+            Destroy(gameObject);
         }
     }
 }

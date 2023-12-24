@@ -32,7 +32,7 @@ public class Range_Calculator : MonoBehaviour
     }
     private bool Within_Charge_Range(Vector2 distance, Transform target)
     {
-        if (distance.sqrMagnitude < new Vector2(6, 6).sqrMagnitude)
+        if (distance.sqrMagnitude < new Vector2(6, 6).sqrMagnitude && distance.sqrMagnitude > new Vector2(3,3).sqrMagnitude)
         {
             EnablerAStar(false);
             GetComponent<Animator>().SetBool("Within_Charge_Range", true);
