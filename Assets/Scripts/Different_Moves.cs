@@ -78,38 +78,17 @@ public class Different_Moves : MonoBehaviour
             transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
         }
     }
-    private Vector2 Calculate_Direction()
+    public void Shoot(LayerMask target, Vector2 originalHit, Vector2 angle)
     {
-        if (transform.rotation.z > 360)
-        {
-            transform.rotation = new Quaternion(0,0, 0, 0); 
-        }
-        if (transform.rotation.z >= -90 && transform.rotation.z < 0)
-        { 
-            float percent = -transform.rotation.z / 90;
-            float remaining = 1 - percent;
-            return new Vector2(transform.position.x * percent, transform.position.y * remaining);
-        }
-        else if (transform.rotation.z < -90 && transform.rotation.z >= -180)
-        {
-            float percent = (-transform.rotation.z-90) / 90;
-            float remaining = 1 - percent;
-            return new Vector2(transform.position.x * remaining, -transform.position.y * percent);
-        }
-        if (transform.rotation.z >= -270 && transform.rotation.z < -180)
-        {
-            float percent = (-transform.rotation.z-180) / 90;
-            float remaining = 1 - percent;
-            return new Vector2(- -transform.position.x * percent, -transform.position.y * remaining);
-        }
-        else if (transform.rotation.z < -270 && transform.rotation.z >= -360)
-        {
-            float percent = (-transform.rotation.z-270) / 90;
-            float remaining = 1 - percent;
-            return new Vector2(transform.position.x * remaining, -transform.position.y * percent);
-        }
+        RaycastHit2D hit = Physics2D.Raycast(new Vector2(originalHit.x + 0.3f, originalHit.y + 0.3f) , angle, 1000, target);
+        Debug.DrawRay(originalHit, angle * 30);
 
-        return new Vector2(transform.position.x, -transform.position.y);    
+        if (hit && hit.collider.CompareTag("Mirror"))
+        {
+            
+            var reflectangle = Vector2.Reflect(transform.right, hit.normal);
+            Shoot(target, hit.point, reflectangle);   
+        }
     }
     // Update is called once per frame
     void Update()
