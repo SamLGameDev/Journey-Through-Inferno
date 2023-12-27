@@ -1475,6 +1475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityMaxHealth: 100
+  invunTimeOnHit: 0
   entityCurrentHealth: 0
 --- !u!61 &1519157040
 BoxCollider2D:
@@ -1824,6 +1825,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityMaxHealth: 100
+  invunTimeOnHit: 1.5
   entityCurrentHealth: 0
 --- !u!61 &1677023837
 BoxCollider2D:
