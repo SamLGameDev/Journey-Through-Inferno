@@ -23,8 +23,6 @@ public class EntityHealthBehaviour : MonoBehaviour
     {
         entityCurrentHealth = entityMaxHealth;
         damageInvulnerable = false;
-
-        ApplyDamage(10);
     }
 
     /// <summary>
