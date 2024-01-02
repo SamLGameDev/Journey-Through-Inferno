@@ -28,7 +28,7 @@ public class Player_movement : MonoBehaviour
        Vector2 movement = actions.FindAction("Movement").ReadValue<Vector2>();
        GetComponent<Rigidbody2D>().velocity = new Vector2(movement.x * speed, movement.y * speed);
        float heading  = Mathf.Atan2(movement.x, movement.y);
-       //transform.rotation = new Quaternion(0,0, heading *Mathf.Rad2Deg, 0);
+       transform.rotation = Quaternion.Euler(0,0, heading *Mathf.Rad2Deg);
     }
     private void Animation_Controller()
     {
