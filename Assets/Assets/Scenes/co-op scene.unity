@@ -206,6 +206,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fallen Angel Variant (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 9195619475462717869, guid: 6f54f83e10a239546ad6251645f07e9b,
+        type: 3}
+      propertyPath: uniqueID
+      value: 2756675196121184370
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -292,17 +297,22 @@ PrefabInstance:
     - target: {fileID: 5117332000427463553, guid: 6f54f83e10a239546ad6251645f07e9b,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5871096964140578926, guid: 6f54f83e10a239546ad6251645f07e9b,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5986526922118790407, guid: 6f54f83e10a239546ad6251645f07e9b,
         type: 3}
       propertyPath: m_Name
       value: Fallen Angel Variant (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9195619475462717869, guid: 6f54f83e10a239546ad6251645f07e9b,
+        type: 3}
+      propertyPath: uniqueID
+      value: 3373929469484199283
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -397,6 +407,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fallen Angel Variant (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9195619475462717869, guid: 6f54f83e10a239546ad6251645f07e9b,
+        type: 3}
+      propertyPath: uniqueID
+      value: 7873478231099927544
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -707,6 +722,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fallen Angel Variant (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 9195619475462717869, guid: 6f54f83e10a239546ad6251645f07e9b,
+        type: 3}
+      propertyPath: uniqueID
+      value: 3731441277407771084
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -895,7 +915,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAAAAIeyVpgZqWgIAABMFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1z2jAQ/SuMzk3H0BCG3lqHkB5ImNBOLr4Ia401yJJHHwGS4b93V7axQ6cnxHtvd9+uVv5gUrsacm/s0kqxMgLY9xGjM/sy6slHOPKd0Rv5Dp3mVQpfkohHzQv30iA+pjBnKvBW5j/0TpE4QTBoWRhbLcQOUuO8Q7jgygFS1niK1gh9jNgRf27mFHLC02RGp3c8zZPRGY85aA+2l3bCTnY7jbKgc8WrGgR57tXTTj5tsmnsplWQ89woJV1rhflTHVtNee0CNoICITm2FuuTvgS5Kz3ZHAY/F4UD33qy/HQvLU6oycp+mmZsFXf7xtcbV4HqTKZ30VOTdPUPfzOOdGFN9djVHSdUw5cy37/wU86dH8x1CN9/Nh70gas93yp4LUE/maU1QQskvQ0UGhxM7vu/l9bSEvJ9jzdWr8BQ//92qIdz7P6YKlltifp62wAbZeK8492DxZv5hYbjZrg2BaLk4o+D33w3XKGWeJDWeaTaLjXZ25pgScoWcWbUTfCpsRoi3JquQXPlT2tM46+v8IoblL1iHjg9lrZ4y3Vv4Cokwr0+Sa6otTlcLsuV5rACVz4Hr6SG3jQRTzin1GjdbNhwJl3YJtiC54OwXZDi82oxUeTfQEzm22S8LQrgN/Mt3M1nUy7G49lcJAmLuyc19snVujHajgdvTffJNe5Z9w0ZLS2v47YLyw9L+V6ZwcilLswmtwD6uclwMQ4Wi+CrFAshcUAb8F7qeN/sI2PK5HsQ2SVRFjtdHL3lWZ8lY7V8M56QjKXxo5Exgi+7vLbwJuFAxbtkZ3b+C1BLAwQUAAAICAAAACHsiObMvW0AAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNdRUEovSizIKAaKGII4pZkpIHa0UkpasnFqipFlkoFhUlpaaqKuZVKqmaW5aWKKoaG5ZYqBgVIsUH1JZUGqX2JuKkRPQGJJRlpmXkpmXrqee1FmijvIaKXYWgBQSwECLQAUAAAICAAAACHslaYGaloCAAATBQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAAACHsiObMvW0AAAB4AAAACQAkAAAAAAAAAAAAAACnAgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAF8DAAAAAA==
+    dataString: UEsDBBQAAAgIAAAAIexzVQYQWgIAABQFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1z2jAQ/SuMzk3H0BCG3lqHkB5ImNBOLr4Ia401yJJHHwGS4b93V7axQ6cnxHtvd9+uVv5gUrsacm/s0kqxMgLY9xGjM/sy6slHOPKd0Rv5Dp3mVQpfkohHzQv30iA+pjBnKvBW5j/0TpE4QTBoWRhbLcQOUuO8Q7jgygFS1niK1gh9jNgRf27mFHLC02RGp3c8zZPRGY85aA+2l3bCTnY7jbKgc8WrGgR57tXTTj5tsmnsplWQ89woJV1rhflTHVtNee0CNoICITm2FuuTvgS5Kz3ZHAY/F4UD33qy/HQvLU6oycp+mmZsFXf7xtcbV4HqTKZ30VOTdPUPfzOOdGFN9djVHSdUw5cy37/wU86dH8x1CN9/Nh70gas93yp4LUE/maU1QQskvQ0UGhxM7vu/l9bSEvJ9jzdWr8BQ//92qIdz7P6YKlltifp62wAbZeK8492DxZv5hYbjZrg2BaLk4o+D33w3XKGWeJDWeaTaLjXZ25pgScoWcWbUTfCpsRoi3JquQXPlT2tM46+v8IoblL1iHjg9lrZ4y3Vv4Cokwr0+Sa6otTlcLsuV5rACVz4Hr6SG3jQRTzin1GjdbNhwJl3YJtiC54OwXZDi82oxUeTfQEzm22S8LQrgN/Mt3M1nUy7G49lcJAmLuyc19snVujHajgdvTffJNe5Z9w0ZLS2v47YLyw9L+V6ZwcilLswmtwD6uclwMQ4Wi+CrFAshcUAb8F7qeN/sI2PK5HsQ2SVRFjtdHL3lWZ8lY7V8M56QjKXxo5Exgi+7vLbwJuFAxS9xZ3b+C1BLAwQUAAAICAAAACHsiObMvW0AAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNdRUEovSizIKAaKGII4pZkpIHa0UkpasnFqipFlkoFhUlpaaqKuZVKqmaW5aWKKoaG5ZYqBgVIsUH1JZUGqX2JuKkRPQGJJRlpmXkpmXrqee1FmijvIaKXYWgBQSwECLQAUAAAICAAAACHsc1UGEFoCAAAUBQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAAACHsiObMvW0AAAB4AAAACQAkAAAAAAAAAAAAAACnAgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAF8DAAAAAA==
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -1308,6 +1328,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fallen Angel Variant (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 9195619475462717869, guid: 6f54f83e10a239546ad6251645f07e9b,
+        type: 3}
+      propertyPath: uniqueID
+      value: 3158073064888897855
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1656,6 +1681,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fallen Angel Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 9195619475462717869, guid: 6f54f83e10a239546ad6251645f07e9b,
+        type: 3}
+      propertyPath: uniqueID
+      value: 5609698756717428234
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2039,6 +2069,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fallen Angel
+      objectReference: {fileID: 0}
+    - target: {fileID: 9195619475462717869, guid: 6f54f83e10a239546ad6251645f07e9b,
+        type: 3}
+      propertyPath: uniqueID
+      value: 7765897997982182123
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
