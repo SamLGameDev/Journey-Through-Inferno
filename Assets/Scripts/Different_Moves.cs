@@ -34,8 +34,8 @@ public class Different_Moves : MonoBehaviour
         {
             return time;
         }
-
-        RaycastHit2D[] hit = Physics2D.BoxCastAll(transform.position, new Vector2(transform.localScale.x, range), transform.rotation.z, Vector2.up, range, LayersToHit);
+        
+        RaycastHit2D[] hit = Physics2D.BoxCastAll(transform.position, new Vector2(transform.localScale.x + 1, range), 0 , transform.right, range, LayersToHit);
         foreach (RaycastHit2D hit2d in hit)
         {
             hit2d.collider.gameObject.GetComponent<EntityHealthBehaviour>().ApplyDamage(damage);

@@ -27,8 +27,9 @@ public class Player_movement : MonoBehaviour
         // Gets the movement action and moves the player based on that times speed
        Vector2 movement = actions.FindAction("Movement").ReadValue<Vector2>();
        GetComponent<Rigidbody2D>().velocity = new Vector2(movement.x * speed, movement.y * speed);
-       float heading  = Mathf.Atan2(movement.x, movement.y);
-       transform.rotation = Quaternion.Euler(0,0, heading *Mathf.Rad2Deg);
+       Vector2 GetRotation = actions.FindAction("Aim").ReadValue<Vector2>();
+       float heading  = Mathf.Atan2(GetRotation.x, GetRotation.y);
+       GetComponentInChildren<Transform>().rotation = Quaternion.Euler(0,0, heading *Mathf.Rad2Deg);
     }
     private void Animation_Controller()
     {
@@ -83,7 +84,7 @@ public class Player_movement : MonoBehaviour
     }
     private void Player_Melee()
     {
-        float time = moves.Melee(0.6f, 2, delay);
+        float time = moves.Melee(1.6f, 2, delay);
         delay = time;
 
     }
