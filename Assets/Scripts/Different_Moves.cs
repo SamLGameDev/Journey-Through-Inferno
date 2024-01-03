@@ -85,13 +85,19 @@ public class Different_Moves : MonoBehaviour
     public void Shoot(LayerMask target, Vector2 originalHit, Vector2 angle)
     {
         RaycastHit2D hit = Physics2D.Raycast(new Vector2(originalHit.x + 0.3f, originalHit.y + 0.3f) , angle, 1000, target);
-        Debug.DrawRay(originalHit, angle * 30);
+        Color red = Color.red;
+        Debug.DrawRay(originalHit, angle * 30, red);
 
         if (hit && hit.collider.CompareTag("Mirror"))
         {
             
             var reflectangle = Vector2.Reflect(transform.right, hit.normal);
-            Shoot(target, hit.point, reflectangle);   
+            Shoot(target, hit.point, reflectangle);
+        }
+
+        if (hit && hit.collider.CompareTag("Enemy"))
+        {
+            hit.collider.gameObject.GetComponent<EntityHealthBehaviour>().ApplyDamage(5);
         }
     }
     // Update is called once per frame
