@@ -29,7 +29,8 @@ public class Player_movement : MonoBehaviour
        GetComponent<Rigidbody2D>().velocity = new Vector2(movement.x * speed, movement.y * speed);
        Vector2 GetRotation = actions.FindAction("Aim").ReadValue<Vector2>();
        float heading  = Mathf.Atan2(GetRotation.x, GetRotation.y);
-       GetComponentInChildren<Transform>().rotation = Quaternion.Euler(0,0, heading *Mathf.Rad2Deg);
+       transform.GetChild(0).rotation = Quaternion.Euler(0,0, heading * Mathf.Rad2Deg);
+       
     }
     private void Animation_Controller()
     {
@@ -90,7 +91,7 @@ public class Player_movement : MonoBehaviour
     }
     private void Player_Shooting()
     {
-        moves.Shoot(GunTargets, transform.position, transform.right);
+        moves.Shoot(GunTargets, transform.position, transform.GetChild(0).GetChild(0).right);
     }
     private void IdleCheck()
     {
