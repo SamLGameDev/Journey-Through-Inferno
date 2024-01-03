@@ -28,7 +28,7 @@ public class Player_movement : MonoBehaviour
        Vector2 movement = actions.FindAction("Movement").ReadValue<Vector2>();
        GetComponent<Rigidbody2D>().velocity = new Vector2(movement.x * speed, movement.y * speed);
        Vector2 GetRotation = actions.FindAction("Aim").ReadValue<Vector2>();
-       float heading  = Mathf.Atan2(GetRotation.x, GetRotation.y);
+       float heading  = Mathf.Atan2(GetRotation.x, -GetRotation.y);
        transform.GetChild(0).rotation = Quaternion.Euler(0,0, heading * Mathf.Rad2Deg);
        
     }
@@ -100,7 +100,7 @@ public class Player_movement : MonoBehaviour
         if (velo < 0.0001)
         {
             Debug.Log("pass 2");
-            if (Time.time - 5 > time)
+            if (Time.time - 3 > time)
             {
                 ani.SetBool("Time passed 5", true);
                 Debug.Log("pass 3");
