@@ -7,6 +7,8 @@ using static UnityEngine.GraphicsBuffer;
 
 public class Different_Moves : MonoBehaviour
 {
+    private float damageDelay = 0;
+    
     public LayerMask LayersToHit;
     // Start is called before the first frame update
     void Start()
@@ -82,6 +84,8 @@ public class Different_Moves : MonoBehaviour
             transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
         }
     }
+    
+ 
     public void Shoot(LayerMask target, Vector2 originalHit, Vector2 angle)
     {
         RaycastHit2D hit = Physics2D.Raycast(new Vector2(originalHit.x + 0.3f, originalHit.y + 0.3f) , angle, 1000, target);
@@ -95,9 +99,14 @@ public class Different_Moves : MonoBehaviour
             Shoot(target, hit.point, reflectangle);
         }
 
-        if (hit && hit.collider.CompareTag("Enemy"))
+        damageDelay -= Time.deltaTime;
+        if (damageDelay <= 0)
         {
-            hit.collider.gameObject.GetComponent<EntityHealthBehaviour>().ApplyDamage(5);
+            if (hit && hit.collider.CompareTag("Enemy"))
+            {
+                hit.collider.gameObject.GetComponent<EntityHealthBehaviour>().ApplyDamage(1);
+            }
+            damageDelay = 0.05f;
         }
     }
     // Update is called once per frame
