@@ -91,7 +91,7 @@ public class Player_movement : MonoBehaviour
     }
     private void Player_Shooting()
     {
-        moves.Shoot(GunTargets, transform.position, transform.GetChild(0).GetChild(0).right);
+        moves.Shoot(GunTargets, transform.GetChild(0).GetChild(0).position, transform.GetChild(0).GetChild(0).right);
     }
     private void IdleCheck()
     {
