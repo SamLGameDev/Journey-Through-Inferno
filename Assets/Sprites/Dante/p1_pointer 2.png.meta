@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 185bfbe41163ee841be660d386234fe5
+guid: 0eb53271d29fef34ba60ec0e2ac983c2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 50
+  spritePixelsToUnits: 25
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -173,175 +173,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: p1_Dante_Movement_forward_0
-      rect:
-        serializedVersion: 2
-        x: 9
-        y: 120
-        width: 51
-        height: 112
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f383e099b3d5a2d48947ed00cf08bf3d
-      internalID: -2047830196
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: p1_Dante_Movement_forward_1
-      rect:
-        serializedVersion: 2
-        x: 61
-        y: 120
-        width: 51
-        height: 111
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5e278ee077aa9f944a5accef83252786
-      internalID: -1855793526
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: p1_Dante_Movement_forward_2
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 118
-        width: 52
-        height: 113
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 175037d396ce9b341827d324a33ee5de
-      internalID: 1543208635
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: p1_Dante_Movement_forward_3
-      rect:
-        serializedVersion: 2
-        x: 164
-        y: 121
-        width: 49
-        height: 110
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e6335312d4cb60a49b69f35d32af67d8
-      internalID: 1602246349
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: p1_Dante_Movement_forward_4
-      rect:
-        serializedVersion: 2
-        x: 7
-        y: 4
-        width: 54
-        height: 110
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f92c29ff73bc29b428a26158155d38a9
-      internalID: 1348109199
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: p1_Dante_Movement_forward_5
-      rect:
-        serializedVersion: 2
-        x: 63
-        y: 5
-        width: 49
-        height: 110
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 52efc98504325d141808a21fffa6062c
-      internalID: -289450173
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: p1_Dante_Movement_forward_6
-      rect:
-        serializedVersion: 2
-        x: 114
-        y: 3
-        width: 50
-        height: 111
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c68317233027c0749b4b4cefc882452d
-      internalID: -1113170098
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: p1_Dante_Movement_forward_7
-      rect:
-        serializedVersion: 2
-        x: 165
-        y: 5
-        width: 48
-        height: 109
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6312b11ab2c663940a95ad405f5b7a74
-      internalID: 746467720
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -352,15 +184,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      p1_Dante_Movement_forward_0: -2047830196
-      p1_Dante_Movement_forward_1: -1855793526
-      p1_Dante_Movement_forward_2: 1543208635
-      p1_Dante_Movement_forward_3: 1602246349
-      p1_Dante_Movement_forward_4: 1348109199
-      p1_Dante_Movement_forward_5: -289450173
-      p1_Dante_Movement_forward_6: -1113170098
-      p1_Dante_Movement_forward_7: 746467720
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
