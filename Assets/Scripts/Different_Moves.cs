@@ -1,13 +1,16 @@
 using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.ProBuilder.MeshOperations;
+using UnityEngine.SocialPlatforms.Impl;
 using static UnityEngine.GraphicsBuffer;
 
 public class Different_Moves : MonoBehaviour
 {
     private float damageDelay = 0;
+    private Coroutine Player_Coroutine;
     
     public LayerMask LayersToHit;
     // Start is called before the first frame update
@@ -84,8 +87,39 @@ public class Different_Moves : MonoBehaviour
             transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
         }
     }
-    
+    public void Player_Sword_Attack(int facing)
+    {
+        GameObject sword = transform.GetChild(1).gameObject;
+        sword.SetActive(true);
+        float time = Time.time;
+        GetComponent<Player_movement>().running = false;
+        Player_Coroutine = StartCoroutine(RotateAround(sword, time, facing));
+        
+
  
+    }
+    private IEnumerator RotateAround(GameObject target, float deltaTime, int facing)
+    {
+        float limit = -0.9999f;
+        while (!GetComponent<Player_movement>().actions.FindAction("Actions").triggered || GetComponent<Player_movement>().running)
+        {
+            yield return null;
+        }
+        GetComponent<Player_movement>().running = true;
+        while (Time.time - 10 < deltaTime)
+        {
+            if (target.transform.rotation.z <= limit || target.transform.rotation.z > 0)
+            {
+                target.transform.RotateAround(transform.position, new Vector3(0, 0, -facing), 180);
+                GetComponent<Player_movement>().running = false;
+                Player_Coroutine.reset
+                yield break;
+            }
+            target.transform.RotateAround(transform.position, new Vector3(0,0,facing), 260 * Time.deltaTime);
+            yield return null;
+        }
+    }
+
     public void Shoot(LayerMask target, Vector2 originalHit, Vector2 angle)
     {
         RaycastHit2D hit = Physics2D.Raycast(new Vector2(originalHit.x + 0.3f, originalHit.y + 0.3f) , angle, 1000, target);
