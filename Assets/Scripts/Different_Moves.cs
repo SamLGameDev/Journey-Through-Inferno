@@ -87,35 +87,62 @@ public class Different_Moves : MonoBehaviour
             transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
         }
     }
-    public void Player_Sword_Attack(int facing)
+    public void Player_Sword_Attack()
     {
         GameObject sword = transform.GetChild(1).gameObject;
         sword.SetActive(true);
         float time = Time.time;
-        GetComponent<Player_movement>().running = false;
-        Player_Coroutine = StartCoroutine(RotateAround(sword, time, facing));
+        Player_Coroutine = StartCoroutine(RotateAround(sword));
         
 
  
     }
-    private IEnumerator RotateAround(GameObject target, float deltaTime, int facing)
+    private float calculate_limit()
     {
-        float limit = -0.9999f;
-        while (!GetComponent<Player_movement>().actions.FindAction("Actions").triggered || GetComponent<Player_movement>().running)
+        Player_movement player = GetComponent<Player_movement>();
+        float limit;
+        if (!player.upDown)
         {
-            yield return null;
+            limit = player.facing == -1 ? -0.7f : 0.7f;
         }
-        GetComponent<Player_movement>().running = true;
-        while (Time.time - 10 < deltaTime)
+        else
         {
-            if (target.transform.rotation.z <= limit || target.transform.rotation.z > 0)
+            limit = player.facing == -1 ? -0.999f : 0.999f;
+        }
+        return limit;
+    }
+    private IEnumerator RotateAround(GameObject target)
+    {
+        Player_movement player = GetComponent<Player_movement>();
+        float limit = calculate_limit();
+        float fakelimit = -2;
+        if (limit == 0.7f)
+        {
+            fakelimit = 0.7f;
+            limit = -2;
+        }
+        int facing = player.facing;
+        Quaternion rotation = target.transform.rotation;
+
+        while (GetComponent<Player_movement>().running)
+        {
+            target.transform.RotateAround(transform.position, new Vector3(0, 0, facing), 80 * Time.deltaTime);
+            if ((target.transform.rotation.z <= limit && limit < 0) || (target.transform.rotation.z >= limit && limit > 0) || (target.transform.rotation.z <= fakelimit && fakelimit > 0))
             {
                 target.transform.RotateAround(transform.position, new Vector3(0, 0, -facing), 180);
+                target.transform.rotation = rotation;
                 GetComponent<Player_movement>().running = false;
-                Player_Coroutine.reset
-                yield break;
+                yield return new WaitUntil(() => GetComponent<Player_movement>().running);
+                facing = player.facing;
+                limit = calculate_limit();
+                fakelimit = -2;
+                if (limit == 0.7f)
+                {
+                    fakelimit = 0.7f;
+                    limit = -2;
+                }
+                rotation = target.transform.rotation;
             }
-            target.transform.RotateAround(transform.position, new Vector3(0,0,facing), 260 * Time.deltaTime);
             yield return null;
         }
     }

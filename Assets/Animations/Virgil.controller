@@ -95,9 +95,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: Positive Y>X change
     m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: Negative x
-    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6727316422093519121}
   m_Solo: 0
@@ -328,15 +325,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 4
     m_ConditionEvent: Velocity
     m_EventTreshold: 0.00001
-  - m_ConditionMode: 2
-    m_ConditionEvent: Y>X
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: Positive Y>X change
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: Negative x
-    m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: Time passed 5
     m_EventTreshold: 0
@@ -373,9 +361,6 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: Positive Y>X change
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: Negative x
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -725754839225885031}
