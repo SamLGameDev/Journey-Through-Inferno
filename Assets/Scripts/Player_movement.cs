@@ -16,10 +16,10 @@ public class Player_movement : MonoBehaviour
     private Animator ani;
     private float time;
     private bool VelocityCheck;
-    private int facing = -1;
-    private bool upDown = true;
-    [NonSerialized]public bool running = false;
-    private bool passed = false;
+    public int facing = -1;
+    public bool upDown = true;
+    public bool running=  false;
+    bool passed = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,7 +51,7 @@ public class Player_movement : MonoBehaviour
         }
         if (Mathf.Abs(rb.velocity.y) > Mathf.Abs(rb.velocity.x))
         {
-            if (upDown)
+            if (upDown && !running)
             {
                 RotateAround(1);
                 upDown = false;
@@ -60,16 +60,23 @@ public class Player_movement : MonoBehaviour
             {
                 ani.SetBool("Y>X", true);
                 ani.SetBool("Positive Y>X change", false);
+                facing = 1;
+            }
+            else if (rb.velocity.y > 0) 
+            {
+                ani.SetBool("Y>X", false);
+                ani.SetBool("Positive Y>X change", true);
+                facing = -1;
             }
             else
             {
                 ani.SetBool("Y>X", false);
-                ani.SetBool("Positive Y>X change", true);
+                ani.SetBool("Positive Y>X change", false);
             }
         }
-        else
+        else if (Mathf.Abs(rb.velocity.y) < Mathf.Abs(rb.velocity.x))
         {
-            if (!upDown)
+            if (!upDown && !running)
             {
                 RotateAround(-1);
                 upDown = true;
@@ -79,7 +86,7 @@ public class Player_movement : MonoBehaviour
                 ani.SetBool("Negative x", true);
                 facing = 1;
             }
-            else
+            else if (rb.velocity.x > 0)
             {
                 ani.SetBool("Negative x", false);
                 facing = -1;
@@ -106,7 +113,7 @@ public class Player_movement : MonoBehaviour
     {
         //float time = moves.Melee(1.6f, 2, delay);
         //delay = time;
-        moves.Player_Sword_Attack(facing);
+        moves.Player_Sword_Attack();
 
     }
     private void Player_Shooting()
@@ -136,12 +143,14 @@ public class Player_movement : MonoBehaviour
     void Update()
     {
         
-        if (actions.FindAction("Actions").triggered && !running && !passed)
+        if (actions.FindAction("Actions").triggered && !running)
         {
-              running = true;
-            passed = true;
-            Debug.Log("pass 1");
-              Player_Melee();
+            running = true;
+            if (!passed)
+            {
+                Player_Melee();
+                passed = true;
+            }
         }
         if (actions.FindAction("Shoot").IsPressed())
         {
