@@ -1,19 +1,25 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.ShaderKeywordFilter;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEngine.GraphicsBuffer;
 
 public class Player_movement : MonoBehaviour
 {
     [SerializeField] private float speed;
-    private InputActionAsset actions;
-    private float delay = -0.05f;
+    [NonSerialized] public InputActionAsset actions;
     private Different_Moves moves;
     [SerializeField] private LayerMask GunTargets;
     private Rigidbody2D rb;
     private Animator ani;
     private float time;
     private bool VelocityCheck;
+    private int facing = -1;
+    private bool upDown = true;
+    [NonSerialized]public bool running = false;
+    private bool passed = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,13 +49,15 @@ public class Player_movement : MonoBehaviour
             VelocityCheck = true;
             return;
         }
-        Debug.Log(Mathf.Abs(rb.velocity.y));
         if (Mathf.Abs(rb.velocity.y) > Mathf.Abs(rb.velocity.x))
         {
-            Debug.Log(rb.velocity.y);
+            if (upDown)
+            {
+                RotateAround(1);
+                upDown = false;
+            }
             if (rb.velocity.y < 0)
             {
-                Debug.Log("y>x");
                 ani.SetBool("Y>X", true);
                 ani.SetBool("Positive Y>X change", false);
             }
@@ -61,19 +69,30 @@ public class Player_movement : MonoBehaviour
         }
         else
         {
+            if (!upDown)
+            {
+                RotateAround(-1);
+                upDown = true;
+            }
             if (rb.velocity.x < 0)
             {
-                Debug.Log("left");
                 ani.SetBool("Negative x", true);
+                facing = 1;
             }
             else
             {
-                Debug.Log("right");
                 ani.SetBool("Negative x", false);
+                facing = -1;
             }
             ani.SetBool("Y>X", false);
             ani.SetBool("Positive Y>X change", false);
         }
+    }
+    private void RotateAround(int direction)
+    {
+        GameObject target = transform.GetChild(1).gameObject;
+        target.transform.RotateAround(transform.position, new Vector3(0, 0, direction), 90);
+        
     }
     public void Flip_Xaxis()
     {
@@ -85,8 +104,9 @@ public class Player_movement : MonoBehaviour
     }
     private void Player_Melee()
     {
-        float time = moves.Melee(1.6f, 2, delay);
-        delay = time;
+        //float time = moves.Melee(1.6f, 2, delay);
+        //delay = time;
+        moves.Player_Sword_Attack(facing);
 
     }
     private void Player_Shooting()
@@ -96,14 +116,11 @@ public class Player_movement : MonoBehaviour
     private void IdleCheck()
     {
         float velo = Mathf.Abs(rb.velocity.x + rb.velocity.y);
-        Debug.Log("pass 1");
         if (velo < 0.0001)
         {
-            Debug.Log("pass 2");
             if (Time.time - 3 > time)
             {
                 ani.SetBool("Time passed 5", true);
-                Debug.Log("pass 3");
             }
             return;
         }
@@ -119,8 +136,11 @@ public class Player_movement : MonoBehaviour
     void Update()
     {
         
-        if (actions.FindAction("Actions").IsPressed())
+        if (actions.FindAction("Actions").triggered && !running && !passed)
         {
+              running = true;
+            passed = true;
+            Debug.Log("pass 1");
               Player_Melee();
         }
         if (actions.FindAction("Shoot").IsPressed())
