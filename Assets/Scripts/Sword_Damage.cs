@@ -11,12 +11,9 @@ public class Sword_Damage : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Debug.Log(collision.name);
-        if (collision != null) 
-        {
-            if (!collision.CompareTag("Player")) collision.GetComponent<EntityHealthBehaviour>().ApplyDamage(4);
-        }
+    { 
+        // applies damage to the enemies
+         if (collision.CompareTag("Enemy")) collision.GetComponent<EntityHealthBehaviour>().ApplyDamage(4);
     }
 
     // Update is called once per frame

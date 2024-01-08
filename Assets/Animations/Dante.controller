@@ -14,15 +14,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: Time passed 5
     m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: Y>X
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: Positive Y>X change
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: Negative x
-    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4178370247246276497}
   m_Solo: 0
@@ -74,14 +65,14 @@ AnimatorStateTransition:
   - m_ConditionMode: 3
     m_ConditionEvent: Velocity
     m_EventTreshold: 0.0001
-  - m_ConditionMode: 2
-    m_ConditionEvent: Y>X
+  - m_ConditionMode: 1
+    m_ConditionEvent: Negative x
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Positive Y>X change
     m_EventTreshold: 0
-  - m_ConditionMode: 1
-    m_ConditionEvent: Negative x
+  - m_ConditionMode: 2
+    m_ConditionEvent: Y>X
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6773865355549739980}
@@ -109,13 +100,13 @@ AnimatorStateTransition:
     m_ConditionEvent: Velocity
     m_EventTreshold: 0.0001
   - m_ConditionMode: 2
+    m_ConditionEvent: Negative x
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
     m_ConditionEvent: Y>X
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Positive Y>X change
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: Negative x
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 419981808018962611}
@@ -317,9 +308,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: Positive Y>X change
     m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: Negative x
-    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 141723327965786794}
   m_Solo: 0
@@ -350,9 +338,6 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: Positive Y>X change
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: Negative x
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 942179866922992573}

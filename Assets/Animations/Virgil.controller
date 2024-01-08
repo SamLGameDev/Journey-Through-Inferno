@@ -354,9 +354,6 @@ AnimatorStateTransition:
     m_ConditionEvent: Velocity
     m_EventTreshold: 0.0001
   - m_ConditionMode: 2
-    m_ConditionEvent: Time passed 5
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
     m_ConditionEvent: Y>X
     m_EventTreshold: 0
   - m_ConditionMode: 1
