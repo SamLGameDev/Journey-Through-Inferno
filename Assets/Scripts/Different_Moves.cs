@@ -197,15 +197,18 @@ public class Different_Moves : MonoBehaviour
     /// <param name="angle"></param>
     public void Shoot(LayerMask target, Vector2 originalHit, Vector2 angle)
     {
-        RaycastHit2D hit = Physics2D.Raycast(new Vector2(originalHit.x + 0.3f, originalHit.y + 0.3f) , angle, 1000, target);
+        bool isMirror = false;
+        Physics2D.queriesStartInColliders = false;
+        RaycastHit2D hit = Physics2D.Raycast(new Vector2(originalHit.x, originalHit.y) , angle, 1000, target);
         Color red = Color.red;
         Debug.DrawRay(originalHit, angle * 30, red);
 
-        if (hit && hit.collider.CompareTag("Mirror"))
+        if (hit && hit.collider.CompareTag("Mirror") && !isMirror)
         {
             // gets the angle of the reflection
-            var reflectangle = Vector2.Reflect(transform.right, hit.normal);
+            var reflectangle = Vector2.Reflect(hit.point, hit.normal);
             // calles shoot again but with the new beam shoudl be reflected from and new angle
+            isMirror = true;
             Shoot(target, hit.point, reflectangle);
         }
 
