@@ -651,7 +651,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 30.75
+  orthographic size: 9.6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2006,6 +2006,7 @@ MonoBehaviour:
   LayersToHit:
     serializedVersion: 2
     m_Bits: 256
+  sword_Speed: 200
 --- !u!95 &1519157043
 Animator:
   serializedVersion: 5
@@ -2370,6 +2371,7 @@ MonoBehaviour:
   LayersToHit:
     serializedVersion: 2
     m_Bits: 256
+  sword_Speed: 360
 --- !u!95 &1677023839
 Animator:
   serializedVersion: 5
