@@ -9,8 +9,13 @@ public class MedusaBehaviour : MonoBehaviour
     [SerializeField] private float maxTimeBetweenPosChange;
 
     [Header("Attributes")]
-    [SerializeField] private float meleeRange;
+    public float meleeRange;
     [SerializeField] private int meleeAttackDamage;
+    [Tooltip("How long after performing an action until Medusa can perform another.")]
+    [SerializeField] private float actionCooldownTime;
+
+    [Header("Attack Indicator")]
+    [SerializeField] private GameObject indicator;
 
     private GameObject[] players;
     private Animator animator;
@@ -45,13 +50,39 @@ public class MedusaBehaviour : MonoBehaviour
     /// </summary>
     public void MeleeAttack()
     {
-        // The last parameter '7' is the layer mask, layer 7 is the 'player' layer.
-        Collider2D coll = Physics2D.OverlapCircle(transform.position, meleeRange / 2, 0);
+        // Layer 7 is the player layer.
+        Collider2D coll = Physics2D.OverlapCircle(transform.position, meleeRange, 1 << 7);
 
         if (coll != null)
         {
-            print(coll.gameObject.layer);
             coll.GetComponent<EntityHealthBehaviour>().ApplyDamage(meleeAttackDamage);
         }
+    }
+
+    /// <summary>
+    /// Spawns a visual indicator at a location where damage will be applied.
+    /// </summary>
+    /// <param name="location">The transform of the indicator.</param>
+    /// <param name="size">The diameter of the attack indicator.</param>
+    public GameObject SpawnIndicator(Vector2 location, float size)
+    {
+        GameObject marker = Instantiate(indicator, location, Quaternion.identity);
+
+        marker.transform.localScale = new Vector3(size, size, size);
+
+        return marker;
+    }
+
+    public IEnumerator ActionCooldownTimer()
+    {
+        print("on cd");
+
+        animator.SetTrigger("onCooldown");
+
+        yield return new WaitForSeconds(actionCooldownTime);
+
+        animator.ResetTrigger("onCooldown");
+
+        print("off cd");
     }
 }
