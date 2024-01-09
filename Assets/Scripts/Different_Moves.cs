@@ -17,6 +17,10 @@ public class Different_Moves : MonoBehaviour
     /// the Layers that you want to hit with the attacks. set in the inspector
     /// </summary>
     public LayerMask LayersToHit;
+    /// <summary>
+    /// the speed for the sword swing
+    /// </summary>
+    public float sword_Speed;
     // Start is called before the first frame update
     void Start()
     {
@@ -165,12 +169,12 @@ public class Different_Moves : MonoBehaviour
         while (GetComponent<Player_movement>().running) // while the attack button has been pressed
         {
             // rotate it around the player based ont he facing direction
-            target.transform.RotateAround(transform.position, new Vector3(0, 0, facing), 130 * Time.deltaTime);
+            target.transform.RotateAround(transform.position, new Vector3(0, 0, facing), sword_Speed * Time.deltaTime);
             // handles the halfway break for both left right down and up, fake being for down
             if ((target.transform.rotation.z <= limit && limit < 0) || (target.transform.rotation.z >= limit && limit > 0) || (target.transform.rotation.z <= fakelimit && fakelimit > 0))
             {
                 // rotates it back to where it originally was, accounting for player movement
-                target.transform.RotateAround(transform.position, new Vector3(0, 0, -facing), 180);
+                target.transform.RotateAround(transform.position, new Vector3(0, 0, -facing), 179);
                 target.transform.rotation = rotation; // to account for any chnages in rotation to set the sword straight
                 GetComponent<Player_movement>().running = false;
                 target.SetActive(false); // make the sword invisible and stop damage when not attacking
