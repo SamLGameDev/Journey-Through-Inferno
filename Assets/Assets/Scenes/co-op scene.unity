@@ -652,7 +652,6 @@ Camera:
   field of view: 60
   orthographic: 1
   orthographic size: 9.6
-  orthographic size: 25.44
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1278,7 +1277,7 @@ PrefabInstance:
     - target: {fileID: 8861141328434789732, guid: 316b6cb4886f4864684084414444bd1c,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3628,7 +3627,7 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Xbox control scheme
+  m_DefaultControlScheme: 
   m_DefaultActionMap: xbox controller
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -3692,7 +3691,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1677023830}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7, y: -16.6, z: 0.0000000018845132}
+  m_LocalPosition: {x: 0.7, y: -4.1, z: 0.0000000018845132}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children:

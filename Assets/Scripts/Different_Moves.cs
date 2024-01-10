@@ -165,6 +165,7 @@ public class Different_Moves : MonoBehaviour
         }
         int facing = player.facing;
         Quaternion rotation = target.transform.rotation; // get the original rotation
+        Vector2 position = target.transform.localPosition; // get the original position
 
         while (GetComponent<Player_movement>().running) // while the attack button has been pressed
         {
@@ -173,13 +174,12 @@ public class Different_Moves : MonoBehaviour
             // handles the halfway break for both left right down and up, fake being for down
             if ((target.transform.rotation.z <= limit && limit < 0) || (target.transform.rotation.z >= limit && limit > 0) || (target.transform.rotation.z <= fakelimit && fakelimit > 0))
             {
-                // rotates it back to where it originally was, accounting for player movement
-                target.transform.RotateAround(transform.position, new Vector3(0, 0, -facing), 179);
                 target.transform.rotation = rotation; // to account for any chnages in rotation to set the sword straight
+                target.transform.localPosition = position; // sets its position to where it started
                 GetComponent<Player_movement>().running = false;
                 target.SetActive(false); // make the sword invisible and stop damage when not attacking
                 yield return new WaitUntil(() => GetComponent<Player_movement>().running); // wait unitll attacking again 
-                // recalculate everything for hte new attack
+                // recalculate everything for the new attack
                 facing = player.facing;
                 limit = calculate_limit();
                 fakelimit = -2;
@@ -189,6 +189,7 @@ public class Different_Moves : MonoBehaviour
                     limit = -2;
                 }
                 rotation = target.transform.rotation;
+                position = target.transform.localPosition;
             }
             yield return null;
         }
