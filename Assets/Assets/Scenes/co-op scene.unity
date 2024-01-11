@@ -3324,7 +3324,7 @@ MonoBehaviour:
   LayersToHit:
     serializedVersion: 2
     m_Bits: 256
-  sword_Speed: 200
+  sword_Speed: 500
 --- !u!95 &1519157043
 Animator:
   serializedVersion: 5
@@ -3774,7 +3774,7 @@ MonoBehaviour:
   LayersToHit:
     serializedVersion: 2
     m_Bits: 256
-  sword_Speed: 360
+  sword_Speed: 500
 --- !u!95 &1677023839
 Animator:
   serializedVersion: 5
@@ -4184,7 +4184,7 @@ PrefabInstance:
     - target: {fileID: 8861141328434789732, guid: 316b6cb4886f4864684084414444bd1c,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
