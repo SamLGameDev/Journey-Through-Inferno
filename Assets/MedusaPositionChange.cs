@@ -15,30 +15,22 @@ public class MedusaPositionChange : StateMachineBehaviour
     //OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        MonoBehaviour.print(Vector2.Distance(mb.topPos.position, animator.transform.position));
-
         if (mb.medusaPos == MedusaBehaviour.CurrentPosition.centre)
         {
             if (Vector2.Distance(mb.centrePos.position, animator.transform.position) < 0.1f)
             {
-                MonoBehaviour.print("arrived");
-
                 animator.SetBool("Moving", false);
             }
 
-            MonoBehaviour.print("moving to centre");
             animator.transform.position = Vector2.MoveTowards(animator.transform.position, mb.centrePos.position, mb.movementSpeed * Time.deltaTime);
         }
         else
         {
             if (Vector2.Distance(mb.topPos.position, animator.transform.position) < 0.1f)
             {
-                MonoBehaviour.print("arrived");
-
                 animator.SetBool("Moving", false);
             }
 
-            MonoBehaviour.print("moving to top");
             animator.transform.position = Vector2.MoveTowards(animator.transform.position, mb.topPos.position, mb.movementSpeed * Time.deltaTime);
         }
     }

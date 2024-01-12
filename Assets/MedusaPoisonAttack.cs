@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 public class MedusaPoisonAttack : StateMachineBehaviour
 {
@@ -19,14 +20,8 @@ public class MedusaPoisonAttack : StateMachineBehaviour
 
         for (int i = 0; i < mb.poisonAmount ; i++)
         {
-            // Calculate a random location for the projectile to hit.
-            float xOffset = Random.Range(-(aimingArea.localScale.x / 2), aimingArea.localScale.x / 2);
-            float yOffset = Random.Range(-(aimingArea.localScale.y / 2), aimingArea.localScale.y / 2);
-
-            Vector2 targetPoint = new Vector2(xOffset, yOffset);
-
-            // Create the indicator.
-            GameObject impactPoint = mb.SpawnIndicator(targetPoint, mb.poisonImpactSize);
+            // Create the indicator at a calculated point.
+            GameObject impactPoint = mb.SpawnIndicator(CalculateTargetPoint(), mb.poisonImpactSize);
 
             // Trigger the countdown to the projectile impacting.
             mb.StartCoroutine(mb.TriggerImpacts(impactPoint, mb.poisonFlightTime));
@@ -45,4 +40,33 @@ public class MedusaPoisonAttack : StateMachineBehaviour
 
     }
 
+    private bool CheckOverlap(Vector2 point)
+    {
+        Collider2D[] hits = Physics2D.OverlapCircleAll(point, mb.poisonImpactSize * 0.5f);
+
+        if (hits.Length > 0)
+        {
+            MonoBehaviour.print("overlap");
+
+            return true;
+        }
+
+        return false;
+    }
+
+    private Vector2 CalculateTargetPoint()
+    {
+        while (true)
+        {
+            float xOffset = Random.Range(-(aimingArea.localScale.x / 2), aimingArea.localScale.x / 2);
+            float yOffset = Random.Range(-(aimingArea.localScale.y / 2), aimingArea.localScale.y / 2);
+
+            Vector2 targetPoint = new Vector2(xOffset, yOffset);
+
+            if (!CheckOverlap(targetPoint))
+            {
+                return targetPoint;
+            }
+        }
+    }
 }

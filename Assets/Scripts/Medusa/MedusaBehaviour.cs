@@ -63,6 +63,11 @@ private void Start()
 
         foreach (GameObject player in players)
         {
+            if (player == null)
+            {
+                return;
+            }
+
             if (Vector2.Distance(player.transform.position, transform.position) < meleeRange)
             {
                 animator.SetTrigger("MeleeAttack");
@@ -103,8 +108,6 @@ private void Start()
     public IEnumerator TriggerImpacts(GameObject impactPoint, float timeTilImpact)
     {
         yield return new WaitForSeconds(timeTilImpact);
-
-        print("detonate");
 
         TriggerAttack(impactPoint);
     }
