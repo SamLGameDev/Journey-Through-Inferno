@@ -13,6 +13,12 @@ public class MedusaIdle : StateMachineBehaviour
 
         mb = animator.GetComponent<MedusaBehaviour>();
 
+        if (mb.readyToMove)
+        {
+            animator.SetBool("Moving", true);
+        }
+
+
         mb.StartCoroutine(mb.ActionCooldownTimer());
     }
 

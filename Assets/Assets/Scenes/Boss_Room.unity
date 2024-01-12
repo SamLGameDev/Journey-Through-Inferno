@@ -461,7 +461,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1790616466}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 23.9, z: 0}
+  m_LocalPosition: {x: 0, y: 23, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -482,6 +482,7 @@ GameObject:
   - component: {fileID: 2103510878}
   - component: {fileID: 2103510877}
   - component: {fileID: 2103510876}
+  - component: {fileID: 2103510879}
   m_Layer: 8
   m_Name: Medusa
   m_TagString: Untagged
@@ -501,13 +502,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f61a5b7abe834e047a3a3c7241626e5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minTimeBetweenPosChange: 15
-  maxTimeBetweenPosChange: 7
+  minTimeBetweenPosChange: 7
+  maxTimeBetweenPosChange: 5
   meleeRange: 7.5
   meleeAttackDamage: 35
   actionCooldownTime: 3
+  movementSpeed: 15
   indicator: {fileID: 5361606418721373797, guid: 269f6212271080c4d8723075c5cba900,
     type: 3}
+  centrePos: {fileID: 56039421}
+  topPos: {fileID: 1790616467}
+  medusaPos: 0
 --- !u!212 &2103510874
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -657,6 +662,33 @@ MonoBehaviour:
   entityMaxHealth: 200
   invunTimeOnHit: 0
   entityCurrentHealth: 0
+--- !u!50 &2103510879
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103510872}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1001 &2128921185
 PrefabInstance:
   m_ObjectHideFlags: 0

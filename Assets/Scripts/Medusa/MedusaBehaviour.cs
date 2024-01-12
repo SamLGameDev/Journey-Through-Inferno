@@ -13,19 +13,34 @@ public class MedusaBehaviour : MonoBehaviour
     [SerializeField] private int meleeAttackDamage;
     [Tooltip("How long after performing an action until Medusa can perform another.")]
     [SerializeField] private float actionCooldownTime;
+    public float movementSpeed;
 
     [Header("Attack Indicator")]
     [SerializeField] private GameObject indicator;
 
+    [Header("Positions")]
+    public Transform centrePos;
+    public Transform topPos;
+
     private GameObject[] players;
     private Animator animator;
 
-    private void Start()
+    [HideInInspector]
+    public enum CurrentPosition { centre, top };
+    [HideInInspector]
+    public CurrentPosition medusaPos;
+
+    [HideInInspector]
+    public bool readyToMove;
+
+private void Start()
     {
         animator = GetComponent<Animator>();
         players = GameObject.FindGameObjectsWithTag("Player");
+        StartCoroutine(PosistionChange());
+        medusaPos = CurrentPosition.centre;
     }
-    
+
     /// <summary>
     /// Checks to see if a player is within range of Medusa's melee attacks.
     /// </summary>
@@ -71,18 +86,35 @@ public class MedusaBehaviour : MonoBehaviour
         marker.transform.localScale = new Vector3(size, size, size);
 
         return marker;
+    } 
+
+    private IEnumerator PosistionChange()
+    {
+        // Calculate for a random time after the minimum poschange time has passed but before the max time.
+        float randomTime = minTimeBetweenPosChange + Random.Range(0, maxTimeBetweenPosChange - minTimeBetweenPosChange);
+
+        yield return new WaitForSeconds(randomTime);
+
+        animator.SetBool("Moving", true);
+
+        if (medusaPos == CurrentPosition.centre)
+        {
+            medusaPos = CurrentPosition.top;
+        }
+        else
+        {
+            medusaPos = CurrentPosition.centre;
+        }
+
+        StartCoroutine(PosistionChange());
     }
 
     public IEnumerator ActionCooldownTimer()
     {
-        print("on cd");
-
         animator.SetTrigger("onCooldown");
 
         yield return new WaitForSeconds(actionCooldownTime);
 
         animator.ResetTrigger("onCooldown");
-
-        print("off cd");
     }
 }
