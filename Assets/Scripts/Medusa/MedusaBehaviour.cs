@@ -8,19 +8,29 @@ public class MedusaBehaviour : MonoBehaviour
     [SerializeField] private float minTimeBetweenPosChange;
     [SerializeField] private float maxTimeBetweenPosChange;
 
-    [Header("Attributes")]
+    [Header("Melee Attributes")]
     public float meleeRange;
     [SerializeField] private int meleeAttackDamage;
     [Tooltip("How long after performing an action until Medusa can perform another.")]
     [SerializeField] private float actionCooldownTime;
     public float movementSpeed;
 
+    [Header("Poison Attributes")]
+    [Tooltip("Amount of shots Medusa fires duting her poison attack.")]
+    public int poisonAmount;
+    public float poisonImpactSize;
+    [Tooltip("Amount of time it takes for a poison shot to impact.")]
+    public float poisonFlightTime;
+    public int poisonDamage;
+
     [Header("Attack Indicator")]
     [SerializeField] private GameObject indicator;
 
-    [Header("Positions")]
+    [Header("Transforms")]
     public Transform centrePos;
     public Transform topPos;
+    [Tooltip("Object defining the area Medusa can use her poison attack within.")]
+    public Transform aimingArea;
 
     private GameObject[] players;
     private Animator animator;
@@ -63,15 +73,17 @@ private void Start()
     /// <summary>
     /// Create a hitbox over Medusa at close range to serve as a melee attack.
     /// </summary>
-    public void MeleeAttack()
+    public void TriggerAttack(GameObject indicator)
     {
         // Layer 7 is the player layer.
-        Collider2D coll = Physics2D.OverlapCircle(transform.position, meleeRange, 1 << 7);
+        Collider2D coll = Physics2D.OverlapCircle(indicator.transform.position, indicator.transform.localScale.x, 1 << 7);
 
         if (coll != null)
         {
             coll.GetComponent<EntityHealthBehaviour>().ApplyDamage(meleeAttackDamage);
         }
+
+        indicator.GetComponent<DamageIndicator>().TriggerDetonate();
     }
 
     /// <summary>
@@ -86,7 +98,16 @@ private void Start()
         marker.transform.localScale = new Vector3(size, size, size);
 
         return marker;
-    } 
+    }
+
+    public IEnumerator TriggerImpacts(GameObject impactPoint, float timeTilImpact)
+    {
+        yield return new WaitForSeconds(timeTilImpact);
+
+        print("detonate");
+
+        TriggerAttack(impactPoint);
+    }
 
     private IEnumerator PosistionChange()
     {
