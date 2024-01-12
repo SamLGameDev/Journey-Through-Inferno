@@ -59,6 +59,9 @@ public class Player_movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // makes sword start as invisible 
+        transform.GetChild(1).gameObject.SetActive(false);
+
         actions = GetComponent<PlayerInput>().actions;
         moves=  GetComponent<Different_Moves>();
         rb = GetComponent<Rigidbody2D>();   
