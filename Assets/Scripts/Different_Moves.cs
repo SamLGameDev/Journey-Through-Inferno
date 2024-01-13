@@ -212,8 +212,7 @@ public class Different_Moves : MonoBehaviour
         bool isMirror = false;
         Physics2D.queriesStartInColliders = false;
         RaycastHit2D hit = Physics2D.Raycast(new Vector2(originalHit.x, originalHit.y) , angle, 1000, target);
-        Color red = Color.red;
-        Debug.DrawRay(originalHit, angle * 30, red);
+        Debug.DrawRay(originalHit, angle * 30, Color.red, 0.1f);
 
         if (hit && hit.collider.CompareTag("Mirror") && !isMirror)
         {
