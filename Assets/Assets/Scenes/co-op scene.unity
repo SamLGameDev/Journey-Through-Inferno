@@ -206,6 +206,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fallen Angel Variant (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5986526922118790407, guid: 6f54f83e10a239546ad6251645f07e9b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9195619475462717869, guid: 6f54f83e10a239546ad6251645f07e9b,
         type: 3}
       propertyPath: uniqueID
@@ -308,6 +313,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fallen Angel Variant (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986526922118790407, guid: 6f54f83e10a239546ad6251645f07e9b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9195619475462717869, guid: 6f54f83e10a239546ad6251645f07e9b,
         type: 3}
@@ -493,6 +503,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fallen Angel Variant (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986526922118790407, guid: 6f54f83e10a239546ad6251645f07e9b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9195619475462717869, guid: 6f54f83e10a239546ad6251645f07e9b,
         type: 3}
@@ -1691,6 +1706,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fallen Angel Variant (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986526922118790407, guid: 6f54f83e10a239546ad6251645f07e9b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9195619475462717869, guid: 6f54f83e10a239546ad6251645f07e9b,
         type: 3}
@@ -3070,6 +3090,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fallen Angel Variant (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5986526922118790407, guid: 6f54f83e10a239546ad6251645f07e9b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9195619475462717869, guid: 6f54f83e10a239546ad6251645f07e9b,
         type: 3}
       propertyPath: uniqueID
@@ -3244,6 +3269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityMaxHealth: 100
+  invunTimeOnHit: 0
   entityCurrentHealth: 0
 --- !u!61 &1519157040
 BoxCollider2D:
@@ -3321,6 +3347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ee427dbd87b8054395396023cc00405, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coolDown: 0.05
   LayersToHit:
     serializedVersion: 2
     m_Bits: 256
@@ -3428,6 +3455,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fallen Angel Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986526922118790407, guid: 6f54f83e10a239546ad6251645f07e9b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9195619475462717869, guid: 6f54f83e10a239546ad6251645f07e9b,
         type: 3}
@@ -3713,6 +3745,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityMaxHealth: 100
+  invunTimeOnHit: 0
   entityCurrentHealth: 0
 --- !u!61 &1677023837
 BoxCollider2D:
@@ -3771,6 +3804,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ee427dbd87b8054395396023cc00405, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coolDown: 0.05
   LayersToHit:
     serializedVersion: 2
     m_Bits: 256
