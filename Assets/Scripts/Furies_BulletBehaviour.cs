@@ -8,5 +8,8 @@ public class FuriesBullet : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         { Destroy(gameObject);}
+        
+        if (collision.CompareTag("Wall"))
+        { Destroy(gameObject); }
     }
 }
