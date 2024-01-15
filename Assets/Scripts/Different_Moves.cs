@@ -10,9 +10,10 @@ using static UnityEngine.GraphicsBuffer;
 public class Different_Moves : MonoBehaviour
 {
     /// <summary>
-    /// a delay to stop the enemys from being insantly killed when shot
+    /// variables for the timer between gun shots
     /// </summary>
-    private float damageDelay = 0;
+    public float coolDown;
+    private float shootTimer = 0;
     /// <summary>
     /// the Layers that you want to hit with the attacks. set in the inspector
     /// </summary>
@@ -202,11 +203,16 @@ public class Different_Moves : MonoBehaviour
     /// <param name="angle"></param>
     public void Shoot(LayerMask target, Vector2 originalHit, Vector2 angle)
     {
+        shootTimer -= Time.deltaTime;
+        if (shootTimer > 0)
+        {
+            return;
+        }
+
         bool isMirror = false;
         Physics2D.queriesStartInColliders = false;
         RaycastHit2D hit = Physics2D.Raycast(new Vector2(originalHit.x, originalHit.y) , angle, 1000, target);
-        Color red = Color.red;
-        Debug.DrawRay(originalHit, angle * 30, red);
+        Debug.DrawRay(originalHit, angle * 30, Color.red, 0.1f);
 
         if (hit && hit.collider.CompareTag("Mirror") && !isMirror)
         {
@@ -217,15 +223,14 @@ public class Different_Moves : MonoBehaviour
             Shoot(target, hit.point, reflectangle);
         }
 
-        damageDelay -= Time.deltaTime;
-        if (damageDelay <= 0)
+
+        if (hit && hit.collider.CompareTag("Enemy"))
         {
-            if (hit && hit.collider.CompareTag("Enemy"))
-            {
-                hit.collider.gameObject.GetComponent<EntityHealthBehaviour>().ApplyDamage(1);
-            }
-            damageDelay = 0.05f;
+            hit.collider.gameObject.GetComponent<EntityHealthBehaviour>().ApplyDamage(5);
         }
+
+        shootTimer = coolDown;
+
     }
     // Update is called once per frame
     void Update()
