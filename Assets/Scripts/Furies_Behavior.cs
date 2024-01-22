@@ -1,9 +1,11 @@
+using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Furies_Behavior : MonoBehaviour
 {
+    [SerializeField] private LayerMask target;
     public float shootingRange = 0f;
     public float moveSpeed = 0f;
     public float projectileSpeed = 0f;
@@ -25,7 +27,7 @@ public class Furies_Behavior : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform; // Chases players with the player tag. Not sure how this will work for co-op so it will require further testing
+        player = GetComponent<AIDestinationSetter>().target; // gets the target from Astar
         currentState = FuriesState.Move;
         StartCoroutine(FuriesStateMachine());
     }
@@ -53,21 +55,14 @@ public class Furies_Behavior : MonoBehaviour
             yield return null;
         }
     }
-
     private void Move()
     {
         // When the furies are in the retreat state but the player is no longer within the circle collider, the furies will resume moving towards the player's position
-        if (currentState == FuriesState.Retreat && !isThreatened)
-        {
-            // Moves towards the player's position     
-            transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
-        }
-        else
-        { transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime); }
 
         // Checks if the player is within shooting range and begins shooting if they are
         if (Vector2.Distance(transform.position, player.position) < shootingRange)
-        { currentState = FuriesState.Shoot; }
+        {
+            currentState = FuriesState.Shoot; }
 
     }
 
@@ -90,7 +85,8 @@ public class Furies_Behavior : MonoBehaviour
         }
         // Switches to the Move state if the player is out of range 
         if (Vector2.Distance(transform.position, player.position) > shootingRange)
-        { currentState = FuriesState.Move; }
+        {
+            currentState = FuriesState.Move; }
 
     }
 
@@ -109,7 +105,6 @@ public class Furies_Behavior : MonoBehaviour
         // While the isThreatened variable is true, the furies will move away from the player
         if (isThreatened)
         { transform.position = Vector2.MoveTowards(transform.position, player.position, -moveSpeed * Time.deltaTime); }
-
         // If the player is out of range then the furies will switch back to the Move state and isThreatened will switch back to false
         if (Vector2.Distance(transform.position, player.position) > shootingRange)
         {
@@ -118,6 +113,13 @@ public class Furies_Behavior : MonoBehaviour
         }
 
     }
+
+    private void Update()
+    {
+        player = GetComponent<AIDestinationSetter>().target; // gets the target from Astar
+
+    }
+
 }
 
 

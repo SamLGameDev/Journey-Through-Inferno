@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2158162950555503218}
   - component: {fileID: 8593207479546098650}
-  - component: {fileID: 5666297393298330153}
   - component: {fileID: 4862046785661102292}
   - component: {fileID: 5425823505382445665}
   - component: {fileID: 1919074620864673920}
@@ -20,7 +19,6 @@ GameObject:
   - component: {fileID: 5125486503172991465}
   - component: {fileID: 8158330365370726917}
   - component: {fileID: 4801089580672160280}
-  - component: {fileID: -7485062121282871024}
   - component: {fileID: 9195619475462717869}
   m_Layer: 8
   m_Name: Fallen Angel Variant
@@ -96,22 +94,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5666297393298330153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5986526922118790407}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17e504bc103aca04c9333836288de13b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  speed: 3
-  coop: 1
 --- !u!50 &4862046785661102292
 Rigidbody2D:
   serializedVersion: 4
@@ -152,6 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityMaxHealth: 10
+  invunTimeOnHit: 0
   entityCurrentHealth: 50
 --- !u!114 &1919074620864673920
 MonoBehaviour:
@@ -276,7 +259,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.58, y: 0.74}
+    oldSize: {x: 3.16, y: 1.48}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -318,9 +301,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ee427dbd87b8054395396023cc00405, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coolDown: 0
   LayersToHit:
     serializedVersion: 2
     m_Bits: 128
+  sword_Speed: 0
 --- !u!114 &4801089580672160280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,23 +318,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d7cee9635ea9041891a307bc5495f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-7485062121282871024
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5986526922118790407}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 149cd003c861ca244898ed84120df661, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Targets:
-    serializedVersion: 2
-    m_Bits: 384
-  ColliderSize: 0.6
-  radius: 2
 --- !u!114 &9195619475462717869
 MonoBehaviour:
   m_ObjectHideFlags: 0
