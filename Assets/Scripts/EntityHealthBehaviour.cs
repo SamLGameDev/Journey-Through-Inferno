@@ -5,16 +5,24 @@ using UnityEngine;
 /// <summary>
 /// Controls the ability for a gameobject to possess health, to heal/take damage or die.
 /// </summary>
+[RequireComponent(typeof(BoxCollider2D))]
 public class EntityHealthBehaviour : MonoBehaviour
 {
     [SerializeField] private int entityMaxHealth;
+    [SerializeField] private float invunTimeOnHit;
 
     // This is public so that it can be accessed by UI.
     [HideInInspector] public int entityCurrentHealth;
 
+    private bool damageInvulnerable;
+
+    // Time between IFrame flashes.
+    private float invunDeltaTime = 0.1f;
+
     private void Start()
     {
         entityCurrentHealth = entityMaxHealth;
+        damageInvulnerable = false;
     }
 
     /// <summary>
@@ -23,6 +31,12 @@ public class EntityHealthBehaviour : MonoBehaviour
     /// <param name="damageAmount">Amount of damage to apply</param>
     public void ApplyDamage(int damageAmount)
     {
+        if (damageInvulnerable)
+        {
+            print("Damage blocked due to being invulnerable. :)");
+            return;
+        }
+
         entityCurrentHealth -= damageAmount;
 
         print($"{gameObject.name} took {damageAmount} damage, current health: {entityCurrentHealth}");
@@ -33,7 +47,39 @@ public class EntityHealthBehaviour : MonoBehaviour
         {
             EntityDeath();     
         }
-        
+
+        if (invunTimeOnHit > 0)
+        {
+            StartCoroutine(InvulnerabilityTickDown());
+        }
+    }
+
+    /// <summary>
+    /// Triggered by a player being hit, makes them flash while invulnerable.
+    /// </summary>
+    /// <returns></returns>
+    public IEnumerator InvulnerabilityTickDown()
+    {
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+
+        damageInvulnerable = true;
+
+        for (float i = 0; i < invunTimeOnHit; i += invunDeltaTime)
+        {
+            if (sr.enabled == true)
+            {
+                sr.enabled = false;
+            }
+            else
+            {
+                sr.enabled = true;
+            }
+
+            yield return new WaitForSeconds(invunDeltaTime);
+        }
+
+        sr.enabled = true;
+        damageInvulnerable = false;
     }
 
     /// <summary>
@@ -68,6 +114,7 @@ public class EntityHealthBehaviour : MonoBehaviour
         else if (gameObject.CompareTag("Player"))
         {
             GameManager.instance.OnPlayerDeath();
+            Destroy(gameObject);
         }
     }
 }
