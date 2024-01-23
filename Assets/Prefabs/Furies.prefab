@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 2880178541553116232}
   - component: {fileID: -3635221926971355599}
   - component: {fileID: 7824830163054781154}
+  - component: {fileID: 2127096435719846241}
   m_Layer: 8
   m_Name: Furies
   m_TagString: Enemy
@@ -326,3 +327,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2127096435719846241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600547005513823415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8b84871b0250ba438dbe2b84fadcf82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityMaxHealth: 50
+  invunTimeOnHit: 0
+  entityCurrentHealth: 0
