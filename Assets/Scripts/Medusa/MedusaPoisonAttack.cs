@@ -46,8 +46,6 @@ public class MedusaPoisonAttack : StateMachineBehaviour
 
         if (hits.Length > 0)
         {
-            MonoBehaviour.print("overlap");
-
             return true;
         }
 
