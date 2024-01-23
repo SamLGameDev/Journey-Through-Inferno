@@ -8,6 +8,10 @@ using static UnityEngine.GraphicsBuffer;
 public class Player_movement : MonoBehaviour
 {
     /// <summary>
+    /// the bullet prefab
+    /// </summary>
+    [SerializeField] private GameObject bullet;
+    /// <summary>
     /// the speed of the player
     /// </summary>
     [SerializeField] private float speed;
@@ -184,7 +188,7 @@ public class Player_movement : MonoBehaviour
     private void Player_Shooting()
     {
         // shoots from the compas's facing direction
-        moves.Shoot(GunTargets, transform.GetChild(0).GetChild(0).position, transform.GetChild(0).GetChild(0).right);
+        moves.Shoot(GunTargets, transform.GetChild(0).GetChild(0).position, transform.GetChild(0).GetChild(0).right, bullet);
     }
     /// <summary>
     /// checks if the player hasnt been moving for 3 seconds

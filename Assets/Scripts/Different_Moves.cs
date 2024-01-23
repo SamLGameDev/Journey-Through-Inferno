@@ -201,36 +201,39 @@ public class Different_Moves : MonoBehaviour
     /// <param name="target"></param>
     /// <param name="originalHit"></param>
     /// <param name="angle"></param>
-    public void Shoot(LayerMask target, Vector2 originalHit, Vector2 angle)
+    public void Shoot(LayerMask target, Vector2 originalHit, Vector2 angle, GameObject bullet)
     {
-        shootTimer -= Time.deltaTime;
-        if (shootTimer > 0)
-        {
-            return;
-        }
+        #region old stuff
+        //shootTimer -= Time.deltaTime;
+        //if (shootTimer > 0)
+        //{
+        //    return;
+        //}
 
-        bool isMirror = false;
-        Physics2D.queriesStartInColliders = false;
-        RaycastHit2D hit = Physics2D.Raycast(new Vector2(originalHit.x, originalHit.y) , angle, 1000, target);
-        Debug.DrawRay(originalHit, angle * 30, Color.red, 0.1f);
+        //bool isMirror = false;
+        //Physics2D.queriesStartInColliders = false;
+        //RaycastHit2D hit = Physics2D.Raycast(new Vector2(originalHit.x, originalHit.y) , angle, 1000, target);
+        //Debug.DrawRay(originalHit, angle * 30, Color.red, 0.1f);
 
-        if (hit && hit.collider.CompareTag("Mirror") && !isMirror)
-        {
-            // gets the angle of the reflection
-            var reflectangle = Vector2.Reflect(hit.point, hit.normal);
-            // calles shoot again but with the new beam shoudl be reflected from and new angle
-            isMirror = true;
-            Shoot(target, hit.point, reflectangle);
-        }
+        //if (hit && hit.collider.CompareTag("Mirror") && !isMirror)
+        //{
+        //    // gets the angle of the reflection
+        //    var reflectangle = Vector2.Reflect(hit.point, hit.normal);
+        //    // calles shoot again but with the new beam shoudl be reflected from and new angle
+        //    isMirror = true;
+        //    Shoot(target, hit.point, reflectangle);
+        //}
 
 
-        if (hit && hit.collider.CompareTag("Enemy"))
-        {
-            hit.collider.gameObject.GetComponent<EntityHealthBehaviour>().ApplyDamage(5);
-        }
+        //if (hit && hit.collider.CompareTag("Enemy"))
+        //{
+        //    hit.collider.gameObject.GetComponent<EntityHealthBehaviour>().ApplyDamage(5);
+        //}
 
-        shootTimer = coolDown;
-
+        //shootTimer = coolDown;
+        #endregion old stuff
+        GameObject projectile = Instantiate(bullet, transform.position, Quaternion.identity);
+        projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(3,3);
     }
     // Update is called once per frame
     void Update()
