@@ -2144,7 +2144,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &727613250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4162,7 +4162,7 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Xbox control scheme
+  m_DefaultControlScheme: 
   m_DefaultActionMap: xbox controller
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -4273,6 +4273,7 @@ MonoBehaviour:
   facing: -1
   upDown: 1
   running: 0
+  PauseMenu: {fileID: 727613249}
 --- !u!114 &1519157042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4369,7 +4370,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Player 1 - Paused!
+  m_text: ' Game Paused!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -4706,6 +4707,7 @@ MonoBehaviour:
   facing: -1
   upDown: 1
   running: 0
+  PauseMenu: {fileID: 727613249}
 --- !u!114 &1677023833
 MonoBehaviour:
   m_ObjectHideFlags: 0
