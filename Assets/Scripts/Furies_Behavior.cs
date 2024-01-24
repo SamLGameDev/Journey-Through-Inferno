@@ -81,6 +81,7 @@ public class Furies_Behavior : MonoBehaviour
 
             // Sets the next allowed shot time based on cooldown
             shotCooldown = Time.time + startCooldown;
+            Destroy(FuriesProjectile, 3);
 
         }
         // Switches to the Move state if the player is out of range 

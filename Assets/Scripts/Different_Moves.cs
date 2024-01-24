@@ -232,8 +232,8 @@ public class Different_Moves : MonoBehaviour
 
         //shootTimer = coolDown;
         #endregion old stuff
-        GameObject projectile = Instantiate(bullet, transform.position, Quaternion.identity);
-        projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(3,3);
+        // instanciates a bullet in the facing direction of the compass
+        GameObject projectile = Instantiate(bullet, transform.position, transform.GetChild(0).GetChild(0).rotation);
     }
     // Update is called once per frame
     void Update()
