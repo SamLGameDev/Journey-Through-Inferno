@@ -54,6 +54,14 @@ public class Player_movement : MonoBehaviour
     /// <summary>
     /// whether the sword attack function has been called before.
     /// </summary>
+    public GameObject PauseMenu;
+    /// <summary>
+    /// Gets the pause menu canvas that was created in the level
+    /// </summary>
+    private bool isPaused;
+    /// <summary>
+    /// true if currently paused
+    /// </summary>
     bool passed = false; // need this so we dont waste resources starting the coroutine again
     // Start is called before the first frame update
     void Start()
@@ -85,6 +93,26 @@ public class Player_movement : MonoBehaviour
     /// controlls all of the animations and decides what aniamtion should be playing right now.
     /// also rotates the sword to be in the right facing direction
     /// </summary>
+    /// 
+
+    private void OnPauseMenu(InputValue value)
+    {
+        if (isPaused == false)
+        {
+            PauseMenu.SetActive(true);
+            isPaused = true;
+            Time.timeScale = 0;
+        }
+        else
+        {
+            PauseMenu.SetActive(false);
+            isPaused = false;
+            Time.timeScale = 1;
+        }
+    }
+
+
+
     private void Animation_Controller()
     { 
         float velo = Mathf.Abs(rb.velocity.x + rb.velocity.y); // absolute value so negatives dont affect it
