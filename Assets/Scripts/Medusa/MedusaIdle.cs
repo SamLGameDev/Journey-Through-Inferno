@@ -9,8 +9,6 @@ public class MedusaIdle : StateMachineBehaviour
     //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.SetBool("idle", true);
-
         mb = animator.GetComponent<MedusaBehaviour>();
 
         if (mb.readyToMove)
@@ -18,8 +16,7 @@ public class MedusaIdle : StateMachineBehaviour
             animator.SetBool("Moving", true);
         }
 
-
-        mb.StartCoroutine(mb.ActionCooldownTimer());
+        mb.StartCoroutine(mb.AbilityTrigger());
     }
 
     //OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -31,7 +28,6 @@ public class MedusaIdle : StateMachineBehaviour
     //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.SetBool("idle", false);
+        mb.StopAllCoroutines();
     }
-
 }

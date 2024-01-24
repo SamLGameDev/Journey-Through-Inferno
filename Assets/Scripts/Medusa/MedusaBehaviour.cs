@@ -5,15 +5,12 @@ using UnityEngine;
 public class MedusaBehaviour : MonoBehaviour
 {
     [Header("Position changing")]
-    [SerializeField] private float minTimeBetweenPosChange;
-    [SerializeField] private float maxTimeBetweenPosChange;
+    public float movementSpeed;
 
     [Header("Melee Attributes")]
     public float meleeRange;
     [SerializeField] private int meleeAttackDamage;
-    [Tooltip("How long after performing an action until Medusa can perform another.")]
-    [SerializeField] private float actionCooldownTime;
-    public float movementSpeed;
+    [SerializeField] private float meleeAttackCooldown;
 
     [Header("Poison Attributes")]
     [Tooltip("Amount of shots Medusa fires duting her poison attack.")]
@@ -22,6 +19,12 @@ public class MedusaBehaviour : MonoBehaviour
     [Tooltip("Amount of time it takes for a poison shot to impact.")]
     public float poisonFlightTime;
     public int poisonDamage;
+
+    [Header("Ability Timing Attributes")]
+    [Tooltip("How long after performing an action until Medusa can perform another.")]
+    [SerializeField] private float actionCooldownTime;
+    [Tooltip("Maximum time before medusa will trigger another ability")]
+    [SerializeField] private float maxTimeAbilityUsage;
 
     [Header("Attack Indicator")]
     [SerializeField] private GameObject indicator;
@@ -43,12 +46,15 @@ public class MedusaBehaviour : MonoBehaviour
     [HideInInspector]
     public bool readyToMove;
 
+    //[HideInInspector]
+    public bool meleeCooldown;
+
 private void Start()
     {
         animator = GetComponent<Animator>();
         players = GameObject.FindGameObjectsWithTag("Player");
-        StartCoroutine(PosistionChange());
         medusaPos = CurrentPosition.centre;
+        meleeCooldown = false;
     }
 
     /// <summary>
@@ -56,7 +62,7 @@ private void Start()
     /// </summary>
     public void CheckMeleeRange()
     {
-        if (animator.GetBool("MeleeAttack"))
+        if (animator.GetBool("MeleeAttack") || meleeCooldown)
         {
             return;
         }
@@ -105,6 +111,12 @@ private void Start()
         return marker;
     }
 
+    /// <summary>
+    /// Takes an indicator for a poison shot impact and makes it detonate after a set amount of time.
+    /// </summary>
+    /// <param name="impactPoint">The location of the imapct point.</param>
+    /// <param name="timeTilImpact">The in flight time of the projectile.</param>
+    /// <returns></returns>
     public IEnumerator TriggerImpacts(GameObject impactPoint, float timeTilImpact)
     {
         yield return new WaitForSeconds(timeTilImpact);
@@ -112,33 +124,50 @@ private void Start()
         TriggerAttack(impactPoint);
     }
 
-    private IEnumerator PosistionChange()
+    /// <summary>
+    /// Calculates a random time and triggers a random one of Medusa's abilites.
+    /// </summary>
+    /// <returns></returns>
+    public IEnumerator AbilityTrigger()
     {
-        // Calculate for a random time after the minimum poschange time has passed but before the max time.
-        float randomTime = minTimeBetweenPosChange + Random.Range(0, maxTimeBetweenPosChange - minTimeBetweenPosChange);
+        float randomTime = actionCooldownTime + Random.Range(0, maxTimeAbilityUsage - actionCooldownTime);
+
+        float randomAbilityIndex = Random.Range(1, 4);
 
         yield return new WaitForSeconds(randomTime);
 
-        animator.SetBool("Moving", true);
-
-        if (medusaPos == CurrentPosition.centre)
+        // Selecting a random ability to use.
+        if (randomAbilityIndex == 1)
         {
-            medusaPos = CurrentPosition.top;
+            animator.SetTrigger("PoisonAttack");
         }
-        else
+        else if (randomAbilityIndex == 2)
         {
-            medusaPos = CurrentPosition.centre;
+            animator.SetTrigger("PetrifyAttack");
         }
+        else if (randomAbilityIndex == 3)
+        {
+            if (medusaPos == CurrentPosition.centre)
+            {
+                medusaPos = CurrentPosition.top;
+            }
+            else
+            {
+                medusaPos = CurrentPosition.centre;
+            }
 
-        StartCoroutine(PosistionChange());
+            animator.SetBool("Moving", true);
+        }
     }
 
-    public IEnumerator ActionCooldownTimer()
+    /// <summary>
+    /// Puts Medusa's melee attack on cooldown to stop her from being able to use it again.
+    /// </summary>
+    /// <returns></returns>
+    public IEnumerator MeleeCooldown()
     {
-        animator.SetTrigger("onCooldown");
+        yield return new WaitForSeconds(meleeAttackCooldown);
 
-        yield return new WaitForSeconds(actionCooldownTime);
-
-        animator.ResetTrigger("onCooldown");
+        meleeCooldown = false;
     }
 }
