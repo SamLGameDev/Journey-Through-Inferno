@@ -8,6 +8,10 @@ using static UnityEngine.GraphicsBuffer;
 public class Player_movement : MonoBehaviour
 {
     /// <summary>
+    /// can the player shoot again
+    /// </summary>
+    private bool gun_cooldown;
+    /// <summary>
     /// the bullet prefab
     /// </summary>
     [SerializeField] private GameObject bullet;
@@ -64,7 +68,7 @@ public class Player_movement : MonoBehaviour
     {
         // makes sword start as invisible 
         transform.GetChild(1).gameObject.SetActive(false);
-
+        StartCoroutine(timer(1));
         actions = GetComponent<PlayerInput>().actions;
         moves=  GetComponent<Different_Moves>();
         rb = GetComponent<Rigidbody2D>();   
@@ -214,6 +218,20 @@ public class Player_movement : MonoBehaviour
         }
         
     }
+    /// <summary>
+    /// starts a timer and sets gun_cooldwon to true when the ste amount of time has passed, repeats when that variable is false
+    /// </summary>
+    /// <param name="dt"></param>
+    /// <returns></returns>
+    private IEnumerator timer(float dt)
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(dt);
+            gun_cooldown = true;
+            yield return new WaitWhile(() => gun_cooldown);
+        }
+    }
     // Update is called once per frame
     void Update()
     {
@@ -230,8 +248,9 @@ public class Player_movement : MonoBehaviour
                 passed = true;
             }
         }
-        if (actions.FindAction("Shoot").IsPressed()) // the shoot action
+        if (actions.FindAction("Shoot").IsPressed() && gun_cooldown) // the shoot action
         {
+            gun_cooldown = false;
             Player_Shooting();
         }
         if (VelocityCheck) 
