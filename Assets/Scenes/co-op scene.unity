@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1533,7 +1533,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &481472222
 Transform:
   m_ObjectHideFlags: 0
@@ -2226,7 +2226,7 @@ RectTransform:
   - {fileID: 222635971}
   - {fileID: 1122477186}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3120,7 +3120,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1210573692
 GameObject:
@@ -4265,7 +4265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22684f22776a946479069cd07ce4c6d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 1649063520}
+  bullet: {fileID: 7186132154605417265, guid: a8294735b22965b4bbd903326b093078, type: 3}
   speed: 5
   GunTargets:
     serializedVersion: 2
@@ -4550,12 +4550,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6553652}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1649063520 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7186132154605417265, guid: a8294735b22965b4bbd903326b093078,
-    type: 3}
-  m_PrefabInstance: {fileID: 4940965819349483284}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1658490859
 GameObject:
   m_ObjectHideFlags: 0
@@ -4704,7 +4698,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22684f22776a946479069cd07ce4c6d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 1649063520}
+  bullet: {fileID: 7186132154605417265, guid: a8294735b22965b4bbd903326b093078, type: 3}
   speed: 5
   GunTargets:
     serializedVersion: 2
