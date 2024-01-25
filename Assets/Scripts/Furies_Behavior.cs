@@ -13,6 +13,8 @@ public class Furies_Behavior : MonoBehaviour
     public float startCooldown = 0f;
     public float shotCooldown = 0f;
     public bool isThreatened = false; // Boolean switches between true and false depending on the player colliding with furies' circle collider
+    private Rigidbody2D rb;
+    private Animator ani;
 
 
     private Transform player;
@@ -27,11 +29,26 @@ public class Furies_Behavior : MonoBehaviour
 
     private void Start()
     {
+        ani = GetComponent<Animator>(); 
+        rb = GetComponent<Rigidbody2D>();
         player = GetComponent<AIDestinationSetter>().target; // gets the target from Astar
         currentState = FuriesState.Move;
         StartCoroutine(FuriesStateMachine());
     }
-
+    /// <summary>
+    /// flips the x axis of the sprite for the left animation
+    /// </summary>
+    public void Flip_Xaxis()
+    {
+        GetComponent<SpriteRenderer>().flipX = true;
+    }
+    /// <summary>
+    /// unflips the sprite for the right aniamtion
+    /// </summary>
+    public void UnFlip_Xaxis()
+    {
+        GetComponent<SpriteRenderer>().flipX = false;
+    }
 
     private IEnumerator FuriesStateMachine()
     {
@@ -65,7 +82,87 @@ public class Furies_Behavior : MonoBehaviour
             currentState = FuriesState.Shoot; }
 
     }
-
+    private void Animation_controller()
+    {
+        Transform target = GetComponent<AIDestinationSetter>().target;
+        Vector3 playerLocalPos = transform.InverseTransformPoint(target.position);
+        if (playerLocalPos.x < 0)
+        {
+            if (playerLocalPos.y > 0)
+            {
+                if (Mathf.Abs(playerLocalPos.y) < Mathf.Abs(playerLocalPos.x))
+                {
+                    ani.SetBool("Moving_right", false);
+                    ani.SetBool("Moving_Down", false);
+                    ani.SetBool("Moving_Up", false);
+                    ani.SetBool("Moving_left", true);
+                }
+                else
+                {
+                    {
+                        ani.SetBool("Moving_right", false);
+                        ani.SetBool("Moving_Down", false);
+                        ani.SetBool("Moving_left", false);
+                        ani.SetBool("Moving_Up", true);
+                    }
+                }
+            }
+            else
+            {
+                if (Mathf.Abs(playerLocalPos.y) < Mathf.Abs(playerLocalPos.x))
+                {
+                    ani.SetBool("Moving_right", false);
+                    ani.SetBool("Moving_Down", false);
+                    ani.SetBool("Moving_Up", false);
+                    ani.SetBool("Moving_left", true);
+                }
+                else 
+                {
+                    ani.SetBool("Moving_right", false);
+                    ani.SetBool("Moving_Up", false);
+                    ani.SetBool("Moving_left", false);
+                    ani.SetBool("Moving_Down", true);
+                }
+            }
+        }
+        else
+        {
+            if (playerLocalPos.y > 0)
+            {
+                if (Mathf.Abs(playerLocalPos.y) < Mathf.Abs(playerLocalPos.x))
+                {
+                    ani.SetBool("Moving_left", false);
+                    ani.SetBool("Moving_Down", false);
+                    ani.SetBool("Moving_Up", false);
+                    ani.SetBool("Moving_right", true);
+                }
+                else
+                {
+                    ani.SetBool("Moving_right", false);
+                    ani.SetBool("Moving_left", false);
+                    ani.SetBool("Moving_Down", false);
+                    ani.SetBool("Moving_Up", true);
+                }
+            }
+            else
+            {
+                if (Mathf.Abs(playerLocalPos.y) < Mathf.Abs(playerLocalPos.x))
+                {
+                    ani.SetBool("Moving_left", false);
+                    ani.SetBool("Moving_Down", false);
+                    ani.SetBool("Moving_Up", false);
+                    ani.SetBool("Moving_right", true);
+                }
+                else
+                {
+                    ani.SetBool("Moving_Up", false);
+                    ani.SetBool("Moving_right", false);
+                    ani.SetBool("Moving_left", false);
+                    ani.SetBool("Moving_Down", true);
+                }
+            }
+        }
+    }
     private void Shoot()
     {
         // Checks if the cooldown is finished and then begin shooting at the player's last position
@@ -118,7 +215,7 @@ public class Furies_Behavior : MonoBehaviour
     private void Update()
     {
         player = GetComponent<AIDestinationSetter>().target; // gets the target from Astar
-
+        Animation_controller();
     }
 
 }
