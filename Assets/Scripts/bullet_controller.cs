@@ -25,7 +25,7 @@ public class bullet_controller : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            collision.GetComponent<EntityHealthBehaviour>().ApplyDamage(3);
+            collision.GetComponent<EntityHealthBehaviour>().ApplyDamage(bulletDamage + damageModifier);
             Destroy(this);
         }
     }
