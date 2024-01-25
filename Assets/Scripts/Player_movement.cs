@@ -72,9 +72,13 @@ public class Player_movement : MonoBehaviour
     /// </summary>
     bool passed = false; // need this so we dont waste resources starting the coroutine again
     /// <summary>
-    /// how long between bullet shots
+    /// standard between bullet shots
     /// </summary>
-    private float cooldownTime = 2;
+    private float cooldownTime = 1.5f;
+    /// <summary>
+    /// change to the cooldown time for if the player has a tarot card
+    /// </summary>
+    private float cooldownModifier = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -88,8 +92,8 @@ public class Player_movement : MonoBehaviour
         ani = GetComponent<Animator>();
 
         // decreases the gun cooldown time if player has the temperance card
-        if (GetComponent<Tarot_cards>().hasTemperance == true) { cooldownTime = 1; }
-        else { cooldownTime = 2; }
+        if (GetComponent<Tarot_cards>().hasTemperance == true) { cooldownModifier = -0.5f; }
+        else { cooldownModifier = 0; }
     }
     /// <summary>
     /// moves the player based on the movement of the left joystick and the aiming device based
