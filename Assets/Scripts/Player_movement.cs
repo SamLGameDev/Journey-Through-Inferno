@@ -81,20 +81,27 @@ public class Player_movement : MonoBehaviour
     /// </summary>
     private float cooldownModifier = 0;
 
+    private float chariotSpeed = 11f;
+
     // Start is called before the first frame update
     void Start()
     {
+        // decreases the gun cooldown time if player has the temperance card
+        if (GetComponent<Tarot_cards>().hasTemperance == true) { cooldownModifier = -0.5f; }
+        else { cooldownModifier = 0; }
+
+        if (GetComponent<Tarot_cards>().hasChariot == true) // If the player has the Chariot Arcana then their movement speed will be increased
+        { speed = chariotSpeed; }
+        else
+        { speed = 7f; }
+
         // makes sword start as invisible 
         transform.GetChild(1).gameObject.SetActive(false);
-        StartCoroutine(timer(cooldownTime));
+        StartCoroutine(timer(cooldownTime + cooldownModifier));
         actions = GetComponent<PlayerInput>().actions;
         moves=  GetComponent<Different_Moves>();
         rb = GetComponent<Rigidbody2D>();   
         ani = GetComponent<Animator>();
-
-        // decreases the gun cooldown time if player has the temperance card
-        if (GetComponent<Tarot_cards>().hasTemperance == true) { cooldownModifier = -0.5f; }
-        else { cooldownModifier = 0; }
     }
     /// <summary>
     /// moves the player based on the movement of the left joystick and the aiming device based
