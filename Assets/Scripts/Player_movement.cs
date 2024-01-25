@@ -71,16 +71,25 @@ public class Player_movement : MonoBehaviour
     /// true if currently paused
     /// </summary>
     bool passed = false; // need this so we dont waste resources starting the coroutine again
+    /// <summary>
+    /// how long between bullet shots
+    /// </summary>
+    private float cooldownTime = 2;
+
     // Start is called before the first frame update
     void Start()
     {
         // makes sword start as invisible 
         transform.GetChild(1).gameObject.SetActive(false);
-        StartCoroutine(timer(1));
+        StartCoroutine(timer(cooldownTime));
         actions = GetComponent<PlayerInput>().actions;
         moves=  GetComponent<Different_Moves>();
         rb = GetComponent<Rigidbody2D>();   
         ani = GetComponent<Animator>();
+
+        // decreases the gun cooldown time if player has the temperance card
+        if (GetComponent<Tarot_cards>().hasTemperance == true) { cooldownTime = 1; }
+        else { cooldownTime = 2; }
     }
     /// <summary>
     /// moves the player based on the movement of the left joystick and the aiming device based

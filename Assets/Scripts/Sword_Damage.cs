@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class Sword_Damage : MonoBehaviour
 {
+    /// <summary>
+    /// the standard sword damage
+    /// </summary>
     private int swordDamage = 4;
+    /// <summary>
+    /// the change to the sword damage for when the player has a tarot card
+    /// </summary>
     private int damageModifier = 0;
     
     // Start is called before the first frame update

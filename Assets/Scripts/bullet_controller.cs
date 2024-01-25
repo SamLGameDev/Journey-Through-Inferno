@@ -8,11 +8,16 @@ public class bullet_controller : MonoBehaviour
     /// the rigidbody of the bullet
     /// </summary>
     Rigidbody2D rb;
-    // Start is called before the first frame update
-
+    /// <summary>
+    /// the standard bullet damage
+    /// </summary>
     private int bulletDamage = 3;
+    /// <summary>
+    /// the change to the bullet damage for when the player has a tarot card
+    /// </summary>
     private int damageModifier = 0;
 
+    // Start is called before the first frame update
     void Start()
     {
         if (GetComponent<Tarot_cards>().hasStar == true) { damageModifier = 2; }
