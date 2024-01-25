@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEngine.GraphicsBuffer;
@@ -72,7 +73,10 @@ public class Player_movement : MonoBehaviour
     /// </summary>
     bool passed = false; // need this so we dont waste resources starting the coroutine again
 
-    private bool HasChariot = false;
+    public bool HasChariot = false;
+    private float chariotSpeed = 11f;
+
+   
     
     // Start is called before the first frame update
     void Start()
@@ -84,6 +88,14 @@ public class Player_movement : MonoBehaviour
         moves=  GetComponent<Different_Moves>();
         rb = GetComponent<Rigidbody2D>();   
         ani = GetComponent<Animator>();
+
+
+        if (HasChariot) // If the player has the Chariot Arcana then their movement speed will be increased
+        { speed = chariotSpeed; }
+        else 
+        { speed = 7f; }  
+                  
+        
     }
     /// <summary>
     /// moves the player based on the movement of the left joystick and the aiming device based
@@ -97,11 +109,7 @@ public class Player_movement : MonoBehaviour
        // gets the value of the aiming action and Atan + Rad2Deg's it so the aiming point is the same as the joystick rotation
        Vector2 GetRotation = actions.FindAction("Aim").ReadValue<Vector2>();
        float heading  = Mathf.Atan2(GetRotation.x, -GetRotation.y);
-       transform.GetChild(0).rotation = Quaternion.Euler(0,0, heading * Mathf.Rad2Deg);
-
-        // If player has the Chariot card equipped then their movement speed is increased
-        if (HasChariot)
-        { speed *= 2f; }
+       transform.GetChild(0).rotation = Quaternion.Euler(0,0, heading * Mathf.Rad2Deg);      
         
     }
     /// <summary>
@@ -294,5 +302,7 @@ public class Player_movement : MonoBehaviour
         }
         Animation_Controller();
         Joystic_Movement();
+
+       
     }
 }
