@@ -234,6 +234,7 @@ public class Different_Moves : MonoBehaviour
         #endregion old stuff
         // instanciates a bullet in the facing direction of the compass
         GameObject projectile = Instantiate(bullet, transform.position, transform.GetChild(0).GetChild(0).rotation);
+        projectile.transform.parent = transform;
     }
     // Update is called once per frame
     void Update()
