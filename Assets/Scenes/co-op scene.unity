@@ -4065,7 +4065,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1519157034
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4274,7 +4274,6 @@ MonoBehaviour:
   upDown: 1
   running: 0
   PauseMenu: {fileID: 727613249}
-  HasChariot: 1
 --- !u!114 &1519157042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4709,7 +4708,6 @@ MonoBehaviour:
   upDown: 1
   running: 0
   PauseMenu: {fileID: 727613249}
-  HasChariot: 0
 --- !u!114 &1677023833
 MonoBehaviour:
   m_ObjectHideFlags: 0
