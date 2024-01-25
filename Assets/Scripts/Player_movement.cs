@@ -73,7 +73,7 @@ public class Player_movement : MonoBehaviour
     /// </summary>
     bool passed = false; // need this so we dont waste resources starting the coroutine again
 
-    public bool HasChariot = false;
+    private bool HasChariot = false;
     private float chariotSpeed = 11f;
 
    

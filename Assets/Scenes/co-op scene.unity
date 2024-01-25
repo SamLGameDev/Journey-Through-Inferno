@@ -4052,9 +4052,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1519157035}
   - component: {fileID: 1519157034}
+  - component: {fileID: 1519157041}
   - component: {fileID: 1519157037}
   - component: {fileID: 1519157038}
-  - component: {fileID: 1519157041}
   - component: {fileID: 1519157040}
   - component: {fileID: 1519157039}
   - component: {fileID: 1519157042}
@@ -4266,7 +4266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 7186132154605417265, guid: a8294735b22965b4bbd903326b093078, type: 3}
-  speed: 5
+  speed: 7
   GunTargets:
     serializedVersion: 2
     m_Bits: 768
@@ -4274,6 +4274,7 @@ MonoBehaviour:
   upDown: 1
   running: 0
   PauseMenu: {fileID: 727613249}
+  HasChariot: 1
 --- !u!114 &1519157042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4646,8 +4647,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1677023835}
   - component: {fileID: 1677023834}
-  - component: {fileID: 1677023833}
   - component: {fileID: 1677023832}
+  - component: {fileID: 1677023833}
   - component: {fileID: 1677023831}
   - component: {fileID: 1677023836}
   - component: {fileID: 1677023837}
@@ -4700,7 +4701,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 7186132154605417265, guid: a8294735b22965b4bbd903326b093078, type: 3}
-  speed: 5
+  speed: 7
   GunTargets:
     serializedVersion: 2
     m_Bits: 768
@@ -4708,6 +4709,7 @@ MonoBehaviour:
   upDown: 1
   running: 0
   PauseMenu: {fileID: 727613249}
+  HasChariot: 0
 --- !u!114 &1677023833
 MonoBehaviour:
   m_ObjectHideFlags: 0
