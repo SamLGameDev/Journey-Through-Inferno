@@ -71,6 +71,9 @@ public class Player_movement : MonoBehaviour
     /// true if currently paused
     /// </summary>
     bool passed = false; // need this so we dont waste resources starting the coroutine again
+
+    private bool HasChariot = false;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -95,7 +98,11 @@ public class Player_movement : MonoBehaviour
        Vector2 GetRotation = actions.FindAction("Aim").ReadValue<Vector2>();
        float heading  = Mathf.Atan2(GetRotation.x, -GetRotation.y);
        transform.GetChild(0).rotation = Quaternion.Euler(0,0, heading * Mathf.Rad2Deg);
-       
+
+        // If player has the Chariot card equipped then their movement speed is increased
+        if (HasChariot)
+        { speed *= 2f; }
+        
     }
     /// <summary>
     /// controlls all of the animations and decides what aniamtion should be playing right now.
