@@ -20,9 +20,11 @@ public class bullet_controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (GetComponent<Tarot_cards>().hasStar == true) { damageModifier = 2; }
+        if (GetComponentInParent<Tarot_cards>().hasStar) { damageModifier = 2; }
         else { damageModifier = 0; }
-
+        // moves the bullet in the direction it is facing
+        rb = GetComponent<Rigidbody2D>();
+        rb.AddForce(transform.right * 3000);
         Destroy(this.gameObject, 3);
     }
 
@@ -38,8 +40,6 @@ public class bullet_controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // moves the bullet in the direction it is facing
-        rb = GetComponent<Rigidbody2D>();
-        rb.AddForce(transform.right * 3);
+
     }
 }

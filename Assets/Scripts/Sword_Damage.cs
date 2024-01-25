@@ -16,7 +16,7 @@ public class Sword_Damage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (GetComponent<Tarot_cards>().hasStrength == true) { damageModifier = 2; }
+        if (GetComponentInParent<Tarot_cards>().hasStrength) { damageModifier = 2; }
         else { damageModifier = 0; }
     }
 

@@ -94,10 +94,10 @@ public class Player_movement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         ani = GetComponent<Animator>();
         // decreases the gun cooldown time if player has the temperance card
-        if (GetComponent<Tarot_cards>().hasTemperance == true) { cooldownModifier = -0.5f; }
+        if (GetComponent<Tarot_cards>().hasTemperance) { cooldownModifier = -0.5f; }
         else { cooldownModifier = 0; }
 
-        if (GetComponent<Tarot_cards>().hasChariot == true) // If the player has the Chariot Arcana then their movement speed will be increased
+        if (GetComponent<Tarot_cards>().hasChariot) // If the player has the Chariot Arcana then their movement speed will be increased
         { speed = chariotSpeed; }
         else
         { speed = 7f; }
