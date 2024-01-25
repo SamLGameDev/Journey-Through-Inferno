@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 855644394111392280}
   - component: {fileID: -3067071241486007913}
   - component: {fileID: 850796850611039608}
+  - component: {fileID: -1701719167390632334}
   m_Layer: 8
   m_Name: FuriesProjectile
   m_TagString: Enemy
@@ -76,9 +77,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b,
-    type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: -1920135099, guid: 3b6b1a78aa61b0840859973c07046a2b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -127,9 +127,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1840d7facc3d8c94bbd020b4f459235c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyTags:
-  - Player
-  - Wall
 --- !u!58 &850796850611039608
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -165,3 +162,24 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!95 &-1701719167390632334
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4435638632648024255}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 55673af98a48c094b999d444d3f84446, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
