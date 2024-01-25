@@ -9,9 +9,15 @@ public class bullet_controller : MonoBehaviour
     /// </summary>
     Rigidbody2D rb;
     // Start is called before the first frame update
+
+    private int bulletDamage = 3;
+    private int damageModifier = 0;
+
     void Start()
     {
-        
+        if (GetComponent<Tarot_cards>().hasStar == true) { damageModifier = 2; }
+        else { damageModifier = 0; }
+
         Destroy(this.gameObject, 3);
     }
 

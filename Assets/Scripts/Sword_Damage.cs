@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Sword_Damage : MonoBehaviour
 {
-    public int swordDamage = 4;
-    public int damageModifier = 0;
+    private int swordDamage = 4;
+    private int damageModifier = 0;
     
     // Start is called before the first frame update
     void Start()
