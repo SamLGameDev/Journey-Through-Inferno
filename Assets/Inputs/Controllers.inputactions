@@ -223,7 +223,7 @@
                     "path": "<Gamepad>/start",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Xbox control scheme;Keyboard",
                     "action": "PauseMenu",
                     "isComposite": false,
                     "isPartOfComposite": false

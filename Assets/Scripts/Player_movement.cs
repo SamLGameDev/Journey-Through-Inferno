@@ -86,6 +86,13 @@ public class Player_movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // makes sword start as invisible 
+        transform.GetChild(1).gameObject.SetActive(false);
+        StartCoroutine(timer(cooldownTime + cooldownModifier));
+        actions = GetComponent<PlayerInput>().actions;
+        moves = GetComponent<Different_Moves>();
+        rb = GetComponent<Rigidbody2D>();
+        ani = GetComponent<Animator>();
         // decreases the gun cooldown time if player has the temperance card
         if (GetComponent<Tarot_cards>().hasTemperance == true) { cooldownModifier = -0.5f; }
         else { cooldownModifier = 0; }
@@ -95,13 +102,7 @@ public class Player_movement : MonoBehaviour
         else
         { speed = 7f; }
 
-        // makes sword start as invisible 
-        transform.GetChild(1).gameObject.SetActive(false);
-        StartCoroutine(timer(cooldownTime + cooldownModifier));
-        actions = GetComponent<PlayerInput>().actions;
-        moves=  GetComponent<Different_Moves>();
-        rb = GetComponent<Rigidbody2D>();   
-        ani = GetComponent<Animator>();
+
     }
     /// <summary>
     /// moves the player based on the movement of the left joystick and the aiming device based
@@ -284,7 +285,6 @@ public class Player_movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         if (actions.FindAction("Actions").triggered && !running) // check if the melee action is triggered and not running
         {
             running = true;
