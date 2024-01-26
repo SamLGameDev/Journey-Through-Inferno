@@ -844,6 +844,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FuriesProjectile
       objectReference: {fileID: 0}
+    - target: {fileID: 4435638632648024255, guid: 69425cdf21671244f8a41af8c7240f11,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4435638632648024255, guid: 69425cdf21671244f8a41af8c7240f11,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 4668188762206442367, guid: 69425cdf21671244f8a41af8c7240f11,
         type: 3}
       propertyPath: m_RootOrder
@@ -1491,10 +1501,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6491935665004741035, guid: 316b6cb4886f4864684084414444bd1c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8861141328434789732, guid: 316b6cb4886f4864684084414444bd1c,
         type: 3}
       propertyPath: m_Name
       value: weapon_strength
+      objectReference: {fileID: 0}
+    - target: {fileID: 8861141328434789732, guid: 316b6cb4886f4864684084414444bd1c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8861141328434789732, guid: 316b6cb4886f4864684084414444bd1c,
         type: 3}
@@ -5397,6 +5417,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3054313615865408233, guid: c59d0046edde7e342bbad33d6fdd1f79,
+        type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 1024
       objectReference: {fileID: 0}
     - target: {fileID: 4104389254971394780, guid: c59d0046edde7e342bbad33d6fdd1f79,
         type: 3}

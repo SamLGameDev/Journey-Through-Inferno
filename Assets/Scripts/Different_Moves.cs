@@ -177,8 +177,9 @@ public class Different_Moves : MonoBehaviour
             {
                 target.transform.rotation = rotation; // to account for any chnages in rotation to set the sword straight
                 target.transform.localPosition = position; // sets its position to where it started
-                GetComponent<Player_movement>().running = false;
                 target.SetActive(false); // make the sword invisible and stop damage when not attacking
+                yield return new WaitForSeconds(0.15f);
+                GetComponent<Player_movement>().running = false;
                 yield return new WaitUntil(() => GetComponent<Player_movement>().running); // wait unitll attacking again 
                 // recalculate everything for the new attack
                 facing = player.facing;
