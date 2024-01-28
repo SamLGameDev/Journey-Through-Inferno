@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,7 +108,175 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: boss_Medusa_Movement_Forward_0
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 160
+        width: 125
+        height: 135
+      alignment: 9
+      pivot: {x: 0.44672424, y: 0.49999988}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69f1b027ff7cab84abd657ef2726439b
+      internalID: 1434792473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_Medusa_Movement_Forward_1
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 160
+        width: 121
+        height: 137
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20d22b9dc454d7a40ab1f71c5988943d
+      internalID: 2076376691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_Medusa_Movement_Forward_2
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 160
+        width: 128
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4306515f0bfe44b49806a9edd1a59b06
+      internalID: 404823732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_Medusa_Movement_Forward_3
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 160
+        width: 121
+        height: 137
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6635f9f66c9594428d03cc98fe2292e
+      internalID: -1092531214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_Medusa_Movement_Forward_4
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 15
+        width: 115
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fa5074defff5a34988cdd1b8401e4ec
+      internalID: 1378530739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_Medusa_Movement_Forward_5
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 16
+        width: 121
+        height: 137
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f5dabbaf5af25444a418cfd88eb08dc
+      internalID: -1873423813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_Medusa_Movement_Forward_6
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 16
+        width: 128
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68adbce04a6fd1f46bd0c66e6af6e787
+      internalID: -1485976222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_Medusa_Movement_Forward_7
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 16
+        width: 121
+        height: 137
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3278070340d42d4e9186035f965e6d4
+      internalID: 1534893699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +287,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      boss_Medusa_Movement_Forward_0: 1434792473
+      boss_Medusa_Movement_Forward_1: 2076376691
+      boss_Medusa_Movement_Forward_2: 404823732
+      boss_Medusa_Movement_Forward_3: -1092531214
+      boss_Medusa_Movement_Forward_4: 1378530739
+      boss_Medusa_Movement_Forward_5: -1873423813
+      boss_Medusa_Movement_Forward_6: -1485976222
+      boss_Medusa_Movement_Forward_7: 1534893699
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

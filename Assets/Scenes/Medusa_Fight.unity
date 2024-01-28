@@ -1665,6 +1665,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7122952836914844517, guid: 4a6efd9d63ff62e47b860ff0959888fa,
         type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7122952836914844517, guid: 4a6efd9d63ff62e47b860ff0959888fa,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7122952836914844517, guid: 4a6efd9d63ff62e47b860ff0959888fa,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7122952836914844517, guid: 4a6efd9d63ff62e47b860ff0959888fa,
+        type: 3}
       propertyPath: m_SortingOrder
       value: 2
       objectReference: {fileID: 0}
@@ -3657,6 +3672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22684f22776a946479069cd07ce4c6d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 0}
   speed: 5
   GunTargets:
     serializedVersion: 2
@@ -3664,6 +3680,7 @@ MonoBehaviour:
   facing: -1
   upDown: 1
   running: 0
+  PauseMenu: {fileID: 0}
 --- !u!114 &1519157042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3927,6 +3944,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22684f22776a946479069cd07ce4c6d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 0}
   speed: 5
   GunTargets:
     serializedVersion: 2
@@ -3934,6 +3952,7 @@ MonoBehaviour:
   facing: -1
   upDown: 1
   running: 0
+  PauseMenu: {fileID: 0}
 --- !u!114 &1677023833
 MonoBehaviour:
   m_ObjectHideFlags: 0
