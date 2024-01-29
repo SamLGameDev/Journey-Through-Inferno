@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// Controls the ability for a gameobject to possess health, to heal/take damage or die.
@@ -18,6 +19,9 @@ public class EntityHealthBehaviour : MonoBehaviour
 
     // Time between IFrame flashes.
     private float invunDeltaTime = 0.1f;
+
+    //Gets the healthbar from the canvas, must be dragged in to create reference
+    public Image healthBar;
 
     private void Start()
     {
@@ -38,6 +42,7 @@ public class EntityHealthBehaviour : MonoBehaviour
         }
 
         entityCurrentHealth -= damageAmount;
+        healthBar.fillAmount = entityCurrentHealth / 100f;
 
         print($"{gameObject.name} took {damageAmount} damage, current health: {entityCurrentHealth}");
 
@@ -52,6 +57,8 @@ public class EntityHealthBehaviour : MonoBehaviour
         {
             StartCoroutine(InvulnerabilityTickDown());
         }
+
+        
     }
 
     /// <summary>
