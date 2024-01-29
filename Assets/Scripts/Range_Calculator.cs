@@ -11,6 +11,7 @@ public class Range_Calculator : MonoBehaviour
     /// the cooldown for the charge
     /// </summary>
     private float cooldown;
+    [SerializeField] private EnemyStats stats;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,7 @@ public class Range_Calculator : MonoBehaviour
     /// <returns></returns>
     private bool Within_Melee_Range(Vector2 distance)
     {
-        if (distance.x < 0.5 && distance.y < 1) // if the distance is less than half an x and a away, trigger the melee animation
+        if (distance.sqrMagnitude < new Vector2(stats.meeleRange, stats.meeleRange).sqrMagnitude) // if the distance is less than half an x and a away, trigger the melee animation
         {
             GetComponent<Animator>().SetBool("Within_Range", true);
             return true; 
@@ -47,7 +48,8 @@ public class Range_Calculator : MonoBehaviour
     private bool Within_Charge_Range(Vector2 distance)
     {
         // if the distance is less than six feet away but further than 3 then CHARGE! 
-        if (distance.sqrMagnitude < new Vector2(6, 6).sqrMagnitude && distance.sqrMagnitude > new Vector2(3,3).sqrMagnitude)
+        if (distance.sqrMagnitude < new Vector2(stats.chargeNear, stats.chargeNear).sqrMagnitude
+            && distance.sqrMagnitude > new Vector2(stats.chargeFarAway,stats.chargeFarAway).sqrMagnitude)
         {
             EnablerAStar(false); // disbles pathfinding so it isnt trying to move when charging
             GetComponent<Animator>().SetBool("Within_Charge_Range", true);
@@ -81,7 +83,7 @@ public class Range_Calculator : MonoBehaviour
         bool range = Within_Melee_Range(distance);
         // if the target isnt within melee range and charge isnt already happening and
         // its been 10 seconds since the last charge, charge again
-        if (!range && GetComponent<Animator>().GetBool("Within_Charge_Range") == false && time - 10 > cooldown)
+        if (!range && GetComponent<Animator>().GetBool("Within_Charge_Range") == false && time - stats.chargeCooldown > cooldown)
         {
             cooldown = Time.time;  
             Within_Charge_Range(distance);

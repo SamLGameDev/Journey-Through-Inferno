@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8b84871b0250ba438dbe2b84fadcf82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entityMaxHealth: 10
+  stats: {fileID: 11400000, guid: ee49df38efdaefc4fa8fcd7bdf5de804, type: 2}
   invunTimeOnHit: 0
   entityCurrentHealth: 50
 --- !u!114 &1919074620864673920
@@ -306,6 +306,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   sword_Speed: 0
+  stats: {fileID: 11400000, guid: ee49df38efdaefc4fa8fcd7bdf5de804, type: 2}
 --- !u!114 &4801089580672160280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,6 +319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d7cee9635ea9041891a307bc5495f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats: {fileID: 11400000, guid: ee49df38efdaefc4fa8fcd7bdf5de804, type: 2}
 --- !u!114 &9195619475462717869
 MonoBehaviour:
   m_ObjectHideFlags: 0

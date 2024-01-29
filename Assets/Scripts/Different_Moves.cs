@@ -2,6 +2,7 @@ using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.ProBuilder.MeshOperations;
 using UnityEngine.SocialPlatforms.Impl;
@@ -22,6 +23,7 @@ public class Different_Moves : MonoBehaviour
     /// the speed for the sword swing
     /// </summary>
     public float sword_Speed;
+    [SerializeField] private EnemyStats stats;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,10 +37,10 @@ public class Different_Moves : MonoBehaviour
     {
         // creates a box that will grab everything with a collider in it that matches the layers to
         // hit then apply damage to it.
-        RaycastHit2D[] hit = Physics2D.BoxCastAll(transform.position, new Vector2(transform.localScale.x, Melee_info.floatParameter), transform.rotation.z, Vector2.up, Melee_info.floatParameter, LayersToHit);
+        RaycastHit2D[] hit = Physics2D.BoxCastAll(transform.position, new Vector2(stats.meleeSizeX, stats.meleeSizeY), 0, transform.right, stats.meleeDistance, stats.whatsHittable);
         foreach (RaycastHit2D hit2d in hit)
         {
-            hit2d.collider.gameObject.GetComponent<EntityHealthBehaviour>().ApplyDamage(Melee_info.intParameter);
+            hit2d.collider.gameObject.GetComponent<EntityHealthBehaviour>().ApplyDamage(stats.damage);
         }
 
 
@@ -50,24 +52,24 @@ public class Different_Moves : MonoBehaviour
     /// <param name="damage"></param>
     /// <param name="time"></param>
     /// <returns></returns>
-    public virtual float Melee(float range, int damage, float time)
+    public virtual float Melee(float time)
     {
         // a delay to stop the player from spamming melee
-        if (Time.time - 0.5 < time)
+        if (Time.time - stats.chargeDamageInterval < time)
         {
             return time;
         }
         // same as previous melee function this is an override to
-        RaycastHit2D[] hit = Physics2D.BoxCastAll(transform.position, new Vector2(transform.localScale.x + 1, range), 0 , transform.right, range, LayersToHit);
+        RaycastHit2D[] hit = Physics2D.BoxCastAll(transform.position, new Vector2(stats.meleeSizeX, stats.meleeSizeY), 0 , transform.right, stats.meleeDistance, stats.whatsHittable);
+
         foreach (RaycastHit2D hit2d in hit)
         {
-            hit2d.collider.gameObject.GetComponent<EntityHealthBehaviour>().ApplyDamage(damage);
+            hit2d.collider.gameObject.GetComponent<EntityHealthBehaviour>().ApplyDamage(stats.damage);
         }
         return Time.time;
 
 
     }
-
 
     /// <summary>
     /// Enables A* pathfinding components. Does not disable the A* graph itself, just destination setters.
@@ -92,13 +94,13 @@ public class Different_Moves : MonoBehaviour
         float Melee_Damage_Cooldown = -5;
         float time = Time.time;
         // duration od the charge
-        while (Time.time - 2 < time)
+        while (Time.time - stats.chargeDuration < time)
         {
             yield return null;
             // move it in the direction it is facing at a speed if 5
-            transform.position += transform.right * Time.deltaTime * 5;
+            transform.position += transform.right * Time.deltaTime * stats.chargeSpeed;
             // calles melee to get new cooldown or attack
-            Melee_Damage_Cooldown = Melee(5, 6, Melee_Damage_Cooldown);
+            Melee_Damage_Cooldown = Melee(Melee_Damage_Cooldown);
         }
         // reenables pathfinding so thta it can move again
         EnablerAStar(true);

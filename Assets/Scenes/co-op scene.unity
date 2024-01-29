@@ -1626,7 +1626,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &481472222
 Transform:
   m_ObjectHideFlags: 0
@@ -1768,7 +1768,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -4299,7 +4299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8b84871b0250ba438dbe2b84fadcf82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entityMaxHealth: 100
+  stats: {fileID: 11400000, guid: 3c836f6fb50fddd499544b73c55a2a1e, type: 2}
   invunTimeOnHit: 0
   entityCurrentHealth: 0
 --- !u!61 &1519157040
@@ -4385,6 +4385,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   sword_Speed: 500
+  stats: {fileID: 0}
 --- !u!95 &1519157043
 Animator:
   serializedVersion: 5
@@ -4931,7 +4932,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8b84871b0250ba438dbe2b84fadcf82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entityMaxHealth: 100
+  stats: {fileID: 11400000, guid: 3c836f6fb50fddd499544b73c55a2a1e, type: 2}
   invunTimeOnHit: 0
   entityCurrentHealth: 0
 --- !u!61 &1677023837
@@ -4996,6 +4997,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   sword_Speed: 500
+  stats: {fileID: 0}
 --- !u!95 &1677023839
 Animator:
   serializedVersion: 5
@@ -5386,7 +5388,7 @@ PrefabInstance:
     - target: {fileID: 1600547005513823415, guid: c59d0046edde7e342bbad33d6fdd1f79,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2127096435719846241, guid: c59d0046edde7e342bbad33d6fdd1f79,
         type: 3}
