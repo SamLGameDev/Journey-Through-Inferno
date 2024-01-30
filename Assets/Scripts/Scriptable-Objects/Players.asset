@@ -19,6 +19,9 @@ MonoBehaviour:
   gunCooldownModifier: 1.5
   speed: 6
   chariotSpeed: 6
+  dashSpeed: 25
+  dashDuration: 0.2
+  dashCooldown: 0.5
   layersToHit:
     serializedVersion: 2
     m_Bits: 256
