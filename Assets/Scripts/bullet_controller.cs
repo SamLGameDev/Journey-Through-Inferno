@@ -28,9 +28,9 @@ public class bullet_controller : MonoBehaviour
         rb.AddForce(transform.right * stats.bulletSpeed);
         Destroy(this.gameObject, stats.bulletLife);
 
-        // If the player has the Magician Arcana, then the size of their bullets will be increased
+        // If the player has the Magician Arcana then the size of their bullets will be increased
         if (GetComponentInParent<Tarot_cards>().hasMagician)
-        { transform.localScale *= 3f; }
+        { transform.localScale *= 3f; }       
 
     }
 
