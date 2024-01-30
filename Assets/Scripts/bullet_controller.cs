@@ -27,6 +27,11 @@ public class bullet_controller : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.AddForce(transform.right * stats.bulletSpeed);
         Destroy(this.gameObject, stats.bulletLife);
+
+        // If the player has the Magician Arcana then the size of their bullets will be increased
+        if (GetComponentInParent<Tarot_cards>().hasMagician)
+        { transform.localScale *= 3f; }       
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

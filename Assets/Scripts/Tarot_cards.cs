@@ -11,6 +11,8 @@ public class Tarot_cards : MonoBehaviour
     public bool hasStrength = false;
     public bool hasStar = false;
     public bool hasTemperance = false;
+    public bool hasMagician = false;
+    public bool hasEmperor = false;
     
     // Start is called before the first frame update
     void Start()

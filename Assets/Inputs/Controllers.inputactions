@@ -49,6 +49,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "TriggerBuff",
+                    "type": "Button",
+                    "id": "03aeed52-8798-4503-bd4e-497fa888dd38",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -165,7 +174,7 @@
                 {
                     "name": "",
                     "id": "e3432e2f-cd15-4bc5-8c92-9b45b6f0751e",
-                    "path": "<XInputController>/rightTrigger",
+                    "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "Xbox control scheme;Keyboard",
@@ -187,7 +196,7 @@
                 {
                     "name": "",
                     "id": "5bfd31c4-687f-4572-a93d-a0ec32e07e58",
-                    "path": "<XInputController>/leftTrigger",
+                    "path": "<Gamepad>/leftTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard;Xbox control scheme",
@@ -209,7 +218,7 @@
                 {
                     "name": "",
                     "id": "29d10ac3-7092-4e57-9a96-0e8bac4c4039",
-                    "path": "<XInputController>/rightStick",
+                    "path": "<Gamepad>/rightStick",
                     "interactions": "",
                     "processors": "",
                     "groups": "Xbox control scheme;Keyboard",
@@ -225,6 +234,17 @@
                     "processors": "",
                     "groups": "Xbox control scheme;Keyboard",
                     "action": "PauseMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2460e97a-d5cf-4b04-a33c-e9c88eacae45",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Xbox control scheme",
+                    "action": "TriggerBuff",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -86,10 +86,16 @@ public class Player_movement : MonoBehaviour
         if (GetComponent<Tarot_cards>().hasTemperance) { cooldownModifier = stats.gunCooldownModifier; }
         else { cooldownModifier = 0; }
 
-        if (GetComponent<Tarot_cards>().hasChariot) // If the player has the Chariot Arcana then their movement speed will be increased
+        if (GetComponentInParent<Tarot_cards>().hasChariot) // If the player has the Chariot Arcana then their movement speed will be increased
         { speed = stats.chariotSpeed; }
         else
         { speed = stats.speed; }
+
+        // If the player has the Emperor Arcana then their max health will be increased
+        if (GetComponentInParent<Tarot_cards>().hasEmperor)
+        { stats.maxHealth = 25; }   
+        
+        
 
 
     }
