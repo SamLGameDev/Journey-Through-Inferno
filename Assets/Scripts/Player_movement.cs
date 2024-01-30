@@ -13,13 +13,9 @@ public class Player_movement : MonoBehaviour
     /// </summary>
     private bool gun_cooldown;
     /// <summary>
-    /// the bullet prefab
-    /// </summary>
-    [SerializeField] private GameObject bullet;
-    /// <summary>
     /// the speed of the player
     /// </summary>
-    [SerializeField] private float speed;
+    private float speed;
     /// <summary>
     /// the input actions the player can take
     /// </summary>
@@ -28,10 +24,6 @@ public class Player_movement : MonoBehaviour
     /// the different moves script
     /// </summary>
     private Different_Moves moves;
-    /// <summary>
-    /// the targets for the gun
-    /// </summary>
-    [SerializeField] private LayerMask GunTargets;
     /// <summary>
     /// the players rigidbody
     /// </summary>
@@ -73,34 +65,30 @@ public class Player_movement : MonoBehaviour
     /// </summary>
     bool passed = false; // need this so we dont waste resources starting the coroutine again
     /// <summary>
-    /// standard between bullet shots
-    /// </summary>
-    private float cooldownTime = 1.5f;
-    /// <summary>
     /// change to the cooldown time for if the player has a tarot card
     /// </summary>
     private float cooldownModifier = 0;
 
-    private float chariotSpeed = 11f;
-
+    [SerializeField] private Player stats;
+    [SerializeField] private GameObject sword;
     // Start is called before the first frame update
     void Start()
     {
         // makes sword start as invisible 
         transform.GetChild(1).gameObject.SetActive(false);
-        StartCoroutine(timer(cooldownTime + cooldownModifier));
+        StartCoroutine(timer(stats.gunCooldown - cooldownModifier));
         actions = GetComponent<PlayerInput>().actions;
         moves = GetComponent<Different_Moves>();
         rb = GetComponent<Rigidbody2D>();
         ani = GetComponent<Animator>();
         // decreases the gun cooldown time if player has the temperance card
-        if (GetComponent<Tarot_cards>().hasTemperance) { cooldownModifier = -0.5f; }
+        if (GetComponent<Tarot_cards>().hasTemperance) { cooldownModifier = stats.gunCooldownModifier; }
         else { cooldownModifier = 0; }
 
         if (GetComponent<Tarot_cards>().hasChariot) // If the player has the Chariot Arcana then their movement speed will be increased
-        { speed = chariotSpeed; }
+        { speed = stats.chariotSpeed; }
         else
-        { speed = 7f; }
+        { speed = stats.speed; }
 
 
     }
@@ -119,11 +107,7 @@ public class Player_movement : MonoBehaviour
        transform.GetChild(0).rotation = Quaternion.Euler(0,0, heading * Mathf.Rad2Deg);      
         
     }
-    /// <summary>
-    /// controlls all of the animations and decides what aniamtion should be playing right now.
-    /// also rotates the sword to be in the right facing direction
-    /// </summary>
-    /// 
+
 
     private void OnPauseMenu(InputValue value)
     {
@@ -142,12 +126,16 @@ public class Player_movement : MonoBehaviour
     }
 
 
-
+    /// <summary>
+    /// controlls all of the animations and decides what aniamtion should be playing right now.
+    /// also rotates the sword to be in the right facing direction
+    /// </summary>
+    /// 
     private void Animation_Controller()
     { 
         float velo = Mathf.Abs(rb.velocity.x + rb.velocity.y); // absolute value so negatives dont affect it
         ani.SetFloat("Velocity",velo);
-        /// starts the idle check as the player isnt moving
+        // starts the idle check as the player isnt moving
         if (velo < 0.0001  && !VelocityCheck) 
         {
             time = Time.time;
@@ -242,7 +230,8 @@ public class Player_movement : MonoBehaviour
     private void Player_Shooting()
     {
         // shoots from the compas's facing direction
-        moves.Shoot(GunTargets, transform.GetChild(0).GetChild(0).position, transform.GetChild(0).GetChild(0).right, bullet);
+        moves.Shoot(stats.layersToHit, transform.GetChild(0).GetChild(0).position,
+            transform.GetChild(0).GetChild(0).right, stats.bullet);
     }
     /// <summary>
     /// checks if the player hasnt been moving for 3 seconds
@@ -253,7 +242,7 @@ public class Player_movement : MonoBehaviour
         if (velo < 0.0001)
         {
             // if three seconds have passed go into idle
-            if (Time.time - 3 > time)
+            if (Time.time - stats.timeUntilIdle > time)
             {
                 ani.SetBool("Time passed 5", true);
             }
@@ -288,7 +277,6 @@ public class Player_movement : MonoBehaviour
         if (actions.FindAction("Actions").triggered && !running) // check if the melee action is triggered and not running
         {
             running = true;
-            GameObject sword = transform.GetChild(1).gameObject;
             sword.SetActive(true);
             // make the sword active
             if (!passed) // if it hasnt been trggered before, trigger it

@@ -1501,6 +1501,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6489887914554609292, guid: 316b6cb4886f4864684084414444bd1c,
+        type: 3}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 11400000, guid: c53c78a8f908aff40b06667ff5c1036a,
+        type: 2}
     - target: {fileID: 6491935665004741035, guid: 316b6cb4886f4864684084414444bd1c,
         type: 3}
       propertyPath: m_Layer
@@ -1734,6 +1740,12 @@ Transform:
   m_Father: {fileID: 1338611598}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -37.586}
+--- !u!1 &499526389 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8861141328434789732, guid: 316b6cb4886f4864684084414444bd1c,
+    type: 3}
+  m_PrefabInstance: {fileID: 465444941}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &565519521
 GameObject:
   m_ObjectHideFlags: 0
@@ -2669,6 +2681,12 @@ Transform:
   m_Father: {fileID: 1338611598}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -37.586}
+--- !u!1 &999446583 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8861141328434789732, guid: 316b6cb4886f4864684084414444bd1c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1323902531149372033}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1016704247
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4299,7 +4317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8b84871b0250ba438dbe2b84fadcf82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: 3c836f6fb50fddd499544b73c55a2a1e, type: 2}
+  stats: {fileID: 11400000, guid: c53c78a8f908aff40b06667ff5c1036a, type: 2}
   invunTimeOnHit: 0
   entityCurrentHealth: 0
 --- !u!61 &1519157040
@@ -4359,15 +4377,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22684f22776a946479069cd07ce4c6d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 7186132154605417265, guid: a8294735b22965b4bbd903326b093078, type: 3}
-  speed: 7
-  GunTargets:
-    serializedVersion: 2
-    m_Bits: 768
   facing: -1
   upDown: 1
   running: 0
   PauseMenu: {fileID: 727613249}
+  stats: {fileID: 11400000, guid: c53c78a8f908aff40b06667ff5c1036a, type: 2}
+  sword: {fileID: 999446583}
 --- !u!114 &1519157042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4385,7 +4400,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   sword_Speed: 500
-  stats: {fileID: 0}
+  stats: {fileID: 11400000, guid: ee49df38efdaefc4fa8fcd7bdf5de804, type: 2}
+  pStats: {fileID: 11400000, guid: c53c78a8f908aff40b06667ff5c1036a, type: 2}
 --- !u!95 &1519157043
 Animator:
   serializedVersion: 5
@@ -4811,15 +4827,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22684f22776a946479069cd07ce4c6d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 7186132154605417265, guid: a8294735b22965b4bbd903326b093078, type: 3}
-  speed: 7
-  GunTargets:
-    serializedVersion: 2
-    m_Bits: 768
   facing: -1
   upDown: 1
   running: 0
   PauseMenu: {fileID: 727613249}
+  stats: {fileID: 11400000, guid: c53c78a8f908aff40b06667ff5c1036a, type: 2}
+  sword: {fileID: 499526389}
 --- !u!114 &1677023833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4932,7 +4945,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8b84871b0250ba438dbe2b84fadcf82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: 3c836f6fb50fddd499544b73c55a2a1e, type: 2}
+  stats: {fileID: 11400000, guid: c53c78a8f908aff40b06667ff5c1036a, type: 2}
   invunTimeOnHit: 0
   entityCurrentHealth: 0
 --- !u!61 &1677023837
@@ -4997,7 +5010,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   sword_Speed: 500
-  stats: {fileID: 0}
+  stats: {fileID: 11400000, guid: ee49df38efdaefc4fa8fcd7bdf5de804, type: 2}
+  pStats: {fileID: 11400000, guid: c53c78a8f908aff40b06667ff5c1036a, type: 2}
 --- !u!95 &1677023839
 Animator:
   serializedVersion: 5
@@ -5388,7 +5402,7 @@ PrefabInstance:
     - target: {fileID: 1600547005513823415, guid: c59d0046edde7e342bbad33d6fdd1f79,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2127096435719846241, guid: c59d0046edde7e342bbad33d6fdd1f79,
         type: 3}
@@ -5413,7 +5427,17 @@ PrefabInstance:
     - target: {fileID: 3054313615865408233, guid: c59d0046edde7e342bbad33d6fdd1f79,
         type: 3}
       propertyPath: m_Radius
-      value: 3
+      value: 4.2254305
+      objectReference: {fileID: 0}
+    - target: {fileID: 3054313615865408233, guid: c59d0046edde7e342bbad33d6fdd1f79,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.06807995
+      objectReference: {fileID: 0}
+    - target: {fileID: 3054313615865408233, guid: c59d0046edde7e342bbad33d6fdd1f79,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.00000047683716
       objectReference: {fileID: 0}
     - target: {fileID: 3054313615865408233, guid: c59d0046edde7e342bbad33d6fdd1f79,
         type: 3}

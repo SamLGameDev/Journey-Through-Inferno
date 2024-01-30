@@ -238,7 +238,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -307,6 +307,7 @@ MonoBehaviour:
     m_Bits: 128
   sword_Speed: 0
   stats: {fileID: 11400000, guid: ee49df38efdaefc4fa8fcd7bdf5de804, type: 2}
+  pStats: {fileID: 0}
 --- !u!114 &4801089580672160280
 MonoBehaviour:
   m_ObjectHideFlags: 0

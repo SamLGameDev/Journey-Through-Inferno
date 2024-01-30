@@ -102,16 +102,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f61a5b7abe834e047a3a3c7241626e5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minTimeBetweenPosChange: 7
-  maxTimeBetweenPosChange: 5
+  movementSpeed: 15
   meleeRange: 7.5
   meleeAttackDamage: 35
-  actionCooldownTime: 3
-  movementSpeed: 15
+  meleeAttackCooldown: 0
   poisonAmount: 20
   poisonImpactSize: 4
   poisonFlightTime: 1
   poisonDamage: 10
+  actionCooldownTime: 3
+  maxTimeAbilityUsage: 0
   indicator: {fileID: 5361606418721373797, guid: 269f6212271080c4d8723075c5cba900,
     type: 3}
   centrePos: {fileID: 0}
@@ -119,6 +119,7 @@ MonoBehaviour:
   aimingArea: {fileID: 0}
   medusaPos: 0
   readyToMove: 0
+  meleeCooldown: 0
 --- !u!114 &9097793489111844800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8b84871b0250ba438dbe2b84fadcf82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entityMaxHealth: 200
+  stats: {fileID: 11400000, guid: 967521d4166627948b50e946f51ce62b, type: 2}
   invunTimeOnHit: 0
   entityCurrentHealth: 0
 --- !u!95 &3401023965402023177

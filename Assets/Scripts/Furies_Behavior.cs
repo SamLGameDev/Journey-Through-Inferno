@@ -5,17 +5,11 @@ using UnityEngine;
 
 public class Furies_Behavior : MonoBehaviour
 {
-    [SerializeField] private LayerMask target;
-    public float shootingRange = 0f;
-    public float moveSpeed = 0f;
-    public float projectileSpeed = 0f;
-    public GameObject projectilePrefab;
-    public float startCooldown = 0f;
-    public float shotCooldown = 0f;
-    public bool isThreatened = false; // Boolean switches between true and false depending on the player colliding with furies' circle collider
+    private float shotCooldown = 0f;
+    private bool isThreatened = false; // Boolean switches between true and false depending on the player colliding with furies' circle collider
     private Rigidbody2D rb;
     private Animator ani;
-
+    [SerializeField]private Furies stats;
 
     private Transform player;
     private enum FuriesState // Machine state for the furies' behaviour. Will switch between the idle, moving, shooting and retreating states depending on certain factors
@@ -33,6 +27,7 @@ public class Furies_Behavior : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         player = GetComponent<AIDestinationSetter>().target; // gets the target from Astar
         currentState = FuriesState.Move;
+        GetComponent<AIPath>().endReachedDistance = stats.shootingRange;
         StartCoroutine(FuriesStateMachine());
     }
     /// <summary>
@@ -77,7 +72,7 @@ public class Furies_Behavior : MonoBehaviour
         // When the furies are in the retreat state but the player is no longer within the circle collider, the furies will resume moving towards the player's position
 
         // Checks if the player is within shooting range and begins shooting if they are
-        if (Vector2.Distance(transform.position, player.position) < shootingRange)
+        if (Vector2.Distance(transform.position, player.position) < stats.shootingRange)
         {
             currentState = FuriesState.Shoot; }
 
@@ -163,17 +158,17 @@ public class Furies_Behavior : MonoBehaviour
             Vector2 shootDirection = (player.position - transform.position).normalized;
 
             // Creates the projectile and sets its initial speed
-            GameObject FuriesProjectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+            GameObject FuriesProjectile = Instantiate(stats.projectilePrefab, transform.position, Quaternion.identity);
             Rigidbody2D projectileRb = FuriesProjectile.GetComponent<Rigidbody2D>();
-            projectileRb.velocity = shootDirection * projectileSpeed;
+            projectileRb.velocity = shootDirection * stats.projectileSpeed;
 
             // Sets the next allowed shot time based on cooldown
-            shotCooldown = Time.time + startCooldown;
+            shotCooldown = Time.time + stats.shootCooldown;
             Destroy(FuriesProjectile, 3);
 
         }
         // Switches to the Move state if the player is out of range 
-        if (Vector2.Distance(transform.position, player.position) > shootingRange)
+        if (Vector2.Distance(transform.position, player.position) > stats.shootingRange)
         {
             currentState = FuriesState.Move; }
 
@@ -193,9 +188,9 @@ public class Furies_Behavior : MonoBehaviour
     {
         // While the isThreatened variable is true, the furies will move away from the player
         if (isThreatened)
-        { transform.position = Vector2.MoveTowards(transform.position, player.position, -moveSpeed * Time.deltaTime); }
+        { transform.position = Vector2.MoveTowards(transform.position, player.position, -stats.moveSpeed * Time.deltaTime); }
         // If the player is out of range then the furies will switch back to the Move state and isThreatened will switch back to false
-        if (Vector2.Distance(transform.position, player.position) > shootingRange)
+        if (Vector2.Distance(transform.position, player.position) > stats.shootingRange)
         {
             currentState = FuriesState.Move;
             isThreatened = false;
