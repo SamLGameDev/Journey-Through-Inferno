@@ -4907,7 +4907,7 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
+  m_DefaultControlScheme: Xbox control scheme
   m_DefaultActionMap: xbox controller
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -5074,6 +5074,8 @@ MonoBehaviour:
   hasStrength: 0
   hasStar: 0
   hasTemperance: 0
+  hasMagician: 0
+  hasEmperor: 0
 --- !u!1 &1590881679
 GameObject:
   m_ObjectHideFlags: 0
@@ -5677,7 +5679,7 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
+  m_DefaultControlScheme: Xbox control scheme
   m_DefaultActionMap: xbox controller
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -5867,6 +5869,8 @@ MonoBehaviour:
   hasStrength: 0
   hasStar: 0
   hasTemperance: 0
+  hasMagician: 0
+  hasEmperor: 0
 --- !u!1 &1688846259
 GameObject:
   m_ObjectHideFlags: 0
