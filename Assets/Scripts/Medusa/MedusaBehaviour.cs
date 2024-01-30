@@ -18,6 +18,12 @@ public class MedusaBehaviour : MonoBehaviour
     [SerializeField] private float poisonImpactSize;
     [Tooltip("Amount of time it takes for a poison shot to impact.")]
     public float poisonFlightTime;
+    public int poisonDamage;
+
+    [Header("Petrification Attributes")]
+    [Tooltip("Time someone must stay in LOS to become petrified.")]
+    public float petrificationTime;
+
     [SerializeField] private int poisonDamage;
     [SerializeField] private GameObject poisonProjectile;
  
@@ -36,7 +42,8 @@ public class MedusaBehaviour : MonoBehaviour
     [Tooltip("Object defining the area Medusa can use her poison attack within.")]
     [SerializeField] private Transform aimingArea;
 
-    private GameObject[] players;
+    [HideInInspector]
+    public GameObject[] players;
     private Animator animator;
 
     [HideInInspector]
