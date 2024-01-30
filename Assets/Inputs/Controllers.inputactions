@@ -54,6 +54,9 @@
                     "name": "TriggerBuff",
                     "type": "Button",
                     "id": "03aeed52-8798-4503-bd4e-497fa888dd38",
+                    "name": "Dash",
+                    "type": "Button",
+                    "id": "85a62d54-c8a6-43db-99e2-e623ca8468c3",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -245,6 +248,23 @@
                     "processors": "",
                     "groups": "Xbox control scheme",
                     "action": "TriggerBuff",
+                    "id": "76d1d09c-97d8-4c42-b0a2-3634b341a0dd",
+                    "path": "<XInputController>/leftStickPress",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard;Xbox control scheme",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e7a687cb-89fc-4c3d-9373-0f82f7176ada",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Xbox control scheme;Keyboard",
+                    "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

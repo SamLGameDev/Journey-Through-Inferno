@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 
 public class Player_movement : MonoBehaviour
 {
+    public TrailRenderer dashTrail;
     /// <summary>
     /// can the player shoot again
     /// </summary>
@@ -82,6 +83,7 @@ public class Player_movement : MonoBehaviour
         moves = GetComponent<Different_Moves>();
         rb = GetComponent<Rigidbody2D>();
         ani = GetComponent<Animator>();
+        StartCoroutine(dash());
         // decreases the gun cooldown time if player has the temperance card
         if (GetComponent<Tarot_cards>().hasTemperance) { cooldownModifier = stats.gunCooldownModifier; }
         else { cooldownModifier = 0; }
@@ -278,8 +280,29 @@ public class Player_movement : MonoBehaviour
             yield return new WaitWhile(() => gun_cooldown);
         }
     }
-    // Update is called once per frame
-    void Update()
+    private IEnumerator dash()
+    {
+        while (true)
+        {
+            yield return new WaitUntil(() => actions.FindAction("Dash").triggered);
+            if (!upDown)
+            {
+                dashTrail.startWidth = 1;
+            }
+            else
+            {
+                dashTrail.startWidth = 3;
+            }
+            dashTrail.enabled = true;
+            yield return null;
+            speed += stats.dashSpeed;
+            yield return new WaitForSeconds(stats.dashDuration);
+            speed -= stats.dashSpeed;
+            dashTrail.enabled = false;
+            yield return new WaitForSeconds(stats.dashCooldown);
+        }
+    }
+    private void possibleActions()
     {
         if (actions.FindAction("Actions").triggered && !running) // check if the melee action is triggered and not running
         {
@@ -297,10 +320,15 @@ public class Player_movement : MonoBehaviour
             gun_cooldown = false;
             Player_Shooting();
         }
-        if (VelocityCheck) 
+        if (VelocityCheck)
         {
             IdleCheck();
         }
+    }
+    // Update is called once per frame
+    void Update()
+    {
+        possibleActions();
         Animation_Controller();
         Joystic_Movement();
 
