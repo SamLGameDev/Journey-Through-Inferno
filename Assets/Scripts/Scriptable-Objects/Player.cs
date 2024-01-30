@@ -21,6 +21,18 @@ public class Player : BasicAttributes
     /// </summary>
     public float chariotSpeed;
     /// <summary>
+    /// the speed of the dash
+    /// </summary>
+    public float dashSpeed;
+    /// <summary>
+    /// how long the player is dashing
+    /// </summary>
+    public float dashDuration;
+    /// <summary>
+    /// how long the cooldwon for the dash is
+    /// </summary>
+    public float dashCooldown;
+    /// <summary>
     /// what layers the  player can hit
     /// </summary>
     public LayerMask layersToHit;
