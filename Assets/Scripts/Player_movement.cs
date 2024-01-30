@@ -5,6 +5,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEngine.GraphicsBuffer;
+using UnityEngine.SceneManagement;
 
 public class Player_movement : MonoBehaviour
 {
@@ -59,7 +60,7 @@ public class Player_movement : MonoBehaviour
     /// <summary>
     /// Gets the pause menu canvas that was created in the level
     /// </summary>
-    private bool isPaused;
+    public bool isPaused;
     /// <summary>
     /// true if currently paused
     /// </summary>
@@ -111,18 +112,18 @@ public class Player_movement : MonoBehaviour
 
     private void OnPauseMenu(InputValue value)
     {
-        if (isPaused == false)
-        {
+       // if (isPaused == false)
+       // {
             PauseMenu.SetActive(true);
-            isPaused = true;
+          //  isPaused = true;
             Time.timeScale = 0;
-        }
-        else
-        {
-            PauseMenu.SetActive(false);
-            isPaused = false;
-            Time.timeScale = 1;
-        }
+       // }
+        //else
+        //{
+            //PauseMenu.SetActive(false);
+            //isPaused = false;
+            //Time.timeScale = 1;
+        //}
     }
 
 
