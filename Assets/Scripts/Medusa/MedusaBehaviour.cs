@@ -14,12 +14,13 @@ public class MedusaBehaviour : MonoBehaviour
 
     [Header("Poison Attributes")]
     [Tooltip("Amount of shots Medusa fires duting her poison attack.")]
-    public int poisonAmount;
-    public float poisonImpactSize;
+    [SerializeField] private int poisonAmount;
+    [SerializeField] private float poisonImpactSize;
     [Tooltip("Amount of time it takes for a poison shot to impact.")]
     public float poisonFlightTime;
-    public int poisonDamage;
-
+    [SerializeField] private int poisonDamage;
+    [SerializeField] private GameObject poisonProjectile;
+ 
     [Header("Ability Timing Attributes")]
     [Tooltip("How long after performing an action until Medusa can perform another.")]
     [SerializeField] private float actionCooldownTime;
@@ -33,7 +34,7 @@ public class MedusaBehaviour : MonoBehaviour
     public Transform centrePos;
     public Transform topPos;
     [Tooltip("Object defining the area Medusa can use her poison attack within.")]
-    public Transform aimingArea;
+    [SerializeField] private Transform aimingArea;
 
     private GameObject[] players;
     private Animator animator;
@@ -84,10 +85,10 @@ private void Start()
     /// <summary>
     /// Create a hitbox over Medusa at close range to serve as a melee attack.
     /// </summary>
-    public void TriggerAttack(GameObject indicator)
+    public void TriggerDamage(GameObject indicator)
     {
         // Layer 7 is the player layer.
-        Collider2D coll = Physics2D.OverlapCircle(indicator.transform.position, indicator.transform.localScale.x, 1 << 7);
+        Collider2D coll = Physics2D.OverlapCircle(indicator.transform.position, indicator.transform.localScale.x / 2, 1 << 7);
 
         if (coll != null)
         {
@@ -109,19 +110,6 @@ private void Start()
         marker.transform.localScale = new Vector3(size, size, size);
 
         return marker;
-    }
-
-    /// <summary>
-    /// Takes an indicator for a poison shot impact and makes it detonate after a set amount of time.
-    /// </summary>
-    /// <param name="impactPoint">The location of the imapct point.</param>
-    /// <param name="timeTilImpact">The in flight time of the projectile.</param>
-    /// <returns></returns>
-    public IEnumerator TriggerImpacts(GameObject impactPoint, float timeTilImpact)
-    {
-        yield return new WaitForSeconds(timeTilImpact);
-
-        TriggerAttack(impactPoint);
     }
 
     /// <summary>
@@ -159,6 +147,43 @@ private void Start()
             animator.SetBool("Moving", true);
         }
     }
+
+    /// <summary>
+    /// Makes Medusa spray poison shots into the air that land down in random locations across the map.
+    /// </summary>
+    public void PoisonAttack()
+    {
+        for (int i = 0; i < poisonAmount; i++)
+        {
+            // Create the indicator at a calculated point.
+            GameObject impactPoint = SpawnIndicator(CalculateTargetPoint(), poisonImpactSize);
+
+            GameObject projectile = Instantiate(poisonProjectile, transform.position, Quaternion.identity);
+
+            Projectile pb = projectile.GetComponent<Projectile>();
+            pb.indicator = impactPoint.transform;
+            pb.flightTime = poisonFlightTime;
+            pb.mb = this;
+        }
+    }
+
+    // Calculates a single impact unblocked impact point for poison.
+    private Vector2 CalculateTargetPoint()
+    {
+        while (true)
+        {
+            float xOffset = Random.Range(-(aimingArea.localScale.x / 2), aimingArea.localScale.x / 2);
+            float yOffset = Random.Range(-(aimingArea.localScale.y / 2), aimingArea.localScale.y / 2);
+
+            Vector2 targetPoint = new Vector2(xOffset, yOffset);
+
+            if (Physics2D.OverlapCircleAll(targetPoint, poisonImpactSize * 0.5f).Length == 0)
+            {
+                return targetPoint;
+            }
+        }
+    }
+
 
     /// <summary>
     /// Puts Medusa's melee attack on cooldown to stop her from being able to use it again.

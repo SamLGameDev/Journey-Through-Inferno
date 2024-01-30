@@ -1630,6 +1630,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3684730056783915263, guid: 4a6efd9d63ff62e47b860ff0959888fa,
         type: 3}
+      propertyPath: poisonFlightTime
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3684730056783915263, guid: 4a6efd9d63ff62e47b860ff0959888fa,
+        type: 3}
+      propertyPath: poisonProjectile
+      value: 
+      objectReference: {fileID: 7124076208600775416, guid: f9debfcca4079044485e079977166e51,
+        type: 3}
+    - target: {fileID: 3684730056783915263, guid: 4a6efd9d63ff62e47b860ff0959888fa,
+        type: 3}
       propertyPath: meleeAttackDamage
       value: 20
       objectReference: {fileID: 0}
