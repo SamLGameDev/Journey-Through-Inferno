@@ -18,9 +18,16 @@ public class bullet_controller : MonoBehaviour
     private int damageModifier = 0;
     public Player stats;
 
-    private bool isHoming= false;
-    private float homingStrength = 5f;
-    private Transform enemy;
+    public Transform target;
+    public float speed = 5f;
+    public float rotateSpeed = 200f;
+    
+
+
+
+
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -36,9 +43,9 @@ public class bullet_controller : MonoBehaviour
         if (GetComponentInParent<Tarot_cards>().hasMagician)
         { transform.localScale *= 3f; }
 
-        // If the player has the Moon Arcana then their bullets will home in on enemies
-        if (GetComponentInParent<Tarot_cards>().hasMoon)
-        { isHoming = true; }
+      
+
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -50,13 +57,23 @@ public class bullet_controller : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-      
+        if (GetComponentInParent<Tarot_cards>().hasMoon)
+        {
+            Vector2 direction = (Vector2)target.position - rb.position;
+            direction.Normalize();
+
+            float rotateAmount = Vector3.Cross(direction, transform.up).z;
+
+            rb.angularVelocity = -rotateAmount * rotateSpeed;
+
+            rb.velocity = transform.up * speed;
+        }
+
     }
 
-    
+
 
 
 }

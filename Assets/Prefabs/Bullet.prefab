@@ -128,6 +128,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: c53c78a8f908aff40b06667ff5c1036a, type: 2}
+  target: {fileID: 2158162950555503218, guid: 6f54f83e10a239546ad6251645f07e9b, type: 3}
+  speed: 15
+  rotateSpeed: 200
 --- !u!58 &5221023343936830034
 CircleCollider2D:
   m_ObjectHideFlags: 0
