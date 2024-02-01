@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8826022921122756423}
   m_Layer: 8
   m_Name: Medusa
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,11 +31,11 @@ Transform:
   m_GameObject: {fileID: 241013125750778860}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.8946557, y: 4.8946557, z: 4.8946557}
+  m_LocalScale: {x: 3.3804448, y: 3.3804448, z: 3.3804448}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7122952836914844517
 SpriteRenderer:
@@ -77,10 +77,10 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 2747690628134850419, guid: b670ab75dde984907b8570040daa08c5,
     type: 3}
-  m_Color: {r: 0.17387694, g: 0.6886792, b: 0.15202916, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -102,23 +102,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f61a5b7abe834e047a3a3c7241626e5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 15
-  meleeRange: 7.5
-  meleeAttackDamage: 35
-  meleeAttackCooldown: 0
-  poisonAmount: 20
+  movementSpeed: 10
+  meleeRange: 4
+  meleeAttackDamage: 20
+  meleeAttackCooldown: 1.5
+  poisonAmount: 35
   poisonImpactSize: 4
-  poisonFlightTime: 1
+  poisonFlightTime: 1.5
   poisonDamage: 10
-  actionCooldownTime: 3
-  maxTimeAbilityUsage: 0
+  poisonProjectile: {fileID: 7124076208600775416, guid: f9debfcca4079044485e079977166e51,
+    type: 3}
+  poisonImpactSprite: {fileID: 0}
+  petrificationSpeed: 2
+  petrificationTime: 1
+  actionCooldownTime: 0.5
+  maxTimeAbilityUsage: 2
   indicator: {fileID: 5361606418721373797, guid: 269f6212271080c4d8723075c5cba900,
     type: 3}
   centrePos: {fileID: 0}
   topPos: {fileID: 0}
   aimingArea: {fileID: 0}
+  players: []
   medusaPos: 0
   readyToMove: 0
+  attacking: 0
   meleeCooldown: 0
 --- !u!114 &9097793489111844800
 MonoBehaviour:
@@ -135,6 +142,7 @@ MonoBehaviour:
   stats: {fileID: 11400000, guid: 967521d4166627948b50e946f51ce62b, type: 2}
   invunTimeOnHit: 0
   entityCurrentHealth: 0
+  healthBar: {fileID: 0}
 --- !u!95 &3401023965402023177
 Animator:
   serializedVersion: 5
