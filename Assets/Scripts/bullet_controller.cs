@@ -19,6 +19,7 @@ public class bullet_controller : MonoBehaviour
     public Player stats;
 
     public Transform target;
+    public Transform target2;
     public float speed = 5f;
     public float rotateSpeed = 200f;
     
@@ -59,16 +60,30 @@ public class bullet_controller : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // If the player has the Moon Arcana then their bullets will home in on enemies, it's flawed though because it can only target two types of enemies feel free to edit
         if (GetComponentInParent<Tarot_cards>().hasMoon)
         {
-            Vector2 direction = (Vector2)target.position - rb.position;
-            direction.Normalize();
+            if (target != null && target2 != null)
+            {
+                // Calculates direction and normalize for both targets
+                Vector2 direction = (Vector2)target.position - rb.position;
+                direction.Normalize();
 
-            float rotateAmount = Vector3.Cross(direction, transform.up).z;
+                Vector2 direction2 = (Vector2)target2.position - rb.position;
+                direction2.Normalize();
 
-            rb.angularVelocity = -rotateAmount * rotateSpeed;
+                // Calculates rotation amount using cross product for both targets
+                float rotateAmount = Vector3.Cross(direction, transform.up).z;
+                float rotateAmount2 = Vector3.Cross(direction2, transform.up).z;
 
-            rb.velocity = transform.up * speed;
+                // Adjust angular velocity for both targets
+                rb.angularVelocity = -rotateAmount * rotateSpeed;
+                rb.angularVelocity = -rotateAmount2 * rotateSpeed;
+
+                // Sets speed for homing effect
+                rb.velocity = transform.up * speed;
+            }
+           
         }
 
     }

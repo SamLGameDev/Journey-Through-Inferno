@@ -5074,6 +5074,9 @@ MonoBehaviour:
   hasStrength: 0
   hasStar: 0
   hasTemperance: 0
+  hasMagician: 0
+  hasEmperor: 0
+  hasMoon: 0
 --- !u!1 &1590881679
 GameObject:
   m_ObjectHideFlags: 0
@@ -5867,6 +5870,9 @@ MonoBehaviour:
   hasStrength: 0
   hasStar: 0
   hasTemperance: 0
+  hasMagician: 0
+  hasEmperor: 0
+  hasMoon: 0
 --- !u!1 &1688846259
 GameObject:
   m_ObjectHideFlags: 0
