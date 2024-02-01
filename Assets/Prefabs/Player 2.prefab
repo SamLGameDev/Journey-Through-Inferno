@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 4007955020842756716}
   - component: {fileID: 3584560066941170297}
   - component: {fileID: 6244709391738952527}
+  - component: {fileID: 3974176746681490940}
   m_Layer: 7
   m_Name: Player 2
   m_TagString: Player
@@ -376,6 +377,19 @@ MonoBehaviour:
   hasTemperance: 0
   hasMagician: 0
   hasEmperor: 0
+--- !u!114 &3974176746681490940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4024701041087090802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ac3db710668744eab714245562480e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cards: []
 --- !u!1 &5818796914753176210
 GameObject:
   m_ObjectHideFlags: 0

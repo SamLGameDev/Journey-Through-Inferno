@@ -9,7 +9,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(BoxCollider2D))]
 public class EntityHealthBehaviour : MonoBehaviour
 {
-    [SerializeField] private BasicAttributes stats;
+    public BasicAttributes stats;
     [SerializeField] private float invunTimeOnHit;
 
     // This is public so that it can be accessed by UI.
@@ -109,13 +109,14 @@ public class EntityHealthBehaviour : MonoBehaviour
 
         print($"Restored {healAmount} health to {gameObject.name}, current health: {entityCurrentHealth}");
     }
+ 
 
     private void EntityDeath()
     {
         if (gameObject.CompareTag("Enemy"))
         {
             GameManager.instance.OnEnemyDeath();
-
+            
             Destroy(gameObject);
         }
         else if (gameObject.CompareTag("Player"))

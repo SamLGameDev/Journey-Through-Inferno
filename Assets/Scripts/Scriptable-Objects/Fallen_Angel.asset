@@ -13,8 +13,13 @@ MonoBehaviour:
   m_Name: Fallen_Angel
   m_EditorClassIdentifier: 
   damage: 3
-  maxHealth: 15
-  cardDropChance: 0
+  maxHealth: 1
+  cardDropChance: 100
+  droppableCards:
+  - Star
+  - Chariot
+  - Strength
+  - Magician
   chargeCooldown: 5
   meeleRange: 1
   chargeFarAway: 3
