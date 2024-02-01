@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class ButtonCommands : MonoBehaviour
 {
+    public bool getPaused;
+
     // Loads the main menu
     public void MainMenu()
     {
@@ -20,5 +22,11 @@ public class ButtonCommands : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
+        
     }
 }

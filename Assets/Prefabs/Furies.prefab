@@ -109,7 +109,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -151,17 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 261034e7f6a806e4490fa46b90172f18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target:
-    serializedVersion: 2
-    m_Bits: 128
-  shootingRange: 5
-  moveSpeed: 3
-  projectileSpeed: 4
-  projectilePrefab: {fileID: 4435638632648024255, guid: 69425cdf21671244f8a41af8c7240f11,
-    type: 3}
-  startCooldown: 3
-  shotCooldown: 1
-  isThreatened: 0
+  stats: {fileID: 11400000, guid: 8433197bcfafda54195840a75029068e, type: 2}
 --- !u!58 &3054313615865408233
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -177,7 +167,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 1280
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -254,10 +244,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  target: {fileID: 0}
-  player2: {fileID: 0}
+  target: {fileID: 1736434646341859925, guid: 28d04583d0c318648b28ee2c53bdaeab, type: 3}
+  player2: {fileID: 2495953773665164011, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b, type: 3}
   coop: 1
-  player1: {fileID: 0}
+  player1: {fileID: 1736434646341859925, guid: 28d04583d0c318648b28ee2c53bdaeab, type: 3}
 --- !u!114 &-3635221926971355599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,9 +329,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8b84871b0250ba438dbe2b84fadcf82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entityMaxHealth: 50
+  stats: {fileID: 11400000, guid: 8433197bcfafda54195840a75029068e, type: 2}
   invunTimeOnHit: 0
   entityCurrentHealth: 0
+  healthBar: {fileID: 0}
 --- !u!95 &4104389254971394780
 Animator:
   serializedVersion: 5

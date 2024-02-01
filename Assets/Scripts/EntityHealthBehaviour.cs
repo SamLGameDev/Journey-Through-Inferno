@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// Controls the ability for a gameobject to possess health, to heal/take damage or die.
@@ -8,7 +9,7 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class EntityHealthBehaviour : MonoBehaviour
 {
-    [SerializeField] private int entityMaxHealth;
+    [SerializeField] private BasicAttributes stats;
     [SerializeField] private float invunTimeOnHit;
 
     // This is public so that it can be accessed by UI.
@@ -19,9 +20,12 @@ public class EntityHealthBehaviour : MonoBehaviour
     // Time between IFrame flashes.
     private float invunDeltaTime = 0.1f;
 
+    //Gets the healthbar from the canvas, must be dragged in to create reference
+    public Image healthBar;
+
     private void Start()
     {
-        entityCurrentHealth = entityMaxHealth;
+        entityCurrentHealth = stats.maxHealth;
         damageInvulnerable = false;
     }
 
@@ -38,6 +42,7 @@ public class EntityHealthBehaviour : MonoBehaviour
         }
 
         entityCurrentHealth -= damageAmount;
+        healthBar.fillAmount = entityCurrentHealth / 15f;
 
         print($"{gameObject.name} took {damageAmount} damage, current health: {entityCurrentHealth}");
 
@@ -52,6 +57,8 @@ public class EntityHealthBehaviour : MonoBehaviour
         {
             StartCoroutine(InvulnerabilityTickDown());
         }
+
+        
     }
 
     /// <summary>
@@ -91,9 +98,9 @@ public class EntityHealthBehaviour : MonoBehaviour
         // We check to see if the heal would exceed the players max health,
         // If it does, heal them to full health, else just heal the amount.
 
-        if ((entityCurrentHealth += healAmount) > entityMaxHealth)
+        if ((entityCurrentHealth += healAmount) > stats.maxHealth)
         {
-            entityCurrentHealth = entityMaxHealth;
+            entityCurrentHealth = stats.maxHealth;
         }
         else
         {
