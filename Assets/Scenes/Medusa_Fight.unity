@@ -1598,11 +1598,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Medusa
       objectReference: {fileID: 0}
-    - target: {fileID: 241013125750778860, guid: 4a6efd9d63ff62e47b860ff0959888fa,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
     - target: {fileID: 3684730056783915263, guid: 4a6efd9d63ff62e47b860ff0959888fa,
         type: 3}
       propertyPath: topPos
@@ -1618,111 +1613,10 @@ PrefabInstance:
       propertyPath: aimingArea
       value: 
       objectReference: {fileID: 134414694}
-    - target: {fileID: 3684730056783915263, guid: 4a6efd9d63ff62e47b860ff0959888fa,
-        type: 3}
-      propertyPath: meleeRange
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3684730056783915263, guid: 4a6efd9d63ff62e47b860ff0959888fa,
-        type: 3}
-      propertyPath: poisonAmount
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 3684730056783915263, guid: 4a6efd9d63ff62e47b860ff0959888fa,
-        type: 3}
-      propertyPath: movementSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3684730056783915263, guid: 4a6efd9d63ff62e47b860ff0959888fa,
-        type: 3}
-      propertyPath: poisonFlightTime
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3684730056783915263, guid: 4a6efd9d63ff62e47b860ff0959888fa,
-        type: 3}
-      propertyPath: poisonProjectile
-      value: 
-      objectReference: {fileID: 7124076208600775416, guid: f9debfcca4079044485e079977166e51,
-        type: 3}
-    - target: {fileID: 3684730056783915263, guid: 4a6efd9d63ff62e47b860ff0959888fa,
-        type: 3}
-      propertyPath: meleeAttackDamage
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 3684730056783915263, guid: 4a6efd9d63ff62e47b860ff0959888fa,
-        type: 3}
-      propertyPath: petrificationTime
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3684730056783915263, guid: 4a6efd9d63ff62e47b860ff0959888fa,
-        type: 3}
-      propertyPath: actionCooldownTime
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3684730056783915263, guid: 4a6efd9d63ff62e47b860ff0959888fa,
-        type: 3}
-      propertyPath: maxTimeAbilityUsage
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3684730056783915263, guid: 4a6efd9d63ff62e47b860ff0959888fa,
-        type: 3}
-      propertyPath: meleeAttackCooldown
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3684730056783915263, guid: 4a6efd9d63ff62e47b860ff0959888fa,
-        type: 3}
-      propertyPath: minTimeAbilityUsage
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3684730056783915263, guid: 4a6efd9d63ff62e47b860ff0959888fa,
-        type: 3}
-      propertyPath: maxTimeBetweenPosChange
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3684730056783915263, guid: 4a6efd9d63ff62e47b860ff0959888fa,
-        type: 3}
-      propertyPath: minTimeBetweenPosChange
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7122952836914844517, guid: 4a6efd9d63ff62e47b860ff0959888fa,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7122952836914844517, guid: 4a6efd9d63ff62e47b860ff0959888fa,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7122952836914844517, guid: 4a6efd9d63ff62e47b860ff0959888fa,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7122952836914844517, guid: 4a6efd9d63ff62e47b860ff0959888fa,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 8531231575022713048, guid: 4a6efd9d63ff62e47b860ff0959888fa,
         type: 3}
       propertyPath: m_RootOrder
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8531231575022713048, guid: 4a6efd9d63ff62e47b860ff0959888fa,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3.3804448
-      objectReference: {fileID: 0}
-    - target: {fileID: 8531231575022713048, guid: 4a6efd9d63ff62e47b860ff0959888fa,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3.3804448
-      objectReference: {fileID: 0}
-    - target: {fileID: 8531231575022713048, guid: 4a6efd9d63ff62e47b860ff0959888fa,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 3.3804448
       objectReference: {fileID: 0}
     - target: {fileID: 8531231575022713048, guid: 4a6efd9d63ff62e47b860ff0959888fa,
         type: 3}
@@ -3633,9 +3527,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8b84871b0250ba438dbe2b84fadcf82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entityMaxHealth: 100
+  stats: {fileID: 0}
   invunTimeOnHit: 0
   entityCurrentHealth: 0
+  healthBar: {fileID: 0}
 --- !u!61 &1519157040
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3693,15 +3588,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22684f22776a946479069cd07ce4c6d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
-  speed: 5
-  GunTargets:
-    serializedVersion: 2
-    m_Bits: 768
+  dashTrail: {fileID: 0}
   facing: -1
   upDown: 1
   running: 0
   PauseMenu: {fileID: 0}
+  isPaused: 0
+  stats: {fileID: 0}
+  sword: {fileID: 0}
 --- !u!114 &1519157042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3719,6 +3613,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   sword_Speed: 500
+  stats: {fileID: 0}
+  pStats: {fileID: 0}
 --- !u!95 &1519157043
 Animator:
   serializedVersion: 5
@@ -3965,15 +3861,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22684f22776a946479069cd07ce4c6d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
-  speed: 5
-  GunTargets:
-    serializedVersion: 2
-    m_Bits: 768
+  dashTrail: {fileID: 0}
   facing: -1
   upDown: 1
   running: 0
   PauseMenu: {fileID: 0}
+  isPaused: 0
+  stats: {fileID: 0}
+  sword: {fileID: 0}
 --- !u!114 &1677023833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4086,9 +3981,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8b84871b0250ba438dbe2b84fadcf82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entityMaxHealth: 100
+  stats: {fileID: 0}
   invunTimeOnHit: 0
   entityCurrentHealth: 0
+  healthBar: {fileID: 0}
 --- !u!61 &1677023837
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4151,6 +4047,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   sword_Speed: 500
+  stats: {fileID: 0}
+  pStats: {fileID: 0}
 --- !u!95 &1677023839
 Animator:
   serializedVersion: 5
