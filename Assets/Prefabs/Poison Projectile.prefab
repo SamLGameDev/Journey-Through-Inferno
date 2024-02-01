@@ -97,6 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0692ca3d824bd4d4081ddd2cb22206eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPos: {x: 0, y: 0, z: 0}
-  speed: 10
+  mb: {fileID: 0}
+  indicator: {fileID: 0}
   arcHeight: 1
+  flightTime: 0
+  impactMark: {fileID: 1175483414, guid: 1ae52ed6091997340b7398462739024e, type: 3}

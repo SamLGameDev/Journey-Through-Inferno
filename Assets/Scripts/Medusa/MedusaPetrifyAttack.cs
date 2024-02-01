@@ -15,7 +15,7 @@ public class MedusaPetrifyAttack : StateMachineBehaviour
         {
             PetrificationAttack script = player.AddComponent<PetrificationAttack>();
             script.medusa = animator.gameObject.transform;
-            script.petrifyTime = mb.petrificationTime;
+            script.petrifyTime = mb.petrificationSpeed;
         }
     }
 

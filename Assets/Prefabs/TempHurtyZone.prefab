@@ -100,5 +100,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   warningColor: {r: 1, g: 0.09307529, b: 0, a: 0.4117647}
   detonateColor: {r: 0, g: 1, b: 0.27759147, a: 1}
-  holdTime: 0.3
+  holdTime: 0.6
   fadeTime: 0.6

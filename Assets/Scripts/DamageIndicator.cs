@@ -72,6 +72,7 @@ public class DamageIndicator : MonoBehaviour
     /// <param name="impactMark">Sprite of the impact mark.</param>
     public void TriggerDetonate(Sprite impactMark)
     {
+        sr.color = Color.white;
         sr.sprite = impactMark;
 
         fadeOut = true;

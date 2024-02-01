@@ -10,9 +10,10 @@ public class PetrificationAttack : MonoBehaviour
     [HideInInspector]
     public Transform medusa;
 
-    private float petrifyProgress;
+    public float petrifyProgress;
 
-    private bool petrified;
+    [HideInInspector]
+    public bool petrified;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,11 @@ public class PetrificationAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!medusa.GetComponent<MedusaBehaviour>().attacking)
+        {
+            return;
+        }
+
         if (petrified)
         {
             return;
@@ -36,9 +42,21 @@ public class PetrificationAttack : MonoBehaviour
 
             if (petrifyProgress >= petrifyTime)
             {
-                print("freeze!");
+                petrified = true;
+
                 // Trigger petrify. 
+                GetComponent<Player_movement>().enabled = false;
+                GetComponent<SpriteRenderer>().color = Color.gray;
+                GetComponent<Animator>().speed = 0f;
+
+                // Start a countdown to unpetrify the player.
+                MedusaBehaviour mb = medusa.GetComponent<MedusaBehaviour>();
+                mb.StartCoroutine(mb.Unfreeze(gameObject, this));
+
+                petrifyProgress = 0;
             }
         }
     }
+
+
 }

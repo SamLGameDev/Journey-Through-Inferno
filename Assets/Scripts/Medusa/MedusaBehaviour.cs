@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class MedusaBehaviour : MonoBehaviour
@@ -24,9 +25,9 @@ public class MedusaBehaviour : MonoBehaviour
 
     [Header("Petrification Attributes")]
     [Tooltip("Time someone must stay in LOS to become petrified.")]
-    public float petrificationTime;
+    public float petrificationSpeed;
+    [SerializeField] private float petrificationTime;
 
- 
     [Header("Ability Timing Attributes")]
     [Tooltip("How long after performing an action until Medusa can perform another.")]
     [SerializeField] private float actionCooldownTime;
@@ -52,12 +53,12 @@ public class MedusaBehaviour : MonoBehaviour
     public CurrentPosition medusaPos;
 
     [HideInInspector]
-    public bool readyToMove;
+    public bool readyToMove, attacking;
 
     //[HideInInspector]
     public bool meleeCooldown;
 
-private void Start()
+    private void Start()
     {
         animator = GetComponent<Animator>();
         players = GameObject.FindGameObjectsWithTag("Player");
@@ -200,6 +201,12 @@ private void Start()
         }
     }
 
+    // Used by the petrification animation event so petrification starts at the right time.
+    private void SetAttackingTrue()
+    {
+        attacking = true;
+    }
+
 
     /// <summary>
     /// Puts Medusa's melee attack on cooldown to stop her from being able to use it again.
@@ -210,5 +217,23 @@ private void Start()
         yield return new WaitForSeconds(meleeAttackCooldown);
 
         meleeCooldown = false;
+    }
+
+    /// <summary>
+    /// Un-petrifies a player after a set amount of time.
+    /// </summary>
+    /// <returns></returns>
+    public IEnumerator Unfreeze(GameObject player, PetrificationAttack script)
+    {
+        print("aaa");
+        yield return new WaitForSeconds(petrificationTime);
+
+        player.GetComponent<Player_movement>().enabled = true;
+        player.GetComponent<SpriteRenderer>().color = Color.white;
+        player.GetComponent<Animator>().speed = 1f;
+
+        script.petrified = false;
+
+        print("bbb");
     }
 }
