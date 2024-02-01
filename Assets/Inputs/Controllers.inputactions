@@ -84,7 +84,7 @@
                 {
                     "name": "up",
                     "id": "6a699442-4cac-4e6f-947f-75a6bc237c1a",
-                    "path": "<XInputController>/leftStick/up",
+                    "path": "<Gamepad>/leftStick/up",
                     "interactions": "",
                     "processors": "",
                     "groups": "Xbox control scheme",
@@ -95,7 +95,7 @@
                 {
                     "name": "down",
                     "id": "128e4fc7-5973-42c2-8067-ff7114cd8f93",
-                    "path": "<XInputController>/leftStick/down",
+                    "path": "<Gamepad>/leftStick/down",
                     "interactions": "",
                     "processors": "",
                     "groups": "Xbox control scheme",
@@ -106,7 +106,7 @@
                 {
                     "name": "left",
                     "id": "cf61e038-173d-47dd-991c-2cb2bc8fba3f",
-                    "path": "<XInputController>/leftStick/left",
+                    "path": "<Gamepad>/leftStick/left",
                     "interactions": "",
                     "processors": "",
                     "groups": "Xbox control scheme",
@@ -117,7 +117,7 @@
                 {
                     "name": "right",
                     "id": "f6608588-bbe8-4081-8d7f-bebc320fee36",
-                    "path": "<XInputController>/leftStick/right",
+                    "path": "<Gamepad>/leftStick/right",
                     "interactions": "",
                     "processors": "",
                     "groups": "Xbox control scheme",
