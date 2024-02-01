@@ -38,13 +38,27 @@ public class bullet_controller : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
+            List<string> enemyStats = collision.GetComponent<EntityHealthBehaviour>().stats.droppableCards;
+            float dropchance = collision.GetComponent<EntityHealthBehaviour>().stats.cardDropChance; ;
             collision.GetComponent<EntityHealthBehaviour>().ApplyDamage(stats.bulletDamage + damageModifier);
+            if (collision.GetComponent<EntityHealthBehaviour>().entityCurrentHealth <= 0)
+            {
+                SpawnCard(enemyStats, dropchance);
+            }
             Destroy(this);
         }
     }
+    private void SpawnCard(List<string> possibleCards, float dropChance)
+    {
+        if (Random.Range(0.0001f, 101) < dropChance)
+        {
 
-    // Update is called once per frame
-    void Update()
+            string card = possibleCards[Random.Range(0, possibleCards.Count)];
+            GetComponentInParent<TarotCardSelector>().cards.Add(card);
+        }
+    }
+        // Update is called once per frame
+        void Update()
     {
 
     }

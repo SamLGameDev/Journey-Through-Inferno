@@ -17,6 +17,7 @@ public class BasicAttributes : ScriptableObject
     /// </summary>
     public float cardDropChance;
     /// <summary>
-    /// the charge cooldown time before it can charge again
+    /// the tarot cards it can drop
     /// </summary>
+    public List<string> droppableCards;
 }

@@ -17,11 +17,33 @@ public class Sword_Damage : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
-    { 
+    {
         // applies damage to the enemies
-         if (collision.CompareTag("Enemy")) collision.GetComponent<EntityHealthBehaviour>().ApplyDamage(stats.swordDamage + damageModifier);
-    }
+        if (collision.CompareTag("Enemy")) 
+        {
+            List<string> enemyStats = collision.GetComponent<EntityHealthBehaviour>().stats.droppableCards;
+            float dropchance = collision.GetComponent<EntityHealthBehaviour>().stats.cardDropChance;
+            collision.GetComponent<EntityHealthBehaviour>().ApplyDamage(stats.swordDamage + damageModifier);
+            if (collision.GetComponent<EntityHealthBehaviour>().entityCurrentHealth <= 0)
+            {
+                SpawnCard(enemyStats, dropchance);
+            }
 
+            
+
+            
+        }
+    }
+    private void SpawnCard(List<string> possibleCards, float dropChance)
+    {
+        if (Random.Range(0.0001f, 101) < dropChance)
+        {
+
+            string card = possibleCards[Random.Range(0, possibleCards.Count)];
+            GetComponentInParent<TarotCardSelector>().cards.Add(card);
+        }
+
+    }
     // Update is called once per frame
     void Update()
     {
