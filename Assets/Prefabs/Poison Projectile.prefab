@@ -99,6 +99,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mb: {fileID: 0}
   indicator: {fileID: 0}
-  arcHeight: 1
+  arcHeight: 15
   flightTime: 0
   impactMark: {fileID: 1175483414, guid: 1ae52ed6091997340b7398462739024e, type: 3}
