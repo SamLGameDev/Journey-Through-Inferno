@@ -18,6 +18,10 @@ public class bullet_controller : MonoBehaviour
     private int damageModifier = 0;
     public Player stats;
 
+    private bool isHoming= false;
+    private float homingStrength = 5f;
+    private Transform enemy;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,8 +34,11 @@ public class bullet_controller : MonoBehaviour
 
         // If the player has the Magician Arcana then the size of their bullets will be increased
         if (GetComponentInParent<Tarot_cards>().hasMagician)
-        { transform.localScale *= 3f; }       
+        { transform.localScale *= 3f; }
 
+        // If the player has the Moon Arcana then their bullets will home in on enemies
+        if (GetComponentInParent<Tarot_cards>().hasMoon)
+        { isHoming = true; }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -46,6 +53,10 @@ public class bullet_controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+      
     }
+
+    
+
+
 }
