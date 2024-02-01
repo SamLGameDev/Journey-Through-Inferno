@@ -16,6 +16,8 @@ public class Projectile : MonoBehaviour
 
     public float flightTime;
 
+    [SerializeField] private Sprite impactMark;
+
     Vector3 startPos;
 
     float passedTime;
@@ -52,7 +54,7 @@ public class Projectile : MonoBehaviour
 
     void Arrived()
     {
-        mb.TriggerDamage(indicator.transform.gameObject);
+        mb.TriggerDamage(indicator.transform.gameObject, impactMark);
         Destroy(gameObject);
     }
 

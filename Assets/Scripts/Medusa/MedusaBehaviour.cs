@@ -18,14 +18,14 @@ public class MedusaBehaviour : MonoBehaviour
     [SerializeField] private float poisonImpactSize;
     [Tooltip("Amount of time it takes for a poison shot to impact.")]
     public float poisonFlightTime;
-    public int poisonDamage;
+    [SerializeField] private int poisonDamage;
+    [SerializeField] private GameObject poisonProjectile;
+    [SerializeField] private Sprite poisonImpactSprite;
 
     [Header("Petrification Attributes")]
     [Tooltip("Time someone must stay in LOS to become petrified.")]
     public float petrificationTime;
 
-    [SerializeField] private int poisonDamage;
-    [SerializeField] private GameObject poisonProjectile;
  
     [Header("Ability Timing Attributes")]
     [Tooltip("How long after performing an action until Medusa can perform another.")]
@@ -92,7 +92,9 @@ private void Start()
     /// <summary>
     /// Create a hitbox over Medusa at close range to serve as a melee attack.
     /// </summary>
-    public void TriggerDamage(GameObject indicator)
+    /// <param name="indicator">Warning indicator that will mark where damage will be applied.</param>
+    /// <param name="impactMark">An impact sprite for when the ability strikes.</param>
+    public void TriggerDamage(GameObject indicator, Sprite impactMark)
     {
         // Layer 7 is the player layer.
         Collider2D coll = Physics2D.OverlapCircle(indicator.transform.position, indicator.transform.localScale.x / 2, 1 << 7);
@@ -102,7 +104,14 @@ private void Start()
             coll.GetComponent<EntityHealthBehaviour>().ApplyDamage(meleeAttackDamage);
         }
 
-        indicator.GetComponent<DamageIndicator>().TriggerDetonate();
+        if (impactMark == null) 
+        {
+            indicator.GetComponent<DamageIndicator>().TriggerDetonate();
+        }
+        else
+        {
+            indicator.GetComponent<DamageIndicator>().TriggerDetonate(impactMark);
+        }
     }
 
     /// <summary>
