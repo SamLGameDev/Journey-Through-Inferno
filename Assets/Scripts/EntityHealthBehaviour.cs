@@ -23,10 +23,14 @@ public class EntityHealthBehaviour : MonoBehaviour
     //Gets the healthbar from the canvas, must be dragged in to create reference
     public Image healthBar;
 
+    //A boolean for, surprisingly, if theyre alive
+    public bool IsAlive;
+
     private void Start()
     {
         entityCurrentHealth = stats.maxHealth;
         damageInvulnerable = false;
+        IsAlive = true;
     }
 
     /// <summary>
@@ -116,12 +120,14 @@ public class EntityHealthBehaviour : MonoBehaviour
         if (gameObject.CompareTag("Enemy"))
         {
             GameManager.instance.OnEnemyDeath();
+            IsAlive = false;
             
             Destroy(gameObject);
         }
         else if (gameObject.CompareTag("Player"))
         {
             GameManager.instance.OnPlayerDeath();
+            IsAlive=false;
             Destroy(gameObject);
         }
     }
