@@ -16773,6 +16773,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5262642640742413803, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
+        type: 3}
+      propertyPath: PauseMenu
+      value: 
+      objectReference: {fileID: 727613249}
     - target: {fileID: 5776273053023467762, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
         type: 3}
       propertyPath: m_DefaultControlScheme
@@ -16867,6 +16872,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1290067501 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4024701041087090802, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1262719135}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1296091478
 GameObject:
   m_ObjectHideFlags: 0
@@ -18128,7 +18139,7 @@ MonoBehaviour:
   Player2Health: {fileID: 1486478143}
   PlayerUI: {fileID: 1384521131}
   Player1HealthBehaviour: {fileID: 1593183990}
-  Player2HealthBehaviour: {fileID: 2104678421}
+  Player2HealthBehaviour: {fileID: 1290067501}
 --- !u!1 &1385850313
 GameObject:
   m_ObjectHideFlags: 0
@@ -19809,6 +19820,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2621943557696908633, guid: 28d04583d0c318648b28ee2c53bdaeab,
+        type: 3}
+      propertyPath: PauseMenu
+      value: 
+      objectReference: {fileID: 727613249}
     - target: {fileID: 6075803444259581383, guid: 28d04583d0c318648b28ee2c53bdaeab,
         type: 3}
       propertyPath: m_DefaultControlScheme

@@ -25,7 +25,7 @@ public class GameOverManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((Player1HealthManager.IsAlive == false) && (Player1HealthManager.IsAlive == false))
+        if ((Player1HealthManager.IsAlive == false) && (Player2HealthManager.IsAlive == false))
         {
             SceneManager.LoadScene("LevelFailed");
         }
