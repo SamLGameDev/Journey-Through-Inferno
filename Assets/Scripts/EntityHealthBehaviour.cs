@@ -46,7 +46,12 @@ public class EntityHealthBehaviour : MonoBehaviour
         }
 
         entityCurrentHealth -= damageAmount;
-        healthBar.fillAmount = entityCurrentHealth / 15f;
+
+        if (gameObject.tag == "Player")
+        {
+            healthBar.fillAmount = entityCurrentHealth / 15f;
+        }
+        
 
         print($"{gameObject.name} took {damageAmount} damage, current health: {entityCurrentHealth}");
 
