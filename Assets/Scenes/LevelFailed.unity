@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 666339866}
   - component: {fileID: 666339865}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Main Menu Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -206,7 +206,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 666339866}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1926558404}
+        m_TargetAssemblyTypeName: ButtonCommands, Assembly-CSharp
+        m_MethodName: MainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &666339866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -522,7 +534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 666339863}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1276510364
@@ -575,8 +587,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0.639, y: 5.7511}
+  m_SizeDelta: {x: 99.8554, y: 114.7701}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1436229928
 MonoBehaviour:
@@ -763,6 +775,7 @@ GameObject:
   - component: {fileID: 1926558402}
   - component: {fileID: 1926558401}
   - component: {fileID: 1926558400}
+  - component: {fileID: 1926558404}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -856,3 +869,16 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1926558404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926558399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0f0a5e1ac1abad448edc445690f9bac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  getPaused: 0
