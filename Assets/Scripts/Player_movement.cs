@@ -67,9 +67,17 @@ public class Player_movement : MonoBehaviour
     /// </summary>
     bool passed = false; // need this so we dont waste resources starting the coroutine again
     /// <summary>
-    /// change to the cooldown time for if the player has a tarot card
+    /// change to the cooldown time for tarot card effects
     /// </summary>
-    private float cooldownModifier = 0;
+    private float cooldownModifier;
+    /// <summary>
+    /// time between invisibility bursts
+    /// </summary>
+    private bool invis_cooldown;
+    /// <summary>
+    /// if the player is invisible to enemies
+    /// </summary>
+    public bool isInvisible;
 
 
 
@@ -86,6 +94,7 @@ public class Player_movement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         ani = GetComponent<Animator>();
         StartCoroutine(dash());
+        
         // decreases the gun cooldown time if player has the temperance card
         if (GetComponent<Tarot_cards>().hasTemperance) { cooldownModifier = stats.gunCooldownModifier; }
         else { cooldownModifier = 0; }
@@ -97,9 +106,15 @@ public class Player_movement : MonoBehaviour
 
         // If the player has the Emperor Arcana then their max health will be increased
         if (GetComponentInParent<Tarot_cards>().hasEmperor)
-        { stats.maxHealth = 25; }   
-        
-        
+        { stats.maxHealth = 25; }
+
+        // If the player has the High Priestess Arcana then the timer for the invisibility bursts will start
+        if (GetComponentInParent<Tarot_cards>().hasHighPriestess)
+        { ; }
+        else
+        { invis_cooldown = false; }
+
+
 
 
     }
@@ -282,6 +297,7 @@ public class Player_movement : MonoBehaviour
             yield return new WaitWhile(() => gun_cooldown);
         }
     }
+    
     private IEnumerator dash()
     {
         while (true)
@@ -321,6 +337,11 @@ public class Player_movement : MonoBehaviour
         {
             gun_cooldown = false;
             Player_Shooting();
+        }
+        if (actions.FindAction("TriggerBuff").IsPressed() && invis_cooldown && !isInvisible)
+        {
+            invis_cooldown = false;
+            
         }
         if (VelocityCheck)
         {
