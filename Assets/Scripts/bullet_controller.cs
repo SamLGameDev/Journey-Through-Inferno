@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class bullet_controller : MonoBehaviour
 {
@@ -17,6 +18,11 @@ public class bullet_controller : MonoBehaviour
     /// </summary>
     private int damageModifier = 0;
     public Player stats;
+
+    public Transform target;
+    public Transform target2;
+    public float speed;
+    public float rotateSpeed = 200f;
 
     // Start is called before the first frame update
     void Start()
@@ -57,9 +63,34 @@ public class bullet_controller : MonoBehaviour
             GetComponentInParent<TarotCardSelector>().cards.Add(card);
         }
     }
-        // Update is called once per frame
-        void Update()
+    private void FixedUpdate()
+
     {
+        // If the player has the Moon Arcana then their bullets will home in on enemies, it's flawed though because it can only target two types of enemies feel free to edit
+        if (GetComponentInParent<Tarot_cards>().hasMoon)
+        {
+            if (target != null && target2 != null)
+            {
+                // Calculates direction and normalize for both targets
+                Vector2 direction = (Vector2)target.position - rb.position;
+                direction.Normalize();
+
+                Vector2 direction2 = (Vector2)target2.position - rb.position;
+                direction2.Normalize();
+
+                // Calculates rotation amount using cross product for both targets
+                float rotateAmount = Vector3.Cross(direction, transform.up).z;
+                float rotateAmount2 = Vector3.Cross(direction2, transform.up).z;
+
+                // Adjust angular velocity for both targets
+                rb.angularVelocity = -rotateAmount * rotateSpeed;
+                rb.angularVelocity = -rotateAmount2 * rotateSpeed;
+
+                // Sets speed for homing effect
+                rb.velocity = transform.up * speed;
+            }
+
+        }
 
     }
 }
