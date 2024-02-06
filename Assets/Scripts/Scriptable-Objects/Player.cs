@@ -33,6 +33,14 @@ public class Player : BasicAttributes
     /// </summary>
     public float dashCooldown;
     /// <summary>
+    /// the cooldown between invisibility bursts
+    /// </summary>
+    public float invisibilityCooldown;
+    /// <summary>
+    /// the length of an invisibility burst
+    /// </summary>
+    public float invisibilityDuration;
+    /// <summary>
     /// what layers the  player can hit
     /// </summary>
     public LayerMask layersToHit;

@@ -24,23 +24,33 @@ public class Enemy_Pathfinding : MonoBehaviour
         if (coop)
 
         {
-            // calculates the sqr magnitude of the distance between the the enemy and the two players and compares them.
-            Vector2 pos1 = player1.transform.position - transform.position;
-            Vector2 pos2 = player2.transform.position - transform.position;
-
-            if (pos1.sqrMagnitude < pos2.sqrMagnitude)
+            if (player1.GetComponent<Player_movement>().isInvisible)
+            {
+                target = player2.transform.position;
+            }
+            else if (player2.GetComponent<Player_movement>().isInvisible)
             {
                 target = player1.transform.position;
             }
             else
-
-
             {
-                target = player2.transform.position;
+                // calculates the sqr magnitude of the distance between the the enemy and the two players and compares them.
+                Vector2 pos1 = player1.transform.position - transform.position;
+                Vector2 pos2 = player2.transform.position - transform.position;
+
+                if (pos1.sqrMagnitude < pos2.sqrMagnitude)
+                {
+                    target = player1.transform.position;
+                }
+                else
+
+
+                {
+                    target = player2.transform.position;
+
+                }
 
             }
-
-
         }
         else
 

@@ -7,13 +7,14 @@ public class Tarot_cards : MonoBehaviour
     /// <summary>
     /// booleans for whether the player has each different tarot card
     /// </summary>
-    public bool hasChariot = false;
-    public bool hasStrength = false;
-    public bool hasStar = false;
-    public bool hasTemperance = false;
-    public bool hasMagician = false;
-    public bool hasEmperor = false;
-    public bool hasMoon = false;
+    public bool hasChariot = false; // faster movement
+    public bool hasStrength = false; // high melee damage
+    public bool hasStar = false; // higher ranged damage
+    public bool hasTemperance = false; // lower cooldown time
+    public bool hasMagician = false; // increased projectile size
+    public bool hasEmperor = false; // increased max health
+    public bool hasMoon = false; // homing projectiles
+    public bool hasHighPriestess = false; // shoot bursts of invisibility
     
     // Start is called before the first frame update
     void Start()
