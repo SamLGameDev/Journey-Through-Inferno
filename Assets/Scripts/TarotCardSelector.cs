@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TarotCardSelector : MonoBehaviour
 {
-    public List<string> cards;
+    public List<TarotCards> cards;
     // Start is called before the first frame update
     void Start()
     {

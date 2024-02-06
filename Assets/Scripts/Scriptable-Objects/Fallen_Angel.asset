@@ -16,10 +16,7 @@ MonoBehaviour:
   maxHealth: 1
   cardDropChance: 100
   droppableCards:
-  - Star
-  - Chariot
-  - Strength
-  - Magician
+  - {fileID: 11400000, guid: b41df299a53ffa24c93eb59bc29a84a9, type: 2}
   chargeCooldown: 5
   meeleRange: 1
   chargeFarAway: 3
