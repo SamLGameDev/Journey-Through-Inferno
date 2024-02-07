@@ -35,9 +35,11 @@ public class CardSpawner : MonoBehaviour
     }
 
 
-    public void HasClickedButton()
+    public void HasClickedButton(TarotCards card, GameObject p)
     {
+        
         cardChosen = true;
+
     }
     private void Update()
     {
@@ -64,10 +66,8 @@ public class CardSpawner : MonoBehaviour
             {
                 cardChosen = false;
                 _playerCards = p.GetComponent<TarotCardSelector>().cards;
-                Debug.Log("here2");
                 if (_playerCards.Count == 0)
                 {
-                    Debug.Log("here");
                     continue;
                 }
                 cardAmount = _playerCards.Count > 4 ? 4 : _playerCards.Count;
@@ -110,7 +110,7 @@ public class CardSpawner : MonoBehaviour
                     {
                         newCard = Instantiate(cardPrefab, gameObject.transform);
                         newCard.GetComponent<Image>().sprite = _playerCards[arrayIndex].cardImage;
-                        newCard.GetComponent<Button>().onClick.AddListener(HasClickedButton);
+                        newCard.GetComponent<Button>().onClick.AddListener(() => { HasClickedButton(_playerCards[arrayIndex], p); });
                         newCard.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
                         // We increment here because we are artificially completing a 'pair' with only one card already.
                         i++;
@@ -124,7 +124,7 @@ public class CardSpawner : MonoBehaviour
                         Debug.Log(i);
                         newCard = Instantiate(cardPrefab, gameObject.transform);
                         newCard.GetComponent<Image>().sprite = _playerCards[arrayIndex].cardImage;
-                        newCard.GetComponent<Button>().onClick.AddListener(HasClickedButton);
+                        newCard.GetComponent<Button>().onClick.AddListener(() => { HasClickedButton(_playerCards[arrayIndex], p); });
                         // Each card is set to either be the correct distance on the left or the right respectively using i.
                         if (leftIndex)
                         {
