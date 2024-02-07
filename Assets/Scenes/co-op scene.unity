@@ -1856,7 +1856,7 @@ PrefabInstance:
     - target: {fileID: 2158162950555503218, guid: 6f54f83e10a239546ad6251645f07e9b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.989423
+      value: 5.99
       objectReference: {fileID: 0}
     - target: {fileID: 2158162950555503218, guid: 6f54f83e10a239546ad6251645f07e9b,
         type: 3}
@@ -8809,7 +8809,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &481472222
 Transform:
   m_ObjectHideFlags: 0
@@ -10902,7 +10902,7 @@ PrefabInstance:
     - target: {fileID: 2158162950555503218, guid: 6f54f83e10a239546ad6251645f07e9b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.9434233
+      value: 5.48
       objectReference: {fileID: 0}
     - target: {fileID: 2158162950555503218, guid: 6f54f83e10a239546ad6251645f07e9b,
         type: 3}
@@ -12984,6 +12984,11 @@ MonoBehaviour:
   cardSpacing: 80
   cardPrefab: {fileID: 6208903582967637812, guid: b4ecf8dcb6560744fa43ec313c3a45e7,
     type: 3}
+  players:
+  - {fileID: 1593183990}
+  - {fileID: 1290067501}
+  encounterCleared: 0
+  gameManager: {fileID: 1336663984}
 --- !u!1 &962652732
 GameObject:
   m_ObjectHideFlags: 0
@@ -17162,12 +17167,12 @@ PrefabInstance:
     - target: {fileID: 2495953773665164011, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.1099997
+      value: -4.4
       objectReference: {fileID: 0}
     - target: {fileID: 2495953773665164011, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.120001
+      value: -21.9
       objectReference: {fileID: 0}
     - target: {fileID: 2495953773665164011, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
         type: 3}
@@ -17233,6 +17238,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8921179218869034630, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.0000501
+      objectReference: {fileID: 0}
+    - target: {fileID: 8921179218869034630, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.000024974346
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17928,6 +17943,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db465e459a368944b8e1f0349650dc97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemiesRemaining: 0
+  spawner: {fileID: 953507368}
 --- !u!4 &1336663985
 Transform:
   m_ObjectHideFlags: 0
@@ -18029,7 +18046,7 @@ MonoBehaviour:
     seed: 0
     pivotPointRoot: {fileID: 0}
     spreadOutCount: 1
-  showGraphs: 1
+  showGraphs: 0
 --- !u!1 &1343852045
 GameObject:
   m_ObjectHideFlags: 0
@@ -20652,9 +20669,25 @@ PrefabInstance:
       objectReference: {fileID: 727613249}
     - target: {fileID: 6075803444259581383, guid: 28d04583d0c318648b28ee2c53bdaeab,
         type: 3}
+      propertyPath: m_DefaultActionMap
+      value: xbox controller
+      objectReference: {fileID: 0}
+    - target: {fileID: 6075803444259581383, guid: 28d04583d0c318648b28ee2c53bdaeab,
+        type: 3}
       propertyPath: m_DefaultControlScheme
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8256488800317661993, guid: 28d04583d0c318648b28ee2c53bdaeab,
+        type: 3}
+      propertyPath: cards.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8256488800317661993, guid: 28d04583d0c318648b28ee2c53bdaeab,
+        type: 3}
+      propertyPath: cards.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: b41df299a53ffa24c93eb59bc29a84a9,
+        type: 2}
     - target: {fileID: 8680525075647752170, guid: 28d04583d0c318648b28ee2c53bdaeab,
         type: 3}
       propertyPath: m_SortingOrder
@@ -26636,8 +26669,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2098965592}
   - component: {fileID: 2098965591}
+  - component: {fileID: 2098965593}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Encounter Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26675,7 +26709,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 4.98608, y: -4.7020874}
+  m_Offset: {x: 4.98608, y: 1.6245699}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -26686,7 +26720,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 64.634476, y: 56.888733}
+  m_Size: {x: 64.634476, y: 44.23542}
   m_EdgeRadius: 0
 --- !u!4 &2098965592
 Transform:
@@ -26703,6 +26737,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2098965593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2098965590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b161e4056aea36f419ee3aaa980a40ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 1336663984}
 --- !u!1 &2102955980
 GameObject:
   m_ObjectHideFlags: 0

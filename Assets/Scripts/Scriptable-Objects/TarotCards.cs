@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class TarotCards :ScriptableObject
 {
-    public Image cardImage;
+    public Sprite cardImage;
     public int effectValue;
     public string description;
     public bool specialCardEffectEnabled;

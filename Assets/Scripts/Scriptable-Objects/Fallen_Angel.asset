@@ -17,6 +17,9 @@ MonoBehaviour:
   cardDropChance: 100
   droppableCards:
   - {fileID: 11400000, guid: b41df299a53ffa24c93eb59bc29a84a9, type: 2}
+  - {fileID: 11400000, guid: b10f048a0ac2b994e9d69ec36c997081, type: 2}
+  - {fileID: 11400000, guid: b540e8bc04270a849b2f9bd3c59b0167, type: 2}
+  - {fileID: 11400000, guid: 9262466f791bc9b4f80c2f4fab441744, type: 2}
   chargeCooldown: 5
   meeleRange: 1
   chargeFarAway: 3

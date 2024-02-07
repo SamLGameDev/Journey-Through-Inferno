@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b7288b36b84b9241be4fdadd30129c7, type: 3}
-  m_Name: Chariot
+  m_Name: Magician
   m_EditorClassIdentifier: 
-  cardImage: {fileID: 21300000, guid: 21ef5e718e0c7dd49b8f885752568ee9, type: 3}
+  cardImage: {fileID: 21300000, guid: c372b1c5621acd744bea0642480f5ac1, type: 3}
   effectValue: 0
   description: 
   specialCardEffectEnabled: 0
