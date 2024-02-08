@@ -23,6 +23,14 @@ public class EntityHealthBehaviour : MonoBehaviour
     //Gets the healthbar from the canvas, must be dragged in to create reference
     public Image healthBar;
 
+    //Gets the three images for the high, medium, and low health sprites
+    public Image LowHealth;
+    public Image MidHealth;
+    public Image HighHealth;
+
+    //Gets the image in the UI that will be changed
+    public Image HealthSprite;
+
     //A boolean for, surprisingly, if theyre alive
     public bool IsAlive;
 
@@ -50,6 +58,21 @@ public class EntityHealthBehaviour : MonoBehaviour
         if (gameObject.tag == "Player")
         {
             healthBar.fillAmount = entityCurrentHealth / 15f;
+
+            if (entityCurrentHealth / 15f <= 0.7f && entityCurrentHealth / 15f >= 0.35f)
+            {
+                HealthSprite.sprite = MidHealth.sprite;
+            }
+            if (entityCurrentHealth / 15f > 0.7f)
+            {
+                HealthSprite.sprite = HighHealth.sprite;
+            }
+            if (entityCurrentHealth / 15f < 0.35f)
+            {
+                HealthSprite.sprite = LowHealth.sprite;
+            }
+
+            print(entityCurrentHealth);
         }
         
 
