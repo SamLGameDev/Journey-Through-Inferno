@@ -903,8 +903,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278225663
+  m_fontColor: {r: 1, g: 0.5430124, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1768,7 +1768,7 @@ GameObject:
   - component: {fileID: 148366219}
   - component: {fileID: 148366220}
   - component: {fileID: 148366221}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: StonePillar (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5232,7 +5232,7 @@ GameObject:
   - component: {fileID: 246317833}
   - component: {fileID: 246317834}
   - component: {fileID: 246317835}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: StonePillar (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7735,7 +7735,7 @@ GameObject:
   - component: {fileID: 400785869}
   - component: {fileID: 400785870}
   - component: {fileID: 400785871}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: StonePillar (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8403,7 +8403,7 @@ GameObject:
   m_Component:
   - component: {fileID: 441960712}
   - component: {fileID: 441960713}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FloorColumn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9172,9 +9172,9 @@ Transform:
   - {fileID: 1354699884}
   - {fileID: 1812441583}
   - {fileID: 819118213}
+  - {fileID: 285356242}
   - {fileID: 309393936}
   - {fileID: 291879986}
-  - {fileID: 285356242}
   - {fileID: 1422877905}
   m_Father: {fileID: 1015267438}
   m_RootOrder: -1
@@ -9274,7 +9274,7 @@ GameObject:
   - component: {fileID: 540117848}
   - component: {fileID: 540117849}
   - component: {fileID: 540117850}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: StonePillar (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12399,7 +12399,7 @@ GameObject:
   - component: {fileID: 853778301}
   - component: {fileID: 853778302}
   - component: {fileID: 853778303}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: StonePillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12865,7 +12865,7 @@ GameObject:
   - component: {fileID: 939218809}
   - component: {fileID: 939218810}
   - component: {fileID: 939218811}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TallPillar (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14400,7 +14400,7 @@ GameObject:
   - component: {fileID: 1035228130}
   - component: {fileID: 1035228131}
   - component: {fileID: 1035228132}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BrokenPillar1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14949,7 +14949,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1062508625}
   - component: {fileID: 1062508626}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DoorArch2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16300,7 +16300,7 @@ GameObject:
   - component: {fileID: 1175491123}
   - component: {fileID: 1175491124}
   - component: {fileID: 1175491125}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BrokenPillar2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16939,7 +16939,7 @@ GameObject:
   - component: {fileID: 1230345568}
   - component: {fileID: 1230345569}
   - component: {fileID: 1230345570}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BrokenPillar2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17075,7 +17075,7 @@ GameObject:
   - component: {fileID: 1255918361}
   - component: {fileID: 1255918362}
   - component: {fileID: 1255918363}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: StonePillar (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17299,12 +17299,12 @@ PrefabInstance:
     - target: {fileID: 2495953773665164011, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.1099997
+      value: 4.97
       objectReference: {fileID: 0}
     - target: {fileID: 2495953773665164011, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.120001
+      value: -20.61
       objectReference: {fileID: 0}
     - target: {fileID: 2495953773665164011, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
         type: 3}
@@ -17664,7 +17664,7 @@ GameObject:
   - component: {fileID: 1303848013}
   - component: {fileID: 1303848014}
   - component: {fileID: 1303848015}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TallPillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18094,7 +18094,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAAAAIeyVpgZqWgIAABMFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1z2jAQ/SuMzk3H0BCG3lqHkB5ImNBOLr4Ia401yJJHHwGS4b93V7axQ6cnxHtvd9+uVv5gUrsacm/s0kqxMgLY9xGjM/sy6slHOPKd0Rv5Dp3mVQpfkohHzQv30iA+pjBnKvBW5j/0TpE4QTBoWRhbLcQOUuO8Q7jgygFS1niK1gh9jNgRf27mFHLC02RGp3c8zZPRGY85aA+2l3bCTnY7jbKgc8WrGgR57tXTTj5tsmnsplWQ89woJV1rhflTHVtNee0CNoICITm2FuuTvgS5Kz3ZHAY/F4UD33qy/HQvLU6oycp+mmZsFXf7xtcbV4HqTKZ30VOTdPUPfzOOdGFN9djVHSdUw5cy37/wU86dH8x1CN9/Nh70gas93yp4LUE/maU1QQskvQ0UGhxM7vu/l9bSEvJ9jzdWr8BQ//92qIdz7P6YKlltifp62wAbZeK8492DxZv5hYbjZrg2BaLk4o+D33w3XKGWeJDWeaTaLjXZ25pgScoWcWbUTfCpsRoi3JquQXPlT2tM46+v8IoblL1iHjg9lrZ4y3Vv4Cokwr0+Sa6otTlcLsuV5rACVz4Hr6SG3jQRTzin1GjdbNhwJl3YJtiC54OwXZDi82oxUeTfQEzm22S8LQrgN/Mt3M1nUy7G49lcJAmLuyc19snVujHajgdvTffJNe5Z9w0ZLS2v47YLyw9L+V6ZwcilLswmtwD6uclwMQ4Wi+CrFAshcUAb8F7qeN/sI2PK5HsQ2SVRFjtdHL3lWZ8lY7V8M56QjKXxo5Exgi+7vLbwJuFAxbtkZ3b+C1BLAwQUAAAICAAAACHsiObMvW0AAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNdRUEovSizIKAaKGII4pZkpIHa0UkpasnFqipFlkoFhUlpaaqKuZVKqmaW5aWKKoaG5ZYqBgVIsUH1JZUGqX2JuKkRPQGJJRlpmXkpmXrqee1FmijvIaKXYWgBQSwECLQAUAAAICAAAACHslaYGaloCAAATBQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAAACHsiObMvW0AAAB4AAAACQAkAAAAAAAAAAAAAACnAgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAF8DAAAAAA==
+    dataString: UEsDBBQAAAgIAAAAIew/5IYHWwIAABQFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1z2jAQ/SuMzk3HEGiG3lqHkB5ImNBOLr4Ia401yJJHHwGS4b93V7axQ6cnlrdvd99+yB9MaldD7o1dWilWRgD7PmJksy+j3vkIR74zeiPfoeO8SuFLIvHIeeFeGsTHFOZMBd7K/IfeKSInCAYtC2OrhdhBapx3CBdcOUCXNZ6iNUIfI3bEn5s5hZzQmtyR9Y7WPBmd0cxBe7A9tSN2tOks0oLOFa9qEKS5Z886+qzJprGblkHKc6OUdK0U5k91bDXltQvYCBKE5NharE/8EuSu9CRzGPxcFA58q8ny0720OKEmK/tpmrFV3O0bXW9cBaozuU2mUVSTdfUP4WYc3YU11WNXeJxQEV/KfP/CTzl3fjDYIXz/WXnQB672fKvgtQT9ZJbWBC3Q6W2g0OBgct//vfSWlpDve7yRegWG+v/roR7Osf1jqmS1JdfXaQNslIkDj8sHi6v5hYLjabg2BaKk4o+D33w3vKHW8SCt8+hqu9Qkb2uCJSpbxJlRN8GnxmqIcCu6Bs2VP60xjb/e4ZVvUPbK88DptbTFW1/3CK5CItzzk+TKtTaHy7JcaQ4rcOVz8Epq6EWT4wnnlBqtmxMbzqQL2wRb8HwQtgtSfD4tJor8FsRkvk3G26IAfjPfwrf53YyL8fhuLpKExduTGvvkat0IbceDW9N9co131n1ERkvL63juwvLDUr5XZjByqQuzyS2Afm4yXISDxSL4LMVCSBzQBryXOu6bfWRMmXwPIrskymKni6O3POuzZKyWb8YTkrE0fjUyRvDlltcW3iQcqHiX7MzOfwFQSwMEFAAACAgAAAAh7IjmzL1tAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTXUVBKL0osyCgGihiCOKWZKSB2tFJKWrJxaoqRZZKBYVJaWmqirmVSqpmluWliiqGhuWWKgYFSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAAAAh7D/khgdbAgAAFAUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAAAh7IjmzL1tAAAAeAAAAAkAJAAAAAAAAAAAAAAAqAIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABgAwAAAAA=
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -18178,7 +18178,7 @@ GameObject:
   - component: {fileID: 1343852046}
   - component: {fileID: 1343852047}
   - component: {fileID: 1343852048}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BrokenPillar1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19619,7 +19619,7 @@ GameObject:
   - component: {fileID: 1452947050}
   - component: {fileID: 1452947051}
   - component: {fileID: 1452947052}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: StonePillar (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19917,7 +19917,7 @@ GameObject:
   - component: {fileID: 1462026623}
   - component: {fileID: 1462026624}
   - component: {fileID: 1462026625}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: StonePillar (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20730,12 +20730,12 @@ PrefabInstance:
     - target: {fileID: 1736434646341859925, guid: 28d04583d0c318648b28ee2c53bdaeab,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.8
+      value: -8.08
       objectReference: {fileID: 0}
     - target: {fileID: 1736434646341859925, guid: 28d04583d0c318648b28ee2c53bdaeab,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -20.2
+      value: -20.37
       objectReference: {fileID: 0}
     - target: {fileID: 1736434646341859925, guid: 28d04583d0c318648b28ee2c53bdaeab,
         type: 3}
@@ -21239,7 +21239,7 @@ GameObject:
   - component: {fileID: 1576808600}
   - component: {fileID: 1576808601}
   - component: {fileID: 1576808602}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: StonePillar (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23361,8 +23361,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4294939904
+  m_fontColor: {r: 0, g: 0.5850754, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -23524,7 +23524,7 @@ GameObject:
   - component: {fileID: 1778406162}
   - component: {fileID: 1778406163}
   - component: {fileID: 1778406164}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: StonePillar (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23737,7 +23737,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1801464846}
   - component: {fileID: 1801464847}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DoorArch1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24247,7 +24247,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1825470084}
   - component: {fileID: 1825470085}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DoorArch1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24332,7 +24332,7 @@ GameObject:
   - component: {fileID: 1833787555}
   - component: {fileID: 1833787556}
   - component: {fileID: 1833787557}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: StonePillar (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
