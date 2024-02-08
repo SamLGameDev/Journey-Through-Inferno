@@ -194,7 +194,7 @@
                 {
                     "name": "",
                     "id": "74cd07dd-16e0-417c-8567-8558f8a8a39d",
-                    "path": "<Mouse>/leftButton",
+                    "path": "<Keyboard>/g",
                     "interactions": "",
                     "processors": "",
                     "groups": "Xbox control scheme;Keyboard",

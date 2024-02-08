@@ -14,4 +14,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelFailed.unity
     guid: c8c4961475e61b047a23e9f149d857ce
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: e60a5f2822a63fc419d1491446c3a415,
+      type: 2}

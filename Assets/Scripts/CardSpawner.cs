@@ -26,7 +26,7 @@ public class CardSpawner : MonoBehaviour
     private List<TarotCards> _playerCards;
     public bool encounterCleared;
     [SerializeField] private GameManager gameManager;
-
+    public GameObject Canvas;
     // Start is called before the first frame update
     void Start()
     {

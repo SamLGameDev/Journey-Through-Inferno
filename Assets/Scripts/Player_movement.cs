@@ -7,9 +7,12 @@ using UnityEngine.InputSystem;
 using static UnityEngine.GraphicsBuffer;
 using UnityEngine.SceneManagement;
 using Fungus;
+using static UnityEngine.InputSystem.InputAction;
 
 public class Player_movement : MonoBehaviour
 {
+    public bool dodash = false;
+    public int playerIndex;
     public TrailRenderer dashTrail;
     /// <summary>
     /// can the player shoot again
@@ -18,7 +21,7 @@ public class Player_movement : MonoBehaviour
     /// <summary>
     /// the speed of the player
     /// </summary>
-    private float speed;
+    public float speed;
     /// <summary>
     /// the input actions the player can take
     /// </summary>
@@ -80,10 +83,10 @@ public class Player_movement : MonoBehaviour
     /// </summary>
     public bool isInvisible;
 
-
+    public Vector2 MovementDirection;
 
     public Player stats;
-    [SerializeField] private GameObject sword;
+    public GameObject sword;
     // Start is called before the first frame update
     void Start()
     {
@@ -92,7 +95,6 @@ public class Player_movement : MonoBehaviour
         // makes sword start as invisible 
         transform.GetChild(1).gameObject.SetActive(false);
         StartCoroutine(timer(stats.gunCooldown));
-        actions = GetComponent<PlayerInput>().actions;
         moves = GetComponent<Different_Moves>();
         rb = GetComponent<Rigidbody2D>();
         ani = GetComponent<Animator>();
@@ -123,18 +125,19 @@ public class Player_movement : MonoBehaviour
     {
         speed = stats.speed + stats.chariotSpeed;
     }
-    public void Joystic_Movement()
+    public void Joystic_Movement(float movespeed)
     {
         // Gets the movement action and moves the player based on that times speed
-       Vector2 movement = actions.FindAction("Movement").ReadValue<Vector2>();
-       GetComponent<Rigidbody2D>().velocity = new Vector2(movement.x * speed, movement.y * speed);
-       // gets the value of the aiming action and Atan + Rad2Deg's it so the aiming point is the same as the joystick rotation
-       Vector2 GetRotation = actions.FindAction("Aim").ReadValue<Vector2>();
-       float heading  = Mathf.Atan2(GetRotation.x, -GetRotation.y);
-       transform.GetChild(0).rotation = Quaternion.Euler(0,0, heading * Mathf.Rad2Deg);      
+        Debug.Log("speed" + movespeed);
+        movespeed = speed;
+       GetComponent<Rigidbody2D>().velocity =MovementDirection * movespeed;
         
     }
-
+    public void Aiming(Vector2 GetRotation)
+    {
+        float heading = Mathf.Atan2(GetRotation.x, -GetRotation.y);
+        transform.GetChild(0).rotation = Quaternion.Euler(0, 0, heading * Mathf.Rad2Deg);
+    }
 
     private void OnPauseMenu(InputValue value)
     {
@@ -252,16 +255,25 @@ public class Player_movement : MonoBehaviour
     /// starts the sword attack coroutine
     /// </summary>
     /// <param name="sword"></param>
-    private void Player_Melee(GameObject sword)
+    public void Player_Melee(GameObject sword)
     {
-        StartCoroutine(moves.RotateAround(sword));
+        running = true;
+        sword.SetActive(true);
+        // make the sword active
+        if (!passed) // if it hasnt been triggered before, trigger it
+        {
+            StartCoroutine(moves.RotateAround(sword));
+            passed = true;
+        }
+
 
     }
     /// <summary>
     /// calls the shoot function from different moves
     /// </summary>
-    private void Player_Shooting()
+    public void Player_Shooting()
     {
+        gun_cooldown = false;
         // shoots from the compas's facing direction
         moves.Shoot(stats.layersToHit, transform.GetChild(0).GetChild(0).position,
             transform.GetChild(0).GetChild(0).right, stats.bullet);
@@ -330,13 +342,16 @@ public class Player_movement : MonoBehaviour
         yield return new WaitForSeconds(dt);
         isInvisible = false;
     }
-
+    public void BeginDash()
+    {
+        dodash = true; 
+    }
 
     private IEnumerator dash()
     {
         while (true)
         {
-            yield return new WaitUntil(() => actions.FindAction("Dash").triggered);
+            yield return new WaitUntil(() => dodash);
             if (!upDown)
             {
                 dashTrail.startWidth = 1;
@@ -351,32 +366,21 @@ public class Player_movement : MonoBehaviour
             yield return new WaitForSeconds(stats.dashDuration);
             speed -= stats.dashSpeed;
             dashTrail.enabled = false;
+            dodash = false;
             yield return new WaitForSeconds(stats.dashCooldown);
         }
     }
-    private void possibleActions()
+    public void Invisible()
     {
-        if (actions.FindAction("Actions").triggered && !running) // check if the melee action is triggered and not running
-        {
-            running = true;
-            sword.SetActive(true);
-            // make the sword active
-            if (!passed) // if it hasnt been triggered before, trigger it
-            {
-                Player_Melee(sword);
-                passed = true;
-            }
-        }
-        if (actions.FindAction("Shoot").IsPressed() && gun_cooldown) // the shoot action
-        {
-            gun_cooldown = false;
-            Player_Shooting();
-        }
-        if (actions.FindAction("TriggerBuff").IsPressed() && invis_cooldown && !isInvisible) // turn invisible on button press
+        if (invis_cooldown && !isInvisible) // turn invisible on button press
         {
             invis_cooldown = false;
             invisDurationTimer(stats.invisibilityDuration);
         }
+    }
+    private void possibleActions()
+    {
+        
         if (VelocityCheck)
         {
             IdleCheck();
@@ -385,10 +389,9 @@ public class Player_movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        Joystic_Movement(speed);
         possibleActions();
         Animation_Controller();
-        Joystic_Movement();
 
        
     }
