@@ -657,13 +657,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 44268499}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 120, y: 200, z: 0}
+  m_LocalPosition: {x: 120, y: 197.9, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1613383993}
   - {fileID: 788606532}
   - {fileID: 1486478142}
+  - {fileID: 65750033}
   m_Father: {fileID: 1384521135}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -835,6 +836,141 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &65750032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 65750033}
+  - component: {fileID: 65750035}
+  - component: {fileID: 65750034}
+  m_Layer: 0
+  m_Name: NameTagP2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &65750033
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 65750032}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 44268500}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -23.000153, y: 44}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &65750034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 65750032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Virgil
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278225663
+  m_fontColor: {r: 1, g: 0.5430124, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 47.64
+  m_fontSizeBase: 47.64
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &65750035
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 65750032}
+  m_CullTransparentMesh: 1
 --- !u!1 &67002947
 GameObject:
   m_ObjectHideFlags: 0
@@ -1632,7 +1768,7 @@ GameObject:
   - component: {fileID: 148366219}
   - component: {fileID: 148366220}
   - component: {fileID: 148366221}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: StonePillar (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2708,7 +2844,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5096,7 +5232,7 @@ GameObject:
   - component: {fileID: 246317833}
   - component: {fileID: 246317834}
   - component: {fileID: 246317835}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: StonePillar (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7599,7 +7735,7 @@ GameObject:
   - component: {fileID: 400785869}
   - component: {fileID: 400785870}
   - component: {fileID: 400785871}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: StonePillar (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7826,13 +7962,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 420818361}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -120, y: 200, z: 0}
+  m_LocalPosition: {x: -120, y: 197.9, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7447432}
   - {fileID: 849366883}
   - {fileID: 351602826}
+  - {fileID: 1752496889}
   m_Father: {fileID: 1384521135}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8266,7 +8403,7 @@ GameObject:
   m_Component:
   - component: {fileID: 441960712}
   - component: {fileID: 441960713}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FloorColumn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9035,9 +9172,9 @@ Transform:
   - {fileID: 1354699884}
   - {fileID: 1812441583}
   - {fileID: 819118213}
+  - {fileID: 285356242}
   - {fileID: 309393936}
   - {fileID: 291879986}
-  - {fileID: 285356242}
   - {fileID: 1422877905}
   m_Father: {fileID: 1015267438}
   m_RootOrder: -1
@@ -9137,7 +9274,7 @@ GameObject:
   - component: {fileID: 540117848}
   - component: {fileID: 540117849}
   - component: {fileID: 540117850}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: StonePillar (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12262,7 +12399,7 @@ GameObject:
   - component: {fileID: 853778301}
   - component: {fileID: 853778302}
   - component: {fileID: 853778303}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: StonePillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12728,7 +12865,7 @@ GameObject:
   - component: {fileID: 939218809}
   - component: {fileID: 939218810}
   - component: {fileID: 939218811}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TallPillar (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14268,7 +14405,7 @@ GameObject:
   - component: {fileID: 1035228130}
   - component: {fileID: 1035228131}
   - component: {fileID: 1035228132}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BrokenPillar1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14817,7 +14954,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1062508625}
   - component: {fileID: 1062508626}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DoorArch2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16168,7 +16305,7 @@ GameObject:
   - component: {fileID: 1175491123}
   - component: {fileID: 1175491124}
   - component: {fileID: 1175491125}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BrokenPillar2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16807,7 +16944,7 @@ GameObject:
   - component: {fileID: 1230345568}
   - component: {fileID: 1230345569}
   - component: {fileID: 1230345570}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BrokenPillar2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16943,7 +17080,7 @@ GameObject:
   - component: {fileID: 1255918361}
   - component: {fileID: 1255918362}
   - component: {fileID: 1255918363}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: StonePillar (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17174,11 +17311,13 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.4
+      value: 4.97
       objectReference: {fileID: 0}
     - target: {fileID: 2495953773665164011, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: -21.9
+      value: -20.61
       objectReference: {fileID: 0}
     - target: {fileID: 2495953773665164011, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
         type: 3}
@@ -17261,11 +17400,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 1.0000501
+    - target: {fileID: 6436077244101123047, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: de08f28ec8b2d684da47fb726eec09cd, type: 2}
+    - target: {fileID: 8921179218869034630, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.6349907
+      objectReference: {fileID: 0}
+    - target: {fileID: 8921179218869034630, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.9605508
+      objectReference: {fileID: 0}
+    - target: {fileID: 8921179218869034630, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.009605348
       objectReference: {fileID: 0}
     - target: {fileID: 8921179218869034630, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
         type: 3}
       propertyPath: m_Offset.y
       value: -0.000024974346
+      value: 0.009605646
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17560,7 +17719,7 @@ GameObject:
   - component: {fileID: 1303848013}
   - component: {fileID: 1303848014}
   - component: {fileID: 1303848015}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TallPillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17993,6 +18152,7 @@ MonoBehaviour:
   version: 1
   data:
     dataString: UEsDBBQAAAgIAAAAIeymNhBPWQIAABQFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1z2jAQ/SuMzk3H0JAMvbWGkB5ImNBOLr4Ia401yJJHHwGS4b93V7axQ6cnxHtvd9+uVv5gUrsacm/s0kqxMgLY9xGjM/sy6slHOPKd0Rv5Dp3mVQpfkohHzQv30iA+pjBnKvBW5j/0TpE4QTBoWRhbLcQOUuO8Q7jgygFS1niK1gh9jNgRf25mFHLC0+SeTu94miWjMx5z0B5sL+2Enex2GmVB54pXNQjy3KunnXzaZNPYTasg57lRSrrWCvOnOraa8toFbAQFQnJsLdYnfQlyV3qyOQx+LgoHvvVk+WkuLU6oycp+mmZsFXf7xtcbV4HqTKZ30VOTdPUPfzOOdGFN9djVHSdUw5cy37/wU86dH8x1CM8/Gw/6wNWebxW8lqCfzNKaoAWS3gYKDQ4m8/7vpbW0hHzf443VKzDU/78d6uEcuz+mSlZbor7eNsBGmTjvePdg8WZ+oeG4Ga5NgSi5+OPgN98NV6glHqR1Hqm2S032tiZYkrJFnBl1E3xqrIYIt6Zr0Fz50xrT+OsrvOIGZa+YB06PpS3ect0buAqJcK9PkitqbQ6Xy3KlOazAlc/BK6mhN03EE84pNVo3GzacSRe2Cbbg+SBsF6T4vFpMFPk3EJPZNhlviwL4zWwLd7P7KRfj8f1MJAmLuyc19snVujHajgdvbTgTjYvWfURGS8vruO7C8sNSvldmMHOpC7PJLYB+/pzCgcUq+CzFQkic0Aa8lzpeOPvImDL5HkR2SZTFVhdHb3nWZ8lYLd+MJyRjafxqZIzgyzKvLbxJOFDxLtmZnf8CUEsDBBQAAAgIAAAAIeyI5sy9bQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM011FQSi9KLMgoBooYgjilmSkgdrRSSlqycWqKkWWSgWFSWlpqoq5lUqqZpblpYoqhobllioGBUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAAAAIeymNhBPWQIAABQFAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAAAAIeyI5sy9bQAAAHgAAAAJACQAAAAAAAAAAAAAAKYCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAXgMAAAAA
+    dataString: UEsDBBQAAAgIAAAAIew/5IYHWwIAABQFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1z2jAQ/SuMzk3HEGiG3lqHkB5ImNBOLr4Ia401yJJHHwGS4b93V7axQ6cnlrdvd99+yB9MaldD7o1dWilWRgD7PmJksy+j3vkIR74zeiPfoeO8SuFLIvHIeeFeGsTHFOZMBd7K/IfeKSInCAYtC2OrhdhBapx3CBdcOUCXNZ6iNUIfI3bEn5s5hZzQmtyR9Y7WPBmd0cxBe7A9tSN2tOks0oLOFa9qEKS5Z886+qzJprGblkHKc6OUdK0U5k91bDXltQvYCBKE5NharE/8EuSu9CRzGPxcFA58q8ny0720OKEmK/tpmrFV3O0bXW9cBaozuU2mUVSTdfUP4WYc3YU11WNXeJxQEV/KfP/CTzl3fjDYIXz/WXnQB672fKvgtQT9ZJbWBC3Q6W2g0OBgct//vfSWlpDve7yRegWG+v/roR7Osf1jqmS1JdfXaQNslIkDj8sHi6v5hYLjabg2BaKk4o+D33w3vKHW8SCt8+hqu9Qkb2uCJSpbxJlRN8GnxmqIcCu6Bs2VP60xjb/e4ZVvUPbK88DptbTFW1/3CK5CItzzk+TKtTaHy7JcaQ4rcOVz8Epq6EWT4wnnlBqtmxMbzqQL2wRb8HwQtgtSfD4tJor8FsRkvk3G26IAfjPfwrf53YyL8fhuLpKExduTGvvkat0IbceDW9N9co131n1ERkvL63juwvLDUr5XZjByqQuzyS2Afm4yXISDxSL4LMVCSBzQBryXOu6bfWRMmXwPIrskymKni6O3POuzZKyWb8YTkrE0fjUyRvDlltcW3iQcqHiX7MzOfwFQSwMEFAAACAgAAAAh7IjmzL1tAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTXUVBKL0osyCgGihiCOKWZKSB2tFJKWrJxaoqRZZKBYVJaWmqirmVSqpmluWliiqGhuWWKgYFSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAAAAh7D/khgdbAgAAFAUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAAAh7IjmzL1tAAAAeAAAAAkAJAAAAAAAAAAAAAAAqAIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABgAwAAAAA=
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -18076,7 +18236,7 @@ GameObject:
   - component: {fileID: 1343852046}
   - component: {fileID: 1343852047}
   - component: {fileID: 1343852048}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BrokenPillar1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18777,7 +18937,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -18831,6 +18991,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1385850315}
   - component: {fileID: 1385850314}
+  - component: {fileID: 1385850316}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -18915,6 +19076,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &1385850316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385850313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &1400981814
 GameObject:
   m_ObjectHideFlags: 0
@@ -19517,7 +19701,7 @@ GameObject:
   - component: {fileID: 1452947050}
   - component: {fileID: 1452947051}
   - component: {fileID: 1452947052}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: StonePillar (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19815,7 +19999,7 @@ GameObject:
   - component: {fileID: 1462026623}
   - component: {fileID: 1462026624}
   - component: {fileID: 1462026625}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: StonePillar (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20633,12 +20817,12 @@ PrefabInstance:
     - target: {fileID: 1736434646341859925, guid: 28d04583d0c318648b28ee2c53bdaeab,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.8
+      value: -8.08
       objectReference: {fileID: 0}
     - target: {fileID: 1736434646341859925, guid: 28d04583d0c318648b28ee2c53bdaeab,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -20.2
+      value: -20.37
       objectReference: {fileID: 0}
     - target: {fileID: 1736434646341859925, guid: 28d04583d0c318648b28ee2c53bdaeab,
         type: 3}
@@ -20716,6 +20900,11 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8680525075647752170, guid: 28d04583d0c318648b28ee2c53bdaeab,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f5783a747332b5b488df468c02f5665f, type: 2}
     - target: {fileID: 8939962254210646001, guid: 28d04583d0c318648b28ee2c53bdaeab,
         type: 3}
       propertyPath: healthBar
@@ -21158,7 +21347,7 @@ GameObject:
   - component: {fileID: 1576808600}
   - component: {fileID: 1576808601}
   - component: {fileID: 1576808602}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: StonePillar (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23213,6 +23402,141 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 93161629}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1752496888
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1752496889}
+  - component: {fileID: 1752496891}
+  - component: {fileID: 1752496890}
+  m_Layer: 0
+  m_Name: NameTagP1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1752496889
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752496888}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 420818362}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -25, y: 36}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1752496890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752496888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Dante
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294939904
+  m_fontColor: {r: 0, g: 0.5850754, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 47.64
+  m_fontSizeBase: 47.64
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1752496891
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752496888}
+  m_CullTransparentMesh: 1
 --- !u!1 &1774806224
 GameObject:
   m_ObjectHideFlags: 0
@@ -23308,7 +23632,7 @@ GameObject:
   - component: {fileID: 1778406162}
   - component: {fileID: 1778406163}
   - component: {fileID: 1778406164}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: StonePillar (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23521,7 +23845,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1801464846}
   - component: {fileID: 1801464847}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DoorArch1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24031,7 +24355,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1825470084}
   - component: {fileID: 1825470085}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DoorArch1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24116,7 +24440,7 @@ GameObject:
   - component: {fileID: 1833787555}
   - component: {fileID: 1833787556}
   - component: {fileID: 1833787557}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: StonePillar (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

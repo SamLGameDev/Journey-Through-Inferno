@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEngine.GraphicsBuffer;
 using UnityEngine.SceneManagement;
+using Fungus;
 
 public class Player_movement : MonoBehaviour
 {
@@ -106,7 +107,7 @@ public class Player_movement : MonoBehaviour
 
         // If the player has the High Priestess Arcana then the timer for the invisibility bursts will start
         if (GetComponentInParent<Tarot_cards>().hasHighPriestess)
-        { ; }
+        { StartCoroutine(invisCooldownTimer(stats.invisibilityCooldown)); }
         else
         { invis_cooldown = false; }
 
@@ -290,7 +291,7 @@ public class Player_movement : MonoBehaviour
         
     }
     /// <summary>
-    /// starts a timer and sets gun_cooldwon to true when the ste amount of time has passed, repeats when that variable is false
+    /// starts a timer and sets gun_cooldwon to true when the set amount of time has passed, repeats when that variable is false
     /// </summary>
     /// <param name="dt"></param>
     /// <returns></returns>
@@ -304,7 +305,33 @@ public class Player_movement : MonoBehaviour
             yield return new WaitWhile(() => gun_cooldown);
         }
     }
-    
+    /// <summary>
+    /// starts a timer and sets invis_cooldwon to true when the set amount of time has passed, repeats when that variable is false
+    /// </summary>
+    /// <param name="dt"></param>
+    /// <returns></returns>
+    private IEnumerator invisCooldownTimer(float dt)
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(dt);
+            invis_cooldown = true;
+            yield return new WaitWhile(() => invis_cooldown);
+        }
+    }
+    /// <summary>
+    /// starts a timer and sets isInvisible to true for an amount of seconds set in the Player class
+    /// </summary>
+    /// <param name="dt"></param>
+    /// <returns></returns>
+    private IEnumerator invisDurationTimer(float dt)
+    {
+        isInvisible = true;
+        yield return new WaitForSeconds(dt);
+        isInvisible = false;
+    }
+
+
     private IEnumerator dash()
     {
         while (true)
@@ -334,7 +361,7 @@ public class Player_movement : MonoBehaviour
             running = true;
             sword.SetActive(true);
             // make the sword active
-            if (!passed) // if it hasnt been trggered before, trigger it
+            if (!passed) // if it hasnt been triggered before, trigger it
             {
                 Player_Melee(sword);
                 passed = true;
@@ -345,10 +372,10 @@ public class Player_movement : MonoBehaviour
             gun_cooldown = false;
             Player_Shooting();
         }
-        if (actions.FindAction("TriggerBuff").IsPressed() && invis_cooldown && !isInvisible)
+        if (actions.FindAction("TriggerBuff").IsPressed() && invis_cooldown && !isInvisible) // turn invisible on button press
         {
             invis_cooldown = false;
-            
+            invisDurationTimer(stats.invisibilityDuration);
         }
         if (VelocityCheck)
         {
