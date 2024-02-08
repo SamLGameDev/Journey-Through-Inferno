@@ -11,11 +11,20 @@ public class MedusaPositionChange : StateMachineBehaviour
     {
         mb = animator.GetComponent<MedusaBehaviour>();
 
+        if (mb.medusaPos == MedusaBehaviour.CurrentPosition.centre)
+        {
+            animator.SetFloat("MovementBlend", 0);
+        }
+        else
+        {
+            animator.SetFloat("MovementBlend", 1);
+        }
     }
 
     //OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        // Move towards the currently set target position. If destination reached, end the animation.
         if (mb.medusaPos == MedusaBehaviour.CurrentPosition.centre)
         {
             if (Vector2.Distance(mb.centrePos.position, animator.transform.position) < 0.1f)

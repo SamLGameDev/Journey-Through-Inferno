@@ -57,11 +57,23 @@ public class DamageIndicator : MonoBehaviour
     }
 
     /// <summary>
-    /// 'Detonates' the indicator to deal damage to things inside.
+    /// 'Detonates' the indicator.
     /// </summary>
     public void TriggerDetonate()
     {
         sr.color = detonateColor;
+
+        fadeOut = true;
+    }
+
+    /// <summary>
+    /// 'Detonates' the indicator, changes the indicator to an impact mark.
+    /// </summary>
+    /// <param name="impactMark">Sprite of the impact mark.</param>
+    public void TriggerDetonate(Sprite impactMark)
+    {
+        sr.color = Color.white;
+        sr.sprite = impactMark;
 
         fadeOut = true;
     }
