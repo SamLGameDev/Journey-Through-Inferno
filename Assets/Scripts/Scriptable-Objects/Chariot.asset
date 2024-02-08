@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b7288b36b84b9241be4fdadd30129c7, type: 3}
+  m_Name: Chariot
+  m_EditorClassIdentifier: 
+  cardImage: {fileID: 21300000, guid: 21ef5e718e0c7dd49b8f885752568ee9, type: 3}
+  players: {fileID: 11400000, guid: c53c78a8f908aff40b06667ff5c1036a, type: 2}
+  effectValue: 100
+  description: Chariot
+  specialCardEffectEnabled: 0
+  possibleMods: 3

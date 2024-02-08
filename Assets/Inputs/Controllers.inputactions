@@ -87,7 +87,7 @@
                     "path": "<Gamepad>/leftStick/up",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Xbox control scheme",
+                    "groups": "Xbox control scheme;Keyboard",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -98,7 +98,7 @@
                     "path": "<Gamepad>/leftStick/down",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Xbox control scheme",
+                    "groups": "Xbox control scheme;Keyboard",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -109,7 +109,7 @@
                     "path": "<Gamepad>/leftStick/left",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Xbox control scheme",
+                    "groups": "Xbox control scheme;Keyboard",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -120,7 +120,7 @@
                     "path": "<Gamepad>/leftStick/right",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Xbox control scheme",
+                    "groups": "Xbox control scheme;Keyboard",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -142,7 +142,7 @@
                     "path": "<Keyboard>/#(W)",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Xbox control scheme;Keyboard",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -153,7 +153,7 @@
                     "path": "<Keyboard>/#(S)",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Xbox control scheme;Keyboard",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -164,7 +164,7 @@
                     "path": "<Keyboard>/#(A)",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Xbox control scheme;Keyboard",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -175,7 +175,7 @@
                     "path": "<Keyboard>/#(D)",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Xbox control scheme;Keyboard",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -252,7 +252,7 @@
                     "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Xbox control scheme",
+                    "groups": "Xbox control scheme;Keyboard",
                     "action": "TriggerBuff",
                     "isComposite": false,
                     "isPartOfComposite": false

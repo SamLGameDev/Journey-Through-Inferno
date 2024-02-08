@@ -12,8 +12,6 @@ public class Sword_Damage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (GetComponentInParent<Tarot_cards>().hasStrength) { damageModifier = stats.swordDamageModifier; }
-        else { damageModifier = 0; }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -21,9 +19,9 @@ public class Sword_Damage : MonoBehaviour
         // applies damage to the enemies
         if (collision.CompareTag("Enemy")) 
         {
-            List<string> enemyStats = collision.GetComponent<EntityHealthBehaviour>().stats.droppableCards;
+            List<TarotCards> enemyStats = collision.GetComponent<EntityHealthBehaviour>().stats.droppableCards;
             float dropchance = collision.GetComponent<EntityHealthBehaviour>().stats.cardDropChance;
-            collision.GetComponent<EntityHealthBehaviour>().ApplyDamage(stats.swordDamage + damageModifier);
+            collision.GetComponent<EntityHealthBehaviour>().ApplyDamage(stats.swordDamage + stats.swordDamageModifier);
             if (collision.GetComponent<EntityHealthBehaviour>().entityCurrentHealth <= 0)
             {
                 SpawnCard(enemyStats, dropchance);
@@ -34,12 +32,12 @@ public class Sword_Damage : MonoBehaviour
             
         }
     }
-    private void SpawnCard(List<string> possibleCards, float dropChance)
+    private void SpawnCard(List<TarotCards> possibleCards, float dropChance)
     {
         if (Random.Range(0.0001f, 101) < dropChance)
         {
 
-            string card = possibleCards[Random.Range(0, possibleCards.Count)];
+            TarotCards card = possibleCards[Random.Range(0, possibleCards.Count)];
             GetComponentInParent<TarotCardSelector>().cards.Add(card);
         }
 
