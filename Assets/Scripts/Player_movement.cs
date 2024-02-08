@@ -70,7 +70,7 @@ public class Player_movement : MonoBehaviour
     /// <summary>
     /// change to the cooldown time for tarot card effects
     /// </summary>
-    private float cooldownModifier;
+   // private float cooldownModifier;
     /// <summary>
     /// time between invisibility bursts
     /// </summary>
@@ -82,14 +82,16 @@ public class Player_movement : MonoBehaviour
 
 
 
-    [SerializeField] private Player stats;
+    public Player stats;
     [SerializeField] private GameObject sword;
     // Start is called before the first frame update
     void Start()
     {
+        ResetModifiers();
+        UpdateSpeed();
         // makes sword start as invisible 
         transform.GetChild(1).gameObject.SetActive(false);
-        StartCoroutine(timer(stats.gunCooldown - cooldownModifier));
+        StartCoroutine(timer(stats.gunCooldown));
         actions = GetComponent<PlayerInput>().actions;
         moves = GetComponent<Different_Moves>();
         rb = GetComponent<Rigidbody2D>();
@@ -97,13 +99,7 @@ public class Player_movement : MonoBehaviour
         StartCoroutine(dash());
         
         // decreases the gun cooldown time if player has the temperance card
-        if (GetComponent<Tarot_cards>().hasTemperance) { cooldownModifier = stats.gunCooldownModifier; }
-        else { cooldownModifier = 0; }
 
-        if (GetComponentInParent<Tarot_cards>().hasChariot) // If the player has the Chariot Arcana then their movement speed will be increased
-        { speed = stats.chariotSpeed; }
-        else
-        { speed = stats.speed; }
 
         // If the player has the Emperor Arcana then their max health will be increased
         if (GetComponentInParent<Tarot_cards>().hasEmperor)
@@ -123,6 +119,10 @@ public class Player_movement : MonoBehaviour
     /// moves the player based on the movement of the left joystick and the aiming device based
     /// on the movement of the right joystick
     /// </summary>
+    public void UpdateSpeed()
+    {
+        speed = stats.speed + stats.chariotSpeed;
+    }
     public void Joystic_Movement()
     {
         // Gets the movement action and moves the player based on that times speed
@@ -152,7 +152,13 @@ public class Player_movement : MonoBehaviour
         //}
     }
 
-
+    private void ResetModifiers()
+    {
+        stats.chariotSpeed = 0;
+        stats.gunCooldownModifier = 0;
+        stats.swordDamageModifier = 0;
+        stats.bulletDamageModifier = 0;
+    }
     /// <summary>
     /// controlls all of the animations and decides what aniamtion should be playing right now.
     /// also rotates the sword to be in the right facing direction
@@ -293,6 +299,7 @@ public class Player_movement : MonoBehaviour
     {
         while (true)
         {
+            dt = stats.gunCooldown - stats.gunCooldownModifier;
             yield return new WaitForSeconds(dt);
             gun_cooldown = true;
             yield return new WaitWhile(() => gun_cooldown);
@@ -378,6 +385,7 @@ public class Player_movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         possibleActions();
         Animation_Controller();
         Joystic_Movement();

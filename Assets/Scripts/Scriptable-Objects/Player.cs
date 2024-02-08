@@ -84,4 +84,5 @@ public class Player : BasicAttributes
     /// how long until the bullet is destoryed
     /// </summary>
     public float bulletLife;
+
 }

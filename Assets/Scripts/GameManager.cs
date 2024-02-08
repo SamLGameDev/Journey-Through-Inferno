@@ -7,14 +7,15 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     private int alivePlayers;
-    private int enemiesRemaining;
-
+    public int enemiesRemaining;
+    [SerializeField] private CardSpawner spawner;
     public enum GameState
     {
         normalPlay,
         pause,
         gameOver,
         victory,
+        EncounterCleared,
     }
 
     private void Awake()
@@ -68,7 +69,8 @@ public class GameManager : MonoBehaviour
 
         if (enemiesRemaining == 0)
         {
-            UpdateGameState(GameState.victory);
+            UpdateGameState(GameState.EncounterCleared);
+
         }
     }
 
@@ -92,12 +94,20 @@ public class GameManager : MonoBehaviour
             case GameState.victory:
                 OnVictory();
                 break;
+            case GameState.EncounterCleared:
+                OnEncounterCleared();
+                break;
             default:
                 Debug.LogError("Out of range gamestate change");
                 break;
         }
     }
+    private void OnEncounterCleared()
+    {
+        Time.timeScale = 0;
+        spawner.encounterCleared = true;
 
+    }
     private void OnNormalPlay()
     {
         Time.timeScale = 1;

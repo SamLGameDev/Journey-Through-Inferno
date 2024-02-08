@@ -19,5 +19,6 @@ public class BasicAttributes : ScriptableObject
     /// <summary>
     /// the tarot cards it can drop
     /// </summary>
-    public List<string> droppableCards;
+    public List<TarotCards> droppableCards;
+
 }
