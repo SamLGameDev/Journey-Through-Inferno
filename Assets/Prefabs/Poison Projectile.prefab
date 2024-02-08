@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5361606418721373797
+--- !u!1 &7124076208600775416
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6834732148840748407}
-  - component: {fileID: 8853111131309444820}
-  - component: {fileID: 9020982695598265857}
+  - component: {fileID: 957098030674365016}
+  - component: {fileID: 1902795552736268207}
+  - component: {fileID: 5030857043387604683}
   m_Layer: 0
-  m_Name: TempHurtyZone
+  m_Name: Poison Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6834732148840748407
+--- !u!4 &957098030674365016
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5361606418721373797}
+  m_GameObject: {fileID: 7124076208600775416}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.1670815, y: 4.454073, z: 0}
-  m_LocalScale: {x: 5.68, y: 5.68, z: 5.68}
+  m_LocalPosition: {x: -1.6258465, y: -5.4360924, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &8853111131309444820
+--- !u!212 &1902795552736268207
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5361606418721373797}
+  m_GameObject: {fileID: 7124076208600775416}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -74,31 +74,31 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b,
-    type: 3}
+  m_Sprite: {fileID: -1534247367, guid: 81af10d26a788db419e4fd4caa84ac80, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.27, y: 0.48}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &9020982695598265857
+--- !u!114 &5030857043387604683
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5361606418721373797}
+  m_GameObject: {fileID: 7124076208600775416}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcada010277411942bfb7547d746a626, type: 3}
+  m_Script: {fileID: 11500000, guid: 0692ca3d824bd4d4081ddd2cb22206eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  warningColor: {r: 1, g: 0.09307529, b: 0, a: 0.4117647}
-  detonateColor: {r: 0, g: 1, b: 0.27759147, a: 1}
-  holdTime: 0.6
-  fadeTime: 1.2
+  mb: {fileID: 0}
+  indicator: {fileID: 0}
+  arcHeight: 15
+  flightTime: 0
+  impactMark: {fileID: 1175483414, guid: 1ae52ed6091997340b7398462739024e, type: 3}
