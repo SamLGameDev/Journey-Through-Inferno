@@ -11,6 +11,7 @@ public class TarotCards :ScriptableObject
     public Sprite cardImage;
     public Player players;
     public int effectValue;
+    [Multiline]
     public string description;
     public bool specialCardEffectEnabled;
     public possibleModifiers possibleMods;

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class CardSpawner : MonoBehaviour
@@ -118,6 +119,7 @@ public class CardSpawner : MonoBehaviour
                         newCard = Instantiate(cardPrefab, gameObject.transform);
                         newCard.GetComponent<Image>().sprite = card.cardImage;
                         newCard.GetComponent<Button>().onClick.AddListener(() => { HasClickedButton(card, p); });
+                        newCard.GetComponent<DisplayDescription>().card = card;
                         newCard.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
                         // We increment here because we are artificially completing a 'pair' with only one card already.
                         i++;
@@ -129,12 +131,10 @@ public class CardSpawner : MonoBehaviour
                     else if (i % 2 == startIndex)
                     {
                         newCard = Instantiate(cardPrefab, gameObject.transform);
-                        Debug.Log("arrayindex before  " + arrayIndex);
                         newCard.GetComponent<Image>().sprite = card.cardImage;
-                        Debug.Log("arrayindex " + arrayIndex);
                         newCard.GetComponent<Button>().onClick.AddListener(() => { HasClickedButton(card, p); });
-                        Debug.Log("arrayindex after  " + arrayIndex);
-                        Debug.Log(card.description);
+                        newCard.GetComponent<DisplayDescription>().card = card;
+
                         // Each card is set to either be the correct distance on the left or the right respectively using i.
                         if (leftIndex)
                         {
