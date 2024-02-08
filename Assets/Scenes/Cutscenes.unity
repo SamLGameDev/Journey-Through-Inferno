@@ -227,8 +227,7 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks:
-  - {fileID: 417375787}
+  selectedBlocks: []
   selectedCommands: []
   variables: []
   description: 
@@ -258,7 +257,7 @@ MonoBehaviour:
   storyText: Yes, Virgil-sempai!
   description: 
   character: {fileID: 2032819381}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: fff231fbebbff9140b4fdcc223c86bf9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -317,7 +316,7 @@ MonoBehaviour:
   storyText: We should get going.
   description: 
   character: {fileID: 2101633371}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 0aa8d2241847bc14eaacc8ee9cff51da, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -344,7 +343,7 @@ MonoBehaviour:
   storyText: '*Sigh*'
   description: 
   character: {fileID: 2101633371}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: f2cc5ff45a27a1b448a4afdcc5d18769, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -371,7 +370,7 @@ MonoBehaviour:
   storyText: The second time.
   description: 
   character: {fileID: 2032819381}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 673de18d2eef3fd45840f1e4861c9ff6, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -398,7 +397,7 @@ MonoBehaviour:
   storyText: I meant Dis.
   description: 
   character: {fileID: 2032819381}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 673de18d2eef3fd45840f1e4861c9ff6, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -425,7 +424,7 @@ MonoBehaviour:
   storyText: So this is the city of this?
   description: 
   character: {fileID: 2032819381}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 9e5dbeb84678b0c4eaac2157d3b2af68, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -452,7 +451,7 @@ MonoBehaviour:
   storyText: GOD?
   description: 
   character: {fileID: 2032819381}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 32660a7be06fc83488081620ec7c0952, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -479,7 +478,7 @@ MonoBehaviour:
   storyText: Ah shi-
   description: 
   character: {fileID: 2101633371}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 03abca5c87ae15a4994ea947e689f471, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -506,7 +505,7 @@ MonoBehaviour:
   storyText: '*Unholy shriek*'
   description: 
   character: {fileID: 1515291798}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: c2fef6cb16b5823448af601463a708ef, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -533,7 +532,7 @@ MonoBehaviour:
   storyText: Who are you, Gandalf?
   description: 
   character: {fileID: 2101633371}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: d9ec245bb87fe3b49a2bdc5c77e51258, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -560,7 +559,7 @@ MonoBehaviour:
   storyText: YOU SHALL NOT PASS!
   description: 
   character: {fileID: 1515291798}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 1770ad45c727d1e43b04533935111860, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -587,7 +586,7 @@ MonoBehaviour:
   storyText: Ahh!
   description: 
   character: {fileID: 2032819381}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 0cb6201c23c80964e9544ba2afd3c2c9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -614,7 +613,7 @@ MonoBehaviour:
   storyText: Statistically speaking it's not unlikely.
   description: 
   character: {fileID: 2101633371}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: d9ec245bb87fe3b49a2bdc5c77e51258, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -668,7 +667,7 @@ MonoBehaviour:
   storyText: I still can't believe I knew a guy who ended up in hell.
   description: 
   character: {fileID: 2032819381}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 9e5dbeb84678b0c4eaac2157d3b2af68, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
