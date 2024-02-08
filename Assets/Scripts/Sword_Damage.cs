@@ -12,8 +12,6 @@ public class Sword_Damage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (GetComponentInParent<Tarot_cards>().hasStrength) { damageModifier = stats.swordDamageModifier; }
-        else { damageModifier = 0; }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -23,7 +21,7 @@ public class Sword_Damage : MonoBehaviour
         {
             List<TarotCards> enemyStats = collision.GetComponent<EntityHealthBehaviour>().stats.droppableCards;
             float dropchance = collision.GetComponent<EntityHealthBehaviour>().stats.cardDropChance;
-            collision.GetComponent<EntityHealthBehaviour>().ApplyDamage(stats.swordDamage + damageModifier);
+            collision.GetComponent<EntityHealthBehaviour>().ApplyDamage(stats.swordDamage + stats.swordDamageModifier);
             if (collision.GetComponent<EntityHealthBehaviour>().entityCurrentHealth <= 0)
             {
                 SpawnCard(enemyStats, dropchance);

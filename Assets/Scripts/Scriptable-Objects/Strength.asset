@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Strength
   m_EditorClassIdentifier: 
   cardImage: {fileID: 21300000, guid: c372b1c5621acd744bea0642480f5ac1, type: 3}
-  effectValue: 0
+  players: {fileID: 0}
+  effectValue: 3
   description: 
   specialCardEffectEnabled: 0
+  possibleMods: 2

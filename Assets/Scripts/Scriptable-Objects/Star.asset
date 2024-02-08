@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Star
   m_EditorClassIdentifier: 
   cardImage: {fileID: 21300000, guid: 5306a4727492eb243b31a5b607b5e6ac, type: 3}
-  effectValue: 0
+  players: {fileID: 0}
+  effectValue: 3
   description: 
   specialCardEffectEnabled: 0
+  possibleMods: 1

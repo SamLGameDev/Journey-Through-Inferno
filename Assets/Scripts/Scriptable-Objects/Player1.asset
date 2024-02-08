@@ -10,28 +10,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e0628e9c02fb16d43a69c1e106fb83da, type: 3}
-  m_Name: Players
+  m_Name: Player1
   m_EditorClassIdentifier: 
   damage: 3
   maxHealth: 15
   cardDropChance: 24
+  droppableCards: []
   gunCooldown: 1.5
-  gunCooldownModifier: 1.5
+  gunCooldownModifier: 0
   speed: 6
-  chariotSpeed: 6
+  chariotSpeed: 0
   dashSpeed: 25
   dashDuration: 0.2
   dashCooldown: 0.5
+  invisibilityCooldown: 0
+  invisibilityDuration: 0
   layersToHit:
     serializedVersion: 2
     m_Bits: 256
   bullet: {fileID: 7186132154605417265, guid: a8294735b22965b4bbd903326b093078, type: 3}
   timeUntilIdle: 3
   swordDamage: 4
-  swordDamageModifier: 4
+  swordDamageModifier: 0
   swordSpeed: 360
   swordDelay: 0.15
   bulletDamage: 3
-  bulletDamageModifier: 3
+  bulletDamageModifier: 0
   bulletSpeed: 3000
   bulletLife: 3

@@ -22,6 +22,37 @@ public class TarotCards :ScriptableObject
         speed,
         guncooldown,
     }
+    public void ApplyEffect(GameObject p)
+    {
+        if (specialCardEffectEnabled)
+        {
+            SpecialEffect();
+            return;
+        }
+        Debug.Log(effectValue);
+        Player stats = p.GetComponent<Player_movement>().stats;
+        switch (possibleMods)
+        {
+            case possibleModifiers.None:
+                return;
+            case possibleModifiers.GunDamage:
+                stats.bulletDamageModifier = effectValue;
+                break;
+            case possibleModifiers.SwordDamge:
+                stats.swordDamageModifier = effectValue;
+                break;
+            case possibleModifiers.speed:
+                stats.chariotSpeed = effectValue;
+                p.GetComponent<Player_movement>().UpdateSpeed();
+                break;
+            case possibleModifiers.guncooldown:
+                stats.gunCooldownModifier = effectValue;
+                break;
+        }
+    }
+    private void SpecialEffect()
+    {
 
+    }
 
 }

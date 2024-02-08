@@ -39,6 +39,9 @@ public class CardSpawner : MonoBehaviour
     {
         
         cardChosen = true;
+        Debug.Log(card.effectValue);
+        Debug.Log(card.description);
+        card.ApplyEffect(p);
 
     }
     private void Update()
@@ -72,7 +75,10 @@ public class CardSpawner : MonoBehaviour
                 }
                 cardAmount = _playerCards.Count > 4 ? 4 : _playerCards.Count;
                 onscreenCards = new GameObject[cardAmount];
-
+                foreach (TarotCards card in _playerCards)
+                {
+                    Debug.Log(card);
+                }
 
                 // This makes the cards spawn on alternating sides.
                 bool leftIndex = true;
@@ -104,13 +110,14 @@ public class CardSpawner : MonoBehaviour
                 int arrayIndex = 0;
                 for (int i = startIndex; i < cardAmount; i++)
                 {
+                    TarotCards card = _playerCards[arrayIndex];
                     // If the card amount is odd and it's the first card, then we can place that in the middle and then continue as
                     // normal afterwards as if it was an even number of cards.
                     if (i == 0 && startIndex == 0)
                     {
                         newCard = Instantiate(cardPrefab, gameObject.transform);
-                        newCard.GetComponent<Image>().sprite = _playerCards[arrayIndex].cardImage;
-                        newCard.GetComponent<Button>().onClick.AddListener(() => { HasClickedButton(_playerCards[arrayIndex], p); });
+                        newCard.GetComponent<Image>().sprite = card.cardImage;
+                        newCard.GetComponent<Button>().onClick.AddListener(() => { HasClickedButton(card, p); });
                         newCard.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
                         // We increment here because we are artificially completing a 'pair' with only one card already.
                         i++;
@@ -121,10 +128,13 @@ public class CardSpawner : MonoBehaviour
                      // To be brutally honest I can't remember why. It's been a long day and if it's not here it doesn't work.
                     else if (i % 2 == startIndex)
                     {
-                        Debug.Log(i);
                         newCard = Instantiate(cardPrefab, gameObject.transform);
-                        newCard.GetComponent<Image>().sprite = _playerCards[arrayIndex].cardImage;
-                        newCard.GetComponent<Button>().onClick.AddListener(() => { HasClickedButton(_playerCards[arrayIndex], p); });
+                        Debug.Log("arrayindex before  " + arrayIndex);
+                        newCard.GetComponent<Image>().sprite = card.cardImage;
+                        Debug.Log("arrayindex " + arrayIndex);
+                        newCard.GetComponent<Button>().onClick.AddListener(() => { HasClickedButton(card, p); });
+                        Debug.Log("arrayindex after  " + arrayIndex);
+                        Debug.Log(card.description);
                         // Each card is set to either be the correct distance on the left or the right respectively using i.
                         if (leftIndex)
                         {

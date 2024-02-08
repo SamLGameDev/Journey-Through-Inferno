@@ -16,7 +16,6 @@ public class bullet_controller : MonoBehaviour
     /// <summary>
     /// the change to the bullet damage for when the player has a tarot card
     /// </summary>
-    private int damageModifier = 0;
     public Player stats;
 
     public Transform target;
@@ -27,8 +26,6 @@ public class bullet_controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (GetComponentInParent<Tarot_cards>().hasStar) { damageModifier = stats.bulletDamageModifier; }
-        else { damageModifier = 0; }
         // moves the bullet in the direction it is facing
         rb = GetComponent<Rigidbody2D>();
         rb.AddForce(transform.right * stats.bulletSpeed);
@@ -46,7 +43,7 @@ public class bullet_controller : MonoBehaviour
         {
             List<TarotCards> enemyStats = collision.GetComponent<EntityHealthBehaviour>().stats.droppableCards;
             float dropchance = collision.GetComponent<EntityHealthBehaviour>().stats.cardDropChance; ;
-            collision.GetComponent<EntityHealthBehaviour>().ApplyDamage(stats.bulletDamage + damageModifier);
+            collision.GetComponent<EntityHealthBehaviour>().ApplyDamage(stats.bulletDamage + stats.bulletDamageModifier);
             if (collision.GetComponent<EntityHealthBehaviour>().entityCurrentHealth <= 0)
             {
                 SpawnCard(enemyStats, dropchance);

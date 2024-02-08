@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b7288b36b84b9241be4fdadd30129c7, type: 3}
   m_Name: Magician
   m_EditorClassIdentifier: 
-  cardImage: {fileID: 21300000, guid: c372b1c5621acd744bea0642480f5ac1, type: 3}
+  cardImage: {fileID: 21300000, guid: 5fa8a93f7dcd2a9449cb13c4c66cee22, type: 3}
+  players: {fileID: 0}
   effectValue: 0
   description: 
   specialCardEffectEnabled: 0
+  possibleMods: 0
