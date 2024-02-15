@@ -87,6 +87,7 @@ public class Player_movement : MonoBehaviour
 
     public Player stats;
     public GameObject sword;
+    public Vector2 AimingDirection;
     // Start is called before the first frame update
     void Start()
     {
@@ -128,14 +129,13 @@ public class Player_movement : MonoBehaviour
     public void Joystic_Movement(float movespeed)
     {
         // Gets the movement action and moves the player based on that times speed
-        Debug.Log("speed" + movespeed);
         movespeed = speed;
        GetComponent<Rigidbody2D>().velocity =MovementDirection * movespeed;
         
     }
-    public void Aiming(Vector2 GetRotation)
+    public void Aiming()
     {
-        float heading = Mathf.Atan2(GetRotation.x, -GetRotation.y);
+        float heading = Mathf.Atan2(AimingDirection.x, -AimingDirection.y);
         transform.GetChild(0).rotation = Quaternion.Euler(0, 0, heading * Mathf.Rad2Deg);
     }
 
@@ -273,10 +273,16 @@ public class Player_movement : MonoBehaviour
     /// </summary>
     public void Player_Shooting()
     {
-        gun_cooldown = false;
-        // shoots from the compas's facing direction
-        moves.Shoot(stats.layersToHit, transform.GetChild(0).GetChild(0).position,
+        Debug.Log("shooting");
+        if (gun_cooldown)
+        {
+            Debug.Log("pass");
+            gun_cooldown = false;
+            // shoots from the compas's facing direction
+            moves.Shoot(stats.layersToHit, transform.GetChild(0).GetChild(0).position,
             transform.GetChild(0).GetChild(0).right, stats.bullet);
+        }
+
     }
     /// <summary>
     /// checks if the player hasnt been moving for 3 seconds
@@ -392,7 +398,7 @@ public class Player_movement : MonoBehaviour
         Joystic_Movement(speed);
         possibleActions();
         Animation_Controller();
+        Aiming();
 
-       
     }
 }

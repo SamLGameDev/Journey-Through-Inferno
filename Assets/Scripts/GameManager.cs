@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.XInput;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,7 +11,9 @@ public class GameManager : MonoBehaviour
 
     private int alivePlayers;
     public int enemiesRemaining;
+    private bool okay = false;
     [SerializeField] private CardSpawner spawner;
+    public GameObject cry;
     public enum GameState
     {
         normalPlay,
@@ -27,9 +32,42 @@ public class GameManager : MonoBehaviour
         else
         {
             instance = this;
-        }
-    }
 
+        }
+
+    }
+    private void Start()
+    {
+        if (InputSystem.devices.Count > 2)
+        {
+            var p1 = PlayerInput.Instantiate(cry, 0, controlScheme: "Xbox control scheme", -1, InputSystem.devices[2]);
+            p1.neverAutoSwitchControlSchemes = true;
+        }
+        if (InputSystem.devices.OfType<Gamepad>().Count() > 2 )
+        {
+            var p2 = PlayerInput.Instantiate(cry, 1, controlScheme: "Xbox control scheme", -1, InputSystem.devices[0], InputSystem.devices[1]);
+            p2.neverAutoSwitchControlSchemes = true;
+            return;
+        }
+        var p2K = PlayerInput.Instantiate(cry, 1, controlScheme: "Keyboard", -1, InputSystem.devices[0], InputSystem.devices[1]);
+        p2K.neverAutoSwitchControlSchemes = true;
+        p2K.SwitchCurrentActionMap("Keyboard&Mouse");
+    }
+    public void AddController()
+    {
+        //if (!okay)
+        //{
+        //    okay = true;
+        //    InputDevice controller = InputSystem.devices[2];
+        //    PlayerInput p = GetComponent<PlayerInputManager>().JoinPlayer(-1, -1, "Xbox control scheme", controller);
+        //    if (p == null) 
+        //    {
+        //        Debug.Log("imma kioll unity");
+        //    }
+
+        //}
+
+    }
     /// <summary>
     /// Sets how many total players are in the game for checking win/loss conditions.
     /// </summary>

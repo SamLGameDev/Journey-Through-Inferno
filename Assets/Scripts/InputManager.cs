@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor.Rendering.LookDev;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Utilities;
 using static UnityEngine.InputSystem.InputAction;
 
 public class InputManager : MonoBehaviour
@@ -21,12 +23,13 @@ public class InputManager : MonoBehaviour
     }
     private void Awake()
     {
-        leftMouseClick = new InputAction(binding: "<Mouse>/leftButton");
-        leftMouseClick.performed += ctx => OnSword();
-        leftMouseClick.Enable();
-        rightMouseClick = new InputAction(binding: "<Mouse>/rightButton");
-        rightMouseClick.performed += ctx => OnShoot();
-        rightMouseClick.Enable();
+        //leftMouseClick = new InputAction(binding: "<Mouse>/leftButton");
+        //leftMouseClick.AddBinding("/<gamepad>/rightTrigger");
+        //leftMouseClick.performed += ctx => OnSword();
+        //leftMouseClick.Enable();
+        //rightMouseClick = new InputAction(binding: "<Mouse>/rightButton");
+        //rightMouseClick.performed += ctx => OnShoot();
+        //rightMouseClick.Enable();
     }
     // Update is called once per frame
 
@@ -40,11 +43,7 @@ public class InputManager : MonoBehaviour
     }
     public void OnAim(CallbackContext context)
     {
-        if (movement != null && context.started) 
-        {
-            movement.Aiming(context.ReadValue<Vector2>());
-        }
-
+            movement.AimingDirection = context.ReadValue<Vector2>();
     }
     public void OnDash(CallbackContext context)
     {
@@ -56,16 +55,15 @@ public class InputManager : MonoBehaviour
     }
     public void OnSword()
     {
-        Debug.Log("Sword");
         if ( movement != null)
         {
             movement.Player_Melee(movement.sword);
         }
 
     }
-    public void OnShoot()
+    public void OnShoot(CallbackContext context)
     {
-        if (movement != null) 
+        if (movement != null && context.phase == InputActionPhase.Performed) 
         {
             movement.Player_Shooting();
         }
