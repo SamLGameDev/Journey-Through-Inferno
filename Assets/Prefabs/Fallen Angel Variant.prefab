@@ -36,7 +36,7 @@ Transform:
   m_GameObject: {fileID: 5986526922118790407}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.5, y: -6.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -137,6 +137,11 @@ MonoBehaviour:
   invunTimeOnHit: 0
   entityCurrentHealth: 50
   healthBar: {fileID: 0}
+  LowHealth: {fileID: 0}
+  MidHealth: {fileID: 0}
+  HighHealth: {fileID: 0}
+  HealthSprite: {fileID: 0}
+  IsAlive: 0
 --- !u!114 &1919074620864673920
 MonoBehaviour:
   m_ObjectHideFlags: 0
