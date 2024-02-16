@@ -38,18 +38,18 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-        if (InputSystem.devices.Count > 2)
+        if (InputSystem.devices.Count > 2 && InputSystem.devices.OfType<Gamepad>() != null)
         {
-            var p1 = PlayerInput.Instantiate(cry, 0, controlScheme: "Xbox control scheme", -1, InputSystem.devices[2]);
+            var p1 = PlayerInput.Instantiate(cry, 0, controlScheme: "Xbox control scheme", -1, InputSystem.devices.OfType<Gamepad>().First());
             p1.neverAutoSwitchControlSchemes = true;
         }
-        if (InputSystem.devices.OfType<Gamepad>().Count() > 2 )
+        if (InputSystem.devices.OfType<Gamepad>().Count() >= 2 )
         {
-            var p2 = PlayerInput.Instantiate(cry, 1, controlScheme: "Xbox control scheme", -1, InputSystem.devices[0], InputSystem.devices[1]);
+            var p2 = PlayerInput.Instantiate(cry, 1, controlScheme: "Xbox control scheme", -1, InputSystem.devices.OfType<Gamepad>().ElementAt(1));
             p2.neverAutoSwitchControlSchemes = true;
             return;
         }
-        var p2K = PlayerInput.Instantiate(cry, 1, controlScheme: "Keyboard", -1, InputSystem.devices[0], InputSystem.devices[1]);
+        var p2K = PlayerInput.Instantiate(cry, 1, controlScheme: "Keyboard", -1, InputSystem.devices.OfType<Keyboard>().First(), InputSystem.devices.OfType<Mouse>().First());
         p2K.neverAutoSwitchControlSchemes = true;
         p2K.SwitchCurrentActionMap("Keyboard&Mouse");
     }
