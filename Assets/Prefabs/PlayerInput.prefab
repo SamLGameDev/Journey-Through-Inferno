@@ -124,7 +124,19 @@ MonoBehaviour:
     m_ActionId: 9597d237-1572-42f2-89e9-42b82051bd11
     m_ActionName: xbox controller/Aim
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3233724816281061975}
+        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+        m_MethodName: OnPause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: cae82b5b-0590-46f6-b1b4-a7d388c4872c
     m_ActionName: xbox controller/PauseMenu
   - m_PersistentCalls:

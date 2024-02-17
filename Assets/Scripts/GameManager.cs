@@ -1,7 +1,9 @@
+using Fungus;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.XInput;
 
@@ -14,6 +16,10 @@ public class GameManager : MonoBehaviour
     private bool okay = false;
     [SerializeField] private CardSpawner spawner;
     public GameObject cry;
+    private PlayerInput p1;
+    private PlayerInput p2;
+    [SerializeField] private EventSystem _events;
+    private bool OnEncounterCleared = false;
     public enum GameState
     {
         normalPlay,
@@ -38,20 +44,21 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
+        StartCoroutine(EncounterCleared());
         if (InputSystem.devices.Count > 2 && InputSystem.devices.OfType<Gamepad>() != null)
         {
-            var p1 = PlayerInput.Instantiate(cry, 0, controlScheme: "Xbox control scheme", -1, InputSystem.devices.OfType<Gamepad>().First());
+            p1 = PlayerInput.Instantiate(cry, 0, controlScheme: "Xbox control scheme", -1, InputSystem.devices.OfType<Gamepad>().First());
             p1.neverAutoSwitchControlSchemes = true;
         }
         if (InputSystem.devices.OfType<Gamepad>().Count() >= 2 )
         {
-            var p2 = PlayerInput.Instantiate(cry, 1, controlScheme: "Xbox control scheme", -1, InputSystem.devices.OfType<Gamepad>().ElementAt(1));
+            p2 = PlayerInput.Instantiate(cry, 1, controlScheme: "Xbox control scheme", -1, InputSystem.devices.OfType<Gamepad>().ElementAt(1));
             p2.neverAutoSwitchControlSchemes = true;
             return;
         }
-        var p2K = PlayerInput.Instantiate(cry, 1, controlScheme: "Keyboard", -1, InputSystem.devices.OfType<Keyboard>().First(), InputSystem.devices.OfType<Mouse>().First());
-        p2K.neverAutoSwitchControlSchemes = true;
-        p2K.SwitchCurrentActionMap("Keyboard&Mouse");
+        p2 = PlayerInput.Instantiate(cry, 1, controlScheme: "Keyboard", -1, InputSystem.devices.OfType<Keyboard>().First(), InputSystem.devices.OfType<UnityEngine.InputSystem.Mouse>().First());
+        p2.neverAutoSwitchControlSchemes = true;
+        p2.SwitchCurrentActionMap("Keyboard&Mouse");
     }
     public void AddController()
     {
@@ -133,17 +140,25 @@ public class GameManager : MonoBehaviour
                 OnVictory();
                 break;
             case GameState.EncounterCleared:
-                OnEncounterCleared();
+                OnEncounterCleared = true;
                 break;
             default:
                 Debug.LogError("Out of range gamestate change");
                 break;
         }
     }
-    private void OnEncounterCleared()
+    private IEnumerator EncounterCleared()
     {
-        Time.timeScale = 0;
-        spawner.encounterCleared = true;
+        while (true)
+        {
+            yield return new WaitUntil(() => OnEncounterCleared);
+            Time.timeScale = 0;
+            spawner.encounterCleared = true;
+            yield return new WaitUntil(() => spawner.onscreenCards[0] != null);
+            _events.SetSelectedGameObject(spawner.onscreenCards[0]);
+            OnEncounterCleared = false;
+        }
+        
 
     }
     private void OnNormalPlay()

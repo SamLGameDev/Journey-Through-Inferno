@@ -18,7 +18,7 @@ public class CardSpawner : MonoBehaviour
 
     private int currentCardAmount;
 
-    private GameObject[] onscreenCards;
+    public GameObject[] onscreenCards;
 
     [SerializeField] private List<GameObject> players;
 
@@ -156,6 +156,7 @@ public class CardSpawner : MonoBehaviour
                         leftIndex = !leftIndex;
                     }
                 }
+                Debug.Log(onscreenCards[0].name + "ere");
                 yield return new WaitUntil(() => cardChosen);
                 DestoryCards();
             }

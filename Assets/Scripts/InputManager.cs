@@ -76,4 +76,8 @@ public class InputManager : MonoBehaviour
         }
 
     }
+    public void OnPause()
+    {
+        movement.OnPauseMenu(true);
+    }
 }

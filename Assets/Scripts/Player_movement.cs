@@ -8,9 +8,12 @@ using static UnityEngine.GraphicsBuffer;
 using UnityEngine.SceneManagement;
 using Fungus;
 using static UnityEngine.InputSystem.InputAction;
+using UnityEngine.EventSystems;
 
 public class Player_movement : MonoBehaviour
 {
+    [SerializeField] private EventSystem _eventSystem;
+    [SerializeField] private GameObject _resumeButton;
     public bool dodash = false;
     public int playerIndex;
     public TrailRenderer dashTrail;
@@ -139,20 +142,21 @@ public class Player_movement : MonoBehaviour
         transform.GetChild(0).rotation = Quaternion.Euler(0, 0, heading * Mathf.Rad2Deg);
     }
 
-    private void OnPauseMenu(InputValue value)
+    public void OnPauseMenu(bool value)
     {
-       // if (isPaused == false)
-       // {
+        _eventSystem.SetSelectedGameObject(_resumeButton);
+        if (isPaused == false)
+        {
             PauseMenu.SetActive(true);
-          //  isPaused = true;
+            isPaused = true;
             Time.timeScale = 0;
-       // }
-        //else
-        //{
-            //PauseMenu.SetActive(false);
-            //isPaused = false;
-            //Time.timeScale = 1;
-        //}
+        }
+        else
+        {
+            PauseMenu.SetActive(false);
+            isPaused = false;
+            Time.timeScale = 1;
+        }
     }
 
     private void ResetModifiers()
