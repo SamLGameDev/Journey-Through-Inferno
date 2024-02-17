@@ -94,7 +94,6 @@ public class Player_movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ResetModifiers();
         UpdateSpeed();
         // makes sword start as invisible 
         transform.GetChild(1).gameObject.SetActive(false);
@@ -159,13 +158,6 @@ public class Player_movement : MonoBehaviour
         }
     }
 
-    private void ResetModifiers()
-    {
-        stats.chariotSpeed = 0;
-        stats.gunCooldownModifier = 0;
-        stats.swordDamageModifier = 0;
-        stats.bulletDamageModifier = 0;
-    }
     /// <summary>
     /// controlls all of the animations and decides what aniamtion should be playing right now.
     /// also rotates the sword to be in the right facing direction

@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     private PlayerInput p2;
     [SerializeField] private EventSystem _events;
     private bool OnEncounterCleared = false;
+    [SerializeField] private GameObject _clearPortal;
     public enum GameState
     {
         normalPlay,
@@ -141,6 +142,7 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.EncounterCleared:
                 OnEncounterCleared = true;
+                _clearPortal.SetActive(true);
                 break;
             default:
                 Debug.LogError("Out of range gamestate change");

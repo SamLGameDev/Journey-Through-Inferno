@@ -84,5 +84,11 @@ public class Player : BasicAttributes
     /// how long until the bullet is destoryed
     /// </summary>
     public float bulletLife;
-
+    public void Reset()
+    {
+        chariotSpeed = 0;
+        gunCooldownModifier = 0;
+        swordDamageModifier = 0;
+        bulletDamageModifier = 0;
+    }
 }

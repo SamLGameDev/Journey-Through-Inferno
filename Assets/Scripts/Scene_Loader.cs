@@ -15,6 +15,15 @@ public class Scene_Loader : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneID);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            SceneManager.LoadScene(3);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
