@@ -2,6 +2,7 @@ using Fungus;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -198,5 +199,15 @@ public class GameManager : MonoBehaviour
         print("Victory");
 
         // Add any other things you want to happen here.
+    }
+    private void Update()
+    {
+        if (EditorApplication.isPlaying && !EditorApplication.isPlayingOrWillChangePlaymode)
+        {
+            foreach(GameObject player in playerInstances)
+            {
+                player.GetComponent<Player_movement>().stats.Reset();
+            }
+        }
     }
 }
