@@ -17,7 +17,7 @@ public class Sword_Damage : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // applies damage to the enemies
-        if (collision.CompareTag("Enemy")) 
+        if (collision.CompareTag("Enemy") || (Player_movement.pvP_Enabled && collision.CompareTag("Player"))) 
         {
             List<TarotCards> enemyStats = collision.GetComponent<EntityHealthBehaviour>().stats.droppableCards;
             float dropchance = collision.GetComponent<EntityHealthBehaviour>().stats.cardDropChance;

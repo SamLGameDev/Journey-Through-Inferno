@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Scene_Loader : MonoBehaviour
 {
+    public int nextSceneID;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,13 @@ public class Scene_Loader : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            SceneManager.LoadScene(3);
+            Debug.Log(SceneManager.sceneCountInBuildSettings);
+            if(SceneManager.sceneCountInBuildSettings - 1 == nextSceneID) 
+            {
+                Debug.Log("Last Scene");
+                Player_movement.pvP_Enabled = true;
+            }
+            SceneManager.LoadScene(nextSceneID);
         }
     }
 

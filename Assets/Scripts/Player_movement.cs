@@ -14,6 +14,7 @@ public class Player_movement : MonoBehaviour
 {
     [SerializeField] private EventSystem _eventSystem;
     [SerializeField] private GameObject _resumeButton;
+    public static bool pvP_Enabled = false;
     public bool dodash = false;
     public int playerIndex;
     public TrailRenderer dashTrail;

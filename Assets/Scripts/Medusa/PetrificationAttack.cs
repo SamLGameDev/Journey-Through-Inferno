@@ -24,6 +24,10 @@ public class PetrificationAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (medusa == null)
+        {
+            return;
+        }
         if (!medusa.GetComponent<MedusaBehaviour>().attacking)
         {
             return;

@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public int enemiesRemaining;
     private bool okay = false;
     [SerializeField] private CardSpawner spawner;
+    public List<GameObject> playerInstances;
     public GameObject cry;
     private PlayerInput p1;
     private PlayerInput p2;

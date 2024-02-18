@@ -16,21 +16,16 @@ public class CardSpawner : MonoBehaviour
 
     private int startIndex;
 
-    private int currentCardAmount;
-
     public GameObject[] onscreenCards;
 
-    [SerializeField] private List<GameObject> players;
 
     private bool cardChosen = false;
     private List<TarotCards> _playerCards;
     public bool encounterCleared;
-    [SerializeField] private GameManager gameManager;
     public GameObject Canvas;
     // Start is called before the first frame update
     void Start()
     {
-        currentCardAmount = 0;
         StartCoroutine(SpawnCards());
         onscreenCards = new GameObject[cardAmount];
     }
@@ -63,10 +58,10 @@ public class CardSpawner : MonoBehaviour
     {
         while (true)
         {
-            gameManager.UpdateGameState(GameManager.GameState.normalPlay);
+            GameManager.instance.UpdateGameState(GameManager.GameState.normalPlay);
             yield return new WaitUntil(() => encounterCleared);
             encounterCleared = false;
-            foreach (GameObject p in players)
+            foreach (GameObject p in GameManager.instance.playerInstances)
             {
                 cardChosen = false;
                 _playerCards = p.GetComponent<TarotCardSelector>().cards;

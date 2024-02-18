@@ -9,6 +9,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(BoxCollider2D))]
 public class EntityHealthBehaviour : MonoBehaviour
 {
+    public bool isBoss;
     public BasicAttributes stats;
     [SerializeField] private float invunTimeOnHit;
 

@@ -22,7 +22,8 @@ public class EncounterArea : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             Enemys.Add(collision.gameObject);
-            gameManager.enemiesRemaining++;
+            GameManager.instance.enemiesRemaining++;
+            if (collision.GetComponent<EntityHealthBehaviour>().isBoss) return;
             EnablerAStar(false, collision.gameObject);
             return;
         }
@@ -30,7 +31,7 @@ public class EncounterArea : MonoBehaviour
         {
             foreach(GameObject enemy in Enemys)
             {
-                if (enemy == null)
+                if (enemy == null || enemy.GetComponent<EntityHealthBehaviour>().isBoss)
                 {
                     continue;
                 }

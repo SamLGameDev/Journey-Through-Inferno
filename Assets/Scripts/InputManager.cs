@@ -42,7 +42,8 @@ public class InputManager : MonoBehaviour
     }
     public void OnAim(CallbackContext context)
     {
-            movement.AimingDirection = context.ReadValue<Vector2>();
+        movement.AimingDirection = context.ReadValue<Vector2>();
+
     }
     public void OnDash(CallbackContext context)
     {
