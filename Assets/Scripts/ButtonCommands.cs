@@ -1,5 +1,6 @@
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class ButtonCommands : MonoBehaviour
@@ -31,6 +32,10 @@ public class ButtonCommands : MonoBehaviour
     public void ResumeGame()
     {
         Time.timeScale = 1;
-        
+        if (GameManager.instance.spawner.onscreenCards[0] != null)
+        {
+            GameManager.instance._events.SetSelectedGameObject(GameManager.instance.spawner.onscreenCards[0]);
+        }
+
     }
 }

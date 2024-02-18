@@ -2627,12 +2627,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnLeft: {fileID: 680915305}
+    m_SelectOnRight: {fileID: 222635972}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -11059,12 +11059,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnLeft: {fileID: 680915305}
+    m_SelectOnRight: {fileID: 222635972}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -28635,6 +28635,21 @@ PrefabInstance:
       propertyPath: _clearPortal
       value: 
       objectReference: {fileID: 553176732}
+    - target: {fileID: 4096624456859787653, guid: 9b9bbf6b8c1105448bd7848291b322be,
+        type: 3}
+      propertyPath: playerInstances.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4096624456859787653, guid: 9b9bbf6b8c1105448bd7848291b322be,
+        type: 3}
+      propertyPath: playerInstances.Array.data[0]
+      value: 
+      objectReference: {fileID: 1593183990}
+    - target: {fileID: 4096624456859787653, guid: 9b9bbf6b8c1105448bd7848291b322be,
+        type: 3}
+      propertyPath: playerInstances.Array.data[1]
+      value: 
+      objectReference: {fileID: 1290067501}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

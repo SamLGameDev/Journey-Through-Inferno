@@ -14,12 +14,12 @@ public class GameManager : MonoBehaviour
     private int alivePlayers;
     public int enemiesRemaining;
     private bool okay = false;
-    [SerializeField] private CardSpawner spawner;
+    public CardSpawner spawner;
     public List<GameObject> playerInstances;
     public GameObject cry;
     private PlayerInput p1;
     private PlayerInput p2;
-    [SerializeField] private EventSystem _events;
+    public EventSystem _events;
     private bool OnEncounterCleared = false;
     [SerializeField] private GameObject _clearPortal;
     public enum GameState
