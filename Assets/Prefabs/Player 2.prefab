@@ -24,14 +24,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2545676247139768187}
-  m_LocalRotation: {x: -0, y: -0, z: 0.86580956, w: -0.5003737}
-  m_LocalPosition: {x: -0.742, y: -1.142, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1907588862666638488}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 240.04901}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!212 &4077408228785462648
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -148,7 +148,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: de08f28ec8b2d684da47fb726eec09cd, type: 2}
+  - {fileID: 2100000, guid: 1cf89545d63c9d145813da9f38b3874b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -192,17 +192,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22684f22776a946479069cd07ce4c6d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _eventSystem: {fileID: 0}
+  _resumeButton: {fileID: 0}
   dodash: 0
   playerIndex: 1
   dashTrail: {fileID: 4779470324070114736}
+  speed: 0
   facing: -1
   upDown: 1
   running: 0
   PauseMenu: {fileID: 0}
   isPaused: 0
   isInvisible: 0
+  MovementDirection: {x: 0, y: 0}
   stats: {fileID: 11400000, guid: 5df255e7d82eda04e8040c6b03146859, type: 2}
   sword: {fileID: 1260723696353906758}
+  AimingDirection: {x: 0, y: 0}
 --- !u!50 &1658128008857216438
 Rigidbody2D:
   serializedVersion: 4
@@ -226,7 +231,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -242,6 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8b84871b0250ba438dbe2b84fadcf82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBoss: 0
   stats: {fileID: 11400000, guid: c53c78a8f908aff40b06667ff5c1036a, type: 2}
   invunTimeOnHit: 0
   entityCurrentHealth: 0
@@ -635,7 +641,7 @@ Transform:
   m_GameObject: {fileID: 8800594299435205276}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 8.5, y: 8.5, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2495953773665164011}
