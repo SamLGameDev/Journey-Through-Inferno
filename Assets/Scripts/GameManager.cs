@@ -11,7 +11,7 @@ using UnityEngine.InputSystem.XInput;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-
+    public GameObject text;
     private int alivePlayers;
     public int enemiesRemaining;
     private bool okay = false;
@@ -202,6 +202,7 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
+#if (UNITY_EDITOR)
         if (EditorApplication.isPlaying && !EditorApplication.isPlayingOrWillChangePlaymode)
         {
             foreach(GameObject player in playerInstances)
@@ -209,5 +210,6 @@ public class GameManager : MonoBehaviour
                 player.GetComponent<Player_movement>().stats.Reset();
             }
         }
+#endif
     }
 }
