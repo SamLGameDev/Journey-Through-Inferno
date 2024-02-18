@@ -138,7 +138,8 @@ public class Player_movement : MonoBehaviour
     }
     public void Aiming()
     {
-        float heading = Mathf.Atan2(AimingDirection.x, -AimingDirection.y);
+        float heading = MathF.Atan2(-AimingDirection.x, AimingDirection.y);
+        Debug.Log(heading * Mathf.Rad2Deg);
         transform.GetChild(0).rotation = Quaternion.Euler(0, 0, heading * Mathf.Rad2Deg);
     }
 

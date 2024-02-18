@@ -42,6 +42,7 @@ public class InputManager : MonoBehaviour
     }
     public void OnAim(CallbackContext context)
     {
+        Debug.Log("aiming: " + context.ReadValue<Vector2>());
         movement.AimingDirection = context.ReadValue<Vector2>();
 
     }
