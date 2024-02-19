@@ -61,6 +61,7 @@ public class CardSpawner : MonoBehaviour
             GameManager.instance.UpdateGameState(GameManager.GameState.normalPlay);
             yield return new WaitUntil(() => encounterCleared);
             encounterCleared = false;
+            // disables the second input system
             GameManager.instance.p2.enabled = false;
             foreach (GameObject p in GameManager.instance.playerInstances)
             {
@@ -153,6 +154,7 @@ public class CardSpawner : MonoBehaviour
                     }
                 }
                 Debug.Log(onscreenCards[0].name + "ere");
+                // sets the selected game object to be the newly created tarot card.
                 GameManager.instance._events.SetSelectedGameObject(onscreenCards[0]);
                 yield return new WaitUntil(() => cardChosen);
                 DestoryCards();

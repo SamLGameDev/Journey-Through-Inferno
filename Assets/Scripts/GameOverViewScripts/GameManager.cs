@@ -166,6 +166,8 @@ public class GameManager : MonoBehaviour
     {
         while (true)
         {
+            // when an encounter is cleared, starts the cardSpawner's tarot card creation co-routine.
+            // when it has finished generating the cards, from the event system, sets the selected gameobject to be the first tarot card
             yield return new WaitUntil(() => OnEncounterCleared);
             Time.timeScale = 0;
             spawner.encounterCleared = true;
