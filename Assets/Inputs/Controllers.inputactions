@@ -87,7 +87,7 @@
                     "path": "<Gamepad>/leftStick/up",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Xbox control scheme",
+                    "groups": "Xbox control scheme;SecondController",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -98,7 +98,7 @@
                     "path": "<Gamepad>/leftStick/down",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Xbox control scheme",
+                    "groups": "Xbox control scheme;SecondController",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -109,7 +109,7 @@
                     "path": "<Gamepad>/leftStick/left",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Xbox control scheme",
+                    "groups": "Xbox control scheme;SecondController",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -120,7 +120,7 @@
                     "path": "<Gamepad>/leftStick/right",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Xbox control scheme",
+                    "groups": "Xbox control scheme;SecondController",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -131,7 +131,7 @@
                     "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Xbox control scheme",
+                    "groups": "Xbox control scheme;SecondController",
                     "action": "Actions",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -142,7 +142,7 @@
                     "path": "<Gamepad>/leftTrigger",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Xbox control scheme",
+                    "groups": "Xbox control scheme;SecondController",
                     "action": "Shoot",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -153,7 +153,7 @@
                     "path": "<Gamepad>/rightStick",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Xbox control scheme",
+                    "groups": "Xbox control scheme;SecondController",
                     "action": "Aim",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -164,7 +164,7 @@
                     "path": "<Gamepad>/start",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Xbox control scheme",
+                    "groups": "Xbox control scheme;SecondController",
                     "action": "PauseMenu",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -175,7 +175,7 @@
                     "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Xbox control scheme",
+                    "groups": "Xbox control scheme;SecondController",
                     "action": "TriggerBuff",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -186,7 +186,7 @@
                     "path": "<Gamepad>/leftStickPress",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Xbox control scheme",
+                    "groups": "Xbox control scheme;SecondController",
                     "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -355,7 +355,7 @@
                     "path": "<Gamepad>/dpad",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Xbox control scheme",
+                    "groups": "Xbox control scheme;SecondController",
                     "action": "Navigation",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -366,7 +366,7 @@
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Xbox control scheme",
+                    "groups": "Xbox control scheme;SecondController",
                     "action": "Submit",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -397,6 +397,17 @@
                 },
                 {
                     "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "SecondController",
+            "bindingGroup": "SecondController",
+            "devices": [
+                {
+                    "devicePath": "<Gamepad>",
                     "isOptional": false,
                     "isOR": false
                 }

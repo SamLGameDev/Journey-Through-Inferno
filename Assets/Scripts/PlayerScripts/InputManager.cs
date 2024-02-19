@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
+using UnityEngine.Rendering;
 using static UnityEngine.InputSystem.InputAction;
 
 public class InputManager : MonoBehaviour
@@ -18,7 +19,9 @@ public class InputManager : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         var players = FindObjectsOfType<Player_movement>();
         var index = playerInput.playerIndex;
+        Debug.Log(index + " script index");
         movement = players.FirstOrDefault(p => p.playerIndex == index);
+        Debug.Log(movement.playerIndex + "player index");
     }
     private void Awake()
     {
@@ -34,6 +37,7 @@ public class InputManager : MonoBehaviour
 
     public void OnMove(CallbackContext context)
     {
+        Debug.Log(movement.playerIndex + "moving");
         if (movement != null)
         {
             movement.MovementDirection = context.ReadValue<Vector2>();

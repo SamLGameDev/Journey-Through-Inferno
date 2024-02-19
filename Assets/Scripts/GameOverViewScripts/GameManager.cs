@@ -18,8 +18,8 @@ public class GameManager : MonoBehaviour
     public CardSpawner spawner;
     public List<GameObject> playerInstances;
     public GameObject cry;
-    private PlayerInput p1;
-    private PlayerInput p2;
+    public PlayerInput p1;
+    public PlayerInput p2;
     public EventSystem _events;
     private bool OnEncounterCleared = false;
     [SerializeField] private GameObject _clearPortal;
@@ -50,13 +50,16 @@ public class GameManager : MonoBehaviour
         StartCoroutine(EncounterCleared());
         if (InputSystem.devices.Count > 2 && InputSystem.devices.OfType<Gamepad>() != null)
         {
+            Debug.Log(InputSystem.devices.OfType<Gamepad>().First() + " first");
             p1 = PlayerInput.Instantiate(cry, 0, controlScheme: "Xbox control scheme", -1, InputSystem.devices.OfType<Gamepad>().First());
             p1.neverAutoSwitchControlSchemes = true;
         }
         if (InputSystem.devices.OfType<Gamepad>().Count() >= 2 )
         {
+            Debug.Log(InputSystem.devices.OfType<Gamepad>().ElementAt(1) + " second");
             p2 = PlayerInput.Instantiate(cry, 1, controlScheme: "Xbox control scheme", -1, InputSystem.devices.OfType<Gamepad>().ElementAt(1));
             p2.neverAutoSwitchControlSchemes = true;
+            Debug.Log(p2.currentControlScheme);
             return;
         }
         p2 = PlayerInput.Instantiate(cry, 1, controlScheme: "Keyboard", -1, InputSystem.devices.OfType<Keyboard>().First(), InputSystem.devices.OfType<UnityEngine.InputSystem.Mouse>().First());
