@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     private bool okay = false;
     public CardSpawner spawner;
     public List<GameObject> playerInstances;
-    public GameObject cry;
+    public GameObject InputManager;
     public PlayerInput p1;
     public PlayerInput p2;
     public EventSystem _events;
@@ -48,21 +48,29 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         StartCoroutine(EncounterCleared());
-        if (InputSystem.devices.Count > 2 && InputSystem.devices.OfType<Gamepad>() != null)
+        // if their are gamepads connected
+        if (InputSystem.devices.OfType<Gamepad>() != null)
         {
+            //create a PlayerInpput device from the input manager prefab(found in prefabs) and assign it an index, control scheme and the first gamepad in the list
+            //sets control scheme to Xbox control scheme for both controllers but in reality, its set to SecondController scheme.
+            //makes it so it doesnt automatically switch control schemes
             Debug.Log(InputSystem.devices.OfType<Gamepad>().First() + " first");
-            p1 = PlayerInput.Instantiate(cry, 0, controlScheme: "Xbox control scheme", -1, InputSystem.devices.OfType<Gamepad>().First());
+            p1 = PlayerInput.Instantiate(InputManager, 0, controlScheme: "Xbox control scheme", -1, InputSystem.devices.OfType<Gamepad>().First());
             p1.neverAutoSwitchControlSchemes = true;
         }
+        //if there is more than one gamepad
         if (InputSystem.devices.OfType<Gamepad>().Count() >= 2 )
         {
+            //sets the second controllers scheme to Xbox control scheme. this is doesnt chnage like the first controller.
+            //gets the next controller in the list
             Debug.Log(InputSystem.devices.OfType<Gamepad>().ElementAt(1) + " second");
-            p2 = PlayerInput.Instantiate(cry, 1, controlScheme: "Xbox control scheme", -1, InputSystem.devices.OfType<Gamepad>().ElementAt(1));
+            p2 = PlayerInput.Instantiate(InputManager, 1, controlScheme: "Xbox control scheme", -1, InputSystem.devices.OfType<Gamepad>().ElementAt(1));
             p2.neverAutoSwitchControlSchemes = true;
             Debug.Log(p2.currentControlScheme);
             return;
         }
-        p2 = PlayerInput.Instantiate(cry, 1, controlScheme: "Keyboard", -1, InputSystem.devices.OfType<Keyboard>().First(), InputSystem.devices.OfType<UnityEngine.InputSystem.Mouse>().First());
+        //if there is no second controller, sets the second player to be controler by keyboard and mouse
+        p2 = PlayerInput.Instantiate(InputManager, 1, controlScheme: "Keyboard", -1, InputSystem.devices.OfType<Keyboard>().First(), InputSystem.devices.OfType<UnityEngine.InputSystem.Mouse>().First());
         p2.neverAutoSwitchControlSchemes = true;
         p2.SwitchCurrentActionMap("Keyboard&Mouse");
     }

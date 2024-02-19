@@ -16,6 +16,7 @@ public class InputManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Gets all the playermovement scripts, compares it's index value to the PlayerInput's index, if they match, get that playermovement script
         playerInput = GetComponent<PlayerInput>();
         var players = FindObjectsOfType<Player_movement>();
         var index = playerInput.playerIndex;
@@ -35,6 +36,7 @@ public class InputManager : MonoBehaviour
     }
     // Update is called once per frame
 
+    //Everything after this is just calling functions, or setting directions when movements are called
     public void OnMove(CallbackContext context)
     {
         Debug.Log(movement.playerIndex + "moving");
