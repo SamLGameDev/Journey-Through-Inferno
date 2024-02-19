@@ -15259,6 +15259,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1658128008857216438, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2447866012027878152, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
         type: 3}
       propertyPath: healthBar
@@ -18349,12 +18354,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db465e459a368944b8e1f0349650dc97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text: {fileID: 0}
   enemiesRemaining: 0
   spawner: {fileID: 633568184}
   playerInstances:
   - {fileID: 1900934430}
   - {fileID: 113194983}
   cry: {fileID: 6682802481998483040, guid: 9f004c0e5ade05448a8ceedc3c80610c, type: 3}
+  p1: {fileID: 0}
+  p2: {fileID: 0}
   _events: {fileID: 1204604208}
   _clearPortal: {fileID: 291487505}
 --- !u!4 &1336663985
@@ -20742,6 +20750,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 680247597080537638, guid: 28d04583d0c318648b28ee2c53bdaeab,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1736434646341859925, guid: 28d04583d0c318648b28ee2c53bdaeab,
         type: 3}
       propertyPath: m_RootOrder

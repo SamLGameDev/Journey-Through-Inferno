@@ -7015,7 +7015,7 @@ PrefabInstance:
     - target: {fileID: 4435638632648024255, guid: 69425cdf21671244f8a41af8c7240f11,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4435638632648024255, guid: 69425cdf21671244f8a41af8c7240f11,
         type: 3}
@@ -28180,6 +28180,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Geysers
+      objectReference: {fileID: 0}
+    - target: {fileID: 1603720936107381897, guid: 893aa84d541782d45be879a071978586,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6699830535656135302, guid: 893aa84d541782d45be879a071978586,
         type: 3}
