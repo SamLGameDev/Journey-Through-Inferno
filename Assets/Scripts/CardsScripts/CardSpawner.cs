@@ -61,9 +61,10 @@ public class CardSpawner : MonoBehaviour
         {
             GameManager.instance.UpdateGameState(GameManager.GameState.normalPlay);
             yield return new WaitUntil(() => encounterCleared);
+            EventSystem P1 = GameManager.instance.p1.GetComponent<EventSystem>();
             encounterCleared = false;
             // disables the second input system
-            GameManager.instance.p2.enabled = false;
+            //GameManager.instance.p2.enabled = false;
             foreach (GameObject p in GameManager.instance.playerInstances)
             {
                 cardChosen = false;
@@ -156,8 +157,11 @@ public class CardSpawner : MonoBehaviour
                 }
                 Debug.Log(onscreenCards[0].name + "ere");
                 // sets the selected game object to be the newly created tarot card.
-                GameManager.instance._events.SetSelectedGameObject(onscreenCards[0]);
+                P1.SetSelectedGameObject(onscreenCards[0]);
                 yield return new WaitUntil(() => cardChosen);
+                P1 = GameManager.instance.p2.GetComponent<EventSystem>();
+                //GameManager.instance.p1.enabled = false;
+                //GameManager.instance.p2.enabled = true;
                 DestroyCards();
             }
         } 

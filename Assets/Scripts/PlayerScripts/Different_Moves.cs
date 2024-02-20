@@ -169,7 +169,7 @@ public class Different_Moves : MonoBehaviour
         int facing = player.facing;
         Quaternion rotation = target.transform.rotation; // get the original rotation
         Vector2 position = target.transform.localPosition; // get the original position
-
+        //Invoke("SpawnSwordBeam", pStats.swordSpeed / (pStats.swordSpeed * 2));
         while (GetComponent<Player_movement>().running) // while the attack button has been pressed
         {
             // rotate it around the player based ont he facing direction
@@ -198,6 +198,10 @@ public class Different_Moves : MonoBehaviour
             yield return null;
         }
     }
+    //private void SpawnSwordBeam()
+    //{
+    //    Instantiate(GameManager.instance.bullet, transform);
+    //}
     /// <summary>
     /// shoots a beam that upon coliding with an enemy will make it take damage or a mirror will reflect it
     /// </summary>

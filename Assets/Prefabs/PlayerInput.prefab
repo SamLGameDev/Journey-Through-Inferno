@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 6124097408263365216}
   - component: {fileID: 5954355953688318526}
   - component: {fileID: 3233724816281061975}
+  - component: {fileID: 5528541105880515174}
+  - component: {fileID: -3988639295658216087}
   m_Layer: 0
   m_Name: PlayerInput
   m_TagString: Untagged
@@ -48,7 +50,7 @@ MonoBehaviour:
   m_Actions: {fileID: -944628639613478452, guid: 01a8c8e51e1e985478380d3126b54987,
     type: 3}
   m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
+  m_UIInputModule: {fileID: -3988639295658216087}
   m_DeviceLostEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -235,6 +237,14 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 0cf629be-ea0d-4df4-83bb-e6f819641d9b
     m_ActionName: Keyboard&Mouse/Dash[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9dee5397-fd29-4ed4-8c1d-21a8746e5352
+    m_ActionName: UI/Navigation[/DualShock4GamepadHID/dpad]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 417ae528-5f5c-4fd6-af43-58c6e19b5a12
+    m_ActionName: UI/Submit[/DualShock4GamepadHID/buttonSouth]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: xbox controller
@@ -252,3 +262,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e18c4153831a3ee4ca1836dcfed30dea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5528541105880515174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6682802481998483040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!114 &-3988639295658216087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6682802481998483040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: 01a8c8e51e1e985478380d3126b54987,
+    type: 3}
+  m_PointAction: {fileID: 0}
+  m_MoveAction: {fileID: 9112540966960322963, guid: 01a8c8e51e1e985478380d3126b54987,
+    type: 3}
+  m_SubmitAction: {fileID: 7435018894787096999, guid: 01a8c8e51e1e985478380d3126b54987,
+    type: 3}
+  m_CancelAction: {fileID: 0}
+  m_LeftClickAction: {fileID: 0}
+  m_MiddleClickAction: {fileID: 0}
+  m_RightClickAction: {fileID: 0}
+  m_ScrollWheelAction: {fileID: 0}
+  m_TrackedDevicePositionAction: {fileID: 0}
+  m_TrackedDeviceOrientationAction: {fileID: 0}
+  m_DeselectOnBackgroundClick: 1
+  m_PointerBehavior: 0
+  m_CursorLockBehavior: 0
