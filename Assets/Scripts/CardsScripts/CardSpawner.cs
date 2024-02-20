@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem.UI;
 using UnityEngine.UI;
 
 public class CardSpawner : MonoBehaviour
@@ -34,11 +35,12 @@ public class CardSpawner : MonoBehaviour
     public void HasClickedButton(TarotCards card, GameObject p)
     {
         
-        cardChosen = true;
+        
         Debug.Log(card.effectValue);
         Debug.Log(card.description);
         card.ApplyEffect(p);
         p.GetComponent<Player_movement>().stats.tarotCards.Add(card);
+        cardChosen = true;
 
     }
     private void Update()
@@ -62,6 +64,7 @@ public class CardSpawner : MonoBehaviour
             GameManager.instance.UpdateGameState(GameManager.GameState.normalPlay);
             yield return new WaitUntil(() => encounterCleared);
             EventSystem P1 = GameManager.instance.p1.GetComponent<EventSystem>();
+            GameManager.instance.p2.GetComponent<EventSystem>().enabled = false;
             encounterCleared = false;
             // disables the second input system
             //GameManager.instance.p2.enabled = false;
@@ -159,7 +162,13 @@ public class CardSpawner : MonoBehaviour
                 // sets the selected game object to be the newly created tarot card.
                 P1.SetSelectedGameObject(onscreenCards[0]);
                 yield return new WaitUntil(() => cardChosen);
+                P1.SetSelectedGameObject(null);
+                P1.UpdateModules();
+                P1.enabled = false;
                 P1 = GameManager.instance.p2.GetComponent<EventSystem>();
+                P1.enabled = true;
+                P1.UpdateModules();
+                GameManager.instance.p2.uiInputModule = GameManager.instance.p2.GetComponent<InputSystemUIInputModule>();
                 //GameManager.instance.p1.enabled = false;
                 //GameManager.instance.p2.enabled = true;
                 DestroyCards();

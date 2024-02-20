@@ -11,12 +11,18 @@ public class DisplayDescription : MonoBehaviour
     public GameObject TextBox;
     private GameObject text;
     private GameObject bottomtext;
+    private static bool _createdCard = false;
     void Start()
     {
         
     }
     public void Display()
     {
+        if (_createdCard)
+        {
+            return;
+        }
+        _createdCard = true;
         text = Instantiate(TextBox, GameObject.Find("CardSelectionCanvas").transform);
         text.GetComponent<RectTransform>().position =(Vector2)GameManager.instance.text.transform.position;
         text.GetComponent<RectTransform>().sizeDelta = new Vector2(525, 200);
@@ -43,6 +49,7 @@ public class DisplayDescription : MonoBehaviour
     {
         Destroy(text);
         Destroy(bottomtext);
+        _createdCard = false;
     }
     // Update is called once per frame
     void Update()
