@@ -28570,6 +28570,12 @@ PrefabInstance:
       objectReference: {fileID: 953507368}
     - target: {fileID: 4096624456859787653, guid: 9b9bbf6b8c1105448bd7848291b322be,
         type: 3}
+      propertyPath: InputManager
+      value: 
+      objectReference: {fileID: 6682802481998483040, guid: 9f004c0e5ade05448a8ceedc3c80610c,
+        type: 3}
+    - target: {fileID: 4096624456859787653, guid: 9b9bbf6b8c1105448bd7848291b322be,
+        type: 3}
       propertyPath: _clearPortal
       value: 
       objectReference: {fileID: 553176732}

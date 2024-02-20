@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
     {
         StartCoroutine(EncounterCleared());
         // if their are gamepads connected
-        if (InputSystem.devices.OfType<Gamepad>() != null)
+        if (InputSystem.devices.OfType<Gamepad>().Count() != 0)
         {
             //create a PlayerInpput device from the input manager prefab(found in prefabs) and assign it an index, control scheme and the first gamepad in the list
             //sets control scheme to Xbox control scheme for both controllers but in reality, its set to SecondController scheme.

@@ -38,13 +38,14 @@ public class CardSpawner : MonoBehaviour
         Debug.Log(card.effectValue);
         Debug.Log(card.description);
         card.ApplyEffect(p);
+        p.GetComponent<Player_movement>().stats.tarotCards.Add(card);
 
     }
     private void Update()
     {
 
     }
-    private void DestoryCards()
+    private void DestroyCards()
     {
         foreach (GameObject card in onscreenCards)
         {
@@ -157,7 +158,7 @@ public class CardSpawner : MonoBehaviour
                 // sets the selected game object to be the newly created tarot card.
                 GameManager.instance._events.SetSelectedGameObject(onscreenCards[0]);
                 yield return new WaitUntil(() => cardChosen);
-                DestoryCards();
+                DestroyCards();
             }
         } 
     }

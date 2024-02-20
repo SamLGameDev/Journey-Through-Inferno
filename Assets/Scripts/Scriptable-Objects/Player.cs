@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
+
 [CreateAssetMenu]
 public class Player : BasicAttributes
 {
@@ -84,6 +86,7 @@ public class Player : BasicAttributes
     /// how long until the bullet is destoryed
     /// </summary>
     public float bulletLife;
+    public List<TarotCards> tarotCards;
     public void Reset()
     {
         chariotSpeed = 0;
