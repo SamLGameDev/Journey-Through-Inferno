@@ -22,6 +22,7 @@ public class MedusaBehaviour : MonoBehaviour
     [SerializeField] private int poisonDamage;
     [SerializeField] private GameObject poisonProjectile;
     [SerializeField] private Sprite poisonImpactSprite;
+    [SerializeField] private LayerMask obstacleMask;
 
     [Header("Petrification Attributes")]
     [Tooltip("Time someone must stay in LOS to become petrified.")]
@@ -187,16 +188,29 @@ public class MedusaBehaviour : MonoBehaviour
     // Calculates a single impact unblocked impact point for poison.
     private Vector2 CalculateTargetPoint()
     {
+        float cap = 0;
         while (true)
         {
+            cap++;
+
             float xOffset = Random.Range(-(aimingArea.localScale.x / 2), aimingArea.localScale.x / 2);
             float yOffset = Random.Range(-(aimingArea.localScale.y / 2), aimingArea.localScale.y / 2);
 
             Vector2 targetPoint = new Vector2(xOffset, yOffset);
 
-            if (Physics2D.OverlapCircleAll(targetPoint, poisonImpactSize * 0.5f).Length == 0)
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(targetPoint, poisonImpactSize * 0.5f);
+
+
+            if (!Physics2D.OverlapCircle(targetPoint, poisonImpactSize * 0.5f, obstacleMask))
             {
                 return targetPoint;
+            }
+
+            // Anti lock-up incase of error.
+            if (cap > 10)
+            {
+                print("over Cap");
+                return Vector2.zero;
             }
         }
     }
