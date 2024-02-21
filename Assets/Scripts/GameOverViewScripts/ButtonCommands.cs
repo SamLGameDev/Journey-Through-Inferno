@@ -32,6 +32,7 @@ public class ButtonCommands : MonoBehaviour
     public void ResumeGame()
     {
         Time.timeScale = 1;
+        GameManager.instance.p1.GetComponent<EventSystem>().enabled = true;
         if (GameManager.instance.spawner.onscreenCards[0] != null)
         {
             GameManager.instance._events.SetSelectedGameObject(GameManager.instance.spawner.onscreenCards[0]);
