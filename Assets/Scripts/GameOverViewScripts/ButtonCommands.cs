@@ -8,13 +8,21 @@ public class ButtonCommands : MonoBehaviour
     public bool getPaused;
     [SerializeField] Player player1;
     [SerializeField] Player player2;
+    [SerializeField] private EventSystem _events;
+    [SerializeField] private GameObject mainMenu;
 
     // Loads the main menu
     public void MainMenu()
     {
         SceneManager.LoadScene(0);
     }
-
+    private void Start()
+    {
+        if (SceneManager.GetActiveScene().name == "LevelFailed")
+        {
+            _events.SetSelectedGameObject(mainMenu);
+        }
+    }
     // Starts the first level when ran
     public void StartGame()
     {
