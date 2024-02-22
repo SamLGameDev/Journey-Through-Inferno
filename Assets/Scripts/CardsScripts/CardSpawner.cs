@@ -17,9 +17,10 @@ public class CardSpawner : MonoBehaviour
     [SerializeField] private GameObject cardPrefab;
     private List<GameObject> blankCards = new List<GameObject>();
     private int startIndex;
-
+    private int currentCardIndex = 1;
     public GameObject[] onscreenCards;
-
+    private int cardIndex = 0;
+    private int cardIndex3 = 0;
 
     private bool cardChosen = false;
     private List<TarotCards> _playerCards;
@@ -59,18 +60,45 @@ public class CardSpawner : MonoBehaviour
     }
     public void DisplayNextCard()
     {
-        if (_playerCards.Count == arrayIndex)
+        TarotCards card;
+       for (int i = 0; i < blankCards.Count; i++)
         {
-            return;
+            if (_playerCards.Count == 3 + currentCardIndex)
+            {
+                return;
+            }
+            GameObject newCard = blankCards[i];
+            switch (i) 
+            {
+                case 0:
+                    card = _playerCards[i + currentCardIndex + cardIndex];
+                    break;
+                case 1:
+                    card = _playerCards[i + 1 + currentCardIndex];
+                    break;
+                case 2:
+                    card = _playerCards[i  - 3 + currentCardIndex + cardIndex3];
+                    cardIndex = 1;
+                    if (currentCardIndex == 2)
+                    {
+                        cardIndex3 = 1;
+                    }
+                    break;
+                case 3:
+                    card = _playerCards[i + currentCardIndex];
+                    break;
+                default:
+                    card = _playerCards[_playerCards.Count - 1];
+                    break;
+            }
+            //TarotCards card = _playerCards[i + currentCardIndex];
+            newCard.GetComponent<Image>().sprite = card.cardImage;
+            newCard.GetComponent<Button>().onClick.RemoveAllListeners();
+            newCard.GetComponent<Button>().onClick.AddListener(() => { HasClickedButton(card, playerSelecting); });
+            newCard.GetComponent<DisplayDescription>().card = card;
+            blankCards[i] = newCard;
         }
-        GameObject newCard = blankCards[3];
-        TarotCards card = _playerCards[arrayIndex];
-        newCard.GetComponent<Image>().sprite = card.cardImage;
-        newCard.GetComponent<Button>().onClick.RemoveAllListeners();
-        newCard.GetComponent<Button>().onClick.AddListener(() => { HasClickedButton(card, playerSelecting); });
-        newCard.GetComponent<DisplayDescription>().card = card;
-        arrayIndex++;
-        blankCards[3] = newCard;
+        currentCardIndex += 1;
     }
     private GameObject CreateNewCard(TarotCards card, GameObject p)
     {
