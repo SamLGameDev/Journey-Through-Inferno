@@ -43,6 +43,7 @@ public class MedusaBehaviour : MonoBehaviour
     public Transform topPos;
     [Tooltip("Object defining the area Medusa can use her poison attack within.")]
     [SerializeField] private Transform aimingArea;
+    public VignetteFadeIn vignetteControl;
 
     [HideInInspector]
     public GameObject[] players;

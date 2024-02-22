@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public GameObject text;
-    private int alivePlayers;
+    public int alivePlayers;
     public int enemiesRemaining;
     private bool okay = false;
     public CardSpawner spawner;

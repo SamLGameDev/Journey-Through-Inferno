@@ -11,6 +11,10 @@ public class MedusaPetrifyAttack : StateMachineBehaviour
     {
         mb = animator.GetComponent<MedusaBehaviour>();
 
+        mb.players = GameObject.FindGameObjectsWithTag("Player");
+
+        mb.StartCoroutine(mb.vignetteControl.FadeIn());
+
         foreach (GameObject player in mb.players)
         {
             PetrificationAttack script = player.AddComponent<PetrificationAttack>();
@@ -28,6 +32,8 @@ public class MedusaPetrifyAttack : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        mb.StartCoroutine(mb.vignetteControl.FadeOut());
+
         foreach (GameObject player in mb.players)
         {
             Destroy(player.GetComponent<PetrificationAttack>());
