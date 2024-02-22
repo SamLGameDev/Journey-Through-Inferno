@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.UI;
 using UnityEngine.UI;
+using UnityEngine.VFX;
 
 public class CardSpawner : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class CardSpawner : MonoBehaviour
     [SerializeField] private float cardSpacing;
 
     [SerializeField] private GameObject cardPrefab;
-
+    private List<GameObject> blankCards = new List<GameObject>();
     private int startIndex;
 
     public GameObject[] onscreenCards;
@@ -23,7 +24,9 @@ public class CardSpawner : MonoBehaviour
     private bool cardChosen = false;
     private List<TarotCards> _playerCards;
     public bool encounterCleared;
-    public GameObject Canvas;
+    public GameObject canvas;
+    private int arrayIndex;
+    private GameObject playerSelecting;
     // Start is called before the first frame update
     void Start()
     {
@@ -54,7 +57,41 @@ public class CardSpawner : MonoBehaviour
             Destroy(card);
         }
     }
-
+    public void DisplayNextCard()
+    {
+        if (_playerCards.Count == arrayIndex)
+        {
+            return;
+        }
+        GameObject newCard = blankCards[3];
+        TarotCards card = _playerCards[arrayIndex];
+        newCard.GetComponent<Image>().sprite = card.cardImage;
+        newCard.GetComponent<Button>().onClick.RemoveAllListeners();
+        newCard.GetComponent<Button>().onClick.AddListener(() => { HasClickedButton(card, playerSelecting); });
+        newCard.GetComponent<DisplayDescription>().card = card;
+        arrayIndex++;
+        blankCards[3] = newCard;
+    }
+    private GameObject CreateNewCard(TarotCards card, GameObject p)
+    {
+        GameObject newCard;
+        newCard = Instantiate(cardPrefab, gameObject.transform);
+        blankCards.Add(newCard);
+        newCard.GetComponent<Image>().sprite = card.cardImage;
+        newCard.GetComponent<Button>().onClick.AddListener(() => { HasClickedButton(card, p); });
+        newCard.GetComponent<DisplayDescription>().card = card;
+        return newCard;
+    }
+    private void ChangeEventSystem()
+    {
+        currentSelectingCards.SetSelectedGameObject(null);
+        currentSelectingCards.UpdateModules();
+        currentSelectingCards.enabled = false;
+        currentSelectingCards = GameManager.instance.p2.GetComponent<EventSystem>();
+        currentSelectingCards.enabled = true;
+        currentSelectingCards.UpdateModules();
+        GameManager.instance.p2.uiInputModule = GameManager.instance.p2.GetComponent<InputSystemUIInputModule>();
+    }
     // The cards are spawned in 'pairs', using the for loop to iterate through each cards position
     // and ensure the correct amount of cards in the correct arrangement are placed.
     public IEnumerator SpawnCards()
@@ -62,25 +99,22 @@ public class CardSpawner : MonoBehaviour
         while (true)
         {
             GameManager.instance.UpdateGameState(GameManager.GameState.normalPlay);
+            canvas.transform.GetChild(2).gameObject.SetActive(false);
             yield return new WaitUntil(() => encounterCleared);
             currentSelectingCards = GameManager.instance.p1.GetComponent<EventSystem>();
+            canvas.transform.GetChild(2).gameObject.SetActive(true);
             GameManager.instance.p2.GetComponent<EventSystem>().enabled = false;
             encounterCleared = false;
             // disables the second input system
             //GameManager.instance.p2.enabled = false;
             foreach (GameObject p in GameManager.instance.playerInstances)
             {
+                playerSelecting = p;
                 cardChosen = false;
                 _playerCards = p.GetComponent<TarotCardSelector>().cards;
                 if (_playerCards.Count == 0)
                 {
-                    currentSelectingCards.SetSelectedGameObject(null);
-                    currentSelectingCards.UpdateModules();
-                    currentSelectingCards.enabled = false;
-                    currentSelectingCards = GameManager.instance.p2.GetComponent<EventSystem>();
-                    currentSelectingCards.enabled = true;
-                    currentSelectingCards.UpdateModules();
-                    GameManager.instance.p2.uiInputModule = GameManager.instance.p2.GetComponent<InputSystemUIInputModule>();
+                    ChangeEventSystem();
                     continue;
                 }
                 cardAmount = _playerCards.Count > 4 ? 4 : _playerCards.Count;
@@ -117,7 +151,7 @@ public class CardSpawner : MonoBehaviour
 
                 // The index is needed because the for loop 'i' doesn't always start at 0, and we need to sequentially add each card
                 // to the array as we are creating them.
-                int arrayIndex = 0;
+                arrayIndex = 0;
                 for (int i = startIndex; i < cardAmount; i++)
                 {
                     TarotCards card = _playerCards[arrayIndex];
@@ -125,10 +159,7 @@ public class CardSpawner : MonoBehaviour
                     // normal afterwards as if it was an even number of cards.
                     if (i == 0 && startIndex == 0)
                     {
-                        newCard = Instantiate(cardPrefab, gameObject.transform);
-                        newCard.GetComponent<Image>().sprite = card.cardImage;
-                        newCard.GetComponent<Button>().onClick.AddListener(() => { HasClickedButton(card, p); });
-                        newCard.GetComponent<DisplayDescription>().card = card;
+                        newCard = CreateNewCard(card, p);
                         newCard.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
                         // We increment here because we are artificially completing a 'pair' with only one card already.
                         i++;
@@ -139,10 +170,7 @@ public class CardSpawner : MonoBehaviour
                      // To be brutally honest I can't remember why. It's been a long day and if it's not here it doesn't work.
                     else if (i % 2 == startIndex)
                     {
-                        newCard = Instantiate(cardPrefab, gameObject.transform);
-                        newCard.GetComponent<Image>().sprite = card.cardImage;
-                        newCard.GetComponent<Button>().onClick.AddListener(() => { HasClickedButton(card, p); });
-                        newCard.GetComponent<DisplayDescription>().card = card;
+                        newCard = CreateNewCard(card, p);
 
                         // Each card is set to either be the correct distance on the left or the right respectively using i.
                         if (leftIndex)
@@ -169,13 +197,7 @@ public class CardSpawner : MonoBehaviour
                 // sets the selected game object to be the newly created tarot card.
                 currentSelectingCards.SetSelectedGameObject(onscreenCards[0]);
                 yield return new WaitUntil(() => cardChosen);
-                currentSelectingCards.SetSelectedGameObject(null);
-                currentSelectingCards.UpdateModules();
-                currentSelectingCards.enabled = false;
-                currentSelectingCards = GameManager.instance.p2.GetComponent<EventSystem>();
-                currentSelectingCards.enabled = true;
-                currentSelectingCards.UpdateModules();
-                GameManager.instance.p2.uiInputModule = GameManager.instance.p2.GetComponent<InputSystemUIInputModule>();
+                ChangeEventSystem();
                 //GameManager.instance.p1.enabled = false;
                 //GameManager.instance.p2.enabled = true;
                 DestroyCards();
