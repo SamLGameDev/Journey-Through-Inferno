@@ -10,7 +10,7 @@ public class CardSpawner : MonoBehaviour
 {
     [Range(1, 4)]
     public int cardAmount;
-
+    public static EventSystem currentSelectingCards;
     [SerializeField] private float cardSpacing;
 
     [SerializeField] private GameObject cardPrefab;
@@ -63,7 +63,7 @@ public class CardSpawner : MonoBehaviour
         {
             GameManager.instance.UpdateGameState(GameManager.GameState.normalPlay);
             yield return new WaitUntil(() => encounterCleared);
-            EventSystem P1 = GameManager.instance.p1.GetComponent<EventSystem>();
+            currentSelectingCards = GameManager.instance.p1.GetComponent<EventSystem>();
             GameManager.instance.p2.GetComponent<EventSystem>().enabled = false;
             encounterCleared = false;
             // disables the second input system
@@ -74,6 +74,13 @@ public class CardSpawner : MonoBehaviour
                 _playerCards = p.GetComponent<TarotCardSelector>().cards;
                 if (_playerCards.Count == 0)
                 {
+                    currentSelectingCards.SetSelectedGameObject(null);
+                    currentSelectingCards.UpdateModules();
+                    currentSelectingCards.enabled = false;
+                    currentSelectingCards = GameManager.instance.p2.GetComponent<EventSystem>();
+                    currentSelectingCards.enabled = true;
+                    currentSelectingCards.UpdateModules();
+                    GameManager.instance.p2.uiInputModule = GameManager.instance.p2.GetComponent<InputSystemUIInputModule>();
                     continue;
                 }
                 cardAmount = _playerCards.Count > 4 ? 4 : _playerCards.Count;
@@ -160,14 +167,14 @@ public class CardSpawner : MonoBehaviour
                 }
                 Debug.Log(onscreenCards[0].name + "ere");
                 // sets the selected game object to be the newly created tarot card.
-                P1.SetSelectedGameObject(onscreenCards[0]);
+                currentSelectingCards.SetSelectedGameObject(onscreenCards[0]);
                 yield return new WaitUntil(() => cardChosen);
-                P1.SetSelectedGameObject(null);
-                P1.UpdateModules();
-                P1.enabled = false;
-                P1 = GameManager.instance.p2.GetComponent<EventSystem>();
-                P1.enabled = true;
-                P1.UpdateModules();
+                currentSelectingCards.SetSelectedGameObject(null);
+                currentSelectingCards.UpdateModules();
+                currentSelectingCards.enabled = false;
+                currentSelectingCards = GameManager.instance.p2.GetComponent<EventSystem>();
+                currentSelectingCards.enabled = true;
+                currentSelectingCards.UpdateModules();
                 GameManager.instance.p2.uiInputModule = GameManager.instance.p2.GetComponent<InputSystemUIInputModule>();
                 //GameManager.instance.p1.enabled = false;
                 //GameManager.instance.p2.enabled = true;
