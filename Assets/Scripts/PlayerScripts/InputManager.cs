@@ -39,7 +39,6 @@ public class InputManager : MonoBehaviour
     //Everything after this is just calling functions, or setting directions when movements are called
     public void OnMove(CallbackContext context)
     {
-        Debug.Log(movement.playerIndex + "moving");
         if (movement != null)
         {
             movement.MovementDirection = context.ReadValue<Vector2>();

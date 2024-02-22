@@ -145,7 +145,23 @@ public class Player_movement : MonoBehaviour
 
     public void OnPauseMenu(bool value)
     {
-        _eventSystem.SetSelectedGameObject(_resumeButton);
+        EventSystem player2Paused = GameManager.instance.p2.GetComponent<EventSystem>();
+        EventSystem player1Paused = GameManager.instance.p1.GetComponent<EventSystem>();
+        Debug.Log(playerIndex);
+        if (playerIndex == 0)
+        {
+            player2Paused.enabled = false;
+            player1Paused.SetSelectedGameObject(_resumeButton);
+            player1Paused.enabled = true;
+        }
+        else
+        {
+            player1Paused.enabled = false;
+            player2Paused.enabled = true;
+            player2Paused.SetSelectedGameObject(_resumeButton);
+            player2Paused.UpdateModules();
+        }
+        
         if (isPaused == false)
         {
             PauseMenu.SetActive(true);

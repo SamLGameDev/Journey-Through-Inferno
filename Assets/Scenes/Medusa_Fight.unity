@@ -18598,7 +18598,8 @@ MonoBehaviour:
   playerInstances:
   - {fileID: 1900934430}
   - {fileID: 113194983}
-  InputManager: {fileID: 0}
+  InputManager: {fileID: 6682802481998483040, guid: 9f004c0e5ade05448a8ceedc3c80610c,
+    type: 3}
   p1: {fileID: 0}
   p2: {fileID: 0}
   _events: {fileID: 1204604208}
