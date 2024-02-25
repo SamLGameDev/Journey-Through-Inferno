@@ -6,6 +6,8 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.UI;
 using UnityEngine.UI;
 using UnityEngine.VFX;
+using UnityEngine.InputSystem;
+using static UnityEngine.InputSystem.InputAction;
 
 public class CardSpawner : MonoBehaviour
 {
@@ -21,7 +23,9 @@ public class CardSpawner : MonoBehaviour
     public GameObject[] onscreenCards;
     private int cardIndex = 0;
     private int cardIndex3 = 0;
-
+    private int cardIndex4 = 0;
+    private int cardindex5 = 0;
+    private int cardindex6 = 0;
     private bool cardChosen = false;
     private List<TarotCards> _playerCards;
     public bool encounterCleared;
@@ -60,7 +64,7 @@ public class CardSpawner : MonoBehaviour
     }
     public void DisplayNextCard()
     {
-        TarotCards card;
+       TarotCards card;
        for (int i = 0; i < blankCards.Count; i++)
         {
             if (_playerCards.Count == 3 + currentCardIndex)
@@ -100,6 +104,77 @@ public class CardSpawner : MonoBehaviour
         }
         currentCardIndex += 1;
     }
+    public void DisplayPreviousCard()
+    {
+        TarotCards card;
+        for (int i = 0; i < blankCards.Count; i++)
+        {
+            Debug.Log("currentcardindexstart: " + currentCardIndex);
+            if (currentCardIndex == 1)
+            {
+                return;
+            }
+            if (currentCardIndex == 3)
+            {
+                cardindex5 = 1;
+                cardIndex4 = 3;
+                cardindex6 = 0;
+            }
+            if (currentCardIndex == 2)
+            {
+                cardIndex4 = 0;
+                cardindex5 = 0;
+            }
+            if(currentCardIndex == 4)
+            {
+                cardIndex4 = 3;
+                cardindex6 = 1;
+            }
+            GameObject newCard = blankCards[i];
+            switch (i)
+            {
+                case 0:
+                    card = _playerCards[i + currentCardIndex - cardIndex - 1 + cardindex6];
+                    break;
+                case 1:
+                    card = _playerCards[i + currentCardIndex - cardIndex - 1 + cardindex5 + cardindex6];
+                    break;
+                case 2:
+                    Debug.Log("index 4 " + cardIndex4);
+                    card = _playerCards[i + currentCardIndex - cardIndex - 1 - cardIndex4];
+                    cardIndex = 1;
+                    if (currentCardIndex >= 3)
+                    {
+                        cardIndex4 = 4;
+                    }
+                    break;
+                case 3:
+                    card = _playerCards[i + currentCardIndex - 1 - cardIndex];
+                    break;
+                default:
+                    card = _playerCards[_playerCards.Count - 1];
+                    break;
+            }
+
+            //TarotCards card = _playerCards[i + currentCardIndex];
+            newCard.GetComponent<Image>().sprite = card.cardImage;
+            newCard.GetComponent<Button>().onClick.RemoveAllListeners();
+            newCard.GetComponent<Button>().onClick.AddListener(() => { HasClickedButton(card, playerSelecting); });
+            newCard.GetComponent<DisplayDescription>().card = card;
+            blankCards[i] = newCard;
+        }
+        if (currentCardIndex == 2)
+        {
+            cardIndex = 0;
+            cardIndex4 = 0;
+            cardIndex3 = 0;
+            cardindex5 = 0;
+        }
+        currentCardIndex -= 1;
+        Debug.Log("currentcardindex: " + currentCardIndex);
+
+
+    }
     private GameObject CreateNewCard(TarotCards card, GameObject p)
     {
         GameObject newCard;
@@ -131,6 +206,7 @@ public class CardSpawner : MonoBehaviour
             yield return new WaitUntil(() => encounterCleared);
             currentSelectingCards = GameManager.instance.p1.GetComponent<EventSystem>();
             canvas.transform.GetChild(2).gameObject.SetActive(true);
+            canvas.transform.GetChild(3).gameObject.SetActive(true);
             GameManager.instance.p2.GetComponent<EventSystem>().enabled = false;
             encounterCleared = false;
             // disables the second input system
