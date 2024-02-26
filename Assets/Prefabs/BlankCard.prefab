@@ -239,3 +239,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   card: {fileID: 0}
   TextBox: {fileID: 8838870945949863064, guid: 4445644002b18f640a135ce4c5efee82, type: 3}
+  textBoxes:
+  - {fileID: 0}

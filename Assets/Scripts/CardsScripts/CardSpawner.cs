@@ -187,9 +187,7 @@ public class CardSpawner : MonoBehaviour
     }
     private void ChangeEventSystem()
     {
-        currentSelectingCards.SetSelectedGameObject(null);
-        currentSelectingCards.UpdateModules();
-        currentSelectingCards.enabled = false;
+        if (currentSelectingCards != null) currentSelectingCards.enabled = false;
         currentSelectingCards = GameManager.instance.p2.GetComponent<EventSystem>();
         currentSelectingCards.enabled = true;
         currentSelectingCards.UpdateModules();
@@ -203,8 +201,13 @@ public class CardSpawner : MonoBehaviour
         {
             GameManager.instance.UpdateGameState(GameManager.GameState.normalPlay);
             canvas.transform.GetChild(2).gameObject.SetActive(false);
+            canvas.transform.GetChild(3).gameObject.SetActive(false);
+            GameManager.instance.text.SetActive(false);
             yield return new WaitUntil(() => encounterCleared);
-            currentSelectingCards = GameManager.instance.p1.GetComponent<EventSystem>();
+            if (GameManager.instance.p1 != null )
+            {
+                currentSelectingCards = GameManager.instance.p1.GetComponent<EventSystem>();
+            }
             canvas.transform.GetChild(2).gameObject.SetActive(true);
             canvas.transform.GetChild(3).gameObject.SetActive(true);
             GameManager.instance.p2.GetComponent<EventSystem>().enabled = false;
@@ -300,6 +303,7 @@ public class CardSpawner : MonoBehaviour
                 Debug.Log(onscreenCards[0].name + "ere");
                 // sets the selected game object to be the newly created tarot card.
                 currentSelectingCards.SetSelectedGameObject(onscreenCards[0]);
+                GameManager.instance.text.SetActive(true);
                 yield return new WaitUntil(() => cardChosen);
                 ChangeEventSystem();
                 //GameManager.instance.p1.enabled = false;
