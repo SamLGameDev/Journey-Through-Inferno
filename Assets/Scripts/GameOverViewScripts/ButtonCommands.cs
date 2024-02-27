@@ -44,9 +44,9 @@ public class ButtonCommands : MonoBehaviour
         EventSystem player2Events = GameManager.instance.p2.GetComponent<EventSystem>();
         player1Events.enabled = true;
         player2Events.enabled = true;
-        if (GameManager.instance.spawner.onscreenCards[0] != null)
+        if (GameManager.instance.spawner.onScreenCards[0, 0] != null)
         {
-            CardSpawner.currentSelectingCards.SetSelectedGameObject(GameManager.instance.spawner.onscreenCards[0]);
+            CardSpawner.currentSelectingCards.SetSelectedGameObject((GameObject)GameManager.instance.spawner.onScreenCards[0, 0]);
             if (CardSpawner.currentSelectingCards == player2Events)
             {
                 player1Events.enabled = false;
