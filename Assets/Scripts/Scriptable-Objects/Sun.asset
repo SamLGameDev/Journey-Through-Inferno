@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b7288b36b84b9241be4fdadd30129c7, type: 3}
-  m_Name: Judgement
+  m_Name: Sun
   m_EditorClassIdentifier: 
   cardImage: {fileID: 0}
   players: {fileID: 0}
-  effectValue: 5
+  effectValue: 0
   description: 
-  specialCardEffectEnabled: 1
-  RangeForAbility: 1
-  particleEffect: {fileID: 3593046037354340037, guid: 4f8fec4a19846c542a43e3ea56df4e77,
-    type: 3}
-  possibleMods: 5
+  specialCardEffectEnabled: 0
+  RangeForAbility: 0
+  particleEffect: {fileID: 0}
+  possibleMods: 6

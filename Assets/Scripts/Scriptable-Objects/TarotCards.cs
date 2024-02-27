@@ -24,16 +24,15 @@ public class TarotCards :ScriptableObject
         SwordDamge,
         speed,
         guncooldown,
-        ExplodingEnemies
+        ExplodingEnemies,
+        TwoCards
     }
     public void ApplyEffect(GameObject p)
     {
         if (specialCardEffectEnabled)
         {
-            SpecialEffect(p);
             return;
         }
-        Debug.Log(effectValue);
         Player stats = p.GetComponent<Player_movement>().stats;
         switch (possibleMods)
         {
@@ -53,9 +52,6 @@ public class TarotCards :ScriptableObject
                 stats.gunCooldownModifier = effectValue;
                 break;
         }
-    }
-    private void SpecialEffect(GameObject p)
-    {
     }
 
 }

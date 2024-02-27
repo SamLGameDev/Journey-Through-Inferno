@@ -171,8 +171,8 @@ public class GameManager : MonoBehaviour
             yield return new WaitUntil(() => OnEncounterCleared);
             Time.timeScale = 0;
             spawner.encounterCleared = true;
-            yield return new WaitUntil(() => spawner.onscreenCards[0] != null);
-            _events.SetSelectedGameObject(spawner.onscreenCards[0]);
+            yield return new WaitUntil(() => spawner.onScreenCards[0, 0] != null);
+            _events.SetSelectedGameObject((GameObject)spawner.onScreenCards[0, 0]);
             OnEncounterCleared = false;
         }
         
