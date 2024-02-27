@@ -16,6 +16,9 @@ MonoBehaviour:
   maxHealth: 15
   cardDropChance: 24
   droppableCards: []
+  layersToHit:
+    serializedVersion: 2
+    m_Bits: 256
   gunCooldown: 1.5
   gunCooldownModifier: 0
   speed: 6
@@ -25,9 +28,6 @@ MonoBehaviour:
   dashCooldown: 0.5
   invisibilityCooldown: 0
   invisibilityDuration: 0
-  layersToHit:
-    serializedVersion: 2
-    m_Bits: 256
   bullet: {fileID: 7186132154605417265, guid: a8294735b22965b4bbd903326b093078, type: 3}
   timeUntilIdle: 3
   swordDamage: 4
@@ -38,3 +38,4 @@ MonoBehaviour:
   bulletDamageModifier: 0
   bulletSpeed: 3000
   bulletLife: 3
+  tarotCards: []

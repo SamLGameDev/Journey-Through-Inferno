@@ -4,7 +4,6 @@ using UnityEngine;
 [CreateAssetMenu]
 public class Furies : BasicAttributes
 {
-    public LayerMask layerToHit;
     public float shootingRange;
     public float moveSpeed;
     public float projectileSpeed;

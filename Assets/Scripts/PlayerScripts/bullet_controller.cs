@@ -10,10 +10,6 @@ public class bullet_controller : MonoBehaviour
     /// </summary>
     Rigidbody2D rb;
     /// <summary>
-    /// the standard bullet damage
-    /// </summary>
-    private int bulletDamage = 3;
-    /// <summary>
     /// the change to the bullet damage for when the player has a tarot card
     /// </summary>
     public Player stats;
@@ -44,7 +40,7 @@ public class bullet_controller : MonoBehaviour
         {
             List<TarotCards> enemyStats = collision.GetComponent<EntityHealthBehaviour>().stats.droppableCards;
             float dropchance = collision.GetComponent<EntityHealthBehaviour>().stats.cardDropChance; ;
-            collision.GetComponent<EntityHealthBehaviour>().ApplyDamage(stats.bulletDamage + stats.bulletDamageModifier);
+            collision.GetComponent<EntityHealthBehaviour>().ApplyDamage(stats.bulletDamage + stats.bulletDamageModifier, transform.parent.gameObject);
             if (collision.GetComponent<EntityHealthBehaviour>().entityCurrentHealth <= 0)
             {
                 SpawnCard(enemyStats, dropchance);

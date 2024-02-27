@@ -20,5 +20,6 @@ public class BasicAttributes : ScriptableObject
     /// the tarot cards it can drop
     /// </summary>
     public List<TarotCards> droppableCards;
+    public LayerMask layersToHit;
 
 }
