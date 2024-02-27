@@ -15,7 +15,8 @@ MonoBehaviour:
   damage: 3
   maxHealth: 10
   cardDropChance: 0
-  layerToHit:
+  droppableCards: []
+  layersToHit:
     serializedVersion: 2
     m_Bits: 128
   shootingRange: 12

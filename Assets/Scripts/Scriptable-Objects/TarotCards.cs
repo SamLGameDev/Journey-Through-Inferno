@@ -14,6 +14,8 @@ public class TarotCards :ScriptableObject
     [Multiline]
     public string description;
     public bool specialCardEffectEnabled;
+    public float RangeForAbility;
+    public GameObject particleEffect;
     public possibleModifiers possibleMods;
     public enum possibleModifiers 
     {
@@ -22,12 +24,13 @@ public class TarotCards :ScriptableObject
         SwordDamge,
         speed,
         guncooldown,
+        ExplodingEnemies
     }
     public void ApplyEffect(GameObject p)
     {
         if (specialCardEffectEnabled)
         {
-            SpecialEffect();
+            SpecialEffect(p);
             return;
         }
         Debug.Log(effectValue);
@@ -51,9 +54,8 @@ public class TarotCards :ScriptableObject
                 break;
         }
     }
-    private void SpecialEffect()
+    private void SpecialEffect(GameObject p)
     {
-
     }
 
 }

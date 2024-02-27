@@ -1,5 +1,7 @@
+using Fungus;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.XR;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -46,7 +48,7 @@ public class EntityHealthBehaviour : MonoBehaviour
     /// Reduces the entity's health by a set amount
     /// </summary>
     /// <param name="damageAmount">Amount of damage to apply</param>
-    public void ApplyDamage(int damageAmount)
+    public void ApplyDamage(int damageAmount, GameObject damagerDealer = null)
     {
         if (damageInvulnerable)
         {
@@ -83,7 +85,7 @@ public class EntityHealthBehaviour : MonoBehaviour
         // If so, kill it.
         if (entityCurrentHealth <= 0)
         {
-            EntityDeath();     
+            EntityDeath(damagerDealer);     
         }
 
         if (invunTimeOnHit > 0)
@@ -143,15 +145,54 @@ public class EntityHealthBehaviour : MonoBehaviour
         print($"Restored {healAmount} health to {gameObject.name}, current health: {entityCurrentHealth}");
     }
  
-
-    private void EntityDeath()
+    private object GetJudgement(GameObject player)
     {
+        Player playerStats = player.GetComponent<Player_movement>().stats;
+        foreach (TarotCards card in playerStats.tarotCards)
+        {
+            if (card.possibleMods == TarotCards.possibleModifiers.ExplodingEnemies)
+            {
+                return card;
+            }
+        }
+        return null;
+    }
+    private bool HasJudgement(GameObject player)
+    {
+        TarotCards hasJudgement = (TarotCards)GetJudgement(player);
+        if (hasJudgement == null) return false;
+        return true;
+    }
+    private void CreateExplosion(TarotCards card, Vector2 deathPosition)
+    {
+        GameObject effect = Instantiate(card.particleEffect, deathPosition, Quaternion.identity);
+        effect.transform.localScale = new Vector3(
+            card.RangeForAbility, card.RangeForAbility, card.RangeForAbility);
+        Destroy(effect, 2);
+    }
+    private void EnemyExplodeOnDeath(GameObject player, Vector2 deathPosition)
+    {
+        TarotCards card = (TarotCards)GetJudgement(player);
+        CreateExplosion(card, deathPosition);
+        Collider2D[] InRange = Physics2D.OverlapCircleAll(
+            deathPosition, card.RangeForAbility * 7f, player.GetComponent<Player_movement>().stats.layersToHit);
+        foreach (Collider2D Entity in InRange)
+        {
+            Entity.GetComponent<EntityHealthBehaviour>().ApplyDamage(card.effectValue);
+        }
+
+    }
+    private void EntityDeath(GameObject damageDealer)
+    {
+        Debug.Log(gameObject.name);
         if (gameObject.CompareTag("Enemy"))
         {
             GameManager.instance.OnEnemyDeath();
             IsAlive = false;
-            
+            Vector2 deathPosition = transform.position;
             Destroy(gameObject);
+            if (damageDealer.GetComponent<Player_movement>() != null && HasJudgement(damageDealer)) EnemyExplodeOnDeath(damageDealer, deathPosition);
+
         }
         else if (gameObject.CompareTag("Player"))
         {
