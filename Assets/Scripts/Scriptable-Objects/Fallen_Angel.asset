@@ -20,6 +20,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b10f048a0ac2b994e9d69ec36c997081, type: 2}
   - {fileID: 11400000, guid: b540e8bc04270a849b2f9bd3c59b0167, type: 2}
   - {fileID: 11400000, guid: 9262466f791bc9b4f80c2f4fab441744, type: 2}
+  layersToHit:
+    serializedVersion: 2
+    m_Bits: 128
   chargeCooldown: 5
   meeleRange: 1
   chargeFarAway: 3
@@ -27,9 +30,6 @@ MonoBehaviour:
   chargeSpeed: 5
   chargeDuration: 2
   chargeDamageInterval: 0.5
-  whatsHittable:
-    serializedVersion: 2
-    m_Bits: 128
   meleeSizeX: 1
   meleeSizeY: 1
   meleeDistance: 1

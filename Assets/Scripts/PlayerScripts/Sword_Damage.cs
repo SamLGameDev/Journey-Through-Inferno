@@ -21,7 +21,7 @@ public class Sword_Damage : MonoBehaviour
         {
             List<TarotCards> enemyStats = collision.GetComponent<EntityHealthBehaviour>().stats.droppableCards;
             float dropchance = collision.GetComponent<EntityHealthBehaviour>().stats.cardDropChance;
-            collision.GetComponent<EntityHealthBehaviour>().ApplyDamage(stats.swordDamage + stats.swordDamageModifier);
+            collision.GetComponent<EntityHealthBehaviour>().ApplyDamage(stats.swordDamage + stats.swordDamageModifier, transform.parent.gameObject);
             if (collision.GetComponent<EntityHealthBehaviour>().entityCurrentHealth <= 0)
             {
                 SpawnCard(enemyStats, dropchance);

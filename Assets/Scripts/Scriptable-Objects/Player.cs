@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -42,10 +43,6 @@ public class Player : BasicAttributes
     /// the length of an invisibility burst
     /// </summary>
     public float invisibilityDuration;
-    /// <summary>
-    /// what layers the  player can hit
-    /// </summary>
-    public LayerMask layersToHit;
     /// <summary>
     /// the bullet the player shoots
     /// </summary>
@@ -93,5 +90,6 @@ public class Player : BasicAttributes
         gunCooldownModifier = 0;
         swordDamageModifier = 0;
         bulletDamageModifier = 0;
+        tarotCards.Clear();
     }
 }

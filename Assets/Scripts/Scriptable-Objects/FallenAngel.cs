@@ -31,10 +31,6 @@ public class EnemyStats : BasicAttributes
     /// </summary>
     public float chargeDamageInterval;
     /// <summary>
-    /// the layers they can hit
-    /// </summary>
-    public LayerMask whatsHittable;
-    /// <summary>
     /// the x size of the meele box
     /// </summary>
     public float meleeSizeX;
