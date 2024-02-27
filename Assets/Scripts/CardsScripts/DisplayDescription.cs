@@ -15,6 +15,7 @@ public class DisplayDescription : MonoBehaviour
     void Start()
     {
         
+
     }
     public void Display()
     {
@@ -42,7 +43,8 @@ public class DisplayDescription : MonoBehaviour
         bottomtext.GetComponent<RectTransform>().sizeDelta = new Vector2(540, 200);
         bottomtext.GetComponent<TMPro.TextMeshProUGUI>().text = card.description.Substring(i+1);
         text.SetActive(true);
-        bottomtext.SetActive(true) ;
+        bottomtext.SetActive(true);
+
 
     }
     public void hide()

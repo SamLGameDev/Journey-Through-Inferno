@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Sprites/UI sprites/player UI sprites.meta
+guid: 36357564e73faed42a9c557438efbe85
+========
 guid: 81c429bfad2fbd74d9f1b47db0338148
+>>>>>>>> adccf177399f19f069142b23ae66c3933a62fd15:Assets/Sprites/UI sprites.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
