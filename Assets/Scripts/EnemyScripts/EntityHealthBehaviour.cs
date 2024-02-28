@@ -58,25 +58,25 @@ public class EntityHealthBehaviour : MonoBehaviour
 
         entityCurrentHealth -= damageAmount;
 
-        //if (gameObject.tag == "Player")
-        //{
-        //    healthBar.fillAmount = entityCurrentHealth / 15f;
+        if (gameObject.tag == "Player")
+        {
+            healthBar.fillAmount = entityCurrentHealth / 15f;
 
-        //    if (entityCurrentHealth / 15f <= 0.7f && entityCurrentHealth / 15f >= 0.35f)
-        //    {
-        //        HealthSprite.sprite = MidHealth.sprite;
-        //    }
-        //    if (entityCurrentHealth / 15f > 0.7f)
-        //    {
-        //        HealthSprite.sprite = HighHealth.sprite;
-        //    }
-        //    if (entityCurrentHealth / 15f < 0.35f)
-        //    {
-        //        HealthSprite.sprite = LowHealth.sprite;
-        //    }
+            if (entityCurrentHealth / 15f <= 0.7f && entityCurrentHealth / 15f >= 0.35f)
+            {
+                HealthSprite.sprite = MidHealth.sprite;
+            }
+            if (entityCurrentHealth / 15f > 0.7f)
+            {
+                HealthSprite.sprite = HighHealth.sprite;
+            }
+            if (entityCurrentHealth / 15f < 0.35f)
+            {
+                HealthSprite.sprite = LowHealth.sprite;
+            }
 
-        //    print(entityCurrentHealth);
-        //}
+            print(entityCurrentHealth);
+        }
         
 
         print($"{gameObject.name} took {damageAmount} damage, current health: {entityCurrentHealth}");
