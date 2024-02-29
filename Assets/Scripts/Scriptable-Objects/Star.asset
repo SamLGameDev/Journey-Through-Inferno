@@ -15,6 +15,11 @@ MonoBehaviour:
   cardImage: {fileID: 21300000, guid: 5306a4727492eb243b31a5b607b5e6ac, type: 3}
   players: {fileID: 0}
   effectValue: 3
-  description: shining star!
+  description: 'Invisible by day, spotlights by night, stars lead us all forwards
+    towards hope
+
+    _Effect: Increases attack damage for ranged attack'
   specialCardEffectEnabled: 0
+  RangeForAbility: 0
+  particleEffect: {fileID: 0}
   possibleMods: 1

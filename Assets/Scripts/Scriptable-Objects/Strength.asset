@@ -15,6 +15,11 @@ MonoBehaviour:
   cardImage: {fileID: 21300000, guid: c372b1c5621acd744bea0642480f5ac1, type: 3}
   players: {fileID: 0}
   effectValue: 3
-  description: Strong!!!
+  description: 'The strength to go forward is within you, you only need to find it.
+
+    _Effect:
+    Increases attack damage for melee attack'
   specialCardEffectEnabled: 0
+  RangeForAbility: 0
+  particleEffect: {fileID: 0}
   possibleMods: 2
