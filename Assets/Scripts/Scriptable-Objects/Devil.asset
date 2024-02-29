@@ -15,7 +15,10 @@ MonoBehaviour:
   cardImage: {fileID: 0}
   players: {fileID: 0}
   effectValue: 15
-  description: 
+  description: 'Beware the sins that lead you astray and beware those you push you
+    towards them.
+
+    _Effect: increases card drop rate'
   specialCardEffectEnabled: 0
   RangeForAbility: 0
   particleEffect: {fileID: 0}

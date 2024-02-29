@@ -15,7 +15,10 @@ MonoBehaviour:
   cardImage: {fileID: 0}
   players: {fileID: 0}
   effectValue: 6
-  description: 
+  description: 'A noble self-sacrifice for wisdom, following in the footsteps of
+    Odin.
+
+    _Effect: Increases attack but lowers health'
   specialCardEffectEnabled: 0
   RangeForAbility: 3
   particleEffect: {fileID: 0}

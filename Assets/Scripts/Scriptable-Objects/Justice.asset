@@ -15,7 +15,11 @@ MonoBehaviour:
   cardImage: {fileID: 0}
   players: {fileID: 0}
   effectValue: 10
-  description: 
+  description: 'The truth is an elusive thing, but it will always be revealed in
+    the end. Only then can justice prevail.
+
+    _Effect: Adds a chance for a critical
+    attack'
   specialCardEffectEnabled: 0
   RangeForAbility: 0
   particleEffect: {fileID: 0}

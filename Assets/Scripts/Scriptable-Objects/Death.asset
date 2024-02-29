@@ -15,7 +15,8 @@ MonoBehaviour:
   cardImage: {fileID: 0}
   players: {fileID: 0}
   effectValue: 1
-  description: 
+  description: "There is no need to fear the unknown, for Death is but another adventure.
+    It\u2019s time to move on.\n_Effect: Get an extra life"
   specialCardEffectEnabled: 0
   RangeForAbility: 0
   particleEffect: {fileID: 0}
