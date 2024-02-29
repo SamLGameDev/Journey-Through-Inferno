@@ -19,6 +19,7 @@ MonoBehaviour:
   layersToHit:
     serializedVersion: 2
     m_Bits: 256
+  extraLives: 0
   gunCooldown: 1.5
   gunCooldownModifier: 0
   speed: 6

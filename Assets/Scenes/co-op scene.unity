@@ -9349,7 +9349,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &481472222
 Transform:
   m_ObjectHideFlags: 0
@@ -10644,7 +10644,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &584249137
 GameObject:
@@ -16559,7 +16559,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4798113c927765479617be02957c7b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 248639305}
 --- !u!4 &1157078696
 Transform:
   m_ObjectHideFlags: 0
@@ -16573,7 +16572,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1158298865
 GameObject:
@@ -18036,6 +18035,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2447866012027878152, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
         type: 3}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 11400000, guid: 5df255e7d82eda04e8040c6b03146859,
+        type: 2}
+    - target: {fileID: 2447866012027878152, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
+        type: 3}
       propertyPath: LowHealth
       value: 
       objectReference: {fileID: 2041164822}
@@ -18124,11 +18129,6 @@ PrefabInstance:
       propertyPath: PauseMenu
       value: 
       objectReference: {fileID: 727613249}
-    - target: {fileID: 5262642640742413803, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
-        type: 3}
-      propertyPath: playerIndex
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5262642640742413803, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
         type: 3}
       propertyPath: _eventSystem
@@ -27140,7 +27140,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2041164820
 GameObject:

@@ -296,6 +296,11 @@ public class CardSpawner : MonoBehaviour
             foreach (GameObject p in GameManager.instance.playerInstances)
             {
                 cardChosen = false;
+                if (p == null)
+                {
+                    ChangeEventSystem();
+                    continue;
+                }
                 _playerCards = p.GetComponent<TarotCardSelector>().cards;
                 if (_playerCards.Count == 0)
                 {

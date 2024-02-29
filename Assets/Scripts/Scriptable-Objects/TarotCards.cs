@@ -26,7 +26,8 @@ public class TarotCards :ScriptableObject
         guncooldown,
         ExplodingEnemies,
         TwoCards,
-        increasedDropChance
+        increasedDropChance,
+        extraLife
     }
     public void ApplyEffect(GameObject p)
     {
@@ -54,6 +55,9 @@ public class TarotCards :ScriptableObject
                 break;
             case possibleModifiers.increasedDropChance:
                 stats.cardDropChance = effectValue;
+                break;
+            case possibleModifiers.extraLife:
+                stats.extraLives = effectValue;
                 break;
         }
     }

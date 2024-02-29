@@ -91,5 +91,7 @@ public class Player : BasicAttributes
         swordDamageModifier = 0;
         bulletDamageModifier = 0;
         tarotCards.Clear();
+        extraLives = 0;
+        cardDropChance = 0;
     }
 }
