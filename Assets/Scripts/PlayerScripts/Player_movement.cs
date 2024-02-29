@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 using Fungus;
 using static UnityEngine.InputSystem.InputAction;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem.iOS;
 
 public class Player_movement : MonoBehaviour
 {
@@ -282,16 +283,22 @@ public class Player_movement : MonoBehaviour
 
 
     }
+    private IEnumerator controllerRumble(float leftStick, float rightStick, float duration, Gamepad gamepad)
+    {
+        gamepad.SetMotorSpeeds(leftStick, rightStick);
+        yield return new WaitForSeconds(duration);
+        gamepad.ResetHaptics();
+        StopCoroutine(controllerRumble(0.5f, 0.5f, 0.5f, gamepad));
+    }
     /// <summary>
     /// calls the shoot function from different moves
     /// </summary>
-    public void Player_Shooting()
+    public void Player_Shooting(Gamepad gamepad)
     {
-        Debug.Log("shooting");
         if (gun_cooldown)
-        {
-            Debug.Log("pass");
+        { 
             gun_cooldown = false;
+            StartCoroutine(controllerRumble(0.5f, 0.5f, 0.5f, gamepad));
             // shoots from the compas's facing direction
             moves.Shoot(stats.layersToHit, transform.GetChild(0).GetChild(0).position,
             transform.GetChild(0).GetChild(0).right, stats.bullet);
