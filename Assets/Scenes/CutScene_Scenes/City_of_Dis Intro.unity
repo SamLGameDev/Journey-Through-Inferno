@@ -187,6 +187,7 @@ GameObject:
   - component: {fileID: 417375780}
   - component: {fileID: 417375779}
   - component: {fileID: 417375789}
+  - component: {fileID: 417375790}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -220,7 +221,8 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 417375787}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 417375790}
   variables: []
   description: 
   stepPause: 0
@@ -453,6 +455,7 @@ MonoBehaviour:
   - {fileID: 417375781}
   - {fileID: 417375780}
   - {fileID: 417375779}
+  - {fileID: 417375790}
   suppressAllAutoSelections: 0
 --- !u!4 &417375788
 Transform:
@@ -484,6 +487,25 @@ MonoBehaviour:
   parentBlock: {fileID: 417375787}
   suppressBlockAutoSelect: 0
   waitForFrames: 1
+--- !u!114 &417375790
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 417375769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00d03ae0919f04264b018681ed534177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 10
+  indentLevel: 0
+  _sceneName:
+    stringRef: {fileID: 0}
+    stringVal: co-op scene
+  loadingImage: {fileID: 0}
+  sceneNameOLD: 
 --- !u!1 &638354908
 GameObject:
   m_ObjectHideFlags: 0

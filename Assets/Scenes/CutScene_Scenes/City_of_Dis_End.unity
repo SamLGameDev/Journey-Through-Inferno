@@ -186,6 +186,7 @@ GameObject:
   - component: {fileID: 417375792}
   - component: {fileID: 417375791}
   - component: {fileID: 417375790}
+  - component: {fileID: 417375796}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -206,7 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 58, y: 85}
+  scrollPos: {x: 110.5, y: 265.5}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 278.75
@@ -217,8 +218,10 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks: []
-  selectedCommands: []
+  selectedBlocks:
+  - {fileID: 417375787}
+  selectedCommands:
+  - {fileID: 417375796}
   variables: []
   description: 
   stepPause: 0
@@ -245,7 +248,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 69
-    y: 73
+    y: 72
     width: 77
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -261,6 +264,7 @@ MonoBehaviour:
   - {fileID: 417375792}
   - {fileID: 417375791}
   - {fileID: 417375790}
+  - {fileID: 417375796}
   suppressAllAutoSelections: 0
 --- !u!4 &417375788
 Transform:
@@ -454,6 +458,25 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &417375796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 417375769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00d03ae0919f04264b018681ed534177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 23
+  indentLevel: 0
+  _sceneName:
+    stringRef: {fileID: 0}
+    stringVal: Cutscene greed
+  loadingImage: {fileID: 0}
+  sceneNameOLD: 
 --- !u!1 &638354908
 GameObject:
   m_ObjectHideFlags: 0

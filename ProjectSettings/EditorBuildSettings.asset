@@ -24,6 +24,12 @@ EditorBuildSettings:
     path: Assets/Scenes/CutScene_Scenes/City_of_Dis_End.unity
     guid: 506c992775d902442b49785837b0f135
   - enabled: 1
+    path: Assets/Scenes/CutScene_Scenes/Cutscene greed.unity
+    guid: b2d9012581b45d84a8d1395da8333589
+  - enabled: 1
+    path: Assets/Scenes/City_of_Greed.unity
+    guid: 19d8e8f054be0bb4fa3515a876e97592
+  - enabled: 1
     path: Assets/Scenes/PvP_Area_Placeholder.unity
     guid: 2ceb4cc7957b6794d8abe3e2edc09d7d
   - enabled: 1
