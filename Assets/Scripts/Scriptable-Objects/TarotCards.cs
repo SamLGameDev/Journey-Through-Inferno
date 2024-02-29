@@ -30,6 +30,7 @@ public class TarotCards :ScriptableObject
         extraLife,
         IncreasedDamageLowerHealth,
         criticalHit,
+        damageReduction,
     }
     public void ApplyEffect(GameObject p)
     {
@@ -68,6 +69,9 @@ public class TarotCards :ScriptableObject
                 break;
             case possibleModifiers.criticalHit:
                 stats.criticalHitChance = effectValue;
+                break;
+            case possibleModifiers.damageReduction:
+                stats.damageReduction = effectValue;
                 break;
         }
     }

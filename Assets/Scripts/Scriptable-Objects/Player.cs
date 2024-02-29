@@ -99,5 +99,6 @@ public class Player : BasicAttributes
         swordDamage = 4;
         bulletDamage = 3;
         criticalHitChance = 0;
+        damageReduction = 0;
     }
 }

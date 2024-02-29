@@ -55,7 +55,7 @@ public class EntityHealthBehaviour : MonoBehaviour
             return;
         }
 
-        entityCurrentHealth -= damageAmount;
+        entityCurrentHealth -= damageAmount - stats.damageReduction;
 
         if (gameObject.tag == "Player")
         {
