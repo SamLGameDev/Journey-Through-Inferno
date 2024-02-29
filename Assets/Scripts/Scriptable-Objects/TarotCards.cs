@@ -25,7 +25,8 @@ public class TarotCards :ScriptableObject
         speed,
         guncooldown,
         ExplodingEnemies,
-        TwoCards
+        TwoCards,
+        increasedDropChance
     }
     public void ApplyEffect(GameObject p)
     {
@@ -50,6 +51,9 @@ public class TarotCards :ScriptableObject
                 break;
             case possibleModifiers.guncooldown:
                 stats.gunCooldownModifier = effectValue;
+                break;
+            case possibleModifiers.increasedDropChance:
+                stats.cardDropChance = effectValue;
                 break;
         }
     }

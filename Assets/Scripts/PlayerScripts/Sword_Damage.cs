@@ -34,7 +34,7 @@ public class Sword_Damage : MonoBehaviour
     }
     private void SpawnCard(List<TarotCards> possibleCards, float dropChance)
     {
-        if (Random.Range(0.0001f, 101) < dropChance)
+        if (Random.Range(0.0001f, 101) < dropChance + stats.cardDropChance)
         {
 
             TarotCards card = possibleCards[Random.Range(0, possibleCards.Count)];
