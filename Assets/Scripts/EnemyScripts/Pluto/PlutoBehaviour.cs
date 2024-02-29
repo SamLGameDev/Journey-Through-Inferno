@@ -6,7 +6,7 @@ using UnityEngine;
 public class Pluto_behaviour : MonoBehaviour
 {
     
-    private int[,] places = { { -20, 20, 0, 16, 2, 18 }, { 17, 17, 16, -5, -20, -2 } };
+    private int[,] places = { { -20, 20, 0, 16, 2, -18 }, { 17, 17, 16, -5, -20, -2 } };
     private float moveInterval = 8f;
     private float moveTime;
 
