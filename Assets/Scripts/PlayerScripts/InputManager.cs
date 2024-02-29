@@ -70,7 +70,7 @@ public class InputManager : MonoBehaviour
     {
         if (movement != null && context.phase == InputActionPhase.Performed) 
         {
-            movement.Player_Shooting();
+            movement.Player_Shooting((Gamepad)context.control.device);
         }
 
     }
