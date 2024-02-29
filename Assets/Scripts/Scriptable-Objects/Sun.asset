@@ -15,7 +15,10 @@ MonoBehaviour:
   cardImage: {fileID: 0}
   players: {fileID: 0}
   effectValue: 0
-  description: 
+  description: 'May the sun smile golden upon your successes and happy endings.
+
+    _Effect:
+    Pick an extra card next round'
   specialCardEffectEnabled: 0
   RangeForAbility: 0
   particleEffect: {fileID: 0}
