@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -38,11 +39,13 @@ public class PetrificationAttack : MonoBehaviour
             return;
         }
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, medusa.position - transform.position);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, medusa.position - transform.position, Mathf.Infinity);
 
         if (hit.collider != null && hit.collider.CompareTag("Enemy"))
         {
             petrifyProgress += Time.deltaTime;
+
+            Debug.DrawLine(transform.position, hit.collider.transform.position);
 
             if (petrifyProgress >= petrifyTime)
             {
@@ -52,6 +55,7 @@ public class PetrificationAttack : MonoBehaviour
                 GetComponent<Player_movement>().enabled = false;
                 GetComponent<SpriteRenderer>().color = Color.gray;
                 GetComponent<Animator>().speed = 0f;
+                GetComponent<Rigidbody2D>().velocity = Vector3.zero;
 
                 // Start a countdown to unpetrify the player.
                 MedusaBehaviour mb = medusa.GetComponent<MedusaBehaviour>();
