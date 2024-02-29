@@ -40,3 +40,5 @@ MonoBehaviour:
   bulletSpeed: 3000
   bulletLife: 3
   tarotCards: []
+  criticalHitChance: 0
+  criticalHitDamage: 3

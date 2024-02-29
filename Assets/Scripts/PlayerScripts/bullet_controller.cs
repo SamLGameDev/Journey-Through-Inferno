@@ -38,14 +38,24 @@ public class bullet_controller : MonoBehaviour
         if (collision.CompareTag("Enemy") || (Player_movement.pvP_Enabled && collision.CompareTag("Player")
             && collision.gameObject != transform.parent.gameObject))
         {
-            List<TarotCards> enemyStats = collision.GetComponent<EntityHealthBehaviour>().stats.droppableCards;
-            float dropchance = collision.GetComponent<EntityHealthBehaviour>().stats.cardDropChance; ;
-            collision.GetComponent<EntityHealthBehaviour>().ApplyDamage(stats.bulletDamage + stats.bulletDamageModifier, transform.parent.gameObject);
-            if (collision.GetComponent<EntityHealthBehaviour>().entityCurrentHealth <= 0)
+            EntityHealthBehaviour enemyHealth = collision.GetComponent<EntityHealthBehaviour>();
+            List<TarotCards> enemyStats = enemyHealth.stats.droppableCards;
+            float dropchance = enemyHealth.stats.cardDropChance;
+            int criticalDamage = 0;
+            if (stats.criticalHitChance > 0 && (Random.Range(0.0001f, 101) < stats.criticalHitChance))
             {
-                SpawnCard(enemyStats, dropchance);
+                criticalDamage = stats.criticalHitDamage;
             }
+            enemyHealth.ApplyDamage(stats.bulletDamage + stats.bulletDamageModifier + criticalDamage, transform.parent.gameObject);
+            healthCheck(enemyHealth, dropchance, enemyStats);
             Destroy(this);
+        }
+    }
+    private void healthCheck(EntityHealthBehaviour enemyHealth, float dropchance, List<TarotCards> enemyStats)
+    {
+        if (enemyHealth.entityCurrentHealth <= 0)
+        {
+            SpawnCard(enemyStats, dropchance);
         }
     }
     private void SpawnCard(List<TarotCards> possibleCards, float dropChance)

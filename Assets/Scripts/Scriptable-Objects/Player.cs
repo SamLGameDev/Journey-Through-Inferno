@@ -84,6 +84,8 @@ public class Player : BasicAttributes
     /// </summary>
     public float bulletLife;
     public List<TarotCards> tarotCards;
+    public float criticalHitChance;
+    public int criticalHitDamage;
     public void Reset()
     {
         chariotSpeed = 0;
@@ -96,5 +98,6 @@ public class Player : BasicAttributes
         maxHealth = 15;
         swordDamage = 4;
         bulletDamage = 3;
+        criticalHitChance = 0;
     }
 }
