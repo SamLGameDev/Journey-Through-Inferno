@@ -61,3 +61,6 @@ sysinfo.txt
 crashlytics-build.properties
 ProjectSettings/Packages/com.unity.probuilder/Settings.json
 ProjectSettings/Packages/com.unity.probuilder/Settings.json
+Assets/Fungus/Integrations/Playmaker/Fungus-PlayMaker.unitypackage.meta
+Assets/Fungus/Integrations/Spine/Fungus-Spine.unitypackage.meta
+Assets/Fungus/Fungus_v3.13.8.unitypackage.meta
