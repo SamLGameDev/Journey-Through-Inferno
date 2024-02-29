@@ -100,5 +100,6 @@ public class Player : BasicAttributes
         bulletDamage = 3;
         criticalHitChance = 0;
         damageReduction = 0;
+        armour = 0;
     }
 }

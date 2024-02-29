@@ -38,7 +38,7 @@ public class EntityHealthBehaviour : MonoBehaviour
 
     private void Start()
     {
-        entityCurrentHealth = stats.maxHealth;
+        entityCurrentHealth = stats.maxHealth + stats.armour;
         damageInvulnerable = false;
         IsAlive = true;
     }

@@ -32,6 +32,7 @@ public class TarotCards :ScriptableObject
         criticalHit,
         damageReduction,
         increaseMaxHealth,
+        armour
     }
     public void ApplyEffect(GameObject p)
     {
@@ -76,6 +77,9 @@ public class TarotCards :ScriptableObject
                 break;
             case possibleModifiers.increaseMaxHealth:
                 stats.maxHealth += effectValue;
+                break;
+            case possibleModifiers.armour:
+                stats.armour = effectValue;
                 break;
         }
     }

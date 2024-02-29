@@ -23,5 +23,6 @@ public class BasicAttributes : ScriptableObject
     public LayerMask layersToHit;
     public int extraLives;
     public int damageReduction;
+    public int armour;
 
 }
