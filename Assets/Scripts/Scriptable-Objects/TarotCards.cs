@@ -27,7 +27,8 @@ public class TarotCards :ScriptableObject
         ExplodingEnemies,
         TwoCards,
         increasedDropChance,
-        extraLife
+        extraLife,
+        IncreasedDamageLowerHealth
     }
     public void ApplyEffect(GameObject p)
     {
@@ -58,6 +59,11 @@ public class TarotCards :ScriptableObject
                 break;
             case possibleModifiers.extraLife:
                 stats.extraLives = effectValue;
+                break;
+            case possibleModifiers.IncreasedDamageLowerHealth:
+                stats.maxHealth -= effectValue;
+                stats.swordDamage += (int)RangeForAbility;
+                stats.bulletDamage += (int)RangeForAbility;
                 break;
         }
     }

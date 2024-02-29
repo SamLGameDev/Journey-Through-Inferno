@@ -93,5 +93,8 @@ public class Player : BasicAttributes
         tarotCards.Clear();
         extraLives = 0;
         cardDropChance = 0;
+        maxHealth = 15;
+        swordDamage = 4;
+        bulletDamage = 3;
     }
 }
