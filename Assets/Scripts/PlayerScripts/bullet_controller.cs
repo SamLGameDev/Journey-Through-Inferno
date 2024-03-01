@@ -18,6 +18,7 @@ public class bullet_controller : MonoBehaviour
     public Transform target2;
     public float speed;
     public float rotateSpeed = 200f;
+    public static bool original = true;
 
     // Start is called before the first frame update
     void Start()
@@ -25,15 +26,40 @@ public class bullet_controller : MonoBehaviour
         // moves the bullet in the direction it is facing
         transform.localScale = stats.projectilesize;
         rb = GetComponent<Rigidbody2D>();
-        rb.AddForce(transform.right * stats.bulletSpeed);
+        if (original)
+        {
+            rb.AddForce(transform.right * stats.bulletSpeed);
+        }
         Destroy(this.gameObject, stats.bulletLife);
-
-        // If the player has the Magician Arcana then the size of their bullets will be increased
-        if (GetComponentInParent<Tarot_cards>().hasMagician)
-        { transform.localScale *= 3f; }       
+        if (HasHierophant() && original)
+        {
+            original = false;
+            Invoke("SpreadShot", stats.timeUntilSpreadShot);
+        }
+        // If the player has the Magician Arcana then the size of their bullets will be increased  
 
     }
+    private bool HasHierophant()
+    {
+        foreach (TarotCards card in stats.tarotCards)
+        {
+            if (card.possibleMods == TarotCards.possibleModifiers.SpreadShot)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    private void SpreadShot()
+    {
+        for (int i = 0; i < stats.spreadShotNumber; i++)
+        {
+            GameObject bullet = Instantiate(gameObject, transform.position, Quaternion.identity);
+            bullet.transform.parent = transform.parent;
+            bullet.GetComponent<Rigidbody2D>().AddForce(Quaternion.AngleAxis((15 * (stats.spreadShotNumber / 2)) + (i * -15), Vector3.forward) * transform.right * stats.bulletSpeed);
 
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy") || (Player_movement.pvP_Enabled && collision.CompareTag("Player")

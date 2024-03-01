@@ -87,6 +87,8 @@ public class Player : BasicAttributes
     public float criticalHitChance;
     public int criticalHitDamage;
     public Vector3 projectilesize;
+    public float timeUntilSpreadShot;
+    public int spreadShotNumber;
     public void Reset()
     {
         chariotSpeed = 0;
@@ -103,5 +105,6 @@ public class Player : BasicAttributes
         damageReduction = 0;
         armour = 0;
         projectilesize = new Vector3(0.33f,0.35f,1);
+
     }
 }

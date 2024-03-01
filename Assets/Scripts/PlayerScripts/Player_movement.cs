@@ -296,7 +296,8 @@ public class Player_movement : MonoBehaviour
     public void Player_Shooting(Gamepad gamepad)
     {
         if (gun_cooldown)
-        { 
+        {
+            bullet_controller.original = true;
             gun_cooldown = false;
             StartCoroutine(controllerRumble(0.5f, 0.5f, 0.5f, gamepad));
             // shoots from the compas's facing direction

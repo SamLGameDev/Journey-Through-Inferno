@@ -34,6 +34,7 @@ public class TarotCards :ScriptableObject
         increaseMaxHealth,
         armour,
         increaseProjectileSize,
+        SpreadShot
     }
     public void ApplyEffect(GameObject p)
     {
@@ -84,6 +85,9 @@ public class TarotCards :ScriptableObject
                 break;
             case possibleModifiers.increaseProjectileSize:
                 stats.projectilesize = new Vector3(effectValue, effectValue, 0);
+                break;
+            case possibleModifiers.SpreadShot:
+                stats.spreadShotNumber = effectValue;
                 break;
         }
     }

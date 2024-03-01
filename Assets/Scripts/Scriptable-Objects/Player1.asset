@@ -45,3 +45,5 @@ MonoBehaviour:
   criticalHitChance: 0
   criticalHitDamage: 3
   projectilesize: {x: 0.33, y: 0.35, z: 1}
+  timeUntilSpreadShot: 0.5
+  spreadShotNumber: 3
