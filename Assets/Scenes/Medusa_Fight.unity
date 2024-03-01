@@ -9312,6 +9312,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f54f83e10a239546ad6251645f07e9b, type: 3}
+--- !u!1 &720928131 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 241013125750778860, guid: 4a6efd9d63ff62e47b860ff0959888fa,
+    type: 3}
+  m_PrefabInstance: {fileID: 620738105}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &723890838
 GameObject:
   m_ObjectHideFlags: 0
@@ -18769,6 +18775,8 @@ MonoBehaviour:
   p2: {fileID: 0}
   _events: {fileID: 1204604208}
   _clearPortal: {fileID: 291487505}
+  bossInstances:
+  - {fileID: 720928131}
 --- !u!4 &1336663985
 Transform:
   m_ObjectHideFlags: 0

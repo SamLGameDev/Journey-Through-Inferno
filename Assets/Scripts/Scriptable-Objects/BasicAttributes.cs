@@ -24,5 +24,10 @@ public class BasicAttributes : ScriptableObject
     public int extraLives;
     public int damageReduction;
     public int armour;
+    public int orginalMaxHealth;
+    public virtual void Reset()
+    {
+        maxHealth = orginalMaxHealth;
+    }
 
 }

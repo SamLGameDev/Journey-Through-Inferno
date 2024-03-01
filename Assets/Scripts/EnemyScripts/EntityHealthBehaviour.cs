@@ -38,11 +38,31 @@ public class EntityHealthBehaviour : MonoBehaviour
 
     private void Start()
     {
+        object[] Hermit = HasHermit();
+        if (isBoss && (bool)Hermit[0]) 
+        {
+            TarotCards card = (TarotCards)Hermit[1];
+            stats.maxHealth -= card.effectValue;
+        }
         entityCurrentHealth = stats.maxHealth + stats.armour;
         damageInvulnerable = false;
         IsAlive = true;
     }
+    private object[] HasHermit()
+    {
+        foreach(GameObject Player in GameManager.instance.playerInstances)
+        {
+            foreach(TarotCards card in Player.GetComponent<Player_movement>().stats.tarotCards)
+            {
+                if (card.possibleMods == TarotCards.possibleModifiers.reducedBossHealth)
+                {
+                    return new object[] { true, card };
+                }
+            }
 
+        }
+        return new object[] { false};
+    }
     /// <summary>
     /// Reduces the entity's health by a set amount
     /// </summary>

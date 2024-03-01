@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     public EventSystem _events;
     private bool OnEncounterCleared = false;
     [SerializeField] private GameObject _clearPortal;
+    public List<GameObject> bossInstances;
     public enum GameState
     {
         normalPlay,
@@ -221,6 +222,10 @@ public class GameManager : MonoBehaviour
             foreach(GameObject player in playerInstances)
             {
                 player.GetComponent<Player_movement>().stats.Reset();
+            }
+            foreach(GameObject boss in bossInstances)
+            {
+                boss.GetComponent<EntityHealthBehaviour>().stats.Reset();
             }
         }
 #endif
