@@ -35,7 +35,8 @@ public class TarotCards :ScriptableObject
         armour,
         increaseProjectileSize,
         SpreadShot,
-        reducedBossHealth
+        reducedBossHealth,
+        Homing
     }
     public void ApplyEffect(GameObject p)
     {

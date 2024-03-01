@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.ShaderKeywordFilter;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
@@ -19,10 +20,15 @@ public class bullet_controller : MonoBehaviour
     public float speed;
     public float rotateSpeed = 200f;
     public static bool original = true;
+    private bool hasHoming = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        if (HasCard(TarotCards.possibleModifiers.Homing))
+        {
+            hasHoming = true;
+        }
         // moves the bullet in the direction it is facing
         transform.localScale = stats.projectilesize;
         rb = GetComponent<Rigidbody2D>();
@@ -31,7 +37,7 @@ public class bullet_controller : MonoBehaviour
             rb.AddForce(transform.right * stats.bulletSpeed);
         }
         Destroy(this.gameObject, stats.bulletLife);
-        if (HasHierophant() && original)
+        if (HasCard(TarotCards.possibleModifiers.SpreadShot) && original)
         {
             original = false;
             Invoke("SpreadShot", stats.timeUntilSpreadShot);
@@ -39,11 +45,11 @@ public class bullet_controller : MonoBehaviour
         // If the player has the Magician Arcana then the size of their bullets will be increased  
 
     }
-    private bool HasHierophant()
+    private bool HasCard(TarotCards.possibleModifiers modifer)
     {
         foreach (TarotCards card in stats.tarotCards)
         {
-            if (card.possibleMods == TarotCards.possibleModifiers.SpreadShot)
+            if (card.possibleMods == modifer)
             {
                 return true;
             }
@@ -94,34 +100,39 @@ public class bullet_controller : MonoBehaviour
             GetComponentInParent<TarotCardSelector>().cards.Add(card);
         }
     }
+    private GameObject GetTarget()
+    {
+        GameObject closest = null;
+        foreach(GameObject enemy in EncounterArea.Enemys)
+        {
+            if (enemy != null)
+            {
+                if (closest == null)
+                {
+                    closest = enemy;
+                    continue;
+                }
+                Vector2 EnemyLocation = enemy.transform.position - transform.position;
+                Vector2 closestLocation = closest.transform.position - transform.position;
+                if (EnemyLocation.sqrMagnitude < closestLocation.sqrMagnitude)
+                {
+                    closest = enemy;
+                }
+            }
+        }
+        return closest;
+    }
     private void FixedUpdate()
 
     {
-        // If the player has the Moon Arcana then their bullets will home in on enemies, it's flawed though because it can only target two types of enemies feel free to edit
-        if (GetComponentInParent<Tarot_cards>().hasMoon)
+        if (hasHoming)
         {
-            if (target != null && target2 != null)
+            GameObject target = GetTarget();
+            if (target != null)
             {
-                // Calculates direction and normalize for both targets
-                Vector2 direction = (Vector2)target.position - rb.position;
-                direction.Normalize();
-
-                Vector2 direction2 = (Vector2)target2.position - rb.position;
-                direction2.Normalize();
-
-                // Calculates rotation amount using cross product for both targets
-                float rotateAmount = Vector3.Cross(direction, transform.up).z;
-                float rotateAmount2 = Vector3.Cross(direction2, transform.up).z;
-
-                // Adjust angular velocity for both targets
-                rb.angularVelocity = -rotateAmount * rotateSpeed;
-                rb.angularVelocity = -rotateAmount2 * rotateSpeed;
-
-                // Sets speed for homing effect
-                rb.velocity = transform.up * speed;
+                transform.right = target.transform.position - transform.position;
+                rb.AddForce(transform.right.normalized * stats.bulletSpeed / 100);
             }
-
         }
-
     }
 }
