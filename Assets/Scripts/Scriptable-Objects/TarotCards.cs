@@ -32,7 +32,8 @@ public class TarotCards :ScriptableObject
         criticalHit,
         damageReduction,
         increaseMaxHealth,
-        armour
+        armour,
+        increaseProjectileSize,
     }
     public void ApplyEffect(GameObject p)
     {
@@ -80,6 +81,9 @@ public class TarotCards :ScriptableObject
                 break;
             case possibleModifiers.armour:
                 stats.armour = effectValue;
+                break;
+            case possibleModifiers.increaseProjectileSize:
+                stats.projectilesize = new Vector3(effectValue, effectValue, 0);
                 break;
         }
     }

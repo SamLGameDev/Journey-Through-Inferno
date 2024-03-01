@@ -23,6 +23,7 @@ public class bullet_controller : MonoBehaviour
     void Start()
     {
         // moves the bullet in the direction it is facing
+        transform.localScale = stats.projectilesize;
         rb = GetComponent<Rigidbody2D>();
         rb.AddForce(transform.right * stats.bulletSpeed);
         Destroy(this.gameObject, stats.bulletLife);
@@ -48,7 +49,7 @@ public class bullet_controller : MonoBehaviour
             }
             enemyHealth.ApplyDamage(stats.bulletDamage + stats.bulletDamageModifier + criticalDamage, transform.parent.gameObject);
             healthCheck(enemyHealth, dropchance, enemyStats);
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
     private void healthCheck(EntityHealthBehaviour enemyHealth, float dropchance, List<TarotCards> enemyStats)

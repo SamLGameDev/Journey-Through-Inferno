@@ -20,6 +20,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   extraLives: 0
+  damageReduction: 0
+  armour: 0
   gunCooldown: 1.5
   gunCooldownModifier: 0
   speed: 6
@@ -42,3 +44,4 @@ MonoBehaviour:
   tarotCards: []
   criticalHitChance: 0
   criticalHitDamage: 3
+  projectilesize: {x: 0.33, y: 0.35, z: 1}
