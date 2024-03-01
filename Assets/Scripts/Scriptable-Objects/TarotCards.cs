@@ -9,7 +9,6 @@ using UnityEngine.UI;
 public class TarotCards :ScriptableObject
 {
     public Sprite cardImage;
-    public Player players;
     public int effectValue;
     [Multiline]
     public string description;
@@ -23,7 +22,6 @@ public class TarotCards :ScriptableObject
         GunDamage,
         SwordDamge,
         speed,
-        guncooldown,
         ExplodingEnemies,
         TwoCards,
         increasedDropChance,
@@ -36,7 +34,9 @@ public class TarotCards :ScriptableObject
         increaseProjectileSize,
         SpreadShot,
         reducedBossHealth,
-        Homing
+        Homing,
+        invisibility,
+        cooldownReduction
     }
     public void ApplyEffect(GameObject p)
     {
@@ -58,9 +58,6 @@ public class TarotCards :ScriptableObject
             case possibleModifiers.speed:
                 stats.chariotSpeed = effectValue;
                 p.GetComponent<Player_movement>().UpdateSpeed();
-                break;
-            case possibleModifiers.guncooldown:
-                stats.gunCooldownModifier = effectValue;
                 break;
             case possibleModifiers.increasedDropChance:
                 stats.cardDropChance = effectValue;
@@ -90,6 +87,10 @@ public class TarotCards :ScriptableObject
                 break;
             case possibleModifiers.SpreadShot:
                 stats.spreadShotNumber = effectValue;
+                break;
+            case possibleModifiers.cooldownReduction:
+                stats.cooldownReduction = effectValue;
+                stats.gunCooldownModifier = effectValue;
                 break;
         }
     }

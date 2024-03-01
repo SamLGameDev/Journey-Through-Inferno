@@ -35,6 +35,7 @@ public class EntityHealthBehaviour : MonoBehaviour
 
     //A boolean for, surprisingly, if theyre alive
     public bool IsAlive;
+    public bool invincible;
 
     private void Start()
     {
@@ -69,7 +70,7 @@ public class EntityHealthBehaviour : MonoBehaviour
     /// <param name="damageAmount">Amount of damage to apply</param>
     public void ApplyDamage(int damageAmount, GameObject damagerDealer = null)
     {
-        if (damageInvulnerable)
+        if (damageInvulnerable || invincible)
         {
             print("Damage blocked due to being invulnerable. :)");
             return;

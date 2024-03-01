@@ -93,6 +93,7 @@ public class Player_movement : MonoBehaviour
     public Player stats;
     public GameObject sword;
     public Vector2 AimingDirection;
+    private EntityHealthBehaviour healthBehaviour;
     // Start is called before the first frame update
     void Start()
     {
@@ -103,18 +104,13 @@ public class Player_movement : MonoBehaviour
         moves = GetComponent<Different_Moves>();
         rb = GetComponent<Rigidbody2D>();
         ani = GetComponent<Animator>();
+        healthBehaviour = GetComponent<EntityHealthBehaviour>();
         StartCoroutine(dash());
-        
-        // decreases the gun cooldown time if player has the temperance card
-
-
-        // If the player has the Emperor Arcana then their max health will be increased
-        if (GetComponentInParent<Tarot_cards>().hasEmperor)
-        { stats.maxHealth = 25; }
-
+        StartCoroutine(invisDurationTimer(stats.invisibilityDuration));
+        StartCoroutine(invisCooldownTimer());
         // If the player has the High Priestess Arcana then the timer for the invisibility bursts will start
         if (GetComponentInParent<Tarot_cards>().hasHighPriestess)
-        { StartCoroutine(invisCooldownTimer(stats.invisibilityCooldown)); }
+        { StartCoroutine(invisCooldownTimer()); }
         else
         { invis_cooldown = false; }
 
@@ -350,11 +346,11 @@ public class Player_movement : MonoBehaviour
     /// </summary>
     /// <param name="dt"></param>
     /// <returns></returns>
-    private IEnumerator invisCooldownTimer(float dt)
+    private IEnumerator invisCooldownTimer()
     {
         while (true)
         {
-            yield return new WaitForSeconds(dt);
+            yield return new WaitForSeconds(stats.invisibilityCooldown - stats.cooldownReduction);
             invis_cooldown = true;
             yield return new WaitWhile(() => invis_cooldown);
         }
@@ -366,9 +362,15 @@ public class Player_movement : MonoBehaviour
     /// <returns></returns>
     private IEnumerator invisDurationTimer(float dt)
     {
-        isInvisible = true;
-        yield return new WaitForSeconds(dt);
-        isInvisible = false;
+        while (true)
+        {
+
+            yield return new WaitUntil(() => isInvisible);
+            healthBehaviour.invincible = true;
+            yield return new WaitForSeconds(dt);
+            healthBehaviour.invincible = false;
+            isInvisible = false;
+        }
     }
     public void BeginDash()
     {
@@ -395,7 +397,7 @@ public class Player_movement : MonoBehaviour
             speed -= stats.dashSpeed;
             dashTrail.enabled = false;
             dodash = false;
-            yield return new WaitForSeconds(stats.dashCooldown);
+            yield return new WaitForSeconds(stats.dashCooldown - stats.cooldownReduction);
         }
     }
     public void Invisible()
@@ -403,7 +405,8 @@ public class Player_movement : MonoBehaviour
         if (invis_cooldown && !isInvisible) // turn invisible on button press
         {
             invis_cooldown = false;
-            invisDurationTimer(stats.invisibilityDuration);
+            isInvisible = true;
+
         }
     }
     private void possibleActions()

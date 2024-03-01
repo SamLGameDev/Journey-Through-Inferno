@@ -31,7 +31,7 @@ MonoBehaviour:
   dashDuration: 0.2
   dashCooldown: 0.5
   invisibilityCooldown: 0
-  invisibilityDuration: 0
+  invisibilityDuration: 5
   bullet: {fileID: 7186132154605417265, guid: a8294735b22965b4bbd903326b093078, type: 3}
   timeUntilIdle: 3
   swordDamage: 4
@@ -48,3 +48,4 @@ MonoBehaviour:
   projectilesize: {x: 0.33, y: 0.35, z: 1}
   timeUntilSpreadShot: 0.5
   spreadShotNumber: 0
+  cooldownReduction: 0

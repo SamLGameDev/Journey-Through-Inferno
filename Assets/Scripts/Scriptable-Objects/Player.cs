@@ -89,6 +89,7 @@ public class Player : BasicAttributes
     public Vector3 projectilesize;
     public float timeUntilSpreadShot;
     public int spreadShotNumber;
+    public float cooldownReduction;
     public override void Reset()
     {
         chariotSpeed = 0;
@@ -106,6 +107,7 @@ public class Player : BasicAttributes
         armour = 0;
         projectilesize = new Vector3(0.33f,0.35f,1);
         spreadShotNumber = 0;
+        cooldownReduction = 0;
 
     }
 }
