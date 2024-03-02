@@ -21,6 +21,7 @@ public class CardSpawner : MonoBehaviour
     private int currentCardIndex = 1;
     public object[,] onScreenCards;
     private int cardIndex = 0;
+    private static bool firstTime = true;
     private int cardIndex3 = 0;
     private int cardIndex4 = 0;
     private int cardindex5 = 0;
@@ -276,19 +277,28 @@ public class CardSpawner : MonoBehaviour
     // and ensure the correct amount of cards in the correct arrangement are placed.
     public IEnumerator SpawnCards()
     {
+        GameObject nextButton = canvas.transform.GetChild(2).gameObject;
+        GameObject previousButton = canvas.transform.GetChild(3).gameObject;
+        GameObject tutorialText = canvas.transform.GetChild(4).gameObject;
         while (true)
         {
             GameManager.instance.UpdateGameState(GameManager.GameState.normalPlay);
-            canvas.transform.GetChild(2).gameObject.SetActive(false);
-            canvas.transform.GetChild(3).gameObject.SetActive(false);
+            nextButton.SetActive(false);
+            previousButton.SetActive(false);
+            tutorialText.SetActive(false);
             GameManager.instance.text.SetActive(false);
             yield return new WaitUntil(() => encounterCleared);
             if (GameManager.instance.p1 != null )
             {
                 currentSelectingCards = GameManager.instance.p1.GetComponent<EventSystem>();
             }
-            canvas.transform.GetChild(2).gameObject.SetActive(true);
-            canvas.transform.GetChild(3).gameObject.SetActive(true);
+            nextButton.SetActive(true);
+            nextButton.SetActive(true);
+            if (firstTime)
+            {
+                tutorialText.SetActive(true);
+                firstTime = false;
+            }
             GameManager.instance.p2.GetComponent<EventSystem>().enabled = false;
             encounterCleared = false;
             // disables the second input system
