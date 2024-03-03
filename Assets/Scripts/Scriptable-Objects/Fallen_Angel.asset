@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a31ef4df0dcc4ef43ad560cef7a5818e, type: 3}
   m_Name: Fallen_Angel
   m_EditorClassIdentifier: 
-  damage: 3
-  maxHealth: 1
-  cardDropChance: 100
+  damage: 4
+  maxHealth: 20
+  cardDropChance: 30
   droppableCards:
   - {fileID: 11400000, guid: b41df299a53ffa24c93eb59bc29a84a9, type: 2}
   - {fileID: 11400000, guid: b10f048a0ac2b994e9d69ec36c997081, type: 2}
@@ -41,14 +41,14 @@ MonoBehaviour:
   extraLives: 0
   damageReduction: 0
   armour: 0
-  orginalMaxHealth: 0
+  orginalMaxHealth: 30
   chargeCooldown: 5
-  meeleRange: 1
+  meeleRange: 3
   chargeFarAway: 3
   chargeNear: 6
-  chargeSpeed: 5
+  chargeSpeed: 8
   chargeDuration: 2
   chargeDamageInterval: 0.5
-  meleeSizeX: 1
-  meleeSizeY: 1
-  meleeDistance: 1
+  meleeSizeX: 2
+  meleeSizeY: 3
+  meleeDistance: 3

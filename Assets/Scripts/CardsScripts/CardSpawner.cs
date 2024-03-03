@@ -177,6 +177,8 @@ public class CardSpawner : MonoBehaviour
         int index = arrayIndex;
         newCard.GetComponent<Button>().onClick.AddListener(() => { HasClickedButton(index, p); });
         newCard.GetComponent<DisplayDescription>().card = card;
+        Debug.Log(onScreenCards[0,0]);
+        Debug.Log(onScreenCards[0,1]);
         onScreenCards[arrayIndex, 1] = card;
         return newCard;
     }
@@ -202,7 +204,7 @@ public class CardSpawner : MonoBehaviour
     private void CreateCards(GameObject p)
     {
         cardAmount = _playerCards.Count > 4 ? 4 : _playerCards.Count;
-        onScreenCards = new object[cardAmount, cardAmount];
+        Debug.Log(cardAmount);
         // This makes the cards spawn on alternating sides.
         bool leftIndex = true;
 
@@ -226,7 +228,9 @@ public class CardSpawner : MonoBehaviour
         }
 
         // This array is storing the cards currently shown on screen, allows us to destroy them easily if cards need rerolling.
-        onScreenCards = new object[cardAmount, cardAmount];
+        onScreenCards = new object[cardAmount, cardAmount *2];
+        Debug.Log(onScreenCards.GetLength(0));
+        Debug.Log(onScreenCards.GetLength(1));
 
         // The index is needed because the for loop 'i' doesn't always start at 0, and we need to sequentially add each card
         // to the array as we are creating them.
@@ -315,6 +319,10 @@ public class CardSpawner : MonoBehaviour
                 if (_playerCards.Count == 0)
                 {
                     ChangeEventSystem();
+                    if (p == GameManager.instance.playerInstances[1])
+                    {
+                        GameManager.instance.noCards = true;
+                    }
                     continue;
                 }
                 CreateCards(p);

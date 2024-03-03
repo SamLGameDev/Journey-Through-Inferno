@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   maxHealth: 100
-  cardDropChance: 0
-  droppableCards: []
+  cardDropChance: 100
+  droppableCards:
+  - {fileID: 11400000, guid: 1b114bbd35067a74fb7afdeedc73f1e6, type: 2}
   layersToHit:
     serializedVersion: 2
     m_Bits: 0

@@ -225,5 +225,9 @@ public class EntityHealthBehaviour : MonoBehaviour
             IsAlive=false;
             Destroy(gameObject);
         }
+        if(isBoss)
+        {
+            GameManager.instance.UpdateGameState(GameManager.GameState.EncounterCleared);
+        }
     }
 }

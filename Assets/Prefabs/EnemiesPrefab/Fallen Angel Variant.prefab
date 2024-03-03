@@ -119,7 +119,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &5425823505382445665
 MonoBehaviour:
@@ -133,6 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8b84871b0250ba438dbe2b84fadcf82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBoss: 0
   stats: {fileID: 11400000, guid: ee49df38efdaefc4fa8fcd7bdf5de804, type: 2}
   invunTimeOnHit: 0
   entityCurrentHealth: 50
@@ -142,6 +143,7 @@ MonoBehaviour:
   HighHealth: {fileID: 0}
   HealthSprite: {fileID: 0}
   IsAlive: 0
+  invincible: 0
 --- !u!114 &1919074620864673920
 MonoBehaviour:
   m_ObjectHideFlags: 0

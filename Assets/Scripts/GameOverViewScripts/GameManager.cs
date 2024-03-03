@@ -15,7 +15,6 @@ public class GameManager : MonoBehaviour
     public GameObject text;
     public int alivePlayers;
     public int enemiesRemaining;
-    private bool okay = false;
     public CardSpawner spawner;
     public List<GameObject> playerInstances;
     public GameObject InputManager;
@@ -26,6 +25,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _clearPortal;
     public List<GameObject> bossInstances;
     public List<TextMeshProUGUI> tarotCardAmounts;
+    public GameObject topTextBox;
+    public GameObject bottomTextBox;
+    public bool noCards = false;
     public enum GameState
     {
         normalPlay,
@@ -174,8 +176,9 @@ public class GameManager : MonoBehaviour
             yield return new WaitUntil(() => OnEncounterCleared);
             Time.timeScale = 0;
             spawner.encounterCleared = true;
-            yield return new WaitUntil(() => spawner.onScreenCards[0, 0] != null);
+            yield return new WaitUntil(() => spawner.onScreenCards[0, 0] != null || noCards);
             _events.SetSelectedGameObject((GameObject)spawner.onScreenCards[0, 0]);
+            noCards = false;
             OnEncounterCleared = false;
         }
         

@@ -9,11 +9,9 @@ using UnityEngine.SceneManagement;
 using Fungus;
 using static UnityEngine.InputSystem.InputAction;
 using UnityEngine.EventSystems;
-using UnityEngine.InputSystem.iOS;
 
 public class Player_movement : MonoBehaviour
 {
-    [SerializeField] private EventSystem _eventSystem;
     [SerializeField] private GameObject _resumeButton;
     public static bool pvP_Enabled = false;
     public bool dodash = false;
