@@ -326,6 +326,7 @@ public class Player_movement : MonoBehaviour
         }
         
     }
+
     /// <summary>
     /// starts a timer and sets gun_cooldwon to true when the set amount of time has passed, repeats when that variable is false
     /// </summary>

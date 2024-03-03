@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 50
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -121,7 +121,175 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: p2_Virgil_Win_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 114
+        width: 53
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76d316990383ac74d8fc40093266f9e8
+      internalID: -1653056199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: p2_Virgil_Win_1
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 114
+        width: 49
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8094ceeaee249e4dbb86a1861ec9e69
+      internalID: -1221215541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: p2_Virgil_Win_2
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 114
+        width: 53
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e618ca5fb2e995c4f8a0820d98111301
+      internalID: -216020713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: p2_Virgil_Win_3
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 112
+        width: 53
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe691865c255d014b8c578d39662347e
+      internalID: -287363135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: p2_Virgil_Win_4
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 11
+        width: 52
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51ed712241ef36b4d9f8e3904f00827d
+      internalID: -1871623464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: p2_Virgil_Win_5
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 10
+        width: 48
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa7ae3df87e85714ab4b55c6bd19411b
+      internalID: 1602193235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: p2_Virgil_Win_6
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 9
+        width: 51
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80d908bfed23d1041b3c35a0f721495a
+      internalID: -776152644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: p2_Virgil_Win_7
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 11
+        width: 55
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1e9e7c330f495c4d83f16caf4f6415b
+      internalID: 1267329398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +300,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      p2_Virgil_Win_0: -1653056199
+      p2_Virgil_Win_1: -1221215541
+      p2_Virgil_Win_2: -216020713
+      p2_Virgil_Win_3: -287363135
+      p2_Virgil_Win_4: -1871623464
+      p2_Virgil_Win_5: 1602193235
+      p2_Virgil_Win_6: -776152644
+      p2_Virgil_Win_7: 1267329398
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

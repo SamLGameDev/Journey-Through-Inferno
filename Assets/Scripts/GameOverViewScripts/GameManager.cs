@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         StartCoroutine(EncounterCleared());
+        StartCoroutine(VictoryAnimations());
         // if their are gamepads connected
         if (InputSystem.devices.OfType<Gamepad>().Count() != 0)
         {
@@ -83,6 +84,10 @@ public class GameManager : MonoBehaviour
         int i = 0;
         foreach (GameObject player in playerInstances)
         {
+            if (player == null)
+            {
+                continue;
+            }
             tarotCardAmounts[i].text = player.GetComponent<TarotCardSelector>().cards.Count.ToString();
             i++;
         }
@@ -175,6 +180,33 @@ public class GameManager : MonoBehaviour
         }
         
 
+    }
+    private IEnumerator VictoryAnimations()
+    {
+        while (true)
+        {
+            yield return new WaitUntil(() => OnEncounterCleared);
+            yield return new WaitForSeconds(0.01f);
+            foreach(GameObject player in playerInstances)
+            {
+                if (player != null)
+                {
+                    player.GetComponent<Player_movement>().enabled = false;
+                    player.GetComponent<Animator>().SetBool("wonBattle", true);
+                }
+            }
+            yield return new WaitForSeconds(2.5f);
+            foreach (GameObject player in playerInstances)
+            {
+                if(player != null)
+                {
+                    player.GetComponent<Animator>().SetBool("wonBattle", false);
+                    player.GetComponent<Player_movement>().enabled = true;
+                }
+
+            }
+
+        }
     }
     private void OnNormalPlay()
     {
