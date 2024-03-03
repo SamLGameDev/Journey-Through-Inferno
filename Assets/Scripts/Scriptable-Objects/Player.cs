@@ -107,7 +107,7 @@ public class Player : BasicAttributes
         criticalHitChance = 0;
         damageReduction = 0;
         armour = 0;
-        projectilesize = new Vector3(0.33f,0.35f,1);
+        projectilesize = new Vector3(1,1,1);
         spreadShotNumber = 0;
         cooldownReduction = 0;
 
