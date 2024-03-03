@@ -293,7 +293,7 @@ public class CardSpawner : MonoBehaviour
                 currentSelectingCards = GameManager.instance.p1.GetComponent<EventSystem>();
             }
             nextButton.SetActive(true);
-            nextButton.SetActive(true);
+            previousButton.SetActive(true);
             if (firstTime)
             {
                 tutorialText.SetActive(true);
@@ -322,6 +322,7 @@ public class CardSpawner : MonoBehaviour
                 currentSelectingCards.SetSelectedGameObject((GameObject)onScreenCards[0, 0]);
                 GameManager.instance.text.SetActive(true);
                 yield return new WaitUntil(() => cardChosen);
+                GameManager.instance.UpdateTarotNumber();
                 if (HasSun(p))
                 {
                     cardChosen = false;

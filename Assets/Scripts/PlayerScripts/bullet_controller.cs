@@ -98,6 +98,7 @@ public class bullet_controller : MonoBehaviour
 
             TarotCards card = possibleCards[Random.Range(0, possibleCards.Count)];
             GetComponentInParent<TarotCardSelector>().cards.Add(card);
+            GameManager.instance.UpdateTarotNumber();
         }
     }
     private GameObject GetTarget()

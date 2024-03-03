@@ -49,6 +49,7 @@ public class Sword_Damage : MonoBehaviour
 
             TarotCards card = possibleCards[Random.Range(0, possibleCards.Count)];
             GetComponentInParent<TarotCardSelector>().cards.Add(card);
+            GameManager.instance.UpdateTarotNumber();
         }
 
     }

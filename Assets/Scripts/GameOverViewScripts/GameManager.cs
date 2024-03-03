@@ -2,6 +2,7 @@ using Fungus;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour
     private bool OnEncounterCleared = false;
     [SerializeField] private GameObject _clearPortal;
     public List<GameObject> bossInstances;
+    public List<TextMeshProUGUI> tarotCardAmounts;
     public enum GameState
     {
         normalPlay,
@@ -75,20 +77,15 @@ public class GameManager : MonoBehaviour
         p2.neverAutoSwitchControlSchemes = true;
         p2.SwitchCurrentActionMap("Keyboard&Mouse");
     }
-    public void AddController()
+
+    public void UpdateTarotNumber()
     {
-        //if (!okay)
-        //{
-        //    okay = true;
-        //    InputDevice controller = InputSystem.devices[2];
-        //    PlayerInput p = GetComponent<PlayerInputManager>().JoinPlayer(-1, -1, "Xbox control scheme", controller);
-        //    if (p == null) 
-        //    {
-        //        Debug.Log("imma kioll unity");
-        //    }
-
-        //}
-
+        int i = 0;
+        foreach (GameObject player in playerInstances)
+        {
+            tarotCardAmounts[i].text = player.GetComponent<TarotCardSelector>().cards.Count.ToString();
+            i++;
+        }
     }
     /// <summary>
     /// Sets how many total players are in the game for checking win/loss conditions.

@@ -12,12 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b7288b36b84b9241be4fdadd30129c7, type: 3}
   m_Name: Death
   m_EditorClassIdentifier: 
-  cardImage: {fileID: 0}
-  players: {fileID: 0}
+  cardImage: {fileID: 21300000, guid: 3cb7c35a750699348a04840d1ae1be5e, type: 3}
   effectValue: 1
   description: "There is no need to fear the unknown, for Death is but another adventure.
     It\u2019s time to move on.\n_Effect: Get an extra life"
   specialCardEffectEnabled: 0
   RangeForAbility: 0
   particleEffect: {fileID: 0}
-  possibleMods: 8
+  possibleMods: 7

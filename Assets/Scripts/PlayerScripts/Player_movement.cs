@@ -282,7 +282,7 @@ public class Player_movement : MonoBehaviour
     private IEnumerator controllerRumble(float leftStick, float rightStick, float duration, Gamepad gamepad)
     {
         gamepad.SetMotorSpeeds(leftStick, rightStick);
-        yield return new WaitForSeconds(duration);
+        yield return new WaitForSecondsRealtime(duration);
         gamepad.ResetHaptics();
         StopCoroutine(controllerRumble(0.5f, 0.5f, 0.5f, gamepad));
     }
