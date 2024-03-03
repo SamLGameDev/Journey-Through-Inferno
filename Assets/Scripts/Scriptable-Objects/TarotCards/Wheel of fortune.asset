@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardImage: {fileID: 0}
   effectValue: 0
-  description: 
+  description: "\u201COnce on the wheel, once under it\u201D \u2013 a Polish proverb
+    regarding luck and changing fortunes\n_Effect: "
   specialCardEffectEnabled: 0
   RangeForAbility: 0
   particleEffect: {fileID: 0}

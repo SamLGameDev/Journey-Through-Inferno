@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Moon
   m_EditorClassIdentifier: 
   cardImage: {fileID: 0}
-  players: {fileID: 0}
   effectValue: 0
-  description: 
+  description: 'When problems are hard to see in the moonlight, trust your intuition
+    not to lead you astray.
+
+    _Effect: turns ranged attack into homing missiles'
   specialCardEffectEnabled: 0
   RangeForAbility: 0
   particleEffect: {fileID: 0}

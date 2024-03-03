@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Emperor
   m_EditorClassIdentifier: 
   cardImage: {fileID: 0}
-  players: {fileID: 0}
   effectValue: 20
-  description: 
+  description: 'A father figure to many, the Emperor commands respect as a born leader
+    for his people.
+
+    _Effect: Increases max health'
   specialCardEffectEnabled: 0
   RangeForAbility: 0
   particleEffect: {fileID: 0}

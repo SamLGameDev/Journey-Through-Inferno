@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Lovers
   m_EditorClassIdentifier: 
   cardImage: {fileID: 0}
-  players: {fileID: 0}
   effectValue: 2
-  description: 
+  description: 'Two partners who choose to find strength in each other, even through
+    the toughest of trails.
+
+    _Effect: reduce damage taken'
   specialCardEffectEnabled: 0
   RangeForAbility: 0
   particleEffect: {fileID: 0}

@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Hermit
   m_EditorClassIdentifier: 
   cardImage: {fileID: 0}
-  players: {fileID: 0}
   effectValue: 10
-  description: 
+  description: 'Alone in his quest for clarity, he may seem pitiable, but he has
+    a mission, and he will be illuminated.
+
+    _Effect: Reduces boss health'
   specialCardEffectEnabled: 0
   RangeForAbility: 0
   particleEffect: {fileID: 0}

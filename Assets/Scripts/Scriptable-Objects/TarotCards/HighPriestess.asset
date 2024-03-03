@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardImage: {fileID: 0}
   effectValue: 0
-  description: 
+  description: 'She keeps secrets like no-one else. Trust only your gut when talking
+    to her.
+
+    _Effect: Makes the player invisible to enemies for a bit'
   specialCardEffectEnabled: 0
   RangeForAbility: 0
   particleEffect: {fileID: 0}

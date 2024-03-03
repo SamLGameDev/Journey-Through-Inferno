@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Hierophant
   m_EditorClassIdentifier: 
   cardImage: {fileID: 0}
-  players: {fileID: 0}
   effectValue: 5
-  description: 
+  description: 'He carries the traditions of his people, and with them the expectations
+    of eternity.
+
+    _Effect: turns rnaged attack into a spreadshot'
   specialCardEffectEnabled: 0
   RangeForAbility: 0
   particleEffect: {fileID: 0}
