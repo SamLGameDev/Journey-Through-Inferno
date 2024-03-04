@@ -99,7 +99,7 @@ public class Different_Moves : MonoBehaviour
         {
             yield return null;
             // move it in the direction it is facing at a speed if 5
-            transform.position += transform.right * Time.deltaTime * stats.chargeSpeed;
+            transform.position += transform.up * Time.deltaTime * stats.chargeSpeed;
             // calles melee to get new cooldown or attack
             Melee_Damage_Cooldown = Melee(Melee_Damage_Cooldown);
         }
@@ -125,7 +125,7 @@ public class Different_Moves : MonoBehaviour
                 break;
             }
             // get the difference in thier positions then rotate it acording to that after its been Atan2 and Rad2deg
-            transform.right = target.position - transform.position;
+            transform.up = target.position - transform.position;
         }
     }
     /// <summary>
