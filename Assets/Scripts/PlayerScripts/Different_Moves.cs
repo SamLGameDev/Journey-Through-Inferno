@@ -38,7 +38,7 @@ public class Different_Moves : MonoBehaviour
         // creates a box that will grab everything with a collider in it that matches the layers to
         // hit then apply damage to it.
         Debug.Log("mellerange");
-        RaycastHit2D[] hit = Physics2D.BoxCastAll(transform.position, new Vector2(stats.meleeSizeX, stats.meleeSizeY), 0, transform.right, stats.meleeDistance, stats.layersToHit);
+        RaycastHit2D[] hit = Physics2D.BoxCastAll(transform.position, new Vector2(stats.meleeSizeX, stats.meleeSizeY), 0, transform.up, stats.meleeDistance, stats.layersToHit);
         foreach (RaycastHit2D hit2d in hit)
         {
             hit2d.collider.gameObject.GetComponent<EntityHealthBehaviour>().ApplyDamage(stats.damage);
@@ -61,7 +61,7 @@ public class Different_Moves : MonoBehaviour
             return time;
         }
         // same as previous melee function this is an override to
-        RaycastHit2D[] hit = Physics2D.BoxCastAll(transform.position, new Vector2(stats.meleeSizeX, stats.meleeSizeY), 0 , transform.right, stats.meleeDistance, stats.layersToHit);
+        RaycastHit2D[] hit = Physics2D.BoxCastAll(transform.position, new Vector2(stats.meleeSizeX, stats.meleeSizeY), 0 , transform.up, stats.meleeDistance, stats.layersToHit);
 
         foreach (RaycastHit2D hit2d in hit)
         {
