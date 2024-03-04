@@ -135,6 +135,7 @@ public class Player_movement : MonoBehaviour
     {
         if (AimingDirection.sqrMagnitude == 0) return;
         float heading = MathF.Atan2(-AimingDirection.x, AimingDirection.y);
+        Debug.Log(AimingDirection);
         transform.GetChild(0).rotation = Quaternion.Euler(0, 0, heading * Mathf.Rad2Deg);
     }
 
@@ -177,64 +178,117 @@ public class Player_movement : MonoBehaviour
     /// </summary>
     /// 
     private void Animation_Controller()
-    { 
+    {
         float velo = Mathf.Abs(rb.velocity.x + rb.velocity.y); // absolute value so negatives dont affect it
-        ani.SetFloat("Velocity",velo);
+        ani.SetFloat("Velocity", velo);
         // starts the idle check as the player isnt moving
-        if (velo < 0.0001  && !VelocityCheck) 
+        if (velo < 0.0001 && !VelocityCheck)
         {
             time = Time.time;
             VelocityCheck = true;
             return;
         }
-        // uses absolute values as they could be moving down and that would be negative
-        if (Mathf.Abs(rb.velocity.y) > Mathf.Abs(rb.velocity.x))
+        if (AimingDirection.x > -0.5f && AimingDirection.x < 0.5f)
         {
-            // if the sword was int eh poition needed for a left/right swing
-            // rotates it to be in the position for a down/up swing
             if (upDown && !running)
             {
                 RotateAround(1);
                 upDown = false;
             }
-            if (rb.velocity.y < 0)
+            if (AimingDirection.y < -0.5f)
             {
                 ani.SetBool("Y>X", true);
                 ani.SetBool("Positive Y>X change", false);
                 facing = 1;
-            }
-            else if (rb.velocity.y > 0) 
-            {
-                ani.SetBool("Y>X", false);
-                ani.SetBool("Positive Y>X change", true);
-                facing = -1;
+                return;
             }
             else
             {
                 ani.SetBool("Y>X", false);
-                ani.SetBool("Positive Y>X change", false);
-            }
-        }
-        else if (Mathf.Abs(rb.velocity.y) < Mathf.Abs(rb.velocity.x))
-        {
-            if (!upDown && !running)
-            {
-                RotateAround(-1);
-                upDown = true;
-            }
-            if (rb.velocity.x < 0)
-            {
-                ani.SetBool("Negative x", true);
-                facing = 1;
-            }
-            else if (rb.velocity.x > 0)
-            {
-                ani.SetBool("Negative x", false);
+                ani.SetBool("Positive Y>X change", true);
                 facing = -1;
+
+                return;
             }
-            ani.SetBool("Y>X", false);
-            ani.SetBool("Positive Y>X change", false);
         }
+        if (!upDown && !running)
+        {
+            RotateAround(-1);
+            upDown = true;
+        }
+        ani.SetBool("Y>X", false);
+        ani.SetBool("Positive Y>X change", false);
+        if (AimingDirection.x > 0)
+        {
+            ani.SetBool("Negative x", false);
+            facing = -1;
+        }
+        else
+        {
+            
+            ani.SetBool("Negative x", true);
+            facing = 1;
+
+        }
+        #region old animator
+        //float velo = Mathf.Abs(rb.velocity.x + rb.velocity.y); // absolute value so negatives dont affect it
+        //ani.SetFloat("Velocity",velo);
+        //// starts the idle check as the player isnt moving
+        //if (velo < 0.0001  && !VelocityCheck) 
+        //{
+        //    time = Time.time;
+        //    VelocityCheck = true;
+        //    return;
+        //}
+        //// uses absolute values as they could be moving down and that would be negative
+        //if (Mathf.Abs(rb.velocity.y) > Mathf.Abs(rb.velocity.x))
+        //{
+        //    // if the sword was int eh poition needed for a left/right swing
+        //    // rotates it to be in the position for a down/up swing
+        //    if (upDown && !running)
+        //    {
+        //        RotateAround(1);
+        //        upDown = false;
+        //    }
+        //    if (rb.velocity.y < 0)
+        //    {
+        //        ani.SetBool("Y>X", true);
+        //        ani.SetBool("Positive Y>X change", false);
+        //        facing = 1;
+        //    }
+        //    else if (rb.velocity.y > 0) 
+        //    {
+        //        ani.SetBool("Y>X", false);
+        //        ani.SetBool("Positive Y>X change", true);
+        //        facing = -1;
+        //    }
+        //    else
+        //    {
+        //        ani.SetBool("Y>X", false);
+        //        ani.SetBool("Positive Y>X change", false);
+        //    }
+        //}
+        //else if (Mathf.Abs(rb.velocity.y) < Mathf.Abs(rb.velocity.x))
+        //{
+        //    if (!upDown && !running)
+        //    {
+        //        RotateAround(-1);
+        //        upDown = true;
+        //    }
+        //    if (rb.velocity.x < 0)
+        //    {
+        //        ani.SetBool("Negative x", true);
+        //        facing = 1;
+        //    }
+        //    else if (rb.velocity.x > 0)
+        //    {
+        //        ani.SetBool("Negative x", false);
+        //        facing = -1;
+        //    }
+        //    ani.SetBool("Y>X", false);
+        //    ani.SetBool("Positive Y>X change", false);
+        //}
+        #endregion
     }
     /// <summary>
     /// roates the sword 90 degrees in the direction specified
