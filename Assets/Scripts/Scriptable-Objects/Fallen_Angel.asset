@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 4
   maxHealth: 20
-  cardDropChance: 30
+  cardDropChance: 40
   droppableCards:
   - {fileID: 11400000, guid: b41df299a53ffa24c93eb59bc29a84a9, type: 2}
   - {fileID: 11400000, guid: b10f048a0ac2b994e9d69ec36c997081, type: 2}
