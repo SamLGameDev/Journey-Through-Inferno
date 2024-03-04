@@ -58,7 +58,7 @@ public class InputManager : MonoBehaviour
     }
     public void OnSword()
     {
-        if ( movement != null)
+        if ( movement != null && !movement.running)
         {
             movement.Player_Melee(movement.sword);
         }
