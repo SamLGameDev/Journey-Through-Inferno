@@ -103,6 +103,8 @@ public class Different_Moves : MonoBehaviour
             // calles melee to get new cooldown or attack
             Melee_Damage_Cooldown = Melee(Melee_Damage_Cooldown);
         }
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        rb.velocity = Vector3.zero;
         // reenables pathfinding so thta it can move again
         EnablerAStar(true);
     }
@@ -123,9 +125,7 @@ public class Different_Moves : MonoBehaviour
                 break;
             }
             // get the difference in thier positions then rotate it acording to that after its been Atan2 and Rad2deg
-            Vector3 difference = target.position - transform.position;
-            float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
+            transform.right = target.position - transform.position;
         }
     }
     /// <summary>
