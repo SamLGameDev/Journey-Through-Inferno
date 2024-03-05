@@ -1,6 +1,7 @@
 using Fungus;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.XR;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +13,7 @@ public class EntityHealthBehaviour : MonoBehaviour
 {
     public bool isBoss;
     public BasicAttributes stats;
+    private bool flashRed;
     [SerializeField] private float invunTimeOnHit;
 
     // This is public so that it can be accessed by UI.
@@ -48,6 +50,7 @@ public class EntityHealthBehaviour : MonoBehaviour
         entityCurrentHealth = stats.maxHealth + stats.armour;
         damageInvulnerable = false;
         IsAlive = true;
+        StartCoroutine(FlashRed());
     }
     private object[] HasHermit()
     {
@@ -75,7 +78,7 @@ public class EntityHealthBehaviour : MonoBehaviour
             print("Damage blocked due to being invulnerable. :)");
             return;
         }
-
+        flashRed = true;
         entityCurrentHealth -= damageAmount - stats.damageReduction;
 
         if (gameObject.tag == "Player")
@@ -114,6 +117,18 @@ public class EntityHealthBehaviour : MonoBehaviour
         }
 
         
+    }
+    private IEnumerator FlashRed()
+    {
+        while( true)
+        {
+            yield return new WaitUntil(() => flashRed);
+            SpriteRenderer sr = GetComponent<SpriteRenderer>();
+            sr.color = Color.red;
+            yield return new WaitForSeconds(0.5f);
+            sr.color = Color.white;
+            flashRed = false;
+        }
     }
 
     /// <summary>
