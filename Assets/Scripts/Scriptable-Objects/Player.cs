@@ -110,6 +110,6 @@ public class Player : BasicAttributes
         projectilesize = new Vector3(1,1,1);
         spreadShotNumber.value = 0;
         cooldownReduction.value = 0;
-
+        droppableCards.Clear();
     }
 }

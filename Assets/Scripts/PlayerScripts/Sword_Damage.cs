@@ -28,31 +28,13 @@ public class Sword_Damage : MonoBehaviour
                 criticalDamage = stats.criticalHitDamage.value;
             }
             enemyHealth.ApplyDamage(stats.swordDamage.value + stats.swordDamageModifier.value + criticalDamage, transform.parent.gameObject);
-            healthCheck(enemyHealth, dropchance, enemyStats);
 
             
 
             
         }
     }
-    private void healthCheck(EntityHealthBehaviour enemyHealth, float dropchance, List<TarotCards> enemyStats)
-    {
-        if (enemyHealth.entityCurrentHealth <= 0)
-        {
-            SpawnCard(enemyStats, dropchance);
-        }
-    }
-    private void SpawnCard(List<TarotCards> possibleCards, float dropChance)
-    {
-        if (Random.Range(0.0001f, 101) < dropChance + stats.cardDropChance)
-        {
 
-            TarotCards card = possibleCards[Random.Range(0, possibleCards.Count)];
-            GetComponentInParent<TarotCardSelector>().cards.Add(card);
-            GameManager.instance.UpdateTarotNumber();
-        }
-
-    }
     // Update is called once per frame
     void Update()
     {

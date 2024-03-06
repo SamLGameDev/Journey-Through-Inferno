@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 4
   maxHealth: 20
-  cardDropChance: 40
+  cardDropChance: 100
+  OfTypecounter: {fileID: 11400000, guid: e4a5f4694b79fe4488542d7385a2650f, type: 2}
   droppableCards:
   - {fileID: 11400000, guid: b41df299a53ffa24c93eb59bc29a84a9, type: 2}
   - {fileID: 11400000, guid: b10f048a0ac2b994e9d69ec36c997081, type: 2}
@@ -42,6 +43,8 @@ MonoBehaviour:
   damageReduction: 0
   armour: 0
   orginalMaxHealth: 30
+  Player1Kill: {fileID: 11400000, guid: f4d8606fee010ad47814106632555ae5, type: 2}
+  Player2Kill: {fileID: 11400000, guid: 918b57018f5517146bb3c6d244ee7a78, type: 2}
   chargeCooldown: 5
   meeleRange: 3
   chargeFarAway: 3

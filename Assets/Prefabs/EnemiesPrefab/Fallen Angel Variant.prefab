@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 8158330365370726917}
   - component: {fileID: 4801089580672160280}
   - component: {fileID: 9195619475462717869}
+  - component: {fileID: -6433223236211202966}
   m_Layer: 8
   m_Name: Fallen Angel Variant
   m_TagString: Enemy
@@ -135,6 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isBoss: 0
   stats: {fileID: 11400000, guid: ee49df38efdaefc4fa8fcd7bdf5de804, type: 2}
+  OnDamaged: {fileID: 0}
   invunTimeOnHit: 0
   entityCurrentHealth: 50
   healthBar: {fileID: 0}
@@ -345,3 +347,16 @@ MonoBehaviour:
   uniqueID: 7978028095080118774
   updateError: 1
   checkTime: 0.2
+--- !u!114 &-6433223236211202966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5986526922118790407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb3e25e597478104cb7a6bf4a1c33ad0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attributes: {fileID: 11400000, guid: ee49df38efdaefc4fa8fcd7bdf5de804, type: 2}

@@ -90,7 +90,7 @@ public class GameManager : MonoBehaviour
             {
                 continue;
             }
-            tarotCardAmounts[i].text = player.GetComponent<TarotCardSelector>().cards.Count.ToString();
+            tarotCardAmounts[i].text = player.GetComponent<Player_movement>().stats.droppableCards.Count.ToString();
             i++;
         }
     }

@@ -14,6 +14,7 @@ public class EntityHealthBehaviour : MonoBehaviour
     public bool isBoss;
     public BasicAttributes stats;
     private bool flashRed;
+    [SerializeField] private GameEventListener OnDamaged;
     [SerializeField] private float invunTimeOnHit;
 
     // This is public so that it can be accessed by UI.
@@ -41,6 +42,7 @@ public class EntityHealthBehaviour : MonoBehaviour
 
     private void Start()
     {
+        stats.OfTypecounter.Add(gameObject);
         object[] Hermit = HasHermit();
         if (isBoss && (bool)Hermit[0]) 
         {
@@ -79,6 +81,7 @@ public class EntityHealthBehaviour : MonoBehaviour
             return;
         }
         flashRed = true;
+
         entityCurrentHealth -= damageAmount - stats.damageReduction;
 
         if (gameObject.tag == "Player")
@@ -219,6 +222,30 @@ public class EntityHealthBehaviour : MonoBehaviour
     }
     private void EntityDeath(GameObject damageDealer)
     {
+        if (gameObject.CompareTag("Player"))
+        {
+            if (stats.extraLives > 0)
+            {
+                stats.extraLives--;
+                entityCurrentHealth = stats.maxHealth;
+                return;
+            }
+            GameManager.instance.OnPlayerDeath();
+            IsAlive = false;
+            Destroy(gameObject);
+            return;
+        }
+        Debug.Log(damageDealer.name);
+        
+        if (damageDealer.name == "Player 2")
+        {
+            stats.Player2Kill.Raise();
+        }
+        else
+        {
+            stats.Player1Kill.Raise();
+        }
+        stats.OfTypecounter.Remove(gameObject);
         if (gameObject.CompareTag("Enemy"))
         {
             GameManager.instance.OnEnemyDeath();
@@ -228,18 +255,7 @@ public class EntityHealthBehaviour : MonoBehaviour
             if (damageDealer.GetComponent<Player_movement>() != null && HasJudgement(damageDealer)) EnemyExplodeOnDeath(damageDealer, deathPosition);
 
         }
-        else if (gameObject.CompareTag("Player"))
-        {
-            if (stats.extraLives > 0)
-            {
-                stats.extraLives--;
-                entityCurrentHealth = stats.maxHealth;
-                return;
-            }
-            GameManager.instance.OnPlayerDeath();
-            IsAlive=false;
-            Destroy(gameObject);
-        }
+
         if(isBoss)
         {
             GameManager.instance.UpdateGameState(GameManager.GameState.EncounterCleared);

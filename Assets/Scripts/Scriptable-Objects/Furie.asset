@@ -15,10 +15,15 @@ MonoBehaviour:
   damage: 3
   maxHealth: 10
   cardDropChance: 0
+  OfTypecounter: {fileID: 11400000, guid: e4a5f4694b79fe4488542d7385a2650f, type: 2}
   droppableCards: []
   layersToHit:
     serializedVersion: 2
     m_Bits: 128
+  extraLives: 0
+  damageReduction: 0
+  armour: 0
+  orginalMaxHealth: 0
   shootingRange: 12
   moveSpeed: 8
   projectileSpeed: 10

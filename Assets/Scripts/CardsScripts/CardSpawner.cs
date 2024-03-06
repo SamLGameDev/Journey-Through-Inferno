@@ -315,7 +315,7 @@ public class CardSpawner : MonoBehaviour
                     ChangeEventSystem();
                     continue;
                 }
-                _playerCards = p.GetComponent<TarotCardSelector>().cards;
+                _playerCards = p.GetComponent<Player_movement>().stats.droppableCards;
                 if (_playerCards.Count == 0)
                 {
                     ChangeEventSystem();
