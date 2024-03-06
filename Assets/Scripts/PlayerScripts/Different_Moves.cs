@@ -174,14 +174,14 @@ public class Different_Moves : MonoBehaviour
         while (GetComponent<Player_movement>().running) // while the attack button has been pressed
         {
             // rotate it around the player based ont he facing direction
-            target.transform.RotateAround(transform.position, new Vector3(0, 0, facing), pStats.swordSpeed * Time.deltaTime);
+            target.transform.RotateAround(transform.position, new Vector3(0, 0, facing), pStats.swordSpeed.value * Time.deltaTime);
             // handles the halfway break for both left right down and up, fake being for down
             if ((target.transform.rotation.z <= limit && limit < 0) || (target.transform.rotation.z >= limit && limit > 0) || (target.transform.rotation.z <= fakelimit && fakelimit > 0))
             {
                 target.transform.rotation = rotation; // to account for any chnages in rotation to set the sword straight
                 target.transform.localPosition = position; // sets its position to where it started
                 target.SetActive(false); // make the sword invisible and stop damage when not attacking
-                yield return new WaitForSeconds(pStats.swordDelay);
+                yield return new WaitForSeconds(pStats.swordDelay.value);
                 GetComponent<Player_movement>().running = false;
                 yield return new WaitUntil(() => GetComponent<Player_movement>().running); // wait unitll attacking again 
                 // recalculate everything for the new attack

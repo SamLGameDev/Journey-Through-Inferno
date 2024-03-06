@@ -22,12 +22,12 @@ public class Sword_Damage : MonoBehaviour
             EntityHealthBehaviour enemyHealth = collision.GetComponent<EntityHealthBehaviour>();
             List<TarotCards> enemyStats = enemyHealth.stats.droppableCards;
             float dropchance = enemyHealth.stats.cardDropChance;
-            int criticalDamage = stats.criticalHitDamage;
-            if (stats.criticalHitChance > 0 && (Random.Range(0.0001f, 101) < stats.criticalHitChance))
+            int criticalDamage = stats.criticalHitDamage.value;
+            if (stats.criticalHitChance.value > 0 && (Random.Range(0.0001f, 101) < stats.criticalHitChance.value))
             {
-                criticalDamage = stats.criticalHitDamage;
+                criticalDamage = stats.criticalHitDamage.value;
             }
-            enemyHealth.ApplyDamage(stats.swordDamage + stats.swordDamageModifier + criticalDamage, transform.parent.gameObject);
+            enemyHealth.ApplyDamage(stats.swordDamage.value + stats.swordDamageModifier.value + criticalDamage, transform.parent.gameObject);
             healthCheck(enemyHealth, dropchance, enemyStats);
 
             

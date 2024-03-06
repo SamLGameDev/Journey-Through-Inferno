@@ -50,13 +50,13 @@ public class TarotCards :ScriptableObject
             case possibleModifiers.None:
                 return;
             case possibleModifiers.GunDamage:
-                stats.bulletDamageModifier = effectValue;
+                stats.bulletDamageModifier.value = effectValue;
                 break;
             case possibleModifiers.SwordDamge:
-                stats.swordDamageModifier = effectValue;
+                stats.swordDamageModifier.value = effectValue;
                 break;
             case possibleModifiers.speed:
-                stats.chariotSpeed = effectValue;
+                stats.chariotSpeed.value = effectValue;
                 p.GetComponent<Player_movement>().UpdateSpeed();
                 break;
             case possibleModifiers.increasedDropChance:
@@ -67,11 +67,11 @@ public class TarotCards :ScriptableObject
                 break;
             case possibleModifiers.IncreasedDamageLowerHealth:
                 stats.maxHealth -= effectValue;
-                stats.swordDamage += (int)RangeForAbility;
-                stats.bulletDamage += (int)RangeForAbility;
+                stats.swordDamage.value += (int)RangeForAbility;
+                stats.bulletDamage.value += (int)RangeForAbility;
                 break;
             case possibleModifiers.criticalHit:
-                stats.criticalHitChance = effectValue;
+                stats.criticalHitChance.value = effectValue;
                 break;
             case possibleModifiers.damageReduction:
                 stats.damageReduction = effectValue;
@@ -86,11 +86,11 @@ public class TarotCards :ScriptableObject
                 stats.projectilesize = new Vector3(effectValue, effectValue, 0);
                 break;
             case possibleModifiers.SpreadShot:
-                stats.spreadShotNumber = effectValue;
+                stats.spreadShotNumber.value = effectValue;
                 break;
             case possibleModifiers.cooldownReduction:
-                stats.cooldownReduction = effectValue;
-                stats.gunCooldownModifier = effectValue;
+                stats.cooldownReduction.value = effectValue;
+                stats.gunCooldownModifier.value = effectValue;
                 break;
         }
     }

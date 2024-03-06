@@ -33,13 +33,13 @@ public class bullet_controller : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         if (original)
         {
-            rb.AddForce(transform.right * stats.bulletSpeed);
+            rb.AddForce(transform.right * stats.bulletSpeed.value);
         }
-        Destroy(this.gameObject, stats.bulletLife);
+        Destroy(this.gameObject, stats.bulletLife.value);
         if (HasCard(TarotCards.possibleModifiers.SpreadShot) && original)
         {
             original = false;
-            Invoke("SpreadShot", stats.timeUntilSpreadShot);
+            Invoke("SpreadShot", stats.timeUntilSpreadShot.value);
         }
         // If the player has the Magician Arcana then the size of their bullets will be increased  
 
@@ -57,11 +57,11 @@ public class bullet_controller : MonoBehaviour
     }
     private void SpreadShot()
     {
-        for (int i = 0; i < stats.spreadShotNumber; i++)
+        for (int i = 0; i < stats.spreadShotNumber.value; i++)
         {
             GameObject bullet = Instantiate(gameObject, transform.position, Quaternion.identity);
             bullet.transform.parent = transform.parent;
-            bullet.GetComponent<Rigidbody2D>().AddForce(Quaternion.AngleAxis((15 * (stats.spreadShotNumber / 2)) + (i * -15), Vector3.forward) * transform.right * stats.bulletSpeed);
+            bullet.GetComponent<Rigidbody2D>().AddForce(Quaternion.AngleAxis((15 * (stats.spreadShotNumber.value / 2)) + (i * -15), Vector3.forward) * transform.right * stats.bulletSpeed.value);
 
         }
     }
@@ -74,11 +74,11 @@ public class bullet_controller : MonoBehaviour
             List<TarotCards> enemyStats = enemyHealth.stats.droppableCards;
             float dropchance = enemyHealth.stats.cardDropChance;
             int criticalDamage = 0;
-            if (stats.criticalHitChance > 0 && (Random.Range(0.0001f, 101) < stats.criticalHitChance))
+            if (stats.criticalHitChance.value > 0 && (Random.Range(0.0001f, 101) < stats.criticalHitChance.value))
             {
-                criticalDamage = stats.criticalHitDamage;
+                criticalDamage = stats.criticalHitDamage.value;
             }
-            enemyHealth.ApplyDamage(stats.bulletDamage + stats.bulletDamageModifier + criticalDamage, transform.parent.gameObject);
+            enemyHealth.ApplyDamage(stats.bulletDamage.value + stats.bulletDamageModifier.value + criticalDamage, transform.parent.gameObject);
             healthCheck(enemyHealth, dropchance, enemyStats);
             Destroy(gameObject);
         }
@@ -131,7 +131,7 @@ public class bullet_controller : MonoBehaviour
             if (target != null)
             {
                 transform.right = target.transform.position - transform.position;
-                rb.AddForce(transform.right.normalized * stats.bulletSpeed / 100);
+                rb.AddForce(transform.right.normalized * stats.bulletSpeed.value / 100);
             }
         }
     }

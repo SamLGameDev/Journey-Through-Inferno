@@ -98,13 +98,13 @@ public class Player_movement : MonoBehaviour
         UpdateSpeed();
         // makes sword start as invisible 
         transform.GetChild(1).gameObject.SetActive(false);
-        StartCoroutine(timer(stats.gunCooldown));
+        StartCoroutine(timer(stats.gunCooldown.value));
         moves = GetComponent<Different_Moves>();
         rb = GetComponent<Rigidbody2D>();
         ani = GetComponent<Animator>();
         healthBehaviour = GetComponent<EntityHealthBehaviour>();
         StartCoroutine(dash());
-        StartCoroutine(invisDurationTimer(stats.invisibilityDuration));
+        StartCoroutine(invisDurationTimer(stats.invisibilityDuration.value));
         StartCoroutine(invisCooldownTimer());
         // If the player has the High Priestess Arcana then the timer for the invisibility bursts will start
         if (GetComponentInParent<Tarot_cards>().hasHighPriestess)
@@ -122,7 +122,7 @@ public class Player_movement : MonoBehaviour
     /// </summary>
     public void UpdateSpeed()
     {
-        speed = stats.speed + stats.chariotSpeed;
+        speed = stats.speed.value + stats.chariotSpeed.value;
     }
     public void Joystic_Movement(float movespeed)
     {
@@ -363,7 +363,7 @@ public class Player_movement : MonoBehaviour
         if (velo < 0.0001)
         {
             // if three seconds have passed go into idle
-            if (Time.time - stats.timeUntilIdle > time)
+            if (Time.time - stats.timeUntilIdle.value > time)
             {
                 ani.SetBool("Time passed 5", true);
             }
@@ -388,7 +388,7 @@ public class Player_movement : MonoBehaviour
     {
         while (true)
         {
-            dt = stats.gunCooldown - stats.gunCooldownModifier;
+            dt = stats.gunCooldown.value - stats.gunCooldownModifier.value;
             yield return new WaitForSeconds(dt);
             gun_cooldown = true;
             yield return new WaitWhile(() => gun_cooldown);
@@ -403,7 +403,7 @@ public class Player_movement : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(stats.invisibilityCooldown - stats.cooldownReduction);
+            yield return new WaitForSeconds(stats.invisibilityCooldown.value - stats.cooldownReduction.value);
             invis_cooldown = true;
             yield return new WaitWhile(() => invis_cooldown);
         }
@@ -445,12 +445,12 @@ public class Player_movement : MonoBehaviour
             }
             dashTrail.enabled = true;
             yield return null;
-            speed += stats.dashSpeed;
-            yield return new WaitForSeconds(stats.dashDuration);
-            speed -= stats.dashSpeed;
+            speed += stats.dashSpeed.value;
+            yield return new WaitForSeconds(stats.dashDuration.value);
+            speed -= stats.dashSpeed.value;
             dashTrail.enabled = false;
             dodash = false;
-            yield return new WaitForSeconds(stats.dashCooldown - stats.cooldownReduction);
+            yield return new WaitForSeconds(stats.dashCooldown.value - stats.cooldownReduction.value);
         }
     }
     public void Invisible()
