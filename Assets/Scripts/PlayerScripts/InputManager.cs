@@ -9,8 +9,6 @@ using static UnityEngine.InputSystem.InputAction;
 
 public class InputManager : MonoBehaviour
 {
-    private InputAction leftMouseClick;
-    private InputAction rightMouseClick;
     private PlayerInput playerInput;
     private Player_movement movement;
     // Start is called before the first frame update
@@ -49,6 +47,7 @@ public class InputManager : MonoBehaviour
     {
         movement.AimingDirection = context.ReadValue<Vector2>();
 
+
     }
     public void OnDash(CallbackContext context)
     {
@@ -60,7 +59,7 @@ public class InputManager : MonoBehaviour
     }
     public void OnSword()
     {
-        if ( movement != null)
+        if ( movement != null && !movement.running)
         {
             movement.Player_Melee(movement.sword);
         }
@@ -74,9 +73,20 @@ public class InputManager : MonoBehaviour
         }
 
     }
+    private bool HasHighPriestess()
+    {
+        foreach(TarotCards card in movement.stats.tarotCards)
+        {
+            if (card.possibleMods == TarotCards.possibleModifiers.invisibility)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
     public void OnInvisible(CallbackContext context)
     {
-        if (movement != null && context.started)
+        if (movement != null && context.started && HasHighPriestess())
         {
             movement.Invisible();
         }

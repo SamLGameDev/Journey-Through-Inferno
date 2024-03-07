@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b7288b36b84b9241be4fdadd30129c7, type: 3}
   m_Name: The Tower
   m_EditorClassIdentifier: 
-  cardImage: {fileID: 0}
-  players: {fileID: 0}
+  cardImage: {fileID: 21300000, guid: 3cb7c35a750699348a04840d1ae1be5e, type: 3}
   effectValue: 5
   description: 'Danger lurks around every corner, and a spiral staircase has many
     corners.
@@ -23,4 +22,4 @@ MonoBehaviour:
   RangeForAbility: 1
   particleEffect: {fileID: 3593046037354340037, guid: 4f8fec4a19846c542a43e3ea56df4e77,
     type: 3}
-  possibleMods: 5
+  possibleMods: 4

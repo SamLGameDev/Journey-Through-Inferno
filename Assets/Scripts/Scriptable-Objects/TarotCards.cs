@@ -9,7 +9,6 @@ using UnityEngine.UI;
 public class TarotCards :ScriptableObject
 {
     public Sprite cardImage;
-    public Player players;
     public int effectValue;
     [Multiline]
     public string description;
@@ -23,7 +22,6 @@ public class TarotCards :ScriptableObject
         GunDamage,
         SwordDamge,
         speed,
-        guncooldown,
         ExplodingEnemies,
         TwoCards,
         increasedDropChance,
@@ -32,7 +30,13 @@ public class TarotCards :ScriptableObject
         criticalHit,
         damageReduction,
         increaseMaxHealth,
-        armour
+        armour,
+        increaseProjectileSize,
+        SpreadShot,
+        reducedBossHealth,
+        Homing,
+        invisibility,
+        cooldownReduction
     }
     public void ApplyEffect(GameObject p)
     {
@@ -46,17 +50,14 @@ public class TarotCards :ScriptableObject
             case possibleModifiers.None:
                 return;
             case possibleModifiers.GunDamage:
-                stats.bulletDamageModifier = effectValue;
+                stats.bulletDamageModifier.value = effectValue;
                 break;
             case possibleModifiers.SwordDamge:
-                stats.swordDamageModifier = effectValue;
+                stats.swordDamageModifier.value = effectValue;
                 break;
             case possibleModifiers.speed:
-                stats.chariotSpeed = effectValue;
+                stats.chariotSpeed.value = effectValue;
                 p.GetComponent<Player_movement>().UpdateSpeed();
-                break;
-            case possibleModifiers.guncooldown:
-                stats.gunCooldownModifier = effectValue;
                 break;
             case possibleModifiers.increasedDropChance:
                 stats.cardDropChance = effectValue;
@@ -66,11 +67,11 @@ public class TarotCards :ScriptableObject
                 break;
             case possibleModifiers.IncreasedDamageLowerHealth:
                 stats.maxHealth -= effectValue;
-                stats.swordDamage += (int)RangeForAbility;
-                stats.bulletDamage += (int)RangeForAbility;
+                stats.swordDamage.value += (int)RangeForAbility;
+                stats.bulletDamage.value += (int)RangeForAbility;
                 break;
             case possibleModifiers.criticalHit:
-                stats.criticalHitChance = effectValue;
+                stats.criticalHitChance.value = effectValue;
                 break;
             case possibleModifiers.damageReduction:
                 stats.damageReduction = effectValue;
@@ -80,6 +81,16 @@ public class TarotCards :ScriptableObject
                 break;
             case possibleModifiers.armour:
                 stats.armour = effectValue;
+                break;
+            case possibleModifiers.increaseProjectileSize:
+                stats.projectilesize = new Vector3(effectValue, effectValue, 0);
+                break;
+            case possibleModifiers.SpreadShot:
+                stats.spreadShotNumber.value = effectValue;
+                break;
+            case possibleModifiers.cooldownReduction:
+                stats.cooldownReduction.value = effectValue;
+                stats.gunCooldownModifier.value = effectValue;
                 break;
         }
     }

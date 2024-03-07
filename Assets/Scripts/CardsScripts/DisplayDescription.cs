@@ -25,7 +25,7 @@ public class DisplayDescription : MonoBehaviour
         }
         _createdCard = true;
         text = Instantiate(TextBox, GameObject.Find("CardSelectionCanvas").transform);
-        text.GetComponent<RectTransform>().position =(Vector2)GameManager.instance.text.transform.position;
+        text.GetComponent<RectTransform>().position =(Vector2)GameManager.instance.topTextBox.transform.position;
         text.GetComponent<RectTransform>().sizeDelta = new Vector2(525, 200);
         int i = -1;
         foreach (char letter in card.description)
@@ -38,8 +38,8 @@ public class DisplayDescription : MonoBehaviour
         }
         text.GetComponent<TMPro.TextMeshProUGUI>().text = card.description.Substring(0, i);
         bottomtext = Instantiate(TextBox, GameObject.Find("CardSelectionCanvas").transform);
-        bottomtext.GetComponent<RectTransform>().position = new Vector2(GameManager.instance.text.transform.position.x, 
-            GameManager.instance.text.transform.position.y - 25);
+        bottomtext.GetComponent<RectTransform>().position = new Vector2(GameManager.instance.bottomTextBox.transform.position.x,
+            GameManager.instance.bottomTextBox.transform.position.y - 3);
         bottomtext.GetComponent<RectTransform>().sizeDelta = new Vector2(540, 200);
         bottomtext.GetComponent<TMPro.TextMeshProUGUI>().text = card.description.Substring(i+1);
         text.SetActive(true);

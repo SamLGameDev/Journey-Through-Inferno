@@ -172,7 +172,7 @@
                 {
                     "name": "",
                     "id": "2460e97a-d5cf-4b04-a33c-e9c88eacae45",
-                    "path": "<Gamepad>/rightShoulder",
+                    "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
                     "groups": "Xbox control scheme;SecondController",

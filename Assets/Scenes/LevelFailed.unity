@@ -1334,8 +1334,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   getPaused: 0
-  player1: {fileID: 0}
-  player2: {fileID: 0}
+  player1: {fileID: 11400000, guid: c53c78a8f908aff40b06667ff5c1036a, type: 2}
+  player2: {fileID: 11400000, guid: 5df255e7d82eda04e8040c6b03146859, type: 2}
   _events: {fileID: 1276510363}
   mainMenu: {fileID: 666339863}
 --- !u!1 &2119442313

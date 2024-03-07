@@ -22,36 +22,19 @@ public class Sword_Damage : MonoBehaviour
             EntityHealthBehaviour enemyHealth = collision.GetComponent<EntityHealthBehaviour>();
             List<TarotCards> enemyStats = enemyHealth.stats.droppableCards;
             float dropchance = enemyHealth.stats.cardDropChance;
-            int criticalDamage = stats.criticalHitDamage;
-            if (stats.criticalHitChance > 0 && (Random.Range(0.0001f, 101) < stats.criticalHitChance))
+            int criticalDamage = stats.criticalHitDamage.value;
+            if (stats.criticalHitChance.value > 0 && (Random.Range(0.0001f, 101) < stats.criticalHitChance.value))
             {
-                criticalDamage = stats.criticalHitDamage;
+                criticalDamage = stats.criticalHitDamage.value;
             }
-            enemyHealth.ApplyDamage(stats.swordDamage + stats.swordDamageModifier + criticalDamage, transform.parent.gameObject);
-            healthCheck(enemyHealth, dropchance, enemyStats);
+            enemyHealth.ApplyDamage(stats.swordDamage.value + stats.swordDamageModifier.value + criticalDamage, transform.parent.gameObject);
 
             
 
             
         }
     }
-    private void healthCheck(EntityHealthBehaviour enemyHealth, float dropchance, List<TarotCards> enemyStats)
-    {
-        if (enemyHealth.entityCurrentHealth <= 0)
-        {
-            SpawnCard(enemyStats, dropchance);
-        }
-    }
-    private void SpawnCard(List<TarotCards> possibleCards, float dropChance)
-    {
-        if (Random.Range(0.0001f, 101) < dropChance + stats.cardDropChance)
-        {
 
-            TarotCards card = possibleCards[Random.Range(0, possibleCards.Count)];
-            GetComponentInParent<TarotCardSelector>().cards.Add(card);
-        }
-
-    }
     // Update is called once per frame
     void Update()
     {

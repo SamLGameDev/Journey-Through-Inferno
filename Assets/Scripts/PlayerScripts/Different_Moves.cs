@@ -38,7 +38,7 @@ public class Different_Moves : MonoBehaviour
         // creates a box that will grab everything with a collider in it that matches the layers to
         // hit then apply damage to it.
         Debug.Log("mellerange");
-        RaycastHit2D[] hit = Physics2D.BoxCastAll(transform.position, new Vector2(stats.meleeSizeX, stats.meleeSizeY), 0, transform.right, stats.meleeDistance, stats.layersToHit);
+        RaycastHit2D[] hit = Physics2D.BoxCastAll(transform.position, new Vector2(stats.meleeSizeX, stats.meleeSizeY), 0, transform.up, stats.meleeDistance, stats.layersToHit);
         foreach (RaycastHit2D hit2d in hit)
         {
             hit2d.collider.gameObject.GetComponent<EntityHealthBehaviour>().ApplyDamage(stats.damage);
@@ -61,7 +61,7 @@ public class Different_Moves : MonoBehaviour
             return time;
         }
         // same as previous melee function this is an override to
-        RaycastHit2D[] hit = Physics2D.BoxCastAll(transform.position, new Vector2(stats.meleeSizeX, stats.meleeSizeY), 0 , transform.right, stats.meleeDistance, stats.layersToHit);
+        RaycastHit2D[] hit = Physics2D.BoxCastAll(transform.position, new Vector2(stats.meleeSizeX, stats.meleeSizeY), 0 , transform.up, stats.meleeDistance, stats.layersToHit);
 
         foreach (RaycastHit2D hit2d in hit)
         {
@@ -99,10 +99,12 @@ public class Different_Moves : MonoBehaviour
         {
             yield return null;
             // move it in the direction it is facing at a speed if 5
-            transform.position += transform.right * Time.deltaTime * stats.chargeSpeed;
+            transform.position += transform.up * Time.deltaTime * stats.chargeSpeed;
             // calles melee to get new cooldown or attack
             Melee_Damage_Cooldown = Melee(Melee_Damage_Cooldown);
         }
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        rb.velocity = Vector3.zero;
         // reenables pathfinding so thta it can move again
         EnablerAStar(true);
     }
@@ -123,9 +125,7 @@ public class Different_Moves : MonoBehaviour
                 break;
             }
             // get the difference in thier positions then rotate it acording to that after its been Atan2 and Rad2deg
-            Vector3 difference = target.position - transform.position;
-            float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
+            transform.up = target.position - transform.position;
         }
     }
     /// <summary>
@@ -174,14 +174,14 @@ public class Different_Moves : MonoBehaviour
         while (GetComponent<Player_movement>().running) // while the attack button has been pressed
         {
             // rotate it around the player based ont he facing direction
-            target.transform.RotateAround(transform.position, new Vector3(0, 0, facing), pStats.swordSpeed * Time.deltaTime);
+            target.transform.RotateAround(transform.position, new Vector3(0, 0, facing), pStats.swordSpeed.value * Time.deltaTime);
             // handles the halfway break for both left right down and up, fake being for down
             if ((target.transform.rotation.z <= limit && limit < 0) || (target.transform.rotation.z >= limit && limit > 0) || (target.transform.rotation.z <= fakelimit && fakelimit > 0))
             {
                 target.transform.rotation = rotation; // to account for any chnages in rotation to set the sword straight
                 target.transform.localPosition = position; // sets its position to where it started
                 target.SetActive(false); // make the sword invisible and stop damage when not attacking
-                yield return new WaitForSeconds(pStats.swordDelay);
+                yield return new WaitForSeconds(pStats.swordDelay.value);
                 GetComponent<Player_movement>().running = false;
                 yield return new WaitUntil(() => GetComponent<Player_movement>().running); // wait unitll attacking again 
                 // recalculate everything for the new attack
