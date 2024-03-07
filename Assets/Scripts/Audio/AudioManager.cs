@@ -30,7 +30,7 @@ public class AudioManager : MonoBehaviour
         foreach (Sound s in sounds) 
         {
             s.source = gameObject.AddComponent<AudioSource>();
-            s.source.clip = GetRandomAudioClip(s.clips);
+            s.source.clip = s.clips[0];
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
         }
@@ -45,6 +45,10 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Plays a sound of the specified name.
+    /// </summary>
+    /// <param name="name">Name of the sound to play.</param>
     public void PlaySound(string name)
     {
         Sound s = Array.Find(sounds, sound => name == sound.name);
@@ -54,6 +58,13 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning($"Missing sound {name}!");
         }
 
+        // Check for additional clips for the same sound, and if any randomise the choice.
+        if(s.clips.Length > 1)
+        {
+            s.source.clip = GetRandomAudioClip(s.clips);
+        }
+
+        print(s.source.clip);
         s.source.Play();
     }
 
@@ -87,7 +98,8 @@ public class AudioManager : MonoBehaviour
 
             // Wrap the index
             previousArrayIndex++;
-            if (previousArrayIndex >= previousArray.Length) {
+            if (previousArrayIndex >= previousArray.Length) 
+            {
                 previousArrayIndex = 0;
             }
         }
