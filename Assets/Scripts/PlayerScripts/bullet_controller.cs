@@ -18,73 +18,104 @@ public class bullet_controller : MonoBehaviour
     public Transform target2;
     public float speed;
     public float rotateSpeed = 200f;
+    public static bool original = true;
+    private bool hasHoming = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        if (HasCard(TarotCards.possibleModifiers.Homing))
+        {
+            hasHoming = true;
+        }
         // moves the bullet in the direction it is facing
+        transform.localScale = stats.projectilesize;
         rb = GetComponent<Rigidbody2D>();
-        rb.AddForce(transform.right * stats.bulletSpeed);
-        Destroy(this.gameObject, stats.bulletLife);
-
-        // If the player has the Magician Arcana then the size of their bullets will be increased
-        if (GetComponentInParent<Tarot_cards>().hasMagician)
-        { transform.localScale *= 3f; }       
+        if (original)
+        {
+            rb.AddForce(transform.right * stats.bulletSpeed.value);
+        }
+        Destroy(this.gameObject, stats.bulletLife.value);
+        if (HasCard(TarotCards.possibleModifiers.SpreadShot) && original)
+        {
+            original = false;
+            Invoke("SpreadShot", stats.timeUntilSpreadShot.value);
+        }
+        // If the player has the Magician Arcana then the size of their bullets will be increased  
 
     }
+    private bool HasCard(TarotCards.possibleModifiers modifer)
+    {
+        foreach (TarotCards card in stats.tarotCards)
+        {
+            if (card.possibleMods == modifer)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    private void SpreadShot()
+    {
+        for (int i = 0; i < stats.spreadShotNumber.value; i++)
+        {
+            GameObject bullet = Instantiate(gameObject, transform.position, Quaternion.identity);
+            bullet.transform.parent = transform.parent;
+            bullet.GetComponent<Rigidbody2D>().AddForce(Quaternion.AngleAxis((15 * (stats.spreadShotNumber.value / 2)) + (i * -15), Vector3.forward) * transform.right * stats.bulletSpeed.value);
 
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy") || (Player_movement.pvP_Enabled && collision.CompareTag("Player")
             && collision.gameObject != transform.parent.gameObject))
         {
-            List<TarotCards> enemyStats = collision.GetComponent<EntityHealthBehaviour>().stats.droppableCards;
-            float dropchance = collision.GetComponent<EntityHealthBehaviour>().stats.cardDropChance; ;
-            collision.GetComponent<EntityHealthBehaviour>().ApplyDamage(stats.bulletDamage + stats.bulletDamageModifier, transform.parent.gameObject);
-            if (collision.GetComponent<EntityHealthBehaviour>().entityCurrentHealth <= 0)
+            EntityHealthBehaviour enemyHealth = collision.GetComponent<EntityHealthBehaviour>();
+            List<TarotCards> enemyStats = enemyHealth.stats.droppableCards;
+            float dropchance = enemyHealth.stats.cardDropChance;
+            int criticalDamage = 0;
+            if (stats.criticalHitChance.value > 0 && (Random.Range(0.0001f, 101) < stats.criticalHitChance.value))
             {
-                SpawnCard(enemyStats, dropchance);
+                criticalDamage = stats.criticalHitDamage.value;
             }
-            Destroy(this);
+            enemyHealth.ApplyDamage(stats.bulletDamage.value + stats.bulletDamageModifier.value + criticalDamage, transform.parent.gameObject);
+            Destroy(gameObject);
         }
     }
-    private void SpawnCard(List<TarotCards> possibleCards, float dropChance)
-    {
-        if (Random.Range(0.0001f, 101) < dropChance)
-        {
 
-            TarotCards card = possibleCards[Random.Range(0, possibleCards.Count)];
-            GetComponentInParent<TarotCardSelector>().cards.Add(card);
+    private GameObject GetTarget()
+    {
+        GameObject closest = null;
+        foreach(GameObject enemy in EncounterArea.Enemys)
+        {
+            if (enemy != null)
+            {
+                if (closest == null)
+                {
+                    closest = enemy;
+                    continue;
+                }
+                Vector2 EnemyLocation = enemy.transform.position - transform.position;
+                Vector2 closestLocation = closest.transform.position - transform.position;
+                if (EnemyLocation.sqrMagnitude < closestLocation.sqrMagnitude)
+                {
+                    closest = enemy;
+                }
+            }
         }
+        return closest;
     }
     private void FixedUpdate()
 
     {
-        // If the player has the Moon Arcana then their bullets will home in on enemies, it's flawed though because it can only target two types of enemies feel free to edit
-        if (GetComponentInParent<Tarot_cards>().hasMoon)
+        if (hasHoming)
         {
-            if (target != null && target2 != null)
+            GameObject target = GetTarget();
+            if (target != null)
             {
-                // Calculates direction and normalize for both targets
-                Vector2 direction = (Vector2)target.position - rb.position;
-                direction.Normalize();
-
-                Vector2 direction2 = (Vector2)target2.position - rb.position;
-                direction2.Normalize();
-
-                // Calculates rotation amount using cross product for both targets
-                float rotateAmount = Vector3.Cross(direction, transform.up).z;
-                float rotateAmount2 = Vector3.Cross(direction2, transform.up).z;
-
-                // Adjust angular velocity for both targets
-                rb.angularVelocity = -rotateAmount * rotateSpeed;
-                rb.angularVelocity = -rotateAmount2 * rotateSpeed;
-
-                // Sets speed for homing effect
-                rb.velocity = transform.up * speed;
+                transform.right = target.transform.position - transform.position;
+                rb.AddForce(transform.right.normalized * stats.bulletSpeed.value / 100);
             }
-
         }
-
     }
 }

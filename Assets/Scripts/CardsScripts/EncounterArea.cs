@@ -6,7 +6,7 @@ using UnityEngine;
 public class EncounterArea : MonoBehaviour
 {
     [SerializeField] private GameManager gameManager;
-    private List<GameObject> Enemys;
+    public static List<GameObject> Enemys;
     // Start is called before the first frame update
     void Start()
     {

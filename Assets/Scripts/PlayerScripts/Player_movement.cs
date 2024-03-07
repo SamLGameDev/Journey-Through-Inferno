@@ -9,11 +9,9 @@ using UnityEngine.SceneManagement;
 using Fungus;
 using static UnityEngine.InputSystem.InputAction;
 using UnityEngine.EventSystems;
-using UnityEngine.InputSystem.iOS;
 
 public class Player_movement : MonoBehaviour
 {
-    [SerializeField] private EventSystem _eventSystem;
     [SerializeField] private GameObject _resumeButton;
     public static bool pvP_Enabled = false;
     public bool dodash = false;
@@ -93,28 +91,24 @@ public class Player_movement : MonoBehaviour
     public Player stats;
     public GameObject sword;
     public Vector2 AimingDirection;
+    private EntityHealthBehaviour healthBehaviour;
     // Start is called before the first frame update
     void Start()
     {
         UpdateSpeed();
         // makes sword start as invisible 
         transform.GetChild(1).gameObject.SetActive(false);
-        StartCoroutine(timer(stats.gunCooldown));
+        StartCoroutine(timer(stats.gunCooldown.value));
         moves = GetComponent<Different_Moves>();
         rb = GetComponent<Rigidbody2D>();
         ani = GetComponent<Animator>();
+        healthBehaviour = GetComponent<EntityHealthBehaviour>();
         StartCoroutine(dash());
-        
-        // decreases the gun cooldown time if player has the temperance card
-
-
-        // If the player has the Emperor Arcana then their max health will be increased
-        if (GetComponentInParent<Tarot_cards>().hasEmperor)
-        { stats.maxHealth = 25; }
-
+        StartCoroutine(invisDurationTimer(stats.invisibilityDuration.value));
+        StartCoroutine(invisCooldownTimer());
         // If the player has the High Priestess Arcana then the timer for the invisibility bursts will start
         if (GetComponentInParent<Tarot_cards>().hasHighPriestess)
-        { StartCoroutine(invisCooldownTimer(stats.invisibilityCooldown)); }
+        { StartCoroutine(invisCooldownTimer()); }
         else
         { invis_cooldown = false; }
 
@@ -128,7 +122,8 @@ public class Player_movement : MonoBehaviour
     /// </summary>
     public void UpdateSpeed()
     {
-        speed = stats.speed + stats.chariotSpeed;
+        speed = stats.speed.value + stats.chariotSpeed.value;
+        Debug.Log(speed);
     }
     public void Joystic_Movement(float movespeed)
     {
@@ -141,6 +136,7 @@ public class Player_movement : MonoBehaviour
     {
         if (AimingDirection.sqrMagnitude == 0) return;
         float heading = MathF.Atan2(-AimingDirection.x, AimingDirection.y);
+        Debug.Log(AimingDirection);
         transform.GetChild(0).rotation = Quaternion.Euler(0, 0, heading * Mathf.Rad2Deg);
     }
 
@@ -183,64 +179,117 @@ public class Player_movement : MonoBehaviour
     /// </summary>
     /// 
     private void Animation_Controller()
-    { 
+    {
         float velo = Mathf.Abs(rb.velocity.x + rb.velocity.y); // absolute value so negatives dont affect it
-        ani.SetFloat("Velocity",velo);
+        ani.SetFloat("Velocity", velo);
         // starts the idle check as the player isnt moving
-        if (velo < 0.0001  && !VelocityCheck) 
+        if (velo < 0.0001 && !VelocityCheck)
         {
             time = Time.time;
             VelocityCheck = true;
             return;
         }
-        // uses absolute values as they could be moving down and that would be negative
-        if (Mathf.Abs(rb.velocity.y) > Mathf.Abs(rb.velocity.x))
+        if (AimingDirection.x > -0.5f && AimingDirection.x < 0.5f)
         {
-            // if the sword was int eh poition needed for a left/right swing
-            // rotates it to be in the position for a down/up swing
             if (upDown && !running)
             {
                 RotateAround(1);
                 upDown = false;
             }
-            if (rb.velocity.y < 0)
+            if (AimingDirection.y < -0.5f)
             {
                 ani.SetBool("Y>X", true);
                 ani.SetBool("Positive Y>X change", false);
                 facing = 1;
-            }
-            else if (rb.velocity.y > 0) 
-            {
-                ani.SetBool("Y>X", false);
-                ani.SetBool("Positive Y>X change", true);
-                facing = -1;
+                return;
             }
             else
             {
                 ani.SetBool("Y>X", false);
-                ani.SetBool("Positive Y>X change", false);
-            }
-        }
-        else if (Mathf.Abs(rb.velocity.y) < Mathf.Abs(rb.velocity.x))
-        {
-            if (!upDown && !running)
-            {
-                RotateAround(-1);
-                upDown = true;
-            }
-            if (rb.velocity.x < 0)
-            {
-                ani.SetBool("Negative x", true);
-                facing = 1;
-            }
-            else if (rb.velocity.x > 0)
-            {
-                ani.SetBool("Negative x", false);
+                ani.SetBool("Positive Y>X change", true);
                 facing = -1;
+
+                return;
             }
-            ani.SetBool("Y>X", false);
-            ani.SetBool("Positive Y>X change", false);
         }
+        if (!upDown && !running)
+        {
+            RotateAround(-1);
+            upDown = true;
+        }
+        ani.SetBool("Y>X", false);
+        ani.SetBool("Positive Y>X change", false);
+        if (AimingDirection.x > 0)
+        {
+            ani.SetBool("Negative x", false);
+            facing = -1;
+        }
+        else
+        {
+            
+            ani.SetBool("Negative x", true);
+            facing = 1;
+
+        }
+        #region old animator
+        //float velo = Mathf.Abs(rb.velocity.x + rb.velocity.y); // absolute value so negatives dont affect it
+        //ani.SetFloat("Velocity",velo);
+        //// starts the idle check as the player isnt moving
+        //if (velo < 0.0001  && !VelocityCheck) 
+        //{
+        //    time = Time.time;
+        //    VelocityCheck = true;
+        //    return;
+        //}
+        //// uses absolute values as they could be moving down and that would be negative
+        //if (Mathf.Abs(rb.velocity.y) > Mathf.Abs(rb.velocity.x))
+        //{
+        //    // if the sword was int eh poition needed for a left/right swing
+        //    // rotates it to be in the position for a down/up swing
+        //    if (upDown && !running)
+        //    {
+        //        RotateAround(1);
+        //        upDown = false;
+        //    }
+        //    if (rb.velocity.y < 0)
+        //    {
+        //        ani.SetBool("Y>X", true);
+        //        ani.SetBool("Positive Y>X change", false);
+        //        facing = 1;
+        //    }
+        //    else if (rb.velocity.y > 0) 
+        //    {
+        //        ani.SetBool("Y>X", false);
+        //        ani.SetBool("Positive Y>X change", true);
+        //        facing = -1;
+        //    }
+        //    else
+        //    {
+        //        ani.SetBool("Y>X", false);
+        //        ani.SetBool("Positive Y>X change", false);
+        //    }
+        //}
+        //else if (Mathf.Abs(rb.velocity.y) < Mathf.Abs(rb.velocity.x))
+        //{
+        //    if (!upDown && !running)
+        //    {
+        //        RotateAround(-1);
+        //        upDown = true;
+        //    }
+        //    if (rb.velocity.x < 0)
+        //    {
+        //        ani.SetBool("Negative x", true);
+        //        facing = 1;
+        //    }
+        //    else if (rb.velocity.x > 0)
+        //    {
+        //        ani.SetBool("Negative x", false);
+        //        facing = -1;
+        //    }
+        //    ani.SetBool("Y>X", false);
+        //    ani.SetBool("Positive Y>X change", false);
+        //}
+        #endregion
     }
     /// <summary>
     /// roates the sword 90 degrees in the direction specified
@@ -286,7 +335,7 @@ public class Player_movement : MonoBehaviour
     private IEnumerator controllerRumble(float leftStick, float rightStick, float duration, Gamepad gamepad)
     {
         gamepad.SetMotorSpeeds(leftStick, rightStick);
-        yield return new WaitForSeconds(duration);
+        yield return new WaitForSecondsRealtime(duration);
         gamepad.ResetHaptics();
         StopCoroutine(controllerRumble(0.5f, 0.5f, 0.5f, gamepad));
     }
@@ -296,7 +345,8 @@ public class Player_movement : MonoBehaviour
     public void Player_Shooting(Gamepad gamepad)
     {
         if (gun_cooldown)
-        { 
+        {
+            bullet_controller.original = true;
             gun_cooldown = false;
             StartCoroutine(controllerRumble(0.5f, 0.5f, 0.5f, gamepad));
             // shoots from the compas's facing direction
@@ -314,7 +364,7 @@ public class Player_movement : MonoBehaviour
         if (velo < 0.0001)
         {
             // if three seconds have passed go into idle
-            if (Time.time - stats.timeUntilIdle > time)
+            if (Time.time - stats.timeUntilIdle.value > time)
             {
                 ani.SetBool("Time passed 5", true);
             }
@@ -329,6 +379,7 @@ public class Player_movement : MonoBehaviour
         }
         
     }
+
     /// <summary>
     /// starts a timer and sets gun_cooldwon to true when the set amount of time has passed, repeats when that variable is false
     /// </summary>
@@ -338,7 +389,7 @@ public class Player_movement : MonoBehaviour
     {
         while (true)
         {
-            dt = stats.gunCooldown - stats.gunCooldownModifier;
+            dt = stats.gunCooldown.value - stats.gunCooldownModifier.value;
             yield return new WaitForSeconds(dt);
             gun_cooldown = true;
             yield return new WaitWhile(() => gun_cooldown);
@@ -349,11 +400,11 @@ public class Player_movement : MonoBehaviour
     /// </summary>
     /// <param name="dt"></param>
     /// <returns></returns>
-    private IEnumerator invisCooldownTimer(float dt)
+    private IEnumerator invisCooldownTimer()
     {
         while (true)
         {
-            yield return new WaitForSeconds(dt);
+            yield return new WaitForSeconds(stats.invisibilityCooldown.value - stats.cooldownReduction.value);
             invis_cooldown = true;
             yield return new WaitWhile(() => invis_cooldown);
         }
@@ -365,9 +416,15 @@ public class Player_movement : MonoBehaviour
     /// <returns></returns>
     private IEnumerator invisDurationTimer(float dt)
     {
-        isInvisible = true;
-        yield return new WaitForSeconds(dt);
-        isInvisible = false;
+        while (true)
+        {
+
+            yield return new WaitUntil(() => isInvisible);
+            healthBehaviour.invincible = true;
+            yield return new WaitForSeconds(dt);
+            healthBehaviour.invincible = false;
+            isInvisible = false;
+        }
     }
     public void BeginDash()
     {
@@ -389,12 +446,12 @@ public class Player_movement : MonoBehaviour
             }
             dashTrail.enabled = true;
             yield return null;
-            speed += stats.dashSpeed;
-            yield return new WaitForSeconds(stats.dashDuration);
-            speed -= stats.dashSpeed;
+            speed += stats.dashSpeed.value;
+            yield return new WaitForSeconds(stats.dashDuration.value);
+            speed -= stats.dashSpeed.value;
             dashTrail.enabled = false;
             dodash = false;
-            yield return new WaitForSeconds(stats.dashCooldown);
+            yield return new WaitForSeconds(stats.dashCooldown.value - stats.cooldownReduction.value);
         }
     }
     public void Invisible()
@@ -402,7 +459,8 @@ public class Player_movement : MonoBehaviour
         if (invis_cooldown && !isInvisible) // turn invisible on button press
         {
             invis_cooldown = false;
-            invisDurationTimer(stats.invisibilityDuration);
+            isInvisible = true;
+
         }
     }
     private void possibleActions()

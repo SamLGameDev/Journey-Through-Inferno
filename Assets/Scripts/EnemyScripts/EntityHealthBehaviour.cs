@@ -1,6 +1,7 @@
 using Fungus;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.XR;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +13,8 @@ public class EntityHealthBehaviour : MonoBehaviour
 {
     public bool isBoss;
     public BasicAttributes stats;
+    private bool flashRed;
+    [SerializeField] private GameEventListener OnDamaged;
     [SerializeField] private float invunTimeOnHit;
 
     // This is public so that it can be accessed by UI.
@@ -35,27 +38,51 @@ public class EntityHealthBehaviour : MonoBehaviour
 
     //A boolean for, surprisingly, if theyre alive
     public bool IsAlive;
+    public bool invincible;
 
     private void Start()
     {
-        entityCurrentHealth = stats.maxHealth;
+        stats.OfTypecounter.Add(gameObject);
+        object[] Hermit = HasHermit();
+        if (isBoss && (bool)Hermit[0]) 
+        {
+            TarotCards card = (TarotCards)Hermit[1];
+            stats.maxHealth -= card.effectValue;
+        }
+        entityCurrentHealth = stats.maxHealth + stats.armour;
         damageInvulnerable = false;
         IsAlive = true;
+        StartCoroutine(FlashRed());
     }
+    private object[] HasHermit()
+    {
+        foreach(GameObject Player in GameManager.instance.playerInstances)
+        {
+            foreach(TarotCards card in Player.GetComponent<Player_movement>().stats.tarotCards)
+            {
+                if (card.possibleMods == TarotCards.possibleModifiers.reducedBossHealth)
+                {
+                    return new object[] { true, card };
+                }
+            }
 
+        }
+        return new object[] { false};
+    }
     /// <summary>
     /// Reduces the entity's health by a set amount
     /// </summary>
     /// <param name="damageAmount">Amount of damage to apply</param>
     public void ApplyDamage(int damageAmount, GameObject damagerDealer = null)
     {
-        if (damageInvulnerable)
+        if (damageInvulnerable || invincible)
         {
             print("Damage blocked due to being invulnerable. :)");
             return;
         }
+        flashRed = true;
 
-        entityCurrentHealth -= damageAmount;
+        entityCurrentHealth -= damageAmount - stats.damageReduction;
 
         if (gameObject.tag == "Player")
         {
@@ -93,6 +120,18 @@ public class EntityHealthBehaviour : MonoBehaviour
         }
 
         
+    }
+    private IEnumerator FlashRed()
+    {
+        while( true)
+        {
+            yield return new WaitUntil(() => flashRed);
+            SpriteRenderer sr = GetComponent<SpriteRenderer>();
+            sr.color = Color.red;
+            yield return new WaitForSeconds(0.5f);
+            sr.color = Color.white;
+            flashRed = false;
+        }
     }
 
     /// <summary>
@@ -183,7 +222,30 @@ public class EntityHealthBehaviour : MonoBehaviour
     }
     private void EntityDeath(GameObject damageDealer)
     {
-        Debug.Log(gameObject.name);
+        if (gameObject.CompareTag("Player"))
+        {
+            if (stats.extraLives > 0)
+            {
+                stats.extraLives--;
+                entityCurrentHealth = stats.maxHealth;
+                return;
+            }
+            GameManager.instance.OnPlayerDeath();
+            IsAlive = false;
+            Destroy(gameObject);
+            return;
+        }
+        Debug.Log(damageDealer.name);
+        
+        if (damageDealer.name == "Player 2")
+        {
+            stats.Player2Kill.Raise();
+        }
+        else
+        {
+            stats.Player1Kill.Raise();
+        }
+        stats.OfTypecounter.Remove(gameObject);
         if (gameObject.CompareTag("Enemy"))
         {
             GameManager.instance.OnEnemyDeath();
@@ -193,11 +255,10 @@ public class EntityHealthBehaviour : MonoBehaviour
             if (damageDealer.GetComponent<Player_movement>() != null && HasJudgement(damageDealer)) EnemyExplodeOnDeath(damageDealer, deathPosition);
 
         }
-        else if (gameObject.CompareTag("Player"))
+
+        if(isBoss)
         {
-            GameManager.instance.OnPlayerDeath();
-            IsAlive=false;
-            Destroy(gameObject);
+            GameManager.instance.UpdateGameState(GameManager.GameState.EncounterCleared);
         }
     }
 }

@@ -19,29 +19,22 @@ public class Sword_Damage : MonoBehaviour
         // applies damage to the enemies
         if (collision.CompareTag("Enemy") || (Player_movement.pvP_Enabled && collision.CompareTag("Player"))) 
         {
-            List<TarotCards> enemyStats = collision.GetComponent<EntityHealthBehaviour>().stats.droppableCards;
-            float dropchance = collision.GetComponent<EntityHealthBehaviour>().stats.cardDropChance;
-            collision.GetComponent<EntityHealthBehaviour>().ApplyDamage(stats.swordDamage + stats.swordDamageModifier, transform.parent.gameObject);
-            if (collision.GetComponent<EntityHealthBehaviour>().entityCurrentHealth <= 0)
+            EntityHealthBehaviour enemyHealth = collision.GetComponent<EntityHealthBehaviour>();
+            List<TarotCards> enemyStats = enemyHealth.stats.droppableCards;
+            float dropchance = enemyHealth.stats.cardDropChance;
+            int criticalDamage = stats.criticalHitDamage.value;
+            if (stats.criticalHitChance.value > 0 && (Random.Range(0.0001f, 101) < stats.criticalHitChance.value))
             {
-                SpawnCard(enemyStats, dropchance);
+                criticalDamage = stats.criticalHitDamage.value;
             }
+            enemyHealth.ApplyDamage(stats.swordDamage.value + stats.swordDamageModifier.value + criticalDamage, transform.parent.gameObject);
 
             
 
             
         }
     }
-    private void SpawnCard(List<TarotCards> possibleCards, float dropChance)
-    {
-        if (Random.Range(0.0001f, 101) < dropChance)
-        {
 
-            TarotCards card = possibleCards[Random.Range(0, possibleCards.Count)];
-            GetComponentInParent<TarotCardSelector>().cards.Add(card);
-        }
-
-    }
     // Update is called once per frame
     void Update()
     {

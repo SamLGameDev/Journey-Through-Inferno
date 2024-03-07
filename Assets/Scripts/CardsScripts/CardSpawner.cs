@@ -21,6 +21,7 @@ public class CardSpawner : MonoBehaviour
     private int currentCardIndex = 1;
     public object[,] onScreenCards;
     private int cardIndex = 0;
+    private static bool firstTime = true;
     private int cardIndex3 = 0;
     private int cardIndex4 = 0;
     private int cardindex5 = 0;
@@ -201,7 +202,7 @@ public class CardSpawner : MonoBehaviour
     private void CreateCards(GameObject p)
     {
         cardAmount = _playerCards.Count > 4 ? 4 : _playerCards.Count;
-        onScreenCards = new object[cardAmount, cardAmount];
+        Debug.Log(cardAmount);
         // This makes the cards spawn on alternating sides.
         bool leftIndex = true;
 
@@ -225,7 +226,9 @@ public class CardSpawner : MonoBehaviour
         }
 
         // This array is storing the cards currently shown on screen, allows us to destroy them easily if cards need rerolling.
-        onScreenCards = new object[cardAmount, cardAmount];
+        onScreenCards = new object[cardAmount, cardAmount *2];
+        Debug.Log(onScreenCards.GetLength(0));
+        Debug.Log(onScreenCards.GetLength(1));
 
         // The index is needed because the for loop 'i' doesn't always start at 0, and we need to sequentially add each card
         // to the array as we are creating them.
@@ -276,19 +279,28 @@ public class CardSpawner : MonoBehaviour
     // and ensure the correct amount of cards in the correct arrangement are placed.
     public IEnumerator SpawnCards()
     {
+        GameObject nextButton = canvas.transform.GetChild(2).gameObject;
+        GameObject previousButton = canvas.transform.GetChild(3).gameObject;
+        GameObject tutorialText = canvas.transform.GetChild(4).gameObject;
         while (true)
         {
             GameManager.instance.UpdateGameState(GameManager.GameState.normalPlay);
-            canvas.transform.GetChild(2).gameObject.SetActive(false);
-            canvas.transform.GetChild(3).gameObject.SetActive(false);
+            nextButton.SetActive(false);
+            previousButton.SetActive(false);
+            tutorialText.SetActive(false);
             GameManager.instance.text.SetActive(false);
             yield return new WaitUntil(() => encounterCleared);
             if (GameManager.instance.p1 != null )
             {
                 currentSelectingCards = GameManager.instance.p1.GetComponent<EventSystem>();
             }
-            canvas.transform.GetChild(2).gameObject.SetActive(true);
-            canvas.transform.GetChild(3).gameObject.SetActive(true);
+            nextButton.SetActive(true);
+            previousButton.SetActive(true);
+            if (firstTime)
+            {
+                tutorialText.SetActive(true);
+                firstTime = false;
+            }
             GameManager.instance.p2.GetComponent<EventSystem>().enabled = false;
             encounterCleared = false;
             // disables the second input system
@@ -296,10 +308,19 @@ public class CardSpawner : MonoBehaviour
             foreach (GameObject p in GameManager.instance.playerInstances)
             {
                 cardChosen = false;
-                _playerCards = p.GetComponent<TarotCardSelector>().cards;
+                if (p == null)
+                {
+                    ChangeEventSystem();
+                    continue;
+                }
+                _playerCards = p.GetComponent<Player_movement>().stats.droppableCards;
                 if (_playerCards.Count == 0)
                 {
                     ChangeEventSystem();
+                    if (p == GameManager.instance.playerInstances[1])
+                    {
+                        GameManager.instance.noCards = true;
+                    }
                     continue;
                 }
                 CreateCards(p);
@@ -307,6 +328,7 @@ public class CardSpawner : MonoBehaviour
                 currentSelectingCards.SetSelectedGameObject((GameObject)onScreenCards[0, 0]);
                 GameManager.instance.text.SetActive(true);
                 yield return new WaitUntil(() => cardChosen);
+                GameManager.instance.UpdateTarotNumber();
                 if (HasSun(p))
                 {
                     cardChosen = false;

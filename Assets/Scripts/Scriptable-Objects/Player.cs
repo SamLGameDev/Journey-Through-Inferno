@@ -1,8 +1,10 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 [CreateAssetMenu]
 public class Player : BasicAttributes
@@ -10,39 +12,39 @@ public class Player : BasicAttributes
     /// <summary>
     /// the cooldown between shots for the gun
     /// </summary>
-    public float gunCooldown;
+    public FloatReference gunCooldown;
     /// <summary>
     /// the cooldown modifer if the player has the temperence card
     /// </summary>
-    public float gunCooldownModifier;
+    public FloatReference gunCooldownModifier;
     /// <summary>
     /// speed of the player
     /// </summary>
-    public float speed;
+    public FloatReference speed;
     /// <summary>
     /// the speed of of the player with the chariot card
     /// </summary>
-    public float chariotSpeed;
+    public FloatReference chariotSpeed;
     /// <summary>
     /// the speed of the dash
     /// </summary>
-    public float dashSpeed;
+    public FloatReference dashSpeed;
     /// <summary>
     /// how long the player is dashing
     /// </summary>
-    public float dashDuration;
+    public FloatReference dashDuration;
     /// <summary>
     /// how long the cooldwon for the dash is
     /// </summary>
-    public float dashCooldown;
+    public FloatReference dashCooldown;
     /// <summary>
     /// the cooldown between invisibility bursts
     /// </summary>
-    public float invisibilityCooldown;
+    public FloatReference invisibilityCooldown;
     /// <summary>
     /// the length of an invisibility burst
     /// </summary>
-    public float invisibilityDuration;
+    public FloatReference invisibilityDuration;
     /// <summary>
     /// the bullet the player shoots
     /// </summary>
@@ -50,46 +52,64 @@ public class Player : BasicAttributes
     /// <summary>
     /// the time until the player goes into the idle animation when standing still
     /// </summary>
-    public float timeUntilIdle;
+    public FloatReference timeUntilIdle;
     /// <summary>
     /// the damage of the sword
     /// </summary>
-    public int swordDamage;
+    public IntReference swordDamage;
     /// <summary>
     /// the sword damage with the strength card
     /// </summary>
-    public int swordDamageModifier;
+    public IntReference swordDamageModifier;
     /// <summary>
     /// the speed of the sword swing
     /// </summary>
-    public float swordSpeed;
+    public FloatReference swordSpeed;
     /// <summary>
     /// how long until they can swing the sword again
     /// </summary>
-    public float swordDelay;
+    public FloatReference swordDelay;
     /// <summary>
     /// bullet base damage
     /// </summary>
-    public int bulletDamage;
+    public IntReference bulletDamage;
     /// <summary>
     /// the damage the bullet does with the star tarrot card
     /// </summary>
-    public int bulletDamageModifier;
+    public IntReference bulletDamageModifier;
     /// <summary>
     /// how fast is the bullet
     /// </summary>
-    public float bulletSpeed;
+    public FloatReference bulletSpeed;
     /// <summary>
     /// how long until the bullet is destoryed
     /// </summary>
-    public float bulletLife;
+    public FloatReference bulletLife;
     public List<TarotCards> tarotCards;
-    public void Reset()
+    public FloatReference criticalHitChance;
+    public IntReference criticalHitDamage;
+    public Vector3 projectilesize;
+    public FloatReference timeUntilSpreadShot;
+    public IntReference spreadShotNumber;
+    public FloatReference cooldownReduction;
+    public override void Reset()
     {
-        chariotSpeed = 0;
-        gunCooldownModifier = 0;
-        swordDamageModifier = 0;
-        bulletDamageModifier = 0;
+        chariotSpeed.value = 0;
+        gunCooldownModifier.value = 0;
+        swordDamageModifier.value = 0;
+        bulletDamageModifier.value = 0;
         tarotCards.Clear();
+        extraLives = 0;
+        cardDropChance = 0;
+        maxHealth = 15;
+        swordDamage.value = 4;
+        bulletDamage.value = 3;
+        criticalHitChance.value = 0;
+        damageReduction = 0;
+        armour = 0;
+        projectilesize = new Vector3(1,1,1);
+        spreadShotNumber.value = 0;
+        cooldownReduction.value = 0;
+        droppableCards.Clear();
     }
 }

@@ -107,7 +107,7 @@ public class MedusaBehaviour : MonoBehaviour
 
         if (coll != null)
         {
-            coll.GetComponent<EntityHealthBehaviour>().ApplyDamage(meleeAttackDamage);
+            coll.GetComponent<EntityHealthBehaviour>().ApplyDamage(meleeAttackDamage, coll.gameObject);
         }
 
         if (impactMark == null) 
@@ -232,6 +232,7 @@ public class MedusaBehaviour : MonoBehaviour
         foreach (GameObject player in players)
         {
             Destroy(player.GetComponent<PetrificationAttack>());
+            player.GetComponent<Player_movement>().enabled = true;
         }
     }
 
@@ -266,9 +267,9 @@ public class MedusaBehaviour : MonoBehaviour
 
     private void OnDestroy()
     {
-        if(attacking)
-        {
+
             StopPetrification();
-        }
+
+        
     }
 }

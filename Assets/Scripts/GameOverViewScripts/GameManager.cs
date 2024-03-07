@@ -2,6 +2,7 @@ using Fungus;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -14,7 +15,6 @@ public class GameManager : MonoBehaviour
     public GameObject text;
     public int alivePlayers;
     public int enemiesRemaining;
-    private bool okay = false;
     public CardSpawner spawner;
     public List<GameObject> playerInstances;
     public GameObject InputManager;
@@ -23,6 +23,11 @@ public class GameManager : MonoBehaviour
     public EventSystem _events;
     private bool OnEncounterCleared = false;
     [SerializeField] private GameObject _clearPortal;
+    public List<GameObject> bossInstances;
+    public List<TextMeshProUGUI> tarotCardAmounts;
+    public GameObject topTextBox;
+    public GameObject bottomTextBox;
+    public bool noCards = false;
     public enum GameState
     {
         normalPlay,
@@ -48,6 +53,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         StartCoroutine(EncounterCleared());
+        StartCoroutine(VictoryAnimations());
         // if their are gamepads connected
         if (InputSystem.devices.OfType<Gamepad>().Count() != 0)
         {
@@ -74,20 +80,19 @@ public class GameManager : MonoBehaviour
         p2.neverAutoSwitchControlSchemes = true;
         p2.SwitchCurrentActionMap("Keyboard&Mouse");
     }
-    public void AddController()
+
+    public void UpdateTarotNumber()
     {
-        //if (!okay)
-        //{
-        //    okay = true;
-        //    InputDevice controller = InputSystem.devices[2];
-        //    PlayerInput p = GetComponent<PlayerInputManager>().JoinPlayer(-1, -1, "Xbox control scheme", controller);
-        //    if (p == null) 
-        //    {
-        //        Debug.Log("imma kioll unity");
-        //    }
-
-        //}
-
+        int i = 0;
+        foreach (GameObject player in playerInstances)
+        {
+            if (player == null)
+            {
+                continue;
+            }
+            tarotCardAmounts[i].text = player.GetComponent<Player_movement>().stats.droppableCards.Count.ToString();
+            i++;
+        }
     }
     /// <summary>
     /// Sets how many total players are in the game for checking win/loss conditions.
@@ -171,12 +176,40 @@ public class GameManager : MonoBehaviour
             yield return new WaitUntil(() => OnEncounterCleared);
             Time.timeScale = 0;
             spawner.encounterCleared = true;
-            yield return new WaitUntil(() => spawner.onScreenCards[0, 0] != null);
+            yield return new WaitUntil(() => spawner.onScreenCards[0, 0] != null || noCards);
             _events.SetSelectedGameObject((GameObject)spawner.onScreenCards[0, 0]);
+            noCards = false;
             OnEncounterCleared = false;
         }
         
 
+    }
+    private IEnumerator VictoryAnimations()
+    {
+        while (true)
+        {
+            yield return new WaitUntil(() => OnEncounterCleared);
+            yield return new WaitForSeconds(0.01f);
+            foreach(GameObject player in playerInstances)
+            {
+                if (player != null)
+                {
+                    player.GetComponent<Player_movement>().enabled = false;
+                    player.GetComponent<Animator>().SetBool("wonBattle", true);
+                }
+            }
+            yield return new WaitForSeconds(2.5f);
+            foreach (GameObject player in playerInstances)
+            {
+                if(player != null)
+                {
+                    player.GetComponent<Animator>().SetBool("wonBattle", false);
+                    player.GetComponent<Player_movement>().enabled = true;
+                }
+
+            }
+
+        }
     }
     private void OnNormalPlay()
     {
@@ -221,6 +254,10 @@ public class GameManager : MonoBehaviour
             foreach(GameObject player in playerInstances)
             {
                 player.GetComponent<Player_movement>().stats.Reset();
+            }
+            foreach(GameObject boss in bossInstances)
+            {
+                boss.GetComponent<EntityHealthBehaviour>().stats.Reset();
             }
         }
 #endif

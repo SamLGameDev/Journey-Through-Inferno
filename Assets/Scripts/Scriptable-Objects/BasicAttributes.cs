@@ -16,10 +16,21 @@ public class BasicAttributes : ScriptableObject
     /// the card drop chance of the entity
     /// </summary>
     public float cardDropChance;
+    public Counter<GameObject> OfTypecounter;
     /// <summary>
     /// the tarot cards it can drop
     /// </summary>
     public List<TarotCards> droppableCards;
     public LayerMask layersToHit;
+    public int extraLives;
+    public int damageReduction;
+    public int armour;
+    public int orginalMaxHealth;
+    public GameEvent Player1Kill;
+    public GameEvent Player2Kill;
+    public virtual void Reset()
+    {
+        maxHealth = orginalMaxHealth;
+    }
 
 }
