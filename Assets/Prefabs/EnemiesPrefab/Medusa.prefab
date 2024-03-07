@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3401023965402023177}
   - component: {fileID: 4925672781076486436}
   - component: {fileID: 8826022921122756423}
+  - component: {fileID: -8386113982693172708}
   m_Layer: 8
   m_Name: Medusa
   m_TagString: Enemy
@@ -112,6 +113,9 @@ MonoBehaviour:
   poisonProjectile: {fileID: 7124076208600775416, guid: f9debfcca4079044485e079977166e51,
     type: 3}
   poisonImpactSprite: {fileID: 0}
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 0
   petrificationSpeed: 2
   petrificationTime: 1
   actionCooldownTime: 0.5
@@ -121,11 +125,13 @@ MonoBehaviour:
   centrePos: {fileID: 0}
   topPos: {fileID: 0}
   aimingArea: {fileID: 0}
+  vignetteControl: {fileID: 0}
   players: []
   medusaPos: 0
   readyToMove: 0
   attacking: 0
   meleeCooldown: 0
+  mpa: {fileID: 0}
 --- !u!114 &9097793489111844800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,10 +144,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8b84871b0250ba438dbe2b84fadcf82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBoss: 0
   stats: {fileID: 11400000, guid: 967521d4166627948b50e946f51ce62b, type: 2}
+  OnDamaged: {fileID: 0}
   invunTimeOnHit: 0
   entityCurrentHealth: 0
   healthBar: {fileID: 0}
+  LowHealth: {fileID: 0}
+  MidHealth: {fileID: 0}
+  HighHealth: {fileID: 0}
+  HealthSprite: {fileID: 0}
+  IsAlive: 0
+  invincible: 0
 --- !u!95 &3401023965402023177
 Animator:
   serializedVersion: 5
@@ -235,3 +249,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &-8386113982693172708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241013125750778860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb3e25e597478104cb7a6bf4a1c33ad0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attributes: {fileID: 11400000, guid: 967521d4166627948b50e946f51ce62b, type: 2}
