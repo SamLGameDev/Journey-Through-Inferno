@@ -36,15 +36,6 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            print("Trigger");
-            PlaySound("Sword Swing");
-        }
-    }
-
     /// <summary>
     /// Plays a sound of the specified name.
     /// </summary>
@@ -64,7 +55,6 @@ public class AudioManager : MonoBehaviour
             s.source.clip = GetRandomAudioClip(s.clips);
         }
 
-        print(s.source.clip);
         s.source.Play();
     }
 
