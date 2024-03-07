@@ -177,8 +177,6 @@ public class CardSpawner : MonoBehaviour
         int index = arrayIndex;
         newCard.GetComponent<Button>().onClick.AddListener(() => { HasClickedButton(index, p); });
         newCard.GetComponent<DisplayDescription>().card = card;
-        Debug.Log(onScreenCards[0,0]);
-        Debug.Log(onScreenCards[0,1]);
         onScreenCards[arrayIndex, 1] = card;
         return newCard;
     }

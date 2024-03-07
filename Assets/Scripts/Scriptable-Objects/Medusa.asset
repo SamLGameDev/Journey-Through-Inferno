@@ -25,3 +25,5 @@ MonoBehaviour:
   damageReduction: 0
   armour: 0
   orginalMaxHealth: 100
+  Player1Kill: {fileID: 11400000, guid: 21094ff6890acaf45be41a0c58e41f4f, type: 2}
+  Player2Kill: {fileID: 11400000, guid: c2880108fdd2d924783aa325ca2cc76f, type: 2}

@@ -123,6 +123,7 @@ public class Player_movement : MonoBehaviour
     public void UpdateSpeed()
     {
         speed = stats.speed.value + stats.chariotSpeed.value;
+        Debug.Log(speed);
     }
     public void Joystic_Movement(float movespeed)
     {

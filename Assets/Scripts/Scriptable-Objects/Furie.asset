@@ -14,9 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 3
   maxHealth: 10
-  cardDropChance: 0
+  cardDropChance: 100
   OfTypecounter: {fileID: 11400000, guid: e4a5f4694b79fe4488542d7385a2650f, type: 2}
-  droppableCards: []
+  droppableCards:
+  - {fileID: 11400000, guid: b41df299a53ffa24c93eb59bc29a84a9, type: 2}
+  - {fileID: 11400000, guid: dc1b22430d37efb4ebe051c37e3cbbfe, type: 2}
+  - {fileID: 11400000, guid: 1b114bbd35067a74fb7afdeedc73f1e6, type: 2}
+  - {fileID: 11400000, guid: 7bac9ee92e27bea408c591a599db4ad1, type: 2}
   layersToHit:
     serializedVersion: 2
     m_Bits: 128
@@ -24,6 +28,8 @@ MonoBehaviour:
   damageReduction: 0
   armour: 0
   orginalMaxHealth: 0
+  Player1Kill: {fileID: 11400000, guid: 2a9e3c88a38ed044587aad7913ea13dc, type: 2}
+  Player2Kill: {fileID: 11400000, guid: 0d793ba136e87f84c9b774e2af23e83d, type: 2}
   shootingRange: 12
   moveSpeed: 8
   projectileSpeed: 10
