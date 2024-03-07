@@ -37,6 +37,7 @@ public class Different_Moves : MonoBehaviour
     {
         // creates a box that will grab everything with a collider in it that matches the layers to
         // hit then apply damage to it.
+        Debug.Log("mellerange");
         RaycastHit2D[] hit = Physics2D.BoxCastAll(transform.position, new Vector2(stats.meleeSizeX, stats.meleeSizeY), 0, transform.right, stats.meleeDistance, stats.layersToHit);
         foreach (RaycastHit2D hit2d in hit)
         {

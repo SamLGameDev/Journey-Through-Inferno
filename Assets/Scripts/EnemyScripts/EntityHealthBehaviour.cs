@@ -38,7 +38,7 @@ public class EntityHealthBehaviour : MonoBehaviour
 
     private void Start()
     {
-        entityCurrentHealth = stats.maxHealth;
+        entityCurrentHealth = stats.maxHealth + stats.armour;
         damageInvulnerable = false;
         IsAlive = true;
     }
@@ -55,7 +55,7 @@ public class EntityHealthBehaviour : MonoBehaviour
             return;
         }
 
-        entityCurrentHealth -= damageAmount;
+        entityCurrentHealth -= damageAmount - stats.damageReduction;
 
         if (gameObject.tag == "Player")
         {
@@ -183,7 +183,6 @@ public class EntityHealthBehaviour : MonoBehaviour
     }
     private void EntityDeath(GameObject damageDealer)
     {
-        Debug.Log(gameObject.name);
         if (gameObject.CompareTag("Enemy"))
         {
             GameManager.instance.OnEnemyDeath();
@@ -195,6 +194,12 @@ public class EntityHealthBehaviour : MonoBehaviour
         }
         else if (gameObject.CompareTag("Player"))
         {
+            if (stats.extraLives > 0)
+            {
+                stats.extraLives--;
+                entityCurrentHealth = stats.maxHealth;
+                return;
+            }
             GameManager.instance.OnPlayerDeath();
             IsAlive=false;
             Destroy(gameObject);

@@ -21,6 +21,8 @@ public class MedusaPetrifyAttack : StateMachineBehaviour
             script.medusa = animator.gameObject.transform;
             script.petrifyTime = mb.petrificationSpeed;
         }
+
+        mb.mpa = this;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

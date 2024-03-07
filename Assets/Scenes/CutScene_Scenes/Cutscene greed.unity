@@ -438,6 +438,7 @@ GameObject:
   - component: {fileID: 1732189762}
   - component: {fileID: 1732189761}
   - component: {fileID: 1732189749}
+  - component: {fileID: 1732189766}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -458,7 +459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 91.44522, y: 89.93207}
+  scrollPos: {x: 80.700356, y: 71.28699}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 306.8
@@ -471,7 +472,8 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 1732189750}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 1732189766}
   variables: []
   description: 
   stepPause: 0
@@ -524,8 +526,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 67
-    y: 70
+    x: 65.73418
+    y: 68.73418
     width: 75.31645
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -545,6 +547,7 @@ MonoBehaviour:
   - {fileID: 1732189752}
   - {fileID: 1732189751}
   - {fileID: 1732189749}
+  - {fileID: 1732189766}
   suppressAllAutoSelections: 0
 --- !u!114 &1732189751
 MonoBehaviour:
@@ -930,6 +933,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1732189766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1732189747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00d03ae0919f04264b018681ed534177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 16
+  indentLevel: 0
+  _sceneName:
+    stringRef: {fileID: 0}
+    stringVal: City_of_Greed
+  loadingImage: {fileID: 0}
+  sceneNameOLD: 
 --- !u!1 &2024231650
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,11 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 3
   maxHealth: 15
-  cardDropChance: 24
+  cardDropChance: 0
   droppableCards: []
   layersToHit:
     serializedVersion: 2
     m_Bits: 256
+  extraLives: 0
   gunCooldown: 1.5
   gunCooldownModifier: 0
   speed: 6
@@ -39,3 +40,5 @@ MonoBehaviour:
   bulletSpeed: 3000
   bulletLife: 3
   tarotCards: []
+  criticalHitChance: 0
+  criticalHitDamage: 3

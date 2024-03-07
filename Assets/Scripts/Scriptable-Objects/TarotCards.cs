@@ -25,7 +25,14 @@ public class TarotCards :ScriptableObject
         speed,
         guncooldown,
         ExplodingEnemies,
-        TwoCards
+        TwoCards,
+        increasedDropChance,
+        extraLife,
+        IncreasedDamageLowerHealth,
+        criticalHit,
+        damageReduction,
+        increaseMaxHealth,
+        armour
     }
     public void ApplyEffect(GameObject p)
     {
@@ -50,6 +57,29 @@ public class TarotCards :ScriptableObject
                 break;
             case possibleModifiers.guncooldown:
                 stats.gunCooldownModifier = effectValue;
+                break;
+            case possibleModifiers.increasedDropChance:
+                stats.cardDropChance = effectValue;
+                break;
+            case possibleModifiers.extraLife:
+                stats.extraLives = effectValue;
+                break;
+            case possibleModifiers.IncreasedDamageLowerHealth:
+                stats.maxHealth -= effectValue;
+                stats.swordDamage += (int)RangeForAbility;
+                stats.bulletDamage += (int)RangeForAbility;
+                break;
+            case possibleModifiers.criticalHit:
+                stats.criticalHitChance = effectValue;
+                break;
+            case possibleModifiers.damageReduction:
+                stats.damageReduction = effectValue;
+                break;
+            case possibleModifiers.increaseMaxHealth:
+                stats.maxHealth += effectValue;
+                break;
+            case possibleModifiers.armour:
+                stats.armour = effectValue;
                 break;
         }
     }

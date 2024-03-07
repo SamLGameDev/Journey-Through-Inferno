@@ -57,8 +57,11 @@ public class MedusaBehaviour : MonoBehaviour
     [HideInInspector]
     public bool readyToMove, attacking;
 
-    //[HideInInspector]
+    [HideInInspector]
     public bool meleeCooldown;
+
+    [HideInInspector]
+    public MedusaPetrifyAttack mpa;
 
     private void Start()
     {
@@ -222,6 +225,15 @@ public class MedusaBehaviour : MonoBehaviour
         attacking = true;
     }
 
+    public void StopPetrification()
+    {
+        vignetteControl.StartCoroutine(vignetteControl.FadeOut());
+
+        foreach (GameObject player in players)
+        {
+            Destroy(player.GetComponent<PetrificationAttack>());
+        }
+    }
 
     /// <summary>
     /// Puts Medusa's melee attack on cooldown to stop her from being able to use it again.
@@ -250,5 +262,13 @@ public class MedusaBehaviour : MonoBehaviour
         script.petrified = false;
 
         print("bbb");
+    }
+
+    private void OnDestroy()
+    {
+        if(attacking)
+        {
+            StopPetrification();
+        }
     }
 }
