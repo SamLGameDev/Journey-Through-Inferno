@@ -6,15 +6,14 @@ using UnityEngine;
 public class Pluto_behaviour : MonoBehaviour
 {
     
-    private int[,] places = { { -20, 20, 0, 16, 2, -18 }, { 17, 17, 16, -5, -20, -2 } };
-    private float moveInterval = 8f;
-    private float moveTime;
+    private int[,] places = { { -17, 17, 0, -15, 2, 16 }, { 18, 18, 17, -3, -12, -2 } };
+    private float moveInterval = 10f;
+    private float moveTimer;
 
 
     void Start()
     {
-        moveTime = 0f;
-
+        moveTimer = 0f;
     }
 
     private void MovePlaces()
@@ -26,11 +25,11 @@ public class Pluto_behaviour : MonoBehaviour
 
     void Update()
     {
-        moveTime += Time.deltaTime;
-        if (moveTime >= moveInterval) 
+        moveTimer += Time.deltaTime;
+        if (moveTimer >= moveInterval) 
         {
             MovePlaces();
-            moveTime -= moveInterval;
+            moveTimer -= moveInterval;
         }
     }
 }
