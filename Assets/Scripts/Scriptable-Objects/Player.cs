@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 
@@ -92,6 +93,8 @@ public class Player : BasicAttributes
     public FloatReference timeUntilSpreadShot;
     public IntReference spreadShotNumber;
     public FloatReference cooldownReduction;
+    public BoolReference ControllerRumble;
+    public Gamepad gamepad;
     public override void Reset()
     {
         chariotSpeed.value = 0;

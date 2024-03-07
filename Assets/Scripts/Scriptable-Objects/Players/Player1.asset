@@ -121,3 +121,7 @@ MonoBehaviour:
     Variable: {fileID: 11400000, guid: 034a7e5aad77e224cbd57e55a00aef11, type: 2}
     constantValue: 0
     useConstant: 1
+  ControllerRumble:
+    Variable: {fileID: 11400000, guid: f9f03723cb54f204086d9cee4ee2f77e, type: 2}
+    constantValue: 0
+    useConstant: 1

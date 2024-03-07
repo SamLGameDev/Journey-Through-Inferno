@@ -106,6 +106,7 @@ public class Player_movement : MonoBehaviour
         StartCoroutine(dash());
         StartCoroutine(invisDurationTimer(stats.invisibilityDuration.value));
         StartCoroutine(invisCooldownTimer());
+        StartCoroutine(controllerRumble(0.5f, 0.5f, 0.5f, stats.gamepad));
         // If the player has the High Priestess Arcana then the timer for the invisibility bursts will start
         if (GetComponentInParent<Tarot_cards>().hasHighPriestess)
         { StartCoroutine(invisCooldownTimer()); }
@@ -334,21 +335,27 @@ public class Player_movement : MonoBehaviour
     }
     private IEnumerator controllerRumble(float leftStick, float rightStick, float duration, Gamepad gamepad)
     {
-        gamepad.SetMotorSpeeds(leftStick, rightStick);
-        yield return new WaitForSecondsRealtime(duration);
-        gamepad.ResetHaptics();
-        StopCoroutine(controllerRumble(0.5f, 0.5f, 0.5f, gamepad));
+        while (true)
+        {
+            yield return new WaitUntil(() => stats.ControllerRumble.value);
+            gamepad.SetMotorSpeeds(leftStick, rightStick);
+            yield return new WaitForSecondsRealtime(duration);
+            gamepad.ResetHaptics();
+            stats.ControllerRumble.value = false;
+            
+        }
+
     }
     /// <summary>
     /// calls the shoot function from different moves
     /// </summary>
-    public void Player_Shooting(Gamepad gamepad)
+    public void Player_Shooting(Gamepad controller)
     {
         if (gun_cooldown)
         {
             bullet_controller.original = true;
             gun_cooldown = false;
-            StartCoroutine(controllerRumble(0.5f, 0.5f, 0.5f, gamepad));
+            stats.ControllerRumble.value = true;
             // shoots from the compas's facing direction
             moves.Shoot(stats.layersToHit, transform.GetChild(0).GetChild(0).position,
             transform.GetChild(0).GetChild(0).right, stats.bullet);
