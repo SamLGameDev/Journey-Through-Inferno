@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Pluto
   m_EditorClassIdentifier: 
   damage: 0
-  maxHealth: 0
+  maxHealth: 20
   cardDropChance: 0
+  OfTypecounter: {fileID: 11400000, guid: e4a5f4694b79fe4488542d7385a2650f, type: 2}
   droppableCards: []
   layersToHit:
     serializedVersion: 2
@@ -22,3 +23,6 @@ MonoBehaviour:
   extraLives: 0
   damageReduction: 0
   armour: 0
+  orginalMaxHealth: 0
+  Player1Kill: {fileID: 11400000, guid: b508b93f8b4c6e1479ec0c41dfa7afb9, type: 2}
+  Player2Kill: {fileID: 11400000, guid: 66d1f695d2f202a41ad60a49e44c9c06, type: 2}
