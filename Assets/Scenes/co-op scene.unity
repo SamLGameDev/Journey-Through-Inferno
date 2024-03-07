@@ -10609,7 +10609,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &584249137
 GameObject:
@@ -16524,7 +16524,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4798113c927765479617be02957c7b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 248639305}
+  sounds:
+  - name: Sword Swing
+    clips:
+    - {fileID: 8300000, guid: e15cd033e8242884fa44bbbffb3635e4, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
 --- !u!4 &1157078696
 Transform:
   m_ObjectHideFlags: 0
@@ -16538,7 +16544,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1158298865
 GameObject:
@@ -27105,7 +27111,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2041164820
 GameObject:
