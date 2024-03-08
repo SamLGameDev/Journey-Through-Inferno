@@ -36,7 +36,7 @@ MonoBehaviour:
     useConstant: 1
   speed:
     Variable: {fileID: 11400000, guid: 5dddfc8a04ca9744d82094e1fdcb9aa8, type: 2}
-    constantValue: 3
+    constantValue: 7
     useConstant: 1
   chariotSpeed:
     Variable: {fileID: 11400000, guid: 4f0b5881b615c1843a235fecd56e3131, type: 2}
