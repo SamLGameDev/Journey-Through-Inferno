@@ -95,6 +95,9 @@ public class Player : BasicAttributes
     public FloatReference cooldownReduction;
     public BoolReference ControllerRumble;
     public Gamepad gamepad;
+    public FloatReference timeUntillRegenAfterAttack;
+    public FloatReference timeUntillRegen;
+    public int RegenAmount;
     public override void Reset()
     {
         chariotSpeed.value = 0;
@@ -114,5 +117,6 @@ public class Player : BasicAttributes
         spreadShotNumber.value = 0;
         cooldownReduction.value = 0;
         droppableCards.Clear();
+        RegenAmount = 0;
     }
 }

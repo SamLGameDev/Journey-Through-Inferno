@@ -30,7 +30,7 @@ public class TarotCards :ScriptableObject
         criticalHit,
         damageReduction,
         increaseMaxHealth,
-        armour,
+        HealthRegen,
         increaseProjectileSize,
         SpreadShot,
         reducedBossHealth,
@@ -79,8 +79,8 @@ public class TarotCards :ScriptableObject
             case possibleModifiers.increaseMaxHealth:
                 stats.maxHealth += effectValue;
                 break;
-            case possibleModifiers.armour:
-                stats.armour = effectValue;
+            case possibleModifiers.HealthRegen:
+                stats.RegenAmount = effectValue;
                 break;
             case possibleModifiers.increaseProjectileSize:
                 stats.projectilesize = new Vector3(effectValue, effectValue, 0);

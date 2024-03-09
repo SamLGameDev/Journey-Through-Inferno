@@ -26,6 +26,7 @@ MonoBehaviour:
   orginalMaxHealth: 0
   Player1Kill: {fileID: 0}
   Player2Kill: {fileID: 0}
+  currentHealth: 15
   gunCooldown:
     Variable: {fileID: 11400000, guid: aaaec091154a1cd46a485090a98b3f26, type: 2}
     constantValue: 1.5
@@ -125,3 +126,12 @@ MonoBehaviour:
     Variable: {fileID: 11400000, guid: f9f03723cb54f204086d9cee4ee2f77e, type: 2}
     constantValue: 0
     useConstant: 1
+  timeUntillRegenAfterAttack:
+    Variable: {fileID: 11400000, guid: 5b023b38bcf361743996719181cdbb98, type: 2}
+    constantValue: 0
+    useConstant: 0
+  timeUntillRegen:
+    Variable: {fileID: 11400000, guid: 0682932e8867b784ba4995677cccd4ff, type: 2}
+    constantValue: 0
+    useConstant: 0
+  RegenAmount: 0

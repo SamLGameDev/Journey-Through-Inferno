@@ -92,6 +92,8 @@ public class Player_movement : MonoBehaviour
     public GameObject sword;
     public Vector2 AimingDirection;
     private EntityHealthBehaviour healthBehaviour;
+    [SerializeField]
+    private BoolReference takenDamage;
     // Start is called before the first frame update
     void Start()
     {
@@ -112,6 +114,7 @@ public class Player_movement : MonoBehaviour
         { StartCoroutine(invisCooldownTimer()); }
         else
         { invis_cooldown = false; }
+        StartCoroutine(HealthRegen());
 
 
 
@@ -121,6 +124,24 @@ public class Player_movement : MonoBehaviour
     /// moves the player based on the movement of the left joystick and the aiming device based
     /// on the movement of the right joystick
     /// </summary>
+    private IEnumerator HealthRegen()
+    {
+        while (true)
+        {
+            if (takenDamage.value == true)
+            {
+                yield return new WaitForSeconds(stats.timeUntillRegenAfterAttack.value);
+                takenDamage.value = false;
+            }
+            stats.currentHealth += stats.RegenAmount;
+            if (stats.currentHealth > stats.maxHealth)
+            {
+                stats.currentHealth = stats.maxHealth;
+            }
+            yield return new WaitForSeconds(stats.timeUntillRegen.value);
+            yield return new WaitWhile(() => stats.currentHealth == stats.maxHealth);
+        }
+    }
     public void UpdateSpeed()
     {
         speed = stats.speed.value + stats.chariotSpeed.value;

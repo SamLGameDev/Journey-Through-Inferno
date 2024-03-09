@@ -28,6 +28,7 @@ public class BasicAttributes : ScriptableObject
     public int orginalMaxHealth;
     public GameEvent Player1Kill;
     public GameEvent Player2Kill;
+    public int currentHealth;
     public virtual void Reset()
     {
         maxHealth = orginalMaxHealth;

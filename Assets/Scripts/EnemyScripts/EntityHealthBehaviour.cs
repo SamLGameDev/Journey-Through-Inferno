@@ -18,13 +18,13 @@ public class EntityHealthBehaviour : MonoBehaviour
     [SerializeField] private float invunTimeOnHit;
 
     // This is public so that it can be accessed by UI.
-    [HideInInspector] public int entityCurrentHealth;
 
     private bool damageInvulnerable;
 
     // Time between IFrame flashes.
     private float invunDeltaTime = 0.1f;
-
+    [SerializeField]
+    private BoolReference takenDamage;
     //Gets the healthbar from the canvas, must be dragged in to create reference
     public Image healthBar;
 
@@ -49,7 +49,7 @@ public class EntityHealthBehaviour : MonoBehaviour
             TarotCards card = (TarotCards)Hermit[1];
             stats.maxHealth -= card.effectValue;
         }
-        entityCurrentHealth = stats.maxHealth + stats.armour;
+        stats.currentHealth = stats.maxHealth + stats.armour;
         damageInvulnerable = false;
         IsAlive = true;
         StartCoroutine(FlashRed());
@@ -69,6 +69,27 @@ public class EntityHealthBehaviour : MonoBehaviour
         }
         return new object[] { false};
     }
+    private void FixedUpdate()
+    {
+        if (gameObject.CompareTag("Player"))
+        {
+            healthBar.fillAmount = stats.currentHealth / 15f;
+
+            if (stats.currentHealth / 15f <= 0.7f && stats.currentHealth / 15f >= 0.35f)
+            {
+                HealthSprite.sprite = MidHealth.sprite;
+            }
+            if (stats.currentHealth / 15f > 0.7f)
+            {
+                HealthSprite.sprite = HighHealth.sprite;
+            }
+            if (stats.currentHealth / 15f < 0.35f)
+            {
+                HealthSprite.sprite = LowHealth.sprite;
+            }
+        }
+
+    }
     /// <summary>
     /// Reduces the entity's health by a set amount
     /// </summary>
@@ -82,34 +103,22 @@ public class EntityHealthBehaviour : MonoBehaviour
         }
         flashRed = true;
 
-        entityCurrentHealth -= damageAmount - stats.damageReduction;
+        stats.currentHealth -= damageAmount - stats.damageReduction;
 
         if (gameObject.tag == "Player")
         {
-            healthBar.fillAmount = entityCurrentHealth / 15f;
+            takenDamage.value = true;
+            
 
-            if (entityCurrentHealth / 15f <= 0.7f && entityCurrentHealth / 15f >= 0.35f)
-            {
-                HealthSprite.sprite = MidHealth.sprite;
-            }
-            if (entityCurrentHealth / 15f > 0.7f)
-            {
-                HealthSprite.sprite = HighHealth.sprite;
-            }
-            if (entityCurrentHealth / 15f < 0.35f)
-            {
-                HealthSprite.sprite = LowHealth.sprite;
-            }
-
-            print(entityCurrentHealth);
+            print(stats.currentHealth);
         }
         
 
-        print($"{gameObject.name} took {damageAmount} damage, current health: {entityCurrentHealth}");
+        print($"{gameObject.name} took {damageAmount} damage, current health: {stats.currentHealth}");
 
         // Check to see if the entity has taken lethal damage.
         // If so, kill it.
-        if (entityCurrentHealth <= 0)
+        if (stats.currentHealth <= 0)
         {
             EntityDeath(damagerDealer);     
         }
@@ -171,16 +180,16 @@ public class EntityHealthBehaviour : MonoBehaviour
         // We check to see if the heal would exceed the players max health,
         // If it does, heal them to full health, else just heal the amount.
 
-        if ((entityCurrentHealth += healAmount) > stats.maxHealth)
+        if ((stats.currentHealth += healAmount) > stats.maxHealth)
         {
-            entityCurrentHealth = stats.maxHealth;
+            stats.currentHealth = stats.maxHealth;
         }
         else
         {
-            entityCurrentHealth += healAmount;
+            stats.currentHealth += healAmount;
         }
 
-        print($"Restored {healAmount} health to {gameObject.name}, current health: {entityCurrentHealth}");
+        print($"Restored {healAmount} health to {gameObject.name}, current health: {stats.currentHealth}");
     }
  
     private object GetJudgement(GameObject player)
@@ -227,7 +236,7 @@ public class EntityHealthBehaviour : MonoBehaviour
             if (stats.extraLives > 0)
             {
                 stats.extraLives--;
-                entityCurrentHealth = stats.maxHealth;
+                stats.currentHealth = stats.maxHealth;
                 return;
             }
             GameManager.instance.OnPlayerDeath();

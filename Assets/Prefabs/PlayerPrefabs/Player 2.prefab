@@ -208,6 +208,10 @@ MonoBehaviour:
   stats: {fileID: 11400000, guid: 5df255e7d82eda04e8040c6b03146859, type: 2}
   sword: {fileID: 1260723696353906758}
   AimingDirection: {x: 0, y: 0}
+  takenDamage:
+    Variable: {fileID: 11400000, guid: 07db371228b862341958e59fad907fb4, type: 2}
+    constantValue: 0
+    useConstant: 0
 --- !u!50 &1658128008857216438
 Rigidbody2D:
   serializedVersion: 4
@@ -252,6 +256,10 @@ MonoBehaviour:
   OnDamaged: {fileID: 0}
   invunTimeOnHit: 0
   entityCurrentHealth: 0
+  takenDamage:
+    Variable: {fileID: 11400000, guid: 07db371228b862341958e59fad907fb4, type: 2}
+    constantValue: 0
+    useConstant: 0
   healthBar: {fileID: 0}
   LowHealth: {fileID: 0}
   MidHealth: {fileID: 0}
