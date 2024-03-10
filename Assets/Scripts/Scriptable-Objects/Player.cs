@@ -98,6 +98,8 @@ public class Player : BasicAttributes
     public FloatReference timeUntillRegenAfterAttack;
     public FloatReference timeUntillRegen;
     public int RegenAmount;
+    public GameObject confusionBullet;
+    public float ConfusionCooldown;
     public override void Reset()
     {
         chariotSpeed.value = 0;

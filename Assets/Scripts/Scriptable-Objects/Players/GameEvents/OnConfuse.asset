@@ -9,14 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51772878440faa84eb4dbd335c250c54, type: 3}
-  m_Name: EnemyCounter
+  m_Script: {fileID: 11500000, guid: e4dee3a01de21674091a78f10ae23ea0, type: 3}
+  m_Name: OnConfuse
   m_EditorClassIdentifier: 
-  Items:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}

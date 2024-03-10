@@ -36,7 +36,8 @@ public class TarotCards :ScriptableObject
         reducedBossHealth,
         Homing,
         invisibility,
-        cooldownReduction
+        cooldownReduction,
+        Confusion
     }
     public void ApplyEffect(GameObject p)
     {

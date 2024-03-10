@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4801089580672160280}
   - component: {fileID: 9195619475462717869}
   - component: {fileID: -6433223236211202966}
+  - component: {fileID: -6079359939667663799}
   m_Layer: 8
   m_Name: Fallen Angel Variant
   m_TagString: Enemy
@@ -138,7 +139,10 @@ MonoBehaviour:
   stats: {fileID: 11400000, guid: ee49df38efdaefc4fa8fcd7bdf5de804, type: 2}
   OnDamaged: {fileID: 0}
   invunTimeOnHit: 0
-  entityCurrentHealth: 50
+  takenDamage:
+    Variable: {fileID: 0}
+    constantValue: 0
+    useConstant: 1
   healthBar: {fileID: 0}
   LowHealth: {fileID: 0}
   MidHealth: {fileID: 0}
@@ -233,6 +237,8 @@ MonoBehaviour:
   player2: {fileID: 2495953773665164011, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b, type: 3}
   coop: 1
   player1: {fileID: 1736434646341859925, guid: 28d04583d0c318648b28ee2c53bdaeab, type: 3}
+  isConfused: 0
+  targets: []
 --- !u!61 &6376933874138379425
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -312,9 +318,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coolDown: 0
-  LayersToHit:
+  LayersToHitWhenConfused:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 256
   sword_Speed: 0
   stats: {fileID: 11400000, guid: ee49df38efdaefc4fa8fcd7bdf5de804, type: 2}
   pStats: {fileID: 0}
@@ -360,3 +366,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attributes: {fileID: 11400000, guid: ee49df38efdaefc4fa8fcd7bdf5de804, type: 2}
+--- !u!114 &-6079359939667663799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5986526922118790407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e09ec3e8ff1d99149ba2cbfe2533f6c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: b332f4f3895ee264596a5b567c48376a, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5425823505382445665}
+        m_TargetAssemblyTypeName: EntityHealthBehaviour, Assembly-CSharp
+        m_MethodName: isConfused
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

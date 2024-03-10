@@ -27,6 +27,11 @@ MonoBehaviour:
   Player1Kill: {fileID: 0}
   Player2Kill: {fileID: 0}
   currentHealth: 15
+  confused: 0
+  confusionDuration:
+    Variable: {fileID: 0}
+    constantValue: 0
+    useConstant: 1
   gunCooldown:
     Variable: {fileID: 11400000, guid: aaaec091154a1cd46a485090a98b3f26, type: 2}
     constantValue: 1.5
@@ -135,3 +140,6 @@ MonoBehaviour:
     constantValue: 0
     useConstant: 0
   RegenAmount: 0
+  confusionBullet: {fileID: 6456391441393735406, guid: 3f3f9e342fd76284fb8baf1d10255da2,
+    type: 3}
+  ConfusionCooldown: 5

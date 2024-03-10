@@ -94,6 +94,7 @@ public class Player_movement : MonoBehaviour
     private EntityHealthBehaviour healthBehaviour;
     [SerializeField]
     private BoolReference takenDamage;
+    public bool confusionLoaded = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -158,7 +159,6 @@ public class Player_movement : MonoBehaviour
     {
         if (AimingDirection.sqrMagnitude == 0) return;
         float heading = MathF.Atan2(-AimingDirection.x, AimingDirection.y);
-        Debug.Log(AimingDirection);
         transform.GetChild(0).rotation = Quaternion.Euler(0, 0, heading * Mathf.Rad2Deg);
     }
 
@@ -379,7 +379,8 @@ public class Player_movement : MonoBehaviour
             stats.ControllerRumble.value = true;
             // shoots from the compas's facing direction
             moves.Shoot(stats.layersToHit, transform.GetChild(0).GetChild(0).position,
-            transform.GetChild(0).GetChild(0).right, stats.bullet);
+            transform.GetChild(0).GetChild(0).right, stats.bullet, confusionLoaded);
+            confusionLoaded = false;
         }
 
     }

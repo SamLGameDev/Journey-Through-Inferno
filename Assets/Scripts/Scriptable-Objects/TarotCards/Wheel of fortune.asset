@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Wheel of fortune
   m_EditorClassIdentifier: 
   cardImage: {fileID: 0}
-  effectValue: 0
+  effectValue: 20
   description: "\u201COnce on the wheel, once under it\u201D \u2013 a Polish proverb
-    regarding luck and changing fortunes\n_Effect: "
+    regarding luck and changing fortunes\n_Effect: increases card drop rate"
   specialCardEffectEnabled: 0
   RangeForAbility: 0
   particleEffect: {fileID: 0}
-  possibleMods: 0
+  possibleMods: 6

@@ -245,6 +245,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 417ae528-5f5c-4fd6-af43-58c6e19b5a12
     m_ActionName: UI/Submit[/DualShock4GamepadHID/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3233724816281061975}
+        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+        m_MethodName: LoadConfusionBullet
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 363919b5-6651-4dae-91d4-95c76a3a1e78
+    m_ActionName: xbox controller/LoadConfusion[/XInputControllerWindows/buttonWest]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: xbox controller

@@ -1,8 +1,10 @@
 using Fungus;
+using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.XR;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 /// <summary>
@@ -41,9 +43,12 @@ public class EntityHealthBehaviour : MonoBehaviour
     //A boolean for, surprisingly, if theyre alive
     public bool IsAlive;
     public bool invincible;
+    public bool Confused = false;
 
     private void Start()
     {
+        player1Alive = new object[] { true };
+        player2Alive = new object[] { true };
         stats.OfTypecounter.Add(gameObject);
         object[] Hermit = HasCard(TarotCards.possibleModifiers.reducedBossHealth);
         if (isBoss && (bool)Hermit[0]) 
@@ -55,6 +60,7 @@ public class EntityHealthBehaviour : MonoBehaviour
         damageInvulnerable = false;
         IsAlive = true;
         StartCoroutine(FlashRed());
+        StartCoroutine(ConfusionDuration());
     }
     private object[] HasCard(TarotCards.possibleModifiers modifier)
     {
@@ -70,6 +76,28 @@ public class EntityHealthBehaviour : MonoBehaviour
 
         }
         return new object[] { false};
+    }
+
+    public void isConfused()
+    {
+        if (Confused && !isBoss)
+        {
+
+            AIDestinationSetter destinationSetter = GetComponent<AIDestinationSetter>();
+            destinationSetter.isConfused = true;
+            destinationSetter.targets = stats.OfTypecounter.Items;
+        }
+    }
+    private IEnumerator ConfusionDuration()
+    {
+        AIDestinationSetter destinationSetter = GetComponent<AIDestinationSetter>();
+        while (true)
+        {
+            yield return new WaitUntil(() => Confused);
+            yield return new WaitForSeconds(stats.confusionDuration.value);
+            Confused = false;
+            destinationSetter.isConfused = false;
+        }
     }
     private void FixedUpdate()
     {
@@ -144,7 +172,7 @@ public class EntityHealthBehaviour : MonoBehaviour
             flashRed = false;
         }
     }
-
+    
     /// <summary>
     /// Triggered by a player being hit, makes them flash while invulnerable.
     /// </summary>
