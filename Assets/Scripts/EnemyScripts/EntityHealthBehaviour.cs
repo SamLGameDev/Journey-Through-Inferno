@@ -16,6 +16,8 @@ public class EntityHealthBehaviour : MonoBehaviour
     private bool flashRed;
     [SerializeField] private GameEventListener OnDamaged;
     [SerializeField] private float invunTimeOnHit;
+    public static object[] player1Alive = new object[] { true };
+    public static object[] player2Alive = new object[] { true };
 
     // This is public so that it can be accessed by UI.
 
@@ -43,7 +45,7 @@ public class EntityHealthBehaviour : MonoBehaviour
     private void Start()
     {
         stats.OfTypecounter.Add(gameObject);
-        object[] Hermit = HasHermit();
+        object[] Hermit = HasCard(TarotCards.possibleModifiers.reducedBossHealth);
         if (isBoss && (bool)Hermit[0]) 
         {
             TarotCards card = (TarotCards)Hermit[1];
@@ -54,13 +56,13 @@ public class EntityHealthBehaviour : MonoBehaviour
         IsAlive = true;
         StartCoroutine(FlashRed());
     }
-    private object[] HasHermit()
+    private object[] HasCard(TarotCards.possibleModifiers modifier)
     {
         foreach(GameObject Player in GameManager.instance.playerInstances)
         {
             foreach(TarotCards card in Player.GetComponent<Player_movement>().stats.tarotCards)
             {
-                if (card.possibleMods == TarotCards.possibleModifiers.reducedBossHealth)
+                if (card.possibleMods == modifier)
                 {
                     return new object[] { true, card };
                 }
@@ -239,12 +241,54 @@ public class EntityHealthBehaviour : MonoBehaviour
                 stats.currentHealth = stats.maxHealth;
                 return;
             }
+            if (gameObject.name == "Player 1")
+            {
+                player1Alive = new object[] { false, gameObject };
+            }
+            else
+            {
+                player2Alive = new object[] { false, gameObject };
+            }
+            if ((bool)HasCard(TarotCards.possibleModifiers.SharedLife)[0])
+            {
+                if(gameObject.name == "Player 1")
+                {
+                    if ((bool)player2Alive[0])
+                    {
+                        Player_movement player = GetComponent<Player_movement>();
+                        player.stats.speed.value = 3;
+                        player.UpdateSpeed();
+                        player.stats.swordDamage.value = 1;
+                        player.stats.gunCooldown.value += 2;
+                        return;
+                    }
+                }
+                else
+                {
+                    if ((bool)player1Alive[0])
+                    {
+                        Player_movement player = GetComponent<Player_movement>();
+                        player.stats.speed.value = 3;
+                        player.UpdateSpeed();
+                        player.stats.swordDamage.value = 1;
+                        player.stats.gunCooldown.value += 2;
+                        return;
+                    }
+                }
+            }
+            if (!(bool)player1Alive[0] && gameObject.name == "Player 2")
+            {
+                Destroy((GameObject)player1Alive[1]);
+            }
+            else if (!(bool)player2Alive[0] && gameObject.name == "Player 1")
+            {
+                Destroy((GameObject)player2Alive[1]);
+            }
             GameManager.instance.OnPlayerDeath();
             IsAlive = false;
             Destroy(gameObject);
             return;
         }
-        Debug.Log(damageDealer.name);
         
         if (damageDealer.name == "Player 2")
         {

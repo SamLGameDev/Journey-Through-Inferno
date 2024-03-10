@@ -118,5 +118,8 @@ public class Player : BasicAttributes
         cooldownReduction.value = 0;
         droppableCards.Clear();
         RegenAmount = 0;
+        speed.value = 7;
+        swordDamage.value = 3;
+        gunCooldown.value = 1.5f;
     }
 }

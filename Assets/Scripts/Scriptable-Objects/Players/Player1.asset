@@ -26,7 +26,7 @@ MonoBehaviour:
   orginalMaxHealth: 0
   Player1Kill: {fileID: 0}
   Player2Kill: {fileID: 0}
-  currentHealth: -5
+  currentHealth: 15
   gunCooldown:
     Variable: {fileID: 11400000, guid: aaaec091154a1cd46a485090a98b3f26, type: 2}
     constantValue: 1.5
@@ -70,7 +70,7 @@ MonoBehaviour:
     useConstant: 1
   swordDamage:
     Variable: {fileID: 11400000, guid: 21d917d11332a4344932089bed7466fe, type: 2}
-    constantValue: 4
+    constantValue: 3
     useConstant: 1
   swordDamageModifier:
     Variable: {fileID: 11400000, guid: c1b63a689d586fc469aae8239c5b8e53, type: 2}

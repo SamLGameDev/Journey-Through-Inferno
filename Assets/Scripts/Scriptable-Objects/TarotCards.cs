@@ -28,7 +28,7 @@ public class TarotCards :ScriptableObject
         extraLife,
         IncreasedDamageLowerHealth,
         criticalHit,
-        damageReduction,
+        SharedLife,
         increaseMaxHealth,
         HealthRegen,
         increaseProjectileSize,
@@ -73,8 +73,7 @@ public class TarotCards :ScriptableObject
             case possibleModifiers.criticalHit:
                 stats.criticalHitChance.value = effectValue;
                 break;
-            case possibleModifiers.damageReduction:
-                stats.damageReduction = effectValue;
+            case possibleModifiers.SharedLife:
                 break;
             case possibleModifiers.increaseMaxHealth:
                 stats.maxHealth += effectValue;

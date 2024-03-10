@@ -26,10 +26,10 @@ MonoBehaviour:
   orginalMaxHealth: 0
   Player1Kill: {fileID: 0}
   Player2Kill: {fileID: 0}
-  currentHealth: 15
+  currentHealth: -101
   gunCooldown:
     Variable: {fileID: 11400000, guid: aaaec091154a1cd46a485090a98b3f26, type: 2}
-    constantValue: 1.5
+    constantValue: 53.5
     useConstant: 1
   gunCooldownModifier:
     Variable: {fileID: 11400000, guid: e8d90d220dfae4249b9c4d804235f3a0, type: 2}
@@ -37,7 +37,7 @@ MonoBehaviour:
     useConstant: 1
   speed:
     Variable: {fileID: 11400000, guid: 5dddfc8a04ca9744d82094e1fdcb9aa8, type: 2}
-    constantValue: 7
+    constantValue: 3
     useConstant: 1
   chariotSpeed:
     Variable: {fileID: 11400000, guid: 4f0b5881b615c1843a235fecd56e3131, type: 2}
@@ -70,7 +70,7 @@ MonoBehaviour:
     useConstant: 1
   swordDamage:
     Variable: {fileID: 11400000, guid: 21d917d11332a4344932089bed7466fe, type: 2}
-    constantValue: 4
+    constantValue: 1
     useConstant: 1
   swordDamageModifier:
     Variable: {fileID: 11400000, guid: c1b63a689d586fc469aae8239c5b8e53, type: 2}
@@ -100,7 +100,8 @@ MonoBehaviour:
     Variable: {fileID: 11400000, guid: 86415f70013e13e4f8ed7b9eacb9ae2d, type: 2}
     constantValue: 5
     useConstant: 1
-  tarotCards: []
+  tarotCards:
+  - {fileID: 11400000, guid: 6a125ce579c44a3418eef90ab99f5e6f, type: 2}
   criticalHitChance:
     Variable: {fileID: 11400000, guid: fbd168c8de95b1e4390fef01598bdaad, type: 2}
     constantValue: 0
