@@ -98,6 +98,10 @@ public class Furies_Behavior : MonoBehaviour
     {
         Transform target = GetComponent<AIDestinationSetter>().target;
         // Gets the local position of the target relevent to the furie
+        if (target == null)
+        {
+            return;
+        }
         Vector3 playerLocalPos = transform.InverseTransformPoint(target.position);
         //if they are on the left of the furie
         if (playerLocalPos.x < 0)
@@ -168,10 +172,15 @@ public class Furies_Behavior : MonoBehaviour
 
         }
         // Switches to the Move state if the player is out of range 
-        if (Vector2.Distance(transform.position, player.position) > stats.shootingRange)
+        try
         {
-            currentState = FuriesState.Move; }
 
+            if (Vector2.Distance(transform.position, player.position) > stats.shootingRange)
+            {
+                currentState = FuriesState.Move;
+            }
+        }
+        catch { return; }
     }
 
     private void OnTriggerEnter2D(Collider2D other)

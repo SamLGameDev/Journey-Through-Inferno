@@ -2,7 +2,6 @@ using Fungus;
 using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.XR;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
@@ -65,16 +64,23 @@ public class EntityHealthBehaviour : MonoBehaviour
     }
     private object[] HasCard(TarotCards.possibleModifiers modifier)
     {
-        foreach(GameObject Player in GameManager.instance.playerInstances)
+        try
         {
-            foreach(TarotCards card in Player.GetComponent<Player_movement>().stats.tarotCards)
+            foreach (GameObject Player in GameManager.instance.playerInstances)
             {
-                if (card.possibleMods == modifier)
+                foreach (TarotCards card in Player.GetComponent<Player_movement>().stats.tarotCards)
                 {
-                    return new object[] { true, card };
+                    if (card.possibleMods == modifier)
+                    {
+                        return new object[] { true, card };
+                    }
                 }
-            }
 
+            }
+        }
+        catch
+        {
+            return new object[] { false };
         }
         return new object[] { false};
     }
@@ -315,6 +321,12 @@ public class EntityHealthBehaviour : MonoBehaviour
             }
             GameManager.instance.OnPlayerDeath();
             IsAlive = false;
+            Player_movement playerCotnroller = gameObject.GetComponent<Player_movement>();
+            playerCotnroller.StopAllCoroutines();
+            if (playerCotnroller.stats.gamepad != null){
+                playerCotnroller.stats.gamepad.ResetHaptics();
+            }
+
             Destroy(gameObject);
             return;
         }

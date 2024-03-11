@@ -14,10 +14,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   maxHealth: 100
-  cardDropChance: 100
+  cardDropChance: 101
   OfTypecounter: {fileID: 11400000, guid: e4a5f4694b79fe4488542d7385a2650f, type: 2}
   droppableCards:
   - {fileID: 11400000, guid: 1b114bbd35067a74fb7afdeedc73f1e6, type: 2}
+  - {fileID: 11400000, guid: dc1b22430d37efb4ebe051c37e3cbbfe, type: 2}
+  - {fileID: 11400000, guid: b41df299a53ffa24c93eb59bc29a84a9, type: 2}
+  - {fileID: 11400000, guid: 7bac9ee92e27bea408c591a599db4ad1, type: 2}
+  - {fileID: 11400000, guid: e90fe7f10aadf424d8cd62537b1b3f95, type: 2}
+  - {fileID: 11400000, guid: 88d36f2326a97394b81ffd0de9185622, type: 2}
+  - {fileID: 11400000, guid: ebd4495e00f2e8a46b1cbc38ae91c7fe, type: 2}
+  - {fileID: 11400000, guid: 5fbc0684cd4f8994990b88d62dcf0ff5, type: 2}
+  - {fileID: 11400000, guid: 073a246c04d52f941a45525d5c925bab, type: 2}
+  - {fileID: 11400000, guid: c379608213931154ab3ba8d83f1506ce, type: 2}
+  - {fileID: 11400000, guid: 6a125ce579c44a3418eef90ab99f5e6f, type: 2}
+  - {fileID: 11400000, guid: b540e8bc04270a849b2f9bd3c59b0167, type: 2}
+  - {fileID: 11400000, guid: 69252923036a92642842e1d087832f24, type: 2}
+  - {fileID: 11400000, guid: b10f048a0ac2b994e9d69ec36c997081, type: 2}
+  - {fileID: 11400000, guid: 9262466f791bc9b4f80c2f4fab441744, type: 2}
+  - {fileID: 11400000, guid: cea4e6f30419d6a45818ed8d2ad4bace, type: 2}
+  - {fileID: 11400000, guid: 8356d55443761df40989815930ffca82, type: 2}
+  - {fileID: 11400000, guid: 3e89064d18748ab4785d926037ac06a3, type: 2}
+  - {fileID: 11400000, guid: 0c6d2f734bab3a448b1011a57c3f64e1, type: 2}
   layersToHit:
     serializedVersion: 2
     m_Bits: 0
@@ -27,3 +45,8 @@ MonoBehaviour:
   orginalMaxHealth: 100
   Player1Kill: {fileID: 11400000, guid: 21094ff6890acaf45be41a0c58e41f4f, type: 2}
   Player2Kill: {fileID: 11400000, guid: c2880108fdd2d924783aa325ca2cc76f, type: 2}
+  confused: 0
+  confusionDuration:
+    Variable: {fileID: 0}
+    constantValue: 0
+    useConstant: 1
