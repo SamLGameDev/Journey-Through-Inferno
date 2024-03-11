@@ -72,9 +72,19 @@ public class Furies_Behavior : MonoBehaviour
         // When the furies are in the retreat state but the player is no longer within the circle collider, the furies will resume moving towards the player's position
 
         // Checks if the player is within shooting range and begins shooting if they are
-        if (Vector2.Distance(transform.position, player.position) < stats.shootingRange)
+        try
         {
-            currentState = FuriesState.Shoot; }
+
+
+            if (Vector2.Distance(transform.position, player.position) < stats.shootingRange)
+            {
+                currentState = FuriesState.Shoot;
+            }
+        }
+        catch
+        {
+            return;
+        }
 
     }
     /// <summary>

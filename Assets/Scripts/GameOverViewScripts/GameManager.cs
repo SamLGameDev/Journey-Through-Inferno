@@ -253,13 +253,20 @@ public class GameManager : MonoBehaviour
 #if (UNITY_EDITOR)
         if (EditorApplication.isPlaying && !EditorApplication.isPlayingOrWillChangePlaymode)
         {
-            foreach(GameObject player in playerInstances)
+            try
             {
-                player.GetComponent<Player_movement>().stats.Reset();
+                foreach (GameObject player in playerInstances)
+                {
+                    player.GetComponent<Player_movement>().stats.Reset();
+                }
+                foreach (GameObject boss in bossInstances)
+                {
+                    boss.GetComponent<EntityHealthBehaviour>().stats.Reset();
+                }
             }
-            foreach(GameObject boss in bossInstances)
+            catch
             {
-                boss.GetComponent<EntityHealthBehaviour>().stats.Reset();
+                return;
             }
         }
 #endif
