@@ -134,13 +134,13 @@ public class Player_movement : MonoBehaviour
                 yield return new WaitForSeconds(stats.timeUntillRegenAfterAttack.value);
                 takenDamage.value = false;
             }
-            stats.currentHealth += stats.RegenAmount;
-            if (stats.currentHealth > stats.maxHealth)
+            healthBehaviour.currentHealth += stats.RegenAmount;
+            if (healthBehaviour.currentHealth > stats.maxHealth)
             {
-                stats.currentHealth = stats.maxHealth;
+                healthBehaviour.currentHealth = stats.maxHealth;
             }
             yield return new WaitForSeconds(stats.timeUntillRegen.value);
-            yield return new WaitWhile(() => stats.currentHealth == stats.maxHealth);
+            yield return new WaitWhile(() => healthBehaviour.currentHealth == stats.maxHealth);
         }
     }
     public void UpdateSpeed()
