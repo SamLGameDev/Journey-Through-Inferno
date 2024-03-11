@@ -359,9 +359,13 @@ public class Player_movement : MonoBehaviour
         while (true)
         {
             yield return new WaitUntil(() => stats.ControllerRumble.value);
-            gamepad.SetMotorSpeeds(leftStick, rightStick);
-            yield return new WaitForSecondsRealtime(duration);
-            gamepad.ResetHaptics();
+            if(gamepad != null)
+            {
+                gamepad.SetMotorSpeeds(leftStick, rightStick);
+                yield return new WaitForSecondsRealtime(duration);
+                gamepad.ResetHaptics();
+            }
+
             stats.ControllerRumble.value = false;
             
         }
@@ -370,13 +374,14 @@ public class Player_movement : MonoBehaviour
     /// <summary>
     /// calls the shoot function from different moves
     /// </summary>
-    public void Player_Shooting(Gamepad controller)
+    public void Player_Shooting(Gamepad controller = null)
     {
         if (gun_cooldown)
         {
             bullet_controller.original = true;
             gun_cooldown = false;
-            stats.ControllerRumble.value = true;
+            if (controller != null) { stats.ControllerRumble.value = true; }
+
             // shoots from the compas's facing direction
             moves.Shoot(stats.layersToHit, transform.GetChild(0).GetChild(0).position,
             transform.GetChild(0).GetChild(0).right, stats.bullet, confusionLoaded);

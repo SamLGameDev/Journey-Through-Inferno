@@ -26,7 +26,7 @@ MonoBehaviour:
   orginalMaxHealth: 0
   Player1Kill: {fileID: 0}
   Player2Kill: {fileID: 0}
-  currentHealth: -1
+  currentHealth: 15
   confused: 0
   confusionDuration:
     Variable: {fileID: 0}

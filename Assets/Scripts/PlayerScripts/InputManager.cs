@@ -71,7 +71,12 @@ public class InputManager : MonoBehaviour
     {
         if (movement != null && context.phase == InputActionPhase.Performed) 
         {
-            movement.Player_Shooting((Gamepad)context.control.device);
+            try
+            {
+                movement.Player_Shooting((Gamepad)context.control.device);
+            }
+            catch { movement.Player_Shooting(); }
+
         }
 
     }
