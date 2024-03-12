@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc291d0063e7eb54a9313aaadf8f04c1, type: 3}
+  m_Script: {fileID: 11500000, guid: 2fba299de64e55541ab69c43d1e98740, type: 3}
   m_Name: Pluto
   m_EditorClassIdentifier: 
   damage: 0
-  maxHealth: 50
+  maxHealth: 60
   cardDropChance: 0
   OfTypecounter: {fileID: 11400000, guid: e4a5f4694b79fe4488542d7385a2650f, type: 2}
   droppableCards: []
@@ -31,3 +31,7 @@ MonoBehaviour:
     Variable: {fileID: 0}
     constantValue: 0
     useConstant: 1
+  moveInterval: 10
+  cerberusRange: 0
+  cerberusSpeed: 0
+  cerberusPrefab: {fileID: 0}

@@ -9160,7 +9160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBoss: 0
-  stats: {fileID: 0}
+  stats: {fileID: 11400000, guid: 91c3f2b50bde3804692396f5d5f99213, type: 2}
   OnDamaged: {fileID: 0}
   invunTimeOnHit: 0
   currentHealth: 0
@@ -9510,7 +9510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBoss: 0
-  stats: {fileID: 0}
+  stats: {fileID: 11400000, guid: 91c3f2b50bde3804692396f5d5f99213, type: 2}
   OnDamaged: {fileID: 0}
   invunTimeOnHit: 0
   currentHealth: 0
@@ -11724,6 +11724,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ab1c89403222a149a366ab049f7e7a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats: {fileID: 0}
 --- !u!1 &713606740
 GameObject:
   m_ObjectHideFlags: 0
