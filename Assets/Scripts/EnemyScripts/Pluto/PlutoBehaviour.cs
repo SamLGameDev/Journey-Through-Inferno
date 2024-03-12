@@ -6,7 +6,7 @@ using UnityEngine;
 public class Pluto_behaviour : MonoBehaviour
 {
     
-    private int[,] places = { { -17, 17, 0, -15, 2, 16 }, { 18, 18, 17, -3, -12, -2 } };
+    private int[,] places = { { -17, -16, -7, 7, 20, 18 }, { 13, -3, -21, -7, -3, 13 } };
     private float moveInterval = 10f;
     private float moveTimer;
     private bool hasUsedClone = false;
@@ -40,6 +40,7 @@ public class Pluto_behaviour : MonoBehaviour
 
     void Clone()
     {
+        hasUsedClone = true;
         MovePlaces();
         transform.GetChild(0).gameObject.SetActive(true);
         transform.GetChild(1).gameObject.SetActive(true);
@@ -55,10 +56,15 @@ public class Pluto_behaviour : MonoBehaviour
             moveTimer -= moveInterval;
         }
 
-        if (GetComponent<EntityHealthBehaviour>().entityCurrentHealth <= 10)
+        if ((GetComponent<EntityHealthBehaviour>().currentHealth <= 20) && (hasUsedClone == false))
         {
             Clone();
-            hasUsedClone = true;
+        }
+
+        if (GetComponent<EntityHealthBehaviour>().currentHealth <=0)
+        {
+            transform.GetChild(0).gameObject.SetActive(false);
+            transform.GetChild(1).gameObject.SetActive(false);
         }
     }
 }
