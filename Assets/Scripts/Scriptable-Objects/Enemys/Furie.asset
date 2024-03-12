@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Furie
   m_EditorClassIdentifier: 
   damage: 3
-  maxHealth: 10
+  maxHealth: 20
   cardDropChance: 100
   OfTypecounter: {fileID: 11400000, guid: e4a5f4694b79fe4488542d7385a2650f, type: 2}
   droppableCards:
@@ -30,6 +30,11 @@ MonoBehaviour:
   orginalMaxHealth: 0
   Player1Kill: {fileID: 11400000, guid: 2a9e3c88a38ed044587aad7913ea13dc, type: 2}
   Player2Kill: {fileID: 11400000, guid: 0d793ba136e87f84c9b774e2af23e83d, type: 2}
+  confused: 0
+  confusionDuration:
+    Variable: {fileID: 11400000, guid: 8ec09852bc00a984595b4efbfaa24186, type: 2}
+    constantValue: 0
+    useConstant: 0
   shootingRange: 12
   moveSpeed: 8
   projectileSpeed: 10

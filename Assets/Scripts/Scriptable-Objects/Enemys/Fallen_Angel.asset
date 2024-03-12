@@ -45,6 +45,12 @@ MonoBehaviour:
   orginalMaxHealth: 30
   Player1Kill: {fileID: 11400000, guid: f4d8606fee010ad47814106632555ae5, type: 2}
   Player2Kill: {fileID: 11400000, guid: 918b57018f5517146bb3c6d244ee7a78, type: 2}
+  currentHealth: 11
+  confused: 0
+  confusionDuration:
+    Variable: {fileID: 11400000, guid: 8ec09852bc00a984595b4efbfaa24186, type: 2}
+    constantValue: 0
+    useConstant: 0
   chargeCooldown: 5
   meeleRange: 3
   chargeFarAway: 3

@@ -1,8 +1,9 @@
 using Fungus;
+using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.XR;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 /// <summary>
@@ -16,15 +17,18 @@ public class EntityHealthBehaviour : MonoBehaviour
     private bool flashRed;
     [SerializeField] private GameEventListener OnDamaged;
     [SerializeField] private float invunTimeOnHit;
+    public static object[] player1Alive = new object[] { true };
+    public static object[] player2Alive = new object[] { true };
 
     // This is public so that it can be accessed by UI.
-    [HideInInspector] public int entityCurrentHealth;
 
     private bool damageInvulnerable;
+    public int currentHealth;
 
     // Time between IFrame flashes.
     private float invunDeltaTime = 0.1f;
-
+    [SerializeField]
+    private BoolReference takenDamage;
     //Gets the healthbar from the canvas, must be dragged in to create reference
     public Image healthBar;
 
@@ -39,35 +43,89 @@ public class EntityHealthBehaviour : MonoBehaviour
     //A boolean for, surprisingly, if theyre alive
     public bool IsAlive;
     public bool invincible;
+    public bool Confused = false;
 
     private void Start()
     {
+        player1Alive = new object[] { true };
+        player2Alive = new object[] { true };
         stats.OfTypecounter.Add(gameObject);
-        object[] Hermit = HasHermit();
+        object[] Hermit = HasCard(TarotCards.possibleModifiers.reducedBossHealth);
         if (isBoss && (bool)Hermit[0]) 
         {
             TarotCards card = (TarotCards)Hermit[1];
             stats.maxHealth -= card.effectValue;
         }
-        entityCurrentHealth = stats.maxHealth + stats.armour;
+        currentHealth = stats.maxHealth + stats.armour;
         damageInvulnerable = false;
         IsAlive = true;
         StartCoroutine(FlashRed());
+        StartCoroutine(ConfusionDuration());
     }
-    private object[] HasHermit()
+    private object[] HasCard(TarotCards.possibleModifiers modifier)
     {
-        foreach(GameObject Player in GameManager.instance.playerInstances)
+        try
         {
-            foreach(TarotCards card in Player.GetComponent<Player_movement>().stats.tarotCards)
+            foreach (GameObject Player in GameManager.instance.playerInstances)
             {
-                if (card.possibleMods == TarotCards.possibleModifiers.reducedBossHealth)
+                foreach (TarotCards card in Player.GetComponent<Player_movement>().stats.tarotCards)
                 {
-                    return new object[] { true, card };
+                    if (card.possibleMods == modifier)
+                    {
+                        return new object[] { true, card };
+                    }
                 }
-            }
 
+            }
+        }
+        catch
+        {
+            return new object[] { false };
         }
         return new object[] { false};
+    }
+
+    public void isConfused()
+    {
+        if (Confused && !isBoss)
+        {
+
+            AIDestinationSetter destinationSetter = GetComponent<AIDestinationSetter>();
+            destinationSetter.isConfused = true;
+            destinationSetter.targets = stats.OfTypecounter.Items;
+        }
+    }
+    private IEnumerator ConfusionDuration()
+    {
+        AIDestinationSetter destinationSetter = GetComponent<AIDestinationSetter>();
+        while (true)
+        {
+            yield return new WaitUntil(() => Confused);
+            yield return new WaitForSeconds(stats.confusionDuration.value);
+            Confused = false;
+            destinationSetter.isConfused = false;
+        }
+    }
+    private void FixedUpdate()
+    {
+        if (gameObject.CompareTag("Player"))
+        {
+            healthBar.fillAmount =currentHealth / 15f;
+
+            if (currentHealth / 15f <= 0.7f && currentHealth / 15f >= 0.35f)
+            {
+                HealthSprite.sprite = MidHealth.sprite;
+            }
+            if (currentHealth / 15f > 0.7f)
+            {
+                HealthSprite.sprite = HighHealth.sprite;
+            }
+            if (currentHealth / 15f < 0.35f)
+            {
+                HealthSprite.sprite = LowHealth.sprite;
+            }
+        }
+
     }
     /// <summary>
     /// Reduces the entity's health by a set amount
@@ -82,34 +140,22 @@ public class EntityHealthBehaviour : MonoBehaviour
         }
         flashRed = true;
 
-        entityCurrentHealth -= damageAmount - stats.damageReduction;
+        currentHealth -= damageAmount - stats.damageReduction;
 
         if (gameObject.tag == "Player")
         {
-            healthBar.fillAmount = entityCurrentHealth / 15f;
+            takenDamage.value = true;
+            
 
-            if (entityCurrentHealth / 15f <= 0.7f && entityCurrentHealth / 15f >= 0.35f)
-            {
-                HealthSprite.sprite = MidHealth.sprite;
-            }
-            if (entityCurrentHealth / 15f > 0.7f)
-            {
-                HealthSprite.sprite = HighHealth.sprite;
-            }
-            if (entityCurrentHealth / 15f < 0.35f)
-            {
-                HealthSprite.sprite = LowHealth.sprite;
-            }
-
-            print(entityCurrentHealth);
+            print(currentHealth);
         }
         
 
-        print($"{gameObject.name} took {damageAmount} damage, current health: {entityCurrentHealth}");
+        print($"{gameObject.name} took {damageAmount} damage, current health: {currentHealth}");
 
         // Check to see if the entity has taken lethal damage.
         // If so, kill it.
-        if (entityCurrentHealth <= 0)
+        if (currentHealth <= 0)
         {
             EntityDeath(damagerDealer);     
         }
@@ -133,7 +179,7 @@ public class EntityHealthBehaviour : MonoBehaviour
             flashRed = false;
         }
     }
-
+    
     /// <summary>
     /// Triggered by a player being hit, makes them flash while invulnerable.
     /// </summary>
@@ -171,16 +217,16 @@ public class EntityHealthBehaviour : MonoBehaviour
         // We check to see if the heal would exceed the players max health,
         // If it does, heal them to full health, else just heal the amount.
 
-        if ((entityCurrentHealth += healAmount) > stats.maxHealth)
+        if ((currentHealth += healAmount) > stats.maxHealth)
         {
-            entityCurrentHealth = stats.maxHealth;
+            currentHealth = stats.maxHealth;
         }
         else
         {
-            entityCurrentHealth += healAmount;
+            currentHealth += healAmount;
         }
 
-        print($"Restored {healAmount} health to {gameObject.name}, current health: {entityCurrentHealth}");
+        print($"Restored {healAmount} health to {gameObject.name}, current health: {currentHealth}");
     }
  
     private object GetJudgement(GameObject player)
@@ -227,15 +273,63 @@ public class EntityHealthBehaviour : MonoBehaviour
             if (stats.extraLives > 0)
             {
                 stats.extraLives--;
-                entityCurrentHealth = stats.maxHealth;
+                currentHealth = stats.maxHealth;
                 return;
+            }
+            if (gameObject.name == "Player 1")
+            {
+                player1Alive = new object[] { false, gameObject };
+            }
+            else
+            {
+                player2Alive = new object[] { false, gameObject };
+            }
+            if ((bool)HasCard(TarotCards.possibleModifiers.SharedLife)[0])
+            {
+                if(gameObject.name == "Player 1")
+                {
+                    if ((bool)player2Alive[0])
+                    {
+                        Player_movement player = GetComponent<Player_movement>();
+                        player.stats.speed.value = 3;
+                        player.UpdateSpeed();
+                        player.stats.swordDamage.value = 1;
+                        player.stats.gunCooldown.value += 2;
+                        return;
+                    }
+                }
+                else
+                {
+                    if ((bool)player1Alive[0])
+                    {
+                        Player_movement player = GetComponent<Player_movement>();
+                        player.stats.speed.value = 3;
+                        player.UpdateSpeed();
+                        player.stats.swordDamage.value = 1;
+                        player.stats.gunCooldown.value += 2;
+                        return;
+                    }
+                }
+            }
+            if (!(bool)player1Alive[0] && gameObject.name == "Player 2")
+            {
+                Destroy((GameObject)player1Alive[1]);
+            }
+            else if (!(bool)player2Alive[0] && gameObject.name == "Player 1")
+            {
+                Destroy((GameObject)player2Alive[1]);
             }
             GameManager.instance.OnPlayerDeath();
             IsAlive = false;
+            Player_movement playerCotnroller = gameObject.GetComponent<Player_movement>();
+            playerCotnroller.StopAllCoroutines();
+            if (playerCotnroller.stats.gamepad != null){
+                playerCotnroller.stats.gamepad.ResetHaptics();
+            }
+
             Destroy(gameObject);
             return;
         }
-        Debug.Log(damageDealer.name);
         
         if (damageDealer.name == "Player 2")
         {

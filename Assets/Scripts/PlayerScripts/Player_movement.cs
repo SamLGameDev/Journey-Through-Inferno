@@ -92,6 +92,9 @@ public class Player_movement : MonoBehaviour
     public GameObject sword;
     public Vector2 AimingDirection;
     private EntityHealthBehaviour healthBehaviour;
+    [SerializeField]
+    private BoolReference takenDamage;
+    public bool confusionLoaded = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -106,11 +109,13 @@ public class Player_movement : MonoBehaviour
         StartCoroutine(dash());
         StartCoroutine(invisDurationTimer(stats.invisibilityDuration.value));
         StartCoroutine(invisCooldownTimer());
+        StartCoroutine(controllerRumble(0.5f, 0.5f, 0.5f, stats.gamepad));
         // If the player has the High Priestess Arcana then the timer for the invisibility bursts will start
         if (GetComponentInParent<Tarot_cards>().hasHighPriestess)
         { StartCoroutine(invisCooldownTimer()); }
         else
         { invis_cooldown = false; }
+        StartCoroutine(HealthRegen());
 
 
 
@@ -120,6 +125,24 @@ public class Player_movement : MonoBehaviour
     /// moves the player based on the movement of the left joystick and the aiming device based
     /// on the movement of the right joystick
     /// </summary>
+    private IEnumerator HealthRegen()
+    {
+        while (true)
+        {
+            if (takenDamage.value == true)
+            {
+                yield return new WaitForSeconds(stats.timeUntillRegenAfterAttack.value);
+                takenDamage.value = false;
+            }
+            healthBehaviour.currentHealth += stats.RegenAmount;
+            if (healthBehaviour.currentHealth > stats.maxHealth)
+            {
+                healthBehaviour.currentHealth = stats.maxHealth;
+            }
+            yield return new WaitForSeconds(stats.timeUntillRegen.value);
+            yield return new WaitWhile(() => healthBehaviour.currentHealth == stats.maxHealth);
+        }
+    }
     public void UpdateSpeed()
     {
         speed = stats.speed.value + stats.chariotSpeed.value;
@@ -136,7 +159,6 @@ public class Player_movement : MonoBehaviour
     {
         if (AimingDirection.sqrMagnitude == 0) return;
         float heading = MathF.Atan2(-AimingDirection.x, AimingDirection.y);
-        Debug.Log(AimingDirection);
         transform.GetChild(0).rotation = Quaternion.Euler(0, 0, heading * Mathf.Rad2Deg);
     }
 
@@ -334,24 +356,36 @@ public class Player_movement : MonoBehaviour
     }
     private IEnumerator controllerRumble(float leftStick, float rightStick, float duration, Gamepad gamepad)
     {
-        gamepad.SetMotorSpeeds(leftStick, rightStick);
-        yield return new WaitForSecondsRealtime(duration);
-        gamepad.ResetHaptics();
-        StopCoroutine(controllerRumble(0.5f, 0.5f, 0.5f, gamepad));
+        while (true)
+        {
+            yield return new WaitUntil(() => stats.ControllerRumble.value);
+            if(gamepad != null)
+            {
+                gamepad.SetMotorSpeeds(leftStick, rightStick);
+                yield return new WaitForSecondsRealtime(duration);
+                gamepad.ResetHaptics();
+            }
+
+            stats.ControllerRumble.value = false;
+            
+        }
+
     }
     /// <summary>
     /// calls the shoot function from different moves
     /// </summary>
-    public void Player_Shooting(Gamepad gamepad)
+    public void Player_Shooting(Gamepad controller = null)
     {
         if (gun_cooldown)
         {
             bullet_controller.original = true;
             gun_cooldown = false;
-            StartCoroutine(controllerRumble(0.5f, 0.5f, 0.5f, gamepad));
+            if (controller != null) { stats.ControllerRumble.value = true; }
+
             // shoots from the compas's facing direction
             moves.Shoot(stats.layersToHit, transform.GetChild(0).GetChild(0).position,
-            transform.GetChild(0).GetChild(0).right, stats.bullet);
+            transform.GetChild(0).GetChild(0).right, stats.bullet, confusionLoaded);
+            confusionLoaded = false;
         }
 
     }

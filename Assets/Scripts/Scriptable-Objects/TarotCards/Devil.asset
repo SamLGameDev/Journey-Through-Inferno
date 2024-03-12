@@ -17,8 +17,9 @@ MonoBehaviour:
   description: 'Beware the sins that lead you astray and beware those you push you
     towards them.
 
-    _Effect: increases card drop rate'
+    _Effect: can load a special bullet using X to Make the enemy
+    attack its teammates'
   specialCardEffectEnabled: 0
   RangeForAbility: 0
   particleEffect: {fileID: 0}
-  possibleMods: 6
+  possibleMods: 19

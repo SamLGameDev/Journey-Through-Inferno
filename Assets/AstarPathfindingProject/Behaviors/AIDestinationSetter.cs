@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections;
+using System.Diagnostics.Tracing;
+using System.Collections.Generic;
 
 namespace Pathfinding {
 	/// <summary>
@@ -20,7 +22,8 @@ namespace Pathfinding {
 		public bool coop;
 		public Transform player1;
 		IAstarAI ai;
-
+		public bool isConfused;
+		public List<GameObject> targets;
   
 
         void OnEnable () {
@@ -35,10 +38,35 @@ namespace Pathfinding {
 		void OnDisable () {
 			if (ai != null) ai.onSearchPath -= Update;
 		}
-
-		/// <summary>Updates the AI's destination every frame</summary>
-		void Update () {
-			if (coop)
+        private GameObject GetTarget()
+        {
+            GameObject closest = null;
+            foreach (GameObject enemy in targets)
+            {
+                if (enemy != null && enemy != gameObject)
+                {
+                    if (closest == null)
+                    {
+                        closest = enemy;
+                        continue;
+                    }
+                    Vector2 EnemyLocation = enemy.transform.position - transform.position;
+                    Vector2 closestLocation = closest.transform.position - transform.position;
+                    if (EnemyLocation.sqrMagnitude < closestLocation.sqrMagnitude)
+                    {
+                        closest = enemy;
+                    }
+                }
+            }
+            return closest;
+        }
+        /// <summary>Updates the AI's destination every frame</summary>
+        void Update () {
+			if (isConfused)
+			{
+				target = GetTarget().transform;
+			}
+			if (coop && !isConfused)
 			{
 				if (!player1)
 				{

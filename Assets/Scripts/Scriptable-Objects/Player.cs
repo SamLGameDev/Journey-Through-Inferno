@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 
@@ -92,6 +93,13 @@ public class Player : BasicAttributes
     public FloatReference timeUntilSpreadShot;
     public IntReference spreadShotNumber;
     public FloatReference cooldownReduction;
+    public BoolReference ControllerRumble;
+    public Gamepad gamepad;
+    public FloatReference timeUntillRegenAfterAttack;
+    public FloatReference timeUntillRegen;
+    public int RegenAmount;
+    public GameObject confusionBullet;
+    public float ConfusionCooldown;
     public override void Reset()
     {
         chariotSpeed.value = 0;
@@ -111,5 +119,9 @@ public class Player : BasicAttributes
         spreadShotNumber.value = 0;
         cooldownReduction.value = 0;
         droppableCards.Clear();
+        RegenAmount = 0;
+        speed.value = 7;
+        swordDamage.value = 3;
+        gunCooldown.value = 1.5f;
     }
 }

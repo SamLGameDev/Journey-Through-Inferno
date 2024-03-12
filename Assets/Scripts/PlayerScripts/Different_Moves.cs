@@ -17,7 +17,7 @@ public class Different_Moves : MonoBehaviour
     /// <summary>
     /// the Layers that you want to hit with the attacks. set in the inspector
     /// </summary>
-    public LayerMask LayersToHit;
+    public LayerMask LayersToHitWhenConfused;
     /// <summary>
     /// the speed for the sword swing
     /// </summary>
@@ -37,8 +37,8 @@ public class Different_Moves : MonoBehaviour
     {
         // creates a box that will grab everything with a collider in it that matches the layers to
         // hit then apply damage to it.
-        Debug.Log("mellerange");
-        RaycastHit2D[] hit = Physics2D.BoxCastAll(transform.position, new Vector2(stats.meleeSizeX, stats.meleeSizeY), 0, transform.up, stats.meleeDistance, stats.layersToHit);
+        RaycastHit2D[] hit = Physics2D.BoxCastAll(transform.position, new Vector2(stats.meleeSizeX, stats.meleeSizeY), 0, transform.up, stats.meleeDistance,
+            GetComponent<EntityHealthBehaviour>().Confused ? LayersToHitWhenConfused : stats.layersToHit);
         foreach (RaycastHit2D hit2d in hit)
         {
             hit2d.collider.gameObject.GetComponent<EntityHealthBehaviour>().ApplyDamage(stats.damage);
@@ -61,7 +61,7 @@ public class Different_Moves : MonoBehaviour
             return time;
         }
         // same as previous melee function this is an override to
-        RaycastHit2D[] hit = Physics2D.BoxCastAll(transform.position, new Vector2(stats.meleeSizeX, stats.meleeSizeY), 0 , transform.up, stats.meleeDistance, stats.layersToHit);
+        RaycastHit2D[] hit = Physics2D.BoxCastAll(transform.position, new Vector2(stats.meleeSizeX, stats.meleeSizeY), 0 , transform.up, stats.meleeDistance, GetComponent<EntityHealthBehaviour>().Confused ? LayersToHitWhenConfused : stats.layersToHit);
 
         foreach (RaycastHit2D hit2d in hit)
         {
@@ -209,7 +209,7 @@ public class Different_Moves : MonoBehaviour
     /// <param name="target"></param>
     /// <param name="originalHit"></param>
     /// <param name="angle"></param>
-    public void Shoot(LayerMask target, Vector2 originalHit, Vector2 angle, GameObject bullet)
+    public void Shoot(LayerMask target, Vector2 originalHit, Vector2 angle, GameObject bullet, bool confusion)
     {
         #region old stuff
         //shootTimer -= Time.deltaTime;
@@ -240,8 +240,18 @@ public class Different_Moves : MonoBehaviour
 
         //shootTimer = coolDown;
         #endregion old stuff
+        GameObject projectile;
         // instanciates a bullet in the facing direction of the compass
-        GameObject projectile = Instantiate(bullet, transform.position, transform.GetChild(0).GetChild(0).rotation);
+        if (confusion)
+        {
+            projectile = Instantiate(pStats.confusionBullet, transform.position, transform.GetChild(0).GetChild(0).rotation);
+            projectile.GetComponent<ConfusionBulletController>().stats = pStats;
+        }
+        else
+        {
+            projectile = Instantiate(bullet, transform.position, transform.GetChild(0).GetChild(0).rotation);
+            projectile.GetComponent<bullet_controller>().stats = pStats;
+        }
         projectile.transform.parent = transform;
     }
     // Update is called once per frame

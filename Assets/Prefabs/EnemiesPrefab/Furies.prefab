@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 2127096435719846241}
   - component: {fileID: 4104389254971394780}
   - component: {fileID: 6833979128429709299}
+  - component: {fileID: -7665178361672979666}
   m_Layer: 8
   m_Name: Furies
   m_TagString: Enemy
@@ -249,6 +250,8 @@ MonoBehaviour:
   player2: {fileID: 0}
   coop: 1
   player1: {fileID: 0}
+  isConfused: 0
+  targets: []
 --- !u!114 &-3635221926971355599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,7 +337,10 @@ MonoBehaviour:
   stats: {fileID: 11400000, guid: 8433197bcfafda54195840a75029068e, type: 2}
   OnDamaged: {fileID: 0}
   invunTimeOnHit: 0
-  entityCurrentHealth: 0
+  takenDamage:
+    Variable: {fileID: 0}
+    constantValue: 0
+    useConstant: 1
   healthBar: {fileID: 0}
   LowHealth: {fileID: 0}
   MidHealth: {fileID: 0}
@@ -342,6 +348,7 @@ MonoBehaviour:
   HealthSprite: {fileID: 0}
   IsAlive: 0
   invincible: 0
+  Confused: 0
 --- !u!95 &4104389254971394780
 Animator:
   serializedVersion: 5
@@ -376,3 +383,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attributes: {fileID: 11400000, guid: 8433197bcfafda54195840a75029068e, type: 2}
+--- !u!114 &-7665178361672979666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600547005513823415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e09ec3e8ff1d99149ba2cbfe2533f6c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: b332f4f3895ee264596a5b567c48376a, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2127096435719846241}
+        m_TargetAssemblyTypeName: EntityHealthBehaviour, Assembly-CSharp
+        m_MethodName: isConfused
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

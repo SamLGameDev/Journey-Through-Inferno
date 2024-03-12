@@ -17,7 +17,7 @@ MonoBehaviour:
   description: 'Two partners who choose to find strength in each other, even through
     the toughest of trails.
 
-    _Effect: reduce damage taken'
+    _Effect: you wont die whilst your partner is alive'
   specialCardEffectEnabled: 0
   RangeForAbility: 0
   particleEffect: {fileID: 0}

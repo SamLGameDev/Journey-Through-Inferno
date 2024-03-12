@@ -15,6 +15,7 @@ MonoBehaviour:
   damage: 4
   maxHealth: 1
   cardDropChance: 100
+  OfTypecounter: {fileID: 0}
   droppableCards:
   - {fileID: 11400000, guid: b41df299a53ffa24c93eb59bc29a84a9, type: 2}
   - {fileID: 11400000, guid: b540e8bc04270a849b2f9bd3c59b0167, type: 2}
@@ -23,6 +24,18 @@ MonoBehaviour:
   layersToHit:
     serializedVersion: 2
     m_Bits: 128
+  extraLives: 0
+  damageReduction: 0
+  armour: 0
+  orginalMaxHealth: 0
+  Player1Kill: {fileID: 0}
+  Player2Kill: {fileID: 0}
+  currentHealth: 0
+  confused: 0
+  confusionDuration:
+    Variable: {fileID: 11400000, guid: 8ec09852bc00a984595b4efbfaa24186, type: 2}
+    constantValue: 0
+    useConstant: 0
   chargeCooldown: 5
   meeleRange: 1.5
   chargeFarAway: 2
