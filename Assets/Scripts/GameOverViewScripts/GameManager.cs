@@ -113,7 +113,7 @@ public class GameManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Deducts currently alive player counter to see if the game ends.
+    /// Deducts currently alive player EnemyCounter to see if the game ends.
     /// </summary>
     public void OnPlayerDeath()
     {
@@ -126,7 +126,7 @@ public class GameManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Adds currently alive player counter.
+    /// Adds currently alive player EnemyCounter.
     /// </summary>
     public void OnPlayerRevive()
     {
@@ -134,7 +134,7 @@ public class GameManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Deducts currently alive enemy counter to see if the level is complete.
+    /// Deducts currently alive enemy EnemyCounter to see if the level is complete.
     /// </summary>
     public void OnEnemyDeath()
     {

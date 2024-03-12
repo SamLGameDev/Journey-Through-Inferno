@@ -47,7 +47,6 @@ public class EntityHealthBehaviour : MonoBehaviour
     public bool Confused = false;
     private void OnEnable()
     {
-        stats.OfTypecounter.Add(gameObject);
         stats.originalPosition = transform;
     }
     private void Start()
@@ -112,6 +111,7 @@ public class EntityHealthBehaviour : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        stats.OfTypecounter.Add(gameObject);
         if (gameObject.CompareTag("Player"))
         {
             healthBar.fillAmount =currentHealth / 15f;
@@ -270,8 +270,17 @@ public class EntityHealthBehaviour : MonoBehaviour
         }
 
     }
+    private void OnDisable()
+    {
+        stats.OfTypecounter.Remove(gameObject);
+    }
     private void EntityDeath(GameObject damageDealer)
     {
+        try
+        {
+            Event.Raise();
+        }
+        catch { }
         if (gameObject.CompareTag("Player"))
         {
             if (stats.extraLives > 0)
@@ -343,7 +352,7 @@ public class EntityHealthBehaviour : MonoBehaviour
         {
             stats.Player1Kill.Raise();
         }
-        stats.OfTypecounter.Remove(gameObject);
+
         if (gameObject.CompareTag("Enemy"))
         {
             GameManager.instance.OnEnemyDeath();
