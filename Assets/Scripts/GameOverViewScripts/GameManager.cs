@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-        foreach (GameObject enemy in enemysCount.Items)
+        foreach (GameObject enemy in enemysCount.GetItems())
         {
             if (enemy != null)
             {

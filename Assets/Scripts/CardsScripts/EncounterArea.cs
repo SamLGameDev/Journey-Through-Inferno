@@ -21,7 +21,7 @@ public class EncounterArea : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        foreach (GameObject enemy in Enemys.Items)
+        foreach (GameObject enemy in Enemys.GetItems())
         {
             if (enemy == null) continue;
             EnablerAStar(false, enemy);
@@ -33,7 +33,7 @@ public class EncounterArea : MonoBehaviour
         {
             Canvas.SetActive(true);
             hasTriggered = true;
-            GameManager.instance.p1.GetComponent<EventSystem>().SetSelectedGameObject(box);
+            GameManager.instance._events.GetComponent<EventSystem>().SetSelectedGameObject(box);
             Time.timeScale = 0;
         }
 
@@ -41,7 +41,7 @@ public class EncounterArea : MonoBehaviour
     }
     public void ActivateEnemy()
     {
-        foreach (GameObject enemy in Enemys.Items)
+        foreach (GameObject enemy in Enemys.GetItems())
         {
             if (enemy == null || enemy.GetComponent<EntityHealthBehaviour>().isBoss)
             {

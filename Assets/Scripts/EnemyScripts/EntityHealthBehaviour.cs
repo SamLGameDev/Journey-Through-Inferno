@@ -47,6 +47,7 @@ public class EntityHealthBehaviour : MonoBehaviour
     public bool Confused = false;
     private void OnEnable()
     {
+        stats.OfTypecounter.Add(gameObject);
         stats.originalPosition = transform;
     }
     private void Start()
@@ -95,7 +96,7 @@ public class EntityHealthBehaviour : MonoBehaviour
 
             AIDestinationSetter destinationSetter = GetComponent<AIDestinationSetter>();
             destinationSetter.isConfused = true;
-            destinationSetter.targets = stats.OfTypecounter.Items;
+            destinationSetter.targets = stats.OfTypecounter.GetItems();
         }
     }
     private IEnumerator ConfusionDuration()
@@ -111,7 +112,6 @@ public class EntityHealthBehaviour : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        stats.OfTypecounter.Add(gameObject);
         if (gameObject.CompareTag("Player"))
         {
             healthBar.fillAmount =currentHealth / 15f;

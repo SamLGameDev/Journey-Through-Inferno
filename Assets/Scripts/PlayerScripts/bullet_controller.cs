@@ -88,7 +88,7 @@ public class bullet_controller : MonoBehaviour
     private GameObject GetTarget()
     {
         GameObject closest = null;
-        foreach(GameObject enemy in Enemys.Items)
+        foreach(GameObject enemy in Enemys.GetItems())
         {
             if (enemy != null)
             {

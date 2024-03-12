@@ -289,6 +289,9 @@ public class CardSpawner : MonoBehaviour
             previousButton.SetActive(false);
             tutorialText.SetActive(false);
             GameManager.instance.text.SetActive(false);
+            GameManager.instance._events.enabled = true;
+            GameManager.instance.p2.GetComponent<EventSystem>().enabled = false;
+            GameManager.instance.p1.GetComponent<EventSystem>().enabled = false;
             yield return new WaitUntil(() => encounterCleared);
             if (GameManager.instance.p1 != null )
             {
@@ -301,12 +304,14 @@ public class CardSpawner : MonoBehaviour
                 tutorialText.SetActive(true);
                 firstTime = false;
             }
-            GameManager.instance.p2.GetComponent<EventSystem>().enabled = false;
+
             encounterCleared = false;
             // disables the second input system
             //GameManager.instance.p2.enabled = false;
             foreach (GameObject p in GameManager.instance.playerInstances)
             {
+                currentSelectingCards.enabled = true;
+                GameManager.instance._events.enabled = false;
                 cardChosen = false;
                 if (p == null)
                 {
