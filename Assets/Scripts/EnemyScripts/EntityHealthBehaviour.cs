@@ -45,6 +45,8 @@ public class EntityHealthBehaviour : MonoBehaviour
     public bool IsAlive;
     public bool invincible;
     public bool Confused = false;
+    public bool onlyVirgil;
+    public bool onlyDante;
     private void OnEnable()
     {
         stats.OfTypecounter.Add(gameObject);
@@ -137,6 +139,14 @@ public class EntityHealthBehaviour : MonoBehaviour
     /// <param name="damageAmount">Amount of damage to apply</param>
     public void ApplyDamage(int damageAmount, GameObject damagerDealer = null)
     {
+        if (damagerDealer != null && damagerDealer.name == "Player 1" && onlyVirgil)
+        {
+            return;
+        }
+        else if (damagerDealer != null && damagerDealer.name == "Player 2" && onlyDante)
+        {
+            return;
+        }
         if (damageInvulnerable || invincible)
         {
             print("Damage blocked due to being invulnerable. :)");

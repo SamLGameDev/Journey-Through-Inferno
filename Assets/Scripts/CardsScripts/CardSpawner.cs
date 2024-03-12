@@ -291,7 +291,11 @@ public class CardSpawner : MonoBehaviour
             GameManager.instance.text.SetActive(false);
             GameManager.instance._events.enabled = true;
             GameManager.instance.p2.GetComponent<EventSystem>().enabled = false;
-            GameManager.instance.p1.GetComponent<EventSystem>().enabled = false;
+            if (GameManager.instance.p1 != null)
+            {
+                GameManager.instance.p1.GetComponent<EventSystem>().enabled = false;
+            }
+
             yield return new WaitUntil(() => encounterCleared);
             if (GameManager.instance.p1 != null )
             {
@@ -310,7 +314,11 @@ public class CardSpawner : MonoBehaviour
             //GameManager.instance.p2.enabled = false;
             foreach (GameObject p in GameManager.instance.playerInstances)
             {
-                currentSelectingCards.enabled = true;
+                if (GameManager.instance.p1 != null)
+                {
+                    currentSelectingCards.enabled = true;
+                }
+
                 GameManager.instance._events.enabled = false;
                 cardChosen = false;
                 if (p == null)

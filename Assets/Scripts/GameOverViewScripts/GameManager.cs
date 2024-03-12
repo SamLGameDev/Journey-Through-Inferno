@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     public GameObject bottomTextBox;
     public bool noCards = false;
     public Counter<GameObject> enemysCount;
+
     public enum GameState
     {
         normalPlay,
