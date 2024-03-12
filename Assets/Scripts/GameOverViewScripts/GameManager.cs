@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     public GameObject topTextBox;
     public GameObject bottomTextBox;
     public bool noCards = false;
+    public Counter<GameObject> enemysCount;
     public enum GameState
     {
         normalPlay,
@@ -80,7 +81,13 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-        
+        foreach (GameObject enemy in enemysCount.Items)
+        {
+            if (enemy != null)
+            {
+                enemiesRemaining++;
+            }
+        }
     }
 
     public void UpdateTarotNumber()
@@ -178,7 +185,7 @@ public class GameManager : MonoBehaviour
             yield return new WaitUntil(() => OnEncounterCleared);
             Time.timeScale = 0;
             spawner.encounterCleared = true;
-            yield return new WaitUntil(() => spawner.onScreenCards[0, 0] != null || noCards);
+            yield return new WaitUntil(() => spawner.onScreenCards[0,0] != null || noCards);
             _events.SetSelectedGameObject((GameObject)spawner.onScreenCards[0, 0]);
             noCards = false;
             OnEncounterCleared = false;
@@ -196,6 +203,7 @@ public class GameManager : MonoBehaviour
             {
                 if (player != null)
                 {
+                    player.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
                     player.GetComponent<Player_movement>().enabled = false;
                     player.GetComponent<Animator>().SetBool("wonBattle", true);
                 }

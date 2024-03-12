@@ -18048,7 +18048,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 4160995341029023200}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1461196690}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db465e459a368944b8e1f0349650dc97, type: 3}
@@ -19695,238 +19695,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1461196690 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1360041816144667566, guid: 9b9bbf6b8c1105448bd7848291b322be,
-    type: 3}
-  m_PrefabInstance: {fileID: 4160995341029023200}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1461196694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1461196690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e09ec3e8ff1d99149ba2cbfe2533f6c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: f4d8606fee010ad47814106632555ae5, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1336663984}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: UpdateTarotNumber
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1461196695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1461196690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efdf025ceb39fbb439f4e05199a473de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 918b57018f5517146bb3c6d244ee7a78, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls: []
-  PlayerResponse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -6433223236211202966, guid: 6f54f83e10a239546ad6251645f07e9b,
-          type: 3}
-        m_TargetAssemblyTypeName: DropTarotCard, Assembly-CSharp
-        m_MethodName: DropCard
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 5df255e7d82eda04e8040c6b03146859,
-            type: 2}
-          m_ObjectArgumentAssemblyTypeName: Player, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1461196696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1461196690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efdf025ceb39fbb439f4e05199a473de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: f4d8606fee010ad47814106632555ae5, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls: []
-  PlayerResponse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -6433223236211202966, guid: 6f54f83e10a239546ad6251645f07e9b,
-          type: 3}
-        m_TargetAssemblyTypeName: DropTarotCard, Assembly-CSharp
-        m_MethodName: DropCard
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: c53c78a8f908aff40b06667ff5c1036a,
-            type: 2}
-          m_ObjectArgumentAssemblyTypeName: Player, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1461196700
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1461196690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efdf025ceb39fbb439f4e05199a473de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: c2880108fdd2d924783aa325ca2cc76f, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls: []
-  PlayerResponse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -8386113982693172708, guid: 4a6efd9d63ff62e47b860ff0959888fa,
-          type: 3}
-        m_TargetAssemblyTypeName: DropTarotCard, Assembly-CSharp
-        m_MethodName: DropCard
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 5df255e7d82eda04e8040c6b03146859,
-            type: 2}
-          m_ObjectArgumentAssemblyTypeName: Player, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1461196701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1461196690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efdf025ceb39fbb439f4e05199a473de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 21094ff6890acaf45be41a0c58e41f4f, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls: []
-  PlayerResponse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -8386113982693172708, guid: 4a6efd9d63ff62e47b860ff0959888fa,
-          type: 3}
-        m_TargetAssemblyTypeName: DropTarotCard, Assembly-CSharp
-        m_MethodName: DropCard
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: c53c78a8f908aff40b06667ff5c1036a,
-            type: 2}
-          m_ObjectArgumentAssemblyTypeName: Player, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1461196702
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1461196690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efdf025ceb39fbb439f4e05199a473de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 0d793ba136e87f84c9b774e2af23e83d, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls: []
-  PlayerResponse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6833979128429709299, guid: c59d0046edde7e342bbad33d6fdd1f79,
-          type: 3}
-        m_TargetAssemblyTypeName: DropTarotCard, Assembly-CSharp
-        m_MethodName: DropCard
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 5df255e7d82eda04e8040c6b03146859,
-            type: 2}
-          m_ObjectArgumentAssemblyTypeName: Player, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1461196703
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1461196690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efdf025ceb39fbb439f4e05199a473de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 2a9e3c88a38ed044587aad7913ea13dc, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls: []
-  PlayerResponse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6833979128429709299, guid: c59d0046edde7e342bbad33d6fdd1f79,
-          type: 3}
-        m_TargetAssemblyTypeName: DropTarotCard, Assembly-CSharp
-        m_MethodName: DropCard
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: c53c78a8f908aff40b06667ff5c1036a,
-            type: 2}
-          m_ObjectArgumentAssemblyTypeName: Player, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &1462026622
 GameObject:
   m_ObjectHideFlags: 0
@@ -27862,65 +27630,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 873595767521178319, guid: 9b9bbf6b8c1105448bd7848291b322be,
-        type: 3}
-      propertyPath: m_AllowJoining
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 873595767521178319, guid: 9b9bbf6b8c1105448bd7848291b322be,
-        type: 3}
-      propertyPath: m_NotificationBehavior
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 873595767521178319, guid: 9b9bbf6b8c1105448bd7848291b322be,
-        type: 3}
-      propertyPath: m_PlayerJoinedEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 873595767521178319, guid: 9b9bbf6b8c1105448bd7848291b322be,
-        type: 3}
-      propertyPath: m_PlayerJoinedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 873595767521178319, guid: 9b9bbf6b8c1105448bd7848291b322be,
-        type: 3}
-      propertyPath: m_PlayerJoinedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1336663984}
-    - target: {fileID: 873595767521178319, guid: 9b9bbf6b8c1105448bd7848291b322be,
-        type: 3}
-      propertyPath: m_PlayerJoinedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 873595767521178319, guid: 9b9bbf6b8c1105448bd7848291b322be,
-        type: 3}
-      propertyPath: m_PlayerJoinedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: AddController
-      objectReference: {fileID: 0}
-    - target: {fileID: 873595767521178319, guid: 9b9bbf6b8c1105448bd7848291b322be,
-        type: 3}
-      propertyPath: m_PlayerJoinedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 873595767521178319, guid: 9b9bbf6b8c1105448bd7848291b322be,
-        type: 3}
-      propertyPath: m_PlayerJoinedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: dd
-      objectReference: {fileID: 0}
-    - target: {fileID: 873595767521178319, guid: 9b9bbf6b8c1105448bd7848291b322be,
-        type: 3}
-      propertyPath: m_PlayerJoinedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 1360041816144667566, guid: 9b9bbf6b8c1105448bd7848291b322be,
         type: 3}
       propertyPath: m_Name
       value: Game Manager
-      objectReference: {fileID: 0}
-    - target: {fileID: 1360041816144667566, guid: 9b9bbf6b8c1105448bd7848291b322be,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2709735265530068024, guid: 9b9bbf6b8c1105448bd7848291b322be,
         type: 3}
@@ -27977,16 +27690,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3897996139225064892, guid: 9b9bbf6b8c1105448bd7848291b322be,
-        type: 3}
-      propertyPath: showGraphs
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3897996139225064892, guid: 9b9bbf6b8c1105448bd7848291b322be,
-        type: 3}
-      propertyPath: data.dataString
-      value: UEsDBBQAAAgIAAAAIew/5IYHWwIAABQFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1z2jAQ/SuMzk3HEGiG3lqHkB5ImNBOLr4Ia401yJJHHwGS4b93V7axQ6cnlrdvd99+yB9MaldD7o1dWilWRgD7PmJksy+j3vkIR74zeiPfoeO8SuFLIvHIeeFeGsTHFOZMBd7K/IfeKSInCAYtC2OrhdhBapx3CBdcOUCXNZ6iNUIfI3bEn5s5hZzQmtyR9Y7WPBmd0cxBe7A9tSN2tOks0oLOFa9qEKS5Z886+qzJprGblkHKc6OUdK0U5k91bDXltQvYCBKE5NharE/8EuSu9CRzGPxcFA58q8ny0720OKEmK/tpmrFV3O0bXW9cBaozuU2mUVSTdfUP4WYc3YU11WNXeJxQEV/KfP/CTzl3fjDYIXz/WXnQB672fKvgtQT9ZJbWBC3Q6W2g0OBgct//vfSWlpDve7yRegWG+v/roR7Osf1jqmS1JdfXaQNslIkDj8sHi6v5hYLjabg2BaKk4o+D33w3vKHW8SCt8+hqu9Qkb2uCJSpbxJlRN8GnxmqIcCu6Bs2VP60xjb/e4ZVvUPbK88DptbTFW1/3CK5CItzzk+TKtTaHy7JcaQ4rcOVz8Epq6EWT4wnnlBqtmxMbzqQL2wRb8HwQtgtSfD4tJor8FsRkvk3G26IAfjPfwrf53YyL8fhuLpKExduTGvvkat0IbceDW9N9co131n1ERkvL63juwvLDUr5XZjByqQuzyS2Afm4yXISDxSL4LMVCSBzQBryXOu6bfWRMmXwPIrskymKni6O3POuzZKyWb8YTkrE0fjUyRvDlltcW3iQcqHiX7MzOfwFQSwMEFAAACAgAAAAh7IjmzL1tAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTXUVBKL0osyCgGihiCOKWZKSB2tFJKWrJxaoqRZZKBYVJaWmqirmVSqpmluWliiqGhuWWKgYFSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAAAAh7D/khgdbAgAAFAUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAAAh7IjmzL1tAAAAeAAAAAkAJAAAAAAAAAAAAAAAqAIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABgAwAAAAA=
-      objectReference: {fileID: 0}
     - target: {fileID: 4096624456859787653, guid: 9b9bbf6b8c1105448bd7848291b322be,
         type: 3}
       propertyPath: text
@@ -28007,12 +27710,6 @@ PrefabInstance:
       propertyPath: topTextBox
       value: 
       objectReference: {fileID: 41365959}
-    - target: {fileID: 4096624456859787653, guid: 9b9bbf6b8c1105448bd7848291b322be,
-        type: 3}
-      propertyPath: InputManager
-      value: 
-      objectReference: {fileID: 6682802481998483040, guid: 9f004c0e5ade05448a8ceedc3c80610c,
-        type: 3}
     - target: {fileID: 4096624456859787653, guid: 9b9bbf6b8c1105448bd7848291b322be,
         type: 3}
       propertyPath: _clearPortal
@@ -28042,16 +27739,6 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 4096624456859787653, guid: 9b9bbf6b8c1105448bd7848291b322be,
         type: 3}
-      propertyPath: playerInstances.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4096624456859787653, guid: 9b9bbf6b8c1105448bd7848291b322be,
-        type: 3}
-      propertyPath: tarotCardAmounts.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4096624456859787653, guid: 9b9bbf6b8c1105448bd7848291b322be,
-        type: 3}
       propertyPath: playerInstances.Array.data[0]
       value: 
       objectReference: {fileID: 1593183990}
@@ -28073,35 +27760,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1360041816144667566, guid: 9b9bbf6b8c1105448bd7848291b322be,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1461196694}
-    - targetCorrespondingSourceObject: {fileID: 1360041816144667566, guid: 9b9bbf6b8c1105448bd7848291b322be,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1461196696}
-    - targetCorrespondingSourceObject: {fileID: 1360041816144667566, guid: 9b9bbf6b8c1105448bd7848291b322be,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1461196695}
-    - targetCorrespondingSourceObject: {fileID: 1360041816144667566, guid: 9b9bbf6b8c1105448bd7848291b322be,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1461196703}
-    - targetCorrespondingSourceObject: {fileID: 1360041816144667566, guid: 9b9bbf6b8c1105448bd7848291b322be,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1461196702}
-    - targetCorrespondingSourceObject: {fileID: 1360041816144667566, guid: 9b9bbf6b8c1105448bd7848291b322be,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1461196701}
-    - targetCorrespondingSourceObject: {fileID: 1360041816144667566, guid: 9b9bbf6b8c1105448bd7848291b322be,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1461196700}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b9bbf6b8c1105448bd7848291b322be, type: 3}
 --- !u!1001 &4453764968995668938
 PrefabInstance:

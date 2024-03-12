@@ -39,17 +39,21 @@ public class EntityHealthBehaviour : MonoBehaviour
 
     //Gets the image in the UI that will be changed
     public Image HealthSprite;
-
+    [SerializeField]
+    private GameEvent Event;
     //A boolean for, surprisingly, if theyre alive
     public bool IsAlive;
     public bool invincible;
     public bool Confused = false;
-
+    private void OnEnable()
+    {
+        stats.OfTypecounter.Add(gameObject);
+        stats.originalPosition = transform;
+    }
     private void Start()
     {
         player1Alive = new object[] { true };
         player2Alive = new object[] { true };
-        stats.OfTypecounter.Add(gameObject);
         object[] Hermit = HasCard(TarotCards.possibleModifiers.reducedBossHealth);
         if (isBoss && (bool)Hermit[0]) 
         {
