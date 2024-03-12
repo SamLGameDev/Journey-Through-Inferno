@@ -7043,13 +7043,13 @@ GameObject:
   - component: {fileID: 478829838}
   - component: {fileID: 478829837}
   - component: {fileID: 478829836}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pluto Clone 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &478829835
 Transform:
   m_ObjectHideFlags: 0
@@ -7388,13 +7388,13 @@ GameObject:
   - component: {fileID: 520689918}
   - component: {fileID: 520689917}
   - component: {fileID: 520689916}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pluto Clone 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &520689915
 Transform:
   m_ObjectHideFlags: 0
@@ -8871,9 +8871,9 @@ GameObject:
   - component: {fileID: 683299903}
   - component: {fileID: 683299905}
   - component: {fileID: 683299906}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pluto
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
