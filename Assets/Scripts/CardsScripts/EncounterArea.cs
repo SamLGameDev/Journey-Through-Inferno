@@ -18,6 +18,7 @@ public class EncounterArea : MonoBehaviour
     [SerializeField]
     private GameObject box;
     private bool hasTriggered = false;
+    [SerializeField] private Animator entryClip;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +36,10 @@ public class EncounterArea : MonoBehaviour
             hasTriggered = true;
             GameManager.instance._events.GetComponent<EventSystem>().SetSelectedGameObject(box);
             Time.timeScale = 0;
+            entryClip.Rebind();
+            entryClip.Update(0f);
+            entryClip.SetBool("Enabled", true);
+            entryClip.Play("TextBoxGrow");
         }
         else if (collision.CompareTag("Player") && !hasTriggered)
         {

@@ -551,6 +551,33 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b, type: 3}
+--- !u!1 &596120225 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4079811531989665683, guid: 9ad55f666b12d6c46bdf08233137bbf8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1363497077}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &596120226
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596120225}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 665f267da889e7542aa9b8a0e455d8de, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &720608223
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,6 +693,27 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1496480905}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &932098516
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932098511}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 665f267da889e7542aa9b8a0e455d8de, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &940452473 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4096624456859787653, guid: 9b9bbf6b8c1105448bd7848291b322be,
@@ -857,7 +905,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 696c1cbb9627113448755c8d07ede3ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  message: Press BUTTON to swing sword! Press B2 to Submit!
+  message: Press BUTTON to swing sword! Press B2 to Submit or revive a Player at
+    the cost of Health when near them!
   assets: {fileID: 11400000, guid: 4433f7bbe65090046a2429e4bbbc18f7, type: 2}
   xboxButtonName:
   - RTrigger
@@ -1286,6 +1335,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8217988083745632475, guid: 9ad55f666b12d6c46bdf08233137bbf8,
         type: 3}
+      propertyPath: entryClip
+      value: 
+      objectReference: {fileID: 596120226}
+    - target: {fileID: 8217988083745632475, guid: 9ad55f666b12d6c46bdf08233137bbf8,
+        type: 3}
       propertyPath: dislayText
       value: the Black box will take you to the next stage, usually appears when
         all enemys are killed.
@@ -1293,7 +1347,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4079811531989665683, guid: 9ad55f666b12d6c46bdf08233137bbf8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 596120226}
   m_SourcePrefab: {fileID: 100100000, guid: 9ad55f666b12d6c46bdf08233137bbf8, type: 3}
 --- !u!114 &1444757962 stripped
 MonoBehaviour:
@@ -1345,11 +1403,61 @@ PrefabInstance:
       propertyPath: m_Name
       value: Encounter Area
       objectReference: {fileID: 0}
+    - target: {fileID: 3338108468726533804, guid: 9ad55f666b12d6c46bdf08233137bbf8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3725970250024733085, guid: 9ad55f666b12d6c46bdf08233137bbf8,
         type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 515956867}
+    - target: {fileID: 4079811531989665683, guid: 9ad55f666b12d6c46bdf08233137bbf8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312215727249941419, guid: 9ad55f666b12d6c46bdf08233137bbf8,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.84217715
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312215727249941419, guid: 9ad55f666b12d6c46bdf08233137bbf8,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.82400006
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312215727249941419, guid: 9ad55f666b12d6c46bdf08233137bbf8,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -1154
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312215727249941419, guid: 9ad55f666b12d6c46bdf08233137bbf8,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -669
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312215727249941419, guid: 9ad55f666b12d6c46bdf08233137bbf8,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 18.462502
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312215727249941419, guid: 9ad55f666b12d6c46bdf08233137bbf8,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 39.82361
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312215727249941419, guid: 9ad55f666b12d6c46bdf08233137bbf8,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -656.99994
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312215727249941419, guid: 9ad55f666b12d6c46bdf08233137bbf8,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -345.04
+      objectReference: {fileID: 0}
     - target: {fileID: 5517193603281948434, guid: 9ad55f666b12d6c46bdf08233137bbf8,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -1358,7 +1466,7 @@ PrefabInstance:
     - target: {fileID: 5517193603281948434, guid: 9ad55f666b12d6c46bdf08233137bbf8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.39999962
+      value: -0.3999939
       objectReference: {fileID: 0}
     - target: {fileID: 5593723825048520313, guid: 9ad55f666b12d6c46bdf08233137bbf8,
         type: 3}
@@ -1443,6 +1551,11 @@ PrefabInstance:
       objectReference: {fileID: 1137589752}
     - target: {fileID: 8217988083745632475, guid: 9ad55f666b12d6c46bdf08233137bbf8,
         type: 3}
+      propertyPath: entryClip
+      value: 
+      objectReference: {fileID: 932098516}
+    - target: {fileID: 8217988083745632475, guid: 9ad55f666b12d6c46bdf08233137bbf8,
+        type: 3}
       propertyPath: dislayText
       value: left trigger to swing the Sword!
       objectReference: {fileID: 0}
@@ -1455,6 +1568,10 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4079811531989665683, guid: 9ad55f666b12d6c46bdf08233137bbf8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 932098516}
     - targetCorrespondingSourceObject: {fileID: 1879867621150921995, guid: 9ad55f666b12d6c46bdf08233137bbf8,
         type: 3}
       insertIndex: -1

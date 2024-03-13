@@ -659,6 +659,27 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1496480905}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &932098516
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932098511}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 665f267da889e7542aa9b8a0e455d8de, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &940452473 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4096624456859787653, guid: 44b51cbec69dce74db094b8f56260709,
@@ -1402,6 +1423,11 @@ PrefabInstance:
       objectReference: {fileID: 1137589752}
     - target: {fileID: 8217988083745632475, guid: 56d5982b745d5f44ab6c07137066291d,
         type: 3}
+      propertyPath: entryClip
+      value: 
+      objectReference: {fileID: 932098516}
+    - target: {fileID: 8217988083745632475, guid: 56d5982b745d5f44ab6c07137066291d,
+        type: 3}
       propertyPath: dislayText
       value: left trigger to swing the Sword!
       objectReference: {fileID: 0}
@@ -1413,7 +1439,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4079811531989665683, guid: 56d5982b745d5f44ab6c07137066291d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 932098516}
   m_SourcePrefab: {fileID: 100100000, guid: 56d5982b745d5f44ab6c07137066291d, type: 3}
 --- !u!1 &1568279920
 GameObject:

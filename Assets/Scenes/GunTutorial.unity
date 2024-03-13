@@ -685,6 +685,27 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1496480905}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &932098513
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932098511}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 665f267da889e7542aa9b8a0e455d8de, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &940452473 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4096624456859787653, guid: 7788bab92a4a85940a76b300709dbe97,
@@ -1349,6 +1370,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 515956867}
+    - target: {fileID: 5312215727249941419, guid: 4b5115d29b28cd843a26106266d5cb22,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 319
+      objectReference: {fileID: 0}
     - target: {fileID: 5517193603281948434, guid: 4b5115d29b28cd843a26106266d5cb22,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -1447,6 +1473,11 @@ PrefabInstance:
       objectReference: {fileID: 1137589752}
     - target: {fileID: 8217988083745632475, guid: 4b5115d29b28cd843a26106266d5cb22,
         type: 3}
+      propertyPath: entryClip
+      value: 
+      objectReference: {fileID: 932098513}
+    - target: {fileID: 8217988083745632475, guid: 4b5115d29b28cd843a26106266d5cb22,
+        type: 3}
       propertyPath: dislayText
       value: left trigger to swing the Sword!
       objectReference: {fileID: 0}
@@ -1463,6 +1494,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 796003896}
+    - targetCorrespondingSourceObject: {fileID: 4079811531989665683, guid: 4b5115d29b28cd843a26106266d5cb22,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 932098513}
   m_SourcePrefab: {fileID: 100100000, guid: 4b5115d29b28cd843a26106266d5cb22, type: 3}
 --- !u!1 &1568279920
 GameObject:
