@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour
     public GameObject topTextBox;
     public GameObject bottomTextBox;
     public bool noCards = false;
+    public Counter<GameObject> enemysCount;
+
     public enum GameState
     {
         normalPlay,
@@ -80,7 +82,13 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-        
+        foreach (GameObject enemy in enemysCount.GetItems())
+        {
+            if (enemy != null)
+            {
+                enemiesRemaining++;
+            }
+        }
     }
 
     public void UpdateTarotNumber()
@@ -106,7 +114,7 @@ public class GameManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Deducts currently alive player counter to see if the game ends.
+    /// Deducts currently alive player EnemyCounter to see if the game ends.
     /// </summary>
     public void OnPlayerDeath()
     {
@@ -119,7 +127,7 @@ public class GameManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Adds currently alive player counter.
+    /// Adds currently alive player EnemyCounter.
     /// </summary>
     public void OnPlayerRevive()
     {
@@ -127,7 +135,7 @@ public class GameManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Deducts currently alive enemy counter to see if the level is complete.
+    /// Deducts currently alive enemy EnemyCounter to see if the level is complete.
     /// </summary>
     public void OnEnemyDeath()
     {
@@ -178,7 +186,7 @@ public class GameManager : MonoBehaviour
             yield return new WaitUntil(() => OnEncounterCleared);
             Time.timeScale = 0;
             spawner.encounterCleared = true;
-            yield return new WaitUntil(() => spawner.onScreenCards[0, 0] != null || noCards);
+            yield return new WaitUntil(() => spawner.onScreenCards[0,0] != null || noCards);
             _events.SetSelectedGameObject((GameObject)spawner.onScreenCards[0, 0]);
             noCards = false;
             OnEncounterCleared = false;
@@ -196,6 +204,7 @@ public class GameManager : MonoBehaviour
             {
                 if (player != null)
                 {
+                    player.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
                     player.GetComponent<Player_movement>().enabled = false;
                     player.GetComponent<Animator>().SetBool("wonBattle", true);
                 }

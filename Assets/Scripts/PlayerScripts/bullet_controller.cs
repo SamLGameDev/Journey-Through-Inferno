@@ -20,6 +20,8 @@ public class bullet_controller : MonoBehaviour
     public float rotateSpeed = 200f;
     public static bool original = true;
     private bool hasHoming = false;
+    [SerializeField]
+    private Counter<GameObject> Enemys;
 
     // Start is called before the first frame update
     void Start()
@@ -86,7 +88,7 @@ public class bullet_controller : MonoBehaviour
     private GameObject GetTarget()
     {
         GameObject closest = null;
-        foreach(GameObject enemy in EncounterArea.Enemys)
+        foreach(GameObject enemy in Enemys.GetItems())
         {
             if (enemy != null)
             {

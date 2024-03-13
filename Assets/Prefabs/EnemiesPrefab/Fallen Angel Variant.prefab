@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2158162950555503218}
+  - component: {fileID: 5425823505382445665}
   - component: {fileID: 8593207479546098650}
   - component: {fileID: 4862046785661102292}
-  - component: {fileID: 5425823505382445665}
   - component: {fileID: 1919074620864673920}
   - component: {fileID: 5871096964140578926}
   - component: {fileID: 5117332000427463553}
@@ -42,8 +42,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5425823505382445665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5986526922118790407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8b84871b0250ba438dbe2b84fadcf82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isBoss: 0
+  stats: {fileID: 11400000, guid: ee49df38efdaefc4fa8fcd7bdf5de804, type: 2}
+  OnDamaged: {fileID: 0}
+  invunTimeOnHit: 0
+  currentHealth: 0
+  takenDamage:
+    Variable: {fileID: 0}
+    constantValue: 0
+    useConstant: 1
+  healthBar: {fileID: 0}
+  LowHealth: {fileID: 0}
+  MidHealth: {fileID: 0}
+  HighHealth: {fileID: 0}
+  HealthSprite: {fileID: 0}
+  IsAlive: 0
+  invincible: 0
+  Confused: 0
 --- !u!212 &8593207479546098650
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -123,33 +152,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &5425823505382445665
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5986526922118790407}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8b84871b0250ba438dbe2b84fadcf82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isBoss: 0
-  stats: {fileID: 11400000, guid: ee49df38efdaefc4fa8fcd7bdf5de804, type: 2}
-  OnDamaged: {fileID: 0}
-  invunTimeOnHit: 0
-  takenDamage:
-    Variable: {fileID: 0}
-    constantValue: 0
-    useConstant: 1
-  healthBar: {fileID: 0}
-  LowHealth: {fileID: 0}
-  MidHealth: {fileID: 0}
-  HighHealth: {fileID: 0}
-  HealthSprite: {fileID: 0}
-  IsAlive: 0
-  invincible: 0
 --- !u!114 &1919074620864673920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,7 +352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  uniqueID: 7978028095080118774
+  uniqueID: 4716741842475665825
   updateError: 1
   checkTime: 0.2
 --- !u!114 &-6433223236211202966

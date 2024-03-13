@@ -30,6 +30,7 @@ public class BasicAttributes : ScriptableObject
     public GameEvent Player2Kill;
     public bool confused = false;
     public FloatReference confusionDuration;
+    public Transform originalPosition;
     public virtual void Reset()
     {
         maxHealth = orginalMaxHealth;

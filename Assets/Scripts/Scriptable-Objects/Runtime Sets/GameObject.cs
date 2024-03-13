@@ -5,11 +5,5 @@ using UnityEngine;
 [CreateAssetMenu]
 public class GameObjectCounter : Counter<GameObject> 
 {
-
-
-    public override void Remove(GameObject t)
-    {
-        base.Remove(t);
-    }
  
 }

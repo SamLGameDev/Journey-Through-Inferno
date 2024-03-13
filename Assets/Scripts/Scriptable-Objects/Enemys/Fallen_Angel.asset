@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fallen_Angel
   m_EditorClassIdentifier: 
   damage: 4
-  maxHealth: 20
+  maxHealth: 1
   cardDropChance: 100
   OfTypecounter: {fileID: 11400000, guid: e4a5f4694b79fe4488542d7385a2650f, type: 2}
   droppableCards:
@@ -45,12 +45,12 @@ MonoBehaviour:
   orginalMaxHealth: 30
   Player1Kill: {fileID: 11400000, guid: f4d8606fee010ad47814106632555ae5, type: 2}
   Player2Kill: {fileID: 11400000, guid: 918b57018f5517146bb3c6d244ee7a78, type: 2}
-  currentHealth: 11
   confused: 0
   confusionDuration:
     Variable: {fileID: 11400000, guid: 8ec09852bc00a984595b4efbfaa24186, type: 2}
     constantValue: 0
     useConstant: 0
+  originalPosition: {fileID: 0}
   chargeCooldown: 5
   meeleRange: 3
   chargeFarAway: 3

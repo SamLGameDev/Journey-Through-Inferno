@@ -39,17 +39,23 @@ public class EntityHealthBehaviour : MonoBehaviour
 
     //Gets the image in the UI that will be changed
     public Image HealthSprite;
-
+    [SerializeField]
+    private GameEvent Event;
     //A boolean for, surprisingly, if theyre alive
     public bool IsAlive;
     public bool invincible;
     public bool Confused = false;
-
+    public bool onlyVirgil;
+    public bool onlyDante;
+    private void OnEnable()
+    {
+        stats.OfTypecounter.Add(gameObject);
+        stats.originalPosition = transform;
+    }
     private void Start()
     {
         player1Alive = new object[] { true };
         player2Alive = new object[] { true };
-        stats.OfTypecounter.Add(gameObject);
         object[] Hermit = HasCard(TarotCards.possibleModifiers.reducedBossHealth);
         if (isBoss && (bool)Hermit[0]) 
         {
@@ -92,7 +98,7 @@ public class EntityHealthBehaviour : MonoBehaviour
 
             AIDestinationSetter destinationSetter = GetComponent<AIDestinationSetter>();
             destinationSetter.isConfused = true;
-            destinationSetter.targets = stats.OfTypecounter.Items;
+            destinationSetter.targets = stats.OfTypecounter.GetItems();
         }
     }
     private IEnumerator ConfusionDuration()
@@ -133,6 +139,14 @@ public class EntityHealthBehaviour : MonoBehaviour
     /// <param name="damageAmount">Amount of damage to apply</param>
     public void ApplyDamage(int damageAmount, GameObject damagerDealer = null)
     {
+        if (damagerDealer != null && damagerDealer.name == "Player 1" && onlyVirgil)
+        {
+            return;
+        }
+        else if (damagerDealer != null && damagerDealer.name == "Player 2" && onlyDante)
+        {
+            return;
+        }
         if (damageInvulnerable || invincible)
         {
             print("Damage blocked due to being invulnerable. :)");
@@ -266,8 +280,17 @@ public class EntityHealthBehaviour : MonoBehaviour
         }
 
     }
+    private void OnDisable()
+    {
+        stats.OfTypecounter.Remove(gameObject);
+    }
     private void EntityDeath(GameObject damageDealer)
     {
+        try
+        {
+            Event.Raise();
+        }
+        catch { }
         if (gameObject.CompareTag("Player"))
         {
             if (stats.extraLives > 0)
@@ -339,7 +362,7 @@ public class EntityHealthBehaviour : MonoBehaviour
         {
             stats.Player1Kill.Raise();
         }
-        stats.OfTypecounter.Remove(gameObject);
+
         if (gameObject.CompareTag("Enemy"))
         {
             GameManager.instance.OnEnemyDeath();
