@@ -12037,6 +12037,42 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &804706257 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 568946724292528571, guid: 4fb305f8c16ec094c923d892d9a84cdf,
+    type: 3}
+  m_PrefabInstance: {fileID: 3976712803674725268}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &804706259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804706257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 696c1cbb9627113448755c8d07ede3ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: 'Use the BUTTON to navigate. '
+  assets: {fileID: 11400000, guid: 4433f7bbe65090046a2429e4bbbc18f7, type: 2}
+  xboxButtonName:
+  - DPad
+  ps4ButtonName: []
+  text: {fileID: 804706260}
+--- !u!114 &804706260 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6704815875118706059, guid: 4fb305f8c16ec094c923d892d9a84cdf,
+    type: 3}
+  m_PrefabInstance: {fileID: 3976712803674725268}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804706257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &813111171
 GameObject:
   m_ObjectHideFlags: 0
@@ -27076,7 +27112,7 @@ PrefabInstance:
     - target: {fileID: 1600547005513823415, guid: c59d0046edde7e342bbad33d6fdd1f79,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2880178541553116232, guid: c59d0046edde7e342bbad33d6fdd1f79,
         type: 3}
@@ -27612,6 +27648,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6704815875118706059, guid: 4fb305f8c16ec094c923d892d9a84cdf,
+        type: 3}
+      propertyPath: m_text
+      value: 'Use the BUTTON to navigate. '
+      objectReference: {fileID: 0}
     - target: {fileID: 7755749307358901245, guid: 4fb305f8c16ec094c923d892d9a84cdf,
         type: 3}
       propertyPath: m_Name
@@ -27625,7 +27666,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 568946724292528571, guid: 4fb305f8c16ec094c923d892d9a84cdf,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 804706259}
   m_SourcePrefab: {fileID: 100100000, guid: 4fb305f8c16ec094c923d892d9a84cdf, type: 3}
 --- !u!1001 &4160995341029023200
 PrefabInstance:

@@ -641,6 +641,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 132bc593c70e70c4682cd676c76427a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &796003895 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3338108468726533804, guid: 4b5115d29b28cd843a26106266d5cb22,
+    type: 3}
+  m_PrefabInstance: {fileID: 1496480905}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &796003896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796003895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 696c1cbb9627113448755c8d07ede3ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: BUTTON to Shoot Gun! B2 to Aim. B3 to Dodge.
+  assets: {fileID: 11400000, guid: 4433f7bbe65090046a2429e4bbbc18f7, type: 2}
+  xboxButtonName:
+  - LTrigger
+  - RJoyStick
+  - BButton
+  ps4ButtonName: []
+  text: {fileID: 1137589752}
 --- !u!114 &907245735 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4921072880562162752, guid: 8c0639c9d6b0bd04ca2f741ade763cbc,
@@ -1323,6 +1349,21 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 515956867}
+    - target: {fileID: 5517193603281948434, guid: 4b5115d29b28cd843a26106266d5cb22,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.875
+      objectReference: {fileID: 0}
+    - target: {fileID: 5517193603281948434, guid: 4b5115d29b28cd843a26106266d5cb22,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8875
+      objectReference: {fileID: 0}
+    - target: {fileID: 5517193603281948434, guid: 4b5115d29b28cd843a26106266d5cb22,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5593723825048520313, guid: 4b5115d29b28cd843a26106266d5cb22,
         type: 3}
       propertyPath: m_RootOrder
@@ -1417,7 +1458,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3338108468726533804, guid: 4b5115d29b28cd843a26106266d5cb22,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 796003896}
   m_SourcePrefab: {fileID: 100100000, guid: 4b5115d29b28cd843a26106266d5cb22, type: 3}
 --- !u!1 &1568279920
 GameObject:

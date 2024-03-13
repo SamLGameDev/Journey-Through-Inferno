@@ -7,6 +7,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.DualShock;
 using UnityEngine.InputSystem.XInput;
 
 public class GameManager : MonoBehaviour
@@ -30,6 +31,7 @@ public class GameManager : MonoBehaviour
     public GameObject bottomTextBox;
     public bool noCards = false;
     public Counter<GameObject> enemysCount;
+    
 
     public enum GameState
     {
@@ -61,7 +63,7 @@ public class GameManager : MonoBehaviour
             //makes it so it doesnt automatically switch control schemes
             Debug.Log(InputSystem.devices.OfType<Gamepad>().First() + " first");
             p1 = PlayerInput.Instantiate(InputManager, 0, controlScheme: "Xbox control scheme", -1, InputSystem.devices.OfType<Gamepad>().First());
-            p1.neverAutoSwitchControlSchemes = true;
+            //p1.neverAutoSwitchControlSchemes = true;
             playerstats.First().gamepad = InputSystem.devices.OfType<Gamepad>().First();
         }
         //if there is more than one gamepad
@@ -70,8 +72,9 @@ public class GameManager : MonoBehaviour
             //sets the second controllers scheme to Xbox control scheme. this is doesnt chnage like the first controller.
             //gets the next controller in the list
             Debug.Log(InputSystem.devices.OfType<Gamepad>().ElementAt(1) + " second");
+            if (InputSystem.devices.OfType<DualShockGamepad>().Count() >= 2) { TutorialTextManger.PS4 = true; }
             p2 = PlayerInput.Instantiate(InputManager, 1, controlScheme: "Xbox control scheme", -1, InputSystem.devices.OfType<Gamepad>().ElementAt(1));
-            p2.neverAutoSwitchControlSchemes = true;
+            //p2.neverAutoSwitchControlSchemes = true;
             playerstats.ElementAt(1).gamepad = InputSystem.devices.OfType<Gamepad>().ElementAt(1);
             return;
         }
