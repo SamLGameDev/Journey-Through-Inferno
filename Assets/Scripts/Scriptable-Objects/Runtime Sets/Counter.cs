@@ -8,6 +8,7 @@ public abstract class Counter<T> : ScriptableObject
     private readonly List<T> Items = new List<T>();
     public void Add(T t)
     {
+
         if (!Items.Contains(t)) { Items.Add(t); }
     }
     public virtual void Remove(T t)

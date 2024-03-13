@@ -1,5 +1,6 @@
 using Fungus;
 using MoonSharp.Interpreter;
+using Pathfinding;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,15 +14,29 @@ public class TutorialEnemy : MonoBehaviour
     
     [SerializeField]
     private GameObjectCounter EnemyCounter;
-    private List<Vector2> Enemys = new List<Vector2>();
     [SerializeField]
     private GameObject prefab;
+    private List<GameObject> EnemyClones = new List<GameObject>();
     private void Start()
     {
-        foreach(GameObject t in EnemyCounter.GetItems())
+        List<GameObject> list = new List<GameObject>(EnemyCounter.GetItems());
+        foreach(GameObject t in list)
         {
-            Enemys.Add(t.transform.position);
+            Debug.Log(t.name + "Start");
+            GameObject clone = Instantiate(t);
+            EnemyCounter.Remove(clone);
+            EnemyClones.Add(clone);
+            clone.transform.position = t.transform.position;
+            clone.SetActive(false);
+
+
         }
+    }
+    private void EnablerAStar(bool setter, GameObject entity)
+    {
+        entity.GetComponent<Seeker>().enabled = setter;
+        entity.GetComponent<AIDestinationSetter>().enabled = setter;
+        entity.GetComponent<AIPath>().enabled = setter;
     }
     public void onDeath()
     {
@@ -29,9 +44,21 @@ public class TutorialEnemy : MonoBehaviour
         foreach (GameObject t in EnemyCounter.GetItems())
         {
             Debug.Log("here");
-            Instantiate(t, Enemys.ElementAt(i), Quaternion.identity);
+            Debug.Log(EnemyCounter.GetListSize());
+            //Instantiate(t, Enemys.ElementAt(i), Quaternion.identity);
             i++;
         }
+        if (i == 0)
+        {
+            foreach(GameObject EnemyClone in EnemyClones)
+            {
+                GameObject clone =  Instantiate(EnemyClone, EnemyClone.transform.position, Quaternion.identity);
+                clone.SetActive(true);
+                EnablerAStar(true, clone);
+
+            }
+        }
+        Debug.Log("BEingCalled");
 
     }
 

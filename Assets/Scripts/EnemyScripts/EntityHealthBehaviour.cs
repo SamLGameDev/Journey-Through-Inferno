@@ -286,11 +286,7 @@ public class EntityHealthBehaviour : MonoBehaviour
     }
     private void EntityDeath(GameObject damageDealer)
     {
-        try
-        {
-            Event.Raise();
-        }
-        catch { }
+
         if (gameObject.CompareTag("Player"))
         {
             if (stats.extraLives > 0)
@@ -372,8 +368,13 @@ public class EntityHealthBehaviour : MonoBehaviour
             if (damageDealer.GetComponent<Player_movement>() != null && HasJudgement(damageDealer)) EnemyExplodeOnDeath(damageDealer, deathPosition);
 
         }
+        try
+        {
+            Event.Raise();
+        }
+        catch { }
 
-        if(isBoss)
+        if (isBoss)
         {
             GameManager.instance.UpdateGameState(GameManager.GameState.EncounterCleared);
         }
