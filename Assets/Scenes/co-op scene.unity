@@ -26699,6 +26699,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1336663984}
+  Enemys: {fileID: 11400000, guid: e4a5f4694b79fe4488542d7385a2650f, type: 2}
+  dislayText: 
+  Canvas: {fileID: 0}
+  textbox: {fileID: 0}
+  box: {fileID: 0}
 --- !u!1 &2102955980
 GameObject:
   m_ObjectHideFlags: 0
@@ -27710,6 +27715,12 @@ PrefabInstance:
       propertyPath: topTextBox
       value: 
       objectReference: {fileID: 41365959}
+    - target: {fileID: 4096624456859787653, guid: 9b9bbf6b8c1105448bd7848291b322be,
+        type: 3}
+      propertyPath: enemysCount
+      value: 
+      objectReference: {fileID: 11400000, guid: e4a5f4694b79fe4488542d7385a2650f,
+        type: 2}
     - target: {fileID: 4096624456859787653, guid: 9b9bbf6b8c1105448bd7848291b322be,
         type: 3}
       propertyPath: _clearPortal

@@ -29,12 +29,23 @@ public class EncounterArea : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && !hasTriggered)
+        if (collision.CompareTag("Player") && !hasTriggered && Canvas != null)
         {
             Canvas.SetActive(true);
             hasTriggered = true;
             GameManager.instance._events.GetComponent<EventSystem>().SetSelectedGameObject(box);
             Time.timeScale = 0;
+        }
+        else if (collision.CompareTag("Player") && !hasTriggered)
+        {
+            foreach (GameObject enemy in Enemys.GetItems())
+            {
+                if (enemy == null || enemy.GetComponent<EntityHealthBehaviour>().isBoss)
+                {
+                    continue;
+                }
+                EnablerAStar(true, enemy);
+            }
         }
 
 
