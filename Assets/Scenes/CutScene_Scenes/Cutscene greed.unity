@@ -1383,10 +1383,8 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks:
-  - {fileID: 1732189750}
-  selectedCommands:
-  - {fileID: 1732189766}
+  selectedBlocks: []
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -1400,7 +1398,7 @@ MonoBehaviour:
   luaBindingName: flowchart
 --- !u!114 &1732189749
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1439,8 +1437,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 65.73418
-    y: 68.73418
+    x: 29.025307
+    y: 49.746826
     width: 75.31645
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -1464,7 +1462,7 @@ MonoBehaviour:
   suppressAllAutoSelections: 0
 --- !u!114 &1732189751
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1491,7 +1489,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &1732189752
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1518,7 +1516,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &1732189753
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1545,7 +1543,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &1732189754
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1572,7 +1570,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &1732189755
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1599,7 +1597,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &1732189756
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1626,7 +1624,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &1732189757
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1653,7 +1651,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &1732189758
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1680,7 +1678,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &1732189759
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1722,7 +1720,7 @@ MonoBehaviour:
   waitForFrames: 1
 --- !u!114 &1732189761
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1749,7 +1747,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &1732189762
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1776,7 +1774,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &1732189763
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1816,8 +1814,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 347
-    y: 152
+    x: 178.64578
+    y: 133.01265
     width: 81.392395
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -1848,7 +1846,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1732189766
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
