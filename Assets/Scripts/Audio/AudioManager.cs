@@ -15,6 +15,7 @@ public class AudioManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(transform.root);
         }
         else
         {
@@ -64,6 +65,11 @@ public class AudioManager : MonoBehaviour
         {
             Debug.LogWarning($"Missing sound {name}!");
             return;
+        }
+
+        if (s.clips.Length == 0)
+        {
+            Debug.LogWarning($"Missing clip for {name} sound!");
         }
 
         // Check for additional clips for the same sound, and if any randomise the choice.
