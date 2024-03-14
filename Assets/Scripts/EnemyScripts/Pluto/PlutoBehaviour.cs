@@ -1,3 +1,4 @@
+using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
@@ -9,11 +10,19 @@ public class Pluto_behaviour : MonoBehaviour
     private int[,] places = { { -17, -16, -7, 7, 20, 18 }, { 13, -3, -21, -7, -3, 13 } };
     public float moveInterval = 10f;
     private float moveTimer;
+
+    private float cerberusCooldown = 8f;
+    private float cerberusTimer;
     private bool hasUsedClone = false;
+
+    private Transform player;
 
     void Start()
     {
         moveTimer = 0f;
+        cerberusTimer = 0f;
+        player = GetComponent<AIDestinationSetter>().target;
+        GetComponent<AIPath>().endReachedDistance = stats.cerberusRange;
     }
 
     private void MovePlaces()
@@ -48,6 +57,11 @@ public class Pluto_behaviour : MonoBehaviour
         
     }
 
+    private void SendCerberus()
+    {
+        
+    }
+
     void Clone()
     {
         hasUsedClone = true;
@@ -66,9 +80,18 @@ public class Pluto_behaviour : MonoBehaviour
             moveTimer -= moveInterval;
         }
 
+        cerberusTimer += Time.deltaTime;
+        if (cerberusTimer >= cerberusCooldown)
+        {
+            SendCerberus();
+            cerberusTimer -= cerberusCooldown;
+        }
+
         if ((GetComponent<EntityHealthBehaviour>().currentHealth <= 20) && (hasUsedClone == false))
         {
             Clone();
         }
+
+
     }
 }
