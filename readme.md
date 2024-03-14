@@ -5,3 +5,5 @@ Journey through inferno is a rogue-like dungeon crawler based on one third of th
 ## Licenses
 
 Free Asset Sounds using Extension Asset License. Found at https://assetstore.unity.com/packages/audio/sound-fx/rpg-essentials-sound-effects-free-227708 (accessed 12/3/24)
+
+Royalty Free 8-Bit Background Music, retro Plaforming by David Fesliyan. Using Royalty Free License. Found at  https://www.fesliyanstudios.com/royalty-free-music/downloads-c/8-bit-music/6 (accessed 14/3/24)
