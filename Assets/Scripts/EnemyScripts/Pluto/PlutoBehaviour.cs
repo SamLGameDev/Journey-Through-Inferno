@@ -32,8 +32,16 @@ public class Pluto_behaviour : MonoBehaviour
             rand3 = Random.Range(0, 6);
         }
 
-        transform.GetChild(0).position = new Vector3(places[0, rand2], places[1, rand2], 0);
-        transform.GetChild(1).position = new Vector3(places[0, rand3], places[1, rand3], 0);
+        if (transform.GetChild(0) != null)
+        {
+            transform.GetChild(0).position = new Vector3(places[0, rand2], places[1, rand2], 0);
+        }
+        
+        if (transform.GetChild(1) != null)
+        {
+            transform.GetChild(1).position = new Vector3(places[0, rand3], places[1, rand3], 0);
+        }
+        
     }
 
     void Clone()
