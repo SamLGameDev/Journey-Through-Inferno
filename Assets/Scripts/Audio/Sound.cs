@@ -15,4 +15,7 @@ public class Sound
 
     [HideInInspector]
     public AudioSource source;
+
+    [HideInInspector]
+    public AudioClipSelector clipSelector;
 }

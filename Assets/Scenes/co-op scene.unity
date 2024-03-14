@@ -15871,10 +15871,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: 
-    clips: []
-    volume: 0
-    pitch: 0
+  - name: Test_Sounds
+    clips:
+    - {fileID: 8300000, guid: e15cd033e8242884fa44bbbffb3635e4, type: 3}
+    - {fileID: 8300000, guid: 61bed2868b732754d8642fd8cf3ea4f1, type: 3}
+    - {fileID: 8300000, guid: 023ea3ddeaa8dd146b7633a0800e5a0e, type: 3}
+    volume: 1
+    pitch: 1
+    looped: 0
     source: {fileID: 0}
 --- !u!4 &1157078696
 Transform:
