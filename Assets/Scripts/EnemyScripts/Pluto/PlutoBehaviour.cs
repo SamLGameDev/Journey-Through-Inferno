@@ -19,28 +19,32 @@ public class Pluto_behaviour : MonoBehaviour
     private void MovePlaces()
     {
         int rand1 = Random.Range(0, 6);
-        transform.position = new Vector3(places[0, rand1], places[1, rand1], 0);
         
         int rand2= Random.Range(0, 6);
         while (rand1 == rand2)
         {
             rand2 = Random.Range(0, 6);
-        }
+        } 
+        
         int rand3 = Random.Range(0, 6);
         while ((rand1 == rand3) || (rand2 == rand3))
         {
             rand3 = Random.Range(0, 6);
         }
-
-        if (transform.GetChild(0) != null)
-        {
+        
+        transform.position = new Vector3(places[0, rand1], places[1, rand1], 0);
+        
+        try
+        {            
             transform.GetChild(0).position = new Vector3(places[0, rand2], places[1, rand2], 0);
         }
+        catch{ }
         
-        if (transform.GetChild(1) != null)
+        try
         {
             transform.GetChild(1).position = new Vector3(places[0, rand3], places[1, rand3], 0);
         }
+        catch{ }
         
     }
 
@@ -65,12 +69,6 @@ public class Pluto_behaviour : MonoBehaviour
         if ((GetComponent<EntityHealthBehaviour>().currentHealth <= 20) && (hasUsedClone == false))
         {
             Clone();
-        }
-
-        if (GetComponent<EntityHealthBehaviour>().currentHealth <=0)
-        {
-            transform.GetChild(0).gameObject.SetActive(false);
-            transform.GetChild(1).gameObject.SetActive(false);
         }
     }
 }
