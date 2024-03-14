@@ -7,6 +7,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.DualShock;
 using UnityEngine.InputSystem.XInput;
 
 public class GameManager : MonoBehaviour
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour
     public int enemiesRemaining;
     public CardSpawner spawner;
     public List<GameObject> playerInstances;
+    public List<Player> playerstats;
     public GameObject InputManager;
     public PlayerInput p1;
     public PlayerInput p2;
@@ -28,6 +30,9 @@ public class GameManager : MonoBehaviour
     public GameObject topTextBox;
     public GameObject bottomTextBox;
     public bool noCards = false;
+    public Counter<GameObject> enemysCount;
+    
+
     public enum GameState
     {
         normalPlay,
@@ -48,10 +53,6 @@ public class GameManager : MonoBehaviour
             instance = this;
 
         }
-
-    }
-    private void Start()
-    {
         StartCoroutine(EncounterCleared());
         StartCoroutine(VictoryAnimations());
         // if their are gamepads connected
@@ -62,23 +63,35 @@ public class GameManager : MonoBehaviour
             //makes it so it doesnt automatically switch control schemes
             Debug.Log(InputSystem.devices.OfType<Gamepad>().First() + " first");
             p1 = PlayerInput.Instantiate(InputManager, 0, controlScheme: "Xbox control scheme", -1, InputSystem.devices.OfType<Gamepad>().First());
-            p1.neverAutoSwitchControlSchemes = true;
+            //p1.neverAutoSwitchControlSchemes = true;
+            playerstats.First().gamepad = InputSystem.devices.OfType<Gamepad>().First();
         }
         //if there is more than one gamepad
-        if (InputSystem.devices.OfType<Gamepad>().Count() >= 2 )
+        if (InputSystem.devices.OfType<Gamepad>().Count() >= 2)
         {
             //sets the second controllers scheme to Xbox control scheme. this is doesnt chnage like the first controller.
             //gets the next controller in the list
             Debug.Log(InputSystem.devices.OfType<Gamepad>().ElementAt(1) + " second");
+            if (InputSystem.devices.OfType<DualShockGamepad>().Count() >= 2) { TutorialTextManger.PS4 = true; }
             p2 = PlayerInput.Instantiate(InputManager, 1, controlScheme: "Xbox control scheme", -1, InputSystem.devices.OfType<Gamepad>().ElementAt(1));
-            p2.neverAutoSwitchControlSchemes = true;
-            Debug.Log(p2.currentControlScheme);
+            //p2.neverAutoSwitchControlSchemes = true;
+            playerstats.ElementAt(1).gamepad = InputSystem.devices.OfType<Gamepad>().ElementAt(1);
             return;
         }
         //if there is no second controller, sets the second player to be controler by keyboard and mouse
         p2 = PlayerInput.Instantiate(InputManager, 1, controlScheme: "Keyboard", -1, InputSystem.devices.OfType<Keyboard>().First(), InputSystem.devices.OfType<UnityEngine.InputSystem.Mouse>().First());
         p2.neverAutoSwitchControlSchemes = true;
         p2.SwitchCurrentActionMap("Keyboard&Mouse");
+    }
+    private void Start()
+    {
+        foreach (GameObject enemy in enemysCount.GetItems())
+        {
+            if (enemy != null)
+            {
+                enemiesRemaining++;
+            }
+        }
     }
 
     public void UpdateTarotNumber()
@@ -104,7 +117,7 @@ public class GameManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Deducts currently alive player counter to see if the game ends.
+    /// Deducts currently alive player EnemyCounter to see if the game ends.
     /// </summary>
     public void OnPlayerDeath()
     {
@@ -117,7 +130,7 @@ public class GameManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Adds currently alive player counter.
+    /// Adds currently alive player EnemyCounter.
     /// </summary>
     public void OnPlayerRevive()
     {
@@ -125,7 +138,7 @@ public class GameManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Deducts currently alive enemy counter to see if the level is complete.
+    /// Deducts currently alive enemy EnemyCounter to see if the level is complete.
     /// </summary>
     public void OnEnemyDeath()
     {
@@ -176,7 +189,7 @@ public class GameManager : MonoBehaviour
             yield return new WaitUntil(() => OnEncounterCleared);
             Time.timeScale = 0;
             spawner.encounterCleared = true;
-            yield return new WaitUntil(() => spawner.onScreenCards[0, 0] != null || noCards);
+            yield return new WaitUntil(() => spawner.onScreenCards[0,0] != null || noCards);
             _events.SetSelectedGameObject((GameObject)spawner.onScreenCards[0, 0]);
             noCards = false;
             OnEncounterCleared = false;
@@ -194,6 +207,7 @@ public class GameManager : MonoBehaviour
             {
                 if (player != null)
                 {
+                    player.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
                     player.GetComponent<Player_movement>().enabled = false;
                     player.GetComponent<Animator>().SetBool("wonBattle", true);
                 }
@@ -251,13 +265,20 @@ public class GameManager : MonoBehaviour
 #if (UNITY_EDITOR)
         if (EditorApplication.isPlaying && !EditorApplication.isPlayingOrWillChangePlaymode)
         {
-            foreach(GameObject player in playerInstances)
+            try
             {
-                player.GetComponent<Player_movement>().stats.Reset();
+                foreach (GameObject player in playerInstances)
+                {
+                    player.GetComponent<Player_movement>().stats.Reset();
+                }
+                foreach (GameObject boss in bossInstances)
+                {
+                    boss.GetComponent<EntityHealthBehaviour>().stats.Reset();
+                }
             }
-            foreach(GameObject boss in bossInstances)
+            catch
             {
-                boss.GetComponent<EntityHealthBehaviour>().stats.Reset();
+                return;
             }
         }
 #endif

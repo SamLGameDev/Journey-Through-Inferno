@@ -1,35 +1,49 @@
+using Fungus;
 using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class EncounterArea : MonoBehaviour
 {
     [SerializeField] private GameManager gameManager;
-    public static List<GameObject> Enemys;
+    public Counter<GameObject> Enemys;
+    public string dislayText;
+    [SerializeField]
+    private GameObject Canvas;
+    [SerializeField]
+    private TextMeshProUGUI textbox;
+    [SerializeField]
+    private GameObject box;
+    private bool hasTriggered = false;
+    [SerializeField] private Animator entryClip;
     // Start is called before the first frame update
     void Start()
     {
-       Enemys = new List<GameObject>();
+        foreach (GameObject enemy in Enemys.GetItems())
+        {
+            if (enemy == null) continue;
+            EnablerAStar(false, enemy);
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        foreach(GameObject enem in Enemys)
+        if (collision.CompareTag("Player") && !hasTriggered && Canvas != null)
         {
-            if (enem == null) continue;
-            if (enem.name == collision.name) return;
+            Canvas.SetActive(true);
+            hasTriggered = true;
+            GameManager.instance._events.GetComponent<EventSystem>().SetSelectedGameObject(box);
+            Time.timeScale = 0;
+            entryClip.Rebind();
+            entryClip.Update(0f);
+            entryClip.SetBool("Enabled", true);
+            entryClip.Play("TextBoxGrow");
         }
-        if (collision.CompareTag("Enemy"))
+        else if (collision.CompareTag("Player") && !hasTriggered)
         {
-            Enemys.Add(collision.gameObject);
-            GameManager.instance.enemiesRemaining++;
-            if (collision.GetComponent<EntityHealthBehaviour>().isBoss) return;
-            EnablerAStar(false, collision.gameObject);
-            return;
-        }
-        if (collision.CompareTag("Player"))
-        {
-            foreach(GameObject enemy in Enemys)
+            foreach (GameObject enemy in Enemys.GetItems())
             {
                 if (enemy == null || enemy.GetComponent<EntityHealthBehaviour>().isBoss)
                 {
@@ -38,6 +52,22 @@ public class EncounterArea : MonoBehaviour
                 EnablerAStar(true, enemy);
             }
         }
+
+
+    }
+    public void ActivateEnemy()
+    {
+        foreach (GameObject enemy in Enemys.GetItems())
+        {
+            if (enemy == null || enemy.GetComponent<EntityHealthBehaviour>().isBoss)
+            {
+                continue;
+            }
+            EnablerAStar(true, enemy);
+        }
+        Canvas.SetActive(false);
+        Time.timeScale = 1;
+        
     }
     private void EnablerAStar(bool setter, GameObject entity)
     {

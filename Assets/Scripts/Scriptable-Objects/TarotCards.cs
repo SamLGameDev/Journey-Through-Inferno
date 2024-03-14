@@ -28,15 +28,16 @@ public class TarotCards :ScriptableObject
         extraLife,
         IncreasedDamageLowerHealth,
         criticalHit,
-        damageReduction,
+        SharedLife,
         increaseMaxHealth,
-        armour,
+        HealthRegen,
         increaseProjectileSize,
         SpreadShot,
         reducedBossHealth,
         Homing,
         invisibility,
-        cooldownReduction
+        cooldownReduction,
+        Confusion
     }
     public void ApplyEffect(GameObject p)
     {
@@ -73,14 +74,13 @@ public class TarotCards :ScriptableObject
             case possibleModifiers.criticalHit:
                 stats.criticalHitChance.value = effectValue;
                 break;
-            case possibleModifiers.damageReduction:
-                stats.damageReduction = effectValue;
+            case possibleModifiers.SharedLife:
                 break;
             case possibleModifiers.increaseMaxHealth:
                 stats.maxHealth += effectValue;
                 break;
-            case possibleModifiers.armour:
-                stats.armour = effectValue;
+            case possibleModifiers.HealthRegen:
+                stats.RegenAmount = effectValue;
                 break;
             case possibleModifiers.increaseProjectileSize:
                 stats.projectilesize = new Vector3(effectValue, effectValue, 0);

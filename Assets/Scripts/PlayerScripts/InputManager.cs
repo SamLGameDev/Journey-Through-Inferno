@@ -11,9 +11,11 @@ public class InputManager : MonoBehaviour
 {
     private PlayerInput playerInput;
     private Player_movement movement;
+    private float confusionCooldown;
     // Start is called before the first frame update
     void Start()
     {
+        confusionCooldown = -10;
         //Gets all the playermovement scripts, compares it's index value to the PlayerInput's index, if they match, get that playermovement script
         playerInput = GetComponent<PlayerInput>();
         var players = FindObjectsOfType<Player_movement>();
@@ -69,15 +71,20 @@ public class InputManager : MonoBehaviour
     {
         if (movement != null && context.phase == InputActionPhase.Performed) 
         {
-            movement.Player_Shooting((Gamepad)context.control.device);
+            try
+            {
+                movement.Player_Shooting((Gamepad)context.control.device);
+            }
+            catch { movement.Player_Shooting(); }
+
         }
 
     }
-    private bool HasHighPriestess()
+    private bool HasCard(TarotCards.possibleModifiers modifier)
     {
         foreach(TarotCards card in movement.stats.tarotCards)
         {
-            if (card.possibleMods == TarotCards.possibleModifiers.invisibility)
+            if (card.possibleMods == modifier)
             {
                 return true;
             }
@@ -86,7 +93,7 @@ public class InputManager : MonoBehaviour
     }
     public void OnInvisible(CallbackContext context)
     {
-        if (movement != null && context.started && HasHighPriestess())
+        if (movement != null && context.started && HasCard(TarotCards.possibleModifiers.invisibility))
         {
             movement.Invisible();
         }
@@ -95,5 +102,13 @@ public class InputManager : MonoBehaviour
     public void OnPause()
     {
         movement.OnPauseMenu(true);
+    }
+    public void LoadConfusionBullet()
+    {
+        if (HasCard(TarotCards.possibleModifiers.Confusion) && Time.time - movement.stats.ConfusionCooldown > confusionCooldown)
+        {
+            confusionCooldown = Time.time;
+            movement.confusionLoaded = true;
+        }
     }
 }

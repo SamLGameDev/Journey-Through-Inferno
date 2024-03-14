@@ -12,11 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51772878440faa84eb4dbd335c250c54, type: 3}
   m_Name: EnemyCounter
   m_EditorClassIdentifier: 
-  Items:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  Event: {fileID: 11400000, guid: f4d8606fee010ad47814106632555ae5, type: 2}
+  Items: []

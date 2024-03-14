@@ -67,6 +67,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "LoadConfusion",
+                    "type": "Button",
+                    "id": "363919b5-6651-4dae-91d4-95c76a3a1e78",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -183,11 +192,22 @@
                 {
                     "name": "",
                     "id": "110948f7-d3e7-4590-b921-7623fc8937e0",
-                    "path": "<Gamepad>/leftStickPress",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "Xbox control scheme;SecondController",
                     "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "08e3ff90-d78c-4d77-9b27-ca8298b565cf",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Xbox control scheme;SecondController",
+                    "action": "LoadConfusion",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

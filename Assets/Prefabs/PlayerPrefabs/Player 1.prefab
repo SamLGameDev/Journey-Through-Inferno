@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 5962747152569457095}
   - component: {fileID: 729681642113407470}
   - component: {fileID: 8256488800317661993}
+  - component: {fileID: 4491222405968353288}
   m_Layer: 7
   m_Name: Player 1
   m_TagString: Player
@@ -168,7 +169,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 1302420053, guid: 3a33f460b3a6d5c4a978007326c8e2ac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -192,7 +193,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22684f22776a946479069cd07ce4c6d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _eventSystem: {fileID: 0}
   _resumeButton: {fileID: 0}
   dodash: 0
   playerIndex: 0
@@ -208,6 +208,10 @@ MonoBehaviour:
   stats: {fileID: 11400000, guid: c53c78a8f908aff40b06667ff5c1036a, type: 2}
   sword: {fileID: 8427460489820360778}
   AimingDirection: {x: 0, y: 0}
+  takenDamage:
+    Variable: {fileID: 11400000, guid: 99906eb09e330b64896702a685f48563, type: 2}
+    constantValue: 0
+    useConstant: 0
 --- !u!50 &680247597080537638
 Rigidbody2D:
   serializedVersion: 4
@@ -250,7 +254,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4096
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -294,14 +298,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isBoss: 0
   stats: {fileID: 11400000, guid: c53c78a8f908aff40b06667ff5c1036a, type: 2}
+  OnDamaged: {fileID: 0}
   invunTimeOnHit: 0
   entityCurrentHealth: 0
+  takenDamage:
+    Variable: {fileID: 11400000, guid: 99906eb09e330b64896702a685f48563, type: 2}
+    constantValue: 0
+    useConstant: 0
   healthBar: {fileID: 0}
   LowHealth: {fileID: 0}
   MidHealth: {fileID: 0}
   HighHealth: {fileID: 0}
   HealthSprite: {fileID: 0}
   IsAlive: 0
+  invincible: 0
 --- !u!114 &4637373173653990572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -375,6 +385,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cards: []
+--- !u!61 &4491222405968353288
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2340573089818477876}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 4096
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.07508454, y: -0.85596764}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.94, y: 2.04}
+    newSize: {x: 1.1, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.549558, y: 0.32806462}
+  m_EdgeRadius: 0
 --- !u!1 &3894066636726236174
 GameObject:
   m_ObjectHideFlags: 0

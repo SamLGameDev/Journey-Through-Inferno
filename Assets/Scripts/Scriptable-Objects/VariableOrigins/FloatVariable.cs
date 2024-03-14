@@ -18,6 +18,6 @@ public class FloatReference
     public float value
     {
         get { return useConstant ? constantValue : Variable.value; }
-        set { Variable.value = value; }
+        set { Variable.value = value; constantValue = value; }
     }
 }

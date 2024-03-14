@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Empress
   m_EditorClassIdentifier: 
   cardImage: {fileID: 21300000, guid: 3cb7c35a750699348a04840d1ae1be5e, type: 3}
-  effectValue: 20
+  effectValue: 2
   description: 'Mother to the Empire and its heirs, she is a good parent to all.
 
     _Effect:
-    Grants armour that is depleted before health'
+    Grants Health Regeneration over time.'
   specialCardEffectEnabled: 0
   RangeForAbility: 0
   particleEffect: {fileID: 0}

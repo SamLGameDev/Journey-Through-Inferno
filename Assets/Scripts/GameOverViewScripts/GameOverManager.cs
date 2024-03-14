@@ -18,14 +18,12 @@ public class GameOverManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Player1HealthManager = Player1HealthBehaviour.GetComponent<EntityHealthBehaviour>();
-        Player2HealthManager = Player2HealthBehaviour.GetComponent<EntityHealthBehaviour>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if ((Player1HealthManager.IsAlive == false) && (Player2HealthManager.IsAlive == false))
+        if (((bool)EntityHealthBehaviour.player1Alive[0] == false) && ((bool)EntityHealthBehaviour.player2Alive[0] == false))
         {
             SceneManager.LoadScene("LevelFailed");
         }

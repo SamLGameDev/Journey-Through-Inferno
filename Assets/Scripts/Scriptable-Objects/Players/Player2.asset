@@ -24,21 +24,28 @@ MonoBehaviour:
   damageReduction: 0
   armour: 0
   orginalMaxHealth: 0
+  Player1Kill: {fileID: 0}
+  Player2Kill: {fileID: 0}
+  confused: 0
+  confusionDuration:
+    Variable: {fileID: 0}
+    constantValue: 0
+    useConstant: 1
   gunCooldown:
     Variable: {fileID: 11400000, guid: aaaec091154a1cd46a485090a98b3f26, type: 2}
     constantValue: 1.5
     useConstant: 1
   gunCooldownModifier:
     Variable: {fileID: 11400000, guid: e8d90d220dfae4249b9c4d804235f3a0, type: 2}
-    constantValue: 1
+    constantValue: 0
     useConstant: 1
   speed:
     Variable: {fileID: 11400000, guid: 5dddfc8a04ca9744d82094e1fdcb9aa8, type: 2}
-    constantValue: 3
+    constantValue: 7
     useConstant: 1
   chariotSpeed:
     Variable: {fileID: 11400000, guid: 4f0b5881b615c1843a235fecd56e3131, type: 2}
-    constantValue: 4
+    constantValue: 0
     useConstant: 1
   dashSpeed:
     Variable: {fileID: 11400000, guid: f5e80d23ed7b98342a3e02ef6e5eafb9, type: 2}
@@ -71,7 +78,7 @@ MonoBehaviour:
     useConstant: 1
   swordDamageModifier:
     Variable: {fileID: 11400000, guid: c1b63a689d586fc469aae8239c5b8e53, type: 2}
-    constantValue: 3
+    constantValue: 0
     useConstant: 1
   swordSpeed:
     Variable: {fileID: 11400000, guid: 5b0d9a21a6a97964183a725583d97a4a, type: 2}
@@ -83,11 +90,11 @@ MonoBehaviour:
     useConstant: 1
   bulletDamage:
     Variable: {fileID: 11400000, guid: e00757f0adfc1d24f8a2a092df060015, type: 2}
-    constantValue: 5
+    constantValue: 3
     useConstant: 1
   bulletDamageModifier:
     Variable: {fileID: 11400000, guid: aac256a5a066c0741bee0355a942865d, type: 2}
-    constantValue: 3
+    constantValue: 0
     useConstant: 1
   bulletSpeed:
     Variable: {fileID: 11400000, guid: 2584671cd50ddaa4fa2e3e2d07e01328, type: 2}
@@ -100,7 +107,7 @@ MonoBehaviour:
   tarotCards: []
   criticalHitChance:
     Variable: {fileID: 11400000, guid: fbd168c8de95b1e4390fef01598bdaad, type: 2}
-    constantValue: 20
+    constantValue: 0
     useConstant: 1
   criticalHitDamage:
     Variable: {fileID: 11400000, guid: 5f3c80b5da10fd24a962ccbf3c1ca656, type: 2}
@@ -109,13 +116,29 @@ MonoBehaviour:
   projectilesize: {x: 1, y: 1, z: 1}
   timeUntilSpreadShot:
     Variable: {fileID: 11400000, guid: c38fc923cb4af05448620dcf63e3bea9, type: 2}
-    constantValue: 2
+    constantValue: 0.25
     useConstant: 1
   spreadShotNumber:
     Variable: {fileID: 11400000, guid: e37f077bf955ec947ac1527cde0241d2, type: 2}
-    constantValue: 5
+    constantValue: 0
     useConstant: 1
   cooldownReduction:
     Variable: {fileID: 11400000, guid: 034a7e5aad77e224cbd57e55a00aef11, type: 2}
-    constantValue: 0.5
+    constantValue: 0
     useConstant: 1
+  ControllerRumble:
+    Variable: {fileID: 11400000, guid: f9f03723cb54f204086d9cee4ee2f77e, type: 2}
+    constantValue: 0
+    useConstant: 1
+  timeUntillRegenAfterAttack:
+    Variable: {fileID: 11400000, guid: 5b023b38bcf361743996719181cdbb98, type: 2}
+    constantValue: 0
+    useConstant: 0
+  timeUntillRegen:
+    Variable: {fileID: 11400000, guid: 0682932e8867b784ba4995677cccd4ff, type: 2}
+    constantValue: 0
+    useConstant: 0
+  RegenAmount: 0
+  confusionBullet: {fileID: 6456391441393735406, guid: 3f3f9e342fd76284fb8baf1d10255da2,
+    type: 3}
+  ConfusionCooldown: 5

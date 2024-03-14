@@ -28,7 +28,7 @@ public class Sword_Damage : MonoBehaviour
                 criticalDamage = stats.criticalHitDamage.value;
             }
             enemyHealth.ApplyDamage(stats.swordDamage.value + stats.swordDamageModifier.value + criticalDamage, transform.parent.gameObject);
-
+            stats.ControllerRumble.value = true;
             
 
             
