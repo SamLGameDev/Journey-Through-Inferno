@@ -68,11 +68,11 @@ namespace Pathfinding {
 			}
 			if (coop && !isConfused)
 			{
-				if (!player1)
+				if (!player1.gameObject.activeInHierarchy)
 				{
 					target = player2;
 				}
-				else if (!player2)
+				else if (!player2.gameObject.activeInHierarchy)
 				{
 					target = player1;
 				}

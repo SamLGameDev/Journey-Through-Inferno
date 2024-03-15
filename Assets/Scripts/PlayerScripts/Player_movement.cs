@@ -16,6 +16,7 @@ public class Player_movement : MonoBehaviour
     public static bool pvP_Enabled = false;
     public bool dodash = false;
     public int playerIndex;
+    public bool RevivePlayer = false;
     public TrailRenderer dashTrail;
     /// <summary>
     /// can the player shoot again
@@ -346,7 +347,7 @@ public class Player_movement : MonoBehaviour
         running = true;
         sword.SetActive(true);
         // make the sword active
-        if (!passed) // if it hasnt been triggered before, trigger it
+        if (!passed && gameObject.activeInHierarchy) // if it hasnt been triggered before, trigger it
         {
             StartCoroutine(moves.RotateAround(sword));
             passed = true;
@@ -512,6 +513,7 @@ public class Player_movement : MonoBehaviour
         possibleActions();
         Animation_Controller();
         Aiming();
+        rb.WakeUp();
 
     }
 }

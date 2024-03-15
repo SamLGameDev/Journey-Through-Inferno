@@ -19,7 +19,7 @@ public class EntityHealthBehaviour : MonoBehaviour
     [SerializeField] private float invunTimeOnHit;
     public static playerInfo player1 = new();
     public static playerInfo player2 = new();
-    
+    public GameObject gravestone;
     // This is public so that it can be accessed by UI.
 
     private bool damageInvulnerable;
@@ -343,7 +343,8 @@ public class EntityHealthBehaviour : MonoBehaviour
             }
 
             gameObject.SetActive(false);
-            //GameObject grave = Instantiate(stats.)
+            GameObject grave = Instantiate(gravestone, transform.position, Quaternion.identity);
+            grave.GetComponent<Respawn>().player = gameObject;
             return;
         }
 

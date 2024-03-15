@@ -196,6 +196,7 @@ MonoBehaviour:
   _resumeButton: {fileID: 0}
   dodash: 0
   playerIndex: 0
+  RevivePlayer: 0
   dashTrail: {fileID: 845683695111839264}
   speed: 0
   facing: -1
@@ -212,6 +213,7 @@ MonoBehaviour:
     Variable: {fileID: 11400000, guid: 99906eb09e330b64896702a685f48563, type: 2}
     constantValue: 0
     useConstant: 0
+  confusionLoaded: 0
 --- !u!50 &680247597080537638
 Rigidbody2D:
   serializedVersion: 4
@@ -300,7 +302,9 @@ MonoBehaviour:
   stats: {fileID: 11400000, guid: c53c78a8f908aff40b06667ff5c1036a, type: 2}
   OnDamaged: {fileID: 0}
   invunTimeOnHit: 0
-  entityCurrentHealth: 0
+  gravestone: {fileID: 2202952940247525431, guid: 71d992df5bdabfa4ab32d9190c19a78f,
+    type: 3}
+  currentHealth: 0
   takenDamage:
     Variable: {fileID: 11400000, guid: 99906eb09e330b64896702a685f48563, type: 2}
     constantValue: 0
@@ -310,8 +314,12 @@ MonoBehaviour:
   MidHealth: {fileID: 0}
   HighHealth: {fileID: 0}
   HealthSprite: {fileID: 0}
+  Event: {fileID: 0}
   IsAlive: 0
   invincible: 0
+  Confused: 0
+  onlyVirgil: 0
+  onlyDante: 0
 --- !u!114 &4637373173653990572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,9 +333,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coolDown: 0.1
-  LayersToHit:
+  LayersToHitWhenConfused:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
   sword_Speed: 500
   stats: {fileID: 11400000, guid: ee49df38efdaefc4fa8fcd7bdf5de804, type: 2}
   pStats: {fileID: 11400000, guid: c53c78a8f908aff40b06667ff5c1036a, type: 2}

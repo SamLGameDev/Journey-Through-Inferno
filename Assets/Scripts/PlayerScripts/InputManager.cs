@@ -111,4 +111,14 @@ public class InputManager : MonoBehaviour
             movement.confusionLoaded = true;
         }
     }
+    public void ResurrectPlayer(CallbackContext context)
+    {
+        movement.RevivePlayer = true;
+        if (context.phase == InputActionPhase.Canceled)
+        {
+            movement.RevivePlayer = false;
+        } 
+
+                
+    }
 }
