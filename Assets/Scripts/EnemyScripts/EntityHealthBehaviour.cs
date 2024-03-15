@@ -17,9 +17,9 @@ public class EntityHealthBehaviour : MonoBehaviour
     private bool flashRed;
     [SerializeField] private GameEventListener OnDamaged;
     [SerializeField] private float invunTimeOnHit;
-    public static object[] player1Alive = new object[] { true };
-    public static object[] player2Alive = new object[] { true };
-
+    public static playerInfo player1 = new();
+    public static playerInfo player2 = new();
+    
     // This is public so that it can be accessed by UI.
 
     private bool damageInvulnerable;
@@ -54,8 +54,8 @@ public class EntityHealthBehaviour : MonoBehaviour
     }
     private void Start()
     {
-        player1Alive = new object[] { true };
-        player2Alive = new object[] { true };
+        player1.IsAlive = true;
+        player2.IsAlive = true;
         object[] Hermit = HasCard(TarotCards.possibleModifiers.reducedBossHealth);
         if (isBoss && (bool)Hermit[0]) 
         {
@@ -68,6 +68,7 @@ public class EntityHealthBehaviour : MonoBehaviour
         StartCoroutine(FlashRed());
         StartCoroutine(ConfusionDuration());
     }
+
     private object[] HasCard(TarotCards.possibleModifiers modifier)
     {
         try
@@ -297,59 +298,55 @@ public class EntityHealthBehaviour : MonoBehaviour
             }
             if (gameObject.name == "Player 1")
             {
-                player1Alive = new object[] { false, gameObject };
+                player1.IsAlive = false;
+                player1.playerObject = gameObject;
             }
             else
             {
-                player2Alive = new object[] { false, gameObject };
+                player2.IsAlive = false;
+                player2.playerObject = gameObject;                
             }
             if ((bool)HasCard(TarotCards.possibleModifiers.SharedLife)[0])
             {
-                if(gameObject.name == "Player 1")
+                if (gameObject.name == "Player 1")
                 {
-                    if ((bool)player2Alive[0])
+                    if (player2.IsAlive)
                     {
-                        Player_movement player = GetComponent<Player_movement>();
-                        player.stats.speed.value = 3;
-                        player.UpdateSpeed();
-                        player.stats.swordDamage.value = 1;
-                        player.stats.gunCooldown.value += 2;
+                        DebuffOnDeath();
                         return;
                     }
                 }
                 else
                 {
-                    if ((bool)player1Alive[0])
+                    if (player1.IsAlive)
                     {
-                        Player_movement player = GetComponent<Player_movement>();
-                        player.stats.speed.value = 3;
-                        player.UpdateSpeed();
-                        player.stats.swordDamage.value = 1;
-                        player.stats.gunCooldown.value += 2;
+                        DebuffOnDeath();
                         return;
                     }
                 }
             }
-            if (!(bool)player1Alive[0] && gameObject.name == "Player 2")
+            if (!player1.IsAlive && gameObject.name == "Player 2")
             {
-                Destroy((GameObject)player1Alive[1]);
+                Destroy(player1.playerObject);
             }
-            else if (!(bool)player2Alive[0] && gameObject.name == "Player 1")
+            else if (!player2.IsAlive && gameObject.name == "Player 1")
             {
-                Destroy((GameObject)player2Alive[1]);
+                Destroy(player2.playerObject);
             }
             GameManager.instance.OnPlayerDeath();
             IsAlive = false;
             Player_movement playerCotnroller = gameObject.GetComponent<Player_movement>();
             playerCotnroller.StopAllCoroutines();
-            if (playerCotnroller.stats.gamepad != null){
+            if (playerCotnroller.stats.gamepad != null)
+            {
                 playerCotnroller.stats.gamepad.ResetHaptics();
             }
 
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            //GameObject grave = Instantiate(stats.)
             return;
         }
-        
+
         if (damageDealer.name == "Player 2")
         {
             stats.Player2Kill.Raise();
@@ -379,4 +376,21 @@ public class EntityHealthBehaviour : MonoBehaviour
             GameManager.instance.UpdateGameState(GameManager.GameState.EncounterCleared);
         }
     }
+
+    private void DebuffOnDeath()
+    {
+        Player_movement player = GetComponent<Player_movement>();
+        player.stats.speed.value = 3;
+        player.UpdateSpeed();
+        player.stats.swordDamage.value = 1;
+        player.stats.gunCooldown.value += 2;
+    }
+
+    public struct playerInfo
+    {
+        public bool IsAlive;
+        public GameObject playerObject;
+    }
+
+
 }
