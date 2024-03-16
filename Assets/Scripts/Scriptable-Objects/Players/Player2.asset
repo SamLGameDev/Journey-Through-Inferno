@@ -34,7 +34,7 @@ MonoBehaviour:
   originalPosition: {fileID: 0}
   gunCooldown:
     Variable: {fileID: 11400000, guid: aaaec091154a1cd46a485090a98b3f26, type: 2}
-    constantValue: 21.5
+    constantValue: 1.5
     useConstant: 1
   gunCooldownModifier:
     Variable: {fileID: 11400000, guid: e8d90d220dfae4249b9c4d804235f3a0, type: 2}
@@ -42,7 +42,7 @@ MonoBehaviour:
     useConstant: 1
   speed:
     Variable: {fileID: 11400000, guid: 5dddfc8a04ca9744d82094e1fdcb9aa8, type: 2}
-    constantValue: 3
+    constantValue: 7
     useConstant: 1
   chariotSpeed:
     Variable: {fileID: 11400000, guid: 4f0b5881b615c1843a235fecd56e3131, type: 2}
@@ -75,7 +75,7 @@ MonoBehaviour:
     useConstant: 1
   swordDamage:
     Variable: {fileID: 11400000, guid: 21d917d11332a4344932089bed7466fe, type: 2}
-    constantValue: 1
+    constantValue: 3
     useConstant: 1
   swordDamageModifier:
     Variable: {fileID: 11400000, guid: c1b63a689d586fc469aae8239c5b8e53, type: 2}
@@ -105,8 +105,7 @@ MonoBehaviour:
     Variable: {fileID: 11400000, guid: 86415f70013e13e4f8ed7b9eacb9ae2d, type: 2}
     constantValue: 5
     useConstant: 1
-  tarotCards:
-  - {fileID: 11400000, guid: 6a125ce579c44a3418eef90ab99f5e6f, type: 2}
+  tarotCards: []
   criticalHitChance:
     Variable: {fileID: 11400000, guid: fbd168c8de95b1e4390fef01598bdaad, type: 2}
     constantValue: 0
@@ -140,7 +139,8 @@ MonoBehaviour:
     Variable: {fileID: 11400000, guid: 0682932e8867b784ba4995677cccd4ff, type: 2}
     constantValue: 0
     useConstant: 0
-  RegenAmount: 0
+  CurrentRegenAmount: 0
+  healthToBeregenerated: 1
   confusionBullet: {fileID: 6456391441393735406, guid: 3f3f9e342fd76284fb8baf1d10255da2,
     type: 3}
   ConfusionCooldown: 5

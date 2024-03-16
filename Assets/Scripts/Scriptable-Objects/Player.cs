@@ -97,7 +97,8 @@ public class Player : BasicAttributes
     public Gamepad gamepad;
     public FloatReference timeUntillRegenAfterAttack;
     public FloatReference timeUntillRegen;
-    public int RegenAmount;
+    public int CurrentRegenAmount;
+    public int healthToBeregenerated;
     public GameObject confusionBullet;
     public float ConfusionCooldown;
     public override void Reset()
@@ -119,9 +120,17 @@ public class Player : BasicAttributes
         spreadShotNumber.value = 0;
         cooldownReduction.value = 0;
         droppableCards.Clear();
-        RegenAmount = 0;
+        CurrentRegenAmount = 0;
         speed.value = 7;
         swordDamage.value = 3;
         gunCooldown.value = 1.5f;
+    }
+    public void Regen()
+    {
+        CurrentRegenAmount = healthToBeregenerated;
+    }
+    public void ExitRegen()
+    {
+        CurrentRegenAmount = 0;
     }
 }

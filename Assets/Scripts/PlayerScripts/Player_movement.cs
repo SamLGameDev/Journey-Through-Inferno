@@ -135,7 +135,7 @@ public class Player_movement : MonoBehaviour
                 yield return new WaitForSeconds(stats.timeUntillRegenAfterAttack.value);
                 takenDamage.value = false;
             }
-            healthBehaviour.currentHealth += stats.RegenAmount;
+            healthBehaviour.currentHealth += stats.CurrentRegenAmount;
             if (healthBehaviour.currentHealth > stats.maxHealth)
             {
                 healthBehaviour.currentHealth = stats.maxHealth;
