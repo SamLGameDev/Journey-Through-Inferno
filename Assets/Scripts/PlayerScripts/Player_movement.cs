@@ -353,7 +353,7 @@ public class Player_movement : MonoBehaviour
             passed = true;
         }
 
-
+        AudioManager.instance.PlaySound("Sword_Slash");
     }
     private IEnumerator controllerRumble(float leftStick, float rightStick, float duration, Gamepad gamepad)
     {
@@ -480,6 +480,9 @@ public class Player_movement : MonoBehaviour
                 dashTrail.startWidth = 3;
             }
             dashTrail.enabled = true;
+
+            AudioManager.instance.PlaySound("Player_Dash");
+
             yield return null;
             speed += stats.dashSpeed.value;
             yield return new WaitForSeconds(stats.dashDuration.value);

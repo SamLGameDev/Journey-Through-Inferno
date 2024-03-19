@@ -296,6 +296,7 @@ public class EntityHealthBehaviour : MonoBehaviour
                 currentHealth = stats.maxHealth;
                 return;
             }
+
             if (gameObject.name == "Player 1")
             {
                 player1.IsAlive = false;
@@ -306,6 +307,7 @@ public class EntityHealthBehaviour : MonoBehaviour
                 player2.IsAlive = false;
                 player2.playerObject = gameObject;                
             }
+
             if ((bool)HasCard(TarotCards.possibleModifiers.SharedLife)[0])
             {
                 if (gameObject.name == "Player 1")
@@ -325,6 +327,7 @@ public class EntityHealthBehaviour : MonoBehaviour
                     }
                 }
             }
+
             if (!player1.IsAlive && gameObject.name == "Player 2")
             {
                 Destroy(player1.playerObject);
@@ -333,10 +336,12 @@ public class EntityHealthBehaviour : MonoBehaviour
             {
                 Destroy(player2.playerObject);
             }
+
             GameManager.instance.OnPlayerDeath();
             IsAlive = false;
             Player_movement playerCotnroller = gameObject.GetComponent<Player_movement>();
             playerCotnroller.StopAllCoroutines();
+
             if (playerCotnroller.stats.gamepad != null)
             {
                 playerCotnroller.stats.gamepad.ResetHaptics();
@@ -359,6 +364,7 @@ public class EntityHealthBehaviour : MonoBehaviour
 
         if (gameObject.CompareTag("Enemy"))
         {
+            AudioManager.instance.PlaySound("Enemy_Death");
             GameManager.instance.OnEnemyDeath();
             IsAlive = false;
             Vector2 deathPosition = transform.position;

@@ -4,6 +4,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum AudioClips
+{
+    VirgilDeath,
+    DanteDeath,
+    UIButtonClick
+}
+
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
