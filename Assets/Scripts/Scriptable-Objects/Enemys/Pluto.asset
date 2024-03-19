@@ -31,7 +31,7 @@ MonoBehaviour:
     Variable: {fileID: 0}
     constantValue: 0
     useConstant: 1
-  moveInterval: 10
-  cerberusRange: 0
-  cerberusSpeed: 0
-  cerberusPrefab: {fileID: 0}
+  cerberusRange: 15
+  cerberusSpeed: 10
+  cerberusPrefab: {fileID: 6508069903699826417, guid: 6d8545a1d0d0b444682ffd7fe7099dba,
+    type: 3}
