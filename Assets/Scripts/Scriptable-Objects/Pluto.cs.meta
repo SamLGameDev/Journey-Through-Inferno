@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2fba299de64e55541ab69c43d1e98740
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - OfTypecounter: {fileID: 11400000, guid: e4a5f4694b79fe4488542d7385a2650f, type: 2}
+  - Player1Kill: {fileID: 11400000, guid: b508b93f8b4c6e1479ec0c41dfa7afb9, type: 2}
+  - Player2Kill: {fileID: 11400000, guid: 66d1f695d2f202a41ad60a49e44c9c06, type: 2}
+  - cerberusPrefab: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
