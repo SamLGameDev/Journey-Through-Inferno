@@ -37,7 +37,7 @@ public class Different_Moves : MonoBehaviour
     {
         // creates a box that will grab everything with a collider in it that matches the layers to
         // hit then apply damage to it.
-        RaycastHit2D[] hit = Physics2D.BoxCastAll(transform.position, new Vector2(stats.meleeSizeX, stats.meleeSizeY), 0, transform.up, stats.meleeDistance,
+        RaycastHit2D[] hit = Physics2D.BoxCastAll(new Vector2(transform.position.x, transform.position.y + 1 + (stats.meleeSizeY / 2)), new Vector2(stats.meleeSizeX, stats.meleeSizeY), 0, transform.up, stats.meleeDistance,
             GetComponent<EntityHealthBehaviour>().Confused ? LayersToHitWhenConfused : stats.layersToHit);
         foreach (RaycastHit2D hit2d in hit)
         {
@@ -45,6 +45,10 @@ public class Different_Moves : MonoBehaviour
         }
 
 
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireCube(new Vector2(transform.position.x, transform.position.y + 1 + (stats.meleeSizeY / 2)), new Vector2(stats.meleeSizeX, stats.meleeSizeY));
     }
     /// <summary>
     /// a Melee attack that contains a float for y range, int for damage, float for cooldown before melee again

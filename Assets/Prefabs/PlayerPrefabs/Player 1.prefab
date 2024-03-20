@@ -103,6 +103,9 @@ GameObject:
   - component: {fileID: 729681642113407470}
   - component: {fileID: 8256488800317661993}
   - component: {fileID: 4491222405968353288}
+  - component: {fileID: 828422472100117085}
+  - component: {fileID: 1758872158653750631}
+  - component: {fileID: 4594297169185084888}
   m_Layer: 7
   m_Name: Player 1
   m_TagString: Player
@@ -126,8 +129,9 @@ Transform:
   - {fileID: 1161573228126957274}
   - {fileID: 3070922239024249282}
   - {fileID: 2838874016558098552}
+  - {fileID: 4083970859226009027}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8680525075647752170
 SpriteRenderer:
@@ -315,7 +319,7 @@ MonoBehaviour:
   HighHealth: {fileID: 0}
   HealthSprite: {fileID: 0}
   Event: {fileID: 0}
-  IsAlive: 0
+  IsAlive: 1
   invincible: 0
   Confused: 0
   onlyVirgil: 0
@@ -438,6 +442,74 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.549558, y: 0.32806462}
   m_EdgeRadius: 0
+--- !u!114 &828422472100117085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2340573089818477876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fc125533f0b8d14190b0853c6a70f48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1758872158653750631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2340573089818477876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e09ec3e8ff1d99149ba2cbfe2533f6c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: a8f7bcf4e71a0ef4cb11c234d2ba0d15, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: c53c78a8f908aff40b06667ff5c1036a, type: 2}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: Regen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4594297169185084888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2340573089818477876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e09ec3e8ff1d99149ba2cbfe2533f6c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: c51738528abf586479ca6105d4d420b2, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: c53c78a8f908aff40b06667ff5c1036a, type: 2}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: ExitRegen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3894066636726236174
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,6 +596,88 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &6326958859315739316
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4083970859226009027}
+  - component: {fileID: 7511443209777059236}
+  - component: {fileID: 2079020509842367726}
+  m_Layer: 7
+  m_Name: RegenArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4083970859226009027
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6326958859315739316}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1736434646341859925}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &7511443209777059236
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6326958859315739316}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 128
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 16247
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.0000006357829}
+  serializedVersion: 2
+  m_Radius: 1.6537228
+--- !u!114 &2079020509842367726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6326958859315739316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 514d534d782ebb042899a9c35198e12c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onRegen: {fileID: 11400000, guid: a8f7bcf4e71a0ef4cb11c234d2ba0d15, type: 2}
+  OnExit: {fileID: 11400000, guid: c51738528abf586479ca6105d4d420b2, type: 2}
 --- !u!1 &6864243991085631782
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,10 +970,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6491935665004741035, guid: 316b6cb4886f4864684084414444bd1c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8861141328434789732, guid: 316b6cb4886f4864684084414444bd1c,
         type: 3}
       propertyPath: m_Name
       value: weapon_strength
+      objectReference: {fileID: 0}
+    - target: {fileID: 8861141328434789732, guid: 316b6cb4886f4864684084414444bd1c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8861141328434789732, guid: 316b6cb4886f4864684084414444bd1c,
         type: 3}
