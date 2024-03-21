@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2c359a9bf5ccd74419cb464683f35220
+guid: 47fd86899ed77124fa4892d328022d8a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -175,211 +175,211 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: boss_Plutus_Cerberus_Telegraph_0
+      name: g2dy19nw_0
       rect:
         serializedVersion: 2
-        x: 20
-        y: 253
-        width: 120
+        x: 37
+        y: 348
+        width: 155
         height: 250
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0348c7c567374314fafa572eecba3901
-      internalID: 807861795
+      spriteID: 1e0b542afea2fbf4eb51b483f4599faa
+      internalID: 946620187
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss_Plutus_Cerberus_Telegraph_1
+      name: g2dy19nw_1
       rect:
         serializedVersion: 2
-        x: 146
-        y: 252
-        width: 95
+        x: 215
+        y: 348
+        width: 155
         height: 250
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 50b750d62a6ce4343b8ab60834ba4a31
-      internalID: -900798745
+      spriteID: e3dc7ff27f21b6e4cbc3a8da803dfd5d
+      internalID: 833724325
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss_Plutus_Cerberus_Telegraph_2
+      name: g2dy19nw_2
       rect:
         serializedVersion: 2
-        x: 243
-        y: 253
-        width: 109
-        height: 249
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 89944e30f91958a459bdfa7da1d2c76b
-      internalID: 1263224332
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: boss_Plutus_Cerberus_Telegraph_3
-      rect:
-        serializedVersion: 2
-        x: 354
-        y: 253
-        width: 135
+        x: 388
+        y: 346
+        width: 155
         height: 250
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04d153773d4814647bbe17380bc3075b
-      internalID: 565309424
+      spriteID: 5a25ecea1af15614db91ab0b6d79756d
+      internalID: -129828977
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss_Plutus_Cerberus_Telegraph_4
+      name: g2dy19nw_3
       rect:
         serializedVersion: 2
-        x: 490
-        y: 253
-        width: 151
-        height: 251
+        x: 579
+        y: 347
+        width: 155
+        height: 250
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79a14be71dd831c47b7878385a202b14
-      internalID: 1824022628
+      spriteID: 37b586bde5243374584fe45adac86e83
+      internalID: 1330008349
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss_Plutus_Cerberus_Telegraph_5
+      name: g2dy19nw_4
       rect:
         serializedVersion: 2
-        x: 27
-        y: 21
-        width: 100
-        height: 228
+        x: 790
+        y: 345
+        width: 155
+        height: 250
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3d44d1c644af3a4fb39b79a40e8a222
-      internalID: 1446907670
+      spriteID: 9d27de634009261409f1d25afa0be3c3
+      internalID: -621284138
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss_Plutus_Cerberus_Telegraph_6
+      name: g2dy19nw_5
       rect:
         serializedVersion: 2
-        x: 131
-        y: 21
-        width: 82
-        height: 249
+        x: 35
+        y: 42
+        width: 155
+        height: 250
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 709435513001d7b469d67f7a99d520ec
-      internalID: 176753423
+      spriteID: e00fba26158134447a5b583570326ae1
+      internalID: -1031786261
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss_Plutus_Cerberus_Telegraph_7
+      name: g2dy19nw_6
       rect:
         serializedVersion: 2
-        x: 214
-        y: 21
-        width: 93
-        height: 249
+        x: 196
+        y: 42
+        width: 155
+        height: 250
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4c56806ddac0cd42a14d0bfea4de60a
-      internalID: -618981421
+      spriteID: cf03ebcee5976e04082e0e5880e4c2ee
+      internalID: -328676374
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss_Plutus_Cerberus_Telegraph_8
+      name: g2dy19nw_7
       rect:
         serializedVersion: 2
-        x: 311
-        y: 15
-        width: 97
-        height: 254
+        x: 384
+        y: 41
+        width: 155
+        height: 250
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 974d040fac1a57d4696381533a3052e5
-      internalID: 1746407186
+      spriteID: 34baefd6974ccac48ba9a9d4ee7983c6
+      internalID: -351211448
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss_Plutus_Cerberus_Telegraph_9
+      name: g2dy19nw_8
       rect:
         serializedVersion: 2
-        x: 413
-        y: 15
-        width: 100
-        height: 253
+        x: 596
+        y: 41
+        width: 155
+        height: 250
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7dffbc16f01ba3c4b93f64d79f82e51d
-      internalID: -578051014
+      spriteID: 83c11b410c494a942a7fe20aa21f115e
+      internalID: -1058659336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: g2dy19nw_9
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 40
+        width: 155
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06903592c1f00ab449e2d253d15a0ab8
+      internalID: 2041585509
       vertices: []
       indices: 
       edges: []
@@ -395,16 +395,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      boss_Plutus_Cerberus_Telegraph_0: 807861795
-      boss_Plutus_Cerberus_Telegraph_1: -900798745
-      boss_Plutus_Cerberus_Telegraph_2: 1263224332
-      boss_Plutus_Cerberus_Telegraph_3: 565309424
-      boss_Plutus_Cerberus_Telegraph_4: 1824022628
-      boss_Plutus_Cerberus_Telegraph_5: 1446907670
-      boss_Plutus_Cerberus_Telegraph_6: 176753423
-      boss_Plutus_Cerberus_Telegraph_7: -618981421
-      boss_Plutus_Cerberus_Telegraph_8: 1746407186
-      boss_Plutus_Cerberus_Telegraph_9: -578051014
+      g2dy19nw_0: 946620187
+      g2dy19nw_1: 833724325
+      g2dy19nw_2: -129828977
+      g2dy19nw_3: 1330008349
+      g2dy19nw_4: -621284138
+      g2dy19nw_5: -1031786261
+      g2dy19nw_6: -328676374
+      g2dy19nw_7: -351211448
+      g2dy19nw_8: -1058659336
+      g2dy19nw_9: 2041585509
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
