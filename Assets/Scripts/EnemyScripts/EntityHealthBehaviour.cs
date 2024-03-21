@@ -14,6 +14,8 @@ public class EntityHealthBehaviour : MonoBehaviour
 {
     public bool isBoss;
     public BasicAttributes stats;
+    [SerializeField]
+    private GameEvent PlayerDeathEvent;
     private bool flashRed;
     [SerializeField] private GameEventListener OnDamaged;
     [SerializeField] private float invunTimeOnHit;
@@ -164,6 +166,11 @@ public class EntityHealthBehaviour : MonoBehaviour
 
             print(currentHealth);
         }
+        if (Player_movement.pvP_Enabled && currentHealth <= stats.maxHealth / 2)
+        {
+            Event.Raise();
+            Event.UnRegisterAllListeners();
+        }
         
 
         print($"{gameObject.name} took {damageAmount} damage, current health: {currentHealth}");
@@ -300,11 +307,13 @@ public class EntityHealthBehaviour : MonoBehaviour
             if (gameObject.name == "Player 1")
             {
                 player1.IsAlive = false;
+                PlayerDeathEvent.Raise();
                 player1.playerObject = gameObject;
             }
             else
             {
                 player2.IsAlive = false;
+                PlayerDeathEvent.Raise();
                 player2.playerObject = gameObject;                
             }
 

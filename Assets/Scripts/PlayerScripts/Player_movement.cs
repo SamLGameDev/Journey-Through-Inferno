@@ -13,7 +13,7 @@ using UnityEngine.EventSystems;
 public class Player_movement : MonoBehaviour
 {
     [SerializeField] private GameObject _resumeButton;
-    public static bool pvP_Enabled = false;
+    public static bool pvP_Enabled = true;
     public bool dodash = false;
     public int playerIndex;
     public bool RevivePlayer = false;
@@ -353,7 +353,7 @@ public class Player_movement : MonoBehaviour
             passed = true;
         }
 
-        AudioManager.instance.PlaySound("Sword_Slash");
+       AudioManager.instance.PlaySound("Sword_Slash");
     }
     private IEnumerator controllerRumble(float leftStick, float rightStick, float duration, Gamepad gamepad)
     {
