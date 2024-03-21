@@ -3142,11 +3142,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 99.59999, y: 108.899994}
+  scrollPos: {x: 130.59993, y: 52.763634}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 318.8
-  zoom: 1
+  zoom: 0.8800001
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -3154,9 +3154,8 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1001282649}
-  selectedCommands:
-  - {fileID: 1001282648}
+  - {fileID: 1001282647}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -3211,7 +3210,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -2
     y: 72
-    width: 75.6
+    width: 76.13636
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3504,7 +3503,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 7.400009
     y: 159.1
-    width: 108.4
+    width: 107.95454
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3806,7 +3805,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 79.40001
     y: 7.100006
-    width: 102.8
+    width: 103.40909
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3823,7 +3822,7 @@ MonoBehaviour:
   suppressAllAutoSelections: 0
 --- !u!114 &1001282648
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -3851,7 +3850,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &1001282649
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -3865,7 +3864,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 113.40001
     y: 93.100006
-    width: 113.2
+    width: 111.36363
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3880,7 +3879,7 @@ MonoBehaviour:
   suppressAllAutoSelections: 0
 --- !u!114 &1001282650
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -3907,7 +3906,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &1001282651
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -6260,6 +6259,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1336663984}
+  Enemys: {fileID: 0}
+  dislayText: 
+  Canvas: {fileID: 0}
+  textbox: {fileID: 0}
+  box: {fileID: 0}
+  entryClip: {fileID: 0}
 --- !u!1001 &60605969985494532
 PrefabInstance:
   m_ObjectHideFlags: 0
