@@ -1,4 +1,5 @@
 using Pathfinding;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
@@ -11,7 +12,7 @@ public class Pluto_behaviour : MonoBehaviour
     public float moveInterval = 10f;
     private float moveTimer;
 
-    private float cerberusCooldown = 8f;
+    public float cerberusCooldown = 8f;
     private float cerberusTimer;
     private bool hasUsedClone = false;
 
@@ -27,18 +28,18 @@ public class Pluto_behaviour : MonoBehaviour
 
     private void MovePlaces()
     {
-        int rand1 = Random.Range(0, 6);
+        int rand1 = UnityEngine.Random.Range(0, 6);
         
-        int rand2= Random.Range(0, 6);
+        int rand2= UnityEngine.Random.Range(0, 6);
         while (rand1 == rand2)
         {
-            rand2 = Random.Range(0, 6);
+            rand2 = UnityEngine.Random.Range(0, 6);
         } 
         
-        int rand3 = Random.Range(0, 6);
+        int rand3 = UnityEngine.Random.Range(0, 6);
         while ((rand1 == rand3) || (rand2 == rand3))
         {
-            rand3 = Random.Range(0, 6);
+            rand3 = UnityEngine.Random.Range(0, 6);
         }
         
         transform.position = new Vector3(places[0, rand1], places[1, rand1], 0);
@@ -79,18 +80,20 @@ public class Pluto_behaviour : MonoBehaviour
 
     void Update()
     {
-        moveTimer += Time.deltaTime;
-        if (moveTimer >= moveInterval) 
-        {
-            MovePlaces();
-            moveTimer -= moveInterval;
-        }
+        
 
         cerberusTimer += Time.deltaTime;
         if (cerberusTimer >= cerberusCooldown)
         {
             SendCerberus();
             cerberusTimer -= cerberusCooldown;
+        }
+
+        moveTimer += Time.deltaTime;
+        if (moveTimer >= moveInterval) 
+        {
+            MovePlaces();
+            moveTimer -= moveInterval;
         }
 
         if ((GetComponent<EntityHealthBehaviour>().currentHealth <= 20) && (hasUsedClone == false))
