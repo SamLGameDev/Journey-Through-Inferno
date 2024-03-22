@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b7288b36b84b9241be4fdadd30129c7, type: 3}
   m_Name: Hermit
   m_EditorClassIdentifier: 
-  cardImage: {fileID: 21300000, guid: 3cb7c35a750699348a04840d1ae1be5e, type: 3}
+  cardImage: {fileID: 21300000, guid: f208c09fb46960a41995b9161daf191a, type: 3}
   effectValue: 10
   description: 'Alone in his quest for clarity, he may seem pitiable, but he has
     a mission, and he will be illuminated.
