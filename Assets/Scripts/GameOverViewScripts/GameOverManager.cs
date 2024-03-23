@@ -13,6 +13,7 @@ public class GameOverManager : MonoBehaviour
     public GameObject Player1HealthBehaviour;
     public GameObject Player2HealthBehaviour;
     private EntityHealthBehaviour Player1HealthManager, Player2HealthManager;
+    public IntReference currentScene;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,7 @@ public class GameOverManager : MonoBehaviour
     {
         if (!EntityHealthBehaviour.player1.IsAlive && !EntityHealthBehaviour.player2.IsAlive)
         {
+            currentScene.value = SceneManager.GetActiveScene().buildIndex;
             SceneManager.LoadScene("LevelFailed");
         }
         

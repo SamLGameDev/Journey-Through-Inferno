@@ -9506,7 +9506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f28d629d50fda14b80f987ce825f904, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneID: 3
+  nextSceneID: 6
 --- !u!61 &553176734
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11586,6 +11586,10 @@ MonoBehaviour:
   player2: {fileID: 0}
   _events: {fileID: 0}
   mainMenu: {fileID: 0}
+  sceneToLoad:
+    Variable: {fileID: 0}
+    constantValue: 0
+    useConstant: 1
 --- !u!1 &749467869
 GameObject:
   m_ObjectHideFlags: 0
@@ -28195,6 +28199,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2434103286776335676, guid: d59a8f9f170686444a1967fd07ec5ba2,
         type: 3}
+      propertyPath: currentScene.Variable
+      value: 
+      objectReference: {fileID: 11400000, guid: 16588c5a3904f77438a9465b65c1da4e,
+        type: 2}
+    - target: {fileID: 2434103286776335676, guid: d59a8f9f170686444a1967fd07ec5ba2,
+        type: 3}
       propertyPath: Player1HealthBehaviour
       value: 
       objectReference: {fileID: 1593183990}
@@ -28203,6 +28213,11 @@ PrefabInstance:
       propertyPath: Player2HealthBehaviour
       value: 
       objectReference: {fileID: 1290067501}
+    - target: {fileID: 2434103286776335676, guid: d59a8f9f170686444a1967fd07ec5ba2,
+        type: 3}
+      propertyPath: currentScene.useConstant
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2781872034880164795, guid: d59a8f9f170686444a1967fd07ec5ba2,
         type: 3}
       propertyPath: m_Pivot.x

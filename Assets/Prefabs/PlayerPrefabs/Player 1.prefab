@@ -304,6 +304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isBoss: 0
   stats: {fileID: 11400000, guid: c53c78a8f908aff40b06667ff5c1036a, type: 2}
+  PlayerDeathEvent: {fileID: 11400000, guid: 18bcc4563d95c5940b028338f5781d25, type: 2}
   OnDamaged: {fileID: 0}
   invunTimeOnHit: 0
   gravestone: {fileID: 2202952940247525431, guid: 71d992df5bdabfa4ab32d9190c19a78f,

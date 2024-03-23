@@ -1338,6 +1338,10 @@ MonoBehaviour:
   player2: {fileID: 11400000, guid: 5df255e7d82eda04e8040c6b03146859, type: 2}
   _events: {fileID: 1276510363}
   mainMenu: {fileID: 666339863}
+  sceneToLoad:
+    Variable: {fileID: 11400000, guid: 16588c5a3904f77438a9465b65c1da4e, type: 2}
+    constantValue: 0
+    useConstant: 0
 --- !u!1 &2119442313
 GameObject:
   m_ObjectHideFlags: 0

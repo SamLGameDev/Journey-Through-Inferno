@@ -317,6 +317,10 @@ MonoBehaviour:
   PlayerUI: {fileID: 1780413913872116332}
   Player1HealthBehaviour: {fileID: 0}
   Player2HealthBehaviour: {fileID: 0}
+  currentScene:
+    Variable: {fileID: 11400000, guid: 16588c5a3904f77438a9465b65c1da4e, type: 2}
+    constantValue: 0
+    useConstant: 1
 --- !u!1 &2473062571516538480
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,7 +17,7 @@ MonoBehaviour:
   description: 'Alone in his quest for clarity, he may seem pitiable, but he has
     a mission, and he will be illuminated.
 
-    _Effect: Reduces boss health'
+    _Effect: adds knockback to the sword'
   specialCardEffectEnabled: 0
   RangeForAbility: 0
   particleEffect: {fileID: 0}

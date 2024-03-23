@@ -403,7 +403,7 @@ public class EntityHealthBehaviour : MonoBehaviour
 
         if (gameObject.CompareTag("Enemy"))
         {
-            AudioManager.instance.PlaySound("Enemy_Death");
+            //AudioManager.instance.PlaySound("Enemy_Death");
             GameManager.instance.OnEnemyDeath();
             IsAlive = false;
             Vector2 deathPosition = transform.position;
