@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class Sword_Damage : MonoBehaviour
 { 
-    /// <summary>
-    /// the change to the sword damage for when the player has a tarot card
-    /// </summary>
-    private int damageModifier = 0;
     [SerializeField] private Player stats;
     // Start is called before the first frame update
     void Start()
@@ -27,7 +23,7 @@ public class Sword_Damage : MonoBehaviour
             {
                 criticalDamage = stats.criticalHitDamage.value;
             }
-            enemyHealth.ApplyDamage(stats.swordDamage.value + stats.swordDamageModifier.value + criticalDamage, transform.parent.gameObject);
+            enemyHealth.ApplyDamage(stats.swordDamage.value + stats.swordDamageModifier.value + criticalDamage, transform.parent.gameObject, "sword");
             stats.ControllerRumble.value = true;
             
 

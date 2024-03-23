@@ -2760,19 +2760,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 628.0852, y: 364.4}
+  scrollPos: {x: 661.27075, y: 368.60617}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 318.8
-  zoom: 1
+  zoom: 0.97
   scrollViewRect:
     serializedVersion: 2
     x: -343
     y: -340
     width: 1114
     height: 859
-  selectedBlocks: []
-  selectedCommands: []
+  selectedBlocks:
+  - {fileID: 1001282625}
+  selectedCommands:
+  - {fileID: 1001282626}
   variables: []
   description: 
   stepPause: 0
@@ -2827,7 +2829,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -2
     y: 72
-    width: 75.6
+    width: 74.74226
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3124,7 +3126,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 7.400009
     y: 159.1
-    width: 108.4
+    width: 106.08247
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3426,7 +3428,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 81.67274
     y: 7.100006
-    width: 102.8
+    width: 101.958755
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3485,7 +3487,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 113.40001
     y: 93.100006
-    width: 113.2
+    width: 110.20618
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0

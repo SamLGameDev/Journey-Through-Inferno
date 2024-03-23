@@ -13,7 +13,7 @@ using UnityEngine.EventSystems;
 public class Player_movement : MonoBehaviour
 {
     [SerializeField] private GameObject _resumeButton;
-    public static bool pvP_Enabled = true;
+    public static bool pvP_Enabled = false;
     public bool dodash = false;
     public int playerIndex;
     public bool RevivePlayer = false;

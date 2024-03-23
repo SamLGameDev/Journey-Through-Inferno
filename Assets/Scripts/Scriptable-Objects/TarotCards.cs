@@ -33,7 +33,7 @@ public class TarotCards :ScriptableObject
         HealthRegen,
         increaseProjectileSize,
         SpreadShot,
-        reducedBossHealth,
+        KnockBack,
         Homing,
         invisibility,
         cooldownReduction,

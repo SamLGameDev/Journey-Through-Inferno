@@ -49,6 +49,8 @@ public class EntityHealthBehaviour : MonoBehaviour
     public bool Confused = false;
     public bool onlyVirgil;
     public bool onlyDante;
+    private bool triggeredKnockBack = false;
+    private GameObject damageDealer;
     private void OnEnable()
     {
         stats.OfTypecounter.Add(gameObject);
@@ -58,17 +60,12 @@ public class EntityHealthBehaviour : MonoBehaviour
     {
         player1.IsAlive = true;
         player2.IsAlive = true;
-        object[] Hermit = HasCard(TarotCards.possibleModifiers.reducedBossHealth);
-        if (isBoss && (bool)Hermit[0]) 
-        {
-            TarotCards card = (TarotCards)Hermit[1];
-            stats.maxHealth -= card.effectValue;
-        }
         currentHealth = stats.maxHealth + stats.armour;
         damageInvulnerable = false;
         IsAlive = true;
         StartCoroutine(FlashRed());
         StartCoroutine(ConfusionDuration());
+        StartCoroutine(knockback());
     }
 
     private object[] HasCard(TarotCards.possibleModifiers modifier)
@@ -140,13 +137,13 @@ public class EntityHealthBehaviour : MonoBehaviour
     /// Reduces the entity's health by a set amount
     /// </summary>
     /// <param name="damageAmount">Amount of damage to apply</param>
-    public void ApplyDamage(int damageAmount, GameObject damagerDealer = null)
+    public void ApplyDamage(int damageAmount, GameObject damagerDealerLocal = null, string weapon = null)
     {
-        if (damagerDealer != null && damagerDealer.name == "Player 1" && onlyVirgil)
+        if (damagerDealerLocal != null && damagerDealerLocal.name == "Player 1" && onlyVirgil)
         {
             return;
         }
-        else if (damagerDealer != null && damagerDealer.name == "Player 2" && onlyDante)
+        else if (damagerDealerLocal != null && damagerDealerLocal.name == "Player 2" && onlyDante)
         {
             return;
         }
@@ -179,7 +176,13 @@ public class EntityHealthBehaviour : MonoBehaviour
         // If so, kill it.
         if (currentHealth <= 0)
         {
-            EntityDeath(damagerDealer);     
+            EntityDeath(damagerDealerLocal);     
+        }
+        object[] hermit = HasCard(TarotCards.possibleModifiers.KnockBack);
+        if ((bool)hermit[0] && gameObject.tag != "Player" && !isBoss && weapon == "sword") 
+        {
+            damageDealer = damagerDealerLocal;
+            triggeredKnockBack = true;
         }
 
         if (invunTimeOnHit > 0)
@@ -188,6 +191,33 @@ public class EntityHealthBehaviour : MonoBehaviour
         }
 
         
+    }
+    private IEnumerator knockback()
+    {
+        while(true)
+        {
+            yield return new WaitUntil(() => triggeredKnockBack);
+            Range_Calculator range_Calculator = GetComponent<Range_Calculator>();
+            range_Calculator.enabled = false;
+            TarotCards knockbackDistance = (TarotCards)HasCard(TarotCards.possibleModifiers.KnockBack)[1];
+            EnablerAStar(false);
+            Vector2 direction = damageDealer.transform.position - transform.position;
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            rb.AddForce(-direction.normalized * Time.deltaTime * knockbackDistance.effectValue);
+            yield return new WaitForSeconds(0.15f);
+            rb.totalForce = Vector2.zero;
+            rb.velocity = Vector2.zero;
+            EnablerAStar(true);
+            rb.totalForce = Vector2.zero;
+            range_Calculator.enabled = true;
+            triggeredKnockBack = false;
+        }
+    }
+    private void EnablerAStar(bool setter)
+    {
+        GetComponent<Seeker>().enabled = setter;
+        GetComponent<AIDestinationSetter>().enabled = setter;
+        GetComponent<AIPath>().enabled = setter;
     }
     private IEnumerator FlashRed()
     {

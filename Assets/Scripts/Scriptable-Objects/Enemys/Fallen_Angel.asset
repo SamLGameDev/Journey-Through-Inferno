@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fallen_Angel
   m_EditorClassIdentifier: 
   damage: 4
-  maxHealth: 1
+  maxHealth: 20
   cardDropChance: 100
   OfTypecounter: {fileID: 11400000, guid: e4a5f4694b79fe4488542d7385a2650f, type: 2}
   droppableCards:

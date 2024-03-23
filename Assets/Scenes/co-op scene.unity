@@ -10041,7 +10041,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 67
     y: 70
-    width: 111
+    width: 112.4
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -17311,6 +17311,12 @@ PrefabInstance:
       propertyPath: HealthSprite
       value: 
       objectReference: {fileID: 1869992007}
+    - target: {fileID: 2447866012027878152, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
+        type: 3}
+      propertyPath: PlayerDeathEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: db8c900e9e628274e927cd355b03b81a,
+        type: 2}
     - target: {fileID: 2495953773665164011, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
         type: 3}
       propertyPath: m_RootOrder
@@ -20707,6 +20713,12 @@ PrefabInstance:
       propertyPath: HealthSprite
       value: 
       objectReference: {fileID: 1963926348}
+    - target: {fileID: 8939962254210646001, guid: 28d04583d0c318648b28ee2c53bdaeab,
+        type: 3}
+      propertyPath: PlayerDeathEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 18bcc4563d95c5940b028338f5781d25,
+        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
