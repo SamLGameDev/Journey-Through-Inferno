@@ -132,77 +132,7 @@ public class Different_Moves : MonoBehaviour
             transform.up = target.position - transform.position;
         }
     }
-    /// <summary>
-    /// calculates the limit of where the sword should reach before being reset based on the facing direction of the player
-    /// </summary>
-    /// <returns></returns>
-    private float calculate_limit()
-    {
-        Player_movement player = GetComponent<Player_movement>();
-        float limit;
-        // if the player is facing up or down
-        if (!player.upDown)
-        {
-            // -1 is moving to the right
-            limit = player.facing == -1 ? -0.7f : 0.7f;
-        }
-        // right or left
-        else
-        {
-            limit = player.facing == -1 ? -0.999f : 0.999f;
-        }
-        return limit;
-    }
-    /// <summary>
-    /// rotates the sword around the player based on the facing direction and resets to the start when it reches halfway
-    /// </summary>
-    /// <param name="target"></param>
-    /// <returns></returns>
-    public IEnumerator RotateAround(GameObject target)
-    {
-        Player_movement player = GetComponent<Player_movement>();
-        float limit = calculate_limit();
-        // the fakelimit is for when it is facing downwards as it needs conditions that
-        // would break the rest of the program if used with limit
-        float fakelimit = -2;
-        // if facing downwards
-        if (limit == 0.7f)
-        {
-            fakelimit = 0.7f;
-            limit = -2; // -2 so it doesnt trigger anything
-        }
-        int facing = player.facing;
-        Quaternion rotation = target.transform.rotation; // get the original rotation
-        Vector2 position = target.transform.localPosition; // get the original position
-        //Invoke("SpawnSwordBeam", pStats.swordSpeed / (pStats.swordSpeed * 2));
-        while (GetComponent<Player_movement>().running) // while the attack button has been pressed
-        {
-            // rotate it around the player based ont he facing direction
-            target.transform.RotateAround(transform.position, new Vector3(0, 0, facing), pStats.swordSpeed.value * Time.deltaTime);
-            // handles the halfway break for both left right down and up, fake being for down
-            if ((target.transform.rotation.z <= limit && limit < 0) || (target.transform.rotation.z >= limit && limit > 0) || (target.transform.rotation.z <= fakelimit && fakelimit > 0))
-            {
-                target.transform.rotation = rotation; // to account for any chnages in rotation to set the sword straight
-                target.transform.localPosition = position; // sets its position to where it started
-                target.SetActive(false); // make the sword invisible and stop damage when not attacking
-                yield return new WaitForSeconds(pStats.swordDelay.value);
-                GetComponent<Player_movement>().running = false;
-                yield return new WaitUntil(() => GetComponent<Player_movement>().running); // wait unitll attacking again 
-                // recalculate everything for the new attack
-                facing = player.facing;
-                limit = calculate_limit();
-                fakelimit = -2;
-                if (limit == 0.7f)
-                {
-                    fakelimit = 0.7f;
-                    limit = -2;
-                }
-                rotation = target.transform.rotation;
-                position = target.transform.localPosition;
-            }
-            yield return null;
-        }
-    }
+
     //private void SpawnSwordBeam()
     //{
     //    Instantiate(GameManager.instance.bullet, transform);
