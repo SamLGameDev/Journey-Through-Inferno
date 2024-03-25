@@ -349,7 +349,7 @@ public class Player_movement : MonoBehaviour
         // make the sword active
         if (!passed && gameObject.activeInHierarchy) // if it hasnt been triggered before, trigger it
         {
-            StartCoroutine(moves.RotateAround(sword));
+            //StartCoroutine(moves.RotateAround(sword));
             passed = true;
         }
 
