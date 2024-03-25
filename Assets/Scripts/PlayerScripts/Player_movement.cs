@@ -320,8 +320,8 @@ public class Player_movement : MonoBehaviour
     /// <param name="direction"></param>
     private void RotateAround(int direction)
     {
-        GameObject target = transform.GetChild(1).gameObject;
-        target.transform.RotateAround(transform.position, new Vector3(0, 0, direction), 90);
+        //GameObject target = transform.GetChild(1).gameObject;
+        //target.transform.RotateAround(transform.position, new Vector3(0, 0, direction), 90);
         
     }
     /// <summary>
@@ -347,9 +347,11 @@ public class Player_movement : MonoBehaviour
         running = true;
         sword.SetActive(true);
         // make the sword active
+        sword.GetComponent<Animator>().SetTrigger("Press");
+        running = false;
         if (!passed && gameObject.activeInHierarchy) // if it hasnt been triggered before, trigger it
         {
-            //StartCoroutine(moves.RotateAround(sword));
+            //sword.GetComponent<Animator>().SetTrigger("Press");
             passed = true;
         }
 
