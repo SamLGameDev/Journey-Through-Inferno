@@ -345,7 +345,7 @@ public class Player_movement : MonoBehaviour
     public void Player_Melee(GameObject sword)
     {
         running = true;
-        sword.SetActive(true);
+      //  sword.SetActive(true);
         // make the sword active
         sword.GetComponent<Animator>().SetTrigger("Press");
         running = false;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
-public class bullet_controller : MonoBehaviour
+public class bullet_controller : PlayerProjectile
 {
     /// <summary>
     /// the rigidbody of the bullet
@@ -12,8 +12,6 @@ public class bullet_controller : MonoBehaviour
     /// <summary>
     /// the change to the bullet damage for when the player has a tarot card
     /// </summary>
-    public Player stats;
-
     public Transform target;
     public Transform target2;
     public float speed;
@@ -65,23 +63,6 @@ public class bullet_controller : MonoBehaviour
             bullet.transform.parent = transform.parent;
             bullet.GetComponent<Rigidbody2D>().AddForce(Quaternion.AngleAxis((15 * (stats.spreadShotNumber.value / 2)) + (i * -15), Vector3.forward) * transform.right * stats.bulletSpeed.value);
 
-        }
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Enemy") || (Player_movement.pvP_Enabled && collision.CompareTag("Player")
-            && collision.gameObject != transform.parent.gameObject))
-        {
-            EntityHealthBehaviour enemyHealth = collision.GetComponent<EntityHealthBehaviour>();
-            List<TarotCards> enemyStats = enemyHealth.stats.droppableCards;
-            float dropchance = enemyHealth.stats.cardDropChance;
-            int criticalDamage = 0;
-            if (stats.criticalHitChance.value > 0 && (Random.Range(0.0001f, 101) < stats.criticalHitChance.value))
-            {
-                criticalDamage = stats.criticalHitDamage.value;
-            }
-            enemyHealth.ApplyDamage(stats.bulletDamage.value + stats.bulletDamageModifier.value + criticalDamage, transform.parent.gameObject);
-            Destroy(gameObject);
         }
     }
 

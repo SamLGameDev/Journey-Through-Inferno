@@ -281,3 +281,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: c53c78a8f908aff40b06667ff5c1036a, type: 2}
+  SwordArc: {fileID: 5295329994957010934, guid: f2653f2b02f6c8e41adb2a96bbe201b9,
+    type: 3}
