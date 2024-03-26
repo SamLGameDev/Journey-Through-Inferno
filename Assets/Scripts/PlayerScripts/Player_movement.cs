@@ -96,12 +96,12 @@ public class Player_movement : MonoBehaviour
     [SerializeField]
     private BoolReference takenDamage;
     public bool confusionLoaded = false;
+    private Lunge _lunge;
     // Start is called before the first frame update
     void Start()
     {
         UpdateSpeed();
-        // makes sword start as invisible 
-        transform.GetChild(1).gameObject.SetActive(false);
+        _lunge = new Lunge();
         StartCoroutine(timer(stats.gunCooldown.value));
         moves = GetComponent<Different_Moves>();
         rb = GetComponent<Rigidbody2D>();
@@ -153,7 +153,7 @@ public class Player_movement : MonoBehaviour
     {
         // Gets the movement action and moves the player based on that times speed
         movespeed = speed;
-       GetComponent<Rigidbody2D>().velocity =MovementDirection * movespeed;
+        rb.velocity = MovementDirection * movespeed;
         
     }
     public void Aiming()
@@ -511,13 +511,29 @@ public class Player_movement : MonoBehaviour
             IdleCheck();
         }
     }
+
     // Update is called once per frame
     void Update()
     {
-        Joystic_Movement(speed);
-        possibleActions();
-        Animation_Controller();
-        Aiming();
+        switch (stats.currentState)
+        {
+            case Player.PlayerState.moving:
+                rb.drag = 0;
+                Debug.Log(stats.currentState);
+                Joystic_Movement(speed);
+                possibleActions();
+                Animation_Controller();
+                Aiming();
+                break;
+            case Player.PlayerState.lunge:
+                _lunge.StartLunge(rb, AimingDirection);
+                break;
+            case Player.PlayerState.movementLock:
+                rb.velocity = Vector2.zero;
+                possibleActions();
+                Aiming();
+                break;
+        }
         rb.WakeUp();
 
     }

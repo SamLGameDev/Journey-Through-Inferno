@@ -144,3 +144,4 @@ MonoBehaviour:
   confusionBullet: {fileID: 6456391441393735406, guid: 3f3f9e342fd76284fb8baf1d10255da2,
     type: 3}
   ConfusionCooldown: 5
+  currentState: 1

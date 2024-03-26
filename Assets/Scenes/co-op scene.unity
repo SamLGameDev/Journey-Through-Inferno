@@ -27267,6 +27267,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2117496438 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4158443830731422250, guid: 28d04583d0c318648b28ee2c53bdaeab,
+    type: 3}
+  m_PrefabInstance: {fileID: 1550669849}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2117496452 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4683655926936684099, guid: 28d04583d0c318648b28ee2c53bdaeab,
@@ -27512,7 +27518,7 @@ PrefabInstance:
     - target: {fileID: 3054313615865408233, guid: c59d0046edde7e342bbad33d6fdd1f79,
         type: 3}
       propertyPath: m_ExcludeLayers.m_Bits
-      value: 1024
+      value: 9216
       objectReference: {fileID: 0}
     - target: {fileID: 3054313615865408233, guid: c59d0046edde7e342bbad33d6fdd1f79,
         type: 3}
@@ -28240,7 +28246,7 @@ PrefabInstance:
         type: 3}
       propertyPath: playerInstances.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2117496438}
     - target: {fileID: 4096624456859787653, guid: 9b9bbf6b8c1105448bd7848291b322be,
         type: 3}
       propertyPath: playerInstances.Array.data[1]

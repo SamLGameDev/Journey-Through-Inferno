@@ -43,10 +43,23 @@ public class Sword_Damage : MonoBehaviour
     public void CreateSwordArc()
     {
         GameObject arc = Instantiate(SwordArc, transform.position, transform.parent.GetChild(0).rotation);
+        arc.transform.SetParent(transform.parent.parent);
         arc.GetComponent<SwordArcController>().stats = stats;
 
     }
-    
+
+    public void StartLunge()
+    {
+        stats.UpdatePlayerState(Player.PlayerState.lunge);
+    }
+    public void LockMovement()
+    {
+        stats.UpdatePlayerState(Player.PlayerState.movementLock);
+    }
+    public void moving()
+    {
+        stats.UpdatePlayerState(Player.PlayerState.moving);
+    }
 
     // Update is called once per frame
     void Update()
