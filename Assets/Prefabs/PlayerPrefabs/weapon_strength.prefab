@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5074277872820142794}
   - component: {fileID: 5767842538595253449}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 3525362508441545272}
   - component: {fileID: -8169037869189850748}
   - component: {fileID: 6489887914554609292}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: weapon_strength
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8861141328434789732}
-  m_LocalRotation: {x: -0, y: -0, z: -0.2710793, w: 0.962557}
+  m_LocalRotation: {x: 0, y: 0, z: -0.2710792, w: 0.9625571}
   m_LocalPosition: {x: 1.2163935, y: -2.4180622, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -170,7 +170,7 @@ Transform:
   - {fileID: 5074277872820142794}
   m_Father: {fileID: 0}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -31.457}
 --- !u!212 &3525362508441545272
 SpriteRenderer:
   m_ObjectHideFlags: 0
