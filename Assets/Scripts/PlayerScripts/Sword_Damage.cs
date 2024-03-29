@@ -42,7 +42,7 @@ public class Sword_Damage : MonoBehaviour
     }
     public void CreateSwordArc()
     {
-        GameObject arc = Instantiate(SwordArc, transform.position, transform.parent.rotation, transform.parent.parent.parent);
+        GameObject arc = Instantiate(SwordArc, transform.position, transform.parent.rotation, transform.parent.parent);
         arc.GetComponent<SwordArcController>().stats = stats;
 
     }

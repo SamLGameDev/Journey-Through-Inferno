@@ -117,6 +117,7 @@ public class Player_movement : MonoBehaviour
         else
         { invis_cooldown = false; }
         StartCoroutine(HealthRegen());
+        StartCoroutine(_lunge.PlaceAfterImages());
 
 
 
@@ -426,7 +427,7 @@ public class Player_movement : MonoBehaviour
                 Animation_Controller();
                 break;
             case Player.PlayerState.lunge:
-                _lunge.StartLunge(rb, AimingDirection);
+                _lunge.StartLunge(rb, AimingDirection, GetComponent<SpriteRenderer>(), transform.position);
                 break;
             case Player.PlayerState.movementLock:
                 rb.velocity = Vector2.zero;

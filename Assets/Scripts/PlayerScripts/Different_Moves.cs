@@ -41,6 +41,7 @@ public class Different_Moves : MonoBehaviour
             GetComponent<EntityHealthBehaviour>().Confused ? LayersToHitWhenConfused : stats.layersToHit);
         foreach (RaycastHit2D hit2d in hit)
         {
+            if (hit2d.collider.GetComponent<EntityHealthBehaviour>() == null) { return; }
             hit2d.collider.gameObject.GetComponent<EntityHealthBehaviour>().ApplyDamage(stats.damage);
         }
 
@@ -69,7 +70,10 @@ public class Different_Moves : MonoBehaviour
 
         foreach (RaycastHit2D hit2d in hit)
         {
-            hit2d.collider.gameObject.GetComponent<EntityHealthBehaviour>().ApplyDamage(stats.damage);
+            if (hit2d.collider.GetComponent<EntityHealthBehaviour>() != null)
+            {
+                hit2d.collider.gameObject.GetComponent<EntityHealthBehaviour>().ApplyDamage(stats.damage);
+            }
         }
         return Time.time;
 
