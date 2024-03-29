@@ -203,116 +203,17 @@ public class Player_movement : MonoBehaviour
     /// 
     private void Animation_Controller()
     {
-        float velo = Mathf.Abs(rb.velocity.x + rb.velocity.y); // absolute value so negatives dont affect it
-        ani.SetFloat("Velocity", velo);
+        float currentSpeed = rb.velocity.magnitude; // absolute value so negatives dont affect it
+        ani.SetFloat("Velocity", currentSpeed);
+        ani.SetFloat("AimingX", AimingDirection.x);
+        ani.SetFloat("AimingY", AimingDirection.y);
         // starts the idle check as the player isnt moving
-        if (velo < 0.0001 && !VelocityCheck)
+        if (currentSpeed < 0.0001 && !VelocityCheck)
         {
             time = Time.time;
             VelocityCheck = true;
-            return;
         }
-        if (AimingDirection.x > -0.5f && AimingDirection.x < 0.5f)
-        {
-            if (upDown && !running)
-            {
-                RotateAround(1);
-                upDown = false;
-            }
-            if (AimingDirection.y < -0.5f)
-            {
-                ani.SetBool("Y>X", true);
-                ani.SetBool("Positive Y>X change", false);
-                facing = 1;
-                return;
-            }
-            else
-            {
-                ani.SetBool("Y>X", false);
-                ani.SetBool("Positive Y>X change", true);
-                facing = -1;
-
-                return;
-            }
-        }
-        if (!upDown && !running)
-        {
-            RotateAround(-1);
-            upDown = true;
-        }
-        ani.SetBool("Y>X", false);
-        ani.SetBool("Positive Y>X change", false);
-        if (AimingDirection.x > 0)
-        {
-            ani.SetBool("Negative x", false);
-            facing = -1;
-        }
-        else
-        {
-            
-            ani.SetBool("Negative x", true);
-            facing = 1;
-
-        }
-        #region old animator
-        //float velo = Mathf.Abs(rb.velocity.x + rb.velocity.y); // absolute value so negatives dont affect it
-        //ani.SetFloat("Velocity",velo);
-        //// starts the idle check as the player isnt moving
-        //if (velo < 0.0001  && !VelocityCheck) 
-        //{
-        //    time = Time.time;
-        //    VelocityCheck = true;
-        //    return;
-        //}
-        //// uses absolute values as they could be moving down and that would be negative
-        //if (Mathf.Abs(rb.velocity.y) > Mathf.Abs(rb.velocity.x))
-        //{
-        //    // if the sword was int eh poition needed for a left/right swing
-        //    // rotates it to be in the position for a down/up swing
-        //    if (upDown && !running)
-        //    {
-        //        RotateAround(1);
-        //        upDown = false;
-        //    }
-        //    if (rb.velocity.y < 0)
-        //    {
-        //        ani.SetBool("Y>X", true);
-        //        ani.SetBool("Positive Y>X change", false);
-        //        facing = 1;
-        //    }
-        //    else if (rb.velocity.y > 0) 
-        //    {
-        //        ani.SetBool("Y>X", false);
-        //        ani.SetBool("Positive Y>X change", true);
-        //        facing = -1;
-        //    }
-        //    else
-        //    {
-        //        ani.SetBool("Y>X", false);
-        //        ani.SetBool("Positive Y>X change", false);
-        //    }
-        //}
-        //else if (Mathf.Abs(rb.velocity.y) < Mathf.Abs(rb.velocity.x))
-        //{
-        //    if (!upDown && !running)
-        //    {
-        //        RotateAround(-1);
-        //        upDown = true;
-        //    }
-        //    if (rb.velocity.x < 0)
-        //    {
-        //        ani.SetBool("Negative x", true);
-        //        facing = 1;
-        //    }
-        //    else if (rb.velocity.x > 0)
-        //    {
-        //        ani.SetBool("Negative x", false);
-        //        facing = -1;
-        //    }
-        //    ani.SetBool("Y>X", false);
-        //    ani.SetBool("Positive Y>X change", false);
-        //}
-        #endregion
+        
     }
     /// <summary>
     /// roates the sword 90 degrees in the direction specified
@@ -397,8 +298,8 @@ public class Player_movement : MonoBehaviour
     /// </summary>
     private void IdleCheck()
     {
-        float velo = Mathf.Abs(rb.velocity.x + rb.velocity.y); // absolute value so negatives dont interfere
-        if (velo < 0.0001)
+        float currentSpeed = rb.velocity.magnitude; // absolute value so negatives dont interfere
+        if (currentSpeed < 0.0001)
         {
             // if three seconds have passed go into idle
             if (Time.time - stats.timeUntilIdle.value > time)
@@ -519,11 +420,10 @@ public class Player_movement : MonoBehaviour
         {
             case Player.PlayerState.moving:
                 rb.drag = 0;
-                Debug.Log(stats.currentState);
                 Joystic_Movement(speed);
                 possibleActions();
-                Animation_Controller();
                 Aiming();
+                Animation_Controller();
                 break;
             case Player.PlayerState.lunge:
                 _lunge.StartLunge(rb, AimingDirection);
