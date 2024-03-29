@@ -12,7 +12,7 @@ public class PlayerProjectile : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
-        _rb.AddForce(transform.right * stats.bulletSpeed.value);
+        _rb.AddForce(transform.up * stats.bulletSpeed.value);
         Destroy(gameObject, stats.bulletLife.value);
     }
     private void OnTriggerEnter2D(Collider2D collision)
