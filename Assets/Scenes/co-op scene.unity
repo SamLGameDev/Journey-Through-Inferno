@@ -8847,7 +8847,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &481472222
 Transform:
   m_ObjectHideFlags: 0
@@ -17390,6 +17390,11 @@ PrefabInstance:
       propertyPath: _resumeButton
       value: 
       objectReference: {fileID: 680915303}
+    - target: {fileID: 6244709391738952527, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
+        type: 3}
+      propertyPath: hasChariot
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20565,6 +20570,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 729681642113407470, guid: 28d04583d0c318648b28ee2c53bdaeab,
+        type: 3}
+      propertyPath: hasMoon
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 729681642113407470, guid: 28d04583d0c318648b28ee2c53bdaeab,
+        type: 3}
+      propertyPath: hasChariot
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1736434646341859925, guid: 28d04583d0c318648b28ee2c53bdaeab,
         type: 3}
       propertyPath: m_RootOrder

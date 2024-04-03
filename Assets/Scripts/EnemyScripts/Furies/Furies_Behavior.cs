@@ -203,6 +203,9 @@ public class Furies_Behavior : MonoBehaviour
         }
     }
 
+
+    
+
     private void Retreat()
     {
         // While the isThreatened variable is true, the furies will move away from the player

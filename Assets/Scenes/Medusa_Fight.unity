@@ -15469,6 +15469,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4024701041087090802, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4779470324070114736, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
         type: 3}
       propertyPath: m_Enabled
@@ -18520,6 +18525,7 @@ MonoBehaviour:
   topTextBox: {fileID: 268379351}
   bottomTextBox: {fileID: 903218510}
   noCards: 0
+  enemysCount: {fileID: 0}
 --- !u!4 &1336663985
 Transform:
   m_ObjectHideFlags: 0
