@@ -59,7 +59,7 @@ Transform:
   - {fileID: 3305217362730984712}
   - {fileID: 4256752078200825916}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &295351740279231659
 MonoBehaviour:
@@ -86,9 +86,8 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 6095993298783550904}
-  selectedCommands:
-  - {fileID: 6120214367844555510}
+  - {fileID: 6624733953706635367}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0

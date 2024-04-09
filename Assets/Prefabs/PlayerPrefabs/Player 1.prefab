@@ -924,12 +924,12 @@ PrefabInstance:
     - target: {fileID: 2167356287407277044, guid: 316b6cb4886f4864684084414444bd1c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.1253001
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2167356287407277044, guid: 316b6cb4886f4864684084414444bd1c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.9336002
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2167356287407277044, guid: 316b6cb4886f4864684084414444bd1c,
         type: 3}
@@ -944,17 +944,17 @@ PrefabInstance:
     - target: {fileID: 2167356287407277044, guid: 316b6cb4886f4864684084414444bd1c,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2167356287407277044, guid: 316b6cb4886f4864684084414444bd1c,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2167356287407277044, guid: 316b6cb4886f4864684084414444bd1c,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2167356287407277044, guid: 316b6cb4886f4864684084414444bd1c,
         type: 3}
@@ -971,20 +971,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6491935665004741035, guid: 316b6cb4886f4864684084414444bd1c,
+    - target: {fileID: 3525362508441545272, guid: 316b6cb4886f4864684084414444bd1c,
         type: 3}
-      propertyPath: m_Layer
-      value: 10
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5767842538595253449, guid: 316b6cb4886f4864684084414444bd1c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8861141328434789732, guid: 316b6cb4886f4864684084414444bd1c,
         type: 3}
       propertyPath: m_Name
       value: weapon_strength
-      objectReference: {fileID: 0}
-    - target: {fileID: 8861141328434789732, guid: 316b6cb4886f4864684084414444bd1c,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

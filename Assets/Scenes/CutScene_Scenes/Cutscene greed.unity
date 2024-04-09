@@ -448,6 +448,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1828971787680331687, guid: 43eeff0c55364d34999b2d8c18664232,
+        type: 3}
+      propertyPath: portrait
+      value: 
+      objectReference: {fileID: 21300000, guid: fff231fbebbff9140b4fdcc223c86bf9,
+        type: 3}
+    - target: {fileID: 2112695551215696806, guid: 43eeff0c55364d34999b2d8c18664232,
+        type: 3}
+      propertyPath: portrait
+      value: 
+      objectReference: {fileID: 21300000, guid: 0cb6201c23c80964e9544ba2afd3c2c9,
+        type: 3}
     - target: {fileID: 3053194220872081128, guid: 43eeff0c55364d34999b2d8c18664232,
         type: 3}
       propertyPath: m_RootOrder
@@ -503,11 +515,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4973372389201565902, guid: 43eeff0c55364d34999b2d8c18664232,
+        type: 3}
+      propertyPath: selectedCommands.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033703468031593027, guid: 43eeff0c55364d34999b2d8c18664232,
+        type: 3}
+      propertyPath: portrait
+      value: 
+      objectReference: {fileID: 21300000, guid: fff231fbebbff9140b4fdcc223c86bf9,
+        type: 3}
+    - target: {fileID: 6159273866144325625, guid: 43eeff0c55364d34999b2d8c18664232,
+        type: 3}
+      propertyPath: portrait
+      value: 
+      objectReference: {fileID: 21300000, guid: f2cc5ff45a27a1b448a4afdcc5d18769,
+        type: 3}
+    - target: {fileID: 6781807109833559127, guid: 43eeff0c55364d34999b2d8c18664232,
+        type: 3}
+      propertyPath: portrait
+      value: 
+      objectReference: {fileID: 21300000, guid: f2cc5ff45a27a1b448a4afdcc5d18769,
+        type: 3}
+    - target: {fileID: 7967308640283264406, guid: 43eeff0c55364d34999b2d8c18664232,
+        type: 3}
+      propertyPath: portrait
+      value: 
+      objectReference: {fileID: 21300000, guid: fff231fbebbff9140b4fdcc223c86bf9,
+        type: 3}
     - target: {fileID: 8310450276108082842, guid: 43eeff0c55364d34999b2d8c18664232,
         type: 3}
       propertyPath: m_Name
       value: Greed cutscenes
       objectReference: {fileID: 0}
+    - target: {fileID: 8346100877204118260, guid: 43eeff0c55364d34999b2d8c18664232,
+        type: 3}
+      propertyPath: portrait
+      value: 
+      objectReference: {fileID: 21300000, guid: fff231fbebbff9140b4fdcc223c86bf9,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
