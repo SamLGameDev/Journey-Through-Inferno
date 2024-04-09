@@ -106,9 +106,15 @@ public class EntityHealthBehaviour : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        UpdateHealthBar();
+
+    }
+
+    private void UpdateHealthBar()
+    {
         if (gameObject.CompareTag("Player"))
         {
-            HealthBarSprites.sprites.HealthBar.fillAmount =currentHealth / 15f;
+            HealthBarSprites.sprites.HealthBar.fillAmount = currentHealth / 15f;
 
             if (currentHealth / 15f <= 0.7f && currentHealth / 15f >= 0.35f)
             {
@@ -123,8 +129,8 @@ public class EntityHealthBehaviour : MonoBehaviour
                 HealthBarSprites.sprites.currentSprite.sprite = HealthBarSprites.sprites.LowHealth.sprite;
             }
         }
-
     }
+
     /// <summary>
     /// Reduces the entity's health by a set amount
     /// </summary>
@@ -319,6 +325,7 @@ public class EntityHealthBehaviour : MonoBehaviour
 
         if (gameObject.CompareTag("Player"))
         {
+            UpdateHealthBar();
             if (stats.extraLives > 0)
             {
                 stats.extraLives--;
