@@ -17273,6 +17273,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2443648660638366458, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
+        type: 3}
+      propertyPath: stepTime
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 2443648660638366458, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
+        type: 3}
+      propertyPath: walkAnimName
+      value: Walking_Sound_Virgil
+      objectReference: {fileID: 0}
     - target: {fileID: 2447866012027878152, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
         type: 3}
       propertyPath: IsAlive
@@ -20584,6 +20594,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6365007313955031696, guid: 28d04583d0c318648b28ee2c53bdaeab,
+        type: 3}
+      propertyPath: stepTime
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 6365007313955031696, guid: 28d04583d0c318648b28ee2c53bdaeab,
+        type: 3}
+      propertyPath: walkAnimName
+      value: Walking_Sound_Dante
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
