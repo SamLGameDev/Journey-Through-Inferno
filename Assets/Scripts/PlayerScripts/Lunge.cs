@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class Lunge : MonoBehaviour
 {
-    private bool isLunging = false;
     SpriteRenderer spriteRenderer;
-    private GameObject afterImage;
     private Vector2 playerPos;
     // Start is called before the first frame update
     void Start()
@@ -19,23 +17,19 @@ public class Lunge : MonoBehaviour
         rb.AddForce(direction * 99999 * Time.deltaTime);
         spriteRenderer = sprite;
         playerPos = Pos;
-        isLunging = true;
+        PlaceAfterImages();
     }
-    public IEnumerator PlaceAfterImages()
+    private void PlaceAfterImages()
     {
-        while (true)
-        {
-            yield return new WaitUntil(() => isLunging);
-            afterImage = new GameObject();
-            SpriteRenderer objectSprite = afterImage.AddComponent<SpriteRenderer>();
-            afterImage.AddComponent<Transform>();
-            objectSprite.sprite = spriteRenderer.sprite;
-            objectSprite.material.color = new Color(0, 0, 0, 1);
-            afterImage.transform.localScale = new Vector2(1.5f, 1.5f);
-            afterImage.transform.position = playerPos;
-            Destroy(afterImage, 0.1f);
-            isLunging = false;
-        }
+        GameObject afterImage = new GameObject();
+        SpriteRenderer objectSprite = afterImage.AddComponent<SpriteRenderer>();
+        afterImage.AddComponent<Transform>();
+        objectSprite.sprite = spriteRenderer.sprite;
+        objectSprite.material.color = new Color(0, 0, 0, 1);
+        afterImage.transform.localScale = new Vector2(1.5f, 1.5f);
+        afterImage.transform.position = playerPos;
+        Destroy(afterImage, 0.1f);
+        
 
     }
 }

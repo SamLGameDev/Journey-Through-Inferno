@@ -117,7 +117,6 @@ public class Player_movement : MonoBehaviour
         else
         { invis_cooldown = false; }
         StartCoroutine(HealthRegen());
-        StartCoroutine(_lunge.PlaceAfterImages());
 
 
 
