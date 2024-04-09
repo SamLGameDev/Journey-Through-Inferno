@@ -20776,6 +20776,16 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6365007313955031696, guid: 28d04583d0c318648b28ee2c53bdaeab,
+        type: 3}
+      propertyPath: stepTime
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 6365007313955031696, guid: 28d04583d0c318648b28ee2c53bdaeab,
+        type: 3}
+      propertyPath: walkAnimName
+      value: Walking_Sound_Dante
+      objectReference: {fileID: 0}
     - target: {fileID: 6739643756115909006, guid: 28d04583d0c318648b28ee2c53bdaeab,
         type: 3}
       propertyPath: m_IsActive
@@ -22818,6 +22828,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fc125533f0b8d14190b0853c6a70f48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stepTime: 0.35
+  walkAnimName: Walking_Sound_Virgil
 --- !u!114 &1720545880
 MonoBehaviour:
   m_ObjectHideFlags: 0
