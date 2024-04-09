@@ -473,6 +473,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &299280392 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8720906629025934158, guid: d59a8f9f170686444a1967fd07ec5ba2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1854627326}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &417210044
 GameObject:
   m_ObjectHideFlags: 0
@@ -657,6 +669,12 @@ PrefabInstance:
       propertyPath: HealthSprite
       value: 
       objectReference: {fileID: 1463507303}
+    - target: {fileID: 2447866012027878152, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
+        type: 3}
+      propertyPath: HealthBarSprites
+      value: 
+      objectReference: {fileID: 11400000, guid: 5c1d4edc147e4f7439e80889515153a3,
+        type: 2}
     - target: {fileID: 2495953773665164011, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
         type: 3}
       propertyPath: m_RootOrder
@@ -1707,6 +1725,12 @@ PrefabInstance:
       propertyPath: HealthSprite
       value: 
       objectReference: {fileID: 252772457}
+    - target: {fileID: 644533977997545669, guid: 28d04583d0c318648b28ee2c53bdaeab,
+        type: 3}
+      propertyPath: HealthBarSprites
+      value: 
+      objectReference: {fileID: 11400000, guid: 6fe9df3782a5e7340bc02da442f184ee,
+        type: 2}
     - target: {fileID: 1736434646341859925, guid: 28d04583d0c318648b28ee2c53bdaeab,
         type: 3}
       propertyPath: m_RootOrder
@@ -1962,6 +1986,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyCounter: {fileID: 11400000, guid: e4a5f4694b79fe4488542d7385a2650f, type: 2}
   prefab: {fileID: 0}
+--- !u!114 &1291598328 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4947741745585305881, guid: d59a8f9f170686444a1967fd07ec5ba2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1854627326}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1345222977 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 780742612908223579, guid: d59a8f9f170686444a1967fd07ec5ba2,
@@ -2422,6 +2458,68 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerUICanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2434103286776335676, guid: d59a8f9f170686444a1967fd07ec5ba2,
+        type: 3}
+      propertyPath: _player1Holder
+      value: 
+      objectReference: {fileID: 11400000, guid: 6fe9df3782a5e7340bc02da442f184ee,
+        type: 2}
+    - target: {fileID: 2434103286776335676, guid: d59a8f9f170686444a1967fd07ec5ba2,
+        type: 3}
+      propertyPath: _player2Holder
+      value: 
+      objectReference: {fileID: 11400000, guid: 5c1d4edc147e4f7439e80889515153a3,
+        type: 2}
+    - target: {fileID: 2434103286776335676, guid: d59a8f9f170686444a1967fd07ec5ba2,
+        type: 3}
+      propertyPath: _player1Sprites.lowHeath
+      value: 
+      objectReference: {fileID: 1735021815}
+    - target: {fileID: 2434103286776335676, guid: d59a8f9f170686444a1967fd07ec5ba2,
+        type: 3}
+      propertyPath: _player2Sprites.lowHeath
+      value: 
+      objectReference: {fileID: 994781779}
+    - target: {fileID: 2434103286776335676, guid: d59a8f9f170686444a1967fd07ec5ba2,
+        type: 3}
+      propertyPath: _player1Sprites.healthBar
+      value: 
+      objectReference: {fileID: 513951961}
+    - target: {fileID: 2434103286776335676, guid: d59a8f9f170686444a1967fd07ec5ba2,
+        type: 3}
+      propertyPath: _player1Sprites.midHealth
+      value: 
+      objectReference: {fileID: 245150303}
+    - target: {fileID: 2434103286776335676, guid: d59a8f9f170686444a1967fd07ec5ba2,
+        type: 3}
+      propertyPath: _player2Sprites.healthBar
+      value: 
+      objectReference: {fileID: 2030774145}
+    - target: {fileID: 2434103286776335676, guid: d59a8f9f170686444a1967fd07ec5ba2,
+        type: 3}
+      propertyPath: _player2Sprites.midHealth
+      value: 
+      objectReference: {fileID: 1345222977}
+    - target: {fileID: 2434103286776335676, guid: d59a8f9f170686444a1967fd07ec5ba2,
+        type: 3}
+      propertyPath: _player1Sprites.highHealth
+      value: 
+      objectReference: {fileID: 252772457}
+    - target: {fileID: 2434103286776335676, guid: d59a8f9f170686444a1967fd07ec5ba2,
+        type: 3}
+      propertyPath: _player2Sprites.highHealth
+      value: 
+      objectReference: {fileID: 1463507303}
+    - target: {fileID: 2434103286776335676, guid: d59a8f9f170686444a1967fd07ec5ba2,
+        type: 3}
+      propertyPath: _player1Sprites.currentSprite
+      value: 
+      objectReference: {fileID: 1291598328}
+    - target: {fileID: 2434103286776335676, guid: d59a8f9f170686444a1967fd07ec5ba2,
+        type: 3}
+      propertyPath: _player2Sprites.currentSprite
+      value: 
+      objectReference: {fileID: 299280392}
     - target: {fileID: 2781872034880164795, guid: d59a8f9f170686444a1967fd07ec5ba2,
         type: 3}
       propertyPath: m_Pivot.x

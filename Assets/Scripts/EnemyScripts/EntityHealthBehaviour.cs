@@ -31,16 +31,8 @@ public class EntityHealthBehaviour : MonoBehaviour
     private float invunDeltaTime = 0.1f;
     [SerializeField]
     private BoolReference takenDamage;
-    //Gets the healthbar from the canvas, must be dragged in to create reference
-    public Image healthBar;
-
-    //Gets the three images for the high, medium, and low health sprites
-    public Image LowHealth;
-    public Image MidHealth;
-    public Image HighHealth;
-
-    //Gets the image in the UI that will be changed
-    public Image HealthSprite;
+    [SerializeField]
+    private HealthSpriteObject HealthBarSprites;
     [SerializeField]
     private GameEvent Event;
     //A boolean for, surprisingly, if theyre alive
@@ -116,19 +108,19 @@ public class EntityHealthBehaviour : MonoBehaviour
     {
         if (gameObject.CompareTag("Player"))
         {
-            healthBar.fillAmount =currentHealth / 15f;
+            HealthBarSprites.sprites.HealthBar.fillAmount =currentHealth / 15f;
 
             if (currentHealth / 15f <= 0.7f && currentHealth / 15f >= 0.35f)
             {
-                HealthSprite.sprite = MidHealth.sprite;
+                HealthBarSprites.sprites.currentSprite.sprite = HealthBarSprites.sprites.MidHealth.sprite;
             }
             if (currentHealth / 15f > 0.7f)
             {
-                HealthSprite.sprite = HighHealth.sprite;
+                HealthBarSprites.sprites.currentSprite.sprite = HealthBarSprites.sprites.HighHealth.sprite;
             }
             if (currentHealth / 15f < 0.35f)
             {
-                HealthSprite.sprite = LowHealth.sprite;
+                HealthBarSprites.sprites.currentSprite.sprite = HealthBarSprites.sprites.LowHealth.sprite;
             }
         }
 
