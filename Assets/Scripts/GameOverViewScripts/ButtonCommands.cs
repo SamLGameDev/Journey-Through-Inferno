@@ -10,6 +10,7 @@ public class ButtonCommands : MonoBehaviour
     [SerializeField] Player player2;
     [SerializeField] private EventSystem _events;
     [SerializeField] private GameObject mainMenu;
+    [SerializeField] private IntReference sceneToLoad;
 
     // Loads the main menu
     public void MainMenu()
@@ -28,7 +29,7 @@ public class ButtonCommands : MonoBehaviour
     {
         player1.Reset();
         player2.Reset();
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(sceneToLoad.value) ;
     }
 
     // Update is called once per frame

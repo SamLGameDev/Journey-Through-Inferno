@@ -22,4 +22,8 @@ public class GameEvent : ScriptableObject
     {
         listeners.Remove(listener);
     }
+    public void UnRegisterAllListeners()
+    {
+        listeners.Clear();
+    }
 }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b7288b36b84b9241be4fdadd30129c7, type: 3}
   m_Name: Moon
   m_EditorClassIdentifier: 
-  cardImage: {fileID: 21300000, guid: 3cb7c35a750699348a04840d1ae1be5e, type: 3}
+  cardImage: {fileID: 21300000, guid: 51cc7bde2621b134dad08b8731d42c51, type: 3}
   effectValue: 0
   description: 'When problems are hard to see in the moonlight, trust your intuition
     not to lead you astray.

@@ -49,14 +49,14 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        PlaySound("Background_Music");
+       PlaySound("Background_Music");
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.K))
         {
-            PlaySound("Test_Sounds");
+           PlaySound("Test_Sounds");
         }
     }
 

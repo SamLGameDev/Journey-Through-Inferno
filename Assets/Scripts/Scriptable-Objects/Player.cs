@@ -101,6 +101,7 @@ public class Player : BasicAttributes
     public int healthToBeregenerated;
     public GameObject confusionBullet;
     public float ConfusionCooldown;
+    public PlayerState currentState;
     public override void Reset()
     {
         chariotSpeed.value = 0;
@@ -124,6 +125,7 @@ public class Player : BasicAttributes
         speed.value = 7;
         swordDamage.value = 3;
         gunCooldown.value = 1.5f;
+        currentState = PlayerState.moving;
     }
     public void Regen()
     {
@@ -133,4 +135,18 @@ public class Player : BasicAttributes
     {
         CurrentRegenAmount = 0;
     }
+    public enum PlayerState
+    {
+        Idle,
+        moving,
+        lunge,
+        victory,
+        movementLock
+    }
+
+    public void UpdatePlayerState(PlayerState state)
+    {
+        currentState = state;
+    }
+
 }

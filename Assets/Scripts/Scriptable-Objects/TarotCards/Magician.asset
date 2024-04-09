@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b7288b36b84b9241be4fdadd30129c7, type: 3}
   m_Name: Magician
   m_EditorClassIdentifier: 
-  cardImage: {fileID: 21300000, guid: 5fa8a93f7dcd2a9449cb13c4c66cee22, type: 3}
+  cardImage: {fileID: 21300000, guid: 38f2f59296e56e54bbb3ee27ae928407, type: 3}
   effectValue: 3
   description: 'It can take years of focus to make a vision into reality. A magician
     will toil away until he gets his desired results.

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b7288b36b84b9241be4fdadd30129c7, type: 3}
   m_Name: Hangman
   m_EditorClassIdentifier: 
-  cardImage: {fileID: 21300000, guid: 3cb7c35a750699348a04840d1ae1be5e, type: 3}
+  cardImage: {fileID: 21300000, guid: e8e2c0846648006458e8039c5cad579a, type: 3}
   effectValue: 6
   description: 'A noble self-sacrifice for wisdom, following in the footsteps of
     Odin.

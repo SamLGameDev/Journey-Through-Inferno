@@ -43,7 +43,7 @@ namespace Fungus
         protected bool nextLineInputFlag;
 
         protected float ignoreClickTimer;
-
+        [SerializeField]
         protected StandaloneInputModule currentStandaloneInputModule;
 
         protected Writer writer;
@@ -86,6 +86,7 @@ namespace Fungus
 
             if (writer != null)
             {
+                Debug.Log(currentStandaloneInputModule.name);
                 if (Input.GetButtonDown(currentStandaloneInputModule.submitButton) ||
                     (cancelEnabled && Input.GetButton(currentStandaloneInputModule.cancelButton)))
                 {

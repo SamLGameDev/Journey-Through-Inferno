@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5630751429108606778}
   - component: {fileID: 5591556503266450341}
   - component: {fileID: 8460976937226915685}
+  - component: {fileID: 6350888114196410641}
   m_Layer: 0
   m_Name: Bridge
   m_TagString: Untagged
@@ -32,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5630751429108606778
 SpriteRenderer:
@@ -145,3 +146,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   river: {fileID: 0}
+--- !u!95 &6350888114196410641
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3093925325637997758}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a2eebbe257d4e73419e5e02e15f1b099, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

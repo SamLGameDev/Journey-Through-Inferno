@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b7288b36b84b9241be4fdadd30129c7, type: 3}
   m_Name: Sun
   m_EditorClassIdentifier: 
-  cardImage: {fileID: 21300000, guid: 3cb7c35a750699348a04840d1ae1be5e, type: 3}
+  cardImage: {fileID: 21300000, guid: 1a0861a6fe529394ea18754646d3229d, type: 3}
   effectValue: 0
   description: 'May the sun smile golden upon your successes and happy endings.
 
