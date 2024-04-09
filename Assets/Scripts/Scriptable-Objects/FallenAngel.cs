@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "ScriptableObjects/GameObjects/Enemys/FallenAngel")]
 public class EnemyStats : BasicAttributes
 {
     public float chargeCooldown;

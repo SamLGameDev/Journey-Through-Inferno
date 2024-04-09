@@ -5,7 +5,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "ScriptableObjects/GameObjects/TarotCards/TarotBase")]
 public class TarotCards :ScriptableObject
 {
     public Sprite cardImage;

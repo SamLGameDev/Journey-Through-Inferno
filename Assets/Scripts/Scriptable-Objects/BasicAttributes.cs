@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "ScriptableObjects/GameObjects/EntityBase")]
 public class BasicAttributes : ScriptableObject
 {
     /// <summary>

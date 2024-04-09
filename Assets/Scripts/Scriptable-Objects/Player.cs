@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "ScriptableObjects/GameObjects/Players/PlayerBase")]
 public class Player : BasicAttributes
 {
     /// <summary>
