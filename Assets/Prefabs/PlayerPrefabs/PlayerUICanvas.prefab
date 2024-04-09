@@ -230,7 +230,7 @@ RectTransform:
   - {fileID: 6902010671428791063}
   - {fileID: 5568617760818929161}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -321,6 +321,20 @@ MonoBehaviour:
     Variable: {fileID: 11400000, guid: 16588c5a3904f77438a9465b65c1da4e, type: 2}
     constantValue: 0
     useConstant: 1
+  _player1Sprites:
+    lowHeath: {fileID: 4921072880562162752}
+    highHealth: {fileID: 5495234601071457373}
+    midHealth: {fileID: 1050200932695194123}
+    healthBar: {fileID: 8994677800336466769}
+    currentSprite: {fileID: 4947741745585305881}
+  _player2Sprites:
+    lowHeath: {fileID: 6883026930436989905}
+    highHealth: {fileID: 3597737715836468430}
+    midHealth: {fileID: 780742612908223579}
+    healthBar: {fileID: 7875501835849997115}
+    currentSprite: {fileID: 8720906629025934158}
+  _player1Holder: {fileID: 11400000, guid: 6fe9df3782a5e7340bc02da442f184ee, type: 2}
+  _player2Holder: {fileID: 11400000, guid: 5c1d4edc147e4f7439e80889515153a3, type: 2}
 --- !u!1 &2473062571516538480
 GameObject:
   m_ObjectHideFlags: 0

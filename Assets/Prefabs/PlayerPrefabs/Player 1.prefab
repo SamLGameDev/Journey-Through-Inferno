@@ -482,11 +482,7 @@ MonoBehaviour:
     Variable: {fileID: 11400000, guid: 99906eb09e330b64896702a685f48563, type: 2}
     constantValue: 0
     useConstant: 0
-  healthBar: {fileID: 0}
-  LowHealth: {fileID: 0}
-  MidHealth: {fileID: 0}
-  HighHealth: {fileID: 0}
-  HealthSprite: {fileID: 0}
+  HealthBarSprites: {fileID: 11400000, guid: 6fe9df3782a5e7340bc02da442f184ee, type: 2}
   Event: {fileID: 0}
   IsAlive: 1
   invincible: 0
