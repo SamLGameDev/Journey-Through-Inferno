@@ -1,46 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class ScreenShake : MonoBehaviour
 {
-    public Transform cameraTransform;
-    public float shakeDuration; // Duration of the screenshake
-    public float shakeMagnitude; // Intensity of the screenshake
+    public static ScreenShake Instance {  get; private set; }
 
-    private float timeElapsed = 0f;
-    private Vector3 originalPos;
+    private CinemachineVirtualCamera cinemachineVirtualCamera;
+    private float shakeTimer;
 
 
-    private void Start()
+
+
+    private void Awake()
     {
-        // Stores the original position of the camera
-        originalPos = cameraTransform.localPosition; 
+        Instance = this;
+        cinemachineVirtualCamera = GetComponent<CinemachineVirtualCamera>();
     }
 
-    public void Shake()
+    public void ShakeCamera(float intensity , float time)
     {
-        originalPos = cameraTransform.localPosition;
-        timeElapsed = 0f; // Reset the elapsed time for the shake effect
+        CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin = cinemachineVirtualCamera.GetComponent<CinemachineBasicMultiChannelPerlin>();
+       
+        cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = intensity;
+        shakeTimer = time;
     }
 
     private void Update()
     {
-        if (timeElapsed < shakeDuration)
+        if(shakeTimer > 0) 
         {
-            // Generate random shake offset every frame
-            Vector3 shakeOffset = Random.insideUnitSphere * shakeMagnitude;
+            shakeTimer -= Time.deltaTime;
+            if(shakeTimer <= 0f) 
+            {
+                CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin = cinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
 
-            // Apply the shake offset to the camera's position
-            cameraTransform.localPosition = originalPos + shakeOffset;
-            
-            // Increments the elapsed time
-            timeElapsed += Time.deltaTime;
+
+                cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = 0f;
+            }
         }
-        else
-        {
-            // Resets the camera's position 
-            cameraTransform.localPosition = originalPos;
-        }
+        
     }
 }
