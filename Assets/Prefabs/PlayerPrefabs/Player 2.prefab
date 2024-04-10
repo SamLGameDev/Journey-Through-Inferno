@@ -129,7 +129,7 @@ Transform:
   - {fileID: 415538111962109694}
   - {fileID: 1052976304664338801}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6436077244101123047
 SpriteRenderer:
@@ -449,6 +449,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fc125533f0b8d14190b0853c6a70f48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stepTime: 0
+  walkAnimName: 
 --- !u!114 &5002834956180827612
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,5 +12,9 @@ public class FuriesBullet : MonoBehaviour
         
         if (collision.CompareTag("Wall"))
         { Destroy(gameObject); }
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Obstacles"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
