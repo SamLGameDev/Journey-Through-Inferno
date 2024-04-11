@@ -26,7 +26,6 @@ public class AudioCaller : MonoBehaviour
                 manager.PlaySound(walkAnimName);
                 time = stepTime;
             }
-            print(time);
             time -= Time.deltaTime;
         }
     }
