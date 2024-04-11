@@ -55,7 +55,7 @@ MonoBehaviour:
   meeleRange: 3
   chargeFarAway: 3
   chargeNear: 6
-  chargeSpeed: 8
+  chargeSpeed: 500
   chargeDuration: 2
   chargeDamageInterval: 0.5
   meleeSizeX: 2

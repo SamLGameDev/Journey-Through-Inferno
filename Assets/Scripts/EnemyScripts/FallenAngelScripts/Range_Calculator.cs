@@ -12,6 +12,7 @@ public class Range_Calculator : MonoBehaviour
     /// </summary>
     private float cooldown;
     [SerializeField] private EnemyStats stats;
+    public Angel_State state;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +40,13 @@ public class Range_Calculator : MonoBehaviour
         
 
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (state == Angel_State.charging && collision.gameObject.layer == LayerMask.NameToLayer("Obstacles"))
+        {
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        }
+    }
     /// <summary>
     /// checks if the target is within the range of the charge move
     /// </summary>
@@ -52,6 +60,7 @@ public class Range_Calculator : MonoBehaviour
             && distance.sqrMagnitude > new Vector2(stats.chargeFarAway,stats.chargeFarAway).sqrMagnitude)
         {
             EnablerAStar(false); // disbles pathfinding so it isnt trying to move when charging
+            state = Angel_State.charging;
             GetComponent<Animator>().SetBool("Within_Charge_Range", true);
             return true;
 
@@ -69,7 +78,11 @@ public class Range_Calculator : MonoBehaviour
         GetComponent<AIDestinationSetter>().enabled = setter;
         GetComponent<AIPath>().enabled = setter;
     }
-
+    public enum Angel_State
+    {
+        normal,
+        charging
+    }
     // Update is called once per frame
     void Update()
     {
@@ -83,7 +96,7 @@ public class Range_Calculator : MonoBehaviour
         bool range = Within_Melee_Range(distance);
         // if the target isnt within melee range and charge isnt already happening and
         // its been 10 seconds since the last charge, charge again
-        if (!range && GetComponent<Animator>().GetBool("Within_Charge_Range") == false && time - stats.chargeCooldown > cooldown)
+        if (!range && state == Angel_State.normal && time - stats.chargeCooldown > cooldown)
         {
             cooldown = Time.time;  
             Within_Charge_Range(distance);

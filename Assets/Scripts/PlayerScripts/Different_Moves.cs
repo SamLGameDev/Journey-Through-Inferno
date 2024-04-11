@@ -101,19 +101,22 @@ public class Different_Moves : MonoBehaviour
         GetComponent<Animator>().SetBool("Within_Charge_Range", false);
         // gets the cooldown time for the melee so its not istantly killing whatever it touches 
         float Melee_Damage_Cooldown = -5;
-        float time = Time.time;
+        float time = Time.time; 
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
         // duration od the charge
+        rb.AddForce(transform.up * stats.chargeSpeed);
         while (Time.time - stats.chargeDuration < time)
         {
             yield return null;
             // move it in the direction it is facing at a speed if 5
-            transform.position += transform.up * Time.deltaTime * stats.chargeSpeed;
+
             // calles melee to get new cooldown or attack
             Melee_Damage_Cooldown = Melee(Melee_Damage_Cooldown);
         }
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+
         rb.velocity = Vector3.zero;
-        // reenables pathfinding so thta it can move again
+        // reenables pathfinding so that it can move again
+        GetComponent<Range_Calculator>().state = Range_Calculator.Angel_State.normal;
         EnablerAStar(true);
     }
     /// <summary>
