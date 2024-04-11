@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "ScriptableObjects/GameObjects/Players/PlayerBase")]
 public class Player : BasicAttributes
 {
     /// <summary>
@@ -97,9 +97,11 @@ public class Player : BasicAttributes
     public Gamepad gamepad;
     public FloatReference timeUntillRegenAfterAttack;
     public FloatReference timeUntillRegen;
-    public int RegenAmount;
+    public int CurrentRegenAmount;
+    public int healthToBeregenerated;
     public GameObject confusionBullet;
     public float ConfusionCooldown;
+    public PlayerState currentState;
     public override void Reset()
     {
         chariotSpeed.value = 0;
@@ -119,9 +121,32 @@ public class Player : BasicAttributes
         spreadShotNumber.value = 0;
         cooldownReduction.value = 0;
         droppableCards.Clear();
-        RegenAmount = 0;
+        CurrentRegenAmount = 0;
         speed.value = 7;
         swordDamage.value = 3;
         gunCooldown.value = 1.5f;
+        currentState = PlayerState.moving;
     }
+    public void Regen()
+    {
+        CurrentRegenAmount = healthToBeregenerated;
+    }
+    public void ExitRegen()
+    {
+        CurrentRegenAmount = 0;
+    }
+    public enum PlayerState
+    {
+        Idle,
+        moving,
+        lunge,
+        victory,
+        movementLock
+    }
+
+    public void UpdatePlayerState(PlayerState state)
+    {
+        currentState = state;
+    }
+
 }

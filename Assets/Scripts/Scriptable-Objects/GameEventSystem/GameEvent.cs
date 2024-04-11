@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "ScriptableObjects/Events/GameEvent")]
 public class GameEvent : ScriptableObject
 {
     private List<GameEventListener> listeners = new List<GameEventListener>();
@@ -21,5 +21,9 @@ public class GameEvent : ScriptableObject
     public void UnRegisterListener(GameEventListener listener)
     {
         listeners.Remove(listener);
+    }
+    public void UnRegisterAllListeners()
+    {
+        listeners.Clear();
     }
 }

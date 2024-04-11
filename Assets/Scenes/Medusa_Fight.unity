@@ -3939,7 +3939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f28d629d50fda14b80f987ce825f904, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneID: 5
+  nextSceneID: 8
 --- !u!212 &291487507
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9516,6 +9516,10 @@ MonoBehaviour:
   player2: {fileID: 0}
   _events: {fileID: 0}
   mainMenu: {fileID: 0}
+  sceneToLoad:
+    Variable: {fileID: 0}
+    constantValue: 0
+    useConstant: 1
 --- !u!1 &749467869
 GameObject:
   m_ObjectHideFlags: 0
@@ -18520,6 +18524,7 @@ MonoBehaviour:
   topTextBox: {fileID: 268379351}
   bottomTextBox: {fileID: 903218510}
   noCards: 0
+  enemysCount: {fileID: 0}
 --- !u!4 &1336663985
 Transform:
   m_ObjectHideFlags: 0

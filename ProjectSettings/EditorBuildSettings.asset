@@ -8,19 +8,28 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: ced3ad88ee215f949b82dbdfce3e37a5
-  - enabled: 0
+  - enabled: 1
+    path: Assets/Scenes/tutorial.unity
+    guid: 0688b570b998f564cb2ddc488fb913b7
+  - enabled: 1
+    path: Assets/Scenes/GunTutorial.unity
+    guid: d8e982b5760d7e74ca9a139fe0a0a7a4
+  - enabled: 1
+    path: Assets/Scenes/ExclusiveEnemyies tutorial.unity
+    guid: bce9f51c8cc066740a27e850b2934f8d
+  - enabled: 1
     path: Assets/Scenes/CutScene_Scenes/City_of_Dis Intro.unity
     guid: 656b7249ec8b0c147b477df8c192d46b
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/co-op scene.unity
     guid: ea8ed10a650fe9e46b77ba0e3a7c58c2
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/CutScene_Scenes/City_of_Dis_DeusEx.unity
     guid: 3884d134ddc2334459c002d08f33d051
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Medusa_Fight.unity
     guid: 69ce78ce905dae64989570afd03d5922
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/CutScene_Scenes/City_of_Dis_End.unity
     guid: 506c992775d902442b49785837b0f135
   - enabled: 1

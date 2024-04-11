@@ -5,7 +5,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "ScriptableObjects/GameObjects/TarotCards/TarotBase")]
 public class TarotCards :ScriptableObject
 {
     public Sprite cardImage;
@@ -33,7 +33,7 @@ public class TarotCards :ScriptableObject
         HealthRegen,
         increaseProjectileSize,
         SpreadShot,
-        reducedBossHealth,
+        KnockBack,
         Homing,
         invisibility,
         cooldownReduction,
@@ -80,7 +80,7 @@ public class TarotCards :ScriptableObject
                 stats.maxHealth += effectValue;
                 break;
             case possibleModifiers.HealthRegen:
-                stats.RegenAmount = effectValue;
+                stats.CurrentRegenAmount = effectValue;
                 break;
             case possibleModifiers.increaseProjectileSize:
                 stats.projectilesize = new Vector3(effectValue, effectValue, 0);

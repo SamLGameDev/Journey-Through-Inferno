@@ -65,8 +65,6 @@ public class Pluto_behaviour : MonoBehaviour
         GameObject Cerberus = Instantiate(stats.cerberusPrefab, transform.position, Quaternion.identity);
         Rigidbody2D projectileRb = Cerberus.GetComponent<Rigidbody2D>();
         projectileRb.velocity = shootDirection * stats.cerberusSpeed;
-
-        Destroy(Cerberus, 3);
     }
 
     void Clone()

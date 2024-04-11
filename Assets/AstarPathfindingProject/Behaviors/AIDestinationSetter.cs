@@ -24,6 +24,8 @@ namespace Pathfinding {
 		IAstarAI ai;
 		public bool isConfused;
 		public List<GameObject> targets;
+		public CurrentState currentState = CurrentState.normal;
+
   
 
         void OnEnable () {
@@ -34,7 +36,11 @@ namespace Pathfinding {
 			// scripts as well. So it makes sense that it is up to date every frame.
 			if (ai != null) ai.onSearchPath += Update;
 		}
-
+		public enum CurrentState
+		{
+			normal,
+			retreating
+		}
 		void OnDisable () {
 			if (ai != null) ai.onSearchPath -= Update;
 		}
@@ -66,13 +72,13 @@ namespace Pathfinding {
 			{
 				target = GetTarget().transform;
 			}
-			if (coop && !isConfused)
+			if (coop && !isConfused && currentState == CurrentState.normal)
 			{
-				if (!player1)
+				if (!player1.gameObject.activeInHierarchy)
 				{
 					target = player2;
 				}
-				else if (!player2)
+				else if (!player2.gameObject.activeInHierarchy)
 				{
 					target = player1;
 				}

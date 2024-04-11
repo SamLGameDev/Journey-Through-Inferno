@@ -14,12 +14,14 @@ public class EntityHealthBehaviour : MonoBehaviour
 {
     public bool isBoss;
     public BasicAttributes stats;
+    [SerializeField]
+    private GameEvent PlayerDeathEvent;
     private bool flashRed;
     [SerializeField] private GameEventListener OnDamaged;
     [SerializeField] private float invunTimeOnHit;
-    public static object[] player1Alive = new object[] { true };
-    public static object[] player2Alive = new object[] { true };
-
+    public static playerInfo player1 = new();
+    public static playerInfo player2 = new();
+    public GameObject gravestone;
     // This is public so that it can be accessed by UI.
 
     private bool damageInvulnerable;
@@ -29,39 +31,35 @@ public class EntityHealthBehaviour : MonoBehaviour
     private float invunDeltaTime = 0.1f;
     [SerializeField]
     private BoolReference takenDamage;
-    //Gets the healthbar from the canvas, must be dragged in to create reference
-    public Image healthBar;
-
-    //Gets the three images for the high, medium, and low health sprites
-    public Image LowHealth;
-    public Image MidHealth;
-    public Image HighHealth;
-
-    //Gets the image in the UI that will be changed
-    public Image HealthSprite;
-
+    [SerializeField]
+    private HealthSpriteObject HealthBarSprites;
+    [SerializeField]
+    private GameEvent Event;
     //A boolean for, surprisingly, if theyre alive
     public bool IsAlive;
     public bool invincible;
     public bool Confused = false;
-
+    public bool onlyVirgil;
+    public bool onlyDante;
+    private bool triggeredKnockBack = false;
+    private GameObject damageDealer;
+    private void OnEnable()
+    {
+        stats.OfTypecounter.Add(gameObject);
+        stats.originalPosition = transform;
+    }
     private void Start()
     {
-        player1Alive = new object[] { true };
-        player2Alive = new object[] { true };
-        stats.OfTypecounter.Add(gameObject);
-        object[] Hermit = HasCard(TarotCards.possibleModifiers.reducedBossHealth);
-        if (isBoss && (bool)Hermit[0]) 
-        {
-            TarotCards card = (TarotCards)Hermit[1];
-            stats.maxHealth -= card.effectValue;
-        }
+        player1.IsAlive = true;
+        player2.IsAlive = true;
         currentHealth = stats.maxHealth + stats.armour;
         damageInvulnerable = false;
         IsAlive = true;
         StartCoroutine(FlashRed());
         StartCoroutine(ConfusionDuration());
+        StartCoroutine(knockback());
     }
+
     private object[] HasCard(TarotCards.possibleModifiers modifier)
     {
         try
@@ -92,7 +90,7 @@ public class EntityHealthBehaviour : MonoBehaviour
 
             AIDestinationSetter destinationSetter = GetComponent<AIDestinationSetter>();
             destinationSetter.isConfused = true;
-            destinationSetter.targets = stats.OfTypecounter.Items;
+            destinationSetter.targets = stats.OfTypecounter.GetItems();
         }
     }
     private IEnumerator ConfusionDuration()
@@ -108,31 +106,45 @@ public class EntityHealthBehaviour : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        UpdateHealthBar();
+
+    }
+
+    private void UpdateHealthBar()
+    {
         if (gameObject.CompareTag("Player"))
         {
-            healthBar.fillAmount =currentHealth / 15f;
+            HealthBarSprites.sprites.HealthBar.fillAmount = currentHealth / 15f;
 
             if (currentHealth / 15f <= 0.7f && currentHealth / 15f >= 0.35f)
             {
-                HealthSprite.sprite = MidHealth.sprite;
+                HealthBarSprites.sprites.currentSprite.sprite = HealthBarSprites.sprites.MidHealth.sprite;
             }
             if (currentHealth / 15f > 0.7f)
             {
-                HealthSprite.sprite = HighHealth.sprite;
+                HealthBarSprites.sprites.currentSprite.sprite = HealthBarSprites.sprites.HighHealth.sprite;
             }
             if (currentHealth / 15f < 0.35f)
             {
-                HealthSprite.sprite = LowHealth.sprite;
+                HealthBarSprites.sprites.currentSprite.sprite = HealthBarSprites.sprites.LowHealth.sprite;
             }
         }
-
     }
+
     /// <summary>
     /// Reduces the entity's health by a set amount
     /// </summary>
     /// <param name="damageAmount">Amount of damage to apply</param>
-    public void ApplyDamage(int damageAmount, GameObject damagerDealer = null)
+    public void ApplyDamage(int damageAmount, GameObject damagerDealerLocal = null, string weapon = null)
     {
+        if (damagerDealerLocal != null && damagerDealerLocal.name == "Player 1" && onlyVirgil)
+        {
+            return;
+        }
+        else if (damagerDealerLocal != null && damagerDealerLocal.name == "Player 2" && onlyDante)
+        {
+            return;
+        }
         if (damageInvulnerable || invincible)
         {
             print("Damage blocked due to being invulnerable. :)");
@@ -149,6 +161,11 @@ public class EntityHealthBehaviour : MonoBehaviour
 
             print(currentHealth);
         }
+        if (Player_movement.pvP_Enabled && currentHealth <= stats.maxHealth / 2)
+        {
+            Event.Raise();
+            Event.UnRegisterAllListeners();
+        }
         
 
         print($"{gameObject.name} took {damageAmount} damage, current health: {currentHealth}");
@@ -157,7 +174,13 @@ public class EntityHealthBehaviour : MonoBehaviour
         // If so, kill it.
         if (currentHealth <= 0)
         {
-            EntityDeath(damagerDealer);     
+            EntityDeath(damagerDealerLocal);     
+        }
+        object[] hermit = HasCard(TarotCards.possibleModifiers.KnockBack);
+        if ((bool)hermit[0] && gameObject.tag != "Player" && !isBoss && weapon == "sword") 
+        {
+            damageDealer = damagerDealerLocal;
+            triggeredKnockBack = true;
         }
 
         if (invunTimeOnHit > 0)
@@ -166,6 +189,33 @@ public class EntityHealthBehaviour : MonoBehaviour
         }
 
         
+    }
+    private IEnumerator knockback()
+    {
+        while(true)
+        {
+            yield return new WaitUntil(() => triggeredKnockBack);
+            Range_Calculator range_Calculator = GetComponent<Range_Calculator>();
+            range_Calculator.enabled = false;
+            TarotCards knockbackDistance = (TarotCards)HasCard(TarotCards.possibleModifiers.KnockBack)[1];
+            EnablerAStar(false);
+            Vector2 direction = damageDealer.transform.position - transform.position;
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            rb.AddForce(-direction.normalized * Time.deltaTime * knockbackDistance.effectValue);
+            yield return new WaitForSeconds(0.15f);
+            rb.totalForce = Vector2.zero;
+            rb.velocity = Vector2.zero;
+            EnablerAStar(true);
+            rb.totalForce = Vector2.zero;
+            range_Calculator.enabled = true;
+            triggeredKnockBack = false;
+        }
+    }
+    private void EnablerAStar(bool setter)
+    {
+        GetComponent<Seeker>().enabled = setter;
+        GetComponent<AIDestinationSetter>().enabled = setter;
+        GetComponent<AIPath>().enabled = setter;
     }
     private IEnumerator FlashRed()
     {
@@ -266,71 +316,81 @@ public class EntityHealthBehaviour : MonoBehaviour
         }
 
     }
+    private void OnDisable()
+    {
+        stats.OfTypecounter.Remove(gameObject);
+    }
     private void EntityDeath(GameObject damageDealer)
     {
+
         if (gameObject.CompareTag("Player"))
         {
+            UpdateHealthBar();
             if (stats.extraLives > 0)
             {
                 stats.extraLives--;
                 currentHealth = stats.maxHealth;
                 return;
             }
+
             if (gameObject.name == "Player 1")
             {
-                player1Alive = new object[] { false, gameObject };
+                player1.IsAlive = false;
+                PlayerDeathEvent.Raise();
+                player1.playerObject = gameObject;
             }
             else
             {
-                player2Alive = new object[] { false, gameObject };
+                player2.IsAlive = false;
+                PlayerDeathEvent.Raise();
+                player2.playerObject = gameObject;                
             }
+
             if ((bool)HasCard(TarotCards.possibleModifiers.SharedLife)[0])
             {
-                if(gameObject.name == "Player 1")
+                if (gameObject.name == "Player 1")
                 {
-                    if ((bool)player2Alive[0])
+                    if (player2.IsAlive)
                     {
-                        Player_movement player = GetComponent<Player_movement>();
-                        player.stats.speed.value = 3;
-                        player.UpdateSpeed();
-                        player.stats.swordDamage.value = 1;
-                        player.stats.gunCooldown.value += 2;
+                        DebuffOnDeath();
                         return;
                     }
                 }
                 else
                 {
-                    if ((bool)player1Alive[0])
+                    if (player1.IsAlive)
                     {
-                        Player_movement player = GetComponent<Player_movement>();
-                        player.stats.speed.value = 3;
-                        player.UpdateSpeed();
-                        player.stats.swordDamage.value = 1;
-                        player.stats.gunCooldown.value += 2;
+                        DebuffOnDeath();
                         return;
                     }
                 }
             }
-            if (!(bool)player1Alive[0] && gameObject.name == "Player 2")
+
+            if (!player1.IsAlive && gameObject.name == "Player 2")
             {
-                Destroy((GameObject)player1Alive[1]);
+                Destroy(player1.playerObject);
             }
-            else if (!(bool)player2Alive[0] && gameObject.name == "Player 1")
+            else if (!player2.IsAlive && gameObject.name == "Player 1")
             {
-                Destroy((GameObject)player2Alive[1]);
+                Destroy(player2.playerObject);
             }
+
             GameManager.instance.OnPlayerDeath();
             IsAlive = false;
             Player_movement playerCotnroller = gameObject.GetComponent<Player_movement>();
             playerCotnroller.StopAllCoroutines();
-            if (playerCotnroller.stats.gamepad != null){
+
+            if (playerCotnroller.stats.gamepad != null)
+            {
                 playerCotnroller.stats.gamepad.ResetHaptics();
             }
 
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            GameObject grave = Instantiate(gravestone, transform.position, Quaternion.identity);
+            grave.GetComponent<Respawn>().player = gameObject;
             return;
         }
-        
+
         if (damageDealer.name == "Player 2")
         {
             stats.Player2Kill.Raise();
@@ -339,9 +399,10 @@ public class EntityHealthBehaviour : MonoBehaviour
         {
             stats.Player1Kill.Raise();
         }
-        stats.OfTypecounter.Remove(gameObject);
+
         if (gameObject.CompareTag("Enemy"))
         {
+            //AudioManager.instance.PlaySound("Enemy_Death");
             GameManager.instance.OnEnemyDeath();
             IsAlive = false;
             Vector2 deathPosition = transform.position;
@@ -349,10 +410,32 @@ public class EntityHealthBehaviour : MonoBehaviour
             if (damageDealer.GetComponent<Player_movement>() != null && HasJudgement(damageDealer)) EnemyExplodeOnDeath(damageDealer, deathPosition);
 
         }
+        try
+        {
+            Event.Raise();
+        }
+        catch { }
 
-        if(isBoss)
+        if (isBoss)
         {
             GameManager.instance.UpdateGameState(GameManager.GameState.EncounterCleared);
         }
     }
+
+    private void DebuffOnDeath()
+    {
+        Player_movement player = GetComponent<Player_movement>();
+        player.stats.speed.value = 3;
+        player.UpdateSpeed();
+        player.stats.swordDamage.value = 1;
+        player.stats.gunCooldown.value += 2;
+    }
+
+    public struct playerInfo
+    {
+        public bool IsAlive;
+        public GameObject playerObject;
+    }
+
+
 }

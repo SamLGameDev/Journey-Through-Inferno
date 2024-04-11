@@ -1,6 +1,7 @@
 using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 
 public class Furies_Behavior : MonoBehaviour
@@ -10,8 +11,16 @@ public class Furies_Behavior : MonoBehaviour
     private Rigidbody2D rb;
     private Animator ani;
     [SerializeField]private Furies stats;
+    private AIDestinationSetter _desitinationSetter;
 
     private Transform player;
+
+    private Quaternion currentAngle;
+    private float rotateAmount;
+    private Transform _intrudingEnemyPos;
+    private Transform _destination;
+    private float currentTime;
+    private AIPath endReachedDistance;
     private enum FuriesState // Machine state for the furies' behaviour. Will switch between the idle, moving, shooting and retreating states depending on certain factors
     {
         Move,
@@ -23,12 +32,16 @@ public class Furies_Behavior : MonoBehaviour
 
     private void Start()
     {
+        _destination = new GameObject().transform;
         ani = GetComponent<Animator>(); 
         rb = GetComponent<Rigidbody2D>();
-        player = GetComponent<AIDestinationSetter>().target; // gets the target from Astar
+        _desitinationSetter = GetComponent<AIDestinationSetter>();
+        player = _desitinationSetter.target; // gets the target from Astar
         currentState = FuriesState.Move;
-        GetComponent<AIPath>().endReachedDistance = stats.shootingRange;
+        endReachedDistance = GetComponent<AIPath>();
+        endReachedDistance.endReachedDistance = stats.shootingRange;
         StartCoroutine(FuriesStateMachine());
+        currentTime = -5;
     }
     /// <summary>
     /// flips the x axis of the sprite for the left animation
@@ -200,17 +213,41 @@ public class Furies_Behavior : MonoBehaviour
         {
             currentState = FuriesState.Retreat;
             isThreatened = true;
+            _intrudingEnemyPos = other.transform;
         }
     }
 
     private void Retreat()
     {
+        endReachedDistance.endReachedDistance = 0;
         // While the isThreatened variable is true, the furies will move away from the player
-        if (isThreatened)
-        { transform.position = Vector2.MoveTowards(transform.position, player.position, -stats.moveSpeed * Time.deltaTime); }
+        if (isThreatened && Time.time-5 > currentTime)
+        { 
+            currentTime = Time.time;
+            _desitinationSetter.currentState = AIDestinationSetter.CurrentState.retreating;
+            Vector2 Retreatdirection = Quaternion.Euler(currentAngle.z, currentAngle.y, 0) * (-(_intrudingEnemyPos.position - transform.position).normalized);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, Retreatdirection, 10, LayerMask.NameToLayer("Obstacles"));
+            if (!hit)
+            {
+                Destroy(_destination.gameObject);
+                _destination = new GameObject().transform;
+                _destination.position = transform.position * Retreatdirection * 8;
+                _desitinationSetter.target = _destination;
+            }
+            if (hit)
+            {
+                rotateAmount += 1;
+                currentAngle = Quaternion.AngleAxis(rotateAmount, Retreatdirection);
+            }
+        }
         // If the player is out of range then the furies will switch back to the Move state and isThreatened will switch back to false
-        if (Vector2.Distance(transform.position, player.position) > stats.shootingRange)
+        if (Vector2.Distance(transform.position, _intrudingEnemyPos.position) > stats.shootingRange)
         {
+            Debug.Log("distance" + Vector2.Distance(transform.position, _intrudingEnemyPos.position));
+            rotateAmount = 0;
+            currentAngle = new Quaternion(1, 1, 0, 0); ;
+            _desitinationSetter.currentState = AIDestinationSetter.CurrentState.normal;
+            endReachedDistance.endReachedDistance = stats.shootingRange;
             currentState = FuriesState.Move;
             isThreatened = false;
         }

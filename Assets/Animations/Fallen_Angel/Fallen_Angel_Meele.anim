@@ -20,17 +20,17 @@ AnimationClip:
   m_PPtrCurves:
   - serializedVersion: 2
     curve:
-    - time: 0.016666668
+    - time: 0
       value: {fileID: 336462125, guid: b9c223364c2739542982717abf1f6170, type: 3}
-    - time: 0.16666667
-      value: {fileID: -1316118368, guid: b9c223364c2739542982717abf1f6170, type: 3}
     - time: 0.33333334
-      value: {fileID: -1003270783, guid: b9c223364c2739542982717abf1f6170, type: 3}
-    - time: 0.5
-      value: {fileID: 449459636, guid: b9c223364c2739542982717abf1f6170, type: 3}
+      value: {fileID: -1316118368, guid: b9c223364c2739542982717abf1f6170, type: 3}
     - time: 0.6666667
+      value: {fileID: -1003270783, guid: b9c223364c2739542982717abf1f6170, type: 3}
+    - time: 1.1666666
+      value: {fileID: 449459636, guid: b9c223364c2739542982717abf1f6170, type: 3}
+    - time: 1.5
       value: {fileID: -2082213948, guid: b9c223364c2739542982717abf1f6170, type: 3}
-    - time: 0.85
+    - time: 1.8333334
       value: {fileID: -2082213948, guid: b9c223364c2739542982717abf1f6170, type: 3}
     attribute: m_Sprite
     path: 
@@ -65,7 +65,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.8666667
+    m_StopTime: 1.85
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -85,7 +85,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.41666666
+  - time: 1.1666666
     functionName: Melee
     data: 
     objectReferenceParameter: {fileID: 0}

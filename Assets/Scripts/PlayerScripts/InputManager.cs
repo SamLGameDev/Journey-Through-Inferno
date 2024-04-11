@@ -59,10 +59,11 @@ public class InputManager : MonoBehaviour
         }
 
     }
-    public void OnSword()
+    public void OnSword(CallbackContext context)
     {
-        if ( movement != null && !movement.running)
-        {
+
+        if ( movement != null && !movement.running && context.phase == InputActionPhase.Performed)
+        { 
             movement.Player_Melee(movement.sword);
         }
 
@@ -110,5 +111,15 @@ public class InputManager : MonoBehaviour
             confusionCooldown = Time.time;
             movement.confusionLoaded = true;
         }
+    }
+    public void ResurrectPlayer(CallbackContext context)
+    {
+        movement.RevivePlayer = true;
+        if (context.phase == InputActionPhase.Canceled)
+        {
+            movement.RevivePlayer = false;
+        } 
+
+                
     }
 }
