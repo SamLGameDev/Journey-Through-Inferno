@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class BridgeCrossing : MonoBehaviour
 {
-    [SerializeField] private BoxCollider2D river;
+    [SerializeField] private PolygonCollider2D river;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player")){
