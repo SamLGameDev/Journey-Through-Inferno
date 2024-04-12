@@ -17,6 +17,7 @@ public class Range_Calculator : MonoBehaviour
     void Start()
     {
         cooldown = 0;
+        GetComponent<AIPath>().slowWhenNotFacingTarget = false;
     }
     /// <summary>
     /// checks to see if the target is within melee range
