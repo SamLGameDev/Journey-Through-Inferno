@@ -149,11 +149,10 @@ public class Player_movement : MonoBehaviour
         speed = stats.speed.value + stats.chariotSpeed.value;
         Debug.Log(speed);
     }
-    public void Joystic_Movement(float movespeed)
+    public void Joystic_Movement()
     {
         // Gets the movement action and moves the player based on that times speed
-        movespeed = speed;
-        rb.velocity = MovementDirection * movespeed;
+        rb.velocity = MovementDirection * speed;
         
     }
     public void Aiming()
@@ -420,7 +419,7 @@ public class Player_movement : MonoBehaviour
         {
             case Player.PlayerState.moving:
                 rb.drag = 0;
-                Joystic_Movement(speed);
+                Joystic_Movement();
                 possibleActions();
                 Aiming();
                 Animation_Controller();
