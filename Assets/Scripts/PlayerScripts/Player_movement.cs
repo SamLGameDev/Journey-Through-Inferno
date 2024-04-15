@@ -373,7 +373,7 @@ public class Player_movement : MonoBehaviour
         while (true)
         {
             yield return new WaitUntil(() => dodash);
-            if (!upDown)
+            if (AimingDirection.y > 0.5 || AimingDirection.y < -0.5)
             {
                 dashTrail.startWidth = 1;
             }
