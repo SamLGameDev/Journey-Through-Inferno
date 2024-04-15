@@ -1953,6 +1953,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28d04583d0c318648b28ee2c53bdaeab, type: 3}
+--- !u!1 &172993184 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4158443830731422250, guid: 28d04583d0c318648b28ee2c53bdaeab,
+    type: 3}
+  m_PrefabInstance: {fileID: 172993183}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &173923731
 GameObject:
   m_ObjectHideFlags: 0
@@ -14501,7 +14507,7 @@ PrefabInstance:
     - target: {fileID: 2585844161413781899, guid: 8de850d06fecee64993b0f785a61de55,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4031499311288301325, guid: 8de850d06fecee64993b0f785a61de55,
         type: 3}
@@ -14532,12 +14538,12 @@ PrefabInstance:
         type: 3}
       propertyPath: player1
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 172993184}
     - target: {fileID: 4491234939670443685, guid: 8de850d06fecee64993b0f785a61de55,
         type: 3}
       propertyPath: player2
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1275316770}
     - target: {fileID: 4491234939670443685, guid: 8de850d06fecee64993b0f785a61de55,
         type: 3}
       propertyPath: m_Enabled
@@ -16582,6 +16588,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b, type: 3}
+--- !u!1 &1275316770 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4024701041087090802, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1275316769}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1294233922
 GameObject:
   m_ObjectHideFlags: 0
