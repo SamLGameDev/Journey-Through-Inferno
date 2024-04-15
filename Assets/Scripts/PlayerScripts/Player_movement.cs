@@ -245,8 +245,9 @@ public class Player_movement : MonoBehaviour
     public void Player_Melee(GameObject sword)
     {
         running = true;
-      //  sword.SetActive(true);
+        //  sword.SetActive(true);
         // make the sword active
+        Debug.Log("pls");
         sword.GetComponent<Animator>().SetTrigger("Press");
         running = false;
         if (!passed && gameObject.activeInHierarchy) // if it hasnt been triggered before, trigger it
@@ -373,7 +374,7 @@ public class Player_movement : MonoBehaviour
         while (true)
         {
             yield return new WaitUntil(() => dodash);
-            if (AimingDirection.y > 0.5 || AimingDirection.y < -0.5)
+            if (MovementDirection.y > 0.5 || MovementDirection.y < -0.5)
             {
                 dashTrail.startWidth = 1;
             }
@@ -434,6 +435,6 @@ public class Player_movement : MonoBehaviour
                 break;
         }
         rb.WakeUp();
-
+        transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 }

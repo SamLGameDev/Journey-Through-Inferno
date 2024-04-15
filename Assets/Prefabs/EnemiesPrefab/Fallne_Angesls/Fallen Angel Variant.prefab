@@ -219,7 +219,7 @@ MonoBehaviour:
   rotationSpeed: 360
   slowdownDistance: 0
   pickNextWaypointDist: 0.5
-  endReachedDistance: 1
+  endReachedDistance: 2
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 1
@@ -243,6 +243,7 @@ MonoBehaviour:
   player1: {fileID: 1736434646341859925, guid: 28d04583d0c318648b28ee2c53bdaeab, type: 3}
   isConfused: 0
   targets: []
+  currentState: 0
 --- !u!61 &6376933874138379425
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -341,6 +342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: ee49df38efdaefc4fa8fcd7bdf5de804, type: 2}
+  state: 0
 --- !u!114 &9195619475462717869
 MonoBehaviour:
   m_ObjectHideFlags: 0

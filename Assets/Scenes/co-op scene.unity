@@ -17313,6 +17313,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4024701041087090802, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5262642640742413803, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
         type: 3}
       propertyPath: PauseMenu
@@ -23265,7 +23270,7 @@ PrefabInstance:
     - target: {fileID: -3635221926971355599, guid: c59d0046edde7e342bbad33d6fdd1f79,
         type: 3}
       propertyPath: maxSpeed
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -3635221926971355599, guid: c59d0046edde7e342bbad33d6fdd1f79,
         type: 3}
@@ -27346,7 +27351,7 @@ PrefabInstance:
     - target: {fileID: -3635221926971355599, guid: c59d0046edde7e342bbad33d6fdd1f79,
         type: 3}
       propertyPath: maxSpeed
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -3635221926971355599, guid: c59d0046edde7e342bbad33d6fdd1f79,
         type: 3}
