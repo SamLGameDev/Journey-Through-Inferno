@@ -8,7 +8,7 @@ using UnityEngine;
 public class Pluto_behaviour : MonoBehaviour
 {
     [SerializeField] private Pluto stats;
-    private int[,] places = { { -17, -16, -7, 7, 20, 18 }, { 13, -3, -21, -7, -3, 13 } };
+    private int[,] places = { { -17, -16, 0, 12, 18, 0 }, { 6, -18, -5, -19, 2, 23 } };
     public float moveInterval = 10f;
     private float moveTimer;
 
