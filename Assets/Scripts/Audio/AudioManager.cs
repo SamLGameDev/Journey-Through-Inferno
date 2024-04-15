@@ -2,14 +2,10 @@ using MoonSharp.VsCodeDebugger.SDK;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using System.Xml.Schema;
 using UnityEngine;
-
-public enum AudioClips
-{
-    VirgilDeath,
-    DanteDeath,
-    UIButtonClick
-}
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -40,7 +36,15 @@ public class AudioManager : MonoBehaviour
                 s.clipSelector = new AudioClipSelector();
             }
 
-            s.source.clip = s.clips[0];
+            if (s.clips.Length != 0)
+            {
+                s.source.clip = s.clips[0];
+            }
+            else
+            {
+                Debug.LogWarning($"Missing sound {s.name}!");
+            }
+
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
             s.source.loop = s.looped;
@@ -49,7 +53,8 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-       PlaySound("Background_Music");
+        // Subscribe background music controller to the OnSceneChange event.
+        SceneManager.sceneLoaded += ChangeBackgroundMusic;
     }
 
     private void Update()
@@ -58,6 +63,32 @@ public class AudioManager : MonoBehaviour
         {
            PlaySound("Test_Sounds");
         }
+    }
+
+    private void ChangeBackgroundMusic(Scene scene, LoadSceneMode mode)
+    {
+        StopSound("Tutorial_Music");
+        StopSound("Main_Menu_Music");
+        StopSound("City_Of_Dis_Music");
+        StopSound("City_Of_Greed_Music");
+
+        if (scene.name == "tutorial")
+        {
+            PlaySound("Tutorial_Music");
+        }
+        else if (scene.name == "co-op scene")
+        {
+            PlaySound("City_Of_Dis_Music");
+        }
+        else if (scene.name == "City_Of_Greed")
+        {
+            PlaySound("City_Of_Greed_Music");
+        }
+        else if (scene.name == "Main_Menu")
+        {
+            PlaySound("Main_Menu_Music");
+        }
+
     }
 
     /// <summary>
@@ -86,5 +117,18 @@ public class AudioManager : MonoBehaviour
         }
 
         s.source.Play();
+    }
+
+    private void StopSound(string name)
+    {
+        Sound s = Array.Find(sounds, sound => name == sound.name);
+
+        if (s == null)
+        {
+            Debug.LogWarning($"Missing sound {name}!");
+            return;
+        }
+
+        s.source.Stop();
     }
 }

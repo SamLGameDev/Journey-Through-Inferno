@@ -619,6 +619,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fc125533f0b8d14190b0853c6a70f48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stepTime: 0.35
+  walkAnimName: Walking_Sound_Dante
 --- !u!114 &502134439329523173
 MonoBehaviour:
   m_ObjectHideFlags: 0
