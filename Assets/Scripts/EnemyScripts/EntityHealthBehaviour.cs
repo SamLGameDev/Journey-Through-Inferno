@@ -420,7 +420,12 @@ public class EntityHealthBehaviour : MonoBehaviour
         {
             GameManager.instance.UpdateGameState(GameManager.GameState.EncounterCleared);
         }
+
+        if (!IsAlive && isBoss)
+        { ScreenShake.Instance.ShakeCamera(5f, 2f); }
     }
+
+   
 
     private void DebuffOnDeath()
     {
