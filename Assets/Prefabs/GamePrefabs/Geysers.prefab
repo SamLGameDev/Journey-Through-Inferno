@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7426974197975975308}
   - component: {fileID: 2336693068829812981}
   - component: {fileID: 6699830535656135302}
+  - component: {fileID: 9025698124114813907}
   m_Layer: 11
   m_Name: Geysers
   m_TagString: Untagged
@@ -103,3 +104,24 @@ MonoBehaviour:
   aoeEffectPrefab: {fileID: 7930868110283766343, guid: fb28be03348eca246a139793e67c41d2,
     type: 3}
   aoeCooldown: 2
+--- !u!95 &9025698124114813907
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603720936107381897}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6bde880f04f506f46b469eee37562de4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

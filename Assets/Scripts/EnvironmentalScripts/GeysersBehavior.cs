@@ -36,13 +36,6 @@ public class GeysersBehavior : MonoBehaviour
 
     private void TriggerAOE()
     {
-        // Instantiates AOE prefab and destroys it after a little while 
-        if(aoeEffectPrefab != null) 
-        {
-            aoeEffect = Instantiate(aoeEffectPrefab, transform.position, Quaternion.identity);
-            Destroy(aoeEffect, 0.5f); 
-        }
-
         // Deal damage to player 
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, aoeRange);
         foreach(Collider2D collider in colliders)
