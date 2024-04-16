@@ -15,6 +15,7 @@ public class Furies_Behavior : MonoBehaviour
 
     private Transform player;
 
+    
     private Quaternion currentAngle;
     private float rotateAmount;
     private Transform _intrudingEnemyPos;
@@ -35,6 +36,7 @@ public class Furies_Behavior : MonoBehaviour
 
     private void Start()
     {
+        
         _destination = new GameObject().transform;
         ani = GetComponent<Animator>(); 
         rb = GetComponent<Rigidbody2D>();
@@ -265,6 +267,9 @@ public class Furies_Behavior : MonoBehaviour
 
     }
 
+    
+   
+   
     private void Update()
     {
         player = GetComponent<AIDestinationSetter>().target; // gets the target from Astar
