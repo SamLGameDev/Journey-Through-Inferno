@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 6852907255213623299}
   - component: {fileID: 5038812532658869192}
   - component: {fileID: 4066482352197744251}
+  - component: {fileID: -671161863749240224}
   m_Layer: 8
   m_Name: MoltenStatue
   m_TagString: Enemy
@@ -356,3 +357,16 @@ MonoBehaviour:
   uniqueID: 7590394222703210017
   updateError: 1
   checkTime: 0.2
+--- !u!114 &-671161863749240224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7187451865587570375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb3e25e597478104cb7a6bf4a1c33ad0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attributes: {fileID: 11400000, guid: 4345a77898c00c1468b8963b7d720b9a, type: 2}
