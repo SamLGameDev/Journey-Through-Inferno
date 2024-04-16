@@ -84,7 +84,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 0.8828125}
+  m_Size: {x: 1.28, y: 1.39}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -146,16 +146,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isBoss: 0
   stats: {fileID: 11400000, guid: 967521d4166627948b50e946f51ce62b, type: 2}
+  PlayerDeathEvent: {fileID: 0}
   OnDamaged: {fileID: 0}
   invunTimeOnHit: 0
-  entityCurrentHealth: 0
-  healthBar: {fileID: 0}
-  LowHealth: {fileID: 0}
-  MidHealth: {fileID: 0}
-  HighHealth: {fileID: 0}
-  HealthSprite: {fileID: 0}
+  gravestone: {fileID: 0}
+  currentHealth: 0
+  takenDamage:
+    Variable: {fileID: 0}
+    constantValue: 0
+    useConstant: 1
+  HealthBarSprites: {fileID: 0}
+  Event: {fileID: 0}
   IsAlive: 0
   invincible: 0
+  Confused: 0
+  onlyVirgil: 0
+  onlyDante: 0
 --- !u!95 &3401023965402023177
 Animator:
   serializedVersion: 5
@@ -213,8 +219,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 1.35}
-    newSize: {x: 1, y: 0.8828125}
+    oldSize: {x: 1.28, y: 1.39}
+    newSize: {x: 1.28, y: 1.39}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
