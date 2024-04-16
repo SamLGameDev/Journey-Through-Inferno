@@ -41,7 +41,7 @@ Transform:
   - {fileID: 2066261175897960839}
   - {fileID: 2286681187460399224}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &334833843447889820
 MonoBehaviour:
@@ -70,7 +70,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 7885602885168091744}
   selectedCommands:
-  - {fileID: 806521608795458398}
+  - {fileID: 7600372070110478048}
   variables: []
   description: 
   stepPause: 0
@@ -132,7 +132,7 @@ MonoBehaviour:
   storyText: So this is the city of this?
   description: 
   character: {fileID: 1175597185461878266}
-  portrait: {fileID: 21300000, guid: 0cb6201c23c80964e9544ba2afd3c2c9, type: 3}
+  portrait: {fileID: 21300000, guid: 23b65cf952b970b4cbd1e361361622d1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1

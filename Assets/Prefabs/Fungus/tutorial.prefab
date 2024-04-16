@@ -86,7 +86,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: -8, y: 12}
+  scrollPos: {x: 64, y: 101.30002}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
@@ -97,8 +97,10 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks: []
-  selectedCommands: []
+  selectedBlocks:
+  - {fileID: 8096431823973885071}
+  selectedCommands:
+  - {fileID: 558365024678578113}
   variables: []
   description: 
   stepPause: 0
@@ -171,7 +173,7 @@ MonoBehaviour:
   storyText: Yo.
   description: 
   character: {fileID: 2103781134908422280}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 0aa8d2241847bc14eaacc8ee9cff51da, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -198,7 +200,7 @@ MonoBehaviour:
   storyText: ASGDHkjkjGgSKJH!
   description: 
   character: {fileID: 5374989190794745435}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 0cb6201c23c80964e9544ba2afd3c2c9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -225,7 +227,7 @@ MonoBehaviour:
   storyText: Wow, Beatrice wasn't kidding when she said you were a wimp.
   description: 
   character: {fileID: 2103781134908422280}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: d9ec245bb87fe3b49a2bdc5c77e51258, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -252,7 +254,7 @@ MonoBehaviour:
   storyText: Wait, Beatrice? You mean my dead girlfriend?
   description: 
   character: {fileID: 5374989190794745435}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 0cb6201c23c80964e9544ba2afd3c2c9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -280,7 +282,7 @@ MonoBehaviour:
     her but here we are. I'm Virgil by the way, at your service.
   description: 
   character: {fileID: 2103781134908422280}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 0aa8d2241847bc14eaacc8ee9cff51da, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -307,7 +309,7 @@ MonoBehaviour:
   storyText: V-V-Virgil? Like the famous poet Virgil?
   description: 
   character: {fileID: 5374989190794745435}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: fff231fbebbff9140b4fdcc223c86bf9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -334,7 +336,7 @@ MonoBehaviour:
   storyText: The very same.
   description: 
   character: {fileID: 2103781134908422280}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: d9ec245bb87fe3b49a2bdc5c77e51258, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -361,7 +363,7 @@ MonoBehaviour:
   storyText: Holy moly! Virgil-sempai I'm your biggest fan!
   description: 
   character: {fileID: 5374989190794745435}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: fff231fbebbff9140b4fdcc223c86bf9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -388,7 +390,7 @@ MonoBehaviour:
   storyText: Huh? Wuh?
   description: 
   character: {fileID: 2103781134908422280}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: abab898845681704bb8d5dba1ddd3a32, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -416,7 +418,7 @@ MonoBehaviour:
     Woo hoo!
   description: 
   character: {fileID: 5374989190794745435}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: fe4d41b2db58cf84680af5a8e753f6fd, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -443,7 +445,7 @@ MonoBehaviour:
   storyText: O-o-o-okay...
   description: 
   character: {fileID: 2103781134908422280}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: abab898845681704bb8d5dba1ddd3a32, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -470,7 +472,7 @@ MonoBehaviour:
   storyText: Well Beatrice sent me to toughen you up, so...
   description: 
   character: {fileID: 2103781134908422280}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 3ce196cf1f95f5544887bd5eee1a6990, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -497,7 +499,7 @@ MonoBehaviour:
   storyText: 'Awesome! '
   description: 
   character: {fileID: 5374989190794745435}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: fff231fbebbff9140b4fdcc223c86bf9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -525,7 +527,7 @@ MonoBehaviour:
     guide.
   description: 
   character: {fileID: 2103781134908422280}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 3ce196cf1f95f5544887bd5eee1a6990, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -552,7 +554,7 @@ MonoBehaviour:
   storyText: Cool!
   description: 
   character: {fileID: 5374989190794745435}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: fe4d41b2db58cf84680af5a8e753f6fd, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -579,7 +581,7 @@ MonoBehaviour:
   storyText: Wait, we're going where?
   description: 
   character: {fileID: 5374989190794745435}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b4de1b57df53b4740ba449f1a4672ea4, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -606,7 +608,7 @@ MonoBehaviour:
   storyText: Alrighty then, no time like the present!
   description: 
   character: {fileID: 2103781134908422280}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 3ce196cf1f95f5544887bd5eee1a6990, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -633,7 +635,7 @@ MonoBehaviour:
   storyText: Wai-
   description: 
   character: {fileID: 5374989190794745435}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 0cb6201c23c80964e9544ba2afd3c2c9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -692,7 +694,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 99
+    x: 100
     y: 251
     width: 81.2
     height: 40
@@ -730,7 +732,7 @@ MonoBehaviour:
     get moving.
   description: 
   character: {fileID: 2103781134908422280}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 0aa8d2241847bc14eaacc8ee9cff51da, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -757,7 +759,7 @@ MonoBehaviour:
   storyText: Stay close to me. And don't touch anything!
   description: 
   character: {fileID: 2103781134908422280}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 0aa8d2241847bc14eaacc8ee9cff51da, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -784,7 +786,7 @@ MonoBehaviour:
   storyText: O-o-o-k-ka-y...
   description: 
   character: {fileID: 5374989190794745435}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: dd6b0fb7088482a43b4336794641558b, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -811,7 +813,7 @@ MonoBehaviour:
   storyText: I can't believe I got talked into this.
   description: 
   character: {fileID: 2103781134908422280}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: f2cc5ff45a27a1b448a4afdcc5d18769, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -838,7 +840,7 @@ MonoBehaviour:
   storyText: What's that?
   description: 
   character: {fileID: 5374989190794745435}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 23b65cf952b970b4cbd1e361361622d1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -865,7 +867,7 @@ MonoBehaviour:
   storyText: Huh. Never seen that before. Probably best not to mess with it.
   description: 
   character: {fileID: 2103781134908422280}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: a4da104822198eb41aededa776fdccb3, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -892,7 +894,7 @@ MonoBehaviour:
   storyText: It's so pretty...
   description: 
   character: {fileID: 5374989190794745435}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: fff231fbebbff9140b4fdcc223c86bf9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -919,7 +921,7 @@ MonoBehaviour:
   storyText: Oh, for f*ck's sake!
   description: 
   character: {fileID: 2103781134908422280}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 57e410533f3394645baf8620aa25728f, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -946,7 +948,7 @@ MonoBehaviour:
   storyText: Well this just made things a lot more interesting.
   description: 
   character: {fileID: 2103781134908422280}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 3ce196cf1f95f5544887bd5eee1a6990, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -973,7 +975,7 @@ MonoBehaviour:
   storyText: What happened Virgil-sempai?
   description: 
   character: {fileID: 5374989190794745435}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 673de18d2eef3fd45840f1e4861c9ff6, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1000,7 +1002,7 @@ MonoBehaviour:
   storyText: It would appear we are now soul-bound.
   description: 
   character: {fileID: 2103781134908422280}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 3ce196cf1f95f5544887bd5eee1a6990, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1027,7 +1029,7 @@ MonoBehaviour:
   storyText: Just what I needed today.
   description: 
   character: {fileID: 2103781134908422280}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: f2cc5ff45a27a1b448a4afdcc5d18769, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1054,7 +1056,7 @@ MonoBehaviour:
   storyText: What does that mean?
   description: 
   character: {fileID: 5374989190794745435}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 673de18d2eef3fd45840f1e4861c9ff6, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1081,7 +1083,7 @@ MonoBehaviour:
   storyText: But it does mean that we heal faster when we are close.
   description: 
   character: {fileID: 2103781134908422280}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 0aa8d2241847bc14eaacc8ee9cff51da, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1135,7 +1137,7 @@ MonoBehaviour:
   storyText: It means my headache just got a lot bigger.
   description: 
   character: {fileID: 2103781134908422280}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: f2cc5ff45a27a1b448a4afdcc5d18769, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1162,7 +1164,7 @@ MonoBehaviour:
   storyText: That's all you really need to know.
   description: 
   character: {fileID: 2103781134908422280}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: d9ec245bb87fe3b49a2bdc5c77e51258, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1

@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &30017247415617897
 MonoBehaviour:
@@ -48,12 +48,15 @@ MonoBehaviour:
   nameColor: {r: 1, g: 1, b: 1, a: 1}
   soundEffect: {fileID: 0}
   portraits:
+  - {fileID: 21300000, guid: 23b65cf952b970b4cbd1e361361622d1, type: 3}
+  - {fileID: 21300000, guid: df73152882506b04fb59ded982103eac, type: 3}
   - {fileID: 21300000, guid: 673de18d2eef3fd45840f1e4861c9ff6, type: 3}
+  - {fileID: 21300000, guid: 9d88d8463ec482f4bb9cff7595a53770, type: 3}
+  - {fileID: 21300000, guid: fe4d41b2db58cf84680af5a8e753f6fd, type: 3}
+  - {fileID: 21300000, guid: b4de1b57df53b4740ba449f1a4672ea4, type: 3}
   - {fileID: 21300000, guid: 9e5dbeb84678b0c4eaac2157d3b2af68, type: 3}
   - {fileID: 21300000, guid: dd6b0fb7088482a43b4336794641558b, type: 3}
   - {fileID: 21300000, guid: 0cb6201c23c80964e9544ba2afd3c2c9, type: 3}
-  - {fileID: 21300000, guid: fff231fbebbff9140b4fdcc223c86bf9, type: 3}
-  - {fileID: 21300000, guid: 32660a7be06fc83488081620ec7c0952, type: 3}
   - {fileID: 21300000, guid: e51881101d192b4459c3d71167468bd9, type: 3}
   portraitsFace: 0
   setSayDialog: {fileID: 0}

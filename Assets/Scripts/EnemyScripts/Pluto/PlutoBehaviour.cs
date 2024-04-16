@@ -26,7 +26,7 @@ public class Pluto_behaviour : MonoBehaviour
         GetComponent<AIPath>().endReachedDistance = stats.cerberusRange;
     }
 
-    private void MovePlaces()
+    public void MovePlaces()
     {
         int rand1 = UnityEngine.Random.Range(0, 6);
         
@@ -58,7 +58,7 @@ public class Pluto_behaviour : MonoBehaviour
         
     }
 
-    private void SendCerberus()
+    public void SendCerberus()
     {
         Vector2 shootDirection = (player.position - transform.position).normalized;
 
@@ -67,7 +67,7 @@ public class Pluto_behaviour : MonoBehaviour
         projectileRb.velocity = shootDirection * stats.cerberusSpeed;
     }
 
-    void Clone()
+    public void Clone()
     {
         hasUsedClone = true;
         MovePlaces();

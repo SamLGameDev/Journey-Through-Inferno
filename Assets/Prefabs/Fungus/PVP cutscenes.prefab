@@ -86,8 +86,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 6624733953706635367}
-  selectedCommands: []
+  - {fileID: 6095993298783550904}
+  selectedCommands:
+  - {fileID: 6120214367844555510}
   variables: []
   description: 
   stepPause: 0
@@ -151,7 +152,7 @@ MonoBehaviour:
   storyText: Uh, what now?
   description: 
   character: {fileID: 2387513990700591477}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 23b65cf952b970b4cbd1e361361622d1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -178,7 +179,7 @@ MonoBehaviour:
   storyText: I don't understand...
   description: 
   character: {fileID: 2950259128304223477}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: ff21b76a1472cd142b6515ae6f9e95fe, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -205,7 +206,7 @@ MonoBehaviour:
   storyText: This was supposed to lead us out!
   description: 
   character: {fileID: 2950259128304223477}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: ff21b76a1472cd142b6515ae6f9e95fe, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -232,7 +233,7 @@ MonoBehaviour:
   storyText: Hey! A tarot card!
   description: 
   character: {fileID: 2387513990700591477}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: fe4d41b2db58cf84680af5a8e753f6fd, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -259,7 +260,7 @@ MonoBehaviour:
   storyText: Wait Dante!
   description: 
   character: {fileID: 2950259128304223477}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: ff21b76a1472cd142b6515ae6f9e95fe, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -286,7 +287,7 @@ MonoBehaviour:
   storyText: It's time to face my destiny...
   description: 
   character: {fileID: 2387513990700591477}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: e51881101d192b4459c3d71167468bd9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -313,7 +314,7 @@ MonoBehaviour:
   storyText: What?
   description: 
   character: {fileID: 2950259128304223477}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: ff21b76a1472cd142b6515ae6f9e95fe, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -340,7 +341,7 @@ MonoBehaviour:
   storyText: Aaagrh!
   description: 
   character: {fileID: 2387513990700591477}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: e51881101d192b4459c3d71167468bd9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -367,7 +368,7 @@ MonoBehaviour:
   storyText: Oh fu-!
   description: 
   character: {fileID: 2950259128304223477}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 03abca5c87ae15a4994ea947e689f471, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -457,7 +458,7 @@ MonoBehaviour:
   storyText: It's over...
   description: 
   character: {fileID: 2950259128304223477}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: dbba5c422a981ad4cb8524f948510689, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -484,7 +485,7 @@ MonoBehaviour:
   storyText: I'm sorry I couldn't protect you.
   description: 
   character: {fileID: 2950259128304223477}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: dbba5c422a981ad4cb8524f948510689, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -511,7 +512,7 @@ MonoBehaviour:
   storyText: I'm sorry Dante.
   description: 
   character: {fileID: 2950259128304223477}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: dbba5c422a981ad4cb8524f948510689, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -538,7 +539,7 @@ MonoBehaviour:
   storyText: I guess nothing can change that I'm a sinner.
   description: 
   character: {fileID: 2950259128304223477}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: dbba5c422a981ad4cb8524f948510689, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -565,7 +566,7 @@ MonoBehaviour:
   storyText: I'm so sorry. I broke my promise.
   description: 
   character: {fileID: 2950259128304223477}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: dbba5c422a981ad4cb8524f948510689, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -592,7 +593,7 @@ MonoBehaviour:
   storyText: Ughh... My head is killing me.
   description: 
   character: {fileID: 2387513990700591477}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 9e5dbeb84678b0c4eaac2157d3b2af68, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -619,7 +620,7 @@ MonoBehaviour:
   storyText: What happened?
   description: 
   character: {fileID: 2387513990700591477}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 23b65cf952b970b4cbd1e361361622d1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -646,7 +647,7 @@ MonoBehaviour:
   storyText: Virgil sempai?
   description: 
   character: {fileID: 2387513990700591477}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 0cb6201c23c80964e9544ba2afd3c2c9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -673,7 +674,7 @@ MonoBehaviour:
   storyText: No!
   description: 
   character: {fileID: 2387513990700591477}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: df73152882506b04fb59ded982103eac, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -700,7 +701,7 @@ MonoBehaviour:
   storyText: What have I done?
   description: 
   character: {fileID: 2387513990700591477}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: df73152882506b04fb59ded982103eac, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -727,7 +728,7 @@ MonoBehaviour:
   storyText: Noooo!
   description: 
   character: {fileID: 2387513990700591477}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: df73152882506b04fb59ded982103eac, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -783,7 +784,7 @@ MonoBehaviour:
   storyText: Dammit!
   description: 
   character: {fileID: 2950259128304223477}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: bf952115deebbca45937b06b842ec563, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -810,7 +811,7 @@ MonoBehaviour:
   storyText: Grrrrr
   description: 
   character: {fileID: 2387513990700591477}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: e51881101d192b4459c3d71167468bd9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -838,7 +839,7 @@ MonoBehaviour:
     way!
   description: 
   character: {fileID: 2950259128304223477}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: bf952115deebbca45937b06b842ec563, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
