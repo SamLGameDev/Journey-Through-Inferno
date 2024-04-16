@@ -20,8 +20,9 @@ GameObject:
   - component: {fileID: 6852907255213623299}
   - component: {fileID: 5038812532658869192}
   - component: {fileID: 4066482352197744251}
+  - component: {fileID: -671161863749240224}
   m_Layer: 8
-  m_Name: Fallen Angel(Greed)
+  m_Name: MoltenStatue
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40,7 +41,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4676838191897014063
 SpriteRenderer:
@@ -83,7 +84,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 200b88a834cf37f4584e5af2000e4f95, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7b0cc729640ae1f47a1c3039fe1f1562, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -208,6 +209,9 @@ MonoBehaviour:
   player2: {fileID: 2495953773665164011, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b, type: 3}
   coop: 1
   player1: {fileID: 1736434646341859925, guid: 28d04583d0c318648b28ee2c53bdaeab, type: 3}
+  isConfused: 0
+  targets: []
+  currentState: 0
 --- !u!61 &2868595686559624893
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -244,7 +248,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.16, y: 1.48}
+    oldSize: {x: 0.78, y: 1.91}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -267,14 +271,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isBoss: 0
   stats: {fileID: 11400000, guid: 4345a77898c00c1468b8963b7d720b9a, type: 2}
+  PlayerDeathEvent: {fileID: 0}
+  OnDamaged: {fileID: 0}
   invunTimeOnHit: 0
-  entityCurrentHealth: 0
-  healthBar: {fileID: 0}
-  LowHealth: {fileID: 0}
-  MidHealth: {fileID: 0}
-  HighHealth: {fileID: 0}
-  HealthSprite: {fileID: 0}
+  gravestone: {fileID: 0}
+  currentHealth: 0
+  takenDamage:
+    Variable: {fileID: 0}
+    constantValue: 0
+    useConstant: 1
+  HealthBarSprites: {fileID: 0}
+  Event: {fileID: 0}
   IsAlive: 0
+  invincible: 0
+  Confused: 0
+  onlyVirgil: 0
+  onlyDante: 0
 --- !u!95 &6899871052324990272
 Animator:
   serializedVersion: 5
@@ -285,7 +297,7 @@ Animator:
   m_GameObject: {fileID: 7187451865587570375}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3f0e199ae501865419afdeb0c453790e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3fda57721a737904595264ab1e6046b4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -309,9 +321,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coolDown: 0
-  LayersToHit:
+  LayersToHitWhenConfused:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 0
   sword_Speed: 0
   stats: {fileID: 11400000, guid: 4345a77898c00c1468b8963b7d720b9a, type: 2}
   pStats: {fileID: 0}
@@ -328,6 +340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: 4345a77898c00c1468b8963b7d720b9a, type: 2}
+  state: 0
 --- !u!114 &4066482352197744251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -341,6 +354,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  uniqueID: 1899722734436200550
+  uniqueID: 7590394222703210017
   updateError: 1
   checkTime: 0.2
+--- !u!114 &-671161863749240224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7187451865587570375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb3e25e597478104cb7a6bf4a1c33ad0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attributes: {fileID: 11400000, guid: 4345a77898c00c1468b8963b7d720b9a, type: 2}
