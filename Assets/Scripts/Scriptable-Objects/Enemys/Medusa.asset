@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Medusa
   m_EditorClassIdentifier: 
   damage: 0
-  maxHealth: 100
+  maxHealth: 1
   cardDropChance: 101
   OfTypecounter: {fileID: 11400000, guid: e4a5f4694b79fe4488542d7385a2650f, type: 2}
   droppableCards:
@@ -50,3 +50,4 @@ MonoBehaviour:
     Variable: {fileID: 0}
     constantValue: 0
     useConstant: 1
+  originalPosition: {fileID: 0}
