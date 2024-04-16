@@ -65,7 +65,8 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 830343849596189511}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 609102680076532967}
   variables: []
   description: 
   stepPause: 0
@@ -122,7 +123,7 @@ MonoBehaviour:
   storyText: GOD!?
   description: 
   character: {fileID: 7241339544191604748}
-  portrait: {fileID: 21300000, guid: 32660a7be06fc83488081620ec7c0952, type: 3}
+  portrait: {fileID: 21300000, guid: 0cb6201c23c80964e9544ba2afd3c2c9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
