@@ -27047,6 +27047,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Medusa
       objectReference: {fileID: 0}
+    - target: {fileID: 241013125750778860, guid: 4a6efd9d63ff62e47b860ff0959888fa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 241013125750778860, guid: 4a6efd9d63ff62e47b860ff0959888fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3401023965402023177, guid: 4a6efd9d63ff62e47b860ff0959888fa,
         type: 3}
       propertyPath: m_Enabled
