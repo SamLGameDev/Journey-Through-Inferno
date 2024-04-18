@@ -22,7 +22,7 @@ public class Scene_Loader : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Debug.Log(SceneManager.sceneCountInBuildSettings);
-            if(SceneManager.sceneCountInBuildSettings - 1 == nextSceneID) 
+            if (SceneManager.GetSceneByBuildIndex(nextSceneID).name == "PvP_Area_Placeholder") 
             {
                 Debug.Log("Last Scene");
                 Player_movement.pvP_Enabled = true;

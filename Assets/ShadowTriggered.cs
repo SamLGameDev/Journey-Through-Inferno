@@ -6,7 +6,7 @@ public class ShadowTriggered : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        GetComponentInParent<SpikeFall>().notHit = false;
+        GetComponentInParent<SpikeFall>().SetState = SpikeFall.State.prefall;
     }
 
 }

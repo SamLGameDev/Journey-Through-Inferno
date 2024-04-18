@@ -23,6 +23,10 @@ public class SpikeFall : MonoBehaviour
     private GameObject shadow;
     [SerializeField]
     private float shadowGrowSpeed;
+
+    private State _state = State.idle;
+    public State SetState { set { _state = value; } }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +41,13 @@ public class SpikeFall : MonoBehaviour
         }
 
 
+    }
+    public enum State
+    {
+        idle,
+        prefall,
+        falling,
+        fallen
     }
     private void Awake()
     {
@@ -69,30 +80,45 @@ public class SpikeFall : MonoBehaviour
         else
         {
             particles.gameObject.SetActive(false);
+            SetState = State.fallen;
         }
         shadow.transform.localPosition = new Vector2(0, 0);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        collision.GetComponent<EntityHealthBehaviour>().ApplyDamage(Damage);
+        if (_state != State.fallen)
+        {
+            collision.GetComponent<EntityHealthBehaviour>().ApplyDamage(Damage);
+        }
     }
     // Update is called once per frame
     void Update()
     {
-        if (notHit)
+        switch (_state)
         {
-            DetectUnderneath();
-            timeBeforeFall = Time.time;
-            return;
+            case State.idle:
+                {
+                    DetectUnderneath();
+                    timeBeforeFall = Time.time;
+                    break;
+                }
+            case State.falling:
+                {
+                    StopAllCoroutines();
+                    fall();
+                    break;
+                }
+            case State.prefall:
+                {
+                    PreFallEffects();
+                    StartCoroutine(Rumble());
+                    if (Time.time - TimeOfPreFall > timeBeforeFall)
+                    {
+                        SetState = State.falling; break;
+                    }
+                    break;
+                }
         }
-        else if(Time.time - TimeOfPreFall > timeBeforeFall)
-        {
-            StopAllCoroutines();
-            fall();
-            return;
-        }
-        PreFallEffects();
-        StartCoroutine(Rumble());
 
     }
 }
