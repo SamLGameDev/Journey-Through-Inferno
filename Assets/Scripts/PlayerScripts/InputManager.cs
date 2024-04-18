@@ -19,6 +19,7 @@ public class InputManager : MonoBehaviour
     public void CutsceneStarted()
     {
         _state = State.cutscene;
+        movement.MovementDirection = Vector2.zero;
     }
     public void CutsceneEnded()
     {
