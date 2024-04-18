@@ -15,6 +15,7 @@ public class Sword_Damage : MonoBehaviour
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         trail = transform.GetChild(0).GetComponent<TrailRenderer>();
+        Debug.Log(Player_movement.pvP_Enabled + " here");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

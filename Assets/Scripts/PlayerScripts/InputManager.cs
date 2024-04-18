@@ -1,6 +1,8 @@
+using Fungus;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
@@ -12,7 +14,23 @@ public class InputManager : MonoBehaviour
     private PlayerInput playerInput;
     private Player_movement movement;
     private float confusionCooldown;
+    private State _state = State.None;
+
+    public void CutsceneStarted()
+    {
+        _state = State.cutscene;
+    }
+    public void CutsceneEnded()
+    {
+        _state = State.None;
+    }
     // Start is called before the first frame update
+    public enum State 
+    {
+        None,
+        cutscene
+    }
+
     void Start()
     {
         confusionCooldown = -10;
@@ -24,22 +42,20 @@ public class InputManager : MonoBehaviour
         movement = players.FirstOrDefault(p => p.playerIndex == index);
         Debug.Log(movement.playerIndex + "player index");
     }
+    private void Update()
+    {
+        
+    }
     private void Awake()
     {
-        //leftMouseClick = new InputAction(binding: "<Mouse>/leftButton");
-        //leftMouseClick.AddBinding("/<gamepad>/rightTrigger");
-        //leftMouseClick.performed += ctx => OnSword();
-        //leftMouseClick.Enable();
-        //rightMouseClick = new InputAction(binding: "<Mouse>/rightButton");
-        //rightMouseClick.performed += ctx => OnShoot();
-        //rightMouseClick.Enable();
+
     }
     // Update is called once per frame
 
     //Everything after this is just calling functions, or setting directions when movements are called
     public void OnMove(CallbackContext context)
     {
-        if (movement != null)
+        if (movement != null && _state == State.None)
         {
             movement.MovementDirection = context.ReadValue<Vector2>();
         }
@@ -53,7 +69,7 @@ public class InputManager : MonoBehaviour
     }
     public void OnDash(CallbackContext context)
     {
-        if (movement != null && context.phase == InputActionPhase.Performed)
+        if (movement != null && context.phase == InputActionPhase.Performed && _state == State.None)
         {
             movement.BeginDash();
         }
@@ -62,7 +78,7 @@ public class InputManager : MonoBehaviour
     public void OnSword(CallbackContext context)
     {
 
-        if ( movement != null && !movement.running && context.phase == InputActionPhase.Performed)
+        if ( movement != null && !movement.running && context.phase == InputActionPhase.Performed && _state == State.None)
         { 
             movement.Player_Melee(movement.sword);
         }
@@ -70,7 +86,7 @@ public class InputManager : MonoBehaviour
     }
     public void OnShoot(CallbackContext context)
     {
-        if (movement != null && context.phase == InputActionPhase.Performed) 
+        if (movement != null && context.phase == InputActionPhase.Performed && _state == State.None) 
         {
             try
             {
@@ -94,11 +110,11 @@ public class InputManager : MonoBehaviour
     }
     public void OnInvisible(CallbackContext context)
     {
-        if (movement != null && context.started && HasCard(TarotCards.possibleModifiers.invisibility))
+        if (movement != null && context.started && HasCard(TarotCards.possibleModifiers.invisibility) && _state == State.None)
         {
             movement.Invisible();
         }
-
+         
     }
     public void OnPause()
     {
@@ -106,7 +122,7 @@ public class InputManager : MonoBehaviour
     }
     public void LoadConfusionBullet()
     {
-        if (HasCard(TarotCards.possibleModifiers.Confusion) && Time.time - movement.stats.ConfusionCooldown > confusionCooldown)
+        if (HasCard(TarotCards.possibleModifiers.Confusion) && Time.time - movement.stats.ConfusionCooldown > confusionCooldown && _state == State.None)
         {
             confusionCooldown = Time.time;
             movement.confusionLoaded = true;
@@ -115,7 +131,7 @@ public class InputManager : MonoBehaviour
     public void ResurrectPlayer(CallbackContext context)
     {
         movement.RevivePlayer = true;
-        if (context.phase == InputActionPhase.Canceled)
+        if (context.phase == InputActionPhase.Canceled && _state == State.None)
         {
             movement.RevivePlayer = false;
         } 

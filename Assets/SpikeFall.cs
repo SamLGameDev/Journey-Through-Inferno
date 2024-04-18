@@ -31,6 +31,7 @@ public class SpikeFall : MonoBehaviour
     void Start()
     {
         particles.gameObject.SetActive(false);
+        Player_movement.pvP_Enabled = true;
     }
     private void DetectUnderneath()
     {
