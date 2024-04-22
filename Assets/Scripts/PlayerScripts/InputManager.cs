@@ -2,7 +2,6 @@ using Fungus;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
@@ -117,9 +116,12 @@ public class InputManager : MonoBehaviour
         }
          
     }
-    public void OnPause()
+    public void OnPause(CallbackContext context)
     {
-        movement.OnPauseMenu(true);
+        if (context.phase == InputActionPhase.Performed)
+        {
+            movement.OnPauseMenu(true);
+        }
     }
     public void LoadConfusionBullet()
     {

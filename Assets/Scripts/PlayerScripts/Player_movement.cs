@@ -13,6 +13,7 @@ using UnityEngine.EventSystems;
 public class Player_movement : MonoBehaviour
 {
     [SerializeField] private GameObject _resumeButton;
+    [SerializeField] private EventSystem _globalEvents;
     public static bool pvP_Enabled = false;
     public bool dodash = false;
     public int playerIndex;
@@ -166,12 +167,14 @@ public class Player_movement : MonoBehaviour
     {
         EventSystem player2Paused = GameManager.instance.p2.GetComponent<EventSystem>();
         EventSystem player1Paused = GameManager.instance.p1.GetComponent<EventSystem>();
+        _globalEvents.enabled = false;
         Debug.Log(playerIndex);
         if (playerIndex == 0)
         {
             player2Paused.enabled = false;
-            player1Paused.SetSelectedGameObject(_resumeButton);
             player1Paused.enabled = true;
+            player1Paused.SetSelectedGameObject(_resumeButton);
+
         }
         else
         {
@@ -191,6 +194,7 @@ public class Player_movement : MonoBehaviour
         {
             PauseMenu.SetActive(false);
             isPaused = false;
+            _globalEvents.enabled = true;
             Time.timeScale = 1;
         }
     }
