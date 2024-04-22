@@ -108,6 +108,7 @@ public class AudioManager : MonoBehaviour
         if (s.clips.Length == 0)
         {
             Debug.LogWarning($"Missing clip for {name} sound!");
+            return;
         }
 
         // Check for additional clips for the same sound, and if any randomise the choice.

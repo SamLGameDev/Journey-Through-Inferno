@@ -30,7 +30,7 @@ Transform:
   m_Children:
   - {fileID: 1901182077783539540}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9175593301728665633
 GameObject:
@@ -100,10 +100,10 @@ MonoBehaviour:
     pitch: 1
     looped: 0
     source: {fileID: 0}
-  - name: Dash
+  - name: Player_Dash
     clips:
     - {fileID: 8300000, guid: 4e349dc959014a845b9aa317d1c2b7f0, type: 3}
-    volume: 1
+    volume: 0.8
     pitch: 1
     looped: 0
     source: {fileID: 0}
@@ -155,5 +155,31 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 83829ff414f47a048b5387e4ab33571c, type: 3}
     volume: 1
     pitch: 1.5
+    looped: 0
+    source: {fileID: 0}
+  - name: Main_Menu_Music
+    clips:
+    - {fileID: 8300000, guid: 26b1acc7c97bc7049a8e54339f9ea103, type: 3}
+    volume: 1
+    pitch: 1
+    looped: 0
+    source: {fileID: 0}
+  - name: City_Of_Dis_Music
+    clips: []
+    volume: 1
+    pitch: 1
+    looped: 0
+    source: {fileID: 0}
+  - name: City_Of_Greed_Music
+    clips: []
+    volume: 1
+    pitch: 1
+    looped: 0
+    source: {fileID: 0}
+  - name: Tutorial_Music
+    clips:
+    - {fileID: 8300000, guid: 26b1acc7c97bc7049a8e54339f9ea103, type: 3}
+    volume: 1
+    pitch: 1.24
     looped: 0
     source: {fileID: 0}
