@@ -2,17 +2,13 @@ using Pathfinding;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
 
 public class Pluto_behaviour : MonoBehaviour
 {
     [SerializeField] private Pluto stats;
     private int[,] places = { { -17, -16, 0, 12, 18, 0 }, { 6, -18, -5, -19, 2, 23 } };
-    public float moveInterval = 10f;
     private float moveTimer;
-
-    public float cerberusCooldown = 8f;
     private float cerberusTimer;
     private bool hasUsedClone = false;
 
@@ -20,8 +16,8 @@ public class Pluto_behaviour : MonoBehaviour
 
     void Start()
     {
-        moveTimer = 0f;
-        cerberusTimer = 0f;
+        moveTimer = 0;
+        cerberusTimer = 0;
         player = GetComponent<AIDestinationSetter>().target;
         GetComponent<AIPath>().endReachedDistance = stats.cerberusRange;
     }
@@ -65,7 +61,6 @@ public class Pluto_behaviour : MonoBehaviour
         GameObject Cerberus = Instantiate(stats.cerberusPrefab, transform.position, Quaternion.identity);
         Rigidbody2D projectileRb = Cerberus.GetComponent<Rigidbody2D>();
         projectileRb.velocity = shootDirection * stats.cerberusSpeed;
-        player = GetComponent<AIDestinationSetter>().target;
     }
 
     public void Clone()
@@ -76,23 +71,28 @@ public class Pluto_behaviour : MonoBehaviour
         transform.GetChild(1).gameObject.SetActive(true);
     }
 
+    public void SpawnStatue()
+    {
+
+    }
+
 
     void Update()
     {
         
 
         cerberusTimer += Time.deltaTime;
-        if (cerberusTimer >= cerberusCooldown)
+        if (cerberusTimer >= stats.cerberusCooldown)
         {
             SendCerberus();
-            cerberusTimer -= cerberusCooldown;
+            cerberusTimer -= stats.cerberusCooldown;
         }
 
         moveTimer += Time.deltaTime;
-        if (moveTimer >= moveInterval) 
+        if (moveTimer >= stats.moveInterval) 
         {
             MovePlaces();
-            moveTimer -= moveInterval;
+            moveTimer -= stats.moveInterval;
         }
 
         if ((GetComponent<EntityHealthBehaviour>().currentHealth <= 20) && (hasUsedClone == false))
