@@ -599,6 +599,7 @@ Transform:
   - {fileID: 1983028986}
   - {fileID: 1446434616}
   - {fileID: 689608970}
+  - {fileID: 1393485862}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -620,7 +621,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 696c1cbb9627113448755c8d07ede3ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  message: BUTTON to  Shoot Gun! B2 to Aim! B3 to Dash!
+  message: BUTTON to  blast a magic projectile! B2 to Aim! B3 to Dash!
   assets: {fileID: 11400000, guid: 4433f7bbe65090046a2429e4bbbc18f7, type: 2}
   xboxButtonName:
   - LTrigger
@@ -656,12 +657,12 @@ PrefabInstance:
     - target: {fileID: 2495953773665164011, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.579606
+      value: 8.34
       objectReference: {fileID: 0}
     - target: {fileID: 2495953773665164011, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -28.146955
+      value: -19.59
       objectReference: {fileID: 0}
     - target: {fileID: 2495953773665164011, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
         type: 3}
@@ -739,7 +740,7 @@ GameObject:
   - component: {fileID: 287505809}
   - component: {fileID: 287505808}
   - component: {fileID: 287505807}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: thumbnail_tilesheet_treachery1_22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -850,13 +851,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 287505806}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -26.7, y: -23.7, z: 0}
-  m_LocalScale: {x: 3.19, y: 3.19, z: 3.19}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -22.01521, y: 0.19011407, z: 0}
+  m_LocalScale: {x: 1.2129278, y: 1.2129278, z: 1.2129278}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_Father: {fileID: 1393485862}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &397852012
 GameObject:
@@ -869,7 +870,7 @@ GameObject:
   - component: {fileID: 397852015}
   - component: {fileID: 397852014}
   - component: {fileID: 397852013}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: thumbnail_tilesheet_treachery1_21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -980,13 +981,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 397852012}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.6, y: -4.1, z: 0}
-  m_LocalScale: {x: 2.81, y: 2.81, z: 2.81}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -19.695818, y: 7.6425858, z: 0}
+  m_LocalScale: {x: 1.068441, y: 1.068441, z: 1.068441}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_Father: {fileID: 1393485862}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &437465906
 GameObject:
@@ -1062,7 +1063,7 @@ GameObject:
   - component: {fileID: 630481111}
   - component: {fileID: 630481110}
   - component: {fileID: 630481109}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: thumbnail_tilesheet_treachery1_23 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1173,13 +1174,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 630481108}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.4, y: -24.2, z: 0}
-  m_LocalScale: {x: 4.63, y: 4.63, z: 4.63}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -21.140684, y: 0, z: 0}
+  m_LocalScale: {x: 1.7604563, y: 1.7604563, z: 1.7604563}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_Father: {fileID: 1393485862}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &636879777 stripped
 GameObject:
@@ -1216,7 +1217,7 @@ GameObject:
   - component: {fileID: 681570648}
   - component: {fileID: 681570647}
   - component: {fileID: 681570646}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: thumbnail_tilesheet_treachery1_20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1327,13 +1328,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 681570645}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 31.2, y: -24.2, z: 0}
-  m_LocalScale: {x: 2.63, y: 2.63, z: 2.63}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_Father: {fileID: 1393485862}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &689608969
 GameObject:
@@ -1480,6 +1481,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2312674410725739281, guid: 9ad55f666b12d6c46bdf08233137bbf8,
+        type: 3}
+      propertyPath: m_text
+      value: "Right Trigger to Swing the Sword! \nSouth Button to Revive!"
+      objectReference: {fileID: 0}
     - target: {fileID: 2312674410725739281, guid: 9ad55f666b12d6c46bdf08233137bbf8,
         type: 3}
       propertyPath: m_fontSize
@@ -2115,7 +2121,7 @@ GameObject:
   - component: {fileID: 1068954152}
   - component: {fileID: 1068954151}
   - component: {fileID: 1068954150}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: thumbnail_tilesheet_treachery1_22 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2226,13 +2232,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1068954149}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 34.3, y: 15.9, z: 0}
-  m_LocalScale: {x: 3.19, y: 3.19, z: 3.19}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.1787066, y: 15.247148, z: 0}
+  m_LocalScale: {x: 1.2129278, y: 1.2129278, z: 1.2129278}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_Father: {fileID: 1393485862}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1127800635
 GameObject:
@@ -2245,7 +2251,7 @@ GameObject:
   - component: {fileID: 1127800638}
   - component: {fileID: 1127800637}
   - component: {fileID: 1127800636}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: thumbnail_tilesheet_treachery1_23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2356,13 +2362,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1127800635}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23.7, y: -24.9, z: 0}
-  m_LocalScale: {x: 4.63, y: 4.63, z: 4.63}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.851711, y: -0.26615927, z: 0}
+  m_LocalScale: {x: 1.7604563, y: 1.7604563, z: 1.7604563}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_Father: {fileID: 1393485862}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1175317983
 GameObject:
@@ -2375,7 +2381,7 @@ GameObject:
   - component: {fileID: 1175317986}
   - component: {fileID: 1175317985}
   - component: {fileID: 1175317984}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: thumbnail_tilesheet_treachery1_20 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2486,13 +2492,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1175317983}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.2, y: -7.9, z: 0}
-  m_LocalScale: {x: 5.45, y: 5.45, z: 5.45}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.703422, y: 6.197719, z: 0}
+  m_LocalScale: {x: 2.0722432, y: 2.0722432, z: 2.0722432}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_Father: {fileID: 1393485862}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1302830441
 GameObject:
@@ -2585,7 +2591,7 @@ GameObject:
   - component: {fileID: 1319246052}
   - component: {fileID: 1319246051}
   - component: {fileID: 1319246050}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: thumbnail_tilesheet_treachery1_20 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2696,13 +2702,54 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1319246049}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.1, y: 24.1, z: 0}
-  m_LocalScale: {x: 5.45, y: 5.45, z: 5.45}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -19.505705, y: 18.36502, z: 0}
+  m_LocalScale: {x: 2.0722432, y: 2.0722432, z: 2.0722432}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_Father: {fileID: 1393485862}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1393485861
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1393485862}
+  m_Layer: 0
+  m_Name: Obstacles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1393485862
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393485861}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 31.2, y: -25.744999, z: 0}
+  m_LocalScale: {x: 2.63, y: 2.63, z: 2.63}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1127800638}
+  - {fileID: 287505809}
+  - {fileID: 397852015}
+  - {fileID: 1319246052}
+  - {fileID: 1175317986}
+  - {fileID: 630481111}
+  - {fileID: 1556132267}
+  - {fileID: 1068954152}
+  - {fileID: 1658860381}
+  - {fileID: 681570648}
+  m_Father: {fileID: 205761410}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1418572280 stripped
 GameObject:
@@ -6282,7 +6329,7 @@ GameObject:
   - component: {fileID: 1556132267}
   - component: {fileID: 1556132266}
   - component: {fileID: 1556132265}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: thumbnail_tilesheet_treachery1_21 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6393,13 +6440,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1556132264}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23.5, y: 3.7, z: 0}
-  m_LocalScale: {x: 2.81, y: 2.81, z: 2.81}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.927757, y: 10.608365, z: 0}
+  m_LocalScale: {x: 1.068441, y: 1.068441, z: 1.068441}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_Father: {fileID: 1393485862}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1642349369 stripped
 MonoBehaviour:
@@ -6469,7 +6516,7 @@ GameObject:
   - component: {fileID: 1658860381}
   - component: {fileID: 1658860380}
   - component: {fileID: 1658860379}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: thumbnail_tilesheet_treachery1_22 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6580,13 +6627,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1658860378}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.2, y: 22.9, z: 0}
-  m_LocalScale: {x: 3.19, y: 3.19, z: 3.19}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.08365, y: 17.908745, z: 0}
+  m_LocalScale: {x: 1.2129278, y: 1.2129278, z: 1.2129278}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_Father: {fileID: 1393485862}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1693113352
 PrefabInstance:

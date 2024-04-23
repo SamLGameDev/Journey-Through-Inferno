@@ -14,10 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardImage: {fileID: 21300000, guid: 381841cb984575242bc8a7caa8363975, type: 3}
   effectValue: 5
-  description: 'Danger lurks around every corner, and a spiral staircase has many
-    corners.
+  description: '_Effect: Enemies explode on death and deal damage to other enemies.
 
-    _Effect: Enemies explode on death and deal damage to other enemies'
+    Danger
+    lurks around every corner, and a spiral staircase has many corners.
+
+'
   specialCardEffectEnabled: 1
   RangeForAbility: 1
   particleEffect: {fileID: 3593046037354340037, guid: 4f8fec4a19846c542a43e3ea56df4e77,

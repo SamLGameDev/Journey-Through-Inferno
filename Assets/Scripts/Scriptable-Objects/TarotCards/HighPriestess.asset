@@ -13,11 +13,13 @@ MonoBehaviour:
   m_Name: HighPriestess
   m_EditorClassIdentifier: 
   cardImage: {fileID: 21300000, guid: c863a29981657da4a8bc4da45b8d25e3, type: 3}
-  effectValue: 0
-  description: 'She keeps secrets like no-one else. Trust only your gut when talking
-    to her.
+  effectValue: 10
+  description: '_Effect: Makes the player invincible for a short period of time.
 
-    _Effect: Makes the player invincible to enemies for a bit'
+    She
+    keeps secrets like no-one else. Trust only your gut when talking to her.
+
+'
   specialCardEffectEnabled: 0
   RangeForAbility: 0
   particleEffect: {fileID: 0}

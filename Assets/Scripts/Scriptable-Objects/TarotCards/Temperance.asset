@@ -14,10 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardImage: {fileID: 21300000, guid: 65cd99195fb94df4c8ee872ab292ac3a, type: 3}
   effectValue: 1
-  description: 'When all is balanced through moderation and self-control, harmony
-    can be reached.
+  description: '_Effect: Cooldown reduction for attacks.
 
-    _Effect: cooldown reduction'
+    When all is balanced
+    through moderation and self-control, harmony can be reached.
+
+'
   specialCardEffectEnabled: 0
   RangeForAbility: 0
   particleEffect: {fileID: 0}

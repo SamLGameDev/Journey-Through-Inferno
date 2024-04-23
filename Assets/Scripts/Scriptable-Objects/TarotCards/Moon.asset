@@ -14,10 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardImage: {fileID: 21300000, guid: 51cc7bde2621b134dad08b8731d42c51, type: 3}
   effectValue: 0
-  description: 'When problems are hard to see in the moonlight, trust your intuition
-    not to lead you astray.
+  description: '_Effect: urns ranged attack into homing attack.
 
-    _Effect: turns ranged attack into homing missiles'
+    When problems
+    are hard to see in the moonlight, trust your intuition not to lead you astray.
+
+'
   specialCardEffectEnabled: 0
   RangeForAbility: 0
   particleEffect: {fileID: 0}

@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardImage: {fileID: 21300000, guid: 8aff1ad2e5850be4590896b6b9a3804b, type: 3}
   effectValue: 15
-  description: 'Beware the sins that lead you astray and beware those you push you
-    towards them.
+  description: '_Effect: Using X, shoots a projectile that causes enemies to attack
+    one another.
 
-    _Effect: can load a special bullet using X to Make the enemy
-    attack its teammates'
+    Beware the sins that lead you astray and beware those you push
+    you towards them.
+
+'
   specialCardEffectEnabled: 0
   RangeForAbility: 0
   particleEffect: {fileID: 0}

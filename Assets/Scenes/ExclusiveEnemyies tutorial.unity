@@ -1100,8 +1100,8 @@ PrefabInstance:
     - target: {fileID: 2312674410725739281, guid: 9ad55f666b12d6c46bdf08233137bbf8,
         type: 3}
       propertyPath: m_text
-      value: Some enemies can only be damaged by cetain players! This is indicated
-        by their color.
+      value: Some enemies can only be damaged by a particular player, this is indicated
+        by the matching colour scheme.
       objectReference: {fileID: 0}
     - target: {fileID: 2312674410725739281, guid: 9ad55f666b12d6c46bdf08233137bbf8,
         type: 3}

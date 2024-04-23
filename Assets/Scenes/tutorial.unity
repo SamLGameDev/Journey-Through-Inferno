@@ -1417,8 +1417,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 696c1cbb9627113448755c8d07ede3ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  message: Press BUTTON  to swing sword! Press B2 to Submit or revive a Player at
-    the cost of Health when near them!
+  message: Press BUTTON  to swing the sword! Press B2 to revive a Player at the cost
+    of Health when near them!
   assets: {fileID: 11400000, guid: 4433f7bbe65090046a2429e4bbbc18f7, type: 2}
   xboxButtonName:
   - RTrigger
@@ -2204,7 +2204,7 @@ PrefabInstance:
     - target: {fileID: 8217988083745632475, guid: 9ad55f666b12d6c46bdf08233137bbf8,
         type: 3}
       propertyPath: dislayText
-      value: left trigger to swing the Sword!
+      value: Right Trigger to swing the Sword.
       objectReference: {fileID: 0}
     - target: {fileID: 8217988083745632475, guid: 9ad55f666b12d6c46bdf08233137bbf8,
         type: 3}
