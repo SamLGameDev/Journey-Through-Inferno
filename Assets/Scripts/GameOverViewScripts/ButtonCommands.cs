@@ -32,6 +32,11 @@ public class ButtonCommands : MonoBehaviour
         SceneManager.LoadScene(sceneToLoad.value) ;
     }
 
+    public void Tutorial()
+    {
+    //    SceneManager.LoadScene(TutorialPage);
+    }
+
     // Update is called once per frame
     public void QuitGame()
     {
