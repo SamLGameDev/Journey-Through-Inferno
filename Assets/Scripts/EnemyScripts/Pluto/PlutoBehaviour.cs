@@ -18,7 +18,6 @@ public class Pluto_behaviour : MonoBehaviour
     {
         moveTimer = 0;
         cerberusTimer = 0;
-        player = GetComponent<AIDestinationSetter>().target;
         GetComponent<AIPath>().endReachedDistance = stats.cerberusRange;
     }
 
@@ -56,6 +55,7 @@ public class Pluto_behaviour : MonoBehaviour
 
     public void SendCerberus()
     {
+        player = GetComponent<AIDestinationSetter>().target;
         Vector2 shootDirection = (player.position - transform.position).normalized;
 
         GameObject Cerberus = Instantiate(stats.cerberusPrefab, transform.position, Quaternion.identity);
@@ -70,12 +70,6 @@ public class Pluto_behaviour : MonoBehaviour
         transform.GetChild(0).gameObject.SetActive(true);
         transform.GetChild(1).gameObject.SetActive(true);
     }
-
-    public void SpawnStatue()
-    {
-
-    }
-
 
     void Update()
     {
@@ -98,6 +92,11 @@ public class Pluto_behaviour : MonoBehaviour
         if ((GetComponent<EntityHealthBehaviour>().currentHealth <= 20) && (hasUsedClone == false))
         {
             Clone();
+        }
+        else
+        {
+            transform.GetChild(0).gameObject.SetActive(false);
+            transform.GetChild(1).gameObject.SetActive(false);
         }
 
 

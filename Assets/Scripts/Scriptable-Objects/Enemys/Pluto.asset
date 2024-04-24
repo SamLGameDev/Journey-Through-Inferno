@@ -32,6 +32,8 @@ MonoBehaviour:
     constantValue: 0
     useConstant: 1
   originalPosition: {fileID: 0}
+  moveInterval: 10
+  cerberusCooldown: 8
   cerberusRange: 15
   cerberusSpeed: 15
   cerberusPrefab: {fileID: 6508069903699826417, guid: 6d8545a1d0d0b444682ffd7fe7099dba,
