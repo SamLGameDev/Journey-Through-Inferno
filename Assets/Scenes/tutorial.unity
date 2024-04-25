@@ -1785,6 +1785,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Encounter Area (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3338108468726533804, guid: 9ad55f666b12d6c46bdf08233137bbf8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3582038526063799243, guid: 9ad55f666b12d6c46bdf08233137bbf8,
         type: 3}
       propertyPath: m_UiScaleMode
@@ -2018,7 +2023,7 @@ PrefabInstance:
     - target: {fileID: 3338108468726533804, guid: 9ad55f666b12d6c46bdf08233137bbf8,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3582038526063799243, guid: 9ad55f666b12d6c46bdf08233137bbf8,
         type: 3}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b7288b36b84b9241be4fdadd30129c7, type: 3}
   m_Name: The Tower
   m_EditorClassIdentifier: 
-  cardImage: {fileID: 21300000, guid: 381841cb984575242bc8a7caa8363975, type: 3}
+  cardImage: {fileID: 21300000, guid: 60e19684502011f4289e2520a60250f9, type: 3}
   effectValue: 5
   description: '_Effect: Enemies explode on death and deal damage to other enemies.
 

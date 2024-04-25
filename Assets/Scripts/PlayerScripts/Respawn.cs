@@ -34,6 +34,14 @@ public class Respawn : MonoBehaviour
                 EntityHealthBehaviour health = player.GetComponent<EntityHealthBehaviour>();
                 health.currentHealth = ressurectedHealth;
                 OnExitCollider.Raise();
+                if (player.name == "Player 2")
+                {
+                    EntityHealthBehaviour.player2.IsAlive = true;
+                }
+                else
+                {
+                    EntityHealthBehaviour.player1.IsAlive = true;
+                }
                 health = collision.GetComponent<EntityHealthBehaviour>();
                 if (health.currentHealth <= CostOfReviving)
                 {
