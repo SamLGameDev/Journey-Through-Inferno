@@ -34,7 +34,7 @@ public class ButtonCommands : MonoBehaviour
 
     public void Tutorial()
     {
-    //    SceneManager.LoadScene(TutorialPage);
+        SceneManager.LoadScene(13);
     }
 
     // Update is called once per frame
