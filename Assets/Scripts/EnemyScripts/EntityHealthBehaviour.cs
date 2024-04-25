@@ -135,7 +135,7 @@ public class EntityHealthBehaviour : MonoBehaviour
     /// Reduces the entity's health by a set amount
     /// </summary>
     /// <param name="damageAmount">Amount of damage to apply</param>
-    public void ApplyDamage(int damageAmount, GameObject damagerDealerLocal = null, string weapon = null)
+    public void ApplyDamage(int damageAmount, GameObject damagerDealerLocal = null, string weapon = " ")
     {
         if (damagerDealerLocal != null && damagerDealerLocal.name == "Player 1" && onlyVirgil)
         {
@@ -177,7 +177,8 @@ public class EntityHealthBehaviour : MonoBehaviour
             EntityDeath(damagerDealerLocal);     
         }
         object[] hermit = HasCard(TarotCards.possibleModifiers.KnockBack);
-        if ((bool)hermit[0] && gameObject.tag != "Player" && !isBoss && weapon == "sword") 
+        if (((bool)hermit[0] || 
+            damagerDealerLocal.GetComponent<Player_movement>().stats.currentState == Player.PlayerState.lunge) && gameObject.tag != "Player" && !isBoss && weapon == "sword") 
         {
             damageDealer = damagerDealerLocal;
             triggeredKnockBack = true;
@@ -197,11 +198,23 @@ public class EntityHealthBehaviour : MonoBehaviour
             yield return new WaitUntil(() => triggeredKnockBack);
             Range_Calculator range_Calculator = GetComponent<Range_Calculator>();
             range_Calculator.enabled = false;
-            TarotCards knockbackDistance = (TarotCards)HasCard(TarotCards.possibleModifiers.KnockBack)[1];
+            float knockbackDistance;
+            TarotCards hasKnockBack = null;
+            try
+            {
+                hasKnockBack = (TarotCards)HasCard(TarotCards.possibleModifiers.KnockBack)[1];
+            }
+            catch
+            {
+                knockbackDistance = 1f;
+            }
+            knockbackDistance = hasKnockBack == null ? 250000f : hasKnockBack.effectValue;
             EnablerAStar(false);
+            Debug.Log(knockbackDistance);
             Vector2 direction = damageDealer.transform.position - transform.position;
+            Debug.Log("4rdref");
             Rigidbody2D rb = GetComponent<Rigidbody2D>();
-            rb.AddForce(-direction.normalized * Time.deltaTime * knockbackDistance.effectValue);
+            rb.AddForce(-direction.normalized * Time.deltaTime * knockbackDistance);
             yield return new WaitForSeconds(0.15f);
             rb.totalForce = Vector2.zero;
             rb.velocity = Vector2.zero;
