@@ -1,3 +1,4 @@
+using Fungus;
 using Pathfinding;
 using System;
 using System.Collections;
@@ -19,6 +20,15 @@ public class Pluto_behaviour : MonoBehaviour
         moveTimer = 0;
         cerberusTimer = 0;
         GetComponent<AIPath>().endReachedDistance = stats.cerberusRange;
+
+        GameObject statue1 = Instantiate(stats.statuePrefab);
+        statue1.transform.position = new Vector3(places[0,0], places[1,0], 0);
+        GameObject statue2 = Instantiate(stats.statuePrefab);
+        statue2.transform.position = new Vector3(places[0, 2], places[1, 2], 0);
+        GameObject statue3 = Instantiate(stats.statuePrefab);
+        statue3.transform.position = new Vector3(places[0, 5], places[1, 5], 0);
+        GameObject statue4 = Instantiate(stats.statuePrefab);
+        statue4.transform.position = new Vector3(places[0, 4], places[1, 4], 0);
     }
 
     public void MovePlaces()
@@ -59,16 +69,18 @@ public class Pluto_behaviour : MonoBehaviour
         Vector2 shootDirection = (player.position - transform.position).normalized;
 
         GameObject Cerberus = Instantiate(stats.cerberusPrefab, transform.position, Quaternion.identity);
-        Rigidbody2D projectileRb = Cerberus.GetComponent<Rigidbody2D>();
-        projectileRb.velocity = shootDirection * stats.cerberusSpeed;
+        Rigidbody2D cerberusRb = Cerberus.GetComponent<Rigidbody2D>();
+        cerberusRb.velocity = shootDirection * stats.cerberusSpeed;
     }
 
     public void Clone()
     {
         hasUsedClone = true;
+        GameObject clone1 = Instantiate(stats.clonePrefab);
+        clone1.transform.SetParent(transform);
+        GameObject clone2 = Instantiate(stats.clonePrefab);
+        clone2.transform.SetParent(transform);
         MovePlaces();
-        transform.GetChild(0).gameObject.SetActive(true);
-        transform.GetChild(1).gameObject.SetActive(true);
     }
 
     void Update()
@@ -93,12 +105,6 @@ public class Pluto_behaviour : MonoBehaviour
         {
             Clone();
         }
-        else
-        {
-            transform.GetChild(0).gameObject.SetActive(false);
-            transform.GetChild(1).gameObject.SetActive(false);
-        }
-
-
+        
     }
 }
