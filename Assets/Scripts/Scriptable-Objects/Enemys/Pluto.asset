@@ -40,3 +40,5 @@ MonoBehaviour:
     type: 3}
   statuePrefab: {fileID: 7187451865587570375, guid: 04332074ca2b39e4e9846204ad71bfe4,
     type: 3}
+  clonePrefab: {fileID: 655716835503738545, guid: f7f1aa1696376a247a9cfc57d5a4c790,
+    type: 3}
