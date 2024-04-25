@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 609102680076532967}
   - component: {fileID: 3898241727358345214}
   - component: {fileID: 6886355405693731531}
+  - component: {fileID: 5998888417363079602}
   m_Layer: 0
   m_Name: DIS deus ex
   m_TagString: Untagged
@@ -65,8 +66,7 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 830343849596189511}
-  selectedCommands:
-  - {fileID: 609102680076532967}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -104,6 +104,7 @@ MonoBehaviour:
   eventHandler: {fileID: 3898241727358345214}
   commandList:
   - {fileID: 609102680076532967}
+  - {fileID: 5998888417363079602}
   - {fileID: 6886355405693731531}
   suppressAllAutoSelections: 0
 --- !u!114 &609102680076532967
@@ -167,6 +168,33 @@ MonoBehaviour:
     stringVal: Medusa_Fight
   loadingImage: {fileID: 0}
   sceneNameOLD: 
+--- !u!114 &5998888417363079602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6007419623775820720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 3
+  indentLevel: 0
+  storyText: Blasphemy!
+  description: 
+  character: {fileID: 8116278133423478108}
+  portrait: {fileID: 21300000, guid: d9ec245bb87fe3b49a2bdc5c77e51258, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
 --- !u!1001 &1513226052716090424
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -325,6 +353,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5906305667756028515}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8116278133423478108 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2402008786681423679, guid: aaffe9f0bf5c2ba4382740da6ea9582a,
+    type: 3}
+  m_PrefabInstance: {fileID: 5906305667756028515}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7211603814712889701
 PrefabInstance:
   m_ObjectHideFlags: 0
