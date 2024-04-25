@@ -219,10 +219,10 @@ public class EntityHealthBehaviour : MonoBehaviour
     }
     private IEnumerator FlashRed()
     {
-        while( true)
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        while ( true)
         {
             yield return new WaitUntil(() => flashRed);
-            SpriteRenderer sr = GetComponent<SpriteRenderer>();
             sr.color = Color.red;
             yield return new WaitForSeconds(0.5f);
             sr.color = Color.white;
@@ -384,7 +384,7 @@ public class EntityHealthBehaviour : MonoBehaviour
             {
                 playerCotnroller.stats.gamepad.ResetHaptics();
             }
-
+            gameObject.GetComponent<SpriteRenderer>().color = Color.white;
             gameObject.SetActive(false);
             GameObject grave = Instantiate(gravestone, transform.position, Quaternion.identity);
             grave.GetComponent<Respawn>().player = gameObject;
