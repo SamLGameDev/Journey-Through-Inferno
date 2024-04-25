@@ -48,6 +48,12 @@ GameObject:
   - component: {fileID: 8967482757835757946}
   - component: {fileID: 1883355845936327193}
   - component: {fileID: 558365024678578113}
+  - component: {fileID: 7727329821570010787}
+  - component: {fileID: 181228371808158464}
+  - component: {fileID: 2499595459413465848}
+  - component: {fileID: 593144691422748125}
+  - component: {fileID: 1549899631241485962}
+  - component: {fileID: 3234831167506133944}
   m_Layer: 0
   m_Name: tutorial
   m_TagString: Untagged
@@ -71,7 +77,7 @@ Transform:
   - {fileID: 1067434158938117185}
   - {fileID: 1346445018703579016}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7541913813021210117
 MonoBehaviour:
@@ -86,10 +92,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 64, y: 101.30002}
+  scrollPos: {x: 131, y: 9.300018}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
-  blockViewHeight: 400
+  blockViewHeight: 278.8
   zoom: 1
   scrollViewRect:
     serializedVersion: 2
@@ -100,7 +106,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 8096431823973885071}
   selectedCommands:
-  - {fileID: 558365024678578113}
+  - {fileID: 3234831167506133944}
   variables: []
   description: 
   stepPause: 0
@@ -140,6 +146,7 @@ MonoBehaviour:
   - {fileID: 989654080301771909}
   - {fileID: 4437307234171782236}
   - {fileID: 7259606877912893623}
+  - {fileID: 7727329821570010787}
   - {fileID: 966531202557242673}
   - {fileID: 4301788961024473694}
   - {fileID: 7201899303777585625}
@@ -151,6 +158,7 @@ MonoBehaviour:
   - {fileID: 4099311645469240513}
   - {fileID: 8602937312603734906}
   - {fileID: 3572544998350468844}
+  - {fileID: 181228371808158464}
   - {fileID: 7537452706407021838}
   - {fileID: 1931532818345445158}
   - {fileID: 8834392440318496406}
@@ -170,7 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 1
   indentLevel: 0
-  storyText: Yo.
+  storyText: Hello.
   description: 
   character: {fileID: 2103781134908422280}
   portrait: {fileID: 21300000, guid: 0aa8d2241847bc14eaacc8ee9cff51da, type: 3}
@@ -197,7 +205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2
   indentLevel: 0
-  storyText: ASGDHkjkjGgSKJH!
+  storyText: Oh God!
   description: 
   character: {fileID: 5374989190794745435}
   portrait: {fileID: 21300000, guid: 0cb6201c23c80964e9544ba2afd3c2c9, type: 3}
@@ -224,7 +232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 3
   indentLevel: 0
-  storyText: Wow, Beatrice wasn't kidding when she said you were a wimp.
+  storyText: Blasphemy.
   description: 
   character: {fileID: 2103781134908422280}
   portrait: {fileID: 21300000, guid: d9ec245bb87fe3b49a2bdc5c77e51258, type: 3}
@@ -278,8 +286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 5
   indentLevel: 0
-  storyText: The very same. I have no idea how a dude like you landed a chick like
-    her but here we are. I'm Virgil by the way, at your service.
+  storyText: The very same. I'm Virgil, at your service.
   description: 
   character: {fileID: 2103781134908422280}
   portrait: {fileID: 21300000, guid: 0aa8d2241847bc14eaacc8ee9cff51da, type: 3}
@@ -306,7 +313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 6
   indentLevel: 0
-  storyText: V-V-Virgil? Like the famous poet Virgil?
+  storyText: Virgil? Like the famous poet Virgil?
   description: 
   character: {fileID: 5374989190794745435}
   portrait: {fileID: 21300000, guid: fff231fbebbff9140b4fdcc223c86bf9, type: 3}
@@ -336,7 +343,7 @@ MonoBehaviour:
   storyText: The very same.
   description: 
   character: {fileID: 2103781134908422280}
-  portrait: {fileID: 21300000, guid: d9ec245bb87fe3b49a2bdc5c77e51258, type: 3}
+  portrait: {fileID: 21300000, guid: 3ce196cf1f95f5544887bd5eee1a6990, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -360,7 +367,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 8
   indentLevel: 0
-  storyText: Holy moly! Virgil-sempai I'm your biggest fan!
+  storyText: "I\u2019m a huge fan of your work!"
   description: 
   character: {fileID: 5374989190794745435}
   portrait: {fileID: 21300000, guid: fff231fbebbff9140b4fdcc223c86bf9, type: 3}
@@ -387,7 +394,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 9
   indentLevel: 0
-  storyText: Huh? Wuh?
+  storyText: Huh? Uh, thanks, I guess.
   description: 
   character: {fileID: 2103781134908422280}
   portrait: {fileID: 21300000, guid: abab898845681704bb8d5dba1ddd3a32, type: 3}
@@ -414,8 +421,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 10
   indentLevel: 0
-  storyText: I can't believe I'm meeting THE Virgil! This is the best day of my life!
-    Woo hoo!
+  storyText: I can't believe I'm meeting THE Virgil!
   description: 
   character: {fileID: 5374989190794745435}
   portrait: {fileID: 21300000, guid: fe4d41b2db58cf84680af5a8e753f6fd, type: 3}
@@ -442,7 +448,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 11
   indentLevel: 0
-  storyText: O-o-o-okay...
+  storyText: Okay...
   description: 
   character: {fileID: 2103781134908422280}
   portrait: {fileID: 21300000, guid: abab898845681704bb8d5dba1ddd3a32, type: 3}
@@ -469,7 +475,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 12
   indentLevel: 0
-  storyText: Well Beatrice sent me to toughen you up, so...
+  storyText: Well Beatrice sent me to confront your sins, so...
   description: 
   character: {fileID: 2103781134908422280}
   portrait: {fileID: 21300000, guid: 3ce196cf1f95f5544887bd5eee1a6990, type: 3}
@@ -496,7 +502,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 13
   indentLevel: 0
-  storyText: 'Awesome! '
+  storyText: 'I''m ready! '
   description: 
   character: {fileID: 5374989190794745435}
   portrait: {fileID: 21300000, guid: fff231fbebbff9140b4fdcc223c86bf9, type: 3}
@@ -523,11 +529,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 14
   indentLevel: 0
-  storyText: So you get an exclusive tour of Hell with yours truly as your reliable
-    guide.
+  storyText: I'm glad.
   description: 
   character: {fileID: 2103781134908422280}
-  portrait: {fileID: 21300000, guid: 3ce196cf1f95f5544887bd5eee1a6990, type: 3}
+  portrait: {fileID: 21300000, guid: 0aa8d2241847bc14eaacc8ee9cff51da, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -659,8 +664,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 147
-    y: 159
+    x: 146
+    y: 160
     width: 121.2
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -712,6 +717,10 @@ MonoBehaviour:
   - {fileID: 1947114087716247366}
   - {fileID: 1883355845936327193}
   - {fileID: 7650930371038243554}
+  - {fileID: 2499595459413465848}
+  - {fileID: 593144691422748125}
+  - {fileID: 3234831167506133944}
+  - {fileID: 1549899631241485962}
   - {fileID: 558365024678578113}
   suppressAllAutoSelections: 0
 --- !u!114 &8352138380579295482
@@ -783,7 +792,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 23
   indentLevel: 0
-  storyText: O-o-o-k-ka-y...
+  storyText: Okay...
   description: 
   character: {fileID: 5374989190794745435}
   portrait: {fileID: 21300000, guid: dd6b0fb7088482a43b4336794641558b, type: 3}
@@ -972,7 +981,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 30
   indentLevel: 0
-  storyText: What happened Virgil-sempai?
+  storyText: What happened?
   description: 
   character: {fileID: 5374989190794745435}
   portrait: {fileID: 21300000, guid: 673de18d2eef3fd45840f1e4861c9ff6, type: 3}
@@ -1080,7 +1089,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 34
   indentLevel: 0
-  storyText: But it does mean that we heal faster when we are close.
+  storyText: Hence the name.
   description: 
   character: {fileID: 2103781134908422280}
   portrait: {fileID: 21300000, guid: 0aa8d2241847bc14eaacc8ee9cff51da, type: 3}
@@ -1110,7 +1119,7 @@ MonoBehaviour:
   storyText: '*quiet hum*'
   description: 
   character: {fileID: 3992941476751699164}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: ad1ec0135fd429e4a96aae4e0e8283a4, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1134,7 +1143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 36
   indentLevel: 0
-  storyText: It means my headache just got a lot bigger.
+  storyText: It means that we are linked by a bond of souls.
   description: 
   character: {fileID: 2103781134908422280}
   portrait: {fileID: 21300000, guid: f2cc5ff45a27a1b448a4afdcc5d18769, type: 3}
@@ -1165,6 +1174,171 @@ MonoBehaviour:
   description: 
   character: {fileID: 2103781134908422280}
   portrait: {fileID: 21300000, guid: d9ec245bb87fe3b49a2bdc5c77e51258, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &7727329821570010787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2151212659233987585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 38
+  indentLevel: 0
+  storyText: Also, wow, Beatrice wasn't kidding when she said you were cowardly.
+  description: 
+  character: {fileID: 2103781134908422280}
+  portrait: {fileID: 21300000, guid: d9ec245bb87fe3b49a2bdc5c77e51258, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &181228371808158464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2151212659233987585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 39
+  indentLevel: 0
+  storyText: So you get an exclusive tour of Hell with yours truly as your reliable
+    guide.
+  description: 
+  character: {fileID: 2103781134908422280}
+  portrait: {fileID: 21300000, guid: 0aa8d2241847bc14eaacc8ee9cff51da, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &2499595459413465848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2151212659233987585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 40
+  indentLevel: 0
+  storyText: Practically speaking, when we are close together, we are stronger.
+  description: 
+  character: {fileID: 2103781134908422280}
+  portrait: {fileID: 21300000, guid: 0aa8d2241847bc14eaacc8ee9cff51da, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &593144691422748125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2151212659233987585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 41
+  indentLevel: 0
+  storyText: 'We can also use the power of the tarot cards, which is handy, since
+    Hell is lot more hostile than I remember. '
+  description: 
+  character: {fileID: 2103781134908422280}
+  portrait: {fileID: 21300000, guid: 0aa8d2241847bc14eaacc8ee9cff51da, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &1549899631241485962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2151212659233987585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 42
+  indentLevel: 0
+  storyText: "Anyway, I could undo this but that would require more energy than I\u2019m
+    willing to expand and this might be helpful, so I won\u2019t."
+  description: 
+  character: {fileID: 2103781134908422280}
+  portrait: {fileID: 21300000, guid: 0aa8d2241847bc14eaacc8ee9cff51da, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &3234831167506133944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2151212659233987585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 43
+  indentLevel: 0
+  storyText: "Which is saying a lot, considering\u2026 it\u2019s you know..."
+  description: 
+  character: {fileID: 2103781134908422280}
+  portrait: {fileID: 21300000, guid: 0aa8d2241847bc14eaacc8ee9cff51da, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1424,6 +1598,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7500990138392082624, guid: 71bb5170b03c38744a53120dc42da837,
+        type: 3}
+      propertyPath: portraits.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: ad1ec0135fd429e4a96aae4e0e8283a4,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

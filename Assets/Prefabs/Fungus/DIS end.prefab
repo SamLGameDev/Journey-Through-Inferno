@@ -12,13 +12,13 @@ GameObject:
   - component: {fileID: 334833843447889820}
   - component: {fileID: 7885602885168091744}
   - component: {fileID: 7600372070110478048}
-  - component: {fileID: 856157783010172303}
-  - component: {fileID: 4208447064017474051}
   - component: {fileID: 1457080862338978876}
-  - component: {fileID: 5878527305034706810}
-  - component: {fileID: 806521608795458398}
   - component: {fileID: 9111482015298457416}
   - component: {fileID: 3072324987998000145}
+  - component: {fileID: 6924460900189134743}
+  - component: {fileID: -8108202854962871334}
+  - component: {fileID: 3863558221934490884}
+  - component: {fileID: 5422606289639421672}
   m_Layer: 0
   m_Name: DIS end
   m_TagString: Untagged
@@ -59,7 +59,7 @@ MonoBehaviour:
   scrollPos: {x: 80.61454, y: 212.98541}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
-  blockViewHeight: 278.75
+  blockViewHeight: 283
   zoom: 0.8800001
   scrollViewRect:
     serializedVersion: 2
@@ -70,7 +70,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 7885602885168091744}
   selectedCommands:
-  - {fileID: 7600372070110478048}
+  - {fileID: 3863558221934490884}
   variables: []
   description: 
   stepPause: 0
@@ -108,11 +108,11 @@ MonoBehaviour:
   eventHandler: {fileID: 3072324987998000145}
   commandList:
   - {fileID: 7600372070110478048}
-  - {fileID: 856157783010172303}
-  - {fileID: 4208447064017474051}
   - {fileID: 1457080862338978876}
-  - {fileID: 5878527305034706810}
-  - {fileID: 806521608795458398}
+  - {fileID: 6924460900189134743}
+  - {fileID: -8108202854962871334}
+  - {fileID: 3863558221934490884}
+  - {fileID: 5422606289639421672}
   - {fileID: 9111482015298457416}
   suppressAllAutoSelections: 0
 --- !u!114 &7600372070110478048
@@ -129,64 +129,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 17
   indentLevel: 0
-  storyText: So this is the city of this?
+  storyText: So this is the city of DIS?
   description: 
   character: {fileID: 1175597185461878266}
   portrait: {fileID: 21300000, guid: 23b65cf952b970b4cbd1e361361622d1, type: 3}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
---- !u!114 &856157783010172303
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 990307235948931968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 18
-  indentLevel: 0
-  storyText: I meant Dis.
-  description: 
-  character: {fileID: 1175597185461878266}
-  portrait: {fileID: 21300000, guid: 673de18d2eef3fd45840f1e4861c9ff6, type: 3}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
---- !u!114 &4208447064017474051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 990307235948931968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 19
-  indentLevel: 0
-  storyText: The second time.
-  description: 
-  character: {fileID: 1175597185461878266}
-  portrait: {fileID: 21300000, guid: 673de18d2eef3fd45840f1e4861c9ff6, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -210,64 +156,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 20
   indentLevel: 0
-  storyText: '*Sigh*'
-  description: 
-  character: {fileID: 889887611053206705}
-  portrait: {fileID: 21300000, guid: f2cc5ff45a27a1b448a4afdcc5d18769, type: 3}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
---- !u!114 &5878527305034706810
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 990307235948931968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 21
-  indentLevel: 0
-  storyText: We should get going.
+  storyText: Yes, though the hostile reception is new.
   description: 
   character: {fileID: 889887611053206705}
   portrait: {fileID: 21300000, guid: 0aa8d2241847bc14eaacc8ee9cff51da, type: 3}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
---- !u!114 &806521608795458398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 990307235948931968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 22
-  indentLevel: 0
-  storyText: Yes, Virgil-sempai!
-  description: 
-  character: {fileID: 1175597185461878266}
-  portrait: {fileID: 21300000, guid: fff231fbebbff9140b4fdcc223c86bf9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -311,6 +203,114 @@ MonoBehaviour:
   parentBlock: {fileID: 7885602885168091744}
   suppressBlockAutoSelect: 0
   waitForFrames: 1
+--- !u!114 &6924460900189134743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990307235948931968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 24
+  indentLevel: 0
+  storyText: "The fallen angels aren\u2019t usually that angry."
+  description: 
+  character: {fileID: 889887611053206705}
+  portrait: {fileID: 21300000, guid: d9ec245bb87fe3b49a2bdc5c77e51258, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &-8108202854962871334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990307235948931968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 25
+  indentLevel: 0
+  storyText: "Maybe it\u2019s because you\u2019re still alive?"
+  description: 
+  character: {fileID: 889887611053206705}
+  portrait: {fileID: 21300000, guid: a4da104822198eb41aededa776fdccb3, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &3863558221934490884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990307235948931968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 26
+  indentLevel: 0
+  storyText: '*sigh* What a pain.'
+  description: 
+  character: {fileID: 889887611053206705}
+  portrait: {fileID: 21300000, guid: f2cc5ff45a27a1b448a4afdcc5d18769, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &5422606289639421672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990307235948931968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 27
+  indentLevel: 0
+  storyText: Anyways, we should get going.
+  description: 
+  character: {fileID: 889887611053206705}
+  portrait: {fileID: 21300000, guid: f2cc5ff45a27a1b448a4afdcc5d18769, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
 --- !u!1001 &1169295355921085587
 PrefabInstance:
   m_ObjectHideFlags: 0

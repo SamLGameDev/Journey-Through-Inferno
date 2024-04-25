@@ -68,7 +68,7 @@ MonoBehaviour:
   scrollPos: {x: 52.258026, y: 127.28737}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
-  blockViewHeight: 310.8
+  blockViewHeight: 400
   zoom: 1
   scrollViewRect:
     serializedVersion: 2
@@ -105,8 +105,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 30.29113
-    y: 49.746826
+    x: 29.29113
+    y: 50.746826
     width: 75.6
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -157,8 +157,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 178.64578
-    y: 133.01265
+    x: 179.64578
+    y: 134.01265
     width: 81.2
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -186,10 +186,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2
   indentLevel: 0
-  storyText: Woo whee! That's a lot of gold!
+  storyText: That's a lot of gold!
   description: 
   character: {fileID: 8914413088844366071}
-  portrait: {fileID: 21300000, guid: fff231fbebbff9140b4fdcc223c86bf9, type: 3}
+  portrait: {fileID: 21300000, guid: 23b65cf952b970b4cbd1e361361622d1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -270,7 +270,7 @@ MonoBehaviour:
   storyText: You could buy so many books with this!
   description: 
   character: {fileID: 8914413088844366071}
-  portrait: {fileID: 21300000, guid: fff231fbebbff9140b4fdcc223c86bf9, type: 3}
+  portrait: {fileID: 21300000, guid: fe4d41b2db58cf84680af5a8e753f6fd, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -294,10 +294,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 7
   indentLevel: 0
-  storyText: I bet even that bastard pope doesn't have this much gold!
+  storyText: I bet even that rotten pope doesn't have this much gold!
   description: 
   character: {fileID: 8914413088844366071}
-  portrait: {fileID: 21300000, guid: fff231fbebbff9140b4fdcc223c86bf9, type: 3}
+  portrait: {fileID: 21300000, guid: fe4d41b2db58cf84680af5a8e753f6fd, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -348,10 +348,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 9
   indentLevel: 0
-  storyText: OooOoh! Shiny statue!
+  storyText: I wonder how much that statue is worth?
   description: 
   character: {fileID: 8914413088844366071}
-  portrait: {fileID: 21300000, guid: fff231fbebbff9140b4fdcc223c86bf9, type: 3}
+  portrait: {fileID: 21300000, guid: 23b65cf952b970b4cbd1e361361622d1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -402,7 +402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 11
   indentLevel: 0
-  storyText: Eeep!
+  storyText: "It\u2019s alive!"
   description: 
   character: {fileID: 8914413088844366071}
   portrait: {fileID: 21300000, guid: 0cb6201c23c80964e9544ba2afd3c2c9, type: 3}
@@ -457,7 +457,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 13
   indentLevel: 0
-  storyText: Do exactly as you say, Virgil sempai.
+  storyText: Do exactly as you say.
   description: 
   character: {fileID: 8914413088844366071}
   portrait: {fileID: 21300000, guid: 9d88d8463ec482f4bb9cff7595a53770, type: 3}
