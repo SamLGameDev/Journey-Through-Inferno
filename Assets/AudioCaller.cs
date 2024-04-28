@@ -10,7 +10,7 @@ public class AudioCaller : MonoBehaviour
 
     private float time;
 
-    [SerializeField] private string name;
+    [SerializeField] private string playerName;
 
     private void Start()
     {
@@ -23,7 +23,7 @@ public class AudioCaller : MonoBehaviour
         {
             if (time < 0)
             {
-                manager.PlaySound("Walking_Sound_" + name);
+                manager.PlaySound("Walking_Sound_" + playerName);
                 time = stepTime;
             }
             time -= Time.deltaTime;
@@ -32,7 +32,7 @@ public class AudioCaller : MonoBehaviour
 
     public void CallSlashSound()
     {
-        manager.PlaySound("Sword_Slash_" + name);
+        manager.PlaySound("Sword_Slash_" + playerName);
     }
 
     public void CallSound(string name)

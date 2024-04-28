@@ -348,12 +348,17 @@ public class EntityHealthBehaviour : MonoBehaviour
 
             if (gameObject.name == "Player 1")
             {
+                AudioManager.instance.PlaySound("Dante_Death");
+
                 player1.IsAlive = false;
                 PlayerDeathEvent.Raise();
                 player1.playerObject = gameObject;
             }
             else
             {
+
+                AudioManager.instance.PlaySound("Virgil_Death");
+
                 player2.IsAlive = false;
                 PlayerDeathEvent.Raise();
                 player2.playerObject = gameObject;                

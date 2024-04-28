@@ -286,6 +286,7 @@ public class Player_movement : MonoBehaviour
     /// </summary>
     public void Player_Shooting(Gamepad controller = null)
     {
+        AudioManager.instance.PlaySound("Gun_Fire");
         if (gun_cooldown)
         {
             bullet_controller.original = true;
