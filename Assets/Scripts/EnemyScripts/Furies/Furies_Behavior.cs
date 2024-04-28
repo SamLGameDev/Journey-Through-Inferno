@@ -200,6 +200,8 @@ public class Furies_Behavior : MonoBehaviour
             shotCooldown = Time.time + stats.shootCooldown;
             Destroy(FuriesProjectile, 3);
 
+            AudioManager.instance.PlaySound("Fury_Projectile");
+
         }
         // Switches to the Move state if the player is out of range 
         try

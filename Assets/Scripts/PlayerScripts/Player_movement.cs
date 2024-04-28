@@ -248,7 +248,6 @@ public class Player_movement : MonoBehaviour
     /// <param name="sword"></param>
     public void Player_Melee(GameObject sword)
     {
-        GetComponent<AudioCaller>().CallSlashSound();
 
         running = true;
         //  sword.SetActive(true);
@@ -261,8 +260,8 @@ public class Player_movement : MonoBehaviour
             //sword.GetComponent<Animator>().SetTrigger("Press");
             passed = true;
         }
-
-     //  AudioManager.instance.PlaySound("Sword_Slash");
+        
+        AudioManager.instance.PlaySound("Sword_Slash");
     }
     private IEnumerator controllerRumble(float leftStick, float rightStick, float duration, Gamepad gamepad)
     {
@@ -286,9 +285,9 @@ public class Player_movement : MonoBehaviour
     /// </summary>
     public void Player_Shooting(Gamepad controller = null)
     {
-        AudioManager.instance.PlaySound("Gun_Fire");
         if (gun_cooldown)
         {
+
             bullet_controller.original = true;
             gun_cooldown = false;
             if (controller != null) { stats.ControllerRumble.value = true; }
@@ -297,6 +296,8 @@ public class Player_movement : MonoBehaviour
             moves.Shoot(stats.layersToHit, transform.GetChild(0).GetChild(0).position,
             transform.GetChild(0).GetChild(0).right, stats.bullet, confusionLoaded);
             confusionLoaded = false;
+
+            AudioManager.instance.PlaySound("Gun_Fire");
         }
 
     }
@@ -391,7 +392,7 @@ public class Player_movement : MonoBehaviour
             }
             dashTrail.enabled = true;
 
-           // AudioManager.instance.PlaySound("Player_Dash");
+           AudioManager.instance.PlaySound("Player_Dash");
 
             yield return null;
             speed += stats.dashSpeed.value;
