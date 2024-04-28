@@ -54,7 +54,16 @@ public class Projectile : MonoBehaviour
 
     void Arrived()
     {
-        mb.TriggerDamage(indicator.transform.gameObject, impactMark);
+        // I am fed up.
+        try
+        {
+            mb.TriggerDamage(indicator.transform.gameObject, impactMark);
+        }
+        catch (NullReferenceException)
+        {
+            Destroy(indicator.gameObject);
+            Destroy(gameObject);
+        }
         Destroy(gameObject);
     }
 
