@@ -175,6 +175,8 @@ public class MedusaBehaviour : MonoBehaviour
     /// </summary>
     public void PoisonAttack()
     {
+        AudioManager.instance.PlaySound("Medusa_Poison");
+
         for (int i = 0; i < poisonAmount; i++)
         {
             // Create the indicator at a calculated point.

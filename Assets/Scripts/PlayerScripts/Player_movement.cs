@@ -248,6 +248,8 @@ public class Player_movement : MonoBehaviour
     /// <param name="sword"></param>
     public void Player_Melee(GameObject sword)
     {
+        GetComponent<AudioCaller>().CallSlashSound();
+
         running = true;
         //  sword.SetActive(true);
         // make the sword active
