@@ -14,11 +14,13 @@ public class DropTarotCard : MonoBehaviour
         {
             Debug.Log("here");
             TarotCards card;
+            int i = 0;
             do
             {
                 card = attributes.droppableCards.ElementAt(Random.Range(0, attributes.droppableCards.Count));
+                i++;
             }
-            while (Killer.droppableCards.Contains(card) || Killer.tarotCards.Contains(card));
+            while (Killer.droppableCards.Contains(card) || Killer.tarotCards.Contains(card) || i == 1000);
             Killer.droppableCards.Add(card);
         }
     }
