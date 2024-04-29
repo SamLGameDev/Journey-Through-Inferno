@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardImage: {fileID: 21300000, guid: 39a8530d287c7724a88473d24f508a31, type: 3}
   effectValue: 5
-  description: '_Effect: Turns ranged attack into a spreadshot.
+  description: 'Effect: Turns ranged attack into a spreadshot._
 
     He carries the
     traditions of his people, and with them the expectations of eternity.

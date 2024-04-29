@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardImage: {fileID: 21300000, guid: e8e2c0846648006458e8039c5cad579a, type: 3}
   effectValue: 6
-  description: '_Effect: Increases attack but lowers health.
+  description: 'Effect: Increases attack but lowers health._
 
     A noble self-sacrifice
     for wisdom, following in the footsteps of Odin.

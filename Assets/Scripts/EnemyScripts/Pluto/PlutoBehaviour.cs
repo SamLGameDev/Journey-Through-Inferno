@@ -5,9 +5,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pluto_behaviour : MonoBehaviour
+public class PlutoBehaviour : MonoBehaviour
 {
     [SerializeField] private Pluto stats;
+    [SerializeField] public Counter<GameObject> statues;
     private int[,] places = { { -17, -16, 0, 12, 18, 0 }, { 6, -18, -5, -19, 2, 23 } };
     private float moveTimer;
     private float cerberusTimer;
@@ -23,10 +24,13 @@ public class Pluto_behaviour : MonoBehaviour
 
         GameObject statue1 = Instantiate(stats.statuePrefab);
         statue1.transform.position = new Vector3(places[0,0], places[1,0], 0);
+
         GameObject statue2 = Instantiate(stats.statuePrefab);
         statue2.transform.position = new Vector3(places[0, 2], places[1, 2], 0);
+
         GameObject statue3 = Instantiate(stats.statuePrefab);
         statue3.transform.position = new Vector3(places[0, 5], places[1, 5], 0);
+
         GameObject statue4 = Instantiate(stats.statuePrefab);
         statue4.transform.position = new Vector3(places[0, 4], places[1, 4], 0);
     }
@@ -73,7 +77,7 @@ public class Pluto_behaviour : MonoBehaviour
         cerberusRb.velocity = shootDirection * stats.cerberusSpeed;
     }
 
-    public void Clone()
+    private void Clone()
     {
         hasUsedClone = true;
         GameObject clone1 = Instantiate(stats.clonePrefab);
@@ -83,10 +87,19 @@ public class Pluto_behaviour : MonoBehaviour
         MovePlaces();
     }
 
+    private void SpawnStatues()
+    {
+        GameObject statue = Instantiate(stats.statuePrefab);
+        statue.transform.position = new Vector3(places[0, 0], places[1, 0], 0);
+
+        if (statues.GetListSize() < 4)
+        {
+            SpawnStatues();
+        }
+    }
+
     void Update()
     {
-        
-
         cerberusTimer += Time.deltaTime;
         if (cerberusTimer >= stats.cerberusCooldown)
         {
@@ -104,7 +117,12 @@ public class Pluto_behaviour : MonoBehaviour
         if ((GetComponent<EntityHealthBehaviour>().currentHealth <= 20) && (hasUsedClone == false))
         {
             Clone();
+            Debug.Log("has used clone");
         }
-        
+
+        if (statues.GetListSize() < 4)
+        {
+            SpawnStatues();
+        }
     }
 }

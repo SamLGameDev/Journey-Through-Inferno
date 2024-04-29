@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardImage: {fileID: 21300000, guid: 4874a093a30f26e4f84a0e03122b61f1, type: 3}
   effectValue: 15
-  description: '_Effect: Adds a chance for a critical attack.
+  description: 'Effect: Adds a chance for a critical attack._
 
     The truth is an
     elusive thing, but it will always be revealed in the end. Only then can justice

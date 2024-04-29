@@ -5859,6 +5859,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4199226212065977241, guid: 04332074ca2b39e4e9846204ad71bfe4,
+        type: 3}
+      propertyPath: maxSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4199226212065977241, guid: 04332074ca2b39e4e9846204ad71bfe4,
+        type: 3}
+      propertyPath: orientation
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7187451865587570375, guid: 04332074ca2b39e4e9846204ad71bfe4,
         type: 3}
       propertyPath: m_Name
@@ -7115,6 +7125,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2156297612407432777, guid: 6d8545a1d0d0b444682ffd7fe7099dba,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2156297612407432777, guid: 6d8545a1d0d0b444682ffd7fe7099dba,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2.77
+      objectReference: {fileID: 0}
     - target: {fileID: 2189182598372404538, guid: 6d8545a1d0d0b444682ffd7fe7099dba,
         type: 3}
       propertyPath: m_Sprite
@@ -9639,6 +9659,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CardSelectionCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7755749307358901245, guid: 4fb305f8c16ec094c923d892d9a84cdf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8489151456280302096, guid: 4fb305f8c16ec094c923d892d9a84cdf,
         type: 3}
       propertyPath: m_Camera
@@ -10728,7 +10753,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0}
     oldSize: {x: 1.22, y: 1.94}
     newSize: {x: 1, y: 0.8828125}
     adaptiveTilingThreshold: 0.5
@@ -10778,6 +10803,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: 91c3f2b50bde3804692396f5d5f99213, type: 2}
+  statues: {fileID: 11400000, guid: 3dfded0e0dad1ba4bb0464e75eef396b, type: 2}
 --- !u!114 &683299907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10929,7 +10955,7 @@ BoxCollider2D:
   m_Offset: {x: 0.059796363, y: -0.4590659}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0}
     oldSize: {x: 1.22, y: 1.94}
     newSize: {x: 1, y: 0.8828125}
     adaptiveTilingThreshold: 0.5
