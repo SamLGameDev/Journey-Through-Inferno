@@ -39,6 +39,7 @@ public class EntityHealthBehaviour : MonoBehaviour
     public bool IsAlive;
     public bool invincible;
     public bool Confused = false;
+    public bool isFrozen = false; // Boolean for whether or not an entity is frozen
     public bool onlyVirgil;
     public bool onlyDante;
     private bool triggeredKnockBack = false;
@@ -55,6 +56,7 @@ public class EntityHealthBehaviour : MonoBehaviour
         currentHealth = stats.maxHealth + stats.armour;
         damageInvulnerable = false;
         IsAlive = true;
+        
         StartCoroutine(FlashRed());
         StartCoroutine(ConfusionDuration());
         StartCoroutine(knockback());
@@ -83,6 +85,15 @@ public class EntityHealthBehaviour : MonoBehaviour
         return new object[] { false};
     }
 
+    public void IsFrozen()
+    {
+        if (isFrozen && !isBoss)
+        {
+            AIDestinationSetter destinationSetter = GetComponent<AIDestinationSetter>();
+            destinationSetter.enabled = false;
+        }
+    }
+
     public void isConfused()
     {
         if (Confused && !isBoss)
@@ -93,6 +104,8 @@ public class EntityHealthBehaviour : MonoBehaviour
             destinationSetter.targets = stats.OfTypecounter.GetItems();
         }
     }
+
+    
     private IEnumerator ConfusionDuration()
     {
         AIDestinationSetter destinationSetter = GetComponent<AIDestinationSetter>();
