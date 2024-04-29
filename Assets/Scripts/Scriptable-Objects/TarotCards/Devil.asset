@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardImage: {fileID: 21300000, guid: 8aff1ad2e5850be4590896b6b9a3804b, type: 3}
   effectValue: 15
-  description: '_Effect: Using X, shoots a projectile that causes enemies to freeze
-    for a short time. Does not effect Bosses.
+  description: 'Effect: Using X, shoots a projectile that causes enemies to freeze
+    for a short time. Does not effect Bosses._
 
     Beware the sins that lead you
     astray and beware those you push you towards them.

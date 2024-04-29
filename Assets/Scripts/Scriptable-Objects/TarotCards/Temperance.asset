@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardImage: {fileID: 21300000, guid: 65cd99195fb94df4c8ee872ab292ac3a, type: 3}
   effectValue: 1
-  description: '_Effect: Cooldown reduction for attacks.
+  description: 'Effect: Cooldown reduction for attacks._
 
     When all is balanced
     through moderation and self-control, harmony can be reached.
