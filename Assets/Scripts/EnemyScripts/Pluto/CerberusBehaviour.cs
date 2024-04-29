@@ -8,9 +8,10 @@ public class CerberusBehaviour : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
-        { 
+        {
             collision.GetComponent<EntityHealthBehaviour>().ApplyDamage(stats.damage);
-            Destroy(gameObject); 
+            Destroy(gameObject);
+            Debug.Log("cerberus destroy");
         }
 
         if (collision.CompareTag("Wall"))   

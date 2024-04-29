@@ -15,7 +15,7 @@ MonoBehaviour:
   damage: 4
   maxHealth: 1
   cardDropChance: 100
-  OfTypecounter: {fileID: 0}
+  OfTypecounter: {fileID: 11400000, guid: e4a5f4694b79fe4488542d7385a2650f, type: 2}
   droppableCards:
   - {fileID: 11400000, guid: b41df299a53ffa24c93eb59bc29a84a9, type: 2}
   - {fileID: 11400000, guid: b540e8bc04270a849b2f9bd3c59b0167, type: 2}
