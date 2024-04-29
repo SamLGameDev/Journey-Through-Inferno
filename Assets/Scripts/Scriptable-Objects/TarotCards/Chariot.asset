@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardImage: {fileID: 21300000, guid: 21ef5e718e0c7dd49b8f885752568ee9, type: 3}
   effectValue: 6
-  description: " _Effect: Increases base movement speed.\nIt\u2019s time to climb
+  description: "Effect: Increases base movement speed._\nIt\u2019s time to climb
     onto the chariot and ride into a new dawn. The journey has only begun.\n"
   specialCardEffectEnabled: 0
   RangeForAbility: 0

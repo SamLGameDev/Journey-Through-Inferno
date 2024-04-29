@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardImage: {fileID: 21300000, guid: e5f982c782744f34bb579f17692e06ff, type: 3}
   effectValue: 2
-  description: '_Effect: Damage taken is reduced.
+  description: 'Effect: Damage taken is reduced._
 
     Two partners who choose to
     find strength in each other, even through the toughest of trails.
