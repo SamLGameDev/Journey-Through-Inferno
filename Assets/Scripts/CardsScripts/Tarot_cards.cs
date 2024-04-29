@@ -15,16 +15,6 @@ public class Tarot_cards : MonoBehaviour
     public bool hasEmperor = false; // increased max health
     public bool hasMoon = false; // homing projectiles
     public bool hasHighPriestess = false; // shoot bursts of invisibility
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public bool hasDevil = false; // Shoots a projectile that freezes enemies. Does not affect bosses
+       
 }
