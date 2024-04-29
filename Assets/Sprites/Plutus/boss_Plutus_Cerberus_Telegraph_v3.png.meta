@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -119,9 +119,271 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: boss_Plutus_Cerberus_Telegraph_v3_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 270
+        width: 151
+        height: 251
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cc8feff437df0f4fbd7bbd650ec4501
+      internalID: 1966500402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_Plutus_Cerberus_Telegraph_v3_1
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 270
+        width: 151
+        height: 251
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a48f06cdebdb74d4289d9410b6a1d98c
+      internalID: -2030406883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_Plutus_Cerberus_Telegraph_v3_2
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 271
+        width: 151
+        height: 251
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6db215b1f2fada04aa4026b731b8b7d7
+      internalID: -319162696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_Plutus_Cerberus_Telegraph_v3_3
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 271
+        width: 151
+        height: 251
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeb91619290d4a846adefcd36e5e26b4
+      internalID: 1719030008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_Plutus_Cerberus_Telegraph_v3_4
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 271
+        width: 151
+        height: 251
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2d05a1aea4e91249b0c9793c47663cc
+      internalID: -286058666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_Plutus_Cerberus_Telegraph_v3_5
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 19
+        width: 151
+        height: 251
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e52e2e4af089a142b5687263df0fc3b
+      internalID: -1770673401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_Plutus_Cerberus_Telegraph_v3_6
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 19
+        width: 151
+        height: 251
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cf051215c2b5264cb0585fe60306f4a
+      internalID: -1314500454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_Plutus_Cerberus_Telegraph_v3_7
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 19
+        width: 151
+        height: 251
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebe87f284ab8f534f9dbfb3d2e9fd59b
+      internalID: -383845213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_Plutus_Cerberus_Telegraph_v3_8
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 14
+        width: 151
+        height: 251
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af0840bb02552ff4f805ec19521083cf
+      internalID: 1348219396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_Plutus_Cerberus_Telegraph_v3_9
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 13
+        width: 151
+        height: 251
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9e0bd2bc87452c40a10562caed69ad6
+      internalID: -564446806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +394,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      boss_Plutus_Cerberus_Telegraph_v3_0: 1966500402
+      boss_Plutus_Cerberus_Telegraph_v3_1: -2030406883
+      boss_Plutus_Cerberus_Telegraph_v3_2: -319162696
+      boss_Plutus_Cerberus_Telegraph_v3_3: 1719030008
+      boss_Plutus_Cerberus_Telegraph_v3_4: -286058666
+      boss_Plutus_Cerberus_Telegraph_v3_5: -1770673401
+      boss_Plutus_Cerberus_Telegraph_v3_6: -1314500454
+      boss_Plutus_Cerberus_Telegraph_v3_7: -383845213
+      boss_Plutus_Cerberus_Telegraph_v3_8: 1348219396
+      boss_Plutus_Cerberus_Telegraph_v3_9: -564446806
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
