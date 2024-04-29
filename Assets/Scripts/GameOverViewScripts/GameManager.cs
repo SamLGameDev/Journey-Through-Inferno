@@ -1,4 +1,5 @@
 using Fungus;
+using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ public class GameManager : MonoBehaviour
     public int alivePlayers;
     public int enemiesRemaining;
     public CardSpawner spawner;
-    public List<GameObject> playerInstances;
+    public Counter<GameObject> playerInstances;
     public List<Player> playerstats;
     public GameObject InputManager;
     public PlayerInput p1;
@@ -92,12 +93,13 @@ public class GameManager : MonoBehaviour
                 enemiesRemaining++;
             }
         }
+        AIDestinationSetter.players = playerInstances.GetItems();
     }
 
     public void UpdateTarotNumber()
     {
         int i = 0;
-        foreach (GameObject player in playerInstances)
+        foreach (GameObject player in playerInstances.GetItems())
         {
             if (player == null)
             {
@@ -203,7 +205,7 @@ public class GameManager : MonoBehaviour
         {
             yield return new WaitUntil(() => OnEncounterCleared);
             yield return new WaitForSeconds(0.01f);
-            foreach(GameObject player in playerInstances)
+            foreach(GameObject player in playerInstances.GetItems())
             {
                 if (player != null)
                 {
@@ -213,7 +215,7 @@ public class GameManager : MonoBehaviour
                 }
             }
             yield return new WaitForSeconds(2.5f);
-            foreach (GameObject player in playerInstances)
+            foreach (GameObject player in playerInstances.GetItems())
             {
                 if(player != null)
                 {
@@ -267,7 +269,7 @@ public class GameManager : MonoBehaviour
         {
             try
             {
-                foreach (GameObject player in playerInstances)
+                foreach (GameObject player in playerInstances.GetItems())
                 {
                     player.GetComponent<Player_movement>().stats.Reset();
                 }

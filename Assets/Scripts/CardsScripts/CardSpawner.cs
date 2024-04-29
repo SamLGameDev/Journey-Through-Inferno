@@ -34,6 +34,8 @@ public class CardSpawner : MonoBehaviour
 
     [SerializeField]
     private List<Sprite> SelectingPlayerSprites;
+    [SerializeField]
+    private Counter<GameObject> playerInstances;
     // Start is called before the first frame update
     void Start()
     {
@@ -315,7 +317,7 @@ public class CardSpawner : MonoBehaviour
             // disables the second input system
             //GameManager.instance.p2.enabled = false;
 
-            foreach (GameObject p in GameManager.instance.playerInstances)
+            foreach (GameObject p in playerInstances.GetItems())
             {
                 SelectingPlayer.SetActive(true);
                 SelectingPlayer.GetComponent<Image>().sprite = SelectingPlayerSprites[SelectingPlayerSpriteIndex];
@@ -336,7 +338,7 @@ public class CardSpawner : MonoBehaviour
                 if (_playerCards.Count == 0)
                 {
                     ChangeEventSystem();
-                    if (p == GameManager.instance.playerInstances[1])
+                    if (p == playerInstances.GetItemAtIndex(1))
                     {
                         GameManager.instance.noCards = true;
                     }

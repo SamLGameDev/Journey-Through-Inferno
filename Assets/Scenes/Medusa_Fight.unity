@@ -6805,12 +6805,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &536047707 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4158443830731422250, guid: 28d04583d0c318648b28ee2c53bdaeab,
-    type: 3}
-  m_PrefabInstance: {fileID: 1550669849}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &537412900
 GameObject:
   m_ObjectHideFlags: 0
@@ -17847,9 +17841,7 @@ MonoBehaviour:
   alivePlayers: 0
   enemiesRemaining: 0
   spawner: {fileID: 497322608}
-  playerInstances:
-  - {fileID: 536047707}
-  - {fileID: 113194983}
+  playerInstances: {fileID: 11400000, guid: 77dab4b9db3db1845b84e0d58cdc2603, type: 2}
   playerstats:
   - {fileID: 11400000, guid: c53c78a8f908aff40b06667ff5c1036a, type: 2}
   - {fileID: 11400000, guid: 5df255e7d82eda04e8040c6b03146859, type: 2}
@@ -17867,7 +17859,7 @@ MonoBehaviour:
   topTextBox: {fileID: 268379351}
   bottomTextBox: {fileID: 903218510}
   noCards: 0
-  enemysCount: {fileID: 0}
+  enemysCount: {fileID: 11400000, guid: e4a5f4694b79fe4488542d7385a2650f, type: 2}
 --- !u!4 &1336663985
 Transform:
   m_ObjectHideFlags: 0
@@ -20334,6 +20326,12 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1635893551771236532, guid: 28d04583d0c318648b28ee2c53bdaeab,
+        type: 3}
+      propertyPath: playerInstances
+      value: 
+      objectReference: {fileID: 11400000, guid: 77dab4b9db3db1845b84e0d58cdc2603,
+        type: 2}
     - target: {fileID: 1736434646341859925, guid: 28d04583d0c318648b28ee2c53bdaeab,
         type: 3}
       propertyPath: m_RootOrder

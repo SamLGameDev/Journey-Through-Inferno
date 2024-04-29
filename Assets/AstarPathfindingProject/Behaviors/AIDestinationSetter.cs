@@ -18,13 +18,11 @@ namespace Pathfinding {
 	public class AIDestinationSetter : VersionedMonoBehaviour {
 		/// <summary>The object that the AI should move to</summary>
 		public Transform target;
-		public Transform player2;
-		public bool coop;
-		public Transform player1;
 		IAstarAI ai;
 		public bool isConfused;
 		public List<GameObject> targets;
 		public CurrentState currentState = CurrentState.normal;
+		public static List<GameObject> players = new List<GameObject>();
 
   
 
@@ -68,37 +66,39 @@ namespace Pathfinding {
         }
         /// <summary>Updates the AI's destination every frame</summary>
         void Update () {
-			if (isConfused)
-			{
-				target = GetTarget().transform;
-			}
-			if (coop && !isConfused && currentState == CurrentState.normal)
-			{
-				if (!player1.gameObject.activeInHierarchy)
-				{
-					target = player2;
-				}
-				else if (!player2.gameObject.activeInHierarchy)
-				{
-					target = player1;
-				}
-				else
-				{
-
-
-					Vector2 p1 = player1.position - transform.position;
-					Vector2 p2 = player2.position - transform.position;
-					if (p1.sqrMagnitude < p2.sqrMagnitude)
-					{
-						target = player1;
-					}
-					else
-					{
-						target = player2;
-					}
-				}
-			}
+            getTarget();
 			if (target != null && ai != null) ai.destination = target.position;
 		}
-	}
+		private void getTarget()
+        {
+            if (isConfused)
+            {
+                target = GetTarget().transform;
+				return;
+            }
+            getPlayerTarget();
+        }
+
+        private void getPlayerTarget()
+        {
+            if (currentState == CurrentState.normal)
+            {
+                if (players.Count == 1)
+                {
+                    target = players[0].transform;
+                    return;
+                }
+                Vector2 p1 = players[0].transform.position - transform.position;
+                Vector2 p2 = players[1].transform.position - transform.position;
+                if (p1.sqrMagnitude < p2.sqrMagnitude)
+                {
+                    target = players[0].transform;
+                    return;
+                }
+                target = players[1].transform;
+
+
+            }
+        }
+    }
 }

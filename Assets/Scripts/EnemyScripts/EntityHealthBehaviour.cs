@@ -46,6 +46,8 @@ public class EntityHealthBehaviour : MonoBehaviour
     private GameObject damageDealer;
     [SerializeField]
     private GameEvent BossDeathEvent;
+    [SerializeField]
+    private Counter<GameObject> playerInstances;
     private void OnEnable()
     {
         stats.OfTypecounter.Add(gameObject);
@@ -68,7 +70,7 @@ public class EntityHealthBehaviour : MonoBehaviour
     {
         try
         {
-            foreach (GameObject Player in GameManager.instance.playerInstances)
+            foreach (GameObject Player in playerInstances.GetItems())
             {
                 foreach (TarotCards card in Player.GetComponent<Player_movement>().stats.tarotCards)
                 {

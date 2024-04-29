@@ -703,6 +703,7 @@ MonoBehaviour:
   SelectingPlayerSprites:
   - {fileID: 21300000, guid: d4b98bd527d796c4f85964411cfaaebf, type: 3}
   - {fileID: 21300000, guid: 73e965fcaf31df24289c08ff71aabbc8, type: 3}
+  playerInstances: {fileID: 11400000, guid: 77dab4b9db3db1845b84e0d58cdc2603, type: 2}
 --- !u!1 &7755749307358901245
 GameObject:
   m_ObjectHideFlags: 0

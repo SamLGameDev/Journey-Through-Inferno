@@ -167,7 +167,7 @@ MonoBehaviour:
   radius: 0.5
   height: 2
   canMove: 1
-  maxSpeed: 1
+  maxSpeed: 5
   gravity: {x: NaN, y: NaN, z: NaN}
   groundMask:
     serializedVersion: 2
@@ -175,7 +175,7 @@ MonoBehaviour:
   centerOffsetCompatibility: NaN
   repathRateCompatibility: NaN
   canSearchCompability: 0
-  orientation: 0
+  orientation: 1
   enableRotation: 1
   autoRepath:
     mode: 2
@@ -207,9 +207,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   target: {fileID: 1736434646341859925, guid: 28d04583d0c318648b28ee2c53bdaeab, type: 3}
-  player2: {fileID: 2495953773665164011, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b, type: 3}
-  coop: 1
-  player1: {fileID: 1736434646341859925, guid: 28d04583d0c318648b28ee2c53bdaeab, type: 3}
   isConfused: 0
   targets: []
   currentState: 0
@@ -286,8 +283,11 @@ MonoBehaviour:
   IsAlive: 0
   invincible: 0
   Confused: 0
+  isFrozen: 0
   onlyVirgil: 0
   onlyDante: 0
+  BossDeathEvent: {fileID: 0}
+  playerInstances: {fileID: 0}
 --- !u!95 &6899871052324990272
 Animator:
   serializedVersion: 5
@@ -383,5 +383,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70abe18c191c5d84fbadbb5204895c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plutoScript: {fileID: 0}
   statues: {fileID: 11400000, guid: 3dfded0e0dad1ba4bb0464e75eef396b, type: 2}
