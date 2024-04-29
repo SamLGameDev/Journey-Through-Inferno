@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardImage: {fileID: 21300000, guid: 1a0861a6fe529394ea18754646d3229d, type: 3}
   effectValue: 0
-  description: '_Effect: Pick an extra card next round.
+  description: 'Effect: Pick an extra card next round._
 
     May the sun smile golden
     upon your successes and happy endings.

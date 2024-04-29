@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardImage: {fileID: 21300000, guid: f40548936ec34184096d457e05e2dbcd, type: 3}
   effectValue: 1
-  description: "_Effect: Gain an extra life.\nThere is no need to fear the unknown,
+  description: "Effect: Gain an extra life._\nThere is no need to fear the unknown,
     for Death is but another adventure. It\u2019s time to move on.\n"
   specialCardEffectEnabled: 0
   RangeForAbility: 0

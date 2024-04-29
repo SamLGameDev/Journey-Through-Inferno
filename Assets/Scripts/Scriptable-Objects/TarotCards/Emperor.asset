@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardImage: {fileID: 21300000, guid: 7862a850894e1ed4988dbd5d7e01a28c, type: 3}
   effectValue: 20
-  description: '_Effect: Increases max health.
+  description: 'Effect: Increases max health._
 
     A father figure to many, the
     Emperor commands respect as a born leader for his people.

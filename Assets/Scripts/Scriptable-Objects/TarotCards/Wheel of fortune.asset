@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardImage: {fileID: 21300000, guid: 157343b54eab71342b78262096035506, type: 3}
   effectValue: 20
-  description: "_Effect: Increases card drop rate.\n\u201COnce on the wheel, once
-    under it\u201D \u2013 a Polish proverb regarding luck and changing fortunes\n"
+  description: "Effect: Increases card drop rate._\nOnce on the wheel, once under
+    it\u201D \u2013 a Polish proverb regarding luck and changing fortunes\n"
   specialCardEffectEnabled: 0
   RangeForAbility: 0
   particleEffect: {fileID: 0}
