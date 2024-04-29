@@ -11,6 +11,8 @@ public class ButtonCommands : MonoBehaviour
     [SerializeField] private EventSystem _events;
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private IntReference sceneToLoad;
+    [SerializeField] private GameObject TutorialP1;
+    [SerializeField] private GameObject TutorialP2;
 
     // Loads the main menu
     public void MainMenu()
@@ -34,7 +36,13 @@ public class ButtonCommands : MonoBehaviour
 
     public void Tutorial()
     {
-        SceneManager.LoadScene(13);
+        SceneManager.LoadScene("TutorialPage");
+    }
+
+    public void TutorialPageNext()
+    {
+        TutorialP1.SetActive(false);
+        TutorialP2.SetActive(true);
     }
 
     // Update is called once per frame
