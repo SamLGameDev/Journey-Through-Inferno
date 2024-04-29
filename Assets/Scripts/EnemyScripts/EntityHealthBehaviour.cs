@@ -190,8 +190,8 @@ public class EntityHealthBehaviour : MonoBehaviour
             EntityDeath(damagerDealerLocal);     
         }
         object[] hermit = HasCard(TarotCards.possibleModifiers.KnockBack);
-        if (((bool)hermit[0] || 
-            damagerDealerLocal.GetComponent<Player_movement>().stats.currentState == Player.PlayerState.lunge) && gameObject.tag == "Player" && !isBoss && weapon == "sword") 
+        if (((bool)hermit[0] || damagerDealerLocal != null &&
+            damagerDealerLocal.GetComponent<Player_movement>().stats.currentState == Player.PlayerState.lunge) && gameObject.tag != "Player" && !isBoss && weapon == "sword") 
         {
             damageDealer = damagerDealerLocal;
             triggeredKnockBack = true;
