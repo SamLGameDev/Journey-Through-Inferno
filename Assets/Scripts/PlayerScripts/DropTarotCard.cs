@@ -13,7 +13,12 @@ public class DropTarotCard : MonoBehaviour
         if (Random.Range(0.0001f, 101) < attributes.cardDropChance + Killer.cardDropChance)
         {
             Debug.Log("here");
-            TarotCards card = attributes.droppableCards.ElementAt(Random.Range(0, attributes.droppableCards.Count));
+            TarotCards card;
+            do
+            {
+                card = attributes.droppableCards.ElementAt(Random.Range(0, attributes.droppableCards.Count));
+            }
+            while (Killer.droppableCards.Contains(card) || Killer.tarotCards.Contains(card));
             Killer.droppableCards.Add(card);
         }
     }
