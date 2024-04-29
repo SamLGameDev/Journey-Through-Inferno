@@ -44,6 +44,8 @@ public class EntityHealthBehaviour : MonoBehaviour
     public bool onlyDante;
     private bool triggeredKnockBack = false;
     private GameObject damageDealer;
+    [SerializeField]
+    private GameEvent BossDeathEvent;
     private void OnEnable()
     {
         stats.OfTypecounter.Add(gameObject);
@@ -374,7 +376,7 @@ public class EntityHealthBehaviour : MonoBehaviour
 
                 player2.IsAlive = false;
                 PlayerDeathEvent.Raise();
-                player2.playerObject = gameObject;                
+                player2.playerObject = gameObject;
             }
 
             if ((bool)HasCard(TarotCards.possibleModifiers.SharedLife)[0])
@@ -422,14 +424,7 @@ public class EntityHealthBehaviour : MonoBehaviour
             return;
         }
 
-        if (damageDealer.name == "Player 2")
-        {
-            stats.Player2Kill.Raise();
-        }
-        else
-        {
-            stats.Player1Kill.Raise();
-        }
+        RaiseDeathEvent(damageDealer);
 
         if (gameObject.CompareTag("Enemy"))
         {
@@ -456,7 +451,22 @@ public class EntityHealthBehaviour : MonoBehaviour
         { ScreenShake.Instance.ShakeCamera(5f, 2f); }
     }
 
-   
+    private void RaiseDeathEvent(GameObject damageDealer)
+    {
+        if (isBoss)
+        {
+            BossDeathEvent.Raise();
+            return;
+        }
+        if (damageDealer.name == "Player 2")
+        {
+            stats.Player2Kill.Raise();
+            return;
+        }
+        stats.Player1Kill.Raise();
+        
+    }
+
 
     private void DebuffOnDeath()
     {

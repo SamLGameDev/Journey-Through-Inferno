@@ -6805,6 +6805,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &536047707 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4158443830731422250, guid: 28d04583d0c318648b28ee2c53bdaeab,
+    type: 3}
+  m_PrefabInstance: {fileID: 1550669849}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &537412900
 GameObject:
   m_ObjectHideFlags: 0
@@ -7978,6 +7984,12 @@ PrefabInstance:
       propertyPath: isBoss
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9097793489111844800, guid: 4a6efd9d63ff62e47b860ff0959888fa,
+        type: 3}
+      propertyPath: BossDeathEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 922ee81addb959342bddf7b16923d4d3,
+        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17812,7 +17824,6 @@ GameObject:
   - component: {fileID: 1336663984}
   - component: {fileID: 1336663986}
   - component: {fileID: 1336663988}
-  - component: {fileID: 1336663987}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -17837,7 +17848,7 @@ MonoBehaviour:
   enemiesRemaining: 0
   spawner: {fileID: 497322608}
   playerInstances:
-  - {fileID: 0}
+  - {fileID: 536047707}
   - {fileID: 113194983}
   playerstats:
   - {fileID: 11400000, guid: c53c78a8f908aff40b06667ff5c1036a, type: 2}
@@ -17959,35 +17970,6 @@ MonoBehaviour:
     pivotPointRoot: {fileID: 0}
     spreadOutCount: 1
   showGraphs: 1
---- !u!114 &1336663987
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1336663983}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e09ec3e8ff1d99149ba2cbfe2533f6c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: c2880108fdd2d924783aa325ca2cc76f, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 720928132}
-        m_TargetAssemblyTypeName: DropTarotCard, Assembly-CSharp
-        m_MethodName: DropCard
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 5df255e7d82eda04e8040c6b03146859,
-            type: 2}
-          m_ObjectArgumentAssemblyTypeName: Player, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1336663988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18000,7 +17982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e09ec3e8ff1d99149ba2cbfe2533f6c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 21094ff6890acaf45be41a0c58e41f4f, type: 2}
+  Event: {fileID: 11400000, guid: 922ee81addb959342bddf7b16923d4d3, type: 2}
   Response:
     m_PersistentCalls:
       m_Calls:
@@ -18010,6 +17992,19 @@ MonoBehaviour:
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: c53c78a8f908aff40b06667ff5c1036a,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: Player, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 720928132}
+        m_TargetAssemblyTypeName: DropTarotCard, Assembly-CSharp
+        m_MethodName: DropCard
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 5df255e7d82eda04e8040c6b03146859,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: Player, Assembly-CSharp
           m_IntArgument: 0
