@@ -9662,7 +9662,7 @@ PrefabInstance:
     - target: {fileID: 7755749307358901245, guid: 4fb305f8c16ec094c923d892d9a84cdf,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8489151456280302096, guid: 4fb305f8c16ec094c923d892d9a84cdf,
         type: 3}
@@ -10716,6 +10716,7 @@ MonoBehaviour:
   IsAlive: 0
   invincible: 0
   Confused: 0
+  isFrozen: 0
   onlyVirgil: 0
   onlyDante: 0
 --- !u!61 &683299904
@@ -14954,6 +14955,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 239297221}
     m_Modifications:
+    - target: {fileID: -2844135195118118089, guid: 4723d1f7f5ef5564fbfb35af2f49268b,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 4.4963093
+      objectReference: {fileID: 0}
+    - target: {fileID: -2844135195118118089, guid: 4723d1f7f5ef5564fbfb35af2f49268b,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2.367445
+      objectReference: {fileID: 0}
+    - target: {fileID: -2844135195118118089, guid: 4723d1f7f5ef5564fbfb35af2f49268b,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.007769108
+      objectReference: {fileID: 0}
     - target: {fileID: 1603720936107381897, guid: 4723d1f7f5ef5564fbfb35af2f49268b,
         type: 3}
       propertyPath: m_Name
@@ -15034,7 +15050,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
