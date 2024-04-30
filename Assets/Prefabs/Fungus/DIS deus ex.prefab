@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3898241727358345214}
   - component: {fileID: 6886355405693731531}
   - component: {fileID: 5998888417363079602}
+  - component: {fileID: -2304154559510440601}
   m_Layer: 0
   m_Name: DIS deus ex
   m_TagString: Untagged
@@ -66,7 +67,8 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 830343849596189511}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: -2304154559510440601}
   variables: []
   description: 
   stepPause: 0
@@ -94,7 +96,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 68.0989
     y: 73
-    width: 78.13187
+    width: 77.47253
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -103,6 +105,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 3898241727358345214}
   commandList:
+  - {fileID: -2304154559510440601}
   - {fileID: 609102680076532967}
   - {fileID: 5998888417363079602}
   - {fileID: 6886355405693731531}
@@ -195,6 +198,24 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &-2304154559510440601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6007419623775820720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 4
+  indentLevel: 0
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 3
+  durationOLD: 0
 --- !u!1001 &1513226052716090424
 PrefabInstance:
   m_ObjectHideFlags: 0

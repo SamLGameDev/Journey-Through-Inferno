@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 4844432510293308991}
   - component: {fileID: 5079776402478189909}
   - component: {fileID: 7363633148808523390}
+  - component: {fileID: 3827084853321141127}
   m_Layer: 0
   m_Name: DIS intro
   m_TagString: Untagged
@@ -72,7 +73,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 7579475284615095915}
   selectedCommands:
-  - {fileID: 3355749640030995995}
+  - {fileID: 3827084853321141127}
   variables: []
   description: 
   stepPause: 0
@@ -109,6 +110,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 5079776402478189909}
   commandList:
+  - {fileID: 3827084853321141127}
   - {fileID: 3355749640030995995}
   - {fileID: 2588396797581074236}
   - {fileID: 1840898754504628350}
@@ -341,6 +343,24 @@ MonoBehaviour:
     stringVal: co-op scene
   loadingImage: {fileID: 0}
   sceneNameOLD: 
+--- !u!114 &3827084853321141127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6252477703594738982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 11
+  indentLevel: 0
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 3
+  durationOLD: 0
 --- !u!1001 &2432311874387624265
 PrefabInstance:
   m_ObjectHideFlags: 0

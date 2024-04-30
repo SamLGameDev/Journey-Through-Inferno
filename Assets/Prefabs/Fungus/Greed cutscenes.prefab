@@ -27,6 +27,8 @@ GameObject:
   - component: {fileID: 6159273866144325625}
   - component: {fileID: 7157411108482389816}
   - component: {fileID: 7954368509454865111}
+  - component: {fileID: -2127294124106892366}
+  - component: {fileID: -2221677248811144016}
   m_Layer: 0
   m_Name: Greed cutscenes
   m_TagString: Untagged
@@ -79,7 +81,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 3708444899660069384}
   selectedCommands:
-  - {fileID: 6159273866144325625}
+  - {fileID: -2221677248811144016}
   variables: []
   description: 
   stepPause: 0
@@ -107,7 +109,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 29.29113
     y: 50.746826
-    width: 75.6
+    width: 75
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -116,6 +118,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 9000929466726975439}
   commandList:
+  - {fileID: -2127294124106892366}
   - {fileID: 7967308640283264406}
   - {fileID: 337625450389414214}
   - {fileID: 5033703468031593027}
@@ -159,7 +162,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 179.64578
     y: 134.01265
-    width: 81.2
+    width: 81
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -168,6 +171,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
+  - {fileID: -2221677248811144016}
   - {fileID: 6781807109833559127}
   - {fileID: 8215245701142273227}
   - {fileID: 6159273866144325625}
@@ -543,6 +547,42 @@ MonoBehaviour:
     stringVal: City_of_Greed
   loadingImage: {fileID: 0}
   sceneNameOLD: 
+--- !u!114 &-2127294124106892366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8310450276108082842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 17
+  indentLevel: 0
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 3
+  durationOLD: 0
+--- !u!114 &-2221677248811144016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8310450276108082842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 18
+  indentLevel: 0
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 3
+  durationOLD: 0
 --- !u!1001 &903524360241131369
 PrefabInstance:
   m_ObjectHideFlags: 0
