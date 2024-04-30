@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Furie
   m_EditorClassIdentifier: 
   damage: 3
-  maxHealth: 1
+  maxHealth: 0
   cardDropChance: 100
   OfTypecounter: {fileID: 11400000, guid: e4a5f4694b79fe4488542d7385a2650f, type: 2}
   droppableCards:
@@ -37,7 +37,7 @@ MonoBehaviour:
     useConstant: 0
   originalPosition: {fileID: 0}
   shootingRange: 12
-  moveSpeed: 8
+  moveSpeed: 5
   projectileSpeed: 10
   projectilePrefab: {fileID: 4435638632648024255, guid: 69425cdf21671244f8a41af8c7240f11,
     type: 3}

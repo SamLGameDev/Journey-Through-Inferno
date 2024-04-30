@@ -102,13 +102,15 @@ public class Player : BasicAttributes
     public GameObject confusionBullet;
     public float ConfusionCooldown;
     public PlayerState currentState;
+
+    public List<TarotCards> Permenant_Cards;
     public override void Reset()
     {
         chariotSpeed.value = 0;
         gunCooldownModifier.value = 0;
         swordDamageModifier.value = 0;
         bulletDamageModifier.value = 0;
-        tarotCards.Clear();
+        tarotCards = Permenant_Cards;
         extraLives = 0;
         cardDropChance = 0;
         maxHealth = 15;

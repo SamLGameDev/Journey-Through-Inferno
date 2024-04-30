@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d383f2c3977f514fb7a0aa71120968d, type: 3}
   m_Name: TimeUntillRegenAfterAttack
   m_EditorClassIdentifier: 
-  value: 10
+  value: 2
