@@ -63,10 +63,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -179.658
       objectReference: {fileID: 0}
+    - target: {fileID: 4436209097756498691, guid: 5b8edf7a2c17d3d478b607c866e15174,
+        type: 3}
+      propertyPath: PlayerAquiredCard
+      value: 
+      objectReference: {fileID: 11400000, guid: 8721c4fc1042c614e8c98dbef9ea70ed,
+        type: 2}
     - target: {fileID: 5205149215868945006, guid: 5b8edf7a2c17d3d478b607c866e15174,
         type: 3}
       propertyPath: m_Name
-      value: Fallen Angel Virgil (1) Variant
+      value: Fallen Angel Dante
       objectReference: {fileID: 0}
     - target: {fileID: 5792870047005240584, guid: 5b8edf7a2c17d3d478b607c866e15174,
         type: 3}

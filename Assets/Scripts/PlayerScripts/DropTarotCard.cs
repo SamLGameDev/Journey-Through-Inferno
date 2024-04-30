@@ -6,13 +6,13 @@ using UnityEngine;
 public class DropTarotCard : MonoBehaviour
 {
     public BasicAttributes attributes;
-
+    [SerializeField]
+    private GameEvent PlayerAquiredCard;
     public void DropCard(Player Killer)
     {
    
         if (Random.Range(0.0001f, 101) < attributes.cardDropChance + Killer.cardDropChance)
         {
-            Debug.Log("here");
             TarotCards card;
             int i = 0;
             do
@@ -22,6 +22,8 @@ public class DropTarotCard : MonoBehaviour
             }
             while (Killer.droppableCards.Contains(card) || Killer.tarotCards.Contains(card) || i == 1000);
             Killer.droppableCards.Add(card);
+            PlayerAquiredCard.Raise();
+
         }
     }
 

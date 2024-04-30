@@ -230,9 +230,6 @@ public class GameManager : MonoBehaviour
     private void OnNormalPlay()
     {
         Time.timeScale = 1;
-
-        print("Normal Play");
-
         // Add any other things you want to happen here.
     }
 

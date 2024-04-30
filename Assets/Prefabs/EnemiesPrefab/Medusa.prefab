@@ -160,8 +160,11 @@ MonoBehaviour:
   IsAlive: 0
   invincible: 0
   Confused: 0
+  isFrozen: 0
   onlyVirgil: 0
   onlyDante: 0
+  BossDeathEvent: {fileID: 0}
+  playerInstances: {fileID: 0}
 --- !u!95 &3401023965402023177
 Animator:
   serializedVersion: 5
@@ -268,3 +271,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attributes: {fileID: 11400000, guid: 967521d4166627948b50e946f51ce62b, type: 2}
+  PlayerAquiredCard: {fileID: 11400000, guid: 8721c4fc1042c614e8c98dbef9ea70ed, type: 2}

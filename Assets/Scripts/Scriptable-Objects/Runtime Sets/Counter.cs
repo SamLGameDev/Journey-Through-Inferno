@@ -1,12 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public abstract class Counter<T> : ScriptableObject
 {
     
-    private readonly List<T> Items = new List<T>();
-    public void Add(T t)
+    protected readonly List<T> Items = new List<T>();
+    public virtual void Add(T t)
     {
 
         if (!Items.Contains(t)) { Items.Add(t); }
