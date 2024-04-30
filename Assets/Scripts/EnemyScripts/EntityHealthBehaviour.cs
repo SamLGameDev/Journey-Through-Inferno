@@ -44,6 +44,10 @@ public class EntityHealthBehaviour : MonoBehaviour
     public bool onlyDante;
     private bool triggeredKnockBack = false;
     private GameObject damageDealer;
+    [SerializeField]
+    private GameEvent BossDeathEvent;
+    [SerializeField]
+    private Counter<GameObject> playerInstances;
     private void OnEnable()
     {
         stats.OfTypecounter.Add(gameObject);
@@ -66,7 +70,7 @@ public class EntityHealthBehaviour : MonoBehaviour
     {
         try
         {
-            foreach (GameObject Player in GameManager.instance.playerInstances)
+            foreach (GameObject Player in playerInstances.GetItems())
             {
                 foreach (TarotCards card in Player.GetComponent<Player_movement>().stats.tarotCards)
                 {
@@ -190,7 +194,7 @@ public class EntityHealthBehaviour : MonoBehaviour
             EntityDeath(damagerDealerLocal);     
         }
         object[] hermit = HasCard(TarotCards.possibleModifiers.KnockBack);
-        if (((bool)hermit[0] || 
+        if (((bool)hermit[0] || damagerDealerLocal != null &&
             damagerDealerLocal.GetComponent<Player_movement>().stats.currentState == Player.PlayerState.lunge) && gameObject.tag != "Player" && !isBoss && weapon == "sword") 
         {
             damageDealer = damagerDealerLocal;
@@ -374,7 +378,7 @@ public class EntityHealthBehaviour : MonoBehaviour
 
                 player2.IsAlive = false;
                 PlayerDeathEvent.Raise();
-                player2.playerObject = gameObject;                
+                player2.playerObject = gameObject;
             }
 
             if ((bool)HasCard(TarotCards.possibleModifiers.SharedLife)[0])
@@ -422,14 +426,7 @@ public class EntityHealthBehaviour : MonoBehaviour
             return;
         }
 
-        if (damageDealer.name == "Player 2")
-        {
-            stats.Player2Kill.Raise();
-        }
-        else
-        {
-            stats.Player1Kill.Raise();
-        }
+        RaiseDeathEvent(damageDealer);
 
         if (gameObject.CompareTag("Enemy"))
         {
@@ -456,7 +453,22 @@ public class EntityHealthBehaviour : MonoBehaviour
         { ScreenShake.Instance.ShakeCamera(5f, 2f); }
     }
 
-   
+    private void RaiseDeathEvent(GameObject damageDealer)
+    {
+        if (isBoss)
+        {
+            BossDeathEvent.Raise();
+            return;
+        }
+        if (damageDealer.name == "Player 2")
+        {
+            stats.Player2Kill.Raise();
+            return;
+        }
+        stats.Player1Kill.Raise();
+        
+    }
+
 
     private void DebuffOnDeath()
     {

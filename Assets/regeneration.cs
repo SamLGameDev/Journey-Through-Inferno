@@ -8,6 +8,8 @@ public class regeneration : MonoBehaviour
     private GameEvent onRegen;
     [SerializeField]
     private GameEvent OnExit;
+    [SerializeField]
+    private Counter<GameObject> playerInstances;
 
     private void OnTriggerEnter2D(Collider2D collision)
     { 
@@ -25,7 +27,7 @@ public class regeneration : MonoBehaviour
     {
         try
         {
-            foreach (GameObject Player in GameManager.instance.playerInstances)
+            foreach (GameObject Player in playerInstances.GetItems())
             {
                 foreach (TarotCards card in Player.GetComponent<Player_movement>().stats.tarotCards)
                 {

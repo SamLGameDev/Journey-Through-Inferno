@@ -5877,7 +5877,7 @@ PrefabInstance:
     - target: {fileID: 7187451865587570375, guid: 04332074ca2b39e4e9846204ad71bfe4,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7216,7 +7216,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2156297612407432777, guid: 6d8545a1d0d0b444682ffd7fe7099dba, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -10716,8 +10717,11 @@ MonoBehaviour:
   IsAlive: 0
   invincible: 0
   Confused: 0
+  isFrozen: 0
   onlyVirgil: 0
   onlyDante: 0
+  BossDeathEvent: {fileID: 0}
+  playerInstances: {fileID: 0}
 --- !u!61 &683299904
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10888,9 +10892,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   target: {fileID: 621783961}
-  player2: {fileID: 1934956610}
-  coop: 1
-  player1: {fileID: 621783961}
   isConfused: 0
   targets: []
   currentState: 0
@@ -22257,12 +22258,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.722229, y: 0.36740923}
   m_EdgeRadius: 0
---- !u!4 &1934956610 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2495953773665164011, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
-    type: 3}
-  m_PrefabInstance: {fileID: 1275316769}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1938053188
 GameObject:
   m_ObjectHideFlags: 0
@@ -23526,6 +23521,12 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2336693068829812981, guid: 4723d1f7f5ef5564fbfb35af2f49268b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1049549109, guid: bbdfba7cd77eed14ca90f6acd911407b,
+        type: 3}
     - target: {fileID: 2336693068829812981, guid: 4723d1f7f5ef5564fbfb35af2f49268b,
         type: 3}
       propertyPath: m_SortingOrder
@@ -25044,6 +25045,12 @@ PrefabInstance:
       propertyPath: _clearPortal
       value: 
       objectReference: {fileID: 553176732}
+    - target: {fileID: 4096624456859787653, guid: e58d4a0c7222d2b4089db5796382f190,
+        type: 3}
+      propertyPath: playerInstances
+      value: 
+      objectReference: {fileID: 11400000, guid: 77dab4b9db3db1845b84e0d58cdc2603,
+        type: 2}
     - target: {fileID: 4096624456859787653, guid: e58d4a0c7222d2b4089db5796382f190,
         type: 3}
       propertyPath: playerstats.Array.size

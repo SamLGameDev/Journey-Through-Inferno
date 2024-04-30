@@ -27373,6 +27373,12 @@ PrefabInstance:
       objectReference: {fileID: 1705178189}
     - target: {fileID: 4096624456859787653, guid: 9b9bbf6b8c1105448bd7848291b322be,
         type: 3}
+      propertyPath: playerInstances
+      value: 
+      objectReference: {fileID: 11400000, guid: 77dab4b9db3db1845b84e0d58cdc2603,
+        type: 2}
+    - target: {fileID: 4096624456859787653, guid: 9b9bbf6b8c1105448bd7848291b322be,
+        type: 3}
       propertyPath: playerstats.Array.size
       value: 2
       objectReference: {fileID: 0}

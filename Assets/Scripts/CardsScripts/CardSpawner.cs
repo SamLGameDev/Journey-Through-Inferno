@@ -31,6 +31,11 @@ public class CardSpawner : MonoBehaviour
     public bool encounterCleared;
     public GameObject canvas;
     private int arrayIndex;
+
+    [SerializeField]
+    private List<Sprite> SelectingPlayerSprites;
+    [SerializeField]
+    private Counter<GameObject> playerInstances;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,10 +54,7 @@ public class CardSpawner : MonoBehaviour
         cardChosen = true;
 
     }
-    private void Update()
-    {
 
-    }
     private void DestroyCards()
     {
         for (int i = 0; i < onScreenCards.GetLength(0); i++)
@@ -282,6 +284,7 @@ public class CardSpawner : MonoBehaviour
         GameObject nextButton = canvas.transform.GetChild(2).gameObject;
         GameObject previousButton = canvas.transform.GetChild(3).gameObject;
         GameObject tutorialText = canvas.transform.GetChild(4).gameObject;
+        GameObject SelectingPlayer = canvas.transform.GetChild(5).gameObject;
         while (true)
         {
             GameManager.instance.UpdateGameState(GameManager.GameState.normalPlay);
@@ -295,7 +298,8 @@ public class CardSpawner : MonoBehaviour
             {
                 GameManager.instance.p1.GetComponent<EventSystem>().enabled = false;
             }
-
+            int SelectingPlayerSpriteIndex = 0;
+            SelectingPlayer.SetActive(false);
             yield return new WaitUntil(() => encounterCleared);
             if (GameManager.instance.p1 != null )
             {
@@ -312,8 +316,12 @@ public class CardSpawner : MonoBehaviour
             encounterCleared = false;
             // disables the second input system
             //GameManager.instance.p2.enabled = false;
-            foreach (GameObject p in GameManager.instance.playerInstances)
+
+            foreach (GameObject p in playerInstances.GetItems())
             {
+                SelectingPlayer.SetActive(true);
+                SelectingPlayer.GetComponent<Image>().sprite = SelectingPlayerSprites[SelectingPlayerSpriteIndex];
+                SelectingPlayerSpriteIndex++;
                 if (GameManager.instance.p1 != null)
                 {
                     currentSelectingCards.enabled = true;
@@ -330,7 +338,7 @@ public class CardSpawner : MonoBehaviour
                 if (_playerCards.Count == 0)
                 {
                     ChangeEventSystem();
-                    if (p == GameManager.instance.playerInstances[1])
+                    if (p == playerInstances.GetItemAtIndex(1))
                     {
                         GameManager.instance.noCards = true;
                     }
@@ -351,8 +359,6 @@ public class CardSpawner : MonoBehaviour
                     yield return new WaitUntil(() => cardChosen);
                 }
                 ChangeEventSystem();
-                //GameManager.instance.p1.enabled = false;
-                //GameManager.instance.p2.enabled = true;
                 DestroyCards();
             }
         } 
