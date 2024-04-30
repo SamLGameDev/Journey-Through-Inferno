@@ -184,7 +184,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 0.30588236}
     m_HighlightedColor: {r: 0.7568628, g: 0.7568628, b: 0.7568628, a: 1}
     m_PressedColor: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 1}
     m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
@@ -724,7 +724,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 0.30588236}
     m_HighlightedColor: {r: 0.7568628, g: 0.7568628, b: 0.7568628, a: 1}
     m_PressedColor: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 1}
     m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1204,7 +1204,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 0.30588236}
     m_HighlightedColor: {r: 0.7568628, g: 0.7568628, b: 0.7568628, a: 0.65882355}
     m_PressedColor: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 1}
     m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1578,6 +1578,8 @@ MonoBehaviour:
     Variable: {fileID: 11400000, guid: 16588c5a3904f77438a9465b65c1da4e, type: 2}
     constantValue: 1
     useConstant: 1
+  TutorialP1: {fileID: 0}
+  TutorialP2: {fileID: 0}
 --- !u!114 &2119172952
 MonoBehaviour:
   m_ObjectHideFlags: 0

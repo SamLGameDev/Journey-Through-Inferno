@@ -13,6 +13,7 @@ public class ButtonCommands : MonoBehaviour
     [SerializeField] private IntReference sceneToLoad;
     [SerializeField] private GameObject TutorialP1;
     [SerializeField] private GameObject TutorialP2;
+    private int CurrentMenu;
 
     // Loads the main menu
     public void MainMenu()
