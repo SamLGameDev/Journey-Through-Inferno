@@ -22,6 +22,7 @@ public class ButtonCommands : MonoBehaviour
     }
     private void Start()
     {
+        CurrentMenu = 1;
         if (SceneManager.GetActiveScene().name == "LevelFailed")
         {
             _events.SetSelectedGameObject(mainMenu);
@@ -42,8 +43,19 @@ public class ButtonCommands : MonoBehaviour
 
     public void TutorialPageNext()
     {
-        TutorialP1.SetActive(false);
-        TutorialP2.SetActive(true);
+        if (CurrentMenu == 0)
+        {
+            TutorialP1.SetActive(false);
+            TutorialP2.SetActive(true);
+            CurrentMenu = 1;
+        }
+        else if (CurrentMenu == 1)
+        {
+            TutorialP1.SetActive(true);
+            TutorialP2.SetActive(false);
+            CurrentMenu = 0;
+        }
+        
     }
 
     // Update is called once per frame
