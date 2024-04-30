@@ -425,7 +425,7 @@ public class EntityHealthBehaviour : MonoBehaviour
             grave.GetComponent<Respawn>().player = gameObject;
             return;
         }
-
+        Debug.Log("before function call");
         RaiseDeathEvent(damageDealer);
 
         if (gameObject.CompareTag("Enemy"))
@@ -462,9 +462,11 @@ public class EntityHealthBehaviour : MonoBehaviour
         }
         if (damageDealer.name == "Player 2")
         {
+            Debug.Log(damageDealer.name);
             stats.Player2Kill.Raise();
             return;
         }
+        Debug.Log("player 1 kill");
         stats.Player1Kill.Raise();
         
     }

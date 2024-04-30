@@ -9306,7 +9306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f28d629d50fda14b80f987ce825f904, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneID: 6
+  nextSceneID: 4
 --- !u!61 &553176734
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -27414,6 +27414,12 @@ PrefabInstance:
       propertyPath: tarotCardAmounts.Array.data[1]
       value: 
       objectReference: {fileID: 414177488}
+    - target: {fileID: 5984162122513911825, guid: 9b9bbf6b8c1105448bd7848291b322be,
+        type: 3}
+      propertyPath: Event
+      value: 
+      objectReference: {fileID: 11400000, guid: 8721c4fc1042c614e8c98dbef9ea70ed,
+        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

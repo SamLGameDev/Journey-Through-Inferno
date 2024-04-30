@@ -2764,6 +2764,12 @@ PrefabInstance:
       objectReference: {fileID: 1307268482}
     - target: {fileID: 4096624456859787653, guid: 9b9bbf6b8c1105448bd7848291b322be,
         type: 3}
+      propertyPath: playerInstances
+      value: 
+      objectReference: {fileID: 11400000, guid: 77dab4b9db3db1845b84e0d58cdc2603,
+        type: 2}
+    - target: {fileID: 4096624456859787653, guid: 9b9bbf6b8c1105448bd7848291b322be,
+        type: 3}
       propertyPath: playerInstances.Array.data[0]
       value: 
       objectReference: {fileID: 0}
@@ -12492,6 +12498,12 @@ PrefabInstance:
       propertyPath: player2
       value: 
       objectReference: {fileID: 1851696277}
+    - target: {fileID: 7663015512654323874, guid: 4f2b8b25e2f3ae144ad2fd229b30b254,
+        type: 3}
+      propertyPath: playerInstances
+      value: 
+      objectReference: {fileID: 11400000, guid: 77dab4b9db3db1845b84e0d58cdc2603,
+        type: 2}
     - target: {fileID: 8214723215691042756, guid: 4f2b8b25e2f3ae144ad2fd229b30b254,
         type: 3}
       propertyPath: m_Name
