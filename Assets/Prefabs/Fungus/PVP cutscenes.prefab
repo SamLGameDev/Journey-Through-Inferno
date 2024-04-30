@@ -37,6 +37,10 @@ GameObject:
   - component: {fileID: 1728882097391916227}
   - component: {fileID: 673645241722979944}
   - component: {fileID: 7030166509033517342}
+  - component: {fileID: -6247451911741612878}
+  - component: {fileID: 8252680704059682327}
+  - component: {fileID: 2722011726466580854}
+  - component: {fileID: -5132614636407904197}
   m_Layer: 0
   m_Name: PVP cutscenes
   m_TagString: Untagged
@@ -87,7 +91,8 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 7861533667298750880}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: -5132614636407904197}
   variables: []
   description: 
   stepPause: 0
@@ -113,8 +118,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -2
-    y: 72
+    x: -4
+    y: 75
     width: 75
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -124,6 +129,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
+  - {fileID: -6247451911741612878}
   - {fileID: 5741246901775338173}
   - {fileID: 5806214145493324052}
   - {fileID: 4106184069000789448}
@@ -402,6 +408,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
+  - {fileID: -5132614636407904197}
   - {fileID: 1336408831816021828}
   - {fileID: 4111496152899076791}
   - {fileID: 7619585609203593307}
@@ -433,6 +440,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
+  - {fileID: 8252680704059682327}
   - {fileID: 6031990084210202815}
   - {fileID: 8625258184246829331}
   - {fileID: 530751972774629445}
@@ -643,7 +651,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 19
   indentLevel: 0
-  storyText: Virgil sempai?
+  storyText: Virgil?
   description: 
   character: {fileID: 2387513990700591477}
   portrait: {fileID: 21300000, guid: 0cb6201c23c80964e9544ba2afd3c2c9, type: 3}
@@ -762,6 +770,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
+  - {fileID: 2722011726466580854}
   - {fileID: 1728882097391916227}
   - {fileID: 673645241722979944}
   - {fileID: 7030166509033517342}
@@ -848,6 +857,78 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &-6247451911741612878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5660836342227800177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 27
+  indentLevel: 0
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 3
+  durationOLD: 0
+--- !u!114 &8252680704059682327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5660836342227800177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 28
+  indentLevel: 0
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 3
+  durationOLD: 0
+--- !u!114 &2722011726466580854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5660836342227800177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 29
+  indentLevel: 0
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 3
+  durationOLD: 0
+--- !u!114 &-5132614636407904197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5660836342227800177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 30
+  indentLevel: 0
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 3
+  durationOLD: 0
 --- !u!1001 &694903752962745290
 PrefabInstance:
   m_ObjectHideFlags: 0

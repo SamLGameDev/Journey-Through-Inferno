@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: -8108202854962871334}
   - component: {fileID: 3863558221934490884}
   - component: {fileID: 5422606289639421672}
+  - component: {fileID: 2830000678104425314}
   m_Layer: 0
   m_Name: DIS end
   m_TagString: Untagged
@@ -70,7 +71,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 7885602885168091744}
   selectedCommands:
-  - {fileID: 3863558221934490884}
+  - {fileID: 2830000678104425314}
   variables: []
   description: 
   stepPause: 0
@@ -98,7 +99,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 70.13636
     y: 73.13636
-    width: 76.36363
+    width: 78.40909
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -107,6 +108,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 3072324987998000145}
   commandList:
+  - {fileID: 2830000678104425314}
   - {fileID: 7600372070110478048}
   - {fileID: 1457080862338978876}
   - {fileID: 6924460900189134743}
@@ -311,6 +313,24 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &2830000678104425314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990307235948931968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 28
+  indentLevel: 0
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 3
+  durationOLD: 0
 --- !u!1001 &1169295355921085587
 PrefabInstance:
   m_ObjectHideFlags: 0
