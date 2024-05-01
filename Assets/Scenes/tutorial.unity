@@ -146,9 +146,9 @@ GameObject:
   - component: {fileID: 43051675}
   - component: {fileID: 43051677}
   - component: {fileID: 43051676}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Square (1)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -161,8 +161,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 43051674}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -49, y: 6.2242, z: -89.5238}
-  m_LocalScale: {x: 46.312508, y: 68.192215, z: 4.84}
+  m_LocalPosition: {x: -53.9411, y: 6.2242, z: -89.5238}
+  m_LocalScale: {x: 36.429417, y: 68.192215, z: 4.84}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2102415351}
@@ -407,9 +407,9 @@ GameObject:
   - component: {fileID: 121563525}
   - component: {fileID: 121563527}
   - component: {fileID: 121563526}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Square (2)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -422,8 +422,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 121563524}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.3607, y: 74.5, z: -89.5238}
-  m_LocalScale: {x: 76.03587, y: 68.192215, z: 4.84}
+  m_LocalPosition: {x: 6.6097, y: 72.6946, z: -89.5238}
+  m_LocalScale: {x: 85.54036, y: 71.806404, z: 4.84}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2102415351}
@@ -11687,9 +11687,9 @@ GameObject:
   - component: {fileID: 1851800478}
   - component: {fileID: 1851800480}
   - component: {fileID: 1851800479}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Square (3)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11702,8 +11702,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1851800477}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: -61.6, z: -89.5238}
-  m_LocalScale: {x: 76.03587, y: 68.192215, z: 4.84}
+  m_LocalPosition: {x: 9.0498, y: -61.7901, z: -89.5238}
+  m_LocalScale: {x: 93.902565, y: 67.80873, z: 4.84}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2102415351}
@@ -12123,9 +12123,9 @@ GameObject:
   - component: {fileID: 2101357250}
   - component: {fileID: 2101357252}
   - component: {fileID: 2101357251}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
