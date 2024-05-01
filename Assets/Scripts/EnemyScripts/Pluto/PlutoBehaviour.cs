@@ -23,6 +23,7 @@ public class PlutoBehaviour : MonoBehaviour
         cerberusTimer = 0;
         GetComponent<AIPath>().endReachedDistance = stats.cerberusRange;
 
+        //Spawns in first 4 molten statues
         GameObject statue1 = Instantiate(stats.statuePrefab);
         statue1.transform.position = new Vector3(places[0,0], places[1,0], 0);
 
@@ -54,6 +55,7 @@ public class PlutoBehaviour : MonoBehaviour
         
         transform.position = new Vector3(places[0, rand1], places[1, rand1], 0);
         
+        //tries to set positions of the clones, doesn't work if they aren't there yet
         try
         {            
             transform.GetChild(0).position = new Vector3(places[0, rand2], places[1, rand2], 0);
@@ -81,15 +83,19 @@ public class PlutoBehaviour : MonoBehaviour
     private void Clone()
     {
         hasUsedClone = true;
+
+        //spawns in two clones
         GameObject clone1 = Instantiate(stats.clonePrefab);
         clone1.transform.SetParent(transform);
         GameObject clone2 = Instantiate(stats.clonePrefab);
         clone2.transform.SetParent(transform);
+        
         MovePlaces();
     }
 
     private void SpawnStatues()
     {
+        //spawns in a new clone after a delay since the last one died
         if (statueTimer >= stats.statueDelay)
         {
             GameObject statue = Instantiate(stats.statuePrefab);
