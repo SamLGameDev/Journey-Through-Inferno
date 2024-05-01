@@ -38,6 +38,8 @@ public class PlutoBehaviour : MonoBehaviour
 
     public void MovePlaces()
     {
+        GetComponent<Animator>().SetTrigger("Move");
+
         int rand1 = UnityEngine.Random.Range(0, 6);
         
         int rand2= UnityEngine.Random.Range(0, 6);
@@ -70,6 +72,9 @@ public class PlutoBehaviour : MonoBehaviour
 
     public void SendCerberus()
     {
+        GetComponent<Animator>().SetTrigger("Cerberus");
+
+
         player = GetComponent<AIDestinationSetter>().target;
         Vector2 shootDirection = (player.position - transform.position).normalized;
 
@@ -81,6 +86,8 @@ public class PlutoBehaviour : MonoBehaviour
     private void Clone()
     {
         hasUsedClone = true;
+        GetComponent<Animator>().SetBool("Clone", true);
+
         GameObject clone1 = Instantiate(stats.clonePrefab);
         clone1.transform.SetParent(transform);
         GameObject clone2 = Instantiate(stats.clonePrefab);
@@ -121,7 +128,6 @@ public class PlutoBehaviour : MonoBehaviour
         if ((GetComponent<EntityHealthBehaviour>().currentHealth <= 20) && (hasUsedClone == false))
         {
             Clone();
-            Debug.Log("has used clone");
         }
 
         if (statues.GetListSize() < 4)
