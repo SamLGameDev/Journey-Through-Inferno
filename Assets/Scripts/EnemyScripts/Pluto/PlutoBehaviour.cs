@@ -12,6 +12,7 @@ public class PlutoBehaviour : MonoBehaviour
     private int[,] places = { { -17, -16, 0, 12, 18, 0 }, { 6, -18, -5, -19, 2, 23 } };
     private float moveTimer;
     private float cerberusTimer;
+    private float statueTimer;
     private bool hasUsedClone = false;
 
     private Transform player;
@@ -89,12 +90,15 @@ public class PlutoBehaviour : MonoBehaviour
 
     private void SpawnStatues()
     {
-        GameObject statue = Instantiate(stats.statuePrefab);
-        statue.transform.position = new Vector3(places[0, 0], places[1, 0], 0);
-
-        if (statues.GetListSize() < 4)
+        if (statueTimer >= stats.statueDelay)
         {
-            SpawnStatues();
+            GameObject statue = Instantiate(stats.statuePrefab);
+            statue.transform.position = new Vector3(places[0, 0], places[1, 0], 0);
+            statueTimer = 0;
+        }
+        else
+        {
+            statueTimer += Time.deltaTime;
         }
     }
 

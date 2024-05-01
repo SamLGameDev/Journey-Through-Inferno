@@ -8,6 +8,7 @@ public class Pluto : BasicAttributes
     public int cerberusCooldown;
     public float cerberusRange;
     public float cerberusSpeed;
+    public float statueDelay;
     public GameObject cerberusPrefab;
     public GameObject statuePrefab;
     public GameObject clonePrefab;
