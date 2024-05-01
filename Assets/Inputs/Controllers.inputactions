@@ -373,7 +373,7 @@
                     "name": "Navigation",
                     "type": "Value",
                     "id": "9dee5397-fd29-4ed4-8c1d-21a8746e5352",
-                    "expectedControlType": "",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -383,6 +383,15 @@
                     "type": "Button",
                     "id": "417ae528-5f5c-4fd6-af43-58c6e19b5a12",
                     "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "KeyboardNav",
+                    "type": "Value",
+                    "id": "739d8ab1-2e91-4641-b66e-67f486545112",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -402,17 +411,6 @@
                 },
                 {
                     "name": "",
-                    "id": "20f24445-e5ca-4ddb-b90d-21c309449a11",
-                    "path": "<Pointer>/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "KeyBoard",
-                    "action": "Navigation",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "2dc9ca67-d660-42ee-b918-f67dd5ae53ba",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
@@ -424,12 +422,23 @@
                 },
                 {
                     "name": "",
-                    "id": "3c2e1084-022c-47c6-96d0-20ad8711b71f",
+                    "id": "593d3b54-6ee2-48a8-a902-3e5e70a66f5d",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyBoard",
                     "action": "Submit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "28ec6e99-c371-4754-92ac-a7672e405f9d",
+                    "path": "<Pointer>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyBoard",
+                    "action": "KeyboardNav",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

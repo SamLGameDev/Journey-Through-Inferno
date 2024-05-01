@@ -354,9 +354,13 @@ public class CardSpawner : MonoBehaviour
                 {
                     cardChosen = false;
                     DestroyCards();
-                    CreateCards(p);
-                    currentSelectingCards.SetSelectedGameObject((GameObject)onScreenCards[0, 0]);
-                    yield return new WaitUntil(() => cardChosen);
+                    if (_playerCards.Count > 0)
+                    {
+                        CreateCards(p);
+                        currentSelectingCards.SetSelectedGameObject((GameObject)onScreenCards[0, 0]);
+                        yield return new WaitUntil(() => cardChosen);
+                    }
+
                 }
                 ChangeEventSystem();
                 DestroyCards();

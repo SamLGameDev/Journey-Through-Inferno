@@ -279,6 +279,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: ef8e0e10-9ae2-4bbe-a929-264300279b59
     m_ActionName: xbox controller/Revive[/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 739d8ab1-2e91-4641-b66e-67f486545112
+    m_ActionName: UI/New action
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: xbox controller
@@ -329,20 +333,18 @@ MonoBehaviour:
   m_XRTrackingOrigin: {fileID: 0}
   m_ActionsAsset: {fileID: -944628639613478452, guid: 01a8c8e51e1e985478380d3126b54987,
     type: 3}
-  m_PointAction: {fileID: 9112540966960322963, guid: 01a8c8e51e1e985478380d3126b54987,
+  m_PointAction: {fileID: 8693206499243958411, guid: 01a8c8e51e1e985478380d3126b54987,
     type: 3}
   m_MoveAction: {fileID: 9112540966960322963, guid: 01a8c8e51e1e985478380d3126b54987,
     type: 3}
   m_SubmitAction: {fileID: 7435018894787096999, guid: 01a8c8e51e1e985478380d3126b54987,
     type: 3}
   m_CancelAction: {fileID: 0}
-  m_LeftClickAction: {fileID: 7435018894787096999, guid: 01a8c8e51e1e985478380d3126b54987,
-    type: 3}
+  m_LeftClickAction: {fileID: 0}
   m_MiddleClickAction: {fileID: 0}
   m_RightClickAction: {fileID: 0}
   m_ScrollWheelAction: {fileID: 0}
-  m_TrackedDevicePositionAction: {fileID: 9112540966960322963, guid: 01a8c8e51e1e985478380d3126b54987,
-    type: 3}
+  m_TrackedDevicePositionAction: {fileID: 0}
   m_TrackedDeviceOrientationAction: {fileID: 0}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
