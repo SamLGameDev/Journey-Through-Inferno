@@ -373,7 +373,7 @@
                     "name": "Navigation",
                     "type": "Value",
                     "id": "9dee5397-fd29-4ed4-8c1d-21a8746e5352",
-                    "expectedControlType": "Dpad",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -385,7 +385,7 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -402,11 +402,33 @@
                 },
                 {
                     "name": "",
+                    "id": "20f24445-e5ca-4ddb-b90d-21c309449a11",
+                    "path": "<Pointer>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyBoard",
+                    "action": "Navigation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "2dc9ca67-d660-42ee-b918-f67dd5ae53ba",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "Xbox control scheme;SecondController",
+                    "action": "Submit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3c2e1084-022c-47c6-96d0-20ad8711b71f",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyBoard",
                     "action": "Submit",
                     "isComposite": false,
                     "isPartOfComposite": false

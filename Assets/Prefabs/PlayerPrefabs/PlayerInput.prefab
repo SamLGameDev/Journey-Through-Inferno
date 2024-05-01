@@ -329,17 +329,20 @@ MonoBehaviour:
   m_XRTrackingOrigin: {fileID: 0}
   m_ActionsAsset: {fileID: -944628639613478452, guid: 01a8c8e51e1e985478380d3126b54987,
     type: 3}
-  m_PointAction: {fileID: 0}
+  m_PointAction: {fileID: 9112540966960322963, guid: 01a8c8e51e1e985478380d3126b54987,
+    type: 3}
   m_MoveAction: {fileID: 9112540966960322963, guid: 01a8c8e51e1e985478380d3126b54987,
     type: 3}
   m_SubmitAction: {fileID: 7435018894787096999, guid: 01a8c8e51e1e985478380d3126b54987,
     type: 3}
   m_CancelAction: {fileID: 0}
-  m_LeftClickAction: {fileID: 0}
+  m_LeftClickAction: {fileID: 7435018894787096999, guid: 01a8c8e51e1e985478380d3126b54987,
+    type: 3}
   m_MiddleClickAction: {fileID: 0}
   m_RightClickAction: {fileID: 0}
   m_ScrollWheelAction: {fileID: 0}
-  m_TrackedDevicePositionAction: {fileID: 0}
+  m_TrackedDevicePositionAction: {fileID: 9112540966960322963, guid: 01a8c8e51e1e985478380d3126b54987,
+    type: 3}
   m_TrackedDeviceOrientationAction: {fileID: 0}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
