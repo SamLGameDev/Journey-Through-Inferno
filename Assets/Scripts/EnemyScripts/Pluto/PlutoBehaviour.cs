@@ -130,7 +130,7 @@ public class PlutoBehaviour : MonoBehaviour
 
         if ((GetComponent<EntityHealthBehaviour>().currentHealth <= 20) && (hasUsedClone == false))
         {
-            GetComponent<Animator>().SetBool("Clone", true);
+            GetComponent<Animator>().SetTrigger("Clone");
         }
 
         if (statues.GetListSize() < 4)
