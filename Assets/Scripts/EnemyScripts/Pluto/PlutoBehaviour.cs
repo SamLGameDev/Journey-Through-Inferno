@@ -13,6 +13,7 @@ public class PlutoBehaviour : MonoBehaviour
     private float moveTimer;
     private float cerberusTimer;
     private float statueTimer;
+
     private bool hasUsedClone = false;
 
     private Transform player;
@@ -20,7 +21,9 @@ public class PlutoBehaviour : MonoBehaviour
     void Start()
     {
         moveTimer = 0;
-        cerberusTimer = 0;
+        cerberusTimer = 5;
+        statueTimer = 0;
+
         GetComponent<AIPath>().endReachedDistance = stats.cerberusRange;
 
         //Spawns in first 4 molten statues
@@ -39,8 +42,6 @@ public class PlutoBehaviour : MonoBehaviour
 
     public void MovePlaces()
     {
-        GetComponent<Animator>().SetTrigger("Move");
-
         int rand1 = UnityEngine.Random.Range(0, 6);
         
         int rand2= UnityEngine.Random.Range(0, 6);
@@ -74,9 +75,6 @@ public class PlutoBehaviour : MonoBehaviour
 
     public void SendCerberus()
     {
-        GetComponent<Animator>().SetTrigger("Cerberus");
-
-
         player = GetComponent<AIDestinationSetter>().target;
         Vector2 shootDirection = (player.position - transform.position).normalized;
 
@@ -88,7 +86,6 @@ public class PlutoBehaviour : MonoBehaviour
     private void Clone()
     {
         hasUsedClone = true;
-        GetComponent<Animator>().SetBool("Clone", true);
 
 
         //spawns in two clones
@@ -96,45 +93,43 @@ public class PlutoBehaviour : MonoBehaviour
         clone1.transform.SetParent(transform);
         GameObject clone2 = Instantiate(stats.clonePrefab);
         clone2.transform.SetParent(transform);
-        
-        MovePlaces();
+
+        GetComponent<Animator>().SetTrigger("Move");
     }
 
     private void SpawnStatues()
     {
-        if (statueTimer - 5 >= stats.statueDelay)
-        //spawns in a new clone after a delay since the last one died
         if (statueTimer >= stats.statueDelay)
         {
             GameObject statue = Instantiate(stats.statuePrefab);
             statue.transform.position = new Vector3(places[0, 0], places[1, 0], 0);
-            statueTimer = 0;
+            statueTimer -= stats.statueDelay;
         }
         else
         {
-            statueTimer = Time.time;
+            statueTimer += Time.deltaTime;
         }
     }
 
     void Update()
     {
-        cerberusTimer = Time.time;
-        if (cerberusTimer - 8 >= stats.cerberusCooldown)
+        cerberusTimer += Time.deltaTime;
+        if (cerberusTimer >= stats.cerberusCooldown)
         {
-            SendCerberus();
-            stats.cerberusCooldown = Time.time;
+            GetComponent<Animator>().SetTrigger("Cerberus");
+            cerberusTimer -= stats.cerberusCooldown;
         }
 
-        moveTimer = Time.time;
-        if (moveTimer - 10 >= stats.moveInterval) 
+        moveTimer += Time.deltaTime;
+        if (moveTimer >= stats.moveInterval) 
         {
-            MovePlaces();
-            stats.moveInterval = Time.time;
+            GetComponent<Animator>().SetTrigger("Move");
+            moveTimer -= stats.moveInterval;
         }
 
         if ((GetComponent<EntityHealthBehaviour>().currentHealth <= 20) && (hasUsedClone == false))
         {
-            Clone();
+            GetComponent<Animator>().SetBool("Clone", true);
         }
 
         if (statues.GetListSize() < 4)
