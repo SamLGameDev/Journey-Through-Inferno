@@ -99,6 +99,7 @@ public class PlutoBehaviour : MonoBehaviour
 
     private void SpawnStatues()
     {
+        //spawns new statue if the respawn time has passed
         if (statueTimer >= stats.statueDelay)
         {
             GameObject statue = Instantiate(stats.statuePrefab);
