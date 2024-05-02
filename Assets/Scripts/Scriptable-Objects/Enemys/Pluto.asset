@@ -33,9 +33,10 @@ MonoBehaviour:
     useConstant: 1
   originalPosition: {fileID: 0}
   moveInterval: 10
-  cerberusCooldown: 8
+  cerberusCooldown: 10
   cerberusRange: 15
   cerberusSpeed: 15
+  statueDelay: 5
   cerberusPrefab: {fileID: 6508069903699826417, guid: 6d8545a1d0d0b444682ffd7fe7099dba,
     type: 3}
   statuePrefab: {fileID: 7187451865587570375, guid: 04332074ca2b39e4e9846204ad71bfe4,
