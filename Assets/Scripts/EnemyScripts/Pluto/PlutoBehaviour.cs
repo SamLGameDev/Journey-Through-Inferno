@@ -97,7 +97,7 @@ public class PlutoBehaviour : MonoBehaviour
 
     private void SpawnStatues()
     {
-        if (statueTimer >= stats.statueDelay)
+        if (statueTimer - 5 >= stats.statueDelay)
         {
             GameObject statue = Instantiate(stats.statuePrefab);
             statue.transform.position = new Vector3(places[0, 0], places[1, 0], 0);
@@ -105,24 +105,24 @@ public class PlutoBehaviour : MonoBehaviour
         }
         else
         {
-            statueTimer += Time.deltaTime;
+            statueTimer = Time.time;
         }
     }
 
     void Update()
     {
-        cerberusTimer += Time.deltaTime;
-        if (cerberusTimer >= stats.cerberusCooldown)
+        cerberusTimer = Time.time;
+        if (cerberusTimer - 8 >= stats.cerberusCooldown)
         {
             SendCerberus();
-            cerberusTimer -= stats.cerberusCooldown;
+            stats.cerberusCooldown = Time.time;
         }
 
-        moveTimer += Time.deltaTime;
-        if (moveTimer >= stats.moveInterval) 
+        moveTimer = Time.time;
+        if (moveTimer - 10 >= stats.moveInterval) 
         {
             MovePlaces();
-            moveTimer -= stats.moveInterval;
+            stats.moveInterval = Time.time;
         }
 
         if ((GetComponent<EntityHealthBehaviour>().currentHealth <= 20) && (hasUsedClone == false))
