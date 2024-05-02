@@ -146,7 +146,7 @@ public class GameManager : MonoBehaviour
     {
         enemiesRemaining--;
 
-        if (enemiesRemaining == 0)
+        if (enemysCount.GetItems().Count < 1)
         {
             UpdateGameState(GameState.EncounterCleared);
 

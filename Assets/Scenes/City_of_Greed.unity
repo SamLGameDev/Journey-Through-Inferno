@@ -10825,8 +10825,8 @@ MonoBehaviour:
   isFrozen: 0
   onlyVirgil: 0
   onlyDante: 0
-  BossDeathEvent: {fileID: 0}
-  playerInstances: {fileID: 0}
+  BossDeathEvent: {fileID: 11400000, guid: 922ee81addb959342bddf7b16923d4d3, type: 2}
+  playerInstances: {fileID: 11400000, guid: 77dab4b9db3db1845b84e0d58cdc2603, type: 2}
 --- !u!61 &683299904
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11019,6 +11019,7 @@ GameObject:
   - component: {fileID: 699024876}
   - component: {fileID: 699024877}
   - component: {fileID: 699024878}
+  - component: {fileID: 699024879}
   m_Layer: 8
   m_Name: Pluto
   m_TagString: Enemy
@@ -11144,6 +11145,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &699024879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699024874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb3e25e597478104cb7a6bf4a1c33ad0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attributes: {fileID: 11400000, guid: 91c3f2b50bde3804692396f5d5f99213, type: 2}
+  PlayerAquiredCard: {fileID: 11400000, guid: 8721c4fc1042c614e8c98dbef9ea70ed, type: 2}
 --- !u!1 &723391183
 GameObject:
   m_ObjectHideFlags: 0
@@ -12413,6 +12428,12 @@ Transform:
   m_Father: {fileID: 331337067}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!1 &864384446 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1360041816144667566, guid: e58d4a0c7222d2b4089db5796382f190,
+    type: 3}
+  m_PrefabInstance: {fileID: 4160995341029023200}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &869555782
 GameObject:
   m_ObjectHideFlags: 0
@@ -16120,12 +16141,54 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 4160995341029023200}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 864384446}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db465e459a368944b8e1f0349650dc97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1336663988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864384446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e09ec3e8ff1d99149ba2cbfe2533f6c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 922ee81addb959342bddf7b16923d4d3, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 699024879}
+        m_TargetAssemblyTypeName: DropTarotCard, Assembly-CSharp
+        m_MethodName: DropCard
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: c53c78a8f908aff40b06667ff5c1036a,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: Player, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 699024879}
+        m_TargetAssemblyTypeName: DropTarotCard, Assembly-CSharp
+        m_MethodName: DropCard
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 5df255e7d82eda04e8040c6b03146859,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: Player, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1342507297
 GameObject:
   m_ObjectHideFlags: 0
@@ -25231,5 +25294,9 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1360041816144667566, guid: e58d4a0c7222d2b4089db5796382f190,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1336663988}
   m_SourcePrefab: {fileID: 100100000, guid: e58d4a0c7222d2b4089db5796382f190, type: 3}
