@@ -39,6 +39,8 @@ public class PlutoBehaviour : MonoBehaviour
 
     public void MovePlaces()
     {
+        GetComponent<Animator>().SetTrigger("Move");
+
         int rand1 = UnityEngine.Random.Range(0, 6);
         
         int rand2= UnityEngine.Random.Range(0, 6);
@@ -72,6 +74,9 @@ public class PlutoBehaviour : MonoBehaviour
 
     public void SendCerberus()
     {
+        GetComponent<Animator>().SetTrigger("Cerberus");
+
+
         player = GetComponent<AIDestinationSetter>().target;
         Vector2 shootDirection = (player.position - transform.position).normalized;
 
@@ -83,6 +88,8 @@ public class PlutoBehaviour : MonoBehaviour
     private void Clone()
     {
         hasUsedClone = true;
+        GetComponent<Animator>().SetBool("Clone", true);
+
 
         //spawns in two clones
         GameObject clone1 = Instantiate(stats.clonePrefab);
@@ -95,6 +102,7 @@ public class PlutoBehaviour : MonoBehaviour
 
     private void SpawnStatues()
     {
+        if (statueTimer - 5 >= stats.statueDelay)
         //spawns in a new clone after a delay since the last one died
         if (statueTimer >= stats.statueDelay)
         {
@@ -104,30 +112,29 @@ public class PlutoBehaviour : MonoBehaviour
         }
         else
         {
-            statueTimer += Time.deltaTime;
+            statueTimer = Time.time;
         }
     }
 
     void Update()
     {
-        cerberusTimer += Time.deltaTime;
-        if (cerberusTimer >= stats.cerberusCooldown)
+        cerberusTimer = Time.time;
+        if (cerberusTimer - 8 >= stats.cerberusCooldown)
         {
             SendCerberus();
-            cerberusTimer -= stats.cerberusCooldown;
+            stats.cerberusCooldown = Time.time;
         }
 
-        moveTimer += Time.deltaTime;
-        if (moveTimer >= stats.moveInterval) 
+        moveTimer = Time.time;
+        if (moveTimer - 10 >= stats.moveInterval) 
         {
             MovePlaces();
-            moveTimer -= stats.moveInterval;
+            stats.moveInterval = Time.time;
         }
 
         if ((GetComponent<EntityHealthBehaviour>().currentHealth <= 20) && (hasUsedClone == false))
         {
             Clone();
-            Debug.Log("has used clone");
         }
 
         if (statues.GetListSize() < 4)
