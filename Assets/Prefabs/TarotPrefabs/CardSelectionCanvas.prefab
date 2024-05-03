@@ -694,7 +694,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 132bc593c70e70c4682cd676c76427a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardAmount: 1
   cardSpacing: 80
   cardPrefab: {fileID: 6208903582967637812, guid: b4ecf8dcb6560744fa43ec313c3a45e7,
     type: 3}
@@ -704,6 +703,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d4b98bd527d796c4f85964411cfaaebf, type: 3}
   - {fileID: 21300000, guid: 73e965fcaf31df24289c08ff71aabbc8, type: 3}
   playerInstances: {fileID: 11400000, guid: 77dab4b9db3db1845b84e0d58cdc2603, type: 2}
+  _cardSelectionGameObjects:
+    nextCardButton: {fileID: 6985771051483997443}
+    prevCardButton: {fileID: 4292949999868508343}
+    tutorialTextBox: {fileID: 8604551452235676354}
+    selectingPlayerIcon: {fileID: 571178960899157692}
+    DescriptionBoxesParent: {fileID: 3843716851984056095}
 --- !u!1 &7755749307358901245
 GameObject:
   m_ObjectHideFlags: 0
@@ -1047,6 +1052,12 @@ PrefabInstance:
 --- !u!224 &1351378575942884134 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6719183660610480289, guid: 4445644002b18f640a135ce4c5efee82,
+    type: 3}
+  m_PrefabInstance: {fileID: 5764143903585203079}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3843716851984056095 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8838870945949863064, guid: 4445644002b18f640a135ce4c5efee82,
     type: 3}
   m_PrefabInstance: {fileID: 5764143903585203079}
   m_PrefabAsset: {fileID: 0}

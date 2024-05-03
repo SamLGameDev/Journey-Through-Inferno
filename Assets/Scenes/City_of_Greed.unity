@@ -25278,6 +25278,11 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 4096624456859787653, guid: e58d4a0c7222d2b4089db5796382f190,
         type: 3}
+      propertyPath: _eventSystemForBothPlayers
+      value: 
+      objectReference: {fileID: 1204604208}
+    - target: {fileID: 4096624456859787653, guid: e58d4a0c7222d2b4089db5796382f190,
+        type: 3}
       propertyPath: playerInstances.Array.size
       value: 2
       objectReference: {fileID: 0}

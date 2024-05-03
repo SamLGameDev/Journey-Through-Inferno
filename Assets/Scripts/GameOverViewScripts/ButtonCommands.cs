@@ -67,8 +67,8 @@ public class ButtonCommands : MonoBehaviour
     public void ResumeGame()
     {
         Time.timeScale = 1;
-        EventSystem player1Events = GameManager.instance.p1.GetComponent<EventSystem>();
-        EventSystem player2Events = GameManager.instance.p2.GetComponent<EventSystem>();
+        EventSystem player1Events = GameManager.instance.player1EventSystem.GetComponent<EventSystem>();
+        EventSystem player2Events = GameManager.instance.player2EventSystem.GetComponent<EventSystem>();
         player1Events.enabled = true;
         player2Events.enabled = true;
         if (GameManager.instance.spawner.onScreenCards[0, 0] != null)

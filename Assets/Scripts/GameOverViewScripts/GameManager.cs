@@ -21,9 +21,9 @@ public class GameManager : MonoBehaviour
     public Counter<GameObject> playerInstances;
     public List<Player> playerstats;
     public GameObject InputManager;
-    public PlayerInput p1;
-    public PlayerInput p2;
-    public EventSystem _events;
+    public EventSystem player1EventSystem;
+    public EventSystem player2EventSystem;
+    public EventSystem _eventSystemForBothPlayers;
     private bool OnEncounterCleared = false;
     [SerializeField] private GameObject _clearPortal;
     public List<GameObject> bossInstances;
@@ -63,8 +63,10 @@ public class GameManager : MonoBehaviour
             //sets control scheme to Xbox control scheme for both controllers but in reality, its set to SecondController scheme.
             //makes it so it doesnt automatically switch control schemes
             Debug.Log(InputSystem.devices.OfType<Gamepad>().First() + " first");
-            p1 = PlayerInput.Instantiate(InputManager, 0, controlScheme: "Xbox control scheme", -1, InputSystem.devices.OfType<Gamepad>().First());
-            //p1.neverAutoSwitchControlSchemes = true;
+            PlayerInput player1InputManager = PlayerInput.Instantiate(InputManager, 0, controlScheme:
+                "Xbox control scheme", -1, InputSystem.devices.OfType<Gamepad>().First());
+            player1EventSystem = player1InputManager.GetComponent<EventSystem>();
+            //player1EventSystem.neverAutoSwitchControlSchemes = true;
             playerstats.First().gamepad = InputSystem.devices.OfType<Gamepad>().First();
         }
         //if there is more than one gamepad
@@ -74,15 +76,18 @@ public class GameManager : MonoBehaviour
             //gets the next controller in the list
             Debug.Log(InputSystem.devices.OfType<Gamepad>().ElementAt(1) + " second");
             if (InputSystem.devices.OfType<DualShockGamepad>().Count() >= 2) { TutorialTextManger.PS4 = true; }
-            p2 = PlayerInput.Instantiate(InputManager, 1, controlScheme: "Xbox control scheme", -1, InputSystem.devices.OfType<Gamepad>().ElementAt(1));
-            //p2.neverAutoSwitchControlSchemes = true;
+            PlayerInput player2InputManager = PlayerInput.Instantiate(InputManager, 1, controlScheme:
+                "Xbox control scheme", -1, InputSystem.devices.OfType<Gamepad>().ElementAt(1));
+            player2EventSystem = player2InputManager.GetComponent<EventSystem>();
+            //player2EventSystem.neverAutoSwitchControlSchemes = true;
             playerstats.ElementAt(1).gamepad = InputSystem.devices.OfType<Gamepad>().ElementAt(1);
             return;
         }
         //if there is no second controller, sets the second player to be controler by keyboard and mouse
-        p2 = PlayerInput.Instantiate(InputManager, 1, controlScheme: "Keyboard", -1, InputSystem.devices.OfType<Keyboard>().First(), InputSystem.devices.OfType<UnityEngine.InputSystem.Mouse>().First());
-        p2.neverAutoSwitchControlSchemes = true;
-        p2.SwitchCurrentActionMap("Keyboard&Mouse");
+        PlayerInput player2InputManagerKeyboard = PlayerInput.Instantiate(InputManager, 1, controlScheme: "Keyboard", -1, InputSystem.devices.OfType<Keyboard>().First(), InputSystem.devices.OfType<UnityEngine.InputSystem.Mouse>().First());
+        player2InputManagerKeyboard.neverAutoSwitchControlSchemes = true;
+        player2InputManagerKeyboard.SwitchCurrentActionMap("Keyboard&Mouse");
+        player2EventSystem = player2InputManagerKeyboard.GetComponent<EventSystem>();
     }
     private void Start()
     {
@@ -145,7 +150,6 @@ public class GameManager : MonoBehaviour
     public void OnEnemyDeath()
     {
         enemiesRemaining--;
-
         if (enemysCount.GetItems().Count < 1)
         {
             UpdateGameState(GameState.EncounterCleared);
@@ -192,7 +196,7 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0;
             spawner.encounterCleared = true;
             yield return new WaitUntil(() => spawner.onScreenCards[0,0] != null || noCards);
-            _events.SetSelectedGameObject((GameObject)spawner.onScreenCards[0, 0]);
+            _eventSystemForBothPlayers.SetSelectedGameObject((GameObject)spawner.onScreenCards[0, 0]);
             noCards = false;
             OnEncounterCleared = false;
         }
@@ -230,6 +234,7 @@ public class GameManager : MonoBehaviour
     private void OnNormalPlay()
     {
         Time.timeScale = 1;
+        OnEncounterCleared = false;
         // Add any other things you want to happen here.
     }
 

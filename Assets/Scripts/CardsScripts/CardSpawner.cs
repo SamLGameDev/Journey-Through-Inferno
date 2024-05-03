@@ -8,11 +8,12 @@ using UnityEngine.UI;
 using UnityEngine.VFX;
 using UnityEngine.InputSystem;
 using static UnityEngine.InputSystem.InputAction;
+using System;
+using UnityEngine.Rendering.UI;
 
 public class CardSpawner : MonoBehaviour
 {
-    [Range(1, 4)]
-    public int cardAmount;
+    private int _currentDisplayedCards;
     public static EventSystem currentSelectingCards;
     [SerializeField] private float cardSpacing;
 
@@ -21,7 +22,6 @@ public class CardSpawner : MonoBehaviour
     private int currentCardIndex = 1;
     public object[,] onScreenCards;
     private int cardIndex = 0;
-    private static bool firstTime = true;
     private int cardIndex3 = 0;
     private int cardIndex4 = 0;
     private int cardindex5 = 0;
@@ -36,11 +36,14 @@ public class CardSpawner : MonoBehaviour
     private List<Sprite> SelectingPlayerSprites;
     [SerializeField]
     private Counter<GameObject> playerInstances;
+
+    
+    public CardSelectionGameObjects _cardSelectionGameObjects;
+
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SpawnCards());
-        onScreenCards = new object[cardAmount, cardAmount];
+        StartCoroutine(HandelingCardSelectionGameState());
     }
 
 
@@ -48,7 +51,6 @@ public class CardSpawner : MonoBehaviour
     {
         TarotCards card = (TarotCards)onScreenCards[index, 1];
         card.ApplyEffect(p);
-        Debug.Log("argggg card ahoy" + card.possibleMods);
         p.GetComponent<Player_movement>().stats.tarotCards.Add(card);
         _playerCards.Remove(card);
         cardChosen = true;
@@ -185,10 +187,10 @@ public class CardSpawner : MonoBehaviour
     private void ChangeEventSystem()
     {
         if (currentSelectingCards != null) currentSelectingCards.enabled = false;
-        currentSelectingCards = GameManager.instance.p2.GetComponent<EventSystem>();
+        currentSelectingCards = GameManager.instance.player2EventSystem.GetComponent<EventSystem>();
         currentSelectingCards.enabled = true;
         currentSelectingCards.UpdateModules();
-        GameManager.instance.p2.uiInputModule = GameManager.instance.p2.GetComponent<InputSystemUIInputModule>();
+        GameManager.instance.player2EventSystem.GetComponent<PlayerInput>().uiInputModule = GameManager.instance.player2EventSystem.GetComponent<InputSystemUIInputModule>();
     }
     private bool HasSun(GameObject p)
     {
@@ -203,8 +205,8 @@ public class CardSpawner : MonoBehaviour
     }
     private void CreateCards(GameObject p)
     {
-        cardAmount = _playerCards.Count > 4 ? 4 : _playerCards.Count;
-        Debug.Log(cardAmount);
+        _currentDisplayedCards = _playerCards.Count > 4 ? 4 : _playerCards.Count;
+        Debug.Log(_currentDisplayedCards);
         // This makes the cards spawn on alternating sides.
         bool leftIndex = true;
 
@@ -218,7 +220,7 @@ public class CardSpawner : MonoBehaviour
         // same function. By using it we can offset the below 'i' for loop by 1 we can make it so that cards spawn slightly
         // offset to the side making the cards spawn evenly across the screen.
 
-        if (cardAmount % 2 == 0)
+        if (_currentDisplayedCards % 2 == 0)
         {
             startIndex = 1;
         }
@@ -228,14 +230,14 @@ public class CardSpawner : MonoBehaviour
         }
 
         // This array is storing the cards currently shown on screen, allows us to destroy them easily if cards need rerolling.
-        onScreenCards = new object[cardAmount, cardAmount *2];
+        onScreenCards = new object[_currentDisplayedCards, _currentDisplayedCards *2];
         Debug.Log(onScreenCards.GetLength(0));
         Debug.Log(onScreenCards.GetLength(1));
 
         // The index is needed because the for loop 'i' doesn't always start at 0, and we need to sequentially add each card
         // to the array as we are creating them.
         arrayIndex = 0;
-        for (int i = startIndex; i < cardAmount; i++)
+        for (int i = startIndex; i < _currentDisplayedCards; i++)
         {
             TarotCards card = _playerCards[arrayIndex];
             // If the card amount is odd and it's the first card, then we can place that in the middle and then continue as
@@ -279,75 +281,24 @@ public class CardSpawner : MonoBehaviour
     }
     // The cards are spawned in 'pairs', using the for loop to iterate through each cards position
     // and ensure the correct amount of cards in the correct arrangement are placed.
-    public IEnumerator SpawnCards()
+    public IEnumerator HandelingCardSelectionGameState()
     {
-        GameObject nextButton = canvas.transform.GetChild(2).gameObject;
-        GameObject previousButton = canvas.transform.GetChild(3).gameObject;
-        GameObject tutorialText = canvas.transform.GetChild(4).gameObject;
-        GameObject SelectingPlayer = canvas.transform.GetChild(5).gameObject;
         while (true)
         {
-            GameManager.instance.UpdateGameState(GameManager.GameState.normalPlay);
-            nextButton.SetActive(false);
-            previousButton.SetActive(false);
-            tutorialText.SetActive(false);
-            GameManager.instance.text.SetActive(false);
-            GameManager.instance._events.enabled = true;
-            GameManager.instance.p2.GetComponent<EventSystem>().enabled = false;
-            if (GameManager.instance.p1 != null)
-            {
-                GameManager.instance.p1.GetComponent<EventSystem>().enabled = false;
-            }
-            int SelectingPlayerSpriteIndex = 0;
-            SelectingPlayer.SetActive(false);
-            yield return new WaitUntil(() => encounterCleared);
-            if (GameManager.instance.p1 != null )
-            {
-                currentSelectingCards = GameManager.instance.p1.GetComponent<EventSystem>();
-            }
-            nextButton.SetActive(true);
-            previousButton.SetActive(true);
-            if (firstTime)
-            {
-                tutorialText.SetActive(true);
-                firstTime = false;
-            }
+            int SelectingPlayerSpriteIndex = ResetGameStateAndSelectionProcess();
 
-            encounterCleared = false;
+            yield return new WaitUntil(() => encounterCleared);
+            StartCardSelectionProcess();
             // disables the second input system
-            //GameManager.instance.p2.enabled = false;
+            //GameManager.instance.player2EventSystem.enabled = false;
 
             foreach (GameObject p in playerInstances.GetItems())
             {
-                SelectingPlayer.SetActive(true);
-                SelectingPlayer.GetComponent<Image>().sprite = SelectingPlayerSprites[SelectingPlayerSpriteIndex];
-                SelectingPlayerSpriteIndex++;
-                if (GameManager.instance.p1 != null)
-                {
-                    currentSelectingCards.enabled = true;
-                }
-
-                GameManager.instance._events.enabled = false;
-                cardChosen = false;
-                if (p == null)
-                {
-                    ChangeEventSystem();
-                    continue;
-                }
-                _playerCards = p.GetComponent<Player_movement>().stats.droppableCards;
-                if (_playerCards.Count == 0)
-                {
-                    ChangeEventSystem();
-                    if (p == playerInstances.GetItemAtIndex(1))
-                    {
-                        GameManager.instance.noCards = true;
-                    }
-                    continue;
-                }
+                SelectingPlayerSpriteIndex = SetUpCardCreation(SelectingPlayerSpriteIndex);
+                if (!CheckIfPlayerCanSelect(p)) { continue; }
                 CreateCards(p);
                 // sets the selected game object to be the newly created tarot card.
                 currentSelectingCards.SetSelectedGameObject((GameObject)onScreenCards[0, 0]);
-                GameManager.instance.text.SetActive(true);
                 yield return new WaitUntil(() => cardChosen);
                 GameManager.instance.UpdateTarotNumber();
                 if (HasSun(p))
@@ -365,6 +316,98 @@ public class CardSpawner : MonoBehaviour
                 ChangeEventSystem();
                 DestroyCards();
             }
-        } 
+        }
     }
+
+    private int SetUpCardCreation(int SelectingPlayerSpriteIndex)
+    {
+        SelectingPlayerSpriteIndex = setPlayerSpriteToCurrentlySelecting(SelectingPlayerSpriteIndex);
+        GameManager.instance._eventSystemForBothPlayers.enabled = false;
+        currentSelectingCards.enabled = true;
+        cardChosen = false;
+        return SelectingPlayerSpriteIndex;
+    }
+
+    private bool CheckIfPlayerCanSelect(GameObject player)
+    {
+        if (player == null)
+        {
+            ChangeEventSystem();
+            return false;
+        }
+        _playerCards = player.GetComponent<Player_movement>().stats.droppableCards;
+        if (_playerCards.Count == 0)
+        {
+            ChangeEventSystem();
+            if (player == playerInstances.GetItemAtIndex(1))
+            {
+                GameManager.instance.noCards = true;
+            }
+            return false;
+        }
+        return true;
+    }
+    private int setPlayerSpriteToCurrentlySelecting(int SelectingPlayerSpriteIndex)
+    {
+        _cardSelectionGameObjects.selectingPlayerIcon.GetComponent<Image>().sprite = SelectingPlayerSprites[SelectingPlayerSpriteIndex];
+        SelectingPlayerSpriteIndex++;
+        return SelectingPlayerSpriteIndex;
+    }
+
+    private void StartCardSelectionProcess()
+    {
+        SetCurrentlySelecting(GameManager.instance.player1EventSystem);
+        SetActiveStateOfCardSelectionGameObjects(true);
+        encounterCleared = false;
+    }
+
+    private static void SetCurrentlySelecting(EventSystem ToBeSet)
+    {
+        if (ToBeSet != null)
+        {
+            currentSelectingCards = ToBeSet;
+        }
+    }
+
+    private int ResetGameStateAndSelectionProcess()
+    {
+        GameManager.instance.UpdateGameState(GameManager.GameState.normalPlay);
+        SetActiveStateOfCardSelectionGameObjects(false);
+        GameManager.instance._eventSystemForBothPlayers.enabled = true;
+        SetActiveStateOfPlayerEventSystems(false);
+        int SelectingPlayerSpriteIndex = 0;
+        return SelectingPlayerSpriteIndex;
+    }
+
+    private void SetActiveStateOfPlayerEventSystems(bool state)
+    {
+        GameManager.instance.player2EventSystem.enabled = state;
+        if (GameManager.instance.player1EventSystem != null)
+        {
+            GameManager.instance.player1EventSystem.enabled = state;
+        }
+    }
+    private void SetActiveStateOfCardSelectionGameObjects(bool state)
+    {
+        _cardSelectionGameObjects.nextCardButton.SetActive(state);
+        _cardSelectionGameObjects.prevCardButton.SetActive(state);
+        _cardSelectionGameObjects.tutorialTextBox.SetActive(state);
+        _cardSelectionGameObjects.selectingPlayerIcon.SetActive(state);
+        _cardSelectionGameObjects.DescriptionBoxesParent.SetActive(state);
+    }
+
+    [Serializable]
+    public struct CardSelectionGameObjects 
+    {
+        public GameObject nextCardButton;
+
+        public GameObject prevCardButton;
+
+        public GameObject tutorialTextBox;
+
+        public GameObject selectingPlayerIcon;
+
+        public GameObject DescriptionBoxesParent;
+    }
+
 }

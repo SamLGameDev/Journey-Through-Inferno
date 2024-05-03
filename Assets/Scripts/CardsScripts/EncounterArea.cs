@@ -34,7 +34,7 @@ public class EncounterArea : MonoBehaviour
         {
             Canvas.SetActive(true);
             hasTriggered = true;
-            GameManager.instance._events.GetComponent<EventSystem>().SetSelectedGameObject(box);
+            GameManager.instance._eventSystemForBothPlayers.GetComponent<EventSystem>().SetSelectedGameObject(box);
             Time.timeScale = 0;
             entryClip.Rebind();
             entryClip.Update(0f);

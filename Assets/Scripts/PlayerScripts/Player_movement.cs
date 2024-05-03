@@ -165,8 +165,8 @@ public class Player_movement : MonoBehaviour
 
     public void OnPauseMenu(bool value)
     {
-        EventSystem player2Paused = GameManager.instance.p2.GetComponent<EventSystem>();
-        EventSystem player1Paused = GameManager.instance.p1.GetComponent<EventSystem>();
+        EventSystem player2Paused = GameManager.instance.player2EventSystem.GetComponent<EventSystem>();
+        EventSystem player1Paused = GameManager.instance.player1EventSystem.GetComponent<EventSystem>();
         _globalEvents.enabled = false;
         Debug.Log(playerIndex);
         if (playerIndex == 0)

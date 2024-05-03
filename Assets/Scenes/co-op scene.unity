@@ -10077,6 +10077,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fallen Angel Virgil
       objectReference: {fileID: 0}
+    - target: {fileID: 5205149215868945006, guid: 5b8edf7a2c17d3d478b607c866e15174,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7811838294498823347, guid: 5b8edf7a2c17d3d478b607c866e15174,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -10891,7 +10896,7 @@ PrefabInstance:
     - target: {fileID: 5425823505382445665, guid: 6f54f83e10a239546ad6251645f07e9b,
         type: 3}
       propertyPath: onlyVirgil
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5986526922118790407, guid: 6f54f83e10a239546ad6251645f07e9b,
         type: 3}
@@ -27505,6 +27510,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 5df255e7d82eda04e8040c6b03146859,
         type: 2}
+    - target: {fileID: 4096624456859787653, guid: 9b9bbf6b8c1105448bd7848291b322be,
+        type: 3}
+      propertyPath: _eventSystemForBothPlayers
+      value: 
+      objectReference: {fileID: 1204604208}
     - target: {fileID: 4096624456859787653, guid: 9b9bbf6b8c1105448bd7848291b322be,
         type: 3}
       propertyPath: playerInstances.Array.data[0]
