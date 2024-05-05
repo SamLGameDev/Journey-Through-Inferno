@@ -10,7 +10,7 @@ public class DropTarotCard : MonoBehaviour
     private GameEvent PlayerAquiredCard;
     public void DropCard(Player Killer)
     {
-   
+        Debug.Log("here pluto");
         if (Random.Range(0.0001f, 101) < attributes.cardDropChance + Killer.cardDropChance)
         {
             TarotCards card;

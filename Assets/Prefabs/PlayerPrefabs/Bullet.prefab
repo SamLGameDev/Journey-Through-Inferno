@@ -132,6 +132,7 @@ MonoBehaviour:
   target2: {fileID: 7613544990411879474, guid: c59d0046edde7e342bbad33d6fdd1f79, type: 3}
   speed: 15
   rotateSpeed: 200
+  Enemys: {fileID: 11400000, guid: e4a5f4694b79fe4488542d7385a2650f, type: 2}
 --- !u!58 &5221023343936830034
 CircleCollider2D:
   m_ObjectHideFlags: 0

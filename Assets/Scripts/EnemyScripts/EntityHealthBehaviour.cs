@@ -225,13 +225,13 @@ public class EntityHealthBehaviour : MonoBehaviour
             {
                 knockbackDistance = 1f;
             }
-            knockbackDistance = hasKnockBack == null ? 250000f : hasKnockBack.effectValue;
+            knockbackDistance = hasKnockBack == null ? 1000f : hasKnockBack.effectValue;
             EnablerAStar(false);
             Debug.Log(knockbackDistance);
             Vector2 direction = damageDealer.transform.position - transform.position;
             Debug.Log("4rdref");
             Rigidbody2D rb = GetComponent<Rigidbody2D>();
-            rb.AddForce(-direction.normalized * Time.deltaTime * knockbackDistance);
+            rb.AddForce(-direction.normalized * knockbackDistance);
             yield return new WaitForSeconds(0.15f);
             rb.totalForce = Vector2.zero;
             rb.velocity = Vector2.zero;

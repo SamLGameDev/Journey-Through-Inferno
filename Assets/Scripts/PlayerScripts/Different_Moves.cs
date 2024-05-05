@@ -37,12 +37,14 @@ public class Different_Moves : MonoBehaviour
     {
         // creates a box that will grab everything with a collider in it that matches the layers to
         // hit then apply damage to it.
+        Debug.Log("being called");
         RaycastHit2D[] hit = Physics2D.BoxCastAll(new Vector2(transform.position.x, transform.position.y + 1 + (stats.meleeSizeY / 2)), new Vector2(stats.meleeSizeX, stats.meleeSizeY), 0, transform.up, stats.meleeDistance,
             GetComponent<EntityHealthBehaviour>().Confused ? LayersToHitWhenConfused : stats.layersToHit);
         foreach (RaycastHit2D hit2d in hit)
         {
             if (hit2d.collider.GetComponent<EntityHealthBehaviour>() == null) { return; }
             hit2d.collider.gameObject.GetComponent<EntityHealthBehaviour>().ApplyDamage(stats.damage);
+            Debug.Log("has Hit");
         }
 
 

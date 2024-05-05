@@ -3805,7 +3805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f28d629d50fda14b80f987ce825f904, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneID: 8
+  nextSceneID: 6
 --- !u!212 &291487507
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17837,6 +17837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db465e459a368944b8e1f0349650dc97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsTutorial: 0
   text: {fileID: 816450365}
   alivePlayers: 0
   enemiesRemaining: 0
@@ -17847,9 +17848,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5df255e7d82eda04e8040c6b03146859, type: 2}
   InputManager: {fileID: 6682802481998483040, guid: 9f004c0e5ade05448a8ceedc3c80610c,
     type: 3}
-  p1: {fileID: 0}
-  p2: {fileID: 0}
-  _events: {fileID: 155145617}
+  player1EventSystem: {fileID: 0}
+  player2EventSystem: {fileID: 0}
+  _eventSystemForBothPlayers: {fileID: 155145617}
   _clearPortal: {fileID: 291487505}
   bossInstances:
   - {fileID: 720928131}

@@ -121,4 +121,5 @@ MonoBehaviour:
   target2: {fileID: 0}
   speed: 15
   rotateSpeed: 200
+  Enemys: {fileID: 11400000, guid: e4a5f4694b79fe4488542d7385a2650f, type: 2}
   Event: {fileID: 11400000, guid: b332f4f3895ee264596a5b567c48376a, type: 2}

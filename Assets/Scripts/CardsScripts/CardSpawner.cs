@@ -44,6 +44,7 @@ public class CardSpawner : MonoBehaviour
     void Start()
     {
         StartCoroutine(HandelingCardSelectionGameState());
+        onScreenCards =   null  ;
     }
 
 

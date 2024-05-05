@@ -6,6 +6,7 @@ using System.Linq;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.DualShock;
@@ -14,6 +15,8 @@ using UnityEngine.InputSystem.XInput;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    [SerializeField]
+    private bool IsTutorial;
     public GameObject text;
     public int alivePlayers;
     public int enemiesRemaining;
@@ -99,6 +102,7 @@ public class GameManager : MonoBehaviour
             }
         }
         AIDestinationSetter.players = playerInstances.GetItems();
+        UpdateTarotNumber();
     }
 
     public void UpdateTarotNumber()
@@ -150,7 +154,7 @@ public class GameManager : MonoBehaviour
     public void OnEnemyDeath()
     {
         enemiesRemaining--;
-        if (enemysCount.GetItems().Count < 1)
+        if (enemysCount.GetItems().Count < 1 && !IsTutorial)
         {
             UpdateGameState(GameState.EncounterCleared);
 
@@ -195,13 +199,27 @@ public class GameManager : MonoBehaviour
             yield return new WaitUntil(() => OnEncounterCleared);
             Time.timeScale = 0;
             spawner.encounterCleared = true;
-            yield return new WaitUntil(() => spawner.onScreenCards[0,0] != null || noCards);
-            _eventSystemForBothPlayers.SetSelectedGameObject((GameObject)spawner.onScreenCards[0, 0]);
+            yield return new WaitUntil(() => OnScreenCardsExists() || noCards);
+            if (!noCards)
+            {
+                _eventSystemForBothPlayers.SetSelectedGameObject((GameObject)spawner.onScreenCards[0, 0]);
+            }
             noCards = false;
             OnEncounterCleared = false;
         }
         
 
+    }
+
+    private bool OnScreenCardsExists()
+    {
+        try
+        {
+            bool doesExist = spawner.onScreenCards[0, 0] != null ? true : false;
+            return doesExist;
+        }
+        catch
+        { return false; }
     }
     private IEnumerator VictoryAnimations()
     {

@@ -2753,6 +2753,11 @@ PrefabInstance:
       objectReference: {fileID: 747622729}
     - target: {fileID: 4096624456859787653, guid: 9b9bbf6b8c1105448bd7848291b322be,
         type: 3}
+      propertyPath: IsTutorial
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4096624456859787653, guid: 9b9bbf6b8c1105448bd7848291b322be,
+        type: 3}
       propertyPath: enemysCount
       value: 
       objectReference: {fileID: 11400000, guid: e4a5f4694b79fe4488542d7385a2650f,
@@ -2768,6 +2773,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 77dab4b9db3db1845b84e0d58cdc2603,
         type: 2}
+    - target: {fileID: 4096624456859787653, guid: 9b9bbf6b8c1105448bd7848291b322be,
+        type: 3}
+      propertyPath: _eventSystemForBothPlayers
+      value: 
+      objectReference: {fileID: 1568279922}
     - target: {fileID: 4096624456859787653, guid: 9b9bbf6b8c1105448bd7848291b322be,
         type: 3}
       propertyPath: playerInstances.Array.data[0]
