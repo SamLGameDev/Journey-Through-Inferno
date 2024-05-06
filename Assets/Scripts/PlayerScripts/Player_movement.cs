@@ -70,7 +70,7 @@ public class Player_movement : MonoBehaviour
     /// <summary>
     /// Gets the pause menu canvas that was created in the level
     /// </summary>
-    public bool isPaused;
+    public static bool isPaused;
     /// <summary>
     /// true if currently paused
     /// </summary>
@@ -165,10 +165,45 @@ public class Player_movement : MonoBehaviour
 
     public void OnPauseMenu(bool value)
     {
-        EventSystem player2Paused = GameManager.instance.player2EventSystem.GetComponent<EventSystem>();
-        EventSystem player1Paused = GameManager.instance.player1EventSystem.GetComponent<EventSystem>();
+        EventSystem player2Paused = GameManager.instance.player2EventSystem;
+        EventSystem player1Paused = GameManager.instance.player1EventSystem;
+        InputManager.currentState = InputManager.State.cutscene;
+        MovementDirection = Vector2.zero;
         _globalEvents.enabled = false;
         Debug.Log(playerIndex);
+        if (isPaused == false)
+        {
+            PauseMenu.SetActive(true);
+            isPaused = true;
+            Time.timeScale = 0;
+        }
+        else
+        {
+            PauseMenu.SetActive(false);
+            isPaused = false;
+            InputManager.currentState = InputManager.State.None;
+            if (GameManager.OnScreenCardsExists())
+            {
+                CardSpawner.currentSelectingCards.SetSelectedGameObject((GameObject)GameManager.instance.spawner.onScreenCards[0, 0]);
+                if (CardSpawner.currentSelectingCards == player2Paused)
+                {
+                    player1Paused.enabled = false;
+                    player2Paused.enabled = true;
+                    return;
+                }
+                player2Paused.enabled = false;
+                player1Paused.enabled = true;
+            }
+            else
+            {
+                _globalEvents.enabled = true;
+                Time.timeScale = 1;
+            }
+            return;
+
+
+        }
+
         if (playerIndex == 0)
         {
             player2Paused.enabled = false;
@@ -184,19 +219,7 @@ public class Player_movement : MonoBehaviour
             player2Paused.UpdateModules();
         }
         
-        if (isPaused == false)
-        {
-            PauseMenu.SetActive(true);
-            isPaused = true;
-            Time.timeScale = 0;
-        }
-        else
-        {
-            PauseMenu.SetActive(false);
-            isPaused = false;
-            _globalEvents.enabled = true;
-            Time.timeScale = 1;
-        }
+
     }
 
     /// <summary>

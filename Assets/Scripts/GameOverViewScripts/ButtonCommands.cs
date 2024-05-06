@@ -67,11 +67,13 @@ public class ButtonCommands : MonoBehaviour
     public void ResumeGame()
     {
         Time.timeScale = 1;
-        EventSystem player1Events = GameManager.instance.player1EventSystem.GetComponent<EventSystem>();
-        EventSystem player2Events = GameManager.instance.player2EventSystem.GetComponent<EventSystem>();
+        EventSystem player1Events = GameManager.instance.player1EventSystem;
+        EventSystem player2Events = GameManager.instance.player2EventSystem;
         player1Events.enabled = true;
         player2Events.enabled = true;
-        if (GameManager.instance.spawner.onScreenCards[0, 0] != null)
+        InputManager.currentState = InputManager.State.None;
+        Player_movement.isPaused = false;
+        if (GameManager.OnScreenCardsExists())
         {
             CardSpawner.currentSelectingCards.SetSelectedGameObject((GameObject)GameManager.instance.spawner.onScreenCards[0, 0]);
             if (CardSpawner.currentSelectingCards == player2Events)
@@ -80,6 +82,10 @@ public class ButtonCommands : MonoBehaviour
                 return;
             }
             player2Events.enabled= false;
+        }
+        else
+        {
+            GameManager.instance._eventSystemForBothPlayers.enabled = true;
         }
 
     }

@@ -211,11 +211,11 @@ public class GameManager : MonoBehaviour
 
     }
 
-    private bool OnScreenCardsExists()
+    public static bool OnScreenCardsExists()
     {
         try
         {
-            bool doesExist = spawner.onScreenCards[0, 0] != null ? true : false;
+            bool doesExist = GameManager.instance.spawner.onScreenCards[0, 0] != null ? true : false;
             return doesExist;
         }
         catch
