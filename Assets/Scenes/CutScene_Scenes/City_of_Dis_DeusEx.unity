@@ -241,6 +241,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3139970759743353346, guid: a2b4312d7bcca604295d8e10a05395ad,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 616
+      objectReference: {fileID: 0}
+    - target: {fileID: 3139970759743353346, guid: a2b4312d7bcca604295d8e10a05395ad,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -60
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630473903102539314, guid: a2b4312d7bcca604295d8e10a05395ad,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210877284166862656, guid: a2b4312d7bcca604295d8e10a05395ad,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210877284166862656, guid: a2b4312d7bcca604295d8e10a05395ad,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758394728729923936, guid: a2b4312d7bcca604295d8e10a05395ad,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -526,7 +556,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000951930}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 955.4825, y: 506.0974, z: 15214.685}
+  m_LocalPosition: {x: 1873, y: 506.0974, z: 15214.685}
   m_LocalScale: {x: 1959.1997, y: 1020.1655, z: 300}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -694,7 +724,7 @@ Transform:
   m_GameObject: {fileID: 1401932220}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.676291, y: 3.311694, z: 3.485627}
+  m_LocalScale: {x: 4.5, y: 4.0537114, z: 4.2666154}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
