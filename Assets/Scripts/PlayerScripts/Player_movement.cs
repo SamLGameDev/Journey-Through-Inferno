@@ -99,7 +99,7 @@ public class Player_movement : MonoBehaviour
     public bool confusionLoaded = false;
     private Lunge _lunge;
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         UpdateSpeed();
         _lunge = new Lunge();
@@ -143,6 +143,7 @@ public class Player_movement : MonoBehaviour
             }
             yield return new WaitForSeconds(stats.timeUntillRegen.value);
             yield return new WaitWhile(() => healthBehaviour.currentHealth == stats.maxHealth);
+
         }
     }
     public void UpdateSpeed()
