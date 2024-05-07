@@ -101,6 +101,7 @@ public class GameManager : MonoBehaviour
                 enemiesRemaining++;
             }
         }
+        Debug.Log(playerInstances.GetListSize());
         AIDestinationSetter.players = playerInstances.GetItems();
         UpdateTarotNumber();
     }
