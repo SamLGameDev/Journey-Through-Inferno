@@ -103,7 +103,7 @@ public class PlutoBehaviour : MonoBehaviour
         if (statueTimer >= stats.statueDelay)
         {
             GameObject statue = Instantiate(stats.statuePrefab);
-            statue.transform.position = new Vector3(places[0, 0], places[1, 0], 0);
+            statue.transform.position = new Vector3(places[0, 5], places[1, 5], 0);
             statueTimer -= stats.statueDelay;
         }
         else

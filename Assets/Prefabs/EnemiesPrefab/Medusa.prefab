@@ -104,9 +104,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 10
   meleeRange: 4
-  meleeAttackDamage: 20
+  meleeAttackDamage: 5
   meleeAttackCooldown: 1.5
-  poisonAmount: 35
+  poisonAmount: 50
   poisonImpactSize: 4
   poisonFlightTime: 1.5
   poisonDamage: 10

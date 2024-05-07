@@ -178,12 +178,12 @@ TextureImporter:
       name: boss_Plutus_Idle_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 17
+        x: 21
+        y: 18
         width: 122
         height: 194
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -241,8 +241,8 @@ TextureImporter:
       name: boss_Plutus_Idle_3
       rect:
         serializedVersion: 2
-        x: 419
-        y: 17
+        x: 420
+        y: 18
         width: 127
         height: 195
       alignment: 0

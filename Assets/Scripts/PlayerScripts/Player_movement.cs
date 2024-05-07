@@ -283,9 +283,10 @@ public class Player_movement : MonoBehaviour
         {
             //sword.GetComponent<Animator>().SetTrigger("Press");
             passed = true;
+
+            AudioManager.instance.PlaySound("Sword_Slash");
         }
-        
-        AudioManager.instance.PlaySound("Sword_Slash");
+
     }
     private IEnumerator controllerRumble(float leftStick, float rightStick, float duration, Gamepad gamepad)
     {
@@ -419,9 +420,9 @@ public class Player_movement : MonoBehaviour
            AudioManager.instance.PlaySound("Player_Dash");
 
             yield return null;
-            speed += stats.dashSpeed.value;
+            speed = stats.dashSpeed.value;
             yield return new WaitForSeconds(stats.dashDuration.value);
-            speed -= stats.dashSpeed.value;
+            speed = stats.speed.value + stats.chariotSpeed.value;
             dashTrail.enabled = false;
             dodash = false;
             yield return new WaitForSeconds(stats.dashCooldown.value - stats.cooldownReduction.value);

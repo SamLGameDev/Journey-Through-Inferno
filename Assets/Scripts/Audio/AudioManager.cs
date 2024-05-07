@@ -57,14 +57,6 @@ public class AudioManager : MonoBehaviour
         SceneManager.sceneLoaded += ChangeBackgroundMusic;
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-           PlaySound("Test_Sounds");
-        }
-    }
-
     private void ChangeBackgroundMusic(Scene scene, LoadSceneMode mode)
     {
         StopSound("Tutorial_Music");
