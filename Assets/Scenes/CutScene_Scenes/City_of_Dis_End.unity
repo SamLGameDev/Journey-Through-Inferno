@@ -435,6 +435,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3139970759743353346, guid: a2b4312d7bcca604295d8e10a05395ad,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 612
+      objectReference: {fileID: 0}
+    - target: {fileID: 3139970759743353346, guid: a2b4312d7bcca604295d8e10a05395ad,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -56
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630473903102539314, guid: a2b4312d7bcca604295d8e10a05395ad,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210877284166862656, guid: a2b4312d7bcca604295d8e10a05395ad,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210877284166862656, guid: a2b4312d7bcca604295d8e10a05395ad,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758394728729923936, guid: a2b4312d7bcca604295d8e10a05395ad,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -705,8 +735,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1401932220}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0698, y: 0.0403, z: 0}
-  m_LocalScale: {x: 4.8186193, y: 3.878424, z: 0.9}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 5, y: 4.0244145, z: 0.93387747}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
