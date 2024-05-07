@@ -253,6 +253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onRegen: {fileID: 11400000, guid: a8f7bcf4e71a0ef4cb11c234d2ba0d15, type: 2}
   OnExit: {fileID: 11400000, guid: c51738528abf586479ca6105d4d420b2, type: 2}
+  playerInstances: {fileID: 0}
 --- !u!1 &4158443830731422250
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,6 +367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _resumeButton: {fileID: 0}
+  _globalEvents: {fileID: 0}
   dodash: 0
   playerIndex: 0
   RevivePlayer: 0
@@ -375,7 +377,6 @@ MonoBehaviour:
   upDown: 1
   running: 0
   PauseMenu: {fileID: 0}
-  isPaused: 0
   isInvisible: 0
   MovementDirection: {x: 0, y: 0}
   stats: {fileID: 11400000, guid: c53c78a8f908aff40b06667ff5c1036a, type: 2}
@@ -487,8 +488,11 @@ MonoBehaviour:
   IsAlive: 1
   invincible: 0
   Confused: 0
+  isFrozen: 0
   onlyVirgil: 0
   onlyDante: 0
+  BossDeathEvent: {fileID: 0}
+  playerInstances: {fileID: 0}
 --- !u!114 &5257204027819863137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -549,6 +553,7 @@ MonoBehaviour:
   hasEmperor: 0
   hasMoon: 0
   hasHighPriestess: 0
+  hasDevil: 0
 --- !u!114 &5657152852828636272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -620,7 +625,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stepTime: 0.35
-  walkAnimName: Walking_Sound_Dante
+  playerName: 
 --- !u!114 &502134439329523173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -702,7 +707,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8550325053892496713}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.08, y: 0.08, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -786,7 +791,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8560096884297861412}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.08, y: 0.32, z: -0.010237869}
+  m_LocalPosition: {x: 0.08, y: 0.06, z: -0.010237869}
   m_LocalScale: {x: 0.6666667, y: 0.6666667, z: 0.7333333}
   m_ConstrainProportionsScale: 0
   m_Children: []
