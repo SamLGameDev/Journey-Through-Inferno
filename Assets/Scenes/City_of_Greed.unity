@@ -14985,6 +14985,11 @@ PrefabInstance:
       propertyPath: aoeRange
       value: 3.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7257827493694455848, guid: 4723d1f7f5ef5564fbfb35af2f49268b,
+        type: 3}
+      propertyPath: geyserCollider
+      value: 
+      objectReference: {fileID: 1656792911}
     - target: {fileID: 7426974197975975308, guid: 4723d1f7f5ef5564fbfb35af2f49268b,
         type: 3}
       propertyPath: m_RootOrder
@@ -19572,6 +19577,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1656792911 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: -2844135195118118089, guid: 4723d1f7f5ef5564fbfb35af2f49268b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1185743145}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1667904476
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ public class ReworkedGeyser : MonoBehaviour
 {
     public BoxCollider2D geyserCollider;
     private bool isColliderEnabled = false;
+    private float timeBeforeDamage;
     
 
     private void Start()
@@ -20,8 +21,10 @@ public class ReworkedGeyser : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (isColliderEnabled && collision.CompareTag("Player"))
+
+        if (isColliderEnabled && collision.CompareTag("Player") && Time.time - 1.5f > timeBeforeDamage)
         {
+            timeBeforeDamage = Time.time;
             collision.GetComponent<EntityHealthBehaviour>().ApplyDamage(1);
             
         }
