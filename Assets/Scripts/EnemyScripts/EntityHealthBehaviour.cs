@@ -154,6 +154,10 @@ public class EntityHealthBehaviour : MonoBehaviour
     /// <param name="damageAmount">Amount of damage to apply</param>
     public void ApplyDamage(int damageAmount, GameObject damagerDealerLocal = null, string weapon = " ")
     {
+        if (currentHealth < 1)
+        {
+            return;
+        }
         if (damagerDealerLocal != null && damagerDealerLocal.name == "Player 1" && onlyVirgil)
         {
             return;

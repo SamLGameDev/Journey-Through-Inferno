@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     [SerializeField]
+    private bool isBossBattle;
+    [SerializeField]
     private bool IsTutorial;
     public GameObject text;
     public int alivePlayers;
@@ -155,7 +157,7 @@ public class GameManager : MonoBehaviour
     public void OnEnemyDeath()
     {
         enemiesRemaining--;
-        if (enemysCount.GetItems().Count < 1 && !IsTutorial)
+        if (enemysCount.GetItems().Count < 1 && !IsTutorial && !isBossBattle)
         {
             UpdateGameState(GameState.EncounterCleared);
 

@@ -9703,7 +9703,7 @@ PrefabInstance:
     - target: {fileID: 7755749307358901245, guid: 4fb305f8c16ec094c923d892d9a84cdf,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8489151456280302096, guid: 4fb305f8c16ec094c923d892d9a84cdf,
         type: 3}
@@ -25645,6 +25645,11 @@ PrefabInstance:
       objectReference: {fileID: 553176732}
     - target: {fileID: 4096624456859787653, guid: e58d4a0c7222d2b4089db5796382f190,
         type: 3}
+      propertyPath: isBossBattle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4096624456859787653, guid: e58d4a0c7222d2b4089db5796382f190,
+        type: 3}
       propertyPath: bottomTextBox
       value: 
       objectReference: {fileID: 642551051}
@@ -25658,6 +25663,11 @@ PrefabInstance:
         type: 3}
       propertyPath: playerstats.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4096624456859787653, guid: e58d4a0c7222d2b4089db5796382f190,
+        type: 3}
+      propertyPath: bossInstances.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4096624456859787653, guid: e58d4a0c7222d2b4089db5796382f190,
         type: 3}
@@ -25681,6 +25691,11 @@ PrefabInstance:
       propertyPath: playerInstances.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4096624456859787653, guid: e58d4a0c7222d2b4089db5796382f190,
+        type: 3}
+      propertyPath: bossInstances.Array.data[0]
+      value: 
+      objectReference: {fileID: 699024874}
     - target: {fileID: 4096624456859787653, guid: e58d4a0c7222d2b4089db5796382f190,
         type: 3}
       propertyPath: tarotCardAmounts.Array.size
