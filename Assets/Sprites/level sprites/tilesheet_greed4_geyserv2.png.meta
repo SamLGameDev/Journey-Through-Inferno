@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 50
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -173,7 +173,154 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: tilesheet_greed4_geyserv2_0
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 111
+        width: 31
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7b76dbc2bce8a745bab5092f04d4915
+      internalID: -1393715997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesheet_greed4_geyserv2_1
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 112
+        width: 46
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b751701106316949a02a79c0b5d6b99
+      internalID: 1400461976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesheet_greed4_geyserv2_2
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 111
+        width: 84
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42c691c3d0ba93a42ae6d89a78544804
+      internalID: -1961709572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesheet_greed4_geyserv2_3
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 104
+        width: 104
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d7d1d84cc6b21e4987060849c194014
+      internalID: 706940229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesheet_greed4_geyserv2_4
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 10
+        width: 130
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a12c875765f6a446bf923c226ba4632
+      internalID: 698211568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesheet_greed4_geyserv2_5
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 2
+        width: 156
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d4a9a4e40c7d4148a2090eddcaa6f77
+      internalID: 417184729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesheet_greed4_geyserv2_6
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 29
+        width: 39
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 482e56a7810cebf4ba3df2ba62551117
+      internalID: -1777899635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -184,7 +331,14 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      tilesheet_greed4_geyserv2_0: -1393715997
+      tilesheet_greed4_geyserv2_1: 1400461976
+      tilesheet_greed4_geyserv2_2: -1961709572
+      tilesheet_greed4_geyserv2_3: 706940229
+      tilesheet_greed4_geyserv2_4: 698211568
+      tilesheet_greed4_geyserv2_5: 417184729
+      tilesheet_greed4_geyserv2_6: -1777899635
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
