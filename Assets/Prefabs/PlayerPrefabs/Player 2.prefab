@@ -129,7 +129,7 @@ Transform:
   - {fileID: 415538111962109694}
   - {fileID: 1052976304664338801}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6436077244101123047
 SpriteRenderer:
@@ -196,6 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _resumeButton: {fileID: 0}
+  _globalEvents: {fileID: 0}
   dodash: 0
   playerIndex: 1
   RevivePlayer: 0
@@ -205,7 +206,6 @@ MonoBehaviour:
   upDown: 1
   running: 0
   PauseMenu: {fileID: 0}
-  isPaused: 0
   isInvisible: 0
   MovementDirection: {x: 0, y: 0}
   stats: {fileID: 11400000, guid: 5df255e7d82eda04e8040c6b03146859, type: 2}
@@ -272,8 +272,11 @@ MonoBehaviour:
   IsAlive: 1
   invincible: 0
   Confused: 0
+  isFrozen: 0
   onlyVirgil: 0
   onlyDante: 0
+  BossDeathEvent: {fileID: 0}
+  playerInstances: {fileID: 0}
 --- !u!61 &8921179218869034630
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -379,6 +382,7 @@ MonoBehaviour:
   hasEmperor: 0
   hasMoon: 0
   hasHighPriestess: 0
+  hasDevil: 0
 --- !u!114 &3974176746681490940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -450,7 +454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stepTime: 0.35
-  walkAnimName: Walking_Sound_Virgil
+  playerName: 
 --- !u!114 &5002834956180827612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -764,7 +768,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1052976304664338801
 Transform:
   m_ObjectHideFlags: 0
