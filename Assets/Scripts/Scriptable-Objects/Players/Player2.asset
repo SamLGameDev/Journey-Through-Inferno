@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0628e9c02fb16d43a69c1e106fb83da, type: 3}
   m_Name: Player2
   m_EditorClassIdentifier: 
-  damage: 100
-  maxHealth: 15
+  damage: 5
+  maxHealth: 20
   cardDropChance: 0
   OfTypecounter: {fileID: 11400000, guid: 77dab4b9db3db1845b84e0d58cdc2603, type: 2}
   droppableCards: []
@@ -75,7 +75,7 @@ MonoBehaviour:
     useConstant: 1
   swordDamage:
     Variable: {fileID: 11400000, guid: 21d917d11332a4344932089bed7466fe, type: 2}
-    constantValue: 3
+    constantValue: 5
     useConstant: 1
   swordDamageModifier:
     Variable: {fileID: 11400000, guid: c1b63a689d586fc469aae8239c5b8e53, type: 2}

@@ -8159,12 +8159,12 @@ PrefabInstance:
     - target: {fileID: 3684730056783915263, guid: 4a6efd9d63ff62e47b860ff0959888fa,
         type: 3}
       propertyPath: poisonAmount
-      value: 100
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3684730056783915263, guid: 4a6efd9d63ff62e47b860ff0959888fa,
         type: 3}
       propertyPath: poisonDamage
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3684730056783915263, guid: 4a6efd9d63ff62e47b860ff0959888fa,
         type: 3}
@@ -8175,6 +8175,11 @@ PrefabInstance:
         type: 3}
       propertyPath: poisonImpactSize
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3684730056783915263, guid: 4a6efd9d63ff62e47b860ff0959888fa,
+        type: 3}
+      propertyPath: actionCooldownTime
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3684730056783915263, guid: 4a6efd9d63ff62e47b860ff0959888fa,
         type: 3}
@@ -14917,12 +14922,12 @@ PrefabInstance:
     - target: {fileID: 2495953773665164011, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8
+      value: 0.38
       objectReference: {fileID: 0}
     - target: {fileID: 2495953773665164011, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -21.5
+      value: -5.15
       objectReference: {fileID: 0}
     - target: {fileID: 2495953773665164011, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
         type: 3}
@@ -18155,6 +18160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db465e459a368944b8e1f0349650dc97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBossBattle: 0
   IsTutorial: 0
   text: {fileID: 816450365}
   alivePlayers: 0
@@ -25353,6 +25359,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5669364995410511013, guid: 4fb305f8c16ec094c923d892d9a84cdf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6112290941295044682, guid: 4fb305f8c16ec094c923d892d9a84cdf,
         type: 3}
