@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0628e9c02fb16d43a69c1e106fb83da, type: 3}
   m_Name: Player1
   m_EditorClassIdentifier: 
-  damage: 3
+  damage: 100
   maxHealth: 15
   cardDropChance: 0
   OfTypecounter: {fileID: 11400000, guid: 77dab4b9db3db1845b84e0d58cdc2603, type: 2}
