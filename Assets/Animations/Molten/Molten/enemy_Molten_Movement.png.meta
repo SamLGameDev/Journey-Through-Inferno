@@ -178,12 +178,12 @@ TextureImporter:
       name: enemy_Molten_Movement_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 147
+        x: 300
+        y: 7
         width: 92
         height: 138
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -199,12 +199,12 @@ TextureImporter:
       name: enemy_Molten_Movement_1
       rect:
         serializedVersion: 2
-        x: 107
-        y: 147
+        x: 201
+        y: 7
         width: 92
         height: 138
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -220,12 +220,12 @@ TextureImporter:
       name: enemy_Molten_Movement_2
       rect:
         serializedVersion: 2
-        x: 199
-        y: 147
+        x: 109
+        y: 7
         width: 92
         height: 138
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -241,12 +241,12 @@ TextureImporter:
       name: enemy_Molten_Movement_3
       rect:
         serializedVersion: 2
-        x: 291
-        y: 147
+        x: 17
+        y: 7
         width: 92
         height: 138
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -262,12 +262,12 @@ TextureImporter:
       name: enemy_Molten_Movement_4
       rect:
         serializedVersion: 2
-        x: 9
-        y: 7
+        x: 299
+        y: 147
         width: 92
         height: 138
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -283,12 +283,12 @@ TextureImporter:
       name: enemy_Molten_Movement_5
       rect:
         serializedVersion: 2
-        x: 106
-        y: 7
+        x: 201
+        y: 147
         width: 92
         height: 138
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -304,12 +304,12 @@ TextureImporter:
       name: enemy_Molten_Movement_6
       rect:
         serializedVersion: 2
-        x: 199
-        y: 7
+        x: 109
+        y: 147
         width: 92
         height: 138
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -325,12 +325,12 @@ TextureImporter:
       name: enemy_Molten_Movement_7
       rect:
         serializedVersion: 2
-        x: 291
-        y: 7
+        x: 17
+        y: 147
         width: 92
         height: 138
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -338,6 +338,27 @@ TextureImporter:
       bones: []
       spriteID: 700c23358b4108144904f3f5041b5bcc
       internalID: 280166711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_Molten_Movement_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 400
+        height: 293
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1606eddbfb0ac2749819012f07e378d9
+      internalID: 1362853431
       vertices: []
       indices: 
       edges: []
@@ -361,6 +382,7 @@ TextureImporter:
       enemy_Molten_Movement_5: -1630288861
       enemy_Molten_Movement_6: -661304625
       enemy_Molten_Movement_7: 280166711
+      enemy_Molten_Movement_8: 1362853431
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

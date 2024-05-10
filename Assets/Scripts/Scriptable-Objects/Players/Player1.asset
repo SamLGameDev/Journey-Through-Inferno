@@ -13,10 +13,15 @@ MonoBehaviour:
   m_Name: Player1
   m_EditorClassIdentifier: 
   damage: 5
-  maxHealth: 15
+  maxHealth: 35
   cardDropChance: 0
   OfTypecounter: {fileID: 11400000, guid: 77dab4b9db3db1845b84e0d58cdc2603, type: 2}
-  droppableCards: []
+  droppableCards:
+  - {fileID: 11400000, guid: ebd4495e00f2e8a46b1cbc38ae91c7fe, type: 2}
+  - {fileID: 11400000, guid: b10f048a0ac2b994e9d69ec36c997081, type: 2}
+  - {fileID: 11400000, guid: dc1b22430d37efb4ebe051c37e3cbbfe, type: 2}
+  - {fileID: 11400000, guid: 3e89064d18748ab4785d926037ac06a3, type: 2}
+  - {fileID: 11400000, guid: b41df299a53ffa24c93eb59bc29a84a9, type: 2}
   layersToHit:
     serializedVersion: 2
     m_Bits: 256
@@ -107,6 +112,7 @@ MonoBehaviour:
     useConstant: 1
   tarotCards:
   - {fileID: 11400000, guid: e90fe7f10aadf424d8cd62537b1b3f95, type: 2}
+  - {fileID: 11400000, guid: 7bac9ee92e27bea408c591a599db4ad1, type: 2}
   criticalHitChance:
     Variable: {fileID: 11400000, guid: fbd168c8de95b1e4390fef01598bdaad, type: 2}
     constantValue: 0
@@ -115,7 +121,7 @@ MonoBehaviour:
     Variable: {fileID: 11400000, guid: 5f3c80b5da10fd24a962ccbf3c1ca656, type: 2}
     constantValue: 4
     useConstant: 1
-  projectilesize: {x: 3, y: 3, z: 1}
+  projectilesize: {x: 2, y: 2, z: 1}
   timeUntilSpreadShot:
     Variable: {fileID: 11400000, guid: c38fc923cb4af05448620dcf63e3bea9, type: 2}
     constantValue: 0.25
