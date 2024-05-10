@@ -85,8 +85,8 @@ public class PlutoBehaviour : MonoBehaviour
 
     private void Clone()
     {
+        GetComponent<Animator>().SetTrigger("Clone");
         hasUsedClone = true;
-
 
         //spawns in two clones
         GameObject clone1 = Instantiate(stats.clonePrefab);
@@ -130,7 +130,7 @@ public class PlutoBehaviour : MonoBehaviour
 
         if ((GetComponent<EntityHealthBehaviour>().currentHealth <= 20) && (hasUsedClone == false))
         {
-            GetComponent<Animator>().SetTrigger("Clone");
+            Clone();
         }
 
         if (statues.GetListSize() < 4)
