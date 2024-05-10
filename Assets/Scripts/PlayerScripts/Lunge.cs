@@ -23,6 +23,7 @@ public class Lunge : MonoBehaviour
     {
         GameObject afterImage = new GameObject();
         SpriteRenderer objectSprite = afterImage.AddComponent<SpriteRenderer>();
+        objectSprite.sortingOrder = 1;
         objectSprite.sprite = spriteRenderer.sprite;
         objectSprite.material.color = new Color(0, 0, 0, 1);
         afterImage.transform.localScale = new Vector2(1.5f, 1.5f);

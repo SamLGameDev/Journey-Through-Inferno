@@ -2,6 +2,7 @@ using Fungus;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.XR;
 
 public class Sword_Damage : MonoBehaviour
 { 
@@ -28,9 +29,9 @@ public class Sword_Damage : MonoBehaviour
             if (stats.criticalHitChance.value > 0 && (Random.Range(0.0001f, 101) < stats.criticalHitChance.value))
             {
                 criticalDamage = stats.criticalHitDamage.value;
-            }
+            } 
             enemyHealth.ApplyDamage(stats.swordDamage.value + stats.swordDamageModifier.value + criticalDamage, transform.parent.parent.gameObject, "sword");
-            stats.ControllerRumble.value = true;
+            transform.parent.parent.GetComponent<Player_movement>().controllerRumble(0.5f, 0.5f, 0.5f);
 
         }
     }

@@ -1,5 +1,6 @@
 using Fungus;
 using Pathfinding;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,6 +38,8 @@ public class GameManager : MonoBehaviour
     public GameObject bottomTextBox;
     public bool noCards = false;
     public Counter<GameObject> enemysCount;
+    [SerializeField]
+    private GameEvent OnEncounterCleaered;
     
 
     public enum GameState
@@ -187,6 +190,7 @@ public class GameManager : MonoBehaviour
             case GameState.EncounterCleared:
                 OnEncounterCleared = true;
                 _clearPortal.SetActive(true);
+                OnEncounterCleaered.Raise();
                 break;
             default:
                 Debug.LogError("Out of range gamestate change");

@@ -15,6 +15,7 @@ public class Player_movement : MonoBehaviour
     [SerializeField] private GameObject _resumeButton;
     [SerializeField] private EventSystem _globalEvents;
     public static bool pvP_Enabled = false;
+    public Gamepad controller;
     public bool dodash = false;
     public int playerIndex;
     public bool RevivePlayer = false;
@@ -88,6 +89,8 @@ public class Player_movement : MonoBehaviour
     /// </summary>
     public bool isInvisible;
 
+    public bool isPetrified;
+
     public Vector2 MovementDirection;
 
     public Player stats;
@@ -111,7 +114,6 @@ public class Player_movement : MonoBehaviour
         StartCoroutine(dash());
         StartCoroutine(invisDurationTimer(stats.invisibilityDuration.value));
         StartCoroutine(invisCooldownTimer());
-        StartCoroutine(controllerRumble(0.5f, 0.5f, 0.5f, stats.gamepad));
         // If the player has the High Priestess Arcana then the timer for the invisibility bursts will start
         if (GetComponentInParent<Tarot_cards>().hasHighPriestess)
         { StartCoroutine(invisCooldownTimer()); }
@@ -273,6 +275,11 @@ public class Player_movement : MonoBehaviour
     public void Player_Melee(GameObject sword)
     {
 
+        if (isPetrified)
+        {
+            return;
+        }
+
         running = true;
         //  sword.SetActive(true);
         // make the sword active
@@ -288,34 +295,33 @@ public class Player_movement : MonoBehaviour
         }
 
     }
-    private IEnumerator controllerRumble(float leftStick, float rightStick, float duration, Gamepad gamepad)
+    public void controllerRumble(float leftStick, float rightStick, float duration)
     {
-        while (true)
-        {
-            yield return new WaitUntil(() => stats.ControllerRumble.value);
-            if(gamepad != null)
-            {
-                gamepad.SetMotorSpeeds(leftStick, rightStick);
-                yield return new WaitForSecondsRealtime(duration);
-                gamepad.ResetHaptics();
-            }
-
-            stats.ControllerRumble.value = false;
-            
-        }
-
+            controller.SetMotorSpeeds(leftStick, rightStick);
+            Invoke("ResetControllerRumble", duration);
+        
+    }
+    public void ResetControllerRumble()
+    {
+        Debug.Log("haiul");
+        controller.ResetHaptics();
     }
     /// <summary>
     /// calls the shoot function from different moves
     /// </summary>
     public void Player_Shooting(Gamepad controller = null)
     {
+        if (isPetrified)
+        {
+            return;
+        }
+
         if (gun_cooldown)
         {
 
             bullet_controller.original = true;
             gun_cooldown = false;
-            if (controller != null) { stats.ControllerRumble.value = true; }
+            if (controller != null) { controllerRumble(0.5f, 0.5f, 0.5f); }
 
             // shoots from the compas's facing direction
             moves.Shoot(stats.layersToHit, transform.GetChild(0).GetChild(0).position,

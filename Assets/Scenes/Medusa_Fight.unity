@@ -8140,6 +8140,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Medusa
       objectReference: {fileID: 0}
+    - target: {fileID: 241013125750778860, guid: 4a6efd9d63ff62e47b860ff0959888fa,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3684730056783915263, guid: 4a6efd9d63ff62e47b860ff0959888fa,
         type: 3}
       propertyPath: topPos

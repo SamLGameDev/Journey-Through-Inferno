@@ -42,6 +42,7 @@ public class InputManager : MonoBehaviour
         Debug.Log(index + " script index");
         movement = players.FirstOrDefault(p => p.playerIndex == index);
         Debug.Log(movement.playerIndex + "player index");
+        movement.controller = (Gamepad)playerInput.devices[0];
     }
     // Update is called once per frame
 
@@ -82,6 +83,7 @@ public class InputManager : MonoBehaviour
     }
     public void OnShoot(CallbackContext context)
     {
+
         if (movement != null && context.phase == InputActionPhase.Performed && currentState == State.None) 
         {
             try
