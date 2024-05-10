@@ -294,7 +294,7 @@ public class Player_movement : MonoBehaviour
             Invoke("ResetControllerRumble", duration);
         
     }
-    private void ResetControllerRumble()
+    public void ResetControllerRumble()
     {
         Debug.Log("haiul");
         controller.ResetHaptics();
