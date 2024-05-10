@@ -9338,12 +9338,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &621783961 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4683655926936684099, guid: 28d04583d0c318648b28ee2c53bdaeab,
-    type: 3}
-  m_PrefabInstance: {fileID: 172993183}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &635431384
 GameObject:
   m_ObjectHideFlags: 0
@@ -10959,7 +10953,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  target: {fileID: 621783961}
+  target: {fileID: 0}
   isConfused: 0
   targets: []
   currentState: 0
@@ -24339,7 +24333,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &2098965591
 BoxCollider2D:
   m_ObjectHideFlags: 0
