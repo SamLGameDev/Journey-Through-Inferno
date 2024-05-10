@@ -178,12 +178,12 @@ TextureImporter:
       name: enemy_ghost_movement_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 33
-        width: 56
-        height: 85
+        x: 18
+        y: 19
+        width: 61
+        height: 99
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -199,12 +199,12 @@ TextureImporter:
       name: enemy_ghost_movement_1
       rect:
         serializedVersion: 2
-        x: 80
-        y: 32
-        width: 60
-        height: 85
+        x: 82
+        y: 19
+        width: 61
+        height: 99
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -220,12 +220,12 @@ TextureImporter:
       name: enemy_ghost_movement_2
       rect:
         serializedVersion: 2
-        x: 148
-        y: 28
-        width: 56
-        height: 90
+        x: 145
+        y: 19
+        width: 65
+        height: 99
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -242,11 +242,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 212
-        y: 32
-        width: 58
-        height: 85
+        y: 19
+        width: 66
+        height: 99
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

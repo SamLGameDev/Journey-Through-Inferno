@@ -4,6 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "ScriptableObjects/GameObjects/Enemys/Pluto")]
 public class Pluto : BasicAttributes
 {
+    public float criticalHealth;
     public float moveInterval;
     public float cerberusCooldown;
     public float cerberusSpeed;

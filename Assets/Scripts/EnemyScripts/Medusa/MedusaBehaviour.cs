@@ -28,6 +28,7 @@ public class MedusaBehaviour : MonoBehaviour
     [Tooltip("Time someone must stay in LOS to become petrified.")]
     public float petrificationSpeed;
     [SerializeField] private float petrificationTime;
+    public GameObject petrificationParticles;
 
     [Header("Ability Timing Attributes")]
     [Tooltip("How long after performing an action until Medusa can perform another.")]
