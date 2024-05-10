@@ -16821,6 +16821,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1658128008857216438, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2443648660638366458, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
         type: 3}
       propertyPath: stepTime
@@ -20056,6 +20061,11 @@ PrefabInstance:
       propertyPath: HealthSprite
       value: 
       objectReference: {fileID: 516702346}
+    - target: {fileID: 690802782547880364, guid: 28d04583d0c318648b28ee2c53bdaeab,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1635893551771236532, guid: 28d04583d0c318648b28ee2c53bdaeab,
         type: 3}
       propertyPath: playerInstances
