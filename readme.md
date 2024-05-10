@@ -1,7 +1,8 @@
 ### Journey Through Inferno ### 
 
-Journey Through Inferno is a rogue-like dungeon crawler based on one third of The Divine Comedy - Dante's Inferno. It is a two player co-op game, where the players control Dante and Virgil as they descend into hell. The final level involves the two of them fighting each other, turning co-op into pvp. 
+Dante and Virgil take to the offensive in this Top down 2D Dungeon-Crawler, instead of the fanfiction stroll through Hell, our heroes pick up sword and spells to fight their way through Hades, gaining impressive abilities through the power of tarot cards!
 
+Upon killing an enemy, the player may pick up a Tarot card, which at the end of a level allows the player to choose from a random selection of power-ups. These can affect player movement, damage, health and more.
 ## Licenses
 
 Free Asset Sounds using Extension Asset License. Found at https://assetstore.unity.com/packages/audio/sound-fx/rpg-essentials-sound-effects-free-227708 (accessed 12/3/24)
