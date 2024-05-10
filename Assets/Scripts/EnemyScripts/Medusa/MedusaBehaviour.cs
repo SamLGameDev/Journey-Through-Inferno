@@ -263,6 +263,7 @@ public class MedusaBehaviour : MonoBehaviour
         // Enable input.
         player.GetComponent<Player_movement>().enabled = true;
         player.GetComponent<Different_Moves>().enabled = true;
+        GetComponent<Player_movement>().isPetrified = false;
 
         // Set color to normal.
         player.GetComponent<SpriteRenderer>().color = Color.white;

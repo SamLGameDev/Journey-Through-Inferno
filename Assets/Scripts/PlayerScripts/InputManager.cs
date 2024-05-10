@@ -82,6 +82,7 @@ public class InputManager : MonoBehaviour
     }
     public void OnShoot(CallbackContext context)
     {
+
         if (movement != null && context.phase == InputActionPhase.Performed && currentState == State.None) 
         {
             try

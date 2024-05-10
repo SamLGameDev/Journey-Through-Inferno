@@ -88,6 +88,8 @@ public class Player_movement : MonoBehaviour
     /// </summary>
     public bool isInvisible;
 
+    public bool isPetrified;
+
     public Vector2 MovementDirection;
 
     public Player stats;
@@ -273,6 +275,11 @@ public class Player_movement : MonoBehaviour
     public void Player_Melee(GameObject sword)
     {
 
+        if (isPetrified)
+        {
+            return;
+        }
+
         running = true;
         //  sword.SetActive(true);
         // make the sword active
@@ -310,6 +317,11 @@ public class Player_movement : MonoBehaviour
     /// </summary>
     public void Player_Shooting(Gamepad controller = null)
     {
+        if (isPetrified)
+        {
+            return;
+        }
+
         if (gun_cooldown)
         {
 
