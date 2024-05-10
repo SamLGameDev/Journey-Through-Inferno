@@ -181,16 +181,15 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Dante and Virgil take to the offensive in this Roguelike Dungeon Crawler,
-    and instead of the fanfiction stroll through Hell, our heroes pick up sword and
-    spells to fight their way through Hell, gaining impressive abilities through
-    the power of tarot cards!
+  m_text: 'Dante and Virgil take to the offensive in this Topdown 2D Dungeon-Crawler,
+    instead of the fanfiction stroll through Hell, our heroes pick up sword and spells
+    to fight their way through Hades, gaining impressive abilities through the power
+    of tarot cards!
 
 
-    Upon killing an enemy, the player may pick up
-    a Tarot card, which at the end of a level allows the player to choose from a
-    random selection of power-ups. These can affect player movement, damage, health
-    and more.'
+    Upon killing an enemy, the player may pick up a Tarot card,
+    which at the end of a level allows the player to choose from a random selection
+    of power-ups. These can affect player movement, damage, health and more.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 8d22a2d6dac130847b3237b40c409ce1, type: 2}
@@ -437,6 +436,7 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1299859653}
+  - {fileID: 2140756207}
   m_Father: {fileID: 1453823789}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1180,7 +1180,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1087954446
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1554,7 +1554,6 @@ RectTransform:
   - {fileID: 1712954183}
   - {fileID: 562906619}
   - {fileID: 535492809}
-  - {fileID: 2140756207}
   - {fileID: 1087954446}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -2570,7 +2569,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2140756207
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2578,9 +2577,9 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2140756206}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.111111, y: 1.111111, z: 1.111111}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1680288104}
@@ -2589,11 +2588,11 @@ RectTransform:
   - {fileID: 1851342943}
   - {fileID: 1454215636}
   - {fileID: 447494950}
-  m_Father: {fileID: 1453823789}
+  m_Father: {fileID: 535492809}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -304.44443, y: 176.66667}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}

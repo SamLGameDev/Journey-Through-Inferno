@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Player1
   m_EditorClassIdentifier: 
   damage: 5
-  maxHealth: 20
+  maxHealth: 15
   cardDropChance: 0
   OfTypecounter: {fileID: 11400000, guid: 77dab4b9db3db1845b84e0d58cdc2603, type: 2}
   droppableCards: []
@@ -75,7 +75,7 @@ MonoBehaviour:
     useConstant: 1
   swordDamage:
     Variable: {fileID: 11400000, guid: 21d917d11332a4344932089bed7466fe, type: 2}
-    constantValue: 5
+    constantValue: 3
     useConstant: 1
   swordDamageModifier:
     Variable: {fileID: 11400000, guid: c1b63a689d586fc469aae8239c5b8e53, type: 2}
@@ -115,7 +115,7 @@ MonoBehaviour:
     Variable: {fileID: 11400000, guid: 5f3c80b5da10fd24a962ccbf3c1ca656, type: 2}
     constantValue: 4
     useConstant: 1
-  projectilesize: {x: 1, y: 1, z: 1}
+  projectilesize: {x: 3, y: 3, z: 1}
   timeUntilSpreadShot:
     Variable: {fileID: 11400000, guid: c38fc923cb4af05448620dcf63e3bea9, type: 2}
     constantValue: 0.25
