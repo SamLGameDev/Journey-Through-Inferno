@@ -8177,6 +8177,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3684730056783915263, guid: 4a6efd9d63ff62e47b860ff0959888fa,
         type: 3}
+      propertyPath: petrificationTime
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3684730056783915263, guid: 4a6efd9d63ff62e47b860ff0959888fa,
+        type: 3}
       propertyPath: actionCooldownTime
       value: 1
       objectReference: {fileID: 0}
@@ -8190,6 +8195,12 @@ PrefabInstance:
       propertyPath: obstacleMask.m_Bits
       value: 2048
       objectReference: {fileID: 0}
+    - target: {fileID: 3684730056783915263, guid: 4a6efd9d63ff62e47b860ff0959888fa,
+        type: 3}
+      propertyPath: petrificationParticles
+      value: 
+      objectReference: {fileID: 8391028547655661226, guid: e4176b7d6fafd594eb93ce55591b91f4,
+        type: 3}
     - target: {fileID: 8531231575022713048, guid: 4a6efd9d63ff62e47b860ff0959888fa,
         type: 3}
       propertyPath: m_RootOrder
@@ -25512,7 +25523,7 @@ PrefabInstance:
     - target: {fileID: 7755749307358901245, guid: 4fb305f8c16ec094c923d892d9a84cdf,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8489151456280302096, guid: 4fb305f8c16ec094c923d892d9a84cdf,
         type: 3}
