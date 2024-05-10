@@ -25553,8 +25553,48 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 568946724292528571, guid: 4fb305f8c16ec094c923d892d9a84cdf,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1960107677}
   m_SourcePrefab: {fileID: 100100000, guid: 4fb305f8c16ec094c923d892d9a84cdf, type: 3}
+--- !u!1 &1960107676 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 568946724292528571, guid: 4fb305f8c16ec094c923d892d9a84cdf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1960107675}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1960107677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1960107676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 696c1cbb9627113448755c8d07ede3ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: 'Use the BUTTON to navigate. '
+  assets: {fileID: 11400000, guid: 4433f7bbe65090046a2429e4bbbc18f7, type: 2}
+  xboxButtonName:
+  - 
+  ps4ButtonName: []
+  text: {fileID: 1960107678}
+--- !u!114 &1960107678 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6704815875118706059, guid: 4fb305f8c16ec094c923d892d9a84cdf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1960107675}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1960107676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1970879233
 GameObject:
   m_ObjectHideFlags: 0
