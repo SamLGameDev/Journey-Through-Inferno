@@ -218,7 +218,6 @@ public class MedusaBehaviour : MonoBehaviour
             // Anti lock-up incase of error.
             if (cap > 10)
             {
-                print("over Cap");
                 return Vector2.zero;
             }
         }
@@ -259,16 +258,17 @@ public class MedusaBehaviour : MonoBehaviour
     /// <returns></returns>
     public IEnumerator Unfreeze(GameObject player, PetrificationAttack script)
     {
-        print("aaa");
         yield return new WaitForSeconds(petrificationTime);
 
+        // Enable input.
         player.GetComponent<Player_movement>().enabled = true;
+        player.GetComponent<Different_Moves>().enabled = true;
+
+        // Set color to normal.
         player.GetComponent<SpriteRenderer>().color = Color.white;
         player.GetComponent<Animator>().speed = 1f;
 
         script.petrified = false;
-
-        print("bbb");
     }
 
     private void OnDestroy()
