@@ -1191,6 +1191,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2127294124106892366, guid: 43eeff0c55364d34999b2d8c18664232,
+        type: 3}
+      propertyPath: _duration.floatVal
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1828971787680331687, guid: 43eeff0c55364d34999b2d8c18664232,
         type: 3}
       propertyPath: portrait
