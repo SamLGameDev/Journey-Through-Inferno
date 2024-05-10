@@ -27347,6 +27347,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 248639302}
+    - target: {fileID: 9083976239620510135, guid: 4fb305f8c16ec094c923d892d9a84cdf,
+        type: 3}
+      propertyPath: _cardSelectionGameObjects.tutorialTextBox
+      value: 
+      objectReference: {fileID: 804706257}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
