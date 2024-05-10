@@ -212,7 +212,7 @@ public class CardSpawner : MonoBehaviour
         bool leftIndex = true;
 
         // Reference for modifying each card individually as it is spawned.
-        GameObject newCard;
+        GameObject newCard = null;
 
         // If there is an odd number of cards to be spawned then there will be one central card surrounded by
         // other cards, if there is an even number then there will be two that take up the middle space.
@@ -278,8 +278,25 @@ public class CardSpawner : MonoBehaviour
                 arrayIndex++;
                 leftIndex = !leftIndex;
             }
+
+            SetNexAndPreviousButtonsToCard(newCard);
         }
     }
+
+    private void SetNexAndPreviousButtonsToCard(GameObject newCard)
+    {
+        if (arrayIndex == 1)
+        {
+            var navigation = _cardSelectionGameObjects.nextCardButton.GetComponent<Button>().navigation;
+            navigation.selectOnLeft = newCard.GetComponent<Button>();
+            _cardSelectionGameObjects.nextCardButton.GetComponent<Button>().navigation = navigation;
+            navigation = _cardSelectionGameObjects.prevCardButton.GetComponent<Button>().navigation;
+            navigation.selectOnRight = newCard.GetComponent<Button>();
+            _cardSelectionGameObjects.prevCardButton.GetComponent<Button>().navigation = navigation;
+
+        }
+    }
+
     // The cards are spawned in 'pairs', using the for loop to iterate through each cards position
     // and ensure the correct amount of cards in the correct arrangement are placed.
     public IEnumerator HandelingCardSelectionGameState()
