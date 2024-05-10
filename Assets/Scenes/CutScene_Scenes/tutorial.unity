@@ -1205,13 +1205,18 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 7541913813021210117, guid: a7b97a1103ba16f47afcfa59ae00817d,
         type: 3}
+      propertyPath: blockViewHeight
+      value: 568
+      objectReference: {fileID: 0}
+    - target: {fileID: 7541913813021210117, guid: a7b97a1103ba16f47afcfa59ae00817d,
+        type: 3}
       propertyPath: selectedBlocks.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7541913813021210117, guid: a7b97a1103ba16f47afcfa59ae00817d,
         type: 3}
       propertyPath: selectedCommands.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7541913813021210117, guid: a7b97a1103ba16f47afcfa59ae00817d,
         type: 3}
@@ -1930,7 +1935,7 @@ MonoBehaviour:
   indentLevel: 0
   _duration:
     floatRef: {fileID: 0}
-    floatVal: 3
+    floatVal: 1
   durationOLD: 0
 --- !u!114 &3787554483697517855
 MonoBehaviour:
@@ -1948,7 +1953,7 @@ MonoBehaviour:
   indentLevel: 0
   _duration:
     floatRef: {fileID: 0}
-    floatVal: 3
+    floatVal: 1
   durationOLD: 0
 --- !u!114 &3787554483697517856
 MonoBehaviour:
@@ -1966,7 +1971,7 @@ MonoBehaviour:
   indentLevel: 0
   _duration:
     floatRef: {fileID: 0}
-    floatVal: 3
+    floatVal: 1
   durationOLD: 0
 --- !u!114 &3787554483697517857
 MonoBehaviour:
