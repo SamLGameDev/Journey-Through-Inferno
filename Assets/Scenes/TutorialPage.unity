@@ -325,10 +325,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Hold A-Button - Revive nearby ally
-
-    Players regen health when stood
-    close together'
+  m_text: "Hold A-Button - Revive nearby ally\nPlayers regen health when stood \nclose
+    together"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 50ea4e5f5fa88d042a78074d1c1068aa, type: 2}
   m_sharedMaterial: {fileID: -1454737801145802970, guid: 50ea4e5f5fa88d042a78074d1c1068aa,
@@ -2351,7 +2349,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "L-Trigger - Fire Ethereal Projectile\n\nR-Stick - Aim \n\nR-Trigger -
-    Sword Swing\n\nX/A Buttons - Perfom Tarot Card Ability"
+    Sword Swing\n\nX/A Buttons - Perform Tarot Card Ability"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 50ea4e5f5fa88d042a78074d1c1068aa, type: 2}
   m_sharedMaterial: {fileID: -1454737801145802970, guid: 50ea4e5f5fa88d042a78074d1c1068aa,
