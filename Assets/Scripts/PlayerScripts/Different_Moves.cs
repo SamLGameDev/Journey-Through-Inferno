@@ -32,8 +32,7 @@ public class Different_Moves : MonoBehaviour
     /// <summary>
     /// a Melee attack that contains a float for y range, int for damage
     /// </summary>
-    /// <param name="Melee_info"></param>
-    public virtual void Melee(AnimationEvent Melee_info)
+    public virtual void Melee()
     {
         // creates a box that will grab everything with a collider in it that matches the layers to
         // hit then apply damage to it.

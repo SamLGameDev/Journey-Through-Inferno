@@ -18,6 +18,8 @@ public class PetrificationAttack : MonoBehaviour
     [HideInInspector]
     public bool petrified;
 
+    public bool isPetrified = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -65,6 +67,7 @@ public class PetrificationAttack : MonoBehaviour
                 // Freeze the player.
                 GetComponent<Animator>().speed = 0f;
                 GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+                isPetrified = true;
 
                 //Play paricles.
                 Instantiate(petrificationParticles, transform.position, Quaternion.identity);

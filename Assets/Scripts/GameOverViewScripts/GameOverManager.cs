@@ -25,9 +25,9 @@ public class GameOverManager : MonoBehaviour
     }
     private void OnEnable()
     {
-        _player1Holder.sprites = new HealthSpritesHolder(_player1Sprites.highHealth, _player1Sprites.lowHeath, _player1Sprites.midHealth,
+        _player1Holder.sprites = new HealthSpritesHolder(_player1Sprites.highHealth, _player1Sprites.lowHeath, _player1Sprites.midHealth, _player1Sprites.petrified,
             _player1Sprites.healthBar, ref _player1Sprites.currentSprite);
-        _player2Holder.sprites = new HealthSpritesHolder(_player2Sprites.highHealth, _player2Sprites.lowHeath, _player2Sprites.midHealth, _player2Sprites.healthBar, ref _player2Sprites.currentSprite);
+        _player2Holder.sprites = new HealthSpritesHolder(_player2Sprites.highHealth, _player2Sprites.lowHeath, _player2Sprites.midHealth, _player2Sprites.petrified, _player2Sprites.healthBar, ref _player2Sprites.currentSprite);
     }
     // Update is called once per frame
     void Update()
@@ -45,7 +45,9 @@ public class GameOverManager : MonoBehaviour
         public Image lowHeath;
         public Image highHealth;
         public Image midHealth;
+        public Image petrified;
         public Image healthBar;
         public Image currentSprite;
+        
     }
 }

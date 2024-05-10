@@ -772,6 +772,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerUICanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2434103286776335676, guid: d59a8f9f170686444a1967fd07ec5ba2,
+        type: 3}
+      propertyPath: _player1Sprites.petrified
+      value: 
+      objectReference: {fileID: 1778940945}
+    - target: {fileID: 2434103286776335676, guid: d59a8f9f170686444a1967fd07ec5ba2,
+        type: 3}
+      propertyPath: _player2Sprites.petrified
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2781872034880164795, guid: d59a8f9f170686444a1967fd07ec5ba2,
         type: 3}
       propertyPath: m_Pivot.x
@@ -4450,7 +4460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f28d629d50fda14b80f987ce825f904, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneID: 2
+  nextSceneID: 3
 --- !u!61 &1307268486
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12958,6 +12968,18 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1778940945 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8106046927883721797, guid: d59a8f9f170686444a1967fd07ec5ba2,
+    type: 3}
+  m_PrefabInstance: {fileID: 224668931}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1780091557
 PrefabInstance:
   m_ObjectHideFlags: 0
