@@ -146,10 +146,17 @@ public class EntityHealthBehaviour : MonoBehaviour
             {
                 HealthBarSprites.sprites.currentSprite.sprite = HealthBarSprites.sprites.LowHealth.sprite;
             }
-            if (GetComponent<PetrificationAttack>().isPetrified == true)
-            { HealthBarSprites.sprites.currentSprite.sprite = HealthBarSprites.sprites.Petrified.sprite; }
-            else 
-            { HealthBarSprites.sprites.currentSprite.sprite = HealthBarSprites.sprites.currentSprite.sprite; }
+            try
+            {
+                if (GetComponent<PetrificationAttack>().isPetrified == true)
+                { HealthBarSprites.sprites.currentSprite.sprite = HealthBarSprites.sprites.Petrified.sprite; }
+                else
+                { HealthBarSprites.sprites.currentSprite.sprite = HealthBarSprites.sprites.currentSprite.sprite; }
+            }
+            catch(NullReferenceException e)
+            {
+                Debug.Log(e);
+            }
         }
     }
 
