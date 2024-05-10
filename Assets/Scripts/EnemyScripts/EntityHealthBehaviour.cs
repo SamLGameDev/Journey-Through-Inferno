@@ -193,6 +193,7 @@ public class EntityHealthBehaviour : MonoBehaviour
 
         // Check to see if the entity has taken lethal damage.
         // If so, kill it.
+        damageDealer = damagerDealerLocal;
         if (currentHealth <= 0)
         {
             EntityDeath(damagerDealerLocal);     
@@ -201,7 +202,7 @@ public class EntityHealthBehaviour : MonoBehaviour
         if (((bool)hermit[0] || damagerDealerLocal != null &&
             damagerDealerLocal.GetComponent<Player_movement>().stats.currentState == Player.PlayerState.lunge) && gameObject.tag != "Player" && !isBoss && weapon == "sword") 
         {
-            damageDealer = damagerDealerLocal;
+
             triggeredKnockBack = true;
         }
 
@@ -429,6 +430,17 @@ public class EntityHealthBehaviour : MonoBehaviour
             grave.GetComponent<Respawn>().player = gameObject;
             return;
         }
+        StartEnemyDeathSequence();
+
+    }
+
+    private void StartEnemyDeathSequence()
+    {
+        EnablerAStar(false);
+        GetComponent<Animator>().SetTrigger("Death");
+    }
+    public void EnemyDeath()
+    {
         Debug.Log("before function call");
         RaiseDeathEvent(damageDealer);
 
