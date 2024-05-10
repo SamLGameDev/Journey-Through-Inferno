@@ -393,7 +393,7 @@
                     "name": "Navigation",
                     "type": "Value",
                     "id": "9dee5397-fd29-4ed4-8c1d-21a8746e5352",
-                    "expectedControlType": "Vector2",
+                    "expectedControlType": "Dpad",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -454,7 +454,7 @@
                 {
                     "name": "",
                     "id": "c3fff9cf-39e9-461d-a94a-60c9801de75f",
-                    "path": "<Gamepad>/leftStick",
+                    "path": "<Gamepad>/dpad",
                     "interactions": "",
                     "processors": "",
                     "groups": "Xbox control scheme;SecondController",

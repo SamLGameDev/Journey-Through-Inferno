@@ -34,9 +34,18 @@ public class TutorialEnemy : MonoBehaviour
     }
     private void EnablerAStar(bool setter, GameObject entity)
     {
-        entity.GetComponent<Seeker>().enabled = setter;
-        entity.GetComponent<AIDestinationSetter>().enabled = setter;
-        entity.GetComponent<AIPath>().enabled = setter;
+        try
+        {
+            entity.GetComponent<Seeker>().enabled = setter;
+            entity.GetComponent<AIDestinationSetter>().enabled = setter;
+            entity.GetComponent<AIPath>().enabled = setter;
+        }
+        catch (Exception e)
+        {
+            Debug.Log(e.ToString());
+            entity.transform.rotation = Quaternion.Euler(0,0,180);
+        }
+
     }
     public void onDeath()
     {
@@ -55,6 +64,7 @@ public class TutorialEnemy : MonoBehaviour
                 GameObject clone =  Instantiate(EnemyClone, EnemyClone.transform.position, Quaternion.identity);
                 clone.SetActive(true);
                 EnablerAStar(true, clone);
+                Debug.Log("amaxing, wowo");
 
             }
         }
