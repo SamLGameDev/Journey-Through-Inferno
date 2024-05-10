@@ -3,7 +3,10 @@ guid: 2ce971a4e7749884cb55b6fdd50c6e91
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - medusa: {instanceID: 0}
+  - petrificationParticles: {fileID: 8391028547655661226, guid: e4176b7d6fafd594eb93ce55591b91f4,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
