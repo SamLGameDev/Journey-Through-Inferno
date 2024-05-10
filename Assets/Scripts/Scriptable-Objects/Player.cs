@@ -119,7 +119,7 @@ public class Player : BasicAttributes
         criticalHitChance.value = 0;
         damageReduction = 0;
         armour = 0;
-        projectilesize = new Vector3(3,3,1);
+        projectilesize = new Vector3(2,2,1);
         spreadShotNumber.value = 0;
         cooldownReduction.value = 0;
         droppableCards.Clear();
