@@ -752,6 +752,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 334833843447889820, guid: 935fd20412a4b374080cdcc6aba962fb,
         type: 3}
+      propertyPath: blockViewHeight
+      value: 479
+      objectReference: {fileID: 0}
+    - target: {fileID: 334833843447889820, guid: 935fd20412a4b374080cdcc6aba962fb,
+        type: 3}
       propertyPath: selectedBlocks.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -764,6 +769,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DIS end
+      objectReference: {fileID: 0}
+    - target: {fileID: 2830000678104425314, guid: 935fd20412a4b374080cdcc6aba962fb,
+        type: 3}
+      propertyPath: _duration.floatVal
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6915436540185764167, guid: 935fd20412a4b374080cdcc6aba962fb,
         type: 3}
