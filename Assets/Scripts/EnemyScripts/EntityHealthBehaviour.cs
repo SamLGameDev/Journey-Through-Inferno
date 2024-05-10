@@ -9,7 +9,7 @@ using UnityEngine.UI;
 /// <summary>
 /// Controls the ability for a gameobject to possess health, to heal/take damage or die.
 /// </summary>
-[RequireComponent(typeof(BoxCollider2D))]
+
 public class EntityHealthBehaviour : MonoBehaviour
 {
     public bool isBoss;
