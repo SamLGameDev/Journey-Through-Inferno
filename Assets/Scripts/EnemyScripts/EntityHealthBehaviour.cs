@@ -1,5 +1,6 @@
 using Fungus;
 using Pathfinding;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -248,9 +249,17 @@ public class EntityHealthBehaviour : MonoBehaviour
     }
     private void EnablerAStar(bool setter)
     {
-        GetComponent<Seeker>().enabled = setter;
-        GetComponent<AIDestinationSetter>().enabled = setter;
-        GetComponent<AIPath>().enabled = setter;
+        try
+        {
+            GetComponent<Seeker>().enabled = setter;
+            GetComponent<AIDestinationSetter>().enabled = setter;
+            GetComponent<AIPath>().enabled = setter;
+        }
+        catch(NullReferenceException e)
+        {
+            Debug.Log(e.ToString());
+        }
+
     }
     private IEnumerator FlashRed()
     {
@@ -437,10 +446,12 @@ public class EntityHealthBehaviour : MonoBehaviour
     private void StartEnemyDeathSequence()
     {
         EnablerAStar(false);
-        GetComponent<Animator>().SetTrigger("Death");
+        GetComponent<Animator>().SetBool("Death", true);
+        StartCoroutine(EnemyDeath());
     }
-    public void EnemyDeath()
+    public IEnumerator EnemyDeath()
     {
+        yield return new WaitForSeconds(1.3f);
         Debug.Log("before function call");
         RaiseDeathEvent(damageDealer);
 

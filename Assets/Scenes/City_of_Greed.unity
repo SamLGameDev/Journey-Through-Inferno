@@ -5879,6 +5879,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4066482352197744251, guid: 04332074ca2b39e4e9846204ad71bfe4,
+        type: 3}
+      propertyPath: uniqueID
+      value: 4090789117415540598
+      objectReference: {fileID: 0}
     - target: {fileID: 4199226212065977241, guid: 04332074ca2b39e4e9846204ad71bfe4,
         type: 3}
       propertyPath: maxSpeed
@@ -5888,6 +5893,16 @@ PrefabInstance:
         type: 3}
       propertyPath: orientation
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6691157518163197453, guid: 04332074ca2b39e4e9846204ad71bfe4,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1299070244}
+    - target: {fileID: 6852907255213623299, guid: 04332074ca2b39e4e9846204ad71bfe4,
+        type: 3}
+      propertyPath: LayersToHitWhenConfused.m_Bits
+      value: 256
       objectReference: {fileID: 0}
     - target: {fileID: 7187451865587570375, guid: 04332074ca2b39e4e9846204ad71bfe4,
         type: 3}
@@ -15636,6 +15651,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &1299070244 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4683655926936684099, guid: 28d04583d0c318648b28ee2c53bdaeab,
+    type: 3}
+  m_PrefabInstance: {fileID: 172993183}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1303115846
 GameObject:
   m_ObjectHideFlags: 0
