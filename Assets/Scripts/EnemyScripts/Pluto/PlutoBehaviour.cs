@@ -24,7 +24,6 @@ public class PlutoBehaviour : MonoBehaviour
         cerberusTimer = 5;
         statueTimer = 0;
 
-        GetComponent<AIPath>().endReachedDistance = stats.cerberusRange;
 
         //Spawns in first 4 molten statues
         GameObject statue1 = Instantiate(stats.statuePrefab);
