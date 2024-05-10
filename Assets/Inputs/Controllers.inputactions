@@ -420,17 +420,6 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "86c69a08-fa2f-4822-b72f-1677abd8fc45",
-                    "path": "<Gamepad>/dpad",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Xbox control scheme;SecondController",
-                    "action": "Navigation",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "2dc9ca67-d660-42ee-b918-f67dd5ae53ba",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
@@ -459,6 +448,17 @@
                     "processors": "",
                     "groups": "KeyBoard",
                     "action": "KeyboardNav",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c3fff9cf-39e9-461d-a94a-60c9801de75f",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Xbox control scheme;SecondController",
+                    "action": "Navigation",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
