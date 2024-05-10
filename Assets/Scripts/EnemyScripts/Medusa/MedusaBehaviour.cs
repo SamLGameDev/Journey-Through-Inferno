@@ -63,6 +63,8 @@ public class MedusaBehaviour : MonoBehaviour
     [HideInInspector]
     public MedusaPetrifyAttack mpa;
 
+    
+
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -235,6 +237,7 @@ public class MedusaBehaviour : MonoBehaviour
         {
             Destroy(player.GetComponent<PetrificationAttack>());
             player.GetComponent<Player_movement>().enabled = true;
+            GetComponent<PetrificationAttack>().isPetrified = false;
         }
     }
 
