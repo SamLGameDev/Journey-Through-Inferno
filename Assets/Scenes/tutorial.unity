@@ -361,7 +361,7 @@ GameObject:
   - component: {fileID: 55633139}
   - component: {fileID: 55633141}
   - component: {fileID: 55633140}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: tilesheet_limbo1_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -622,7 +622,7 @@ GameObject:
   - component: {fileID: 135928243}
   - component: {fileID: 135928245}
   - component: {fileID: 135928244}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: tilesheet_limbo1_8 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1023,7 +1023,7 @@ GameObject:
   - component: {fileID: 276660991}
   - component: {fileID: 276660993}
   - component: {fileID: 276660992}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: tilesheet_limbo1_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1153,7 +1153,7 @@ GameObject:
   - component: {fileID: 296618701}
   - component: {fileID: 296618703}
   - component: {fileID: 296618702}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: tilesheet_limbo1_8 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1595,7 +1595,7 @@ GameObject:
   - component: {fileID: 491218073}
   - component: {fileID: 491218075}
   - component: {fileID: 491218074}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: tilesheet_limbo1_3 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2294,7 +2294,7 @@ GameObject:
   - component: {fileID: 585897101}
   - component: {fileID: 585897103}
   - component: {fileID: 585897102}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: tilesheet_limbo1_8 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3499,7 +3499,7 @@ GameObject:
   - component: {fileID: 1066101187}
   - component: {fileID: 1066101189}
   - component: {fileID: 1066101188}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: tilesheet_limbo1_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3921,7 +3921,7 @@ GameObject:
   - component: {fileID: 1223872203}
   - component: {fileID: 1223872205}
   - component: {fileID: 1223872204}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: tilesheet_limbo1_4 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4221,7 +4221,7 @@ GameObject:
   - component: {fileID: 1275188307}
   - component: {fileID: 1275188309}
   - component: {fileID: 1275188308}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: tilesheet_limbo1_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4696,7 +4696,7 @@ GameObject:
   - component: {fileID: 1394879569}
   - component: {fileID: 1394879571}
   - component: {fileID: 1394879570}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: tilesheet_limbo1_3 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4968,7 +4968,7 @@ GameObject:
   - component: {fileID: 1495948655}
   - component: {fileID: 1495948657}
   - component: {fileID: 1495948656}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: tilesheet_limbo1_4 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5541,7 +5541,7 @@ GameObject:
   - component: {fileID: 1564546965}
   - component: {fileID: 1564546967}
   - component: {fileID: 1564546966}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: tilesheet_limbo2_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5938,7 +5938,7 @@ GameObject:
   - component: {fileID: 1632726973}
   - component: {fileID: 1632726975}
   - component: {fileID: 1632726974}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: tilesheet_limbo1_3 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6139,6 +6139,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4801089580672160280, guid: 6f54f83e10a239546ad6251645f07e9b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5125486503172991465, guid: 6f54f83e10a239546ad6251645f07e9b,
         type: 3}
@@ -13222,6 +13227,11 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4801089580672160280, guid: 6f54f83e10a239546ad6251645f07e9b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5125486503172991465, guid: 6f54f83e10a239546ad6251645f07e9b,
         type: 3}
       propertyPath: m_Enabled
@@ -13309,7 +13319,7 @@ GameObject:
   - component: {fileID: 1829667960}
   - component: {fileID: 1829667962}
   - component: {fileID: 1829667961}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: tilesheet_limbo1_5 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13582,7 +13592,7 @@ GameObject:
   - component: {fileID: 1910771301}
   - component: {fileID: 1910771303}
   - component: {fileID: 1910771302}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: tilesheet_limbo1_5 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13757,7 +13767,7 @@ GameObject:
   - component: {fileID: 2093112154}
   - component: {fileID: 2093112156}
   - component: {fileID: 2093112155}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: tilesheet_limbo2_5 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
