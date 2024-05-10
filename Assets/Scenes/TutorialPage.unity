@@ -325,10 +325,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Hold A-Button - Revive nearby ally
-
-    Players regen health when stood
-    close together'
+  m_text: "Hold A-Button - Revive nearby ally\nPlayers regen health when stood \nclose
+    together"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 50ea4e5f5fa88d042a78074d1c1068aa, type: 2}
   m_sharedMaterial: {fileID: -1454737801145802970, guid: 50ea4e5f5fa88d042a78074d1c1068aa,
@@ -809,7 +807,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ac114633201d1bf45a8be04fdee312ed, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 21ef5e718e0c7dd49b8f885752568ee9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1184,7 +1182,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1087954446
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2565,7 +2563,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2140756207
 RectTransform:
   m_ObjectHideFlags: 0
