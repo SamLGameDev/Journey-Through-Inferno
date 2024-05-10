@@ -7334,7 +7334,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1810145703
   m_SortingLayer: 1
-  m_SortingOrder: 99
+  m_SortingOrder: 120
   m_Sprite: {fileID: 21300000, guid: da1f70cc3ef5c8140937d8582396299d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -8232,7 +8232,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1810145703
   m_SortingLayer: 1
-  m_SortingOrder: 99
+  m_SortingOrder: 120
   m_Sprite: {fileID: 21300000, guid: da1f70cc3ef5c8140937d8582396299d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -21398,7 +21398,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1810145703
   m_SortingLayer: 1
-  m_SortingOrder: 99
+  m_SortingOrder: 120
   m_Sprite: {fileID: 21300000, guid: 6aa96b13bf363e14f997190953230acf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -27465,7 +27465,7 @@ PrefabInstance:
     - target: {fileID: 7755749307358901245, guid: 4fb305f8c16ec094c923d892d9a84cdf,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8489151456280302096, guid: 4fb305f8c16ec094c923d892d9a84cdf,
         type: 3}
@@ -27661,6 +27661,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerUICanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780413913872116332, guid: d59a8f9f170686444a1967fd07ec5ba2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2434103286776335676, guid: d59a8f9f170686444a1967fd07ec5ba2,
         type: 3}
