@@ -181,18 +181,19 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Dante and Virgil take to the offensive in this Top down 2D Dungeon-Crawler,
+  m_text: 'Dante and Virgil take to the offensive in this top-down 2D Dungeon-Crawler,
     instead of the fanfiction stroll through Hell, our heroes pick up sword and spells
     to fight their way through Hades, gaining impressive abilities through the power
-    of tarot cards!
+    of Tarot Cards!
 
 
-    Upon killing an enemy, the player may pick up a Tarot card,
+    Upon killing an enemy, the player may pick up a Tarot Card,
     which at the end of a level allows the player to choose from a random selection
     of power-ups. These can affect player movement, damage, health and more.'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 8d22a2d6dac130847b3237b40c409ce1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 50ea4e5f5fa88d042a78074d1c1068aa, type: 2}
+  m_sharedMaterial: {fileID: -1454737801145802970, guid: 50ea4e5f5fa88d042a78074d1c1068aa,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -216,8 +217,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 14.5
+  m_fontSizeBase: 14.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -234,7 +235,7 @@ MonoBehaviour:
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
+  m_overflowMode: 3
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
@@ -252,7 +253,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 121.057526, y: 58.586792, z: -0.8065491, w: 202.32846}
+  m_margin: {x: 121.057526, y: 58.586792, z: -0.8065491, w: 188.04807}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -324,13 +325,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '- Hold A button near fallen ally to revive them
-
-    - Playes heal when
-    stood close together'
+  m_text: "Hold A-Button - Revive nearby ally\nPlayers regen health when stood \nclose
+    together"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 8d22a2d6dac130847b3237b40c409ce1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 50ea4e5f5fa88d042a78074d1c1068aa, type: 2}
+  m_sharedMaterial: {fileID: -1454737801145802970, guid: 50ea4e5f5fa88d042a78074d1c1068aa,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -807,7 +807,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ac114633201d1bf45a8be04fdee312ed, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 21ef5e718e0c7dd49b8f885752568ee9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -885,8 +885,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Combat Controls:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 8d22a2d6dac130847b3237b40c409ce1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 50ea4e5f5fa88d042a78074d1c1068aa, type: 2}
+  m_sharedMaterial: {fileID: -1454737801145802970, guid: 50ea4e5f5fa88d042a78074d1c1068aa,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1020,8 +1021,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Next Page
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 8d22a2d6dac130847b3237b40c409ce1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 50ea4e5f5fa88d042a78074d1c1068aa, type: 2}
+  m_sharedMaterial: {fileID: -1454737801145802970, guid: 50ea4e5f5fa88d042a78074d1c1068aa,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1180,7 +1182,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1087954446
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1380,8 +1382,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Main Menu
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 8d22a2d6dac130847b3237b40c409ce1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 50ea4e5f5fa88d042a78074d1c1068aa, type: 2}
+  m_sharedMaterial: {fileID: -1454737801145802970, guid: 50ea4e5f5fa88d042a78074d1c1068aa,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1644,10 +1647,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cooperation:'
+  m_text: 'Co-Op Controls:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 8d22a2d6dac130847b3237b40c409ce1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 50ea4e5f5fa88d042a78074d1c1068aa, type: 2}
+  m_sharedMaterial: {fileID: -1454737801145802970, guid: 50ea4e5f5fa88d042a78074d1c1068aa,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1893,8 +1897,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 37.999996, y: -191.9}
-  m_SizeDelta: {x: 703.76526, y: 305.2348}
+  m_AnchoredPosition: {x: -169.24635, y: -81.409996}
+  m_SizeDelta: {x: 289.27, y: 84.2548}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1589512300
 MonoBehaviour:
@@ -1916,12 +1920,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '- Left stick to walk
+  m_text: 'L-Stick - Walk
 
-    - B Button to dash'
+    B-Button - Dash'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 8d22a2d6dac130847b3237b40c409ce1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 50ea4e5f5fa88d042a78074d1c1068aa, type: 2}
+  m_sharedMaterial: {fileID: -1454737801145802970, guid: 50ea4e5f5fa88d042a78074d1c1068aa,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2057,8 +2062,9 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 8d22a2d6dac130847b3237b40c409ce1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 50ea4e5f5fa88d042a78074d1c1068aa, type: 2}
+  m_sharedMaterial: {fileID: -1454737801145802970, guid: 50ea4e5f5fa88d042a78074d1c1068aa,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2100,7 +2106,7 @@ MonoBehaviour:
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
+  m_overflowMode: 3
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
@@ -2118,7 +2124,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 45.482544, y: 59.83206, z: 449.9922, w: 273.8624}
+  m_margin: {x: 45.482544, y: 59.83206, z: 504.53644, w: 273.8624}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2319,8 +2325,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 37.999996, y: -191.9}
-  m_SizeDelta: {x: 703.76526, y: 305.2348}
+  m_AnchoredPosition: {x: -90.948555, y: -277.29916}
+  m_SizeDelta: {x: 445.8681, y: 476.0331}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1851342944
 MonoBehaviour:
@@ -2342,24 +2348,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '- Left Trigger to fire a damage-dealing spell
-
-    - Right Stick to aim
-    the direction of this spell
-
-    - Right Trigger to swing your sword
-
-    - Two
-    swings in quick succession sends out a fiery projectile
-
-    - Three swings lunges
-    you forwards, knocking back enemies
-
-    - Tarot Card abilities can be performed
-    with X / A buttons'
+  m_text: "L-Trigger - Fire Ethereal Projectile\n\nR-Stick - Aim \n\nR-Trigger -
+    Sword Swing\n\nX/A Buttons - Perform Tarot Card Ability"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 8d22a2d6dac130847b3237b40c409ce1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 50ea4e5f5fa88d042a78074d1c1068aa, type: 2}
+  m_sharedMaterial: {fileID: -1454737801145802970, guid: 50ea4e5f5fa88d042a78074d1c1068aa,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2569,7 +2563,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2140756207
 RectTransform:
   m_ObjectHideFlags: 0

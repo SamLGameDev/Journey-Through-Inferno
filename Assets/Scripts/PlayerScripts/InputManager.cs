@@ -42,6 +42,7 @@ public class InputManager : MonoBehaviour
         Debug.Log(index + " script index");
         movement = players.FirstOrDefault(p => p.playerIndex == index);
         Debug.Log(movement.playerIndex + "player index");
+        movement.controller = (Gamepad)playerInput.devices[0];
     }
     // Update is called once per frame
 
