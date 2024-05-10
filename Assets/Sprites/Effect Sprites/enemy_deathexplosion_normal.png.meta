@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -173,7 +173,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: enemy_deathexplosion_normal_0
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 212
+        width: 49
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3680eef65879e3148a700cb0b2bfe682
+      internalID: -1925088991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_deathexplosion_normal_1
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 210
+        width: 72
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5ec29565f99583489ee117b5b81882f
+      internalID: 396918663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_deathexplosion_normal_2
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 210
+        width: 118
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1df8f8bfff766894aa53b3defef85a70
+      internalID: 1560993407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_deathexplosion_normal_3
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 15
+        width: 111
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d1792b616e24e2488dd8010afc00d5c
+      internalID: -2038663889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_deathexplosion_normal_4
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 86
+        width: 118
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef77535f74d97f24fa4e6c6449087491
+      internalID: 1551271310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_deathexplosion_normal_5
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 124
+        width: 149
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b19a7447380b90b41867e9dc20c95638
+      internalID: 1042535371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -184,7 +310,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      enemy_deathexplosion_normal_0: -1925088991
+      enemy_deathexplosion_normal_1: 396918663
+      enemy_deathexplosion_normal_2: 1560993407
+      enemy_deathexplosion_normal_3: -2038663889
+      enemy_deathexplosion_normal_4: 1551271310
+      enemy_deathexplosion_normal_5: 1042535371
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
