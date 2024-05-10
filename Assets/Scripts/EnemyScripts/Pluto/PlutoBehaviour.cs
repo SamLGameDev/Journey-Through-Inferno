@@ -127,7 +127,7 @@ public class PlutoBehaviour : MonoBehaviour
             moveTimer -= stats.moveInterval;
         }
 
-        if ((GetComponent<EntityHealthBehaviour>().currentHealth <= 20) && (hasUsedClone == false))
+        if ((GetComponent<EntityHealthBehaviour>().currentHealth <= stats.criticalHealth) && (hasUsedClone == false))
         {
             Clone();
         }
