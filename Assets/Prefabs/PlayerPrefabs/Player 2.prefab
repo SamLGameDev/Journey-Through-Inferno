@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 2443648660638366458}
   - component: {fileID: 5002834956180827612}
   - component: {fileID: 2033502748044175406}
+  - component: {fileID: 321959326855588858}
   m_Layer: 7
   m_Name: Player 2
   m_TagString: Player
@@ -502,6 +503,34 @@ MonoBehaviour:
       - m_Target: {fileID: 11400000, guid: 5df255e7d82eda04e8040c6b03146859, type: 2}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
         m_MethodName: ExitRegen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &321959326855588858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4024701041087090802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e09ec3e8ff1d99149ba2cbfe2533f6c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: fe3919ed31df2ae439ae3215dcb7d292, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5262642640742413803}
+        m_TargetAssemblyTypeName: Player_movement, Assembly-CSharp
+        m_MethodName: ResetControllerRumble
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

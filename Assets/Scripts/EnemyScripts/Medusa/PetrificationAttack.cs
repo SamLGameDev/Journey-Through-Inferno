@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class PetrificationAttack : MonoBehaviour
 {
@@ -42,6 +43,9 @@ public class PetrificationAttack : MonoBehaviour
 
         if (petrified)
         {
+            GetComponent<Animator>().speed = 0f;
+            GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+
             return;
         }
 
@@ -59,6 +63,7 @@ public class PetrificationAttack : MonoBehaviour
 
                 // Disable input.
                 GetComponent<Player_movement>().enabled = false;
+                GetComponent<Player_movement>().isPetrified = true;
                 GetComponent<Different_Moves>().enabled = false;
 
                 // Set color to petrified effect.
@@ -85,6 +90,4 @@ public class PetrificationAttack : MonoBehaviour
     {
         medusa.GetComponent<MedusaBehaviour>().Unfreeze(gameObject, this);
     }
-
-
 }
