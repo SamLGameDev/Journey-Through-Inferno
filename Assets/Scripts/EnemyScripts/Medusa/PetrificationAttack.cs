@@ -55,9 +55,14 @@ public class PetrificationAttack : MonoBehaviour
             {
                 petrified = true;
 
-                // Trigger petrify. 
+                // Disable input.
                 GetComponent<Player_movement>().enabled = false;
+                GetComponent<Different_Moves>().enabled = false;
+
+                // Set color to petrified effect.
                 GetComponent<SpriteRenderer>().color = Color.gray;
+
+                // Freeze the player.
                 GetComponent<Animator>().speed = 0f;
                 GetComponent<Rigidbody2D>().velocity = Vector3.zero;
 
@@ -71,6 +76,11 @@ public class PetrificationAttack : MonoBehaviour
                 petrifyProgress = 0;
             }
         }
+    }
+
+    private void OnDestroy()
+    {
+        medusa.GetComponent<MedusaBehaviour>().Unfreeze(gameObject, this);
     }
 
 
