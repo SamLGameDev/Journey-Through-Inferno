@@ -1888,6 +1888,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1635893551771236532, guid: 28d04583d0c318648b28ee2c53bdaeab,
+        type: 3}
+      propertyPath: playerInstances
+      value: 
+      objectReference: {fileID: 11400000, guid: 77dab4b9db3db1845b84e0d58cdc2603,
+        type: 2}
     - target: {fileID: 2756529254588032465, guid: 28d04583d0c318648b28ee2c53bdaeab,
         type: 3}
       propertyPath: PauseMenu

@@ -58,6 +58,6 @@ MonoBehaviour:
   chargeSpeed: 500
   chargeDuration: 2
   chargeDamageInterval: 0.5
-  meleeSizeX: 2
-  meleeSizeY: 1
+  meleeSizeX: 3
+  meleeSizeY: 2
   meleeDistance: 3

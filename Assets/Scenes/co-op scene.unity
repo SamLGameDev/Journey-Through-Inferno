@@ -16651,6 +16651,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1437102947299486043, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
+        type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 10231
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437102947299486043, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
+        type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 6144
+      objectReference: {fileID: 0}
     - target: {fileID: 1658128008857216438, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
         type: 3}
       propertyPath: m_CollisionDetection
@@ -16791,6 +16801,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8921179218869034630, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
+        type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 6144
+      objectReference: {fileID: 0}
+    - target: {fileID: 8921179218869034630, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
+        type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 10231
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19942,6 +19962,16 @@ PrefabInstance:
       propertyPath: _resumeButton
       value: 
       objectReference: {fileID: 680915303}
+    - target: {fileID: 3637656976028388624, guid: 28d04583d0c318648b28ee2c53bdaeab,
+        type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 10231
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637656976028388624, guid: 28d04583d0c318648b28ee2c53bdaeab,
+        type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 6144
+      objectReference: {fileID: 0}
     - target: {fileID: 3995644888683688477, guid: 28d04583d0c318648b28ee2c53bdaeab,
         type: 3}
       propertyPath: m_Enabled
@@ -20021,6 +20051,16 @@ PrefabInstance:
         type: 3}
       propertyPath: walkAnimName
       value: Walking_Sound_Dante
+      objectReference: {fileID: 0}
+    - target: {fileID: 7113508430178997793, guid: 28d04583d0c318648b28ee2c53bdaeab,
+        type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 6144
+      objectReference: {fileID: 0}
+    - target: {fileID: 7113508430178997793, guid: 28d04583d0c318648b28ee2c53bdaeab,
+        type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 10231
       objectReference: {fileID: 0}
     - target: {fileID: 8550325053892496713, guid: 28d04583d0c318648b28ee2c53bdaeab,
         type: 3}
