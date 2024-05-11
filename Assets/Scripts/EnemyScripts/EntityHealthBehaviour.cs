@@ -462,6 +462,19 @@ public class EntityHealthBehaviour : MonoBehaviour
     private void StartEnemyDeathSequence()
     {
         EnablerAStar(false);
+        try
+        {
+            SpriteMask[] masks = GetComponentsInChildren<SpriteMask>();
+            foreach(SpriteMask mask in masks)
+            {
+                Destroy(mask);
+            }
+        }
+        catch (Exception ex)
+        {
+            Debug.Log(ex);
+        }
+        transform.rotation = Quaternion.identity;
         GetComponent<Animator>().SetBool("Death", true);
         StartCoroutine(EnemyDeath());
     }
