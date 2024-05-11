@@ -38,6 +38,7 @@ public class Sword_Damage : MonoBehaviour
     public void SetSwordActiveState()
     {
         _spriteRenderer.enabled = !_spriteRenderer.enabled;
+        transform.localRotation = new Quaternion(0,0,0,1);
         trail.enabled = !trail.enabled;
     }
     public void CreateSwordArc()

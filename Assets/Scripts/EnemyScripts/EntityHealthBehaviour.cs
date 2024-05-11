@@ -450,6 +450,10 @@ public class EntityHealthBehaviour : MonoBehaviour
                 playerCotnroller.stats.gamepad.ResetHaptics();
             }
             gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+            GameObject sword = transform.GetChild(0).GetChild(1).gameObject;
+            sword.transform.rotation = Quaternion.Euler(0, 0, 0);
+            sword.GetComponent<SpriteRenderer>().enabled = false;
+            Debug.Log(sword.name);
             gameObject.SetActive(false);
             GameObject grave = Instantiate(gravestone, transform.position, Quaternion.identity);
             grave.GetComponent<Respawn>().player = gameObject;
