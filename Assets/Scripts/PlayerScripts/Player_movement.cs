@@ -244,16 +244,8 @@ public class Player_movement : MonoBehaviour
         }
         
     }
-    /// <summary>
-    /// roates the sword 90 degrees in the direction specified
-    /// </summary>
-    /// <param name="direction"></param>
-    private void RotateAround(int direction)
-    {
-        //GameObject target = transform.GetChild(1).gameObject;
-        //target.transform.RotateAround(transform.position, new Vector3(0, 0, direction), 90);
-        
-    }
+
+    
     /// <summary>
     /// flips the x axis of the sprite for the left animation
     /// </summary>

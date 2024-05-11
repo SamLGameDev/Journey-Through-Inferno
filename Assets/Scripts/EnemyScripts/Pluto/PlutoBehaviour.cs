@@ -18,6 +18,15 @@ public class PlutoBehaviour : MonoBehaviour
 
     private Transform player;
 
+    private AIDestinationSetter destination;
+
+    private Animator animator;
+
+    private SpriteRenderer spriteRenderer;
+
+    private bool beginFreeze = true;
+
+    private float beginfrezeTimer;
     void Start()
     {
         moveTimer = 0;
@@ -37,6 +46,9 @@ public class PlutoBehaviour : MonoBehaviour
 
         GameObject statue4 = Instantiate(stats.statuePrefab);
         statue4.transform.position = new Vector3(places[0, 4], places[1, 4], 0);
+        destination = GetComponent<AIDestinationSetter>();
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     public void MovePlaces()
@@ -74,7 +86,7 @@ public class PlutoBehaviour : MonoBehaviour
 
     public void SendCerberus()
     {
-        player = GetComponent<AIDestinationSetter>().target;
+        player = destination.target;
         Vector2 shootDirection = (player.position - transform.position).normalized;
 
         GameObject Cerberus = Instantiate(stats.cerberusPrefab, transform.position, Quaternion.identity);
@@ -84,7 +96,7 @@ public class PlutoBehaviour : MonoBehaviour
 
     private void Clone()
     {
-        GetComponent<Animator>().SetTrigger("Clone");
+        animator.SetTrigger("Clone");
         hasUsedClone = true;
 
         //spawns in two clones
@@ -93,7 +105,7 @@ public class PlutoBehaviour : MonoBehaviour
         GameObject clone2 = Instantiate(stats.clonePrefab);
         clone2.transform.SetParent(transform);
 
-        GetComponent<Animator>().SetTrigger("Move");
+        animator.SetTrigger("Move");
     }
 
     private void SpawnStatues()
@@ -113,17 +125,36 @@ public class PlutoBehaviour : MonoBehaviour
 
     void Update()
     {
+        if (destination.currentState == AIDestinationSetter.CurrentState.frozen)
+        {
+            if (beginFreeze)
+            {
+                animator.enabled = false;
+                spriteRenderer.color = Color.blue;
+                beginFreeze = false;
+                beginfrezeTimer = Time.time;
+            }
+            if(Time.time - stats.confusionDuration.value > beginfrezeTimer) 
+            {
+                animator.enabled = true;
+                spriteRenderer.color = Color.white;
+                beginFreeze = true;
+                destination.currentState = AIDestinationSetter.CurrentState.normal;
+            }
+
+
+        }
         cerberusTimer += Time.deltaTime;
         if (cerberusTimer >= stats.cerberusCooldown)
         {
-            GetComponent<Animator>().SetTrigger("Cerberus");
+            animator.SetTrigger("Cerberus");
             cerberusTimer -= stats.cerberusCooldown;
         }
 
         moveTimer += Time.deltaTime;
         if (moveTimer >= stats.moveInterval) 
         {
-            GetComponent<Animator>().SetTrigger("Move");
+            animator.SetTrigger("Move");
             moveTimer -= stats.moveInterval;
         }
 

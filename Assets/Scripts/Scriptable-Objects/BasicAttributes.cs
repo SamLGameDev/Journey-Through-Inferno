@@ -31,6 +31,7 @@ public class BasicAttributes : ScriptableObject
     public bool confused = false;
     public FloatReference confusionDuration;
     public Transform originalPosition;
+
     public virtual void Reset()
     {
         maxHealth = orginalMaxHealth;

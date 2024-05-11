@@ -29,7 +29,8 @@ public class Furies_Behavior : MonoBehaviour
     {
         Move,
         Shoot,
-        Retreat
+        Retreat,
+        frozen
     }
 
     private FuriesState currentState = FuriesState.Move;
@@ -67,8 +68,23 @@ public class Furies_Behavior : MonoBehaviour
 
     private IEnumerator FuriesStateMachine()
     {
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        AIDestinationSetter state = GetComponent<AIDestinationSetter>();
+        AIPath movement = GetComponent<AIPath>();
         while (true)
         {
+            if (state.currentState == AIDestinationSetter.CurrentState.frozen)
+            {
+                ani.enabled = false;
+                sr.color = Color.blue;
+                movement.canMove = false;
+                yield return new WaitForSeconds(stats.confusionDuration.value);
+                ani.enabled = true;
+                state.currentState = AIDestinationSetter.CurrentState.normal;
+                movement.canMove = true;
+                sr.color = Color.white;
+                
+            }
             switch (currentState)
             {
                 case FuriesState.Move:
@@ -235,7 +251,6 @@ public class Furies_Behavior : MonoBehaviour
             foundPath = false;
             _lastPlayerPosition = _intrudingEnemyPos.position;
             currentTime = Time.time;
-            _desitinationSetter.currentState = AIDestinationSetter.CurrentState.retreating;
             retreatDirection = Quaternion.Euler(0, 0, rotateAmount) * (-(_intrudingEnemyPos.position - transform.position).normalized);
             RaycastHit2D hit = Physics2D.Raycast(transform.position, retreatDirection, 10, LayerMask.NameToLayer("Obstacles"));
             if (!hit)
@@ -260,7 +275,6 @@ public class Furies_Behavior : MonoBehaviour
             Debug.Log("distance" + Vector2.Distance(transform.position, _intrudingEnemyPos.position));
             rotateAmount = 0;
             currentAngle = new Quaternion(1, 1, 0, 0); ;
-            _desitinationSetter.currentState = AIDestinationSetter.CurrentState.normal;
             endReachedDistance.endReachedDistance = stats.shootingRange;
             currentState = FuriesState.Move;
             isThreatened = false;

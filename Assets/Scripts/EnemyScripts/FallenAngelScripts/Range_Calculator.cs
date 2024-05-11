@@ -1,4 +1,5 @@
 using Pathfinding;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -13,11 +14,21 @@ public class Range_Calculator : MonoBehaviour
     private float cooldown;
     [SerializeField] private EnemyStats stats;
     public Angel_State state;
+    private AIDestinationSetter destination;
+    private AIPath movement;
+    private Animator ani;
+    private SpriteRenderer spriteRenderer;
+    private bool beginFrozen = true;
+    private float freezeBeganTimer;
     // Start is called before the first frame update
     void Start()
     {
         cooldown = 0;
-        GetComponent<AIPath>().slowWhenNotFacingTarget = false;
+        movement = GetComponent<AIPath>();
+        movement.slowWhenNotFacingTarget = false;
+        destination = GetComponent<AIDestinationSetter>();
+        ani = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
     /// <summary>
     /// checks to see if the target is within melee range
@@ -28,14 +39,14 @@ public class Range_Calculator : MonoBehaviour
     {
         if (distance.sqrMagnitude < new Vector2(stats.meeleRange, stats.meeleRange).sqrMagnitude) // if the distance is less than half an x and a away, trigger the melee animation
         {
-            GetComponent<Animator>().SetBool("Within_Range", true);
+            ani.SetBool("Within_Range", true);
             return true; 
 
         }
         
         else
         {
-            GetComponent<Animator>().SetBool("Within_Range", false);
+            ani.SetBool("Within_Range", false);
             return false;
         }
         
@@ -62,11 +73,11 @@ public class Range_Calculator : MonoBehaviour
         {
             EnablerAStar(false); // disbles pathfinding so it isnt trying to move when charging
             state = Angel_State.charging;
-            GetComponent<Animator>().SetBool("Within_Charge_Range", true);
+            ani.SetBool("Within_Charge_Range", true);
             return true;
 
         }
-        GetComponent<Animator>().SetBool("Within_Charge_Range", false);
+        ani.SetBool("Within_Charge_Range", false);
         return false;
     }
     /// <summary>
@@ -82,13 +93,33 @@ public class Range_Calculator : MonoBehaviour
     public enum Angel_State
     {
         normal,
-        charging
+        charging,
     }
     // Update is called once per frame
     void Update()
     {
         float time = Time.time;
-        Transform target = GetComponent<AIDestinationSetter>().target;
+        if (destination.currentState == AIDestinationSetter.CurrentState.frozen)
+        {
+            if (beginFrozen)
+            {
+                ani.enabled = false;
+                spriteRenderer.color = Color.blue;
+                movement.canMove = false;
+                beginFrozen = false;
+                freezeBeganTimer = Time.time;
+            }
+
+            if (time - stats.confusionDuration.value > freezeBeganTimer)
+            {
+                ani.enabled = true;
+                spriteRenderer.color = Color.white;
+                movement.canMove = true;
+                beginFrozen = true;
+                destination.currentState = AIDestinationSetter.CurrentState.normal;
+            }
+        }
+        Transform target = destination.target;
         if (!target) // if no target is found
         {
             return;

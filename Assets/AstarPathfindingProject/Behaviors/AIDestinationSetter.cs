@@ -37,33 +37,13 @@ namespace Pathfinding {
 		public enum CurrentState
 		{
 			normal,
-			retreating
+			retreating,
+            frozen
 		}
 		void OnDisable () {
 			if (ai != null) ai.onSearchPath -= Update;
 		}
-        private GameObject GetTarget()
-        {
-            GameObject closest = null;
-            foreach (GameObject enemy in targets)
-            {
-                if (enemy != null && enemy != gameObject)
-                {
-                    if (closest == null)
-                    {
-                        closest = enemy;
-                        continue;
-                    }
-                    Vector2 EnemyLocation = enemy.transform.position - transform.position;
-                    Vector2 closestLocation = closest.transform.position - transform.position;
-                    if (EnemyLocation.sqrMagnitude < closestLocation.sqrMagnitude)
-                    {
-                        closest = enemy;
-                    }
-                }
-            }
-            return closest;
-        }
+        
         /// <summary>Updates the AI's destination every frame</summary>
         void Update () {
             getTarget();
@@ -71,18 +51,15 @@ namespace Pathfinding {
 		}
 		private void getTarget()
         {
-            if (isConfused)
+            if (currentState == CurrentState.normal)
             {
-                target = GetTarget().transform;
-				return;
+                getPlayerTarget();
             }
-            getPlayerTarget();
+
         }
 
         private void getPlayerTarget()
         {
-            if (currentState == CurrentState.normal)
-            {
                 if (players.Count == 1)
                 {
                     target = players[0].transform;
@@ -96,9 +73,6 @@ namespace Pathfinding {
                     return;
                 }
                 target = players[1].transform;
-
-
-            }
         }
     }
 }

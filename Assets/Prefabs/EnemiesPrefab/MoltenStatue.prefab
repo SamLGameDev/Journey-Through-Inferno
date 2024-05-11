@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: -671161863749240224}
   - component: {fileID: 823333945165225578}
   - component: {fileID: 8059025906828389551}
+  - component: {fileID: -9148435654305255596}
   m_Layer: 8
   m_Name: MoltenStatue
   m_TagString: Enemy
@@ -384,3 +385,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statues: {fileID: 11400000, guid: 3dfded0e0dad1ba4bb0464e75eef396b, type: 2}
+--- !u!114 &-9148435654305255596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7187451865587570375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e09ec3e8ff1d99149ba2cbfe2533f6c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: b332f4f3895ee264596a5b567c48376a, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6628571291636624846}
+        m_TargetAssemblyTypeName: EntityHealthBehaviour, Assembly-CSharp
+        m_MethodName: isConfused
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

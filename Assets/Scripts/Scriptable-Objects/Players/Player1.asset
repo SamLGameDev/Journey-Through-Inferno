@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Player1
   m_EditorClassIdentifier: 
   damage: 5
-  maxHealth: 20
+  maxHealth: 15
   cardDropChance: 0
   OfTypecounter: {fileID: 11400000, guid: 77dab4b9db3db1845b84e0d58cdc2603, type: 2}
   droppableCards: []

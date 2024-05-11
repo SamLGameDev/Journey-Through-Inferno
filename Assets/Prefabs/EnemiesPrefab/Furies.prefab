@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 2127096435719846241}
   - component: {fileID: 4104389254971394780}
   - component: {fileID: 6833979128429709299}
-  - component: {fileID: -7665178361672979666}
+  - component: {fileID: -8891656425634608748}
   m_Layer: 8
   m_Name: Furies
   m_TagString: Enemy
@@ -43,7 +43,7 @@ Transform:
   m_Children:
   - {fileID: 1382615094215876401}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1318488040357682904
 SpriteRenderer:
@@ -388,7 +388,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attributes: {fileID: 11400000, guid: 8433197bcfafda54195840a75029068e, type: 2}
   PlayerAquiredCard: {fileID: 11400000, guid: 8721c4fc1042c614e8c98dbef9ea70ed, type: 2}
---- !u!114 &-7665178361672979666
+--- !u!114 &-8891656425634608748
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

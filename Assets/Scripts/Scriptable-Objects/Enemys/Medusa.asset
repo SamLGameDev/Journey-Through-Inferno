@@ -47,7 +47,7 @@ MonoBehaviour:
   Player2Kill: {fileID: 11400000, guid: c2880108fdd2d924783aa325ca2cc76f, type: 2}
   confused: 0
   confusionDuration:
-    Variable: {fileID: 0}
+    Variable: {fileID: 11400000, guid: 8ec09852bc00a984595b4efbfaa24186, type: 2}
     constantValue: 0
-    useConstant: 1
+    useConstant: 0
   originalPosition: {fileID: 0}

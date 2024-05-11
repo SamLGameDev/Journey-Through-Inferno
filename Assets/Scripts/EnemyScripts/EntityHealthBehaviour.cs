@@ -101,12 +101,16 @@ public class EntityHealthBehaviour : MonoBehaviour
 
     public void isConfused()
     {
-        if (Confused && !isBoss)
+        if (Confused)
         {
 
             AIDestinationSetter destinationSetter = GetComponent<AIDestinationSetter>();
-            destinationSetter.isConfused = true;
-            destinationSetter.targets = stats.OfTypecounter.GetItems();
+            destinationSetter.currentState = AIDestinationSetter.CurrentState.frozen;
+            if (gameObject.name == "Medusa")
+            {
+                GetComponent<Animator>().SetTrigger("Frozen");
+            }
+
         }
     }
 
@@ -118,6 +122,7 @@ public class EntityHealthBehaviour : MonoBehaviour
         {
             yield return new WaitUntil(() => Confused);
             yield return new WaitForSeconds(stats.confusionDuration.value);
+            flashRed = false;
             Confused = false;
             destinationSetter.isConfused = false;
         }
@@ -277,7 +282,7 @@ public class EntityHealthBehaviour : MonoBehaviour
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
         while ( true)
         {
-            yield return new WaitUntil(() => flashRed);
+            yield return new WaitUntil(() => flashRed && !Confused);
             sr.color = Color.red;
             yield return new WaitForSeconds(0.5f);
             sr.color = Color.white;

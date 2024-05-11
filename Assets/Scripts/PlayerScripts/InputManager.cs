@@ -1,4 +1,5 @@
 using Fungus;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,7 +43,14 @@ public class InputManager : MonoBehaviour
         Debug.Log(index + " script index");
         movement = players.FirstOrDefault(p => p.playerIndex == index);
         Debug.Log(movement.playerIndex + "player index");
-        movement.controller = (Gamepad)playerInput.devices[0];
+        try
+        {
+            movement.controller = (Gamepad)playerInput.devices[0];
+        }
+        catch(InvalidCastException e)
+        {
+            Debug.Log("not a controller");
+        }
     }
     // Update is called once per frame
 

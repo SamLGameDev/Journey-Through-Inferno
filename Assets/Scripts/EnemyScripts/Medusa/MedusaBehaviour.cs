@@ -1,3 +1,4 @@
+using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -5,6 +6,13 @@ using UnityEngine;
 
 public class MedusaBehaviour : MonoBehaviour
 {
+    private AIDestinationSetter destination;
+    
+    private SpriteRenderer spriteRenderer;
+
+    [SerializeField]
+    private BasicAttributes stats;
+
     [Header("Position changing")]
     public float movementSpeed;
 
@@ -72,6 +80,8 @@ public class MedusaBehaviour : MonoBehaviour
         players = GameObject.FindGameObjectsWithTag("Player");
         medusaPos = CurrentPosition.centre;
         meleeCooldown = false;
+        destination = GetComponent<AIDestinationSetter>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     /// <summary>
@@ -96,6 +106,16 @@ public class MedusaBehaviour : MonoBehaviour
                 animator.SetTrigger("MeleeAttack");
             }
         }
+    }
+    public void StartFrozen()
+    {
+        spriteRenderer.color = Color.blue;
+    }
+    public void EndFrozen()
+    {
+        spriteRenderer.color = Color.white;
+        destination.currentState = AIDestinationSetter.CurrentState.normal;
+        
     }
 
     /// <summary>
@@ -143,6 +163,7 @@ public class MedusaBehaviour : MonoBehaviour
     /// <returns></returns>
     public IEnumerator AbilityTrigger()
     {
+
         float randomTime = actionCooldownTime + Random.Range(0, maxTimeAbilityUsage - actionCooldownTime);
 
         float randomAbilityIndex = Random.Range(1, 4);
@@ -178,6 +199,10 @@ public class MedusaBehaviour : MonoBehaviour
     /// </summary>
     public void PoisonAttack()
     {
+        if (destination.currentState == AIDestinationSetter.CurrentState.frozen)
+        {
+            return;
+        }
         AudioManager.instance.PlaySound("Medusa_Poison");
 
         for (int i = 0; i < poisonAmount; i++)

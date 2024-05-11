@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 4925672781076486436}
   - component: {fileID: 8826022921122756423}
   - component: {fileID: -8386113982693172708}
+  - component: {fileID: -3089221712900987778}
+  - component: {fileID: -2252587193425132125}
   m_Layer: 8
   m_Name: Medusa
   m_TagString: Enemy
@@ -102,6 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f61a5b7abe834e047a3a3c7241626e5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats: {fileID: 11400000, guid: 967521d4166627948b50e946f51ce62b, type: 2}
   movementSpeed: 10
   meleeRange: 4
   meleeAttackDamage: 5
@@ -118,6 +121,7 @@ MonoBehaviour:
     m_Bits: 0
   petrificationSpeed: 2
   petrificationTime: 1
+  petrificationParticles: {fileID: 0}
   actionCooldownTime: 0.5
   maxTimeAbilityUsage: 2
   indicator: {fileID: 5361606418721373797, guid: 269f6212271080c4d8723075c5cba900,
@@ -272,3 +276,48 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attributes: {fileID: 11400000, guid: 967521d4166627948b50e946f51ce62b, type: 2}
   PlayerAquiredCard: {fileID: 11400000, guid: 8721c4fc1042c614e8c98dbef9ea70ed, type: 2}
+--- !u!114 &-3089221712900987778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241013125750778860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e09ec3e8ff1d99149ba2cbfe2533f6c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: b332f4f3895ee264596a5b567c48376a, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9097793489111844800}
+        m_TargetAssemblyTypeName: EntityHealthBehaviour, Assembly-CSharp
+        m_MethodName: isConfused
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &-2252587193425132125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241013125750778860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9679e68a0f1144e79c664d9a11ca121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  target: {fileID: 0}
+  isConfused: 0
+  targets: []
+  currentState: 0
