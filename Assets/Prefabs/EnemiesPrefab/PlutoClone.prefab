@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBoss: 0
-  stats: {fileID: 11400000, guid: 91c3f2b50bde3804692396f5d5f99213, type: 2}
+  stats: {fileID: 11400000, guid: cbfd3165d02e5d042ac9a4d76deb79fa, type: 2}
   PlayerDeathEvent: {fileID: 0}
   OnDamaged: {fileID: 0}
   invunTimeOnHit: 0
