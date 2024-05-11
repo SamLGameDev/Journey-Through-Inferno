@@ -18205,6 +18205,7 @@ MonoBehaviour:
   bottomTextBox: {fileID: 903218510}
   noCards: 0
   enemysCount: {fileID: 11400000, guid: e4a5f4694b79fe4488542d7385a2650f, type: 2}
+  OnEncounterCleaered: {fileID: 0}
 --- !u!4 &1336663985
 Transform:
   m_ObjectHideFlags: 0
@@ -20776,6 +20777,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Parameters.textureMode
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365397640826424061, guid: 28d04583d0c318648b28ee2c53bdaeab,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4683655926936684099, guid: 28d04583d0c318648b28ee2c53bdaeab,
         type: 3}

@@ -126,11 +126,15 @@ public class MedusaBehaviour : MonoBehaviour
     public void TriggerDamage(GameObject indicator, Sprite impactMark)
     {
         // Layer 7 is the player layer.
-        Collider2D coll = Physics2D.OverlapCircle(indicator.transform.position, indicator.transform.localScale.x / 2, 1 << 7);
+        Collider2D[] coll = Physics2D.OverlapCircleAll(indicator.transform.position, indicator.transform.localScale.x / 2, stats.layersToHit);
 
         if (coll != null)
         {
-            coll.GetComponent<EntityHealthBehaviour>().ApplyDamage(meleeAttackDamage, coll.gameObject);
+            foreach (Collider2D coll2d in coll) 
+            {
+                Debug.Log(coll2d.gameObject.name);
+                coll2d.GetComponent<EntityHealthBehaviour>().ApplyDamage(meleeAttackDamage, coll2d.gameObject); 
+            }
         }
 
         if (impactMark == null) 
@@ -288,7 +292,7 @@ public class MedusaBehaviour : MonoBehaviour
         // Enable input.
         player.GetComponent<Player_movement>().enabled = true;
         player.GetComponent<Different_Moves>().enabled = true;
-        GetComponent<Player_movement>().isPetrified = false;
+        player.GetComponent<Player_movement>().isPetrified = false;
 
         // Set color to normal.
         player.GetComponent<SpriteRenderer>().color = Color.white;

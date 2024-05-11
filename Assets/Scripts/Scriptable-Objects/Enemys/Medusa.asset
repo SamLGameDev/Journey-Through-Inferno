@@ -38,7 +38,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0c6d2f734bab3a448b1011a57c3f64e1, type: 2}
   layersToHit:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   extraLives: 0
   damageReduction: 0
   armour: 0
