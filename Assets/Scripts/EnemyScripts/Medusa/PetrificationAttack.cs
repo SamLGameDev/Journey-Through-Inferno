@@ -21,6 +21,10 @@ public class PetrificationAttack : MonoBehaviour
 
     public bool isPetrified = false;
 
+    public bool beenPetrified = false;
+
+    private float TimeWhenPetrified;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +36,10 @@ public class PetrificationAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (beenPetrified && Time.time - 4 > TimeWhenPetrified)
+        {
+            GetComponent<Player_movement>().Unfreeze(this);
+        }
         if (medusa == null)
         {
             return;
@@ -57,14 +65,15 @@ public class PetrificationAttack : MonoBehaviour
 
             Debug.DrawLine(transform.position, hit.collider.transform.position);
 
-            if (petrifyProgress >= petrifyTime)
+            if (petrifyProgress >= petrifyTime && !beenPetrified)
             {
                 petrified = true;
+                beenPetrified = true;
 
                 // Disable input.
-                GetComponent<Player_movement>().enabled = false;
+                GetComponent<Player_movement>().InputManager.CutsceneStarted();
                 GetComponent<Player_movement>().isPetrified = true;
-                GetComponent<Different_Moves>().enabled = false;
+
 
                 // Set color to petrified effect.
                 GetComponent<SpriteRenderer>().color = Color.gray;
@@ -78,16 +87,19 @@ public class PetrificationAttack : MonoBehaviour
                 Instantiate(petrificationParticles, transform.position, Quaternion.identity);
 
                 // Start a countdown to unpetrify the player.
-                MedusaBehaviour mb = medusa.GetComponent<MedusaBehaviour>();
-                mb.StartCoroutine(mb.Unfreeze(gameObject, this));
+                
+
+                TimeWhenPetrified = Time.time;
 
                 petrifyProgress = 0;
             }
+
         }
+
     }
 
     private void OnDestroy()
     {
-        medusa.GetComponent<MedusaBehaviour>().Unfreeze(gameObject, this);
+        //medusa.GetComponent<MedusaBehaviour>().Unfreeze(gameObject, this);
     }
 }

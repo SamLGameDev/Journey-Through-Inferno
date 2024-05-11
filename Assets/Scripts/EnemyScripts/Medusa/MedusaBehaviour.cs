@@ -265,9 +265,10 @@ public class MedusaBehaviour : MonoBehaviour
         foreach (GameObject player in players)
         {
             Destroy(player.GetComponent<PetrificationAttack>());
-            player.GetComponent<Player_movement>().enabled = true;
-            GetComponent<PetrificationAttack>().isPetrified = false;
+            player.GetComponent<Player_movement>().stats.currentState = Player.PlayerState.moving;
+            //GetComponent<PetrificationAttack>().isPetrified = false;
         }
+
     }
 
     /// <summary>
@@ -285,14 +286,12 @@ public class MedusaBehaviour : MonoBehaviour
     /// Un-petrifies a player after a set amount of time.
     /// </summary>
     /// <returns></returns>
-    public IEnumerator Unfreeze(GameObject player, PetrificationAttack script)
+    public void Unfreeze(GameObject player, PetrificationAttack script)
     {
-        yield return new WaitForSeconds(petrificationTime);
-
         // Enable input.
-        player.GetComponent<Player_movement>().enabled = true;
-        player.GetComponent<Different_Moves>().enabled = true;
-        player.GetComponent<Player_movement>().isPetrified = false;
+        Debug.Log("please god why");
+        Destroy(script);
+        player.GetComponent<Player_movement>().InputManager.CutsceneEnded();
 
         // Set color to normal.
         player.GetComponent<SpriteRenderer>().color = Color.white;

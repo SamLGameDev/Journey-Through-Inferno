@@ -14,6 +14,7 @@ public class Player_movement : MonoBehaviour
 {
     [SerializeField] private GameObject _resumeButton;
     [SerializeField] private EventSystem _globalEvents;
+    public InputManager InputManager;
     public static bool pvP_Enabled = false;
     public Gamepad controller;
     public bool dodash = false;
@@ -267,10 +268,6 @@ public class Player_movement : MonoBehaviour
     public void Player_Melee(GameObject sword)
     {
 
-        if (isPetrified)
-        {
-            return;
-        }
 
         running = true;
         //  sword.SetActive(true);
@@ -287,12 +284,27 @@ public class Player_movement : MonoBehaviour
         }
 
     }
+    public void Unfreeze(PetrificationAttack script)
+    {
+        // Enable input.
+        Debug.Log("please god why");
+        script.petrified = false;
+        Destroy(script);
+        InputManager.CutsceneEnded();
+
+        // Set color to normal.
+        GetComponent<SpriteRenderer>().color = Color.white;
+        GetComponent<Animator>().speed = 1f;
+
+
+    }
     public void controllerRumble(float leftStick, float rightStick, float duration)
     {
             controller.SetMotorSpeeds(leftStick, rightStick);
             Invoke("ResetControllerRumble", duration);
         
     }
+
     public void ResetControllerRumble()
     {
         Debug.Log("haiul");
@@ -303,10 +315,6 @@ public class Player_movement : MonoBehaviour
     /// </summary>
     public void Player_Shooting(Gamepad controller = null)
     {
-        if (isPetrified)
-        {
-            return;
-        }
 
         if (gun_cooldown)
         {

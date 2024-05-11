@@ -14,6 +14,7 @@ public class InputManager : MonoBehaviour
     private PlayerInput playerInput;
     private Player_movement movement;
     private float confusionCooldown;
+
     public static State currentState = State.None;
 
     public void CutsceneStarted()
@@ -51,6 +52,7 @@ public class InputManager : MonoBehaviour
         {
             Debug.Log("not a controller");
         }
+        movement.InputManager = this;
     }
     // Update is called once per frame
 
@@ -82,6 +84,7 @@ public class InputManager : MonoBehaviour
     }
     public void OnSword(CallbackContext context)
     {
+        Debug.Log(currentState);
 
         if ( movement != null && !movement.running && context.phase == InputActionPhase.Performed && currentState == State.None)
         { 

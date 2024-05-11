@@ -35,9 +35,5 @@ public class MedusaPetrifyAttack : StateMachineBehaviour
     {
         mb.StartCoroutine(mb.vignetteControl.FadeOut());
 
-        foreach (GameObject player in mb.players)
-        {
-            Destroy(player.GetComponent<PetrificationAttack>());
-        }
     }
 }
