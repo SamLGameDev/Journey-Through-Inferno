@@ -26742,7 +26742,7 @@ PrefabInstance:
     - target: {fileID: -3635221926971355599, guid: c59d0046edde7e342bbad33d6fdd1f79,
         type: 3}
       propertyPath: canMove
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -3635221926971355599, guid: c59d0046edde7e342bbad33d6fdd1f79,
         type: 3}
