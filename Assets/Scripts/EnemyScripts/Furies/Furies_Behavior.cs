@@ -123,23 +123,7 @@ public class Furies_Behavior : MonoBehaviour
         }
 
     }
-    /// <summary>
-    /// sets every animation param for the furie to false except the param
-    /// </summary>
-    /// <param name="setTrue"></param>
-    private void SetEverythingExceptParamToFalse(string setTrue)
-    {
-        string[] animationVariables = { "Moving_right", "Moving_Down", "Moving_Up", "Moving_left" };
-        foreach(string variable in animationVariables) 
-        {
-            if (variable == setTrue)
-            {
-                ani.SetBool(variable, true);
-                continue;
-            }
-            ani.SetBool(variable, false);
-        }
-    }
+
     private void Animation_controller()
     {
         Transform target = GetComponent<AIDestinationSetter>().target;
@@ -148,54 +132,9 @@ public class Furies_Behavior : MonoBehaviour
         {
             return;
         }
-        Vector3 playerLocalPos = transform.InverseTransformPoint(target.position);
-        //if they are on the left of the furie
-        if (playerLocalPos.x < 0)
-        {
-            // if they are above the center of the furie
-            if (playerLocalPos.y > 0)
-            {
-                // if the value of y is greater than x
-                if (Mathf.Abs(playerLocalPos.y) < Mathf.Abs(playerLocalPos.x))
-                {
-                    SetEverythingExceptParamToFalse("Moving_left");
-                    return;
-                }
-                SetEverythingExceptParamToFalse("Moving_Up");
-                return;
-                    
-               
-            }
-            // its below the centere of the furie
-            if (Mathf.Abs(playerLocalPos.y) < Mathf.Abs(playerLocalPos.x))
-            {
-                SetEverythingExceptParamToFalse("Moving_left");
-                return;
-            }
-            SetEverythingExceptParamToFalse("Moving_Down");
-            return;
-
-        }
-        if (playerLocalPos.y > 0)
-        {
-            if (Mathf.Abs(playerLocalPos.y) < Mathf.Abs(playerLocalPos.x))
-            {
-                SetEverythingExceptParamToFalse("Moving_right");
-            return;
-            }
-            SetEverythingExceptParamToFalse("Moving_Up");
-            return;
-                
-        }
-
-        if (Mathf.Abs(playerLocalPos.y) < Mathf.Abs(playerLocalPos.x))
-        {
-            SetEverythingExceptParamToFalse("Moving_right");
-            return;
-        }
-        SetEverythingExceptParamToFalse("Moving_Down");
-        return;
-                
+        Vector2 positionInRelationToThis = transform.InverseTransformPoint(target.position);
+        ani.SetFloat("positionX", positionInRelationToThis.x);
+        ani.SetFloat("positionY", positionInRelationToThis.y);
             
         
     }

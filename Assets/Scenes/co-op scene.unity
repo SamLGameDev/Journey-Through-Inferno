@@ -8712,7 +8712,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &481472222
 Transform:
   m_ObjectHideFlags: 0
@@ -16714,12 +16714,12 @@ PrefabInstance:
     - target: {fileID: 2495953773665164011, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.28
+      value: 6.4
       objectReference: {fileID: 0}
     - target: {fileID: 2495953773665164011, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -21.84
+      value: -20.3
       objectReference: {fileID: 0}
     - target: {fileID: 2495953773665164011, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
         type: 3}
@@ -26734,10 +26734,25 @@ PrefabInstance:
       propertyPath: uniqueID
       value: 8131453920844851744
       objectReference: {fileID: 0}
+    - target: {fileID: -8889872456141495229, guid: c59d0046edde7e342bbad33d6fdd1f79,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -3635221926971355599, guid: c59d0046edde7e342bbad33d6fdd1f79,
+        type: 3}
+      propertyPath: canMove
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -3635221926971355599, guid: c59d0046edde7e342bbad33d6fdd1f79,
         type: 3}
       propertyPath: maxSpeed
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -3635221926971355599, guid: c59d0046edde7e342bbad33d6fdd1f79,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -3635221926971355599, guid: c59d0046edde7e342bbad33d6fdd1f79,
         type: 3}
@@ -26784,6 +26799,11 @@ PrefabInstance:
       propertyPath: player2
       value: 
       objectReference: {fileID: 1720545868}
+    - target: {fileID: 2880178541553116232, guid: c59d0046edde7e342bbad33d6fdd1f79,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3054313615865408233, guid: c59d0046edde7e342bbad33d6fdd1f79,
         type: 3}
       propertyPath: m_Radius
