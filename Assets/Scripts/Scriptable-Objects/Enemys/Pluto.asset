@@ -51,7 +51,7 @@ MonoBehaviour:
     constantValue: 0
     useConstant: 0
   originalPosition: {fileID: 0}
-  criticalHealth: 50
+  criticalHealth: 40
   moveInterval: 10
   cerberusCooldown: 10
   cerberusSpeed: 15
