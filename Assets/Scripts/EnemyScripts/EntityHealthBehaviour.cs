@@ -453,7 +453,6 @@ public class EntityHealthBehaviour : MonoBehaviour
             GameObject sword = transform.GetChild(0).GetChild(1).gameObject;
             sword.transform.rotation = Quaternion.Euler(0, 0, 0);
             sword.GetComponent<SpriteRenderer>().enabled = false;
-            Debug.Log(sword.name);
             gameObject.SetActive(false);
             GameObject grave = Instantiate(gravestone, transform.position, Quaternion.identity);
             grave.GetComponent<Respawn>().player = gameObject;
@@ -466,6 +465,14 @@ public class EntityHealthBehaviour : MonoBehaviour
     private void StartEnemyDeathSequence()
     {
         EnablerAStar(false);
+       
+        try
+        {
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            GetComponent<BoxCollider2D>().enabled = false;
+            GetComponent<AIPath>().canMove = false;
+        }
+        catch(Exception e) { Debug.Log(e); }
         try
         {
             SpriteMask[] masks = GetComponentsInChildren<SpriteMask>();
