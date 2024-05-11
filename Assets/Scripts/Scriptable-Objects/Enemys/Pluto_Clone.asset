@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pluto_Clone
   m_EditorClassIdentifier: 
   damage: 0
-  maxHealth: 0
+  maxHealth: 60
   cardDropChance: 0
   OfTypecounter: {fileID: 0}
   droppableCards: []
@@ -23,9 +23,9 @@ MonoBehaviour:
   extraLives: 0
   damageReduction: 0
   armour: 0
-  orginalMaxHealth: 0
-  Player1Kill: {fileID: 0}
-  Player2Kill: {fileID: 0}
+  orginalMaxHealth: 60
+  Player1Kill: {fileID: 11400000, guid: f4d8606fee010ad47814106632555ae5, type: 2}
+  Player2Kill: {fileID: 11400000, guid: f4d8606fee010ad47814106632555ae5, type: 2}
   confused: 0
   confusionDuration:
     Variable: {fileID: 0}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fba299de64e55541ab69c43d1e98740, type: 3}
   m_Name: Pluto
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 8
   maxHealth: 120
   cardDropChance: 101
   OfTypecounter: {fileID: 11400000, guid: e4a5f4694b79fe4488542d7385a2650f, type: 2}
