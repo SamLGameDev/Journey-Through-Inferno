@@ -8212,6 +8212,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8391028547655661226, guid: e4176b7d6fafd594eb93ce55591b91f4,
         type: 3}
+    - target: {fileID: 3684730056783915263, guid: 4a6efd9d63ff62e47b860ff0959888fa,
+        type: 3}
+      propertyPath: WhatLayersShouldPlayersHitToAvoidPetrification.m_Bits
+      value: 2304
+      objectReference: {fileID: 0}
     - target: {fileID: 8531231575022713048, guid: 4a6efd9d63ff62e47b860ff0959888fa,
         type: 3}
       propertyPath: m_RootOrder
@@ -14989,12 +14994,12 @@ PrefabInstance:
     - target: {fileID: 2495953773665164011, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.38
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2495953773665164011, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.15
+      value: -3.8
       objectReference: {fileID: 0}
     - target: {fileID: 2495953773665164011, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
         type: 3}

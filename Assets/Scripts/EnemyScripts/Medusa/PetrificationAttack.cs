@@ -9,6 +9,8 @@ public class PetrificationAttack : MonoBehaviour
     [HideInInspector]
     public float petrifyTime;
 
+    public LayerMask whatToHit;
+
     [HideInInspector]
     public Transform medusa;
 
@@ -23,7 +25,7 @@ public class PetrificationAttack : MonoBehaviour
 
     public bool beenPetrified = false;
 
-    private float TimeWhenPetrified;
+    private float TimeWhenPetrified = -99999;
 
     // Start is called before the first frame update
     void Start()
@@ -31,15 +33,12 @@ public class PetrificationAttack : MonoBehaviour
         petrifyProgress = 0;
 
         petrificationParticles = medusa.GetComponent<MedusaBehaviour>().petrificationParticles;
+        Destroy(this, 6);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (beenPetrified && Time.time - 4 > TimeWhenPetrified)
-        {
-            GetComponent<Player_movement>().Unfreeze(this);
-        }
         if (medusa == null)
         {
             return;
@@ -57,7 +56,7 @@ public class PetrificationAttack : MonoBehaviour
             return;
         }
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, medusa.position - transform.position, Mathf.Infinity);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, medusa.transform.position - transform.position, Mathf.Infinity, whatToHit);
 
         if (hit.collider != null && hit.collider.CompareTag("Enemy"))
         {
@@ -101,5 +100,6 @@ public class PetrificationAttack : MonoBehaviour
     private void OnDestroy()
     {
         //medusa.GetComponent<MedusaBehaviour>().Unfreeze(gameObject, this);
+        GetComponent<Player_movement>().Unfreeze(this);
     }
 }

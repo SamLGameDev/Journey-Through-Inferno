@@ -10,6 +10,8 @@ public class MedusaBehaviour : MonoBehaviour
     
     private SpriteRenderer spriteRenderer;
 
+    public LayerMask WhatLayersShouldPlayersHitToAvoidPetrification;
+
     [SerializeField]
     private BasicAttributes stats;
 
