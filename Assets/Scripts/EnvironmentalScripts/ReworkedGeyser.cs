@@ -30,6 +30,12 @@ public class ReworkedGeyser : MonoBehaviour
         }
     }
 
+    public void EndGeyserAOE()
+    {
+        geyserCollider.enabled = false;
+        isColliderEnabled = false;
+    }
+
 }
 
     
