@@ -1,4 +1,5 @@
 using Fungus;
+using JetBrains.Annotations;
 using Pathfinding;
 using System;
 using System.Collections;
@@ -49,6 +50,18 @@ public class EntityHealthBehaviour : MonoBehaviour
     private GameEvent BossDeathEvent;
     [SerializeField]
     private Counter<GameObject> playerInstances;
+    [SerializeField]
+    private Image BossHealthBar;
+
+    [SerializeField]
+    private Image BossBehindHealthBar;
+
+    private float PreviousHealth;
+
+    [SerializeField]
+    private float BossHealthBarLagSpeed;
+
+    private bool DelayHealthBarLag = true;
     private void OnEnable()
     {
         stats.OfTypecounter.Add(gameObject);
@@ -65,6 +78,7 @@ public class EntityHealthBehaviour : MonoBehaviour
         StartCoroutine(FlashRed());
         StartCoroutine(ConfusionDuration());
         StartCoroutine(knockback());
+        PreviousHealth = currentHealth;
     }
 
     private object[] HasCard(TarotCards.possibleModifiers modifier)
@@ -129,8 +143,38 @@ public class EntityHealthBehaviour : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if (isBoss)
+        {
+            UpdateBossHealthBar();
+            return;
+        }
         UpdateHealthBar();
 
+
+    }
+    private void UpdateBossHealthBar()
+    {
+        float fillAmount = GetPercentageFromTotal(stats.maxHealth, currentHealth);
+        BossHealthBar.fillAmount = fillAmount;
+        if (BossHealthBar.fillAmount != BossBehindHealthBar.fillAmount)
+        {
+            if(currentHealth == PreviousHealth)
+            {
+                BossBehindHealthBar.fillAmount = Mathf.Lerp(BossBehindHealthBar.fillAmount, fillAmount, BossHealthBarLagSpeed * Time.deltaTime);
+            }
+            if (DelayHealthBarLag)
+            {
+                DelayHealthBarLag = false;
+                return;
+            }
+            DelayHealthBarLag = true;
+            PreviousHealth = currentHealth;
+        }
+
+    }
+    private float GetPercentageFromTotal(float total, float current)
+    {
+        return current / total;
     }
 
     private void UpdateHealthBar()
@@ -235,8 +279,11 @@ public class EntityHealthBehaviour : MonoBehaviour
         while(true)
         {
             yield return new WaitUntil(() => triggeredKnockBack);
-            Range_Calculator range_Calculator = GetComponent<Range_Calculator>();
-            range_Calculator.enabled = false;
+            Range_Calculator range_Calculator;
+            if (TryGetComponent<Range_Calculator>(out range_Calculator))
+            {
+                range_Calculator.enabled = false;
+            }
             float knockbackDistance;
             TarotCards hasKnockBack = null;
             try
@@ -259,7 +306,10 @@ public class EntityHealthBehaviour : MonoBehaviour
             rb.velocity = Vector2.zero;
             EnablerAStar(true);
             rb.totalForce = Vector2.zero;
-            range_Calculator.enabled = true;
+            if (TryGetComponent<Range_Calculator>(out range_Calculator))
+            {
+                range_Calculator.enabled = true;
+            }
             triggeredKnockBack = false;
         }
     }

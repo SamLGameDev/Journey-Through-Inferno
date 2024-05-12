@@ -29,6 +29,5 @@ public class MedusaMeleeAttack : StateMachineBehaviour
         animator.ResetTrigger("MeleeAttack");
 
         mb.meleeCooldown = true;
-        mb.StartCoroutine(mb.MeleeCooldown());
     }
 }

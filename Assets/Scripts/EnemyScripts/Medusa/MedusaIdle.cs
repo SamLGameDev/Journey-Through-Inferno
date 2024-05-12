@@ -16,7 +16,7 @@ public class MedusaIdle : StateMachineBehaviour
             animator.SetBool("Moving", true);
         }
 
-        mb.StartCoroutine(mb.AbilityTrigger());
+        mb.TriggerAbillities = true;
     }
 
     //OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -29,6 +29,6 @@ public class MedusaIdle : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         mb = animator.GetComponent<MedusaBehaviour>();
-        mb.StopAllCoroutines();
+       // mb.StopAllCoroutines();
     }
 }

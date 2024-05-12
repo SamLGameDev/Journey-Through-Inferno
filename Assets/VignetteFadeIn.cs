@@ -14,6 +14,10 @@ public class VignetteFadeIn : MonoBehaviour
 
     private float vignetteAmount;
 
+    public bool StartFadeOut = false;
+
+    public bool StartFadeIn = false;
+
     private void Start()
     {
         vol = GetComponent<Volume>();
@@ -22,38 +26,53 @@ public class VignetteFadeIn : MonoBehaviour
         vignetteAmount = vig.intensity.value;
 
         vol.enabled = true;
-        gameObject.SetActive(false);
     }
 
     public IEnumerator FadeIn()
     {
-        gameObject.SetActive(true);
-
-        for (float t = 0; t < fadeTime; t += Time.deltaTime)
+        while (true)
         {
-            float normalisedTime = t / fadeTime;
+            yield return new WaitUntil(() => StartFadeIn);
+            float t = 0;
+            while (t < fadeTime)
+            {
+                t += Time.deltaTime;
+                float normalisedTime = t / fadeTime;
 
-            vig.intensity.Override(Mathf.Lerp(0, vignetteAmount, normalisedTime));
+                vig.intensity.Override(Mathf.Lerp(0, vignetteAmount, normalisedTime));
 
-            yield return null;
+                yield return null;
+            }
+            StartFadeIn = false;
+
+
         }
     }
 
     public IEnumerator FadeOut()
     {
-        for (float t = 0; t < fadeTime; t += Time.deltaTime)
+
+        while (true)
         {
-            float normalisedTime = t / fadeTime;
-
-            vig.intensity.Override(Mathf.Lerp(vignetteAmount, 0, normalisedTime));
-
-            if (vig.intensity.value < 0)
+            Debug.Log("ReachedEnd");
+            yield return new WaitUntil(() => StartFadeOut);
+            float t = 0;
+            while (vig.intensity.value > 0.001)
             {
-                gameObject.SetActive(false);
-            }
+                t += Time.deltaTime;
+                float normalisedTime = t / fadeTime;
 
-            yield return null;
+                vig.intensity.Override(Mathf.Lerp(vignetteAmount, 0, normalisedTime));
+                Debug.Log("Viginetefadeout " + vig.intensity.value);
+
+                yield return null;
+            }
+            
+
+            StartFadeOut = false;
+            
         }
+
     }
 
     private void OnDisable()

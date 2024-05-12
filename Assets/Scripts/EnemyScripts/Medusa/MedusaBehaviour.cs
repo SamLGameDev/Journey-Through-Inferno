@@ -69,12 +69,13 @@ public class MedusaBehaviour : MonoBehaviour
     public bool readyToMove, attacking;
 
     [HideInInspector]
-    public bool meleeCooldown;
+    public bool meleeCooldown = false;
 
     [HideInInspector]
     public MedusaPetrifyAttack mpa;
 
-    
+    public bool TriggerAbillities = false;
+
 
     private void Start()
     {
@@ -84,6 +85,10 @@ public class MedusaBehaviour : MonoBehaviour
         meleeCooldown = false;
         destination = GetComponent<AIDestinationSetter>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        StartCoroutine(vignetteControl.FadeOut());
+        StartCoroutine(vignetteControl.FadeIn());
+        StartCoroutine(AbilityTrigger());
+        StartCoroutine(MeleeCooldown());
     }
 
     /// <summary>
@@ -169,35 +174,41 @@ public class MedusaBehaviour : MonoBehaviour
     /// <returns></returns>
     public IEnumerator AbilityTrigger()
     {
-
-        float randomTime = actionCooldownTime + Random.Range(0, maxTimeAbilityUsage - actionCooldownTime);
-
-        float randomAbilityIndex = Random.Range(1, 4);
-
-        yield return new WaitForSeconds(randomTime);
-
-        // Selecting a random ability to use.
-        if (randomAbilityIndex == 1)
+        while (true)
         {
-            animator.SetTrigger("PoisonAttack");
-        }
-        else if (randomAbilityIndex == 2)
-        {
-            animator.SetTrigger("PetrifyAttack");
-        }
-        else if (randomAbilityIndex == 3)
-        {
-            if (medusaPos == CurrentPosition.centre)
+            TriggerAbillities = false;
+            yield return new WaitUntil(() => TriggerAbillities);
+            float randomTime = actionCooldownTime + Random.Range(0, maxTimeAbilityUsage - actionCooldownTime);
+
+            float randomAbilityIndex = Random.Range(1, 4);
+
+            yield return new WaitForSeconds(randomTime);
+
+            // Selecting a random ability to use.
+            if (randomAbilityIndex == 1)
             {
-                medusaPos = CurrentPosition.top;
+                animator.SetTrigger("PoisonAttack");
             }
-            else
+            else if (randomAbilityIndex == 2)
             {
-                medusaPos = CurrentPosition.centre;
+                animator.SetTrigger("PetrifyAttack");
             }
+            else if (randomAbilityIndex == 3)
+            {
+                if (medusaPos == CurrentPosition.centre)
+                {
+                    medusaPos = CurrentPosition.top;
+                }
+                else
+                {
+                    medusaPos = CurrentPosition.centre;
+                }
 
-            animator.SetBool("Moving", true);
+                animator.SetBool("Moving", true);
+            }
         }
+
+
     }
 
     /// <summary>
@@ -262,7 +273,6 @@ public class MedusaBehaviour : MonoBehaviour
 
     public void StopPetrification()
     {
-        vignetteControl.StartCoroutine(vignetteControl.FadeOut());
 
         foreach (GameObject player in players)
         {
@@ -279,9 +289,14 @@ public class MedusaBehaviour : MonoBehaviour
     /// <returns></returns>
     public IEnumerator MeleeCooldown()
     {
-        yield return new WaitForSeconds(meleeAttackCooldown);
+        while (true)
+        {
+            yield return new WaitUntil(() => meleeCooldown);
+            yield return new WaitForSeconds(meleeAttackCooldown);
 
-        meleeCooldown = false;
+            meleeCooldown = false;
+        }
+
     }
 
     /// <summary>
