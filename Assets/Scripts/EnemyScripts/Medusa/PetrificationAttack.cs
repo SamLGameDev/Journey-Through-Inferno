@@ -55,7 +55,6 @@ public class PetrificationAttack : MonoBehaviour
 
             return;
         }
-
         RaycastHit2D hit = Physics2D.Raycast(transform.position, medusa.transform.position - transform.position, Mathf.Infinity, whatToHit);
 
         if (hit.collider != null && hit.collider.CompareTag("Enemy"))
@@ -69,6 +68,7 @@ public class PetrificationAttack : MonoBehaviour
                 petrified = true;
                 beenPetrified = true;
 
+                Debug.Log(gameObject.name + "petrifed");
                 // Disable input.
                 GetComponent<Player_movement>().InputManager.CutsceneStarted();
                 GetComponent<Player_movement>().isPetrified = true;

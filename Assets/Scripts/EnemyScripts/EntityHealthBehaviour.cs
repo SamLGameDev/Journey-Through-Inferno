@@ -62,6 +62,7 @@ public class EntityHealthBehaviour : MonoBehaviour
     private float BossHealthBarLagSpeed;
 
     private bool DelayHealthBarLag = true;
+
     private void OnEnable()
     {
         stats.OfTypecounter.Add(gameObject);

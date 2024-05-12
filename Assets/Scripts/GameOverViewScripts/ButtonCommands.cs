@@ -71,7 +71,10 @@ public class ButtonCommands : MonoBehaviour
         EventSystem player2Events = GameManager.instance.player2EventSystem;
         player1Events.enabled = true;
         player2Events.enabled = true;
-        InputManager.currentState = InputManager.State.None;
+        foreach(GameObject player in GameManager.instance.playerInstances.GetItems())
+        {
+            player.GetComponent<Player_movement>().InputManager.CutsceneEnded();
+        }
         Player_movement.isPaused = false;
         if (GameManager.OnScreenCardsExists())
         {

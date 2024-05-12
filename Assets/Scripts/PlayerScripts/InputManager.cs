@@ -15,12 +15,13 @@ public class InputManager : MonoBehaviour
     private Player_movement movement;
     private float confusionCooldown;
 
-    public static State currentState = State.None;
+    public State currentState = State.None;
 
     public void CutsceneStarted()
     {
         currentState = State.cutscene;
         movement.MovementDirection = Vector2.zero;
+        Debug.Log(movement.gameObject + "input petrified");
     }
     public void CutsceneEnded()
     {

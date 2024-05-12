@@ -80,7 +80,7 @@ MonoBehaviour:
   playerInstances: {fileID: 0}
   BossHealthBar: {fileID: 0}
   BossBehindHealthBar: {fileID: 0}
-  BossHealthBarLagSpeed: 0
+  BossHealthBarLagSpeed: 2
 --- !u!212 &8593207479546098650
 SpriteRenderer:
   m_ObjectHideFlags: 0
