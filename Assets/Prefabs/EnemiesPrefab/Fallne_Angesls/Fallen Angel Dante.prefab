@@ -84,6 +84,11 @@ PrefabInstance:
       propertyPath: onlyVirgil
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6451662308673154417, guid: 5b8edf7a2c17d3d478b607c866e15174,
+        type: 3}
+      propertyPath: SizeIncreaseSpeed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7256823025845731012, guid: 5b8edf7a2c17d3d478b607c866e15174,
         type: 3}
       propertyPath: uniqueID

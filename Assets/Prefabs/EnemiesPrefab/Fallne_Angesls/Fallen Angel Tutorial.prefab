@@ -74,6 +74,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -179.658
       objectReference: {fileID: 0}
+    - target: {fileID: 4801089580672160280, guid: 6f54f83e10a239546ad6251645f07e9b,
+        type: 3}
+      propertyPath: SizeIncreaseSpeed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5117332000427463553, guid: 6f54f83e10a239546ad6251645f07e9b,
         type: 3}
       propertyPath: target

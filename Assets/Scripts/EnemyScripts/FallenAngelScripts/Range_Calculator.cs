@@ -20,6 +20,16 @@ public class Range_Calculator : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private bool beginFrozen = true;
     private float freezeBeganTimer;
+
+    [SerializeField]
+    private Vector3 increasedSize;
+
+    private Vector3 baseSize;
+
+    private bool ShouldIncreaseSize = false;
+
+    [SerializeField]
+    private float SizeIncreaseSpeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +39,7 @@ public class Range_Calculator : MonoBehaviour
         destination = GetComponent<AIDestinationSetter>();
         ani = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        baseSize = transform.localScale;
     }
     /// <summary>
     /// checks to see if the target is within melee range
@@ -80,6 +91,16 @@ public class Range_Calculator : MonoBehaviour
         ani.SetBool("Within_Charge_Range", false);
         return false;
     }
+
+    public void IncreaseSize()
+    {
+        ShouldIncreaseSize = true;
+    }
+
+    public void DecreaseSize()
+    {
+        ShouldIncreaseSize = false;
+    }
     /// <summary>
     /// enables or disables A* based on the setter parameter
     /// </summary>
@@ -98,6 +119,14 @@ public class Range_Calculator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (ShouldIncreaseSize)
+        {
+            transform.localScale = Vector3.Lerp(transform.localScale, increasedSize, SizeIncreaseSpeed * Time.deltaTime);
+        }
+        else
+        {
+            transform.localScale = Vector3.Lerp(transform.localScale, baseSize, SizeIncreaseSpeed * Time.deltaTime);
+        }
         float time = Time.time;
         if (destination.currentState == AIDestinationSetter.CurrentState.frozen)
         {

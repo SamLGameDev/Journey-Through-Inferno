@@ -78,6 +78,9 @@ MonoBehaviour:
   onlyDante: 0
   BossDeathEvent: {fileID: 0}
   playerInstances: {fileID: 0}
+  BossHealthBar: {fileID: 0}
+  BossBehindHealthBar: {fileID: 0}
+  BossHealthBarLagSpeed: 0
 --- !u!212 &8593207479546098650
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -343,6 +346,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: ee49df38efdaefc4fa8fcd7bdf5de804, type: 2}
   state: 0
+  increasedSize: {x: 3, y: 3, z: 1}
+  SizeIncreaseSpeed: 2
 --- !u!114 &9195619475462717869
 MonoBehaviour:
   m_ObjectHideFlags: 0
