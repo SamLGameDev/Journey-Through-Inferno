@@ -9835,7 +9835,7 @@ MonoBehaviour:
   message: 'Use the BUTTON to navigate. '
   assets: {fileID: 11400000, guid: 4433f7bbe65090046a2429e4bbbc18f7, type: 2}
   xboxButtonName:
-  - 
+  - DPad
   ps4ButtonName: []
   text: {fileID: 642551055}
 --- !u!114 &642551055 stripped
