@@ -18455,7 +18455,8 @@ MonoBehaviour:
   bottomTextBox: {fileID: 903218510}
   noCards: 0
   enemysCount: {fileID: 11400000, guid: e4a5f4694b79fe4488542d7385a2650f, type: 2}
-  OnEncounterCleaered: {fileID: 0}
+  OnEncounterCleaered: {fileID: 11400000, guid: fe3919ed31df2ae439ae3215dcb7d292,
+    type: 2}
 --- !u!4 &1336663985
 Transform:
   m_ObjectHideFlags: 0
@@ -28546,6 +28547,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 248639302}
+    - target: {fileID: 5758543814806592852, guid: 8285d51b0d65a0c4faf3f136ef9c9217,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6029126886790632146, guid: 8285d51b0d65a0c4faf3f136ef9c9217,
         type: 3}
       propertyPath: m_Pivot.x
