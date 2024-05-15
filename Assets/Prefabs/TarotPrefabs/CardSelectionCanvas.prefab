@@ -69,8 +69,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Use the D-pad to navigate. south button to submit
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 50ea4e5f5fa88d042a78074d1c1068aa, type: 2}
+  m_sharedMaterial: {fileID: -1454737801145802970, guid: 50ea4e5f5fa88d042a78074d1c1068aa,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
