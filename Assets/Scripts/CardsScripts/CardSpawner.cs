@@ -37,6 +37,8 @@ public class CardSpawner : MonoBehaviour
     [SerializeField]
     private Counter<GameObject> playerInstances;
 
+    private List<GameObject> players;
+
     
     public CardSelectionGameObjects _cardSelectionGameObjects;
 
@@ -45,6 +47,7 @@ public class CardSpawner : MonoBehaviour
     {
         StartCoroutine(HandelingCardSelectionGameState());
         onScreenCards =   null  ;
+        players = new List<GameObject>(playerInstances.GetItems());
     }
 
 
@@ -310,7 +313,7 @@ public class CardSpawner : MonoBehaviour
             // disables the second input system
             //GameManager.instance.player2EventSystem.enabled = false;
 
-            foreach (GameObject p in playerInstances.GetItems())
+            foreach (GameObject p in players)
             {
                 SelectingPlayerSpriteIndex = SetUpCardCreation(SelectingPlayerSpriteIndex);
                 if (!CheckIfPlayerCanSelect(p)) { continue; }
@@ -357,7 +360,7 @@ public class CardSpawner : MonoBehaviour
         if (_playerCards.Count == 0)
         {
             ChangeEventSystem();
-            if (player == playerInstances.GetItemAtIndex(1))
+            if (player == players[1])
             {
                 GameManager.instance.noCards = true;
             }

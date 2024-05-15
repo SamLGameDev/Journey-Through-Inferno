@@ -20266,7 +20266,7 @@ PrefabInstance:
     - target: {fileID: 137963450507240008, guid: f498a18952f87984bb5a1ba914626787,
         type: 3}
       propertyPath: onlyDante
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1851588822714961198, guid: f498a18952f87984bb5a1ba914626787,
         type: 3}
@@ -27580,6 +27580,12 @@ PrefabInstance:
       propertyPath: playerInstances
       value: 
       objectReference: {fileID: 11400000, guid: 77dab4b9db3db1845b84e0d58cdc2603,
+        type: 2}
+    - target: {fileID: 4096624456859787653, guid: 9b9bbf6b8c1105448bd7848291b322be,
+        type: 3}
+      propertyPath: OnEncounterCleaered
+      value: 
+      objectReference: {fileID: 11400000, guid: fe3919ed31df2ae439ae3215dcb7d292,
         type: 2}
     - target: {fileID: 4096624456859787653, guid: 9b9bbf6b8c1105448bd7848291b322be,
         type: 3}
