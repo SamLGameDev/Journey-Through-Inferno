@@ -5,13 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainMenu.unity
     guid: ced3ad88ee215f949b82dbdfce3e37a5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/CutScene_Scenes/tutorial.unity
     guid: 74ed24ca00391fc46ae1a2cfe28c1da6
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TutorialLevel.unity
     guid: 0688b570b998f564cb2ddc488fb913b7
   - enabled: 0
@@ -20,22 +20,22 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/ExclusiveEnemyies tutorial.unity
     guid: bce9f51c8cc066740a27e850b2934f8d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/CutScene_Scenes/City_of_Dis Intro.unity
     guid: 656b7249ec8b0c147b477df8c192d46b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/co-op scene.unity
     guid: ea8ed10a650fe9e46b77ba0e3a7c58c2
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/CutScene_Scenes/City_of_Dis_DeusEx.unity
     guid: 3884d134ddc2334459c002d08f33d051
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Medusa_Fight.unity
     guid: 69ce78ce905dae64989570afd03d5922
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/CutScene_Scenes/City_of_Dis_End.unity
     guid: 506c992775d902442b49785837b0f135
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/CutScene_Scenes/Cutscene greed.unity
     guid: b2d9012581b45d84a8d1395da8333589
   - enabled: 1
@@ -44,13 +44,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/PvP_Area_Placeholder.unity
     guid: 2ceb4cc7957b6794d8abe3e2edc09d7d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LevelFailed.unity
     guid: c8c4961475e61b047a23e9f149d857ce
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TutorialPage.unity
     guid: f9a8ad96eaf5edd448674dbb6434a922
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/End of Game.unity
     guid: 67dca5986fbef584bac56cb502884784
   m_configObjects:
