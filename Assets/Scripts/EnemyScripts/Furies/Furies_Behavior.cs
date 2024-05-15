@@ -82,7 +82,7 @@ public class Furies_Behavior : MonoBehaviour
                 ani.enabled = true;
                 state.currentState = AIDestinationSetter.CurrentState.normal;
                 movement.canMove = true;
-                sr.color = Color.white;
+                sr.color = GetComponent<EntityHealthBehaviour>().originalColor;
                 
             }
             switch (currentState)

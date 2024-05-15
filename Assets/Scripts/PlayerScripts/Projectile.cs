@@ -29,10 +29,6 @@ public class PlayerProjectile : MonoBehaviour
             enemyHealth.ApplyDamage(stats.bulletDamage.value + stats.bulletDamageModifier.value + criticalDamage, transform.parent.gameObject);
             Destroy(gameObject);
         }
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Obstacles"))
-        {
-            Destroy(gameObject);
-        }
     }
     // Update is called once per frame
     void Update()

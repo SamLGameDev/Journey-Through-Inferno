@@ -25,7 +25,7 @@ public class ReworkedGeyser : MonoBehaviour
         if (isColliderEnabled && collision.CompareTag("Player") && Time.time - 1.5f > timeBeforeDamage)
         {
             timeBeforeDamage = Time.time;
-            collision.GetComponent<EntityHealthBehaviour>().ApplyDamage(1);
+            collision.GetComponent<EntityHealthBehaviour>().ApplyDamage(3);
             
         }
     }

@@ -120,7 +120,7 @@ public class MedusaBehaviour : MonoBehaviour
     }
     public void EndFrozen()
     {
-        spriteRenderer.color = Color.white;
+        spriteRenderer.color = GetComponent<EntityHealthBehaviour>().originalColor;
         destination.currentState = AIDestinationSetter.CurrentState.normal;
         
     }
