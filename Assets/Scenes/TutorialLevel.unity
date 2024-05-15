@@ -3337,10 +3337,11 @@ Animation:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1010644592}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Animation: {fileID: 7400000, guid: 494d6a49aad7f9540bc6a81eb5428892, type: 2}
-  m_Animations: []
+  m_Animations:
+  - {fileID: 7400000, guid: 4c3f602c42777544c94cfaf14876c013, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -6158,8 +6159,13 @@ PrefabInstance:
     - target: {fileID: 5125486503172991465, guid: 6f54f83e10a239546ad6251645f07e9b,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5125486503172991465, guid: 6f54f83e10a239546ad6251645f07e9b,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b2d6625716807894c9bd1fa329e7730a, type: 2}
     - target: {fileID: 5425823505382445665, guid: 6f54f83e10a239546ad6251645f07e9b,
         type: 3}
       propertyPath: Event
@@ -6254,7 +6260,7 @@ Animation:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1680428335}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Animation: {fileID: 7400000, guid: 494d6a49aad7f9540bc6a81eb5428892, type: 2}
   m_Animations: []
@@ -13257,8 +13263,13 @@ PrefabInstance:
     - target: {fileID: 5125486503172991465, guid: 6f54f83e10a239546ad6251645f07e9b,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5125486503172991465, guid: 6f54f83e10a239546ad6251645f07e9b,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b2d6625716807894c9bd1fa329e7730a, type: 2}
     - target: {fileID: 5425823505382445665, guid: 6f54f83e10a239546ad6251645f07e9b,
         type: 3}
       propertyPath: Event
@@ -13278,12 +13289,12 @@ PrefabInstance:
     - target: {fileID: 6376933874138379425, guid: 6f54f83e10a239546ad6251645f07e9b,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 1.12
+      value: 1.22
       objectReference: {fileID: 0}
     - target: {fileID: 6376933874138379425, guid: 6f54f83e10a239546ad6251645f07e9b,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1.7
+      value: 1.98
       objectReference: {fileID: 0}
     - target: {fileID: 8158330365370726917, guid: 6f54f83e10a239546ad6251645f07e9b,
         type: 3}
