@@ -72,8 +72,11 @@ public class EntityHealthBehaviour : MonoBehaviour
     }
     private void Start()
     {
-        player1.IsAlive = true;
-        player2.IsAlive = true;
+        if (gameObject.CompareTag("Player"))
+        {
+            player1.IsAlive = true;
+            player2.IsAlive = true;
+        }
         currentHealth = stats.maxHealth + stats.armour;
         damageInvulnerable = false;
         IsAlive = true;
@@ -152,7 +155,7 @@ public class EntityHealthBehaviour : MonoBehaviour
             return;
         }
         UpdateHealthBar();
-
+        Debug.Log(player1.IsAlive + " player 1 alive " +  player2.IsAlive + " player 2 alive");
 
     }
     private void UpdateBossHealthBar()
@@ -540,6 +543,8 @@ public class EntityHealthBehaviour : MonoBehaviour
         }
         transform.rotation = Quaternion.identity;
         GetComponent<Animator>().SetBool("Death", true);
+        StopAllCoroutines();
+        GetComponent<SpriteRenderer>().color = Color.white;
         StartCoroutine(EnemyDeath());
     }
     public IEnumerator EnemyDeath()

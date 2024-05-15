@@ -14,6 +14,18 @@ public class Respawn : MonoBehaviour
     [SerializeField]
     private int CostOfReviving;
 
+    private void Start()
+    {
+        if (player.name == "Player 2")
+        {
+            EntityHealthBehaviour.player2.IsAlive = false;
+        }
+        else
+        {
+            EntityHealthBehaviour.player1.IsAlive = false;
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -36,6 +48,7 @@ public class Respawn : MonoBehaviour
                 OnExitCollider.Raise();
                 if (player.name == "Player 2")
                 {
+                    Debug.Log("working fine here");
                     EntityHealthBehaviour.player2.IsAlive = true;
                 }
                 else

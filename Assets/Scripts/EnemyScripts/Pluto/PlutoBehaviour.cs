@@ -83,6 +83,13 @@ public class PlutoBehaviour : MonoBehaviour
         catch{ }
         
     }
+    private void OnDestroy()
+    {
+        foreach(GameObject enemy in statues.GetItems())
+        {
+            enemy.GetComponent<EntityHealthBehaviour>().ApplyDamage(999, player.gameObject);
+        }
+    }
 
     public void SendCerberus()
     {

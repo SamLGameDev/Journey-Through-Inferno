@@ -12327,6 +12327,7 @@ GameObject:
   - component: {fileID: 1035228131}
   - component: {fileID: 1035228132}
   - component: {fileID: 1035228133}
+  - component: {fileID: 1035228134}
   m_Layer: 11
   m_Name: BrokenPillar1
   m_TagString: Untagged
@@ -12389,7 +12390,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 276
+  m_SortingOrder: 18
   m_Sprite: {fileID: 447324895, guid: 4326a5e6c98be4747a63985a88c670a0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -12399,7 +12400,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 2
+  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &1035228132
 BoxCollider2D:
@@ -12458,10 +12459,10 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 16247
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -12478,7 +12479,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.034258366, y: -0.5995456}
+  m_Offset: {x: -0.034258366, y: -0.52800536}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -12489,8 +12490,22 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1814833, y: 0.22600865}
+  m_Size: {x: 1.1814833, y: 0.36908913}
   m_EdgeRadius: 0
+--- !u!114 &1035228134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035228129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b96d622576c7440b08478c90580674, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInstances: {fileID: 11400000, guid: 77dab4b9db3db1845b84e0d58cdc2603, type: 2}
+  pillars: {fileID: 11400000, guid: 8078ef1c2f9fd0e44a3a93949f906819, type: 2}
 --- !u!1 &1039588171
 GameObject:
   m_ObjectHideFlags: 0
@@ -14189,6 +14204,7 @@ GameObject:
   - component: {fileID: 1175491124}
   - component: {fileID: 1175491125}
   - component: {fileID: 1175491126}
+  - component: {fileID: 1175491127}
   m_Layer: 11
   m_Name: BrokenPillar2 (1)
   m_TagString: Untagged
@@ -14251,7 +14267,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 221
+  m_SortingOrder: 22
   m_Sprite: {fileID: 615889442, guid: 4326a5e6c98be4747a63985a88c670a0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -14261,7 +14277,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 2
+  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &1175491125
 BoxCollider2D:
@@ -14340,7 +14356,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.8181526}
+  m_Offset: {x: 0, y: -0.65286916}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -14351,8 +14367,22 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.15, y: 0.21369493}
+  m_Size: {x: 1.15, y: 0.5442618}
   m_EdgeRadius: 0
+--- !u!114 &1175491127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175491122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b96d622576c7440b08478c90580674, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInstances: {fileID: 11400000, guid: 77dab4b9db3db1845b84e0d58cdc2603, type: 2}
+  pillars: {fileID: 11400000, guid: 8078ef1c2f9fd0e44a3a93949f906819, type: 2}
 --- !u!1 &1192824100
 GameObject:
   m_ObjectHideFlags: 0
@@ -14825,6 +14855,7 @@ GameObject:
   - component: {fileID: 1230345569}
   - component: {fileID: 1230345570}
   - component: {fileID: 1230345571}
+  - component: {fileID: 1230345572}
   m_Layer: 11
   m_Name: BrokenPillar2
   m_TagString: Untagged
@@ -14887,7 +14918,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 221
+  m_SortingOrder: 20
   m_Sprite: {fileID: 615889442, guid: 4326a5e6c98be4747a63985a88c670a0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -14897,7 +14928,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 2
+  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &1230345570
 BoxCollider2D:
@@ -14976,7 +15007,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.80301046}
+  m_Offset: {x: 0, y: -0.6863816}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -14987,8 +15018,22 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.15, y: 0.24397904}
+  m_Size: {x: 1.15, y: 0.47723675}
   m_EdgeRadius: 0
+--- !u!114 &1230345572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230345567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b96d622576c7440b08478c90580674, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInstances: {fileID: 11400000, guid: 77dab4b9db3db1845b84e0d58cdc2603, type: 2}
+  pillars: {fileID: 11400000, guid: 8078ef1c2f9fd0e44a3a93949f906819, type: 2}
 --- !u!1 &1255918360
 GameObject:
   m_ObjectHideFlags: 0
@@ -15211,6 +15256,36 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1437102947299486043, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.6929718
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437102947299486043, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.17678201
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437102947299486043, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.02193074
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437102947299486043, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.881609
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437102947299486043, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
+        type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 10231
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437102947299486043, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
+        type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 6144
+      objectReference: {fileID: 0}
     - target: {fileID: 1658128008857216438, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
         type: 3}
       propertyPath: m_CollisionDetection
@@ -15355,6 +15430,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8921179218869034630, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8921179218869034630, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
+        type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 6144
+      objectReference: {fileID: 0}
+    - target: {fileID: 8921179218869034630, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
+        type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 10231
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18700,6 +18790,7 @@ GameObject:
   - component: {fileID: 1343852047}
   - component: {fileID: 1343852048}
   - component: {fileID: 1343852049}
+  - component: {fileID: 1343852050}
   m_Layer: 11
   m_Name: BrokenPillar1 (1)
   m_TagString: Untagged
@@ -18762,7 +18853,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 276
+  m_SortingOrder: 18
   m_Sprite: {fileID: 447324895, guid: 4326a5e6c98be4747a63985a88c670a0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -18772,7 +18863,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 2
+  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &1343852048
 BoxCollider2D:
@@ -18851,7 +18942,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.59934425}
+  m_Offset: {x: 0, y: -0.53436816}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -18862,8 +18953,22 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.25, y: 0.22631148}
+  m_Size: {x: 1.25, y: 0.3562636}
   m_EdgeRadius: 0
+--- !u!114 &1343852050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343852045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b96d622576c7440b08478c90580674, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInstances: {fileID: 11400000, guid: 77dab4b9db3db1845b84e0d58cdc2603, type: 2}
+  pillars: {fileID: 11400000, guid: 8078ef1c2f9fd0e44a3a93949f906819, type: 2}
 --- !u!1 &1346770624
 GameObject:
   m_ObjectHideFlags: 0
@@ -21167,6 +21272,21 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3637656976028388624, guid: 28d04583d0c318648b28ee2c53bdaeab,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637656976028388624, guid: 28d04583d0c318648b28ee2c53bdaeab,
+        type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 10231
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637656976028388624, guid: 28d04583d0c318648b28ee2c53bdaeab,
+        type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 6144
+      objectReference: {fileID: 0}
     - target: {fileID: 4683655926936684099, guid: 28d04583d0c318648b28ee2c53bdaeab,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21221,6 +21341,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_DefaultControlScheme
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7113508430178997793, guid: 28d04583d0c318648b28ee2c53bdaeab,
+        type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 6144
+      objectReference: {fileID: 0}
+    - target: {fileID: 7113508430178997793, guid: 28d04583d0c318648b28ee2c53bdaeab,
+        type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 10231
       objectReference: {fileID: 0}
     - target: {fileID: 8550325053892496713, guid: 28d04583d0c318648b28ee2c53bdaeab,
         type: 3}

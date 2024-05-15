@@ -361,6 +361,7 @@ GameObject:
   - component: {fileID: 55633139}
   - component: {fileID: 55633141}
   - component: {fileID: 55633140}
+  - component: {fileID: 55633142}
   m_Layer: 11
   m_Name: tilesheet_limbo1_8
   m_TagString: Untagged
@@ -415,7 +416,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.6187296}
+  m_Offset: {x: 0, y: -0.516525}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -426,7 +427,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8684211, y: 0.26254082}
+  m_Size: {x: 0.8684211, y: 0.46695006}
   m_EdgeRadius: 0
 --- !u!212 &55633141
 SpriteRenderer:
@@ -480,6 +481,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &55633142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55633138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b96d622576c7440b08478c90580674, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInstances: {fileID: 11400000, guid: 77dab4b9db3db1845b84e0d58cdc2603, type: 2}
+  pillars: {fileID: 11400000, guid: 8078ef1c2f9fd0e44a3a93949f906819, type: 2}
 --- !u!1 &121563524
 GameObject:
   m_ObjectHideFlags: 0
@@ -622,6 +637,7 @@ GameObject:
   - component: {fileID: 135928243}
   - component: {fileID: 135928245}
   - component: {fileID: 135928244}
+  - component: {fileID: 135928246}
   m_Layer: 11
   m_Name: tilesheet_limbo1_8 (1)
   m_TagString: Untagged
@@ -676,7 +692,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.6187296}
+  m_Offset: {x: 0, y: -0.5267443}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -687,7 +703,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8684211, y: 0.26254082}
+  m_Size: {x: 0.8684211, y: 0.44651142}
   m_EdgeRadius: 0
 --- !u!212 &135928245
 SpriteRenderer:
@@ -741,6 +757,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &135928246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135928242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b96d622576c7440b08478c90580674, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInstances: {fileID: 11400000, guid: 77dab4b9db3db1845b84e0d58cdc2603, type: 2}
+  pillars: {fileID: 11400000, guid: 8078ef1c2f9fd0e44a3a93949f906819, type: 2}
 --- !u!114 &159388806 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7875501835849997115, guid: d59a8f9f170686444a1967fd07ec5ba2,
@@ -1033,6 +1063,7 @@ GameObject:
   - component: {fileID: 276660991}
   - component: {fileID: 276660993}
   - component: {fileID: 276660992}
+  - component: {fileID: 276660994}
   m_Layer: 11
   m_Name: tilesheet_limbo1_5
   m_TagString: Untagged
@@ -1087,7 +1118,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.7762814}
+  m_Offset: {x: 0, y: -0.6769488}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1098,7 +1129,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8684211, y: 0.39480555}
+  m_Size: {x: 0.8684211, y: 0.59347075}
   m_EdgeRadius: 0
 --- !u!212 &276660993
 SpriteRenderer:
@@ -1152,6 +1183,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &276660994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276660990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b96d622576c7440b08478c90580674, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInstances: {fileID: 11400000, guid: 77dab4b9db3db1845b84e0d58cdc2603, type: 2}
+  pillars: {fileID: 11400000, guid: 8078ef1c2f9fd0e44a3a93949f906819, type: 2}
 --- !u!1 &296618700
 GameObject:
   m_ObjectHideFlags: 0
@@ -1163,6 +1208,7 @@ GameObject:
   - component: {fileID: 296618701}
   - component: {fileID: 296618703}
   - component: {fileID: 296618702}
+  - component: {fileID: 296618704}
   m_Layer: 11
   m_Name: tilesheet_limbo1_8 (2)
   m_TagString: Untagged
@@ -1217,7 +1263,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.6187296}
+  m_Offset: {x: 0, y: -0.54747564}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1228,7 +1274,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8684211, y: 0.26254082}
+  m_Size: {x: 0.8684211, y: 0.40504876}
   m_EdgeRadius: 0
 --- !u!212 &296618703
 SpriteRenderer:
@@ -1282,6 +1328,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &296618704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 296618700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b96d622576c7440b08478c90580674, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInstances: {fileID: 11400000, guid: 77dab4b9db3db1845b84e0d58cdc2603, type: 2}
+  pillars: {fileID: 11400000, guid: 8078ef1c2f9fd0e44a3a93949f906819, type: 2}
 --- !u!1 &303254055
 GameObject:
   m_ObjectHideFlags: 1
@@ -2178,6 +2238,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 1437102947299486043, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
+        type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 10231
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437102947299486043, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
+        type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 6144
+      objectReference: {fileID: 0}
     - target: {fileID: 2447866012027878152, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
         type: 3}
       propertyPath: LowHealth
@@ -2288,6 +2358,16 @@ PrefabInstance:
       propertyPath: hasChariot
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8921179218869034630, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
+        type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 6144
+      objectReference: {fileID: 0}
+    - target: {fileID: 8921179218869034630, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
+        type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 10231
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2304,6 +2384,7 @@ GameObject:
   - component: {fileID: 585897101}
   - component: {fileID: 585897103}
   - component: {fileID: 585897102}
+  - component: {fileID: 585897104}
   m_Layer: 11
   m_Name: tilesheet_limbo1_8 (3)
   m_TagString: Untagged
@@ -2358,7 +2439,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.6187296}
+  m_Offset: {x: 0, y: -0.5575811}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2369,7 +2450,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8684211, y: 0.26254082}
+  m_Size: {x: 0.8684211, y: 0.38483772}
   m_EdgeRadius: 0
 --- !u!212 &585897103
 SpriteRenderer:
@@ -2423,6 +2504,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &585897104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585897100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b96d622576c7440b08478c90580674, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInstances: {fileID: 11400000, guid: 77dab4b9db3db1845b84e0d58cdc2603, type: 2}
+  pillars: {fileID: 11400000, guid: 8078ef1c2f9fd0e44a3a93949f906819, type: 2}
 --- !u!1 &596120225 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4079811531989665683, guid: 9ad55f666b12d6c46bdf08233137bbf8,
@@ -3932,6 +4027,7 @@ GameObject:
   - component: {fileID: 1223872203}
   - component: {fileID: 1223872205}
   - component: {fileID: 1223872204}
+  - component: {fileID: 1223872206}
   m_Layer: 11
   m_Name: tilesheet_limbo1_4 (1)
   m_TagString: Untagged
@@ -3986,7 +4082,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.18616012}
+  m_Offset: {x: 0, y: -0.14353207}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3997,7 +4093,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.3157895, y: 0.3382061}
+  m_Size: {x: 1.3157895, y: 0.4234622}
   m_EdgeRadius: 0
 --- !u!212 &1223872205
 SpriteRenderer:
@@ -4051,6 +4147,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1223872206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1223872202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b96d622576c7440b08478c90580674, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInstances: {fileID: 11400000, guid: 77dab4b9db3db1845b84e0d58cdc2603, type: 2}
+  pillars: {fileID: 11400000, guid: 8078ef1c2f9fd0e44a3a93949f906819, type: 2}
 --- !u!114 &1250133069 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1848200205822924037, guid: d59a8f9f170686444a1967fd07ec5ba2,
@@ -4232,6 +4342,7 @@ GameObject:
   - component: {fileID: 1275188307}
   - component: {fileID: 1275188309}
   - component: {fileID: 1275188308}
+  - component: {fileID: 1275188310}
   m_Layer: 11
   m_Name: tilesheet_limbo1_4
   m_TagString: Untagged
@@ -4351,6 +4462,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1275188310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275188306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b96d622576c7440b08478c90580674, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInstances: {fileID: 11400000, guid: 77dab4b9db3db1845b84e0d58cdc2603, type: 2}
+  pillars: {fileID: 11400000, guid: 8078ef1c2f9fd0e44a3a93949f906819, type: 2}
 --- !u!114 &1275980833 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5495234601071457373, guid: d59a8f9f170686444a1967fd07ec5ba2,
@@ -4979,6 +5104,7 @@ GameObject:
   - component: {fileID: 1495948655}
   - component: {fileID: 1495948657}
   - component: {fileID: 1495948656}
+  - component: {fileID: 1495948658}
   m_Layer: 11
   m_Name: tilesheet_limbo1_4 (2)
   m_TagString: Untagged
@@ -5098,6 +5224,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1495948658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495948654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b96d622576c7440b08478c90580674, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInstances: {fileID: 11400000, guid: 77dab4b9db3db1845b84e0d58cdc2603, type: 2}
+  pillars: {fileID: 11400000, guid: 8078ef1c2f9fd0e44a3a93949f906819, type: 2}
 --- !u!1001 &1496480905
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13105,6 +13245,16 @@ PrefabInstance:
       propertyPath: _resumeButton
       value: 
       objectReference: {fileID: 1617485775}
+    - target: {fileID: 3637656976028388624, guid: 28d04583d0c318648b28ee2c53bdaeab,
+        type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 10231
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637656976028388624, guid: 28d04583d0c318648b28ee2c53bdaeab,
+        type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 6144
+      objectReference: {fileID: 0}
     - target: {fileID: 4683655926936684099, guid: 28d04583d0c318648b28ee2c53bdaeab,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13124,6 +13274,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 7113508430178997793, guid: 28d04583d0c318648b28ee2c53bdaeab,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7113508430178997793, guid: 28d04583d0c318648b28ee2c53bdaeab,
+        type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 6144
+      objectReference: {fileID: 0}
+    - target: {fileID: 7113508430178997793, guid: 28d04583d0c318648b28ee2c53bdaeab,
+        type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 10231
       objectReference: {fileID: 0}
     - target: {fileID: 8427460489820360778, guid: 28d04583d0c318648b28ee2c53bdaeab,
         type: 3}
@@ -13352,6 +13517,7 @@ GameObject:
   - component: {fileID: 1829667960}
   - component: {fileID: 1829667962}
   - component: {fileID: 1829667961}
+  - component: {fileID: 1829667963}
   m_Layer: 11
   m_Name: tilesheet_limbo1_5 (2)
   m_TagString: Untagged
@@ -13406,7 +13572,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.7762814}
+  m_Offset: {x: 0, y: -0.6970802}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -13417,7 +13583,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8684211, y: 0.39480555}
+  m_Size: {x: 0.8684211, y: 0.553208}
   m_EdgeRadius: 0
 --- !u!212 &1829667962
 SpriteRenderer:
@@ -13471,6 +13637,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1829667963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829667959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b96d622576c7440b08478c90580674, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInstances: {fileID: 11400000, guid: 77dab4b9db3db1845b84e0d58cdc2603, type: 2}
+  pillars: {fileID: 11400000, guid: 8078ef1c2f9fd0e44a3a93949f906819, type: 2}
 --- !u!1 &1851696276 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4024701041087090802, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
@@ -13625,6 +13805,7 @@ GameObject:
   - component: {fileID: 1910771301}
   - component: {fileID: 1910771303}
   - component: {fileID: 1910771302}
+  - component: {fileID: 1910771304}
   m_Layer: 11
   m_Name: tilesheet_limbo1_5 (1)
   m_TagString: Untagged
@@ -13679,7 +13860,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.7762814}
+  m_Offset: {x: 0, y: -0.7197097}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -13690,7 +13871,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8684211, y: 0.39480555}
+  m_Size: {x: 0.8684211, y: 0.507949}
   m_EdgeRadius: 0
 --- !u!212 &1910771303
 SpriteRenderer:
@@ -13744,6 +13925,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1910771304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910771300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b96d622576c7440b08478c90580674, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInstances: {fileID: 11400000, guid: 77dab4b9db3db1845b84e0d58cdc2603, type: 2}
+  pillars: {fileID: 11400000, guid: 8078ef1c2f9fd0e44a3a93949f906819, type: 2}
 --- !u!1 &2033324205
 GameObject:
   m_ObjectHideFlags: 0
