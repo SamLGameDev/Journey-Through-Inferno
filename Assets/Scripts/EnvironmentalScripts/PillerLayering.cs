@@ -65,4 +65,8 @@ public class PillerLayering : MonoBehaviour
 
         return closestPillar;
     }
+    private void OnDisable()
+    {
+        pillars.Remove(gameObject);
+    }
 }
