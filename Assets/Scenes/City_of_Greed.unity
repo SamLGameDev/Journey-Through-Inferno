@@ -1947,12 +1947,12 @@ PrefabInstance:
     - target: {fileID: 4683655926936684099, guid: 28d04583d0c318648b28ee2c53bdaeab,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.17
+      value: -9.68
       objectReference: {fileID: 0}
     - target: {fileID: 4683655926936684099, guid: 28d04583d0c318648b28ee2c53bdaeab,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -18.51
+      value: -20.48
       objectReference: {fileID: 0}
     - target: {fileID: 4683655926936684099, guid: 28d04583d0c318648b28ee2c53bdaeab,
         type: 3}
@@ -11032,6 +11032,7 @@ MonoBehaviour:
   BossHealthBar: {fileID: 925341984}
   BossBehindHealthBar: {fileID: 674663995}
   BossHealthBarLagSpeed: 2
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!61 &683299904
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15850,12 +15851,12 @@ PrefabInstance:
     - target: {fileID: 2495953773665164011, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.5
+      value: 8.41
       objectReference: {fileID: 0}
     - target: {fileID: 2495953773665164011, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -17.5
+      value: -20.63
       objectReference: {fileID: 0}
     - target: {fileID: 2495953773665164011, guid: 9c8f21e3fc50a304eacd43ce8aa11b3b,
         type: 3}
