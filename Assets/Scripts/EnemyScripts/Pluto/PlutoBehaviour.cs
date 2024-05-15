@@ -137,7 +137,7 @@ public class PlutoBehaviour : MonoBehaviour
             if(Time.time - stats.confusionDuration.value > beginfrezeTimer) 
             {
                 animator.enabled = true;
-                spriteRenderer.color = Color.white;
+                spriteRenderer.color = GetComponent<EntityHealthBehaviour>().originalColor;
                 beginFreeze = true;
                 destination.currentState = AIDestinationSetter.CurrentState.normal;
             }

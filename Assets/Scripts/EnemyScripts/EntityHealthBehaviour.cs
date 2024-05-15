@@ -63,6 +63,8 @@ public class EntityHealthBehaviour : MonoBehaviour
 
     private bool DelayHealthBarLag = true;
 
+    public Color originalColor;
+
     private void OnEnable()
     {
         stats.OfTypecounter.Add(gameObject);
@@ -75,7 +77,7 @@ public class EntityHealthBehaviour : MonoBehaviour
         currentHealth = stats.maxHealth + stats.armour;
         damageInvulnerable = false;
         IsAlive = true;
-        
+        originalColor = GetComponent<SpriteRenderer>().color;
         StartCoroutine(FlashRed());
         StartCoroutine(ConfusionDuration());
         StartCoroutine(knockback());
@@ -336,7 +338,7 @@ public class EntityHealthBehaviour : MonoBehaviour
             yield return new WaitUntil(() => flashRed && !Confused);
             sr.color = Color.red;
             yield return new WaitForSeconds(0.5f);
-            sr.color = Color.white;
+            sr.color = originalColor;
             flashRed = false;
         }
     }

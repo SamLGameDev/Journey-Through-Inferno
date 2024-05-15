@@ -33,9 +33,12 @@ public class ButtonCommands : MonoBehaviour
     {
         player1.Reset();
         player2.Reset();
-        SceneManager.LoadScene(sceneToLoad.value) ;
+        SceneManager.LoadScene(sceneToLoad.value);
     }
-
+    public void ResetLevel()
+    {
+        SceneManager.LoadScene(sceneToLoad.value);
+    }
     public void Tutorial()
     {
         SceneManager.LoadScene("TutorialPage");

@@ -53,7 +53,7 @@ public class MoltenAttack : MonoBehaviour
             if (time - stats.confusionDuration.value > freezeBeganTimer)
             {
                 ani.enabled = true;
-                spriteRenderer.color = Color.white;
+                spriteRenderer.color = GetComponent<EntityHealthBehaviour>().originalColor;
                 movement.canMove = true;
                 beginFrozen = true;
                 destination.currentState = AIDestinationSetter.CurrentState.normal;
