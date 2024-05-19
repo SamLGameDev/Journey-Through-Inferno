@@ -108,6 +108,7 @@ public class Player_movement : MonoBehaviour
     {
         UpdateSpeed();
         _lunge = new Lunge();
+        stats.currentState = Player.PlayerState.moving;
         StartCoroutine(timer(stats.gunCooldown.value));
         moves = GetComponent<Different_Moves>();
         rb = GetComponent<Rigidbody2D>();

@@ -519,7 +519,8 @@ public class EntityHealthBehaviour : MonoBehaviour
     }
 
     private void StartEnemyDeathSequence()
-    {
+    {        
+        StopAllCoroutines();
         EnablerAStar(false);
        
         try
@@ -543,7 +544,7 @@ public class EntityHealthBehaviour : MonoBehaviour
         }
         transform.rotation = Quaternion.identity;
         GetComponent<Animator>().SetBool("Death", true);
-        StopAllCoroutines();
+
         GetComponent<SpriteRenderer>().color = Color.white;
         StartCoroutine(EnemyDeath());
     }
