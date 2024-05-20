@@ -64,6 +64,7 @@ public class AudioManager : MonoBehaviour
 
         if (scene.name == "TutorialLevel" || scene.name == "tutorial")
         {
+            StopSound("MedusaFight");
             StopSound("Main_Menu_Music");
             StopSound("City_Of_Dis_Music");
             StopSound("City_Of_Greed_Music");
@@ -71,6 +72,7 @@ public class AudioManager : MonoBehaviour
         }
         else if (scene.name == "co-op scene" || scene.name == "City_of_Dis Intro" || scene.name == "City_of_Dis_Deus Ex" || scene.name == "City_of_Dis_End")
         {
+            StopSound("MedusaFight");
             StopSound("Main_Menu_Music");
             StopSound("Tutorial_Music");
             StopSound("City_Of_Greed_Music");
@@ -78,17 +80,28 @@ public class AudioManager : MonoBehaviour
         }
         else if (scene.name == "City_of_Greed" || scene.name == "Cutscene greed")
         {
+            StopSound("MedusaFight");
             StopSound("Main_Menu_Music");
             StopSound("City_Of_Dis_Music");
             StopSound("Tutorial_Music");
             PlaySound("City_Of_Greed_Music");
         }
         else if (scene.name == "MainMenu" || scene.name == "TutorialPage")
-        {
+        {            
+            StopSound("MedusaFight");
             StopSound("Tutorial_Music");
             StopSound("City_Of_Dis_Music");
             StopSound("City_Of_Greed_Music");
             PlaySound("Main_Menu_Music");
+
+        }
+        else if(scene.name == "Medusa_Fight")
+        {
+            StopSound("Main_Menu_Music");
+            StopSound("Tutorial_Music");
+            StopSound("City_Of_Dis_Music");
+            StopSound("City_Of_Greed_Music");
+            PlaySound("MedusaFight");
         }
 
     }
