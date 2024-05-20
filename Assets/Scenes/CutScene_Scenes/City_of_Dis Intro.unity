@@ -876,6 +876,11 @@ PrefabInstance:
       propertyPath: _duration.floatVal
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4844432510293308991, guid: cce7cabbb5fc0d141ab4ba1b9fb65128,
+        type: 3}
+      propertyPath: storyText
+      value: Oh nuts-
+      objectReference: {fileID: 0}
     - target: {fileID: 6252477703594738982, guid: cce7cabbb5fc0d141ab4ba1b9fb65128,
         type: 3}
       propertyPath: m_Name
