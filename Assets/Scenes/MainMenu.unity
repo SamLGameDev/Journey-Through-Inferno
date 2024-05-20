@@ -1293,6 +1293,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Audio
       objectReference: {fileID: 0}
+    - target: {fileID: 1865644420723815269, guid: 9211164de6b2818478725197e435a83d,
+        type: 3}
+      propertyPath: sounds.Array.data[0].name
+      value: Test_Sounds 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1865644420723815269, guid: 9211164de6b2818478725197e435a83d,
+        type: 3}
+      propertyPath: sounds.Array.data[13].clips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2974017910618840497, guid: 9211164de6b2818478725197e435a83d,
         type: 3}
       propertyPath: m_RootOrder
