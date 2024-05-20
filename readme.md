@@ -13,4 +13,4 @@ Royalty Free 8-Bit Background Music, 8 bit Nostalgia by David Fesliyan. Using Ro
 
 Royalty Free 8-Bit Background Music, Boss Time by David Fesliyan. Using Royalty Free License. Found at  https://www.fesliyanstudios.com/royalty-free-music/downloads-c/8-bit-music/6 (accessed 14/3/24)
 
-Roya;ty free font https://fontesk.com/haxorville-font/
+Royalty free font https://fontesk.com/haxorville-font/
