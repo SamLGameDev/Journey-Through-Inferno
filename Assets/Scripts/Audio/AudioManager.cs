@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager instance;
+    public static AudioManager instance = null;
 
     public Sound[] sounds;
 
@@ -22,10 +22,9 @@ public class AudioManager : MonoBehaviour
         }
         else
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
 
-        DontDestroyOnLoad(instance);
 
         foreach (Sound s in sounds) 
         {
@@ -48,37 +47,61 @@ public class AudioManager : MonoBehaviour
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
             s.source.loop = s.looped;
+            s.source.playOnAwake = true;
         }
+        SceneManager.sceneLoaded += ChangeBackgroundMusic;
     }
 
     private void Start()
     {
         // Subscribe background music controller to the OnSceneChange event.
-        SceneManager.sceneLoaded += ChangeBackgroundMusic;
     }
 
     private void ChangeBackgroundMusic(Scene scene, LoadSceneMode mode)
     {
-        StopSound("Tutorial_Music");
-        StopSound("Main_Menu_Music");
-        StopSound("City_Of_Dis_Music");
-        StopSound("City_Of_Greed_Music");
 
-        if (scene.name == "tutorial")
+
+
+        if (scene.name == "TutorialLevel" || scene.name == "tutorial")
         {
+            StopSound("MedusaFight");
+            StopSound("Main_Menu_Music");
+            StopSound("City_Of_Dis_Music");
+            StopSound("City_Of_Greed_Music");
             PlaySound("Tutorial_Music");
         }
-        else if (scene.name == "co-op scene")
+        else if (scene.name == "co-op scene" || scene.name == "City_of_Dis Intro" || scene.name == "City_of_Dis_Deus Ex" || scene.name == "City_of_Dis_End")
         {
+            StopSound("MedusaFight");
+            StopSound("Main_Menu_Music");
+            StopSound("Tutorial_Music");
+            StopSound("City_Of_Greed_Music");
             PlaySound("City_Of_Dis_Music");
         }
-        else if (scene.name == "City_Of_Greed")
+        else if (scene.name == "City_of_Greed" || scene.name == "Cutscene greed")
         {
+            StopSound("MedusaFight");
+            StopSound("Main_Menu_Music");
+            StopSound("City_Of_Dis_Music");
+            StopSound("Tutorial_Music");
             PlaySound("City_Of_Greed_Music");
         }
-        else if (scene.name == "Main_Menu")
-        {
+        else if (scene.name == "MainMenu" || scene.name == "TutorialPage")
+        {            
+            StopSound("MedusaFight");
+            StopSound("Tutorial_Music");
+            StopSound("City_Of_Dis_Music");
+            StopSound("City_Of_Greed_Music");
             PlaySound("Main_Menu_Music");
+
+        }
+        else if(scene.name == "Medusa_Fight")
+        {
+            StopSound("Main_Menu_Music");
+            StopSound("Tutorial_Music");
+            StopSound("City_Of_Dis_Music");
+            StopSound("City_Of_Greed_Music");
+            PlaySound("MedusaFight");
         }
 
     }
@@ -108,7 +131,10 @@ public class AudioManager : MonoBehaviour
         {
             s.source.clip = s.clipSelector.GetRandomAudioClip(s.clips);
         }
-
+        if (s.source.isPlaying)
+        {
+            return;
+        }
         s.source.Play();
     }
 
