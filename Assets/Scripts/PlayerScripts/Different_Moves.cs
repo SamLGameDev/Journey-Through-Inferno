@@ -1,11 +1,6 @@
 using Pathfinding;
 using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
-using UnityEngine.ProBuilder.MeshOperations;
-using UnityEngine.SocialPlatforms.Impl;
-using static UnityEngine.GraphicsBuffer;
 
 public class Different_Moves : MonoBehaviour
 {
@@ -24,10 +19,11 @@ public class Different_Moves : MonoBehaviour
     public float sword_Speed;
     [SerializeField] private EnemyStats stats;
     [SerializeField] private Player pStats;
+    private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
     /// <summary>
     /// a Melee attack that contains a float for y range, int for damage
@@ -99,7 +95,7 @@ public class Different_Moves : MonoBehaviour
     public IEnumerator Charge(AnimationEvent Charge_info)
     {
         // stops the animation
-        GetComponent<Animator>().SetBool("Within_Charge_Range", false);
+        animator.SetBool("Within_Charge_Range", false);
         // gets the cooldown time for the melee so its not istantly killing whatever it touches 
         float Melee_Damage_Cooldown = -5;
         float time = Time.time; 
@@ -127,7 +123,7 @@ public class Different_Moves : MonoBehaviour
     public IEnumerator LookAtEnemy()
     {
         // while the animation is playing
-        while (GetComponent<Animator>().GetBool("Within_Charge_Range") == true)
+        while (animator.GetBool("Within_Charge_Range") == true)
         {
             yield return null;
             Transform target = GetComponent<AIDestinationSetter>().target;
@@ -199,6 +195,10 @@ public class Different_Moves : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (animator.GetBool("Death") == true)
+        {
+            StopAllCoroutines();
+            transform.rotation = Quaternion.identity;
+        }
     }
 }
