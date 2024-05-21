@@ -24392,6 +24392,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 239297221}
     m_Modifications:
+    - target: {fileID: -9038317864664257921, guid: 4723d1f7f5ef5564fbfb35af2f49268b,
+        type: 3}
+      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -9038317864664257921, guid: 4723d1f7f5ef5564fbfb35af2f49268b,
+        type: 3}
+      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2058353900}
+    - target: {fileID: -9038317864664257921, guid: 4723d1f7f5ef5564fbfb35af2f49268b,
+        type: 3}
+      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: destroyGyser
+      objectReference: {fileID: 0}
+    - target: {fileID: -9038317864664257921, guid: 4723d1f7f5ef5564fbfb35af2f49268b,
+        type: 3}
+      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ReworkedGeyser, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: -2844135195118118089, guid: 4723d1f7f5ef5564fbfb35af2f49268b,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -24509,6 +24529,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2058353896}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2058353900 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7257827493694455848, guid: 4723d1f7f5ef5564fbfb35af2f49268b,
+    type: 3}
+  m_PrefabInstance: {fileID: 2058353896}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d418c3881fb0134fb9f26f765e7266e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2066544294
 GameObject:
   m_ObjectHideFlags: 0

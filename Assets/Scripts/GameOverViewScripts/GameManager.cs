@@ -189,8 +189,11 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.EncounterCleared:
                 OnEncounterCleared = true;
+                Debug.Log("ENcounter jhere");
                 _clearPortal.SetActive(true);
+                Debug.Log("ENcounter jhere");
                 OnEncounterCleaered.Raise();
+
                 break;
             default:
                 Debug.LogError("Out of range gamestate change");

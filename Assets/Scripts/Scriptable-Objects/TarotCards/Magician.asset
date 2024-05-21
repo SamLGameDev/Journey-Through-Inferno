@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardImage: {fileID: 21300000, guid: 38f2f59296e56e54bbb3ee27ae928407, type: 3}
   effectValue: 4
-  description: 'Effect: Increases projectile size._
+  description: 'Effect: Increases your projectile size._
 
-    It can take years of focus
-    to make a vision into reality. A magician will toil away until he gets his desired
-    results.
+    It can take years of
+    focus to make a vision into reality. A magician will toil away until he gets
+    his desired results.
 
 '
   specialCardEffectEnabled: 0

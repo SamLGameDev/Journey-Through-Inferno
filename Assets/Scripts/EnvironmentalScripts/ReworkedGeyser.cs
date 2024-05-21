@@ -35,7 +35,11 @@ public class ReworkedGeyser : MonoBehaviour
         geyserCollider.enabled = false;
         isColliderEnabled = false;
     }
-
+    public void destroyGyser()
+    {
+        Debug.Log("HERE GYSER");
+        Destroy(gameObject);
+    }
 }
 
     
